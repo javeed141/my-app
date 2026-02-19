@@ -3,6 +3,53 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+const categories = [
+  {
+    type: "A",
+    label: "Multi-Tab + Sidebar",
+    desc: "Multiple top nav tabs + sidebar within each tab",
+    links: [
+      { name: "Pipedrive", url: "https://pipedrive.readme.io/docs/getting-started" },
+      { name: "Lithic", url: "https://docs.lithic.com/docs/quick-start-start-here" },
+      { name: "ReadMe", url: "https://docs.readme.com/main/docs" },
+      { name: "Shopline", url: "https://shopline-developers.readme.io/docs/get-started" },
+    ],
+  },
+  {
+    type: "B",
+    label: "Single Section + Sidebar",
+    desc: "Only one tab + sidebar with all pages",
+    links: [
+      { name: "Paperform", url: "https://paperform.readme.io/reference" },
+      { name: "Floorplanner", url: "https://floorplanner.readme.io/reference/getting-started" },
+      { name: "Autocode", url: "https://autocode.readme.io/docs/getting-started" },
+      { name: "Lirium", url: "https://lirium.readme.io/reference/welcome" },
+    ],
+  },
+  {
+    type: "C",
+    label: "Tabs + Versions + Sidebar",
+    desc: "Multiple tabs with a version selector",
+    links: [
+      { name: "Pennylane", url: "https://pennylane.readme.io/docs/getting-started" },
+      { name: "Datafiniti", url: "https://docs.datafiniti.co/docs" },
+      { name: "360Learning", url: "https://360learning.readme.io/docs/introduction" },
+      { name: "ShippingEasy", url: "https://shippingeasy.readme.io/reference/getting-started" },
+    ],
+  },
+  {
+    type: "D",
+    label: "Multi-Project + Sidebar",
+    desc: "Product/project names in top nav, each with own sub-site",
+    links: [
+      { name: "Modern Treasury – Payments", url: "https://docs.moderntreasury.com/payments/docs" },
+      { name: "Modern Treasury – Reconciliation", url: "https://docs.moderntreasury.com/reconciliation/docs" },
+      { name: "Modern Treasury – Ledgers", url: "https://docs.moderntreasury.com/ledgers/docs" },
+      { name: "Modern Treasury – Platform", url: "https://docs.moderntreasury.com/platform/docs" },
+    ],
+  },
+];
+
 export default function FetchPage() {
   const router = useRouter();
   const [url, setUrl] = useState("");
@@ -38,8 +85,12 @@ export default function FetchPage() {
     }
   }
 
+  function handleQuickLink(linkUrl: string) {
+    setUrl(linkUrl);
+  }
+
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-900 via-purple-950 to-slate-900 flex flex-col items-center justify-center px-4">
+    <div className="min-h-screen bg-linear-to-br from-slate-900 via-purple-950 to-slate-900 flex flex-col items-center justify-center px-4 py-16">
       <div className="w-full max-w-2xl">
         {/* Header */}
         <div className="text-center mb-10">
@@ -112,6 +163,46 @@ export default function FetchPage() {
           <p className="mt-5 text-xs text-slate-500 text-center">
             Works best with documentation sites using /docs, /reference, or /recipes paths
           </p>
+        </div>
+
+        {/* Reference Links by Category */}
+        <div className="mt-10">
+          <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4 text-center">
+            Try a reference site
+          </h2>
+
+          <div className="grid gap-4">
+            {categories.map((cat) => (
+              <div
+                key={cat.type}
+                className="bg-white/5 border border-white/10 rounded-xl p-5"
+              >
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-bold text-purple-400 bg-purple-500/15 px-2 py-0.5 rounded-md">
+                    Type {cat.type}
+                  </span>
+                  <span className="text-sm font-medium text-slate-200">
+                    {cat.label}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-500 mb-3">{cat.desc}</p>
+
+                <div className="flex flex-wrap gap-2">
+                  {cat.links.map((link) => (
+                    <button
+                      key={link.url}
+                      onClick={() => handleQuickLink(link.url)}
+                      className="text-xs px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-600/40
+                                 text-slate-300 hover:text-purple-300 hover:border-purple-500/50 hover:bg-purple-500/10
+                                 transition-colors cursor-pointer"
+                    >
+                      {link.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mt-6 text-center">

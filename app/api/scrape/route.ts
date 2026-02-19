@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import * as cheerio from "cheerio";
+import { load, type CheerioAPI, type Cheerio } from "cheerio";
+import type { AnyNode } from "domhandler";
 
 export async function POST(req: NextRequest) {
   const { url } = await req.json();
@@ -27,8 +28,8 @@ export async function POST(req: NextRequest) {
   }
 
   function addLink(
-    $: cheerio.CheerioAPI,
-    el: cheerio.AnyNode,
+    $: CheerioAPI,
+    el: AnyNode,
     pages: ScrapePageItem[],
     group: string,
     level: number
@@ -47,13 +48,13 @@ export async function POST(req: NextRequest) {
   }
 
   function walkSidebar(
-    $: cheerio.CheerioAPI,
-    $el: cheerio.Cheerio<cheerio.AnyNode>,
+    $: CheerioAPI,
+    $el: Cheerio<AnyNode>,
     pages: ScrapePageItem[],
     group: string,
     depth: number
   ) {
-    $el.children().each((_, child) => {
+    $el.children().each((_: number, child: AnyNode) => {
       const $c = $(child);
       const tag = ((child as { tagName?: string }).tagName || "").toLowerCase();
       const cls = ($c.attr("class") || "").toLowerCase();
@@ -78,7 +79,7 @@ export async function POST(req: NextRequest) {
   }
 
   function parseSidebar(html: string): ScrapePageItem[] {
-    const $ = cheerio.load(html);
+    const $ = load(html);
     const pages: ScrapePageItem[] = [];
 
     const selectors = [
@@ -88,7 +89,7 @@ export async function POST(req: NextRequest) {
       "aside nav", "aside",
     ];
 
-    let $sidebar: cheerio.Cheerio<cheerio.AnyNode> | null = null;
+    let $sidebar: Cheerio<AnyNode> | null = null;
     for (const sel of selectors) {
       const $el = $(sel);
       if ($el.length && $el.find("a").length > 3) {
@@ -100,16 +101,16 @@ export async function POST(req: NextRequest) {
     if ($sidebar) walkSidebar($, $sidebar, pages, "", 0);
 
     if (pages.length === 0) {
-      $("ul").each((_, ul) => {
+      $("ul").each((_: number, ul: AnyNode) => {
         const links = $(ul).find('a[href*="/docs/"], a[href*="/reference/"]');
         if (links.length > 3 && pages.length === 0) {
-          links.each((_, a) => addLink($, a, pages, "", 0));
+          links.each((_2: number, a: AnyNode) => addLink($, a, pages, "", 0));
         }
       });
     }
 
     if (pages.length === 0) {
-      $('a[href*="/docs/"], a[href*="/reference/"]').each((_, a) =>
+      $('a[href*="/docs/"], a[href*="/reference/"]').each((_: number, a: AnyNode) =>
         addLink($, a, pages, "", 0)
       );
     }
@@ -123,14 +124,14 @@ export async function POST(req: NextRequest) {
     const html = await fetchPage(url);
     if (!html) return NextResponse.json({ error: "Failed to fetch URL" }, { status: 502 });
 
-    const $ = cheerio.load(html);
+    const $ = load(html);
 
     // Detect nav tabs
     const tabs: { name: string; path: string }[] = [];
     const seen = new Set<string>();
 
     $("header a, nav a, [class*='Header'] a, [class*='navbar'] a, [class*='Navbar'] a").each(
-      (_, el) => {
+      (_: number, el: AnyNode) => {
         const href = ($(el).attr("href") || "").replace(/\/$/, "");
         for (const [pattern, name] of [
           [/^\/?docs$/, "Guides"],
@@ -147,7 +148,7 @@ export async function POST(req: NextRequest) {
     );
 
     const projects = new Set<string>();
-    $("header a, nav a, [class*='Header'] a").each((_, el) => {
+    $("header a, nav a, [class*='Header'] a").each((_: number, el: AnyNode) => {
       const href = $(el).attr("href") || "";
       const m = href.match(/^\/([\w-]+)\/(docs|reference)\/?$/);
       if (m) {
@@ -191,7 +192,7 @@ export async function POST(req: NextRequest) {
       out.navType = "fallback";
       const pages: ScrapePageItem[] = [];
       const seenHrefs = new Set<string>();
-      $("a").each((_, a) => {
+      $("a").each((_: number, a: AnyNode) => {
         const href = $(a).attr("href") || "";
         const title = $(a).text().trim();
         if (!title || title.length > 100 || seenHrefs.has(href)) return;
