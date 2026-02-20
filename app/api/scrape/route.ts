@@ -328,31 +328,31 @@ export async function POST(req: NextRequest) {
       if (pages.length > 0) out.sections.push({ name: "all", pages });
     }
 
-    // Save JSON to docs/ folder
-    const docsDir = join(process.cwd(), "docs");
-    if (!existsSync(docsDir)) mkdirSync(docsDir, { recursive: true });
-    const safeName = out.site.replace(/[^a-zA-Z0-9.-]/g, "_");
-    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-    const filePath = join(docsDir, `${safeName}_${timestamp}.json`);
-    writeFileSync(filePath, JSON.stringify(out, null, 2));
+    // Save JSON to docs/ folder (works locally, skips silently on serverless)
+    try {
+      const docsDir = join(process.cwd(), "docs");
+      if (!existsSync(docsDir)) mkdirSync(docsDir, { recursive: true });
+      const safeName = out.site.replace(/[^a-zA-Z0-9.-]/g, "_");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+      const filePath = join(docsDir, `${safeName}_${timestamp}.json`);
+      writeFileSync(filePath, JSON.stringify(out, null, 2));
 
-    // Also store the raw sidebar structure if found
-    const $raw = load(html);
-    const rawScripts: string[] = [];
-    $raw("script").each((_: number, el: AnyNode) => {
-      const text = $raw(el).text();
-      if (text.includes("sidebars") || text.includes("sidebar")) {
-        const match = text.match(/"sidebars"\s*:\s*(\{[\s\S]*?\})\s*[,}]/);
-        if (match) rawScripts.push(match[1]);
-      }
-    });
-    if (rawScripts.length > 0) {
-      try {
+      // Also store raw sidebar structure if found
+      const $raw = load(html);
+      const rawScripts: string[] = [];
+      $raw("script").each((_: number, el: AnyNode) => {
+        const text = $raw(el).text();
+        if (text.includes("sidebars") || text.includes("sidebar")) {
+          const match = text.match(/"sidebars"\s*:\s*(\{[\s\S]*?\})\s*[,}]/);
+          if (match) rawScripts.push(match[1]);
+        }
+      });
+      if (rawScripts.length > 0) {
         const rawSidebar = JSON.parse(rawScripts[0]);
         const rawPath = join(docsDir, `${safeName}_${timestamp}_sidebar-structure.json`);
         writeFileSync(rawPath, JSON.stringify(rawSidebar, null, 2));
-      } catch { /* ignore parse errors */ }
-    }
+      }
+    } catch { /* read-only filesystem on serverless — skip */ }
 
     return NextResponse.json(out);
   } catch (e: unknown) {
