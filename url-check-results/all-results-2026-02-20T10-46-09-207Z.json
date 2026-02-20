@@ -1,0 +1,416 @@
+[
+  {
+    "name": "Algolia",
+    "url": "https://algolia.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1669,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://algolia.readme.io/inactive"
+  },
+  {
+    "name": "Toggl Track",
+    "url": "https://engineering.toggl.com/docs/",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 596,
+    "error": null,
+    "final_url": null
+  },
+  {
+    "name": "Attio CRM",
+    "url": "https://docs.attio.com",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 4398,
+    "error": null,
+    "final_url": "https://docs.attio.com/docs/overview"
+  },
+  {
+    "name": "LaunchDarkly",
+    "url": "https://apidocs.launchdarkly.com",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1658,
+    "error": null,
+    "final_url": "https://apidocs.launchdarkly.com/"
+  },
+  {
+    "name": "Mux",
+    "url": "https://docs.mux.com",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2064,
+    "error": null,
+    "final_url": "https://www.mux.com/docs"
+  },
+  {
+    "name": "Cal.com",
+    "url": "https://docs.cal.com/api-reference",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2533,
+    "error": null,
+    "final_url": "https://cal.com/docs/api-reference/v2/introduction"
+  },
+  {
+    "name": "Metronome",
+    "url": "https://docs.metronome.com",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 3284,
+    "error": null,
+    "final_url": "https://docs.metronome.com/guides/get-started/home"
+  },
+  {
+    "name": "Clerk",
+    "url": "https://clerk.readme.io/docs",
+    "status": 404,
+    "ok": false,
+    "elapsed_ms": 1298,
+    "error": "HTTP 404 Not Found",
+    "final_url": null
+  },
+  {
+    "name": "Fiberplane",
+    "url": "https://docs.fiberplane.com",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1096,
+    "error": null,
+    "final_url": "https://docs.fiberplane.com/"
+  },
+  {
+    "name": "Supaglue",
+    "url": "https://docs.supaglue.com",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1362,
+    "error": null,
+    "final_url": "https://docs.supaglue.com/"
+  },
+  {
+    "name": "Razorpay",
+    "url": "https://razorpay.com/docs/api/",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 999,
+    "error": null,
+    "final_url": null
+  },
+  {
+    "name": "Square",
+    "url": "https://developer.squareup.com/reference",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2598,
+    "error": null,
+    "final_url": "https://developer.squareup.com/reference/square"
+  },
+  {
+    "name": "Adyen",
+    "url": "https://docs.adyen.com/api-explorer/",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2251,
+    "error": null,
+    "final_url": null
+  },
+  {
+    "name": "Airwallex",
+    "url": "https://docs.airwallex.com",
+    "status": null,
+    "ok": false,
+    "elapsed_ms": 744,
+    "error": "fetch failed",
+    "final_url": null
+  },
+  {
+    "name": "Unit Finance",
+    "url": "https://docs.unit.co",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 5640,
+    "error": null,
+    "final_url": "https://www.unit.co/docs/api/"
+  },
+  {
+    "name": "Modern Treasury",
+    "url": "https://docs.moderntreasury.com",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2898,
+    "error": null,
+    "final_url": "https://docs.moderntreasury.com/payments/docs/overview"
+  },
+  {
+    "name": "Lithic",
+    "url": "https://docs.lithic.com",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1823,
+    "error": null,
+    "final_url": "https://docs.lithic.com/docs/welcome"
+  },
+  {
+    "name": "Treasury Prime",
+    "url": "https://docs.treasuryprime.com",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 3803,
+    "error": null,
+    "final_url": "https://docs.treasuryprime.com/docs/getting-started"
+  },
+  {
+    "name": "Replicate AI",
+    "url": "https://replicate.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 2151,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://replicate.readme.io/inactive"
+  },
+  {
+    "name": "AssemblyAI",
+    "url": "https://www.assemblyai.com/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1213,
+    "error": null,
+    "final_url": null
+  },
+  {
+    "name": "SerpAPI",
+    "url": "https://serpapi.com/search-api",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 599,
+    "error": null,
+    "final_url": null
+  },
+  {
+    "name": "Clearbit",
+    "url": "https://clearbit.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 2334,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://clearbit.readme.io/inactive"
+  },
+  {
+    "name": "Deepgram",
+    "url": "https://developers.deepgram.com/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 4337,
+    "error": null,
+    "final_url": "https://developers.deepgram.com/home"
+  },
+  {
+    "name": "Pinecone",
+    "url": "https://docs.pinecone.io",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 3358,
+    "error": null,
+    "final_url": "https://docs.pinecone.io/guides/get-started/overview"
+  },
+  {
+    "name": "Weaviate Cloud",
+    "url": "https://weaviate.io/developers/weaviate",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 4641,
+    "error": null,
+    "final_url": "https://docs.weaviate.io/weaviate"
+  },
+  {
+    "name": "Moralis",
+    "url": "https://docs.moralis.io",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 3391,
+    "error": null,
+    "final_url": "https://docs.moralis.com/"
+  },
+  {
+    "name": "QuickNode",
+    "url": "https://www.quicknode.com/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 3078,
+    "error": null,
+    "final_url": "https://www.quicknode.com/docs/welcome"
+  },
+  {
+    "name": "Helius",
+    "url": "https://docs.helius.dev",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 4203,
+    "error": null,
+    "final_url": "https://www.helius.dev/docs"
+  },
+  {
+    "name": "Tatum",
+    "url": "https://docs.tatum.io",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2054,
+    "error": null,
+    "final_url": "https://docs.tatum.io/"
+  },
+  {
+    "name": "Blocknative",
+    "url": "https://docs.blocknative.com",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 3290,
+    "error": null,
+    "final_url": "https://docs.blocknative.com/"
+  },
+  {
+    "name": "CoinAPI",
+    "url": "https://docs.coinapi.io",
+    "status": 403,
+    "ok": false,
+    "elapsed_ms": 667,
+    "error": "HTTP 403 Forbidden",
+    "final_url": "https://docs.coinapi.io/"
+  },
+  {
+    "name": "Sendbird",
+    "url": "https://sendbird.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 2948,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://sendbird.readme.io/inactive"
+  },
+  {
+    "name": "MessageBird",
+    "url": "https://developers.messagebird.com",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1327,
+    "error": null,
+    "final_url": "https://developers.messagebird.com/"
+  },
+  {
+    "name": "Postmark",
+    "url": "https://postmarkapp.com/developer",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2082,
+    "error": null,
+    "final_url": null
+  },
+  {
+    "name": "Courier",
+    "url": "https://docs.courier.com",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 4815,
+    "error": null,
+    "final_url": "https://www.courier.com/docs/welcome"
+  },
+  {
+    "name": "Telnyx",
+    "url": "https://developers.telnyx.com/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 3066,
+    "error": null,
+    "final_url": "https://developers.telnyx.com/docs/account-setup/create-account"
+  },
+  {
+    "name": "Sentry",
+    "url": "https://docs.sentry.io/api/",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1182,
+    "error": null,
+    "final_url": null
+  },
+  {
+    "name": "Linear",
+    "url": "https://developers.linear.app/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 3162,
+    "error": null,
+    "final_url": "https://linear.app/developers"
+  },
+  {
+    "name": "Render",
+    "url": "https://render.com/docs/api",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1668,
+    "error": null,
+    "final_url": null
+  },
+  {
+    "name": "Railway",
+    "url": "https://docs.railway.app/reference/api",
+    "status": 404,
+    "ok": false,
+    "elapsed_ms": 2961,
+    "error": "HTTP 404 Not Found",
+    "final_url": "https://docs.railway.com/reference/api"
+  },
+  {
+    "name": "Logtail",
+    "url": "https://docs.logtail.com",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 3289,
+    "error": null,
+    "final_url": "https://betterstack.com/docs/logs/start/"
+  },
+  {
+    "name": "Clearbit (readme)",
+    "url": "https://clearbit.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 3074,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://clearbit.readme.io/inactive"
+  },
+  {
+    "name": "Pusher Beams",
+    "url": "https://pusher.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 3625,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://pusher.readme.io/inactive"
+  },
+  {
+    "name": "Trinsic",
+    "url": "https://trinsic.readme.io/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 7142,
+    "error": null,
+    "final_url": "https://docs.trinsic.id/docs/trinsic-documentation"
+  },
+  {
+    "name": "Shyft",
+    "url": "https://shyft.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 4715,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://shyft.readme.io/inactive"
+  },
+  {
+    "name": "EnableX",
+    "url": "https://enablex.readme.io/docs",
+    "status": 404,
+    "ok": false,
+    "elapsed_ms": 1447,
+    "error": "HTTP 404 Not Found",
+    "final_url": null
+  }
+]

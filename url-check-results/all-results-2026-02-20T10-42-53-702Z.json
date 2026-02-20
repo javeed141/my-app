@@ -1,0 +1,488 @@
+[
+  {
+    "name": "Pipedrive",
+    "url": "https://pipedrive.readme.io/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2491,
+    "error": null,
+    "final_url": "https://pipedrive.readme.io/docs/getting-started"
+  },
+  {
+    "name": "Apollo",
+    "url": "https://docs.apollo.io/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1909,
+    "error": null,
+    "final_url": "https://docs.apollo.io/docs/api-overview"
+  },
+  {
+    "name": "Penneo",
+    "url": "https://penneo.readme.io/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2911,
+    "error": null,
+    "final_url": "https://penneo.readme.io/docs/getting-started"
+  },
+  {
+    "name": "Heap",
+    "url": "https://developers.heap.io/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1437,
+    "error": null,
+    "final_url": "https://developers.heap.io/docs/overview"
+  },
+  {
+    "name": "ClickUp",
+    "url": "https://developer.clickup.com/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1688,
+    "error": null,
+    "final_url": "https://developer.clickup.com/docs/authentication"
+  },
+  {
+    "name": "Front",
+    "url": "https://dev.frontapp.com/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1483,
+    "error": null,
+    "final_url": "https://dev.frontapp.com/docs/welcome"
+  },
+  {
+    "name": "Personio",
+    "url": "https://developer.personio.de/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1281,
+    "error": null,
+    "final_url": "https://developer.personio.de/docs/getting-started-with-the-personio-api"
+  },
+  {
+    "name": "Lucid",
+    "url": "https://lucid.readme.io/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1898,
+    "error": null,
+    "final_url": "https://lucid.readme.io/docs/welcome"
+  },
+  {
+    "name": "ROR API",
+    "url": "https://ror.readme.io/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1858,
+    "error": null,
+    "final_url": "https://ror.readme.io/docs/basics"
+  },
+  {
+    "name": "Sample Orders",
+    "url": "https://sample-threes.readme.io/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2156,
+    "error": null,
+    "final_url": "https://sample-threes.readme.io/docs/getting-started"
+  },
+  {
+    "name": "ThousandBrains",
+    "url": "https://thousandbrainsproject.readme.io/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1939,
+    "error": null,
+    "final_url": "https://thousandbrainsproject.readme.io/docs/welcome-to-the-thousand-brains-project-documentation"
+  },
+  {
+    "name": "ReadMe Docs",
+    "url": "https://docs.readme.com/main/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1193,
+    "error": null,
+    "final_url": "https://docs.readme.com/main/docs/about-readme"
+  },
+  {
+    "name": "Datafiniti",
+    "url": "https://docs.datafiniti.co/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2128,
+    "error": null,
+    "final_url": "https://docs.datafiniti.co/docs/api-introduction"
+  },
+  {
+    "name": "Paperform",
+    "url": "https://paperform.readme.io/reference",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2258,
+    "error": null,
+    "final_url": "https://paperform.readme.io/reference/getting-started-1"
+  },
+  {
+    "name": "Floorplanner",
+    "url": "https://floorplanner.readme.io/reference",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2024,
+    "error": null,
+    "final_url": "https://floorplanner.readme.io/reference/getting-started"
+  },
+  {
+    "name": "Pennylane",
+    "url": "https://pennylane.readme.io/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1441,
+    "error": null,
+    "final_url": "https://pennylane.readme.io/docs/api-overview"
+  },
+  {
+    "name": "Modern Treasury",
+    "url": "https://docs.moderntreasury.com/payments/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1825,
+    "error": null,
+    "final_url": "https://docs.moderntreasury.com/payments/docs/overview"
+  },
+  {
+    "name": "Lithic",
+    "url": "https://docs.lithic.com/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1136,
+    "error": null,
+    "final_url": "https://docs.lithic.com/docs/welcome"
+  },
+  {
+    "name": "Freshsales",
+    "url": "https://freshsales.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 2456,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://freshsales.readme.io/inactive"
+  },
+  {
+    "name": "Increase",
+    "url": "https://increase.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 2118,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://increase.readme.io/inactive"
+  },
+  {
+    "name": "Synapse",
+    "url": "https://synapse.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1885,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://synapse.readme.io/inactive"
+  },
+  {
+    "name": "Flutterwave",
+    "url": "https://flutterwave.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1729,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://flutterwave.readme.io/inactive"
+  },
+  {
+    "name": "Customer.io",
+    "url": "https://customerio.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1770,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://customerio.readme.io/inactive"
+  },
+  {
+    "name": "Courier",
+    "url": "https://courier.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1881,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://courier.readme.io/inactive"
+  },
+  {
+    "name": "ClickSend",
+    "url": "https://clicksend.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1918,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://clicksend.readme.io/inactive"
+  },
+  {
+    "name": "Bandwidth",
+    "url": "https://bandwidth.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1331,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://bandwidth.readme.io/inactive"
+  },
+  {
+    "name": "Stytch",
+    "url": "https://stytch.readme.io/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 1331,
+    "error": null,
+    "final_url": "https://stytch.readme.io/password?redirect=/docs"
+  },
+  {
+    "name": "Render",
+    "url": "https://render.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 3041,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://render.readme.io/inactive"
+  },
+  {
+    "name": "Railway",
+    "url": "https://railway.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1471,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://railway.readme.io/inactive"
+  },
+  {
+    "name": "Qovery",
+    "url": "https://qovery.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1572,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://qovery.readme.io/inactive"
+  },
+  {
+    "name": "AssemblyAI",
+    "url": "https://assemblyai.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1791,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://assemblyai.readme.io/inactive"
+  },
+  {
+    "name": "Cohere",
+    "url": "https://cohere.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 2527,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://cohere.readme.io/inactive"
+  },
+  {
+    "name": "SerpAPI",
+    "url": "https://serpapi.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1530,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://serpapi.readme.io/inactive"
+  },
+  {
+    "name": "Scale AI",
+    "url": "https://scale.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1590,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://scale.readme.io/inactive"
+  },
+  {
+    "name": "Clarifai",
+    "url": "https://clarifai.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 2225,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://clarifai.readme.io/inactive"
+  },
+  {
+    "name": "Segment",
+    "url": "https://segment.readme.io/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2141,
+    "error": null,
+    "final_url": "https://segment.readme.io/password?redirect=/docs"
+  },
+  {
+    "name": "PostHog",
+    "url": "https://posthog.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1458,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://posthog.readme.io/inactive"
+  },
+  {
+    "name": "Helius",
+    "url": "https://helius.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1643,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://helius.readme.io/inactive"
+  },
+  {
+    "name": "Blocknative",
+    "url": "https://blocknative.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 2094,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://blocknative.readme.io/inactive"
+  },
+  {
+    "name": "Notion API",
+    "url": "https://notion.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1723,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://notion.readme.io/inactive"
+  },
+  {
+    "name": "Airtable",
+    "url": "https://airtable.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1444,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://airtable.readme.io/inactive"
+  },
+  {
+    "name": "Monday",
+    "url": "https://monday.readme.io/docs",
+    "status": 200,
+    "ok": true,
+    "elapsed_ms": 2007,
+    "error": null,
+    "final_url": "https://dash.readme.com/to/monday?redirect=%2Fdocs"
+  },
+  {
+    "name": "Uploadcare",
+    "url": "https://uploadcare.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1567,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://uploadcare.readme.io/inactive"
+  },
+  {
+    "name": "Filestack",
+    "url": "https://filestack.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1936,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://filestack.readme.io/inactive"
+  },
+  {
+    "name": "Zendesk",
+    "url": "https://zendesk.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1656,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://zendesk.readme.io/inactive"
+  },
+  {
+    "name": "Gusto",
+    "url": "https://gusto.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1296,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://gusto.readme.io/inactive"
+  },
+  {
+    "name": "Deel",
+    "url": "https://deel.readme.io/docs",
+    "status": 404,
+    "ok": false,
+    "elapsed_ms": 1047,
+    "error": "HTTP 404 Not Found",
+    "final_url": null
+  },
+  {
+    "name": "Remote",
+    "url": "https://remote.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 1850,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://remote.readme.io/inactive"
+  },
+  {
+    "name": "CommerceLayer",
+    "url": "https://commercelayer.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 2628,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://commercelayer.readme.io/inactive"
+  },
+  {
+    "name": "Shippo",
+    "url": "https://shippo.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 2034,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://shippo.readme.io/inactive"
+  },
+  {
+    "name": "EasyPost",
+    "url": "https://easypost.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 3564,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://easypost.readme.io/inactive"
+  },
+  {
+    "name": "Radar",
+    "url": "https://radar.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 3553,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://radar.readme.io/inactive"
+  },
+  {
+    "name": "Abstract",
+    "url": "https://abstract.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 3592,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://abstract.readme.io/inactive"
+  },
+  {
+    "name": "ReadMe API",
+    "url": "https://readme.readme.io/docs",
+    "status": 401,
+    "ok": false,
+    "elapsed_ms": 4522,
+    "error": "HTTP 401 Unauthorized",
+    "final_url": "https://readme.readme.io/inactive"
+  }
+]

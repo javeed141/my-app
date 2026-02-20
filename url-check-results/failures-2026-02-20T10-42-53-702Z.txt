@@ -1,0 +1,234 @@
+URL Check Failures — Fri, 20 Feb 2026 10:43:22 GMT
+Total checked: 54  |  Passed: 21  |  Failed: 33
+══════════════════════════════════════════════════════════════════════
+
+NAME   : Freshsales
+URL    : https://freshsales.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 2456ms
+FINAL  : https://freshsales.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Increase
+URL    : https://increase.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 2118ms
+FINAL  : https://increase.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Synapse
+URL    : https://synapse.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1885ms
+FINAL  : https://synapse.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Flutterwave
+URL    : https://flutterwave.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1729ms
+FINAL  : https://flutterwave.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Customer.io
+URL    : https://customerio.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1770ms
+FINAL  : https://customerio.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Courier
+URL    : https://courier.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1881ms
+FINAL  : https://courier.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : ClickSend
+URL    : https://clicksend.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1918ms
+FINAL  : https://clicksend.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Bandwidth
+URL    : https://bandwidth.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1331ms
+FINAL  : https://bandwidth.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Render
+URL    : https://render.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 3041ms
+FINAL  : https://render.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Railway
+URL    : https://railway.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1471ms
+FINAL  : https://railway.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Qovery
+URL    : https://qovery.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1572ms
+FINAL  : https://qovery.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : AssemblyAI
+URL    : https://assemblyai.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1791ms
+FINAL  : https://assemblyai.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Cohere
+URL    : https://cohere.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 2527ms
+FINAL  : https://cohere.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : SerpAPI
+URL    : https://serpapi.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1530ms
+FINAL  : https://serpapi.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Scale AI
+URL    : https://scale.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1590ms
+FINAL  : https://scale.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Clarifai
+URL    : https://clarifai.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 2225ms
+FINAL  : https://clarifai.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : PostHog
+URL    : https://posthog.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1458ms
+FINAL  : https://posthog.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Helius
+URL    : https://helius.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1643ms
+FINAL  : https://helius.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Blocknative
+URL    : https://blocknative.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 2094ms
+FINAL  : https://blocknative.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Notion API
+URL    : https://notion.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1723ms
+FINAL  : https://notion.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Airtable
+URL    : https://airtable.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1444ms
+FINAL  : https://airtable.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Uploadcare
+URL    : https://uploadcare.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1567ms
+FINAL  : https://uploadcare.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Filestack
+URL    : https://filestack.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1936ms
+FINAL  : https://filestack.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Zendesk
+URL    : https://zendesk.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1656ms
+FINAL  : https://zendesk.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Gusto
+URL    : https://gusto.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1296ms
+FINAL  : https://gusto.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Deel
+URL    : https://deel.readme.io/docs
+STATUS : 404
+ERROR  : HTTP 404 Not Found
+TIME   : 1047ms
+──────────────────────────────────────────────────────────────────────
+NAME   : Remote
+URL    : https://remote.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 1850ms
+FINAL  : https://remote.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : CommerceLayer
+URL    : https://commercelayer.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 2628ms
+FINAL  : https://commercelayer.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Shippo
+URL    : https://shippo.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 2034ms
+FINAL  : https://shippo.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : EasyPost
+URL    : https://easypost.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 3564ms
+FINAL  : https://easypost.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Radar
+URL    : https://radar.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 3553ms
+FINAL  : https://radar.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : Abstract
+URL    : https://abstract.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 3592ms
+FINAL  : https://abstract.readme.io/inactive
+──────────────────────────────────────────────────────────────────────
+NAME   : ReadMe API
+URL    : https://readme.readme.io/docs
+STATUS : 401
+ERROR  : HTTP 401 Unauthorized
+TIME   : 4522ms
+FINAL  : https://readme.readme.io/inactive
+──────────────────────────────────────────────────────────────────────

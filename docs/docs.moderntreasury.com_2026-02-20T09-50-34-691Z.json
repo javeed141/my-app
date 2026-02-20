@@ -1,0 +1,2424 @@
+{
+  "site": "docs.moderntreasury.com",
+  "navType": "projects",
+  "sections": [
+    {
+      "name": "platform/guides",
+      "pages": [
+        {
+          "title": "Platform Overview",
+          "path": "/platform/docs/platform-overview",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/platform-overview",
+          "level": 1,
+          "group": "Get Started"
+        },
+        {
+          "title": "Signing up for an account",
+          "path": "/platform/docs/get-started",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/get-started",
+          "level": 1,
+          "group": "Get Started"
+        },
+        {
+          "title": "SDKs & Libraries",
+          "path": "/platform/docs/sdks-libraries",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/sdks-libraries",
+          "level": 1,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "NodeJS",
+          "path": "/platform/docs/nodejs",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/nodejs",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Python",
+          "path": "/platform/docs/python",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/python",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Go",
+          "path": "/platform/docs/go",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/go",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Java/Kotlin",
+          "path": "/platform/docs/javakotlin",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/javakotlin",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Ruby",
+          "path": "/platform/docs/ruby",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/ruby",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "OpenAPI Specification",
+          "path": "/platform/docs/openapi-specification",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/openapi-specification",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "API Keys",
+          "path": "/platform/docs/api-keys-1",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/api-keys-1",
+          "level": 1,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Create an API key",
+          "path": "/platform/docs/create-an-api-key",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/create-an-api-key",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "API Key Permissions",
+          "path": "/platform/docs/api-key-permissions",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/api-key-permissions",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Retrieve an API key",
+          "path": "/platform/docs/retrieve-an-api-key",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/retrieve-an-api-key",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Edit an API key",
+          "path": "/platform/docs/edit-an-api-key",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/edit-an-api-key",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Deactivate an API key",
+          "path": "/platform/docs/deactivate-an-api-key",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/deactivate-an-api-key",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Webhooks",
+          "path": "/platform/docs/webhooks-1",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/webhooks-1",
+          "level": 1,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Best Practices",
+          "path": "/platform/docs/webhook-endpoint-best-practices",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/webhook-endpoint-best-practices",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "View webhook events",
+          "path": "/platform/docs/view-webhook-events",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/view-webhook-events",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Add a webhook endpoint",
+          "path": "/platform/docs/set-a-webhook-url",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/set-a-webhook-url",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Verify a webhook event",
+          "path": "/platform/docs/verifying-webhooks",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/verifying-webhooks",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Resend a webhook",
+          "path": "/platform/docs/resend-a-webhook",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/resend-a-webhook",
+          "level": 2,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Request Logs",
+          "path": "/platform/docs/request-logs",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/request-logs",
+          "level": 1,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Customizing Pre-Built UIs",
+          "path": "/platform/docs/customizing-pre-built-uis",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/customizing-pre-built-uis",
+          "level": 1,
+          "group": "Developer Tools"
+        },
+        {
+          "title": "Inviting Users",
+          "path": "/platform/docs/user-invitations-overview",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/user-invitations-overview",
+          "level": 1,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Roles and Permissions",
+          "path": "/platform/docs/roles-and-permissions",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/roles-and-permissions",
+          "level": 1,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Standard Options for Permission Sets and Roles",
+          "path": "/platform/docs/standard-options-for-permission-sets-and-roles",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/standard-options-for-permission-sets-and-roles",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Application Access Management",
+          "path": "/platform/docs/application-access-management",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/application-access-management",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Organization Change Approvals",
+          "path": "/platform/docs/organization-change-approvals",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/organization-change-approvals",
+          "level": 1,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Approving or Denying an Organization Change",
+          "path": "/platform/docs/approve-or-deny-an-organization-change",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/approve-or-deny-an-organization-change",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Roles and Permissions (User Management) Changes",
+          "path": "/platform/docs/proposed-changes-user-management",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/proposed-changes-user-management",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Payment Approval Rule Changes",
+          "path": "/platform/docs/payment-approval-rule-changes",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/payment-approval-rule-changes",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Transaction Categorization Rule Changes",
+          "path": "/platform/docs/transaction-categorization-rule-changes",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/transaction-categorization-rule-changes",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "System for Cross-domain Identity Management (SCIM)",
+          "path": "/platform/docs/user-lifecycle-management-with-scim",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/user-lifecycle-management-with-scim",
+          "level": 1,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Connect Your Identity Provider",
+          "path": "/platform/docs/connect-identity-provider-scim",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/connect-identity-provider-scim",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Assign Permissions to Directory Synced Groups",
+          "path": "/platform/docs/assign-permissions-to-provisioned-roles",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/assign-permissions-to-provisioned-roles",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Manage users with SCIM",
+          "path": "/platform/docs/managing-users-and-roles-with-scim",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/managing-users-and-roles-with-scim",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Manage groups with SCIM",
+          "path": "/platform/docs/managing-your-organizations-roles",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/managing-your-organizations-roles",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Managing Your Environments",
+          "path": "/platform/docs/organizations-overview",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/organizations-overview",
+          "level": 1,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Custom Email Domains",
+          "path": "/platform/docs/custom-email-domains",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/custom-email-domains",
+          "level": 1,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Security Overview",
+          "path": "/platform/docs/security-overview",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/security-overview",
+          "level": 1,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Data Retention",
+          "path": "/platform/docs/data-retention",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/data-retention",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Audit Trail",
+          "path": "/platform/docs/audit-trail",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/audit-trail",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Data Privacy Controls",
+          "path": "/platform/docs/data-privacy-controls-1",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/data-privacy-controls-1",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Single Sign On (SSO)",
+          "path": "/platform/docs/single-sign-on-sso",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/single-sign-on-sso",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Enable Multi-Factor Authentication (MFA)",
+          "path": "/platform/docs/multi-factor-authentication",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/multi-factor-authentication",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "IP Allowlist",
+          "path": "/platform/docs/ip-allowlist",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/ip-allowlist",
+          "level": 2,
+          "group": "Organization Management"
+        },
+        {
+          "title": "Exporting CSVs from the dashboard",
+          "path": "/platform/docs/exports-overview",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/exports-overview",
+          "level": 1,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Reporting Overview",
+          "path": "/platform/docs/reporting-overview",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/reporting-overview",
+          "level": 1,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Create a Report",
+          "path": "/platform/docs/create-a-report",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/create-a-report",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Schedule send a Report",
+          "path": "/platform/docs/schedule-send-a-report",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/schedule-send-a-report",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Export a Report",
+          "path": "/platform/docs/schedule-send-a-report-copy",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/schedule-send-a-report-copy",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Manage Report access",
+          "path": "/platform/docs/manage-report-access",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/manage-report-access",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Report on Payment Orders and Transactions",
+          "path": "/platform/docs/reporting-on-payment-orders-and-transactions",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/reporting-on-payment-orders-and-transactions",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Push to Warehouse",
+          "path": "/platform/docs/push-to-warehouse",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/push-to-warehouse",
+          "level": 1,
+          "group": "Integrations"
+        },
+        {
+          "title": "Push to Warehouse Schema",
+          "path": "/platform/docs/push-to-warehouse-schema",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/push-to-warehouse-schema",
+          "level": 2,
+          "group": "Integrations"
+        },
+        {
+          "title": "Push to Warehouse UI",
+          "path": "/platform/docs/push-to-warehouse-ui",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/push-to-warehouse-ui",
+          "level": 2,
+          "group": "Integrations"
+        },
+        {
+          "title": "Push to Warehouse IP Addresses",
+          "path": "/platform/docs/push-to-warehouse-ip-addresses",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/push-to-warehouse-ip-addresses",
+          "level": 2,
+          "group": "Integrations"
+        },
+        {
+          "title": "SIEM Integration",
+          "path": "/platform/docs/siem",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/siem",
+          "level": 1,
+          "group": "Integrations"
+        },
+        {
+          "title": "SIEM detection with DataDog",
+          "path": "/platform/docs/siem-detection-with-datadog",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/siem-detection-with-datadog",
+          "level": 2,
+          "group": "Integrations"
+        },
+        {
+          "title": "Supported destinations for SIEM",
+          "path": "/platform/docs/supported-destinations-for-siem",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/supported-destinations-for-siem",
+          "level": 2,
+          "group": "Integrations"
+        },
+        {
+          "title": "Configure your API client for Performance & Reliability",
+          "path": "/platform/docs/reliable-api-clients",
+          "fullUrl": "https://docs.moderntreasury.com/platform/docs/reliable-api-clients",
+          "level": 1,
+          "group": "Best Practices"
+        }
+      ]
+    },
+    {
+      "name": "platform/reference",
+      "pages": [
+        {
+          "title": "Getting Started",
+          "path": "/platform/reference/getting-started",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/getting-started",
+          "level": 1,
+          "group": "Modern Treasury API"
+        },
+        {
+          "title": "Authentication",
+          "path": "/platform/reference/authentication",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/authentication",
+          "level": 1,
+          "group": "Topics"
+        },
+        {
+          "title": "Live vs. Test Mode",
+          "path": "/platform/reference/development",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/development",
+          "level": 1,
+          "group": "Topics"
+        },
+        {
+          "title": "Status Codes",
+          "path": "/platform/reference/status-codes",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/status-codes",
+          "level": 1,
+          "group": "Topics"
+        },
+        {
+          "title": "Errors",
+          "path": "/platform/reference/errors",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/errors",
+          "level": 1,
+          "group": "Topics"
+        },
+        {
+          "title": "Metadata",
+          "path": "/platform/reference/metadata",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/metadata",
+          "level": 1,
+          "group": "Topics"
+        },
+        {
+          "title": "Idempotent Requests",
+          "path": "/platform/reference/idempotent-requests",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/idempotent-requests",
+          "level": 1,
+          "group": "Topics"
+        },
+        {
+          "title": "Rate Limits",
+          "path": "/platform/reference/rate-limits",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/rate-limits",
+          "level": 1,
+          "group": "Topics"
+        },
+        {
+          "title": "Pagination",
+          "path": "/platform/reference/pagination",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/pagination",
+          "level": 1,
+          "group": "Topics"
+        },
+        {
+          "title": "Timestamps",
+          "path": "/platform/reference/timestamps",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/timestamps",
+          "level": 1,
+          "group": "Topics"
+        },
+        {
+          "title": "External IDs",
+          "path": "/platform/reference/external-ids",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/external-ids",
+          "level": 1,
+          "group": "Topics"
+        },
+        {
+          "title": "Payment Orders",
+          "path": "/platform/reference/payment-order-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/payment-order-object",
+          "level": 1,
+          "group": "Payments"
+        },
+        {
+          "title": "Create Payment Orderpost",
+          "path": "/platform/reference/create-payment-order",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-payment-order",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Example Requests",
+          "path": "/platform/reference/create-payment-order-examples",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-payment-order-examples",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Async Create Payment Orderpost",
+          "path": "/platform/reference/create-payment-order-async",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-payment-order-async",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "List Payment Ordersget",
+          "path": "/platform/reference/list-payment-orders",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-payment-orders",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Get Payment Orderget",
+          "path": "/platform/reference/get-payment-order",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-payment-order",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Update Payment Orderpatch",
+          "path": "/platform/reference/update-payment-order",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-payment-order",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Line Items",
+          "path": "/platform/reference/line-item-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/line-item-object",
+          "level": 1,
+          "group": "Payments"
+        },
+        {
+          "title": "List Line Itemsget",
+          "path": "/platform/reference/list-line-items",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-line-items",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Get Line Itemget",
+          "path": "/platform/reference/get-line-item",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-line-item",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Update Line Itempatch",
+          "path": "/platform/reference/update-line-item",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-line-item",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Returns",
+          "path": "/platform/reference/return-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/return-object",
+          "level": 1,
+          "group": "Payments"
+        },
+        {
+          "title": "Create Returnpost",
+          "path": "/platform/reference/create-return",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-return",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "List Returnsget",
+          "path": "/platform/reference/list-returns",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-returns",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Get Returnget",
+          "path": "/platform/reference/get-return",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-return",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Incoming Payment Details",
+          "path": "/platform/reference/incoming-payment-detail-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/incoming-payment-detail-object",
+          "level": 1,
+          "group": "Payments"
+        },
+        {
+          "title": "List Incoming Payment Detailsget",
+          "path": "/platform/reference/list-incoming-payment-details",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-incoming-payment-details",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Get Incoming Payment Detailget",
+          "path": "/platform/reference/get-incoming-payment-detail",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-incoming-payment-detail",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Update Incoming Payment Detailpatch",
+          "path": "/platform/reference/update-incoming-payment-detail",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-incoming-payment-detail",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Reversals",
+          "path": "/platform/reference/reversals",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/reversals",
+          "level": 1,
+          "group": "Payments"
+        },
+        {
+          "title": "Create Reversalpost",
+          "path": "/platform/reference/create-reversal",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-reversal",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Get Reversalget",
+          "path": "/platform/reference/get-reversal",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-reversal",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "List Reversalsget",
+          "path": "/platform/reference/list-reversals",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-reversals",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Payment References",
+          "path": "/platform/reference/payment-reference-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/payment-reference-object",
+          "level": 1,
+          "group": "Payments"
+        },
+        {
+          "title": "Get Payment Referenceget",
+          "path": "/platform/reference/get-payment-reference",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-payment-reference",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "List Payment Referencesget",
+          "path": "/platform/reference/list-payment-references",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-payment-references",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Payment Actions",
+          "path": "/platform/reference/payment-actions",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/payment-actions",
+          "level": 1,
+          "group": "Payments"
+        },
+        {
+          "title": "Create Payment Actionpost",
+          "path": "/platform/reference/create-payment-action",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-payment-action",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Update Payment Actionpatch",
+          "path": "/platform/reference/update-payment-action",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-payment-action",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "List Payment Actionsget",
+          "path": "/platform/reference/list-payment-actions",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-payment-actions",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Get Payment Actionget",
+          "path": "/platform/reference/get-payment-action",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-payment-action",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Holds",
+          "path": "/platform/reference/holds",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/holds",
+          "level": 1,
+          "group": "Payments"
+        },
+        {
+          "title": "Create a Holdpost",
+          "path": "/platform/reference/create-a-hold",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-a-hold",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Update a Holdpatch",
+          "path": "/platform/reference/resolve-a-hold",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/resolve-a-hold",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Get a Holdget",
+          "path": "/platform/reference/get-a-hold",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-a-hold",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "List Holdsget",
+          "path": "/platform/reference/list-holds",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-holds",
+          "level": 2,
+          "group": "Payments"
+        },
+        {
+          "title": "Counterparties",
+          "path": "/platform/reference/counterparty-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/counterparty-object",
+          "level": 1,
+          "group": "Counterparties"
+        },
+        {
+          "title": "Create Counterpartypost",
+          "path": "/platform/reference/create-counterparty",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-counterparty",
+          "level": 2,
+          "group": "Counterparties"
+        },
+        {
+          "title": "Example Requests",
+          "path": "/platform/reference/create-counterparty-examples",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-counterparty-examples",
+          "level": 2,
+          "group": "Counterparties"
+        },
+        {
+          "title": "List Counterpartiesget",
+          "path": "/platform/reference/list-counterparties",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-counterparties",
+          "level": 2,
+          "group": "Counterparties"
+        },
+        {
+          "title": "Get Counterpartyget",
+          "path": "/platform/reference/get-counterparty",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-counterparty",
+          "level": 2,
+          "group": "Counterparties"
+        },
+        {
+          "title": "Update Counterpartypatch",
+          "path": "/platform/reference/update-counterparty",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-counterparty",
+          "level": 2,
+          "group": "Counterparties"
+        },
+        {
+          "title": "Collect Account Detailspost",
+          "path": "/platform/reference/collect-account-details",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/collect-account-details",
+          "level": 2,
+          "group": "Counterparties"
+        },
+        {
+          "title": "Delete Counterpartydel",
+          "path": "/platform/reference/delete-counterparty",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-counterparty",
+          "level": 2,
+          "group": "Counterparties"
+        },
+        {
+          "title": "Legal Entities",
+          "path": "/platform/reference/legal-entities",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/legal-entities",
+          "level": 1,
+          "group": "Legal Entities"
+        },
+        {
+          "title": "Create Legal Entitypost",
+          "path": "/platform/reference/create-legal-entity",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-legal-entity",
+          "level": 2,
+          "group": "Legal Entities"
+        },
+        {
+          "title": "Update Legal Entitypatch",
+          "path": "/platform/reference/update-legal-entity",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-legal-entity",
+          "level": 2,
+          "group": "Legal Entities"
+        },
+        {
+          "title": "Get Legal Entityget",
+          "path": "/platform/reference/get-legal-entity",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-legal-entity",
+          "level": 2,
+          "group": "Legal Entities"
+        },
+        {
+          "title": "List Legal Entitiesget",
+          "path": "/platform/reference/list-legal-entities",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-legal-entities",
+          "level": 2,
+          "group": "Legal Entities"
+        },
+        {
+          "title": "Example Requests",
+          "path": "/platform/reference/legal-entity-example-requests",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/legal-entity-example-requests",
+          "level": 2,
+          "group": "Legal Entities"
+        },
+        {
+          "title": "Identifications",
+          "path": "/platform/reference/identifications",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/identifications",
+          "level": 1,
+          "group": "Legal Entities"
+        },
+        {
+          "title": "Legal Entity Associations",
+          "path": "/platform/reference/legal-entity-associations",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/legal-entity-associations",
+          "level": 1,
+          "group": "Legal Entities"
+        },
+        {
+          "title": "Create Legal Entity Associationpost",
+          "path": "/platform/reference/create-legal-entity-association",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-legal-entity-association",
+          "level": 2,
+          "group": "Legal Entities"
+        },
+        {
+          "title": "Connection Legal Entities",
+          "path": "/platform/reference/connection-legal-entities",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/connection-legal-entities",
+          "level": 1,
+          "group": "Legal Entities"
+        },
+        {
+          "title": "Create Connection Legal Entitypost",
+          "path": "/platform/reference/create-connection-legal-entity",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-connection-legal-entity",
+          "level": 2,
+          "group": "Legal Entities"
+        },
+        {
+          "title": "Get Connection Legal Entityget",
+          "path": "/platform/reference/get-connection-legal-entity",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-connection-legal-entity",
+          "level": 2,
+          "group": "Legal Entities"
+        },
+        {
+          "title": "List Connection Legal Entitiesget",
+          "path": "/platform/reference/list-connection-legal-entities",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-connection-legal-entities",
+          "level": 2,
+          "group": "Legal Entities"
+        },
+        {
+          "title": "Internal Accounts",
+          "path": "/platform/reference/internal-account-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/internal-account-object",
+          "level": 1,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Create Internal Accountpost",
+          "path": "/platform/reference/create-internal-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-internal-account",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "List Internal Accountsget",
+          "path": "/platform/reference/list-internal-accounts",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-internal-accounts",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Get Internal Accountget",
+          "path": "/platform/reference/get-internal-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-internal-account",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Update Internal Accountpatch",
+          "path": "/platform/reference/update-internal-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-internal-account",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Request To Close Internal Accountpost",
+          "path": "/platform/reference/request-closure-internal-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/request-closure-internal-account",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Virtual Accounts",
+          "path": "/platform/reference/virtual-account-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/virtual-account-object",
+          "level": 1,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Create Virtual Accountpost",
+          "path": "/platform/reference/create-virtual-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-virtual-account",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "List Virtual Accountsget",
+          "path": "/platform/reference/list-virtual-accounts",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-virtual-accounts",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Get Virtual Accountget",
+          "path": "/platform/reference/get-virtual-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-virtual-account",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Update Virtual Accountpatch",
+          "path": "/platform/reference/update-virtual-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-virtual-account",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Delete Virtual Accountdel",
+          "path": "/platform/reference/delete-virtual-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-virtual-account",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "External Accounts",
+          "path": "/platform/reference/external-account-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/external-account-object",
+          "level": 1,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Create External Accountpost",
+          "path": "/platform/reference/create-external-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-external-account",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "List External Accountsget",
+          "path": "/platform/reference/list-external-accounts",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-external-accounts",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Get External Accountget",
+          "path": "/platform/reference/get-external-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-external-account",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Update External Accountpatch",
+          "path": "/platform/reference/update-external-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-external-account",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Delete External Accountdel",
+          "path": "/platform/reference/delete-external-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-external-account",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Initiate Verificationpost",
+          "path": "/platform/reference/initiate-external-account-verification",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/initiate-external-account-verification",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Complete Verificationpost",
+          "path": "/platform/reference/complete-external-account-verification",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/complete-external-account-verification",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Routing Details",
+          "path": "/platform/reference/routing-detail-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/routing-detail-object",
+          "level": 1,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Create Routing Detailpost",
+          "path": "/platform/reference/create-routing-detail",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-routing-detail",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "List Routing Detailsget",
+          "path": "/platform/reference/list-routing-details",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-routing-details",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Get Routing Detailget",
+          "path": "/platform/reference/get-routing-detail",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-routing-detail",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Delete Routing Detaildel",
+          "path": "/platform/reference/delete-routing-detail",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-routing-detail",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Account Details",
+          "path": "/platform/reference/account-detail-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/account-detail-object",
+          "level": 1,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Create Account Detailpost",
+          "path": "/platform/reference/create-account-detail",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-account-detail",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "List Account Detailsget",
+          "path": "/platform/reference/list-account-details",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-account-details",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Get Account Detailget",
+          "path": "/platform/reference/get-account-detail",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-account-detail",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Delete Account Detaildel",
+          "path": "/platform/reference/delete-account-detail",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-account-detail",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Contact Details",
+          "path": "/platform/reference/contact-detail-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/contact-detail-object",
+          "level": 1,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Create Contact Detailspost",
+          "path": "/platform/reference/create-contact-details",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-contact-details",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "List Contact Detailsget",
+          "path": "/platform/reference/list-contact-details",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-contact-details",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Get Contact Detailget",
+          "path": "/platform/reference/get-contact-detail",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-contact-detail",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Delete Contact Detaildel",
+          "path": "/platform/reference/delete-contact-detail",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-contact-detail",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Balance Reports",
+          "path": "/platform/reference/balance-report-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/balance-report-object",
+          "level": 1,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Create Balance Reportpost",
+          "path": "/platform/reference/create-balance-report",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-balance-report",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "List Balance Reportsget",
+          "path": "/platform/reference/list-balance-reports",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-balance-reports",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Get Balance Reportget",
+          "path": "/platform/reference/get-balance-report",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-balance-report",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Balances",
+          "path": "/platform/reference/balance-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/balance-object",
+          "level": 1,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Connections",
+          "path": "/platform/reference/connections",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/connections",
+          "level": 1,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "List Connectionsget",
+          "path": "/platform/reference/list-connections",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-connections",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Account Capabilities",
+          "path": "/platform/reference/account-capability-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/account-capability-object",
+          "level": 1,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Update Account Capabilitypatch",
+          "path": "/platform/reference/update-account-capability",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-account-capability",
+          "level": 2,
+          "group": "Bank  Accounts"
+        },
+        {
+          "title": "Foreign Exchange Rates",
+          "path": "/platform/reference/foreign-exchange-rates",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/foreign-exchange-rates",
+          "level": 1,
+          "group": "Foreign exchange"
+        },
+        {
+          "title": "Foreign Exchange Quotes",
+          "path": "/platform/reference/foreign-exchange-quotes",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/foreign-exchange-quotes",
+          "level": 1,
+          "group": "Foreign exchange"
+        },
+        {
+          "title": "Create Foreign Exchange Quotepost",
+          "path": "/platform/reference/create-foreign-exchange-quote",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-foreign-exchange-quote",
+          "level": 2,
+          "group": "Foreign exchange"
+        },
+        {
+          "title": "Example Requests",
+          "path": "/platform/reference/example-requests",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/example-requests",
+          "level": 2,
+          "group": "Foreign exchange"
+        },
+        {
+          "title": "List Foreign Exchange Quotesget",
+          "path": "/platform/reference/list-foreign-exchange-quotes",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-foreign-exchange-quotes",
+          "level": 2,
+          "group": "Foreign exchange"
+        },
+        {
+          "title": "Get Foreign Exchange Quoteget",
+          "path": "/platform/reference/get-foreign-exchange-quote",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-foreign-exchange-quote",
+          "level": 2,
+          "group": "Foreign exchange"
+        },
+        {
+          "title": "Expected Payments",
+          "path": "/platform/reference/expected-payment-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/expected-payment-object",
+          "level": 1,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Create Expected Paymentpost",
+          "path": "/platform/reference/create-expected-payment",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-expected-payment",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Example Requests",
+          "path": "/platform/reference/create-expected-payment-examples",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-expected-payment-examples",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "List Expected Paymentsget",
+          "path": "/platform/reference/list-expected-payments",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-expected-payments",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Get Expected Paymentget",
+          "path": "/platform/reference/get-expected-payment",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-expected-payment",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Update Expected Paymentpatch",
+          "path": "/platform/reference/update-expected-payment",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-expected-payment",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Archive Expected Paymentdel",
+          "path": "/platform/reference/archive-expected-payment",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/archive-expected-payment",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Transactions",
+          "path": "/platform/reference/transaction-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/transaction-object",
+          "level": 1,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Create Transactionpost",
+          "path": "/platform/reference/create-transaction",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-transaction",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "List Transactionsget",
+          "path": "/platform/reference/list-transactions",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-transactions",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Get Transactionget",
+          "path": "/platform/reference/get-transaction",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-transaction",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Update Transactionpatch",
+          "path": "/platform/reference/update-transaction",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-transaction",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Delete Transactiondel",
+          "path": "/platform/reference/delete-transaction",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-transaction",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Transaction Line Items",
+          "path": "/platform/reference/transaction-line-item-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/transaction-line-item-object",
+          "level": 1,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Create Transaction Line Itemspost",
+          "path": "/platform/reference/create-transaction-line-items",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-transaction-line-items",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "List Transaction Line Itemsget",
+          "path": "/platform/reference/list-transaction-line-items",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-transaction-line-items",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Delete Transaction Line Itemsdel",
+          "path": "/platform/reference/delete-transaction-line-items",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-transaction-line-items",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Reconciliation Group",
+          "path": "/platform/reference/reconciliation-group-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/reconciliation-group-object",
+          "level": 1,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Get Reconciliation Groupget",
+          "path": "/platform/reference/get-reconciliation-group",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-reconciliation-group",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Create Reconciliation Grouppost",
+          "path": "/platform/reference/create-reconciliation-group",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-reconciliation-group",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Entity Links",
+          "path": "/platform/reference/entity-links",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/entity-links",
+          "level": 1,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Create Entity Linkpost",
+          "path": "/platform/reference/create-entity-link",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-entity-link",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Delete Entity Linkdel",
+          "path": "/platform/reference/delete-entity-link",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-entity-link",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "List Entity Linksget",
+          "path": "/platform/reference/list-entity-links",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-entity-links",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Get Entity Linkget",
+          "path": "/platform/reference/get-entity-link",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-entity-link",
+          "level": 2,
+          "group": "Reconciliation"
+        },
+        {
+          "title": "Ledgers",
+          "path": "/platform/reference/ledger-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ledger-object",
+          "level": 1,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Create Ledgerpost",
+          "path": "/platform/reference/create-ledger",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-ledger",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "List Ledgersget",
+          "path": "/platform/reference/list-ledgers",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-ledgers",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Get Ledgerget",
+          "path": "/platform/reference/get-ledger",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-ledger",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Update Ledgerpatch",
+          "path": "/platform/reference/update-ledger",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-ledger",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Delete Ledgerdel",
+          "path": "/platform/reference/delete-ledger",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-ledger",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Ledger Accounts",
+          "path": "/platform/reference/ledger-account-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ledger-account-object",
+          "level": 1,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Create Ledger Accountpost",
+          "path": "/platform/reference/create-ledger-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-ledger-account",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "List Ledger Accountsget",
+          "path": "/platform/reference/list-ledger-accounts",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-ledger-accounts",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Get Ledger Accountget",
+          "path": "/platform/reference/get-ledger-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-ledger-account",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Update Ledger Accountpatch",
+          "path": "/platform/reference/update-ledger-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-ledger-account",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Delete Ledger Accountdel",
+          "path": "/platform/reference/delete-ledger-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-ledger-account",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Ledger Transactions",
+          "path": "/platform/reference/ledger-transaction-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ledger-transaction-object",
+          "level": 1,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Create Ledger Transactionpost",
+          "path": "/platform/reference/create-ledger-transaction",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-ledger-transaction",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "List Ledger Transactionsget",
+          "path": "/platform/reference/list-ledger-transactions",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-ledger-transactions",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Get Ledger Transactionget",
+          "path": "/platform/reference/get-ledger-transaction",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-ledger-transaction",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Update Ledger Transactionpatch",
+          "path": "/platform/reference/update-ledger-transaction",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-ledger-transaction",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "List Ledger Transaction Versionsget",
+          "path": "/platform/reference/list-ledger-transaction-versions",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-ledger-transaction-versions",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Create Ledger Transaction Reversalpost",
+          "path": "/platform/reference/create-ledger-transaction-reversal",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-ledger-transaction-reversal",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Create Ledger Transaction Partial Postpost",
+          "path": "/platform/reference/create-ledger-transaction-partial-post",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-ledger-transaction-partial-post",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Ledger Entries",
+          "path": "/platform/reference/ledger-entry-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ledger-entry-object",
+          "level": 1,
+          "group": "Ledgers"
+        },
+        {
+          "title": "List Ledger Entriesget",
+          "path": "/platform/reference/list-ledger-entries",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-ledger-entries",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Get Ledger Entryget",
+          "path": "/platform/reference/get-ledger-entry",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-ledger-entry",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Update Ledger Entrypatch",
+          "path": "/platform/reference/update-ledger-entry",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-ledger-entry",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Ledger Account Categories",
+          "path": "/platform/reference/ledger-account-categories",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ledger-account-categories",
+          "level": 1,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Create Ledger Account Categorypost",
+          "path": "/platform/reference/create-ledger-account-category",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-ledger-account-category",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "List Ledger Account Categoriesget",
+          "path": "/platform/reference/list-ledger-account-categories",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-ledger-account-categories",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Get Ledger Account Categoryget",
+          "path": "/platform/reference/get-ledger-account-category",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-ledger-account-category",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Update Ledger Account Categorypatch",
+          "path": "/platform/reference/update-ledger-account-category",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-ledger-account-category",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Delete Ledger Account Categorydel",
+          "path": "/platform/reference/delete-ledger-account-category",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-ledger-account-category",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Add Ledger Account to Categoryput",
+          "path": "/platform/reference/add-ledger-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/add-ledger-account",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Remove Ledger Account from Categorydel",
+          "path": "/platform/reference/remove-ledger-account",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/remove-ledger-account",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Add Ledger Account Category to Categoryput",
+          "path": "/platform/reference/add-ledger-account-category",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/add-ledger-account-category",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Remove Ledger Account Category from Categorydel",
+          "path": "/platform/reference/remove-ledger-account-category",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/remove-ledger-account-category",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Ledger Account Settlements",
+          "path": "/platform/reference/ledger-account-settlements",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ledger-account-settlements",
+          "level": 1,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Create Ledger Account Settlementpost",
+          "path": "/platform/reference/create-ledger-account-settlement",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-ledger-account-settlement",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "List Ledger Account Settlementsget",
+          "path": "/platform/reference/list-ledger-account-settlements",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-ledger-account-settlements",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Get Ledger Account Settlementget",
+          "path": "/platform/reference/get-ledger-account-settlement",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-ledger-account-settlement",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Update Ledger Account Settlementpatch",
+          "path": "/platform/reference/update-ledger-account-settlement",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-ledger-account-settlement",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Add Ledger Entries to Settlementpatch",
+          "path": "/platform/reference/add-ledger-entries-to-settlement",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/add-ledger-entries-to-settlement",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Remove Ledger Entries from Settlementdel",
+          "path": "/platform/reference/remove-ledger-entries-from-settlement",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/remove-ledger-entries-from-settlement",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Ledger Account Statements",
+          "path": "/platform/reference/ledger-account-statements",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ledger-account-statements",
+          "level": 1,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Create Ledger Account Statementpost",
+          "path": "/platform/reference/create-ledger-account-statement",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-ledger-account-statement",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Get Ledger Account Statementget",
+          "path": "/platform/reference/get-ledger-account-statement",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-ledger-account-statement",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Ledger Account Balance Monitors",
+          "path": "/platform/reference/ledger-account-balance-monitor-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ledger-account-balance-monitor-object",
+          "level": 1,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Create Ledger Account Balance Monitorpost",
+          "path": "/platform/reference/create-ledger-account-balance-monitor",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-ledger-account-balance-monitor",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "List Ledger Account Balance Monitorsget",
+          "path": "/platform/reference/list-ledger-account-balance-monitors",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-ledger-account-balance-monitors",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Get Ledger Account Balance Monitorget",
+          "path": "/platform/reference/get-ledger-account-balance-monitor",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-ledger-account-balance-monitor",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Update Ledger Account Balance Monitorpatch",
+          "path": "/platform/reference/update-ledger-account-balance-monitor",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-ledger-account-balance-monitor",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Delete Ledger Account Balance Monitordel",
+          "path": "/platform/reference/delete-ledger-account-balance-monitor",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-ledger-account-balance-monitor",
+          "level": 2,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Ledger Balances",
+          "path": "/platform/reference/ledger-balances-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ledger-balances-object",
+          "level": 1,
+          "group": "Ledgers"
+        },
+        {
+          "title": "Bulk Requests",
+          "path": "/platform/reference/bulk-requests",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/bulk-requests",
+          "level": 1,
+          "group": "Bulk Operations"
+        },
+        {
+          "title": "Create Bulk Requestpost",
+          "path": "/platform/reference/create-bulk-request",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-bulk-request",
+          "level": 2,
+          "group": "Bulk Operations"
+        },
+        {
+          "title": "Get Bulk Requestget",
+          "path": "/platform/reference/get-bulk-request",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-bulk-request",
+          "level": 2,
+          "group": "Bulk Operations"
+        },
+        {
+          "title": "List Bulk Requestsget",
+          "path": "/platform/reference/list-bulk-requests",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-bulk-requests",
+          "level": 2,
+          "group": "Bulk Operations"
+        },
+        {
+          "title": "Bulk Results",
+          "path": "/platform/reference/bulk-results",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/bulk-results",
+          "level": 1,
+          "group": "Bulk Operations"
+        },
+        {
+          "title": "Get Bulk Resultget",
+          "path": "/platform/reference/get-bulk-result",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-bulk-result",
+          "level": 2,
+          "group": "Bulk Operations"
+        },
+        {
+          "title": "List Bulk Resultsget",
+          "path": "/platform/reference/list-bulk-results",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-bulk-results",
+          "level": 2,
+          "group": "Bulk Operations"
+        },
+        {
+          "title": "API Keys",
+          "path": "/platform/reference/api-keys",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/api-keys",
+          "level": 1,
+          "group": "Developers"
+        },
+        {
+          "title": "Current API Keyget",
+          "path": "/platform/reference/current-api-key",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/current-api-key",
+          "level": 2,
+          "group": "Developers"
+        },
+        {
+          "title": "Events",
+          "path": "/platform/reference/events",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/events",
+          "level": 1,
+          "group": "Developers"
+        },
+        {
+          "title": "List Eventsget",
+          "path": "/platform/reference/list-events",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-events",
+          "level": 2,
+          "group": "Developers"
+        },
+        {
+          "title": "Get Eventget",
+          "path": "/platform/reference/get-event",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-event",
+          "level": 2,
+          "group": "Developers"
+        },
+        {
+          "title": "Webhook Events",
+          "path": "/platform/reference/webhook-events",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/webhook-events",
+          "level": 1,
+          "group": "Developers"
+        },
+        {
+          "title": "Create Webhook Eventpost",
+          "path": "/platform/reference/create-webhook",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-webhook",
+          "level": 2,
+          "group": "Developers"
+        },
+        {
+          "title": "Get Webhook Eventget",
+          "path": "/platform/reference/get-webhook",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-webhook",
+          "level": 2,
+          "group": "Developers"
+        },
+        {
+          "title": "Webhook Endpoints",
+          "path": "/platform/reference/webhook-endpoints",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/webhook-endpoints",
+          "level": 1,
+          "group": "Developers"
+        },
+        {
+          "title": "Create Webhook Endpointpost",
+          "path": "/platform/reference/create-webhook-endpoint",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-webhook-endpoint",
+          "level": 2,
+          "group": "Developers"
+        },
+        {
+          "title": "List Webhook Endpointsget",
+          "path": "/platform/reference/list-webhook-endpoints",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-webhook-endpoints",
+          "level": 2,
+          "group": "Developers"
+        },
+        {
+          "title": "Get Webhook Endpointget",
+          "path": "/platform/reference/get-webhook-endpoint",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-webhook-endpoint",
+          "level": 2,
+          "group": "Developers"
+        },
+        {
+          "title": "Update Webhook Endpointpatch",
+          "path": "/platform/reference/update-webhook-endpoint",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-webhook-endpoint",
+          "level": 2,
+          "group": "Developers"
+        },
+        {
+          "title": "Delete Webhook Endpointdel",
+          "path": "/platform/reference/delete-webhook-endpoint",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-webhook-endpoint",
+          "level": 2,
+          "group": "Developers"
+        },
+        {
+          "title": "Overview",
+          "path": "/platform/reference/webhooks",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/webhooks",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Balance Report Webhooks",
+          "path": "/platform/reference/balance-reports",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/balance-reports",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Bulk Request Webhooks",
+          "path": "/platform/reference/bulk-request-webhooks",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/bulk-request-webhooks",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Connection Legal Entity Webhooks",
+          "path": "/platform/reference/connection-legal-entity-webhooks",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/connection-legal-entity-webhooks",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Expected Payment Webhooks",
+          "path": "/platform/reference/expected-payments",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/expected-payments",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "External Account Webhooks",
+          "path": "/platform/reference/external-accounts",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/external-accounts",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Incoming Payment Detail Webhooks",
+          "path": "/platform/reference/incoming-payment-details",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/incoming-payment-details",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Internal Account Webhooks",
+          "path": "/platform/reference/internal-account-webhooks",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/internal-account-webhooks",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Invoice Webhooks",
+          "path": "/platform/reference/invoice-webhooks",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/invoice-webhooks",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Ledger Account Webhooks",
+          "path": "/platform/reference/ledger-account-webhooks",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ledger-account-webhooks",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Ledger Account Balance Monitor Webhooks",
+          "path": "/platform/reference/ledger-account-balance-monitors",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ledger-account-balance-monitors",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Ledger Account Settlement Webhooks",
+          "path": "/platform/reference/ledger-account-payouts",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ledger-account-payouts",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Ledger Transaction Webhooks",
+          "path": "/platform/reference/ledger-transactions",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ledger-transactions",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Legal Entity Webhooks",
+          "path": "/platform/reference/legal-entity-webhooks",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/legal-entity-webhooks",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Payment Order Webhooks",
+          "path": "/platform/reference/payment-orders",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/payment-orders",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Payment Reference Webhooks",
+          "path": "/platform/reference/payment-references",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/payment-references",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Return Webhooks",
+          "path": "/platform/reference/returns",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/returns",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Reversal Webhooks",
+          "path": "/platform/reference/reversals-1",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/reversals-1",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Transaction Webhooks",
+          "path": "/platform/reference/transactions",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/transactions",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "User Onboarding Webhooks",
+          "path": "/platform/reference/user-onboardings",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/user-onboardings",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Virtual Account Webhooks",
+          "path": "/platform/reference/virtual-account-webhooks",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/virtual-account-webhooks",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Addresses",
+          "path": "/platform/reference/address-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/address-object",
+          "level": 1,
+          "group": "Additional Resources"
+        },
+        {
+          "title": "Documents",
+          "path": "/platform/reference/document-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/document-object",
+          "level": 1,
+          "group": "Additional Resources"
+        },
+        {
+          "title": "Create Documentpost",
+          "path": "/platform/reference/create-document",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-document",
+          "level": 2,
+          "group": "Additional Resources"
+        },
+        {
+          "title": "List Documentsget",
+          "path": "/platform/reference/list-documents",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-documents",
+          "level": 2,
+          "group": "Additional Resources"
+        },
+        {
+          "title": "Get Documentget",
+          "path": "/platform/reference/get-document",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-document",
+          "level": 2,
+          "group": "Additional Resources"
+        },
+        {
+          "title": "Download Documentget",
+          "path": "/platform/reference/download-document",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/download-document",
+          "level": 2,
+          "group": "Additional Resources"
+        },
+        {
+          "title": "IP Addresses",
+          "path": "/platform/reference/ip-addresses",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/ip-addresses",
+          "level": 1,
+          "group": "Additional Resources"
+        },
+        {
+          "title": "Routing Numbers",
+          "path": "/platform/reference/routing-numbers",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/routing-numbers",
+          "level": 1,
+          "group": "Validation Endpoints"
+        },
+        {
+          "title": "Validate Routing Numberget",
+          "path": "/platform/reference/validate-routing-number",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/validate-routing-number",
+          "level": 2,
+          "group": "Validation Endpoints"
+        },
+        {
+          "title": "Incoming Payment Detail",
+          "path": "/platform/reference/simulate-incoming-payment-detail",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/simulate-incoming-payment-detail",
+          "level": 1,
+          "group": "Simulation Endpoints"
+        },
+        {
+          "title": "Simulate Incoming Payment Detailpost",
+          "path": "/platform/reference/simulate-incoming-payment-detail-1",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/simulate-incoming-payment-detail-1",
+          "level": 2,
+          "group": "Simulation Endpoints"
+        },
+        {
+          "title": "Invoices",
+          "path": "/platform/reference/invoices",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/invoices",
+          "level": 1,
+          "group": "Invoices"
+        },
+        {
+          "title": "Create Invoicepost",
+          "path": "/platform/reference/create-invoice",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-invoice",
+          "level": 2,
+          "group": "Invoices"
+        },
+        {
+          "title": "Get Invoiceget",
+          "path": "/platform/reference/get-invoice",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-invoice",
+          "level": 2,
+          "group": "Invoices"
+        },
+        {
+          "title": "List Invoicesget",
+          "path": "/platform/reference/list-invoices",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-invoices",
+          "level": 2,
+          "group": "Invoices"
+        },
+        {
+          "title": "Update Invoicepatch",
+          "path": "/platform/reference/update-invoice",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-invoice",
+          "level": 2,
+          "group": "Invoices"
+        },
+        {
+          "title": "Add Payment Order to Invoiceput",
+          "path": "/platform/reference/add_payment_order_to_invoice",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/add_payment_order_to_invoice",
+          "level": 2,
+          "group": "Invoices"
+        },
+        {
+          "title": "Invoice Line Items",
+          "path": "/platform/reference/invoice-line-items",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/invoice-line-items",
+          "level": 1,
+          "group": "Invoices"
+        },
+        {
+          "title": "Create Invoice Line Itempost",
+          "path": "/platform/reference/create-invoice-line-item",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-invoice-line-item",
+          "level": 2,
+          "group": "Invoices"
+        },
+        {
+          "title": "Get InvoiceLineItemget",
+          "path": "/platform/reference/get-invoice-line-item",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-invoice-line-item",
+          "level": 2,
+          "group": "Invoices"
+        },
+        {
+          "title": "List Invoice Line Itemsget",
+          "path": "/platform/reference/list-invoice-line-items",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-invoice-line-items",
+          "level": 2,
+          "group": "Invoices"
+        },
+        {
+          "title": "Update Invoice Line Itempatch",
+          "path": "/platform/reference/update-invoice-line-item",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-invoice-line-item",
+          "level": 2,
+          "group": "Invoices"
+        },
+        {
+          "title": "Delete Invoice Line Itemdel",
+          "path": "/platform/reference/delete-invoice-line-item",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/delete-invoice-line-item",
+          "level": 2,
+          "group": "Invoices"
+        },
+        {
+          "title": "Account Collection Flows",
+          "path": "/platform/reference/account-collection-flow-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/account-collection-flow-object",
+          "level": 1,
+          "group": "Flows"
+        },
+        {
+          "title": "Create Account Collection Flowpost",
+          "path": "/platform/reference/create-account-collection-flow",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-account-collection-flow",
+          "level": 2,
+          "group": "Flows"
+        },
+        {
+          "title": "List Account Collection Flowsget",
+          "path": "/platform/reference/list-account-collection-flows",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-account-collection-flows",
+          "level": 2,
+          "group": "Flows"
+        },
+        {
+          "title": "Get Account Collection Flowget",
+          "path": "/platform/reference/get-account-collection-flow",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-account-collection-flow",
+          "level": 2,
+          "group": "Flows"
+        },
+        {
+          "title": "Update Account Collection Flowpatch",
+          "path": "/platform/reference/update-account-collection-flow",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-account-collection-flow",
+          "level": 2,
+          "group": "Flows"
+        },
+        {
+          "title": "Payment Flows",
+          "path": "/platform/reference/payment-flow-object",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/payment-flow-object",
+          "level": 1,
+          "group": "Flows"
+        },
+        {
+          "title": "Create Payment Flowpost",
+          "path": "/platform/reference/create-payment-flow",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-payment-flow",
+          "level": 2,
+          "group": "Flows"
+        },
+        {
+          "title": "List Payment Flowsget",
+          "path": "/platform/reference/list-payment-flows",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-payment-flows",
+          "level": 2,
+          "group": "Flows"
+        },
+        {
+          "title": "Get Payment Flowget",
+          "path": "/platform/reference/get-payment-flow",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-payment-flow",
+          "level": 2,
+          "group": "Flows"
+        },
+        {
+          "title": "Update Payment Flowpatch",
+          "path": "/platform/reference/update-payment-flow",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-payment-flow",
+          "level": 2,
+          "group": "Flows"
+        },
+        {
+          "title": "Journal Reports",
+          "path": "/platform/reference/journal-reports",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/journal-reports",
+          "level": 1,
+          "group": "Journal Reports"
+        },
+        {
+          "title": "List Journal Reportsget",
+          "path": "/platform/reference/list-journal-reports",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-journal-reports",
+          "level": 2,
+          "group": "Journal Reports"
+        },
+        {
+          "title": "Get Journal Reportget",
+          "path": "/platform/reference/get-journal-report",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-journal-report",
+          "level": 2,
+          "group": "Journal Reports"
+        },
+        {
+          "title": "Update Journal Reportpatch",
+          "path": "/platform/reference/update-journal-report",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/update-journal-report",
+          "level": 2,
+          "group": "Journal Reports"
+        },
+        {
+          "title": "Journal Entries",
+          "path": "/platform/reference/journal-entries",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/journal-entries",
+          "level": 1,
+          "group": "Journal Reports"
+        },
+        {
+          "title": "List Journal Entriesget",
+          "path": "/platform/reference/list-journal-entries",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/list-journal-entries",
+          "level": 2,
+          "group": "Journal Reports"
+        },
+        {
+          "title": "Get Journal Entryget",
+          "path": "/platform/reference/get-journal-entry",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/get-journal-entry",
+          "level": 2,
+          "group": "Journal Reports"
+        },
+        {
+          "title": "Overview",
+          "path": "/platform/reference/modern-treasury-js",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/modern-treasury-js",
+          "level": 1,
+          "group": "Modern Treasury JS"
+        },
+        {
+          "title": "Installation",
+          "path": "/platform/reference/modern-treasury-js-installation",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/modern-treasury-js-installation",
+          "level": 1,
+          "group": "Modern Treasury JS"
+        },
+        {
+          "title": "Initialization",
+          "path": "/platform/reference/modern-treasury-js-initialization",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/modern-treasury-js-initialization",
+          "level": 1,
+          "group": "Modern Treasury JS"
+        },
+        {
+          "title": "Embeddable Flow",
+          "path": "/platform/reference/embeddable-flow",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/embeddable-flow",
+          "level": 1,
+          "group": "Modern Treasury JS"
+        },
+        {
+          "title": "Create Embeddable Flow",
+          "path": "/platform/reference/create-embeddable-flow",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/create-embeddable-flow",
+          "level": 2,
+          "group": "Modern Treasury JS"
+        },
+        {
+          "title": "Mount Embeddable Flow",
+          "path": "/platform/reference/mount-embeddable-flow",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/mount-embeddable-flow",
+          "level": 2,
+          "group": "Modern Treasury JS"
+        },
+        {
+          "title": "Unmount Embeddable Flow",
+          "path": "/platform/reference/working",
+          "fullUrl": "https://docs.moderntreasury.com/platform/reference/working",
+          "level": 2,
+          "group": "Modern Treasury JS"
+        }
+      ]
+    }
+  ]
+}

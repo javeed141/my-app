@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { load, type CheerioAPI, type Cheerio } from "cheerio";
 import type { AnyNode } from "domhandler";
+import { writeFileSync, mkdirSync, existsSync } from "fs";
+import { join } from "path";
 
 export async function POST(req: NextRequest) {
   const { url } = await req.json();
@@ -27,6 +29,123 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  // ── JSON sidebar parser (ReadMe embeds sidebars JSON in script tags) ──
+
+  interface SidebarJsonPage {
+    title?: string;
+    slug?: string;
+    uri?: string;
+    children?: SidebarJsonPage[];
+    pages?: SidebarJsonPage[];
+  }
+
+  function walkJsonSidebar(
+    nodes: SidebarJsonPage[],
+    pages: ScrapePageItem[],
+    group: string,
+    depth: number,
+    pathPrefix: string
+  ) {
+    for (const node of nodes) {
+      const title = (node.title || "").trim();
+      const slug = node.slug || node.uri || "";
+      if (!title || !slug) continue;
+
+      const path = slug.startsWith("http") || slug.startsWith("/")
+        ? slug
+        : `${pathPrefix}/${slug}`;
+      const fullUrl = path.startsWith("http") ? path : baseUrl + path;
+
+      pages.push({ title, path, fullUrl, level: depth, group });
+
+      const children = node.children || node.pages || [];
+      if (children.length > 0) {
+        walkJsonSidebar(children, pages, group, depth + 1, pathPrefix);
+      }
+    }
+  }
+
+  function parseJsonSidebar(html: string): ScrapePageItem[] | null {
+    const pages: ScrapePageItem[] = [];
+
+    // Look for sidebars JSON embedded in script tags
+    const patterns = [
+      /"sidebars"\s*:\s*(\{[\s\S]*?\})\s*[,}]/,
+      /sidebars\s*=\s*(\{[\s\S]*?\})\s*;/,
+    ];
+
+    const $ = load(html);
+    const scripts: string[] = [];
+    $("script").each((_: number, el: AnyNode) => {
+      const text = $(el).text();
+      if (text.length > 100 && (text.includes("sidebars") || text.includes("sidebar"))) {
+        scripts.push(text);
+      }
+    });
+
+    for (const script of scripts) {
+      for (const pattern of patterns) {
+        const match = script.match(pattern);
+        if (!match) continue;
+        try {
+          const sidebars = JSON.parse(match[1]);
+          // sidebars is { docs: [...], reference: [...], ... }
+          for (const [sectionKey, sectionPages] of Object.entries(sidebars)) {
+            if (!Array.isArray(sectionPages)) continue;
+            for (const category of sectionPages as SidebarJsonPage[]) {
+              const groupName = (category.title || sectionKey || "").trim();
+              const children = category.pages || category.children || [];
+              if (children.length > 0) {
+                const prefix = sectionKey === "reference" ? "/reference" : "/docs";
+                walkJsonSidebar(children, pages, groupName, 0, prefix);
+              }
+            }
+          }
+          if (pages.length > 0) return pages;
+        } catch { /* not valid JSON, try next */ }
+      }
+    }
+
+    // Also try __NEXT_DATA__ or similar page props
+    $('script[id="__NEXT_DATA__"], script[type="application/json"]').each(
+      (_: number, el: AnyNode) => {
+        if (pages.length > 0) return;
+        try {
+          const data = JSON.parse($(el).text());
+          const findSidebars = (obj: Record<string, unknown>, depth: number): unknown => {
+            if (depth > 5) return null;
+            if (obj && typeof obj === "object") {
+              if ("sidebars" in obj) return obj.sidebars;
+              for (const val of Object.values(obj)) {
+                const found = findSidebars(val as Record<string, unknown>, depth + 1);
+                if (found) return found;
+              }
+            }
+            return null;
+          };
+          const sidebars = findSidebars(data, 0) as Record<string, SidebarJsonPage[]> | null;
+          if (sidebars && typeof sidebars === "object") {
+            for (const [sectionKey, sectionPages] of Object.entries(sidebars)) {
+              if (!Array.isArray(sectionPages)) continue;
+              for (const category of sectionPages) {
+                const groupName = (category.title || sectionKey || "").trim();
+                const children = category.pages || category.children || [];
+                if (children.length > 0) {
+                  const prefix = sectionKey === "reference" ? "/reference" : "/docs";
+                  walkJsonSidebar(children, pages, groupName, 0, prefix);
+                }
+              }
+            }
+          }
+        } catch { /* ignore */ }
+      }
+    );
+
+    return pages.length > 0 ? pages : null;
+  }
+
+  // ── HTML sidebar parser (fallback) ──────────────────────────────────
+
   function addLink(
     $: CheerioAPI,
     el: AnyNode,
@@ -42,7 +161,7 @@ export async function POST(req: NextRequest) {
       title,
       path: href,
       fullUrl: href.startsWith("http") ? href : baseUrl + href,
-      level: Math.min(level, 2),
+      level,
       group,
     });
   }
@@ -79,6 +198,11 @@ export async function POST(req: NextRequest) {
   }
 
   function parseSidebar(html: string): ScrapePageItem[] {
+    // Try JSON sidebar first (accurate hierarchy from ReadMe embedded data)
+    const jsonPages = parseJsonSidebar(html);
+    if (jsonPages && jsonPages.length > 0) return jsonPages;
+
+    // Fall back to HTML DOM walking
     const $ = load(html);
     const pages: ScrapePageItem[] = [];
 
@@ -202,6 +326,32 @@ export async function POST(req: NextRequest) {
         }
       });
       if (pages.length > 0) out.sections.push({ name: "all", pages });
+    }
+
+    // Save JSON to docs/ folder
+    const docsDir = join(process.cwd(), "docs");
+    if (!existsSync(docsDir)) mkdirSync(docsDir, { recursive: true });
+    const safeName = out.site.replace(/[^a-zA-Z0-9.-]/g, "_");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const filePath = join(docsDir, `${safeName}_${timestamp}.json`);
+    writeFileSync(filePath, JSON.stringify(out, null, 2));
+
+    // Also store the raw sidebar structure if found
+    const $raw = load(html);
+    const rawScripts: string[] = [];
+    $raw("script").each((_: number, el: AnyNode) => {
+      const text = $raw(el).text();
+      if (text.includes("sidebars") || text.includes("sidebar")) {
+        const match = text.match(/"sidebars"\s*:\s*(\{[\s\S]*?\})\s*[,}]/);
+        if (match) rawScripts.push(match[1]);
+      }
+    });
+    if (rawScripts.length > 0) {
+      try {
+        const rawSidebar = JSON.parse(rawScripts[0]);
+        const rawPath = join(docsDir, `${safeName}_${timestamp}_sidebar-structure.json`);
+        writeFileSync(rawPath, JSON.stringify(rawSidebar, null, 2));
+      } catch { /* ignore parse errors */ }
     }
 
     return NextResponse.json(out);
