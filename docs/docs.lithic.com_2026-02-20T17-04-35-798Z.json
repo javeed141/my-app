@@ -1,6 +1,11 @@
 {
   "site": "docs.lithic.com",
   "navType": "tabs",
+  "tabs": [
+    "Guides",
+    "API Reference",
+    "Changelog"
+  ],
   "sections": [
     {
       "name": "Guides",
@@ -55,23 +60,9 @@
           "group": "Getting Started"
         },
         {
-          "title": "3. View Transaction",
-          "path": "/docs/get-pending-transaction",
-          "fullUrl": "https://docs.lithic.com/docs/get-pending-transaction",
-          "level": 2,
-          "group": "Getting Started"
-        },
-        {
           "title": "4. Authorize a Transaction",
           "path": "/docs/simulate-clearing",
           "fullUrl": "https://docs.lithic.com/docs/simulate-clearing",
-          "level": 2,
-          "group": "Getting Started"
-        },
-        {
-          "title": "5. View a Transaction",
-          "path": "/docs/get-cleared-transaction",
-          "fullUrl": "https://docs.lithic.com/docs/get-cleared-transaction",
           "level": 2,
           "group": "Getting Started"
         },
@@ -93,13 +84,6 @@
           "title": "Environments",
           "path": "/docs/enviornments",
           "fullUrl": "https://docs.lithic.com/docs/enviornments",
-          "level": 1,
-          "group": "Developer"
-        },
-        {
-          "title": "API Libraries and OpenAPI Spec",
-          "path": "/docs/api-libraries",
-          "fullUrl": "https://docs.lithic.com/docs/api-libraries",
           "level": 1,
           "group": "Developer"
         },
@@ -262,13 +246,6 @@
           "path": "/docs/partial-approval",
           "fullUrl": "https://docs.lithic.com/docs/partial-approval",
           "level": 2,
-          "group": "Authorization"
-        },
-        {
-          "title": "Merchant Category Codes (MCCs)",
-          "path": "/docs/merchant-category-codes-mccs",
-          "fullUrl": "https://docs.lithic.com/docs/merchant-category-codes-mccs",
-          "level": 1,
           "group": "Authorization"
         },
         {
@@ -664,30 +641,9 @@
           "group": "Webhooks"
         },
         {
-          "title": "Simulating Account Holder Creation",
-          "path": "/docs/simulating-account-holder-creation",
-          "fullUrl": "https://docs.lithic.com/docs/simulating-account-holder-creation",
-          "level": 1,
-          "group": "Testing in Sandbox"
-        },
-        {
           "title": "Simulating Card Transactions",
           "path": "/docs/simulating-transactions",
           "fullUrl": "https://docs.lithic.com/docs/simulating-transactions",
-          "level": 1,
-          "group": "Testing in Sandbox"
-        },
-        {
-          "title": "Simulating Tokenizations",
-          "path": "/docs/simulating-tokenizations",
-          "fullUrl": "https://docs.lithic.com/docs/simulating-tokenizations",
-          "level": 1,
-          "group": "Testing in Sandbox"
-        },
-        {
-          "title": "Simulating Webhook Events",
-          "path": "/docs/simulating-webhooks",
-          "fullUrl": "https://docs.lithic.com/docs/simulating-webhooks",
           "level": 1,
           "group": "Testing in Sandbox"
         },
@@ -2368,6 +2324,361 @@
           "fullUrl": "https://docs.lithic.com/reference/post_dispute-transaction-updated",
           "level": 2,
           "group": "Lithic Developer API"
+        }
+      ]
+    },
+    {
+      "name": "Changelog",
+      "pages": [
+        {
+          "title": "Ach Rules Now Available In Lithic Dashboard",
+          "path": "/changelog/ach-rules-now-available-in-lithic-dashboard",
+          "fullUrl": "https://docs.lithic.com/changelog/ach-rules-now-available-in-lithic-dashboard",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Added Ach Events To Auth Rules Api",
+          "path": "/changelog/added-ach-events-to-auth-rules-api",
+          "fullUrl": "https://docs.lithic.com/changelog/added-ach-events-to-auth-rules-api",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Added Device Id To Tokenization Responses",
+          "path": "/changelog/added-device-id-to-tokenization-responses",
+          "fullUrl": "https://docs.lithic.com/changelog/added-device-id-to-tokenization-responses",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Added Payment Returns Api",
+          "path": "/changelog/added-payment-returns-api",
+          "fullUrl": "https://docs.lithic.com/changelog/added-payment-returns-api",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Added User Defined Status To Financial Accounts",
+          "path": "/changelog/added-user_defined_status-to-financial-accounts",
+          "fullUrl": "https://docs.lithic.com/changelog/added-user_defined_status-to-financial-accounts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "April 17 2025",
+          "path": "/changelog/april-17-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/april-17-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Auth Rule Evaluation Results Now Available Via Api",
+          "path": "/changelog/auth-rule-evaluation-results-now-available-via-api",
+          "fullUrl": "https://docs.lithic.com/changelog/auth-rule-evaluation-results-now-available-via-api",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Auto Collections Enabled For Credit Accounts",
+          "path": "/changelog/auto-collections-enabled-for-credit-accounts",
+          "fullUrl": "https://docs.lithic.com/changelog/auto-collections-enabled-for-credit-accounts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Available Now Authorization Challenges",
+          "path": "/changelog/available-now-authorization-challenges",
+          "fullUrl": "https://docs.lithic.com/changelog/available-now-authorization-challenges",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Bulk Shipping 2",
+          "path": "/changelog/bulk-shipping-2",
+          "fullUrl": "https://docs.lithic.com/changelog/bulk-shipping-2",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Business Accout Binding For Authorization Rules",
+          "path": "/changelog/business-accout-binding-for-authorization-rules",
+          "fullUrl": "https://docs.lithic.com/changelog/business-accout-binding-for-authorization-rules",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Challenge Status Now Available In 3ds Authentication Responses",
+          "path": "/changelog/challenge-status-now-available-in-3ds-authentication-responses",
+          "fullUrl": "https://docs.lithic.com/changelog/challenge-status-now-available-in-3ds-authentication-responses",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Custom Ach Holds Added",
+          "path": "/changelog/custom-ach-holds-added",
+          "fullUrl": "https://docs.lithic.com/changelog/custom-ach-holds-added",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Custom Calendar Cycles Now Available For Velocity Limits",
+          "path": "/changelog/custom-calendar-cycles-now-available-for-velocity-limits",
+          "fullUrl": "https://docs.lithic.com/changelog/custom-calendar-cycles-now-available-for-velocity-limits",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "D 1",
+          "path": "/changelog/d-1",
+          "fullUrl": "https://docs.lithic.com/changelog/d-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Deprecating Aggregate Balance Endpoints",
+          "path": "/changelog/deprecating-aggregate-balance-endpoints",
+          "fullUrl": "https://docs.lithic.com/changelog/deprecating-aggregate-balance-endpoints",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Detailed Transaction Breakout In Statements",
+          "path": "/changelog/detailed-transaction-breakout-in-statements",
+          "fullUrl": "https://docs.lithic.com/changelog/detailed-transaction-breakout-in-statements",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Digital Wallet Card Provisioning Sdk Update",
+          "path": "/changelog/digital-wallet-card-provisioning-sdk-update",
+          "fullUrl": "https://docs.lithic.com/changelog/digital-wallet-card-provisioning-sdk-update",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Fraud Reporting Now Available In Lithic Dashboard",
+          "path": "/changelog/fraud-reporting-now-available-in-lithic-dashboard",
+          "fullUrl": "https://docs.lithic.com/changelog/fraud-reporting-now-available-in-lithic-dashboard",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Transfer Limits Api Now Available",
+          "path": "/changelog/get-transfer-limits-api-now-available",
+          "fullUrl": "https://docs.lithic.com/changelog/get-transfer-limits-api-now-available",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Idempotency For Create Card",
+          "path": "/changelog/idempotency-for-create-card",
+          "fullUrl": "https://docs.lithic.com/changelog/idempotency-for-create-card",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "July 14 2025 1",
+          "path": "/changelog/july-14-2025-1",
+          "fullUrl": "https://docs.lithic.com/changelog/july-14-2025-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "July 3 2025",
+          "path": "/changelog/july-3-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/july-3-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "June 12 2025",
+          "path": "/changelog/june-12-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/june-12-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "June 24 2025",
+          "path": "/changelog/june-24-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/june-24-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "June 25 2025",
+          "path": "/changelog/june-25-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/june-25-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Making Dob Field Optional For External Bank Accounts",
+          "path": "/changelog/making-dob-field-optional-for-external-bank-accounts",
+          "fullUrl": "https://docs.lithic.com/changelog/making-dob-field-optional-for-external-bank-accounts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "March 11 2025",
+          "path": "/changelog/march-11-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/march-11-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "March 18 2025",
+          "path": "/changelog/march-18-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/march-18-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "March 26 2025",
+          "path": "/changelog/march-26-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/march-26-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "March 31 2025",
+          "path": "/changelog/march-31-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/march-31-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "May 13 2025 1",
+          "path": "/changelog/may-13-2025-1",
+          "fullUrl": "https://docs.lithic.com/changelog/may-13-2025-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "May 28 2025",
+          "path": "/changelog/may-28-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/may-28-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "May 5 2025",
+          "path": "/changelog/may-5-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/may-5-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Naics",
+          "path": "/changelog/naics",
+          "fullUrl": "https://docs.lithic.com/changelog/naics",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Account Activity Api Transactions Family Attribute",
+          "path": "/changelog/new-account-activity-api-transactions-family-attribute",
+          "fullUrl": "https://docs.lithic.com/changelog/new-account-activity-api-transactions-family-attribute",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Asa Response Suspected Fraud",
+          "path": "/changelog/new-asa-response-suspected_fraud",
+          "fullUrl": "https://docs.lithic.com/changelog/new-asa-response-suspected_fraud",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Card Updated Event",
+          "path": "/changelog/new-card-updated-event",
+          "fullUrl": "https://docs.lithic.com/changelog/new-card-updated-event",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Decline Reason Added Auth Rule",
+          "path": "/changelog/new-decline-reason-added-auth_rule",
+          "fullUrl": "https://docs.lithic.com/changelog/new-decline-reason-added-auth_rule",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Enum Value In Settlement Api",
+          "path": "/changelog/new-enum-value-in-settlement-api",
+          "fullUrl": "https://docs.lithic.com/changelog/new-enum-value-in-settlement-api",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Merchant Fields In Sandbox",
+          "path": "/changelog/new-merchant-fields-in-sandbox",
+          "fullUrl": "https://docs.lithic.com/changelog/new-merchant-fields-in-sandbox",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Mobile Device Info For 3ds Authentications",
+          "path": "/changelog/new-mobile-device-info-for-3ds-authentications",
+          "fullUrl": "https://docs.lithic.com/changelog/new-mobile-device-info-for-3ds-authentications",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Tags Field Added To Card Transactions 1",
+          "path": "/changelog/new-tags-field-added-to-card-transactions-1",
+          "fullUrl": "https://docs.lithic.com/changelog/new-tags-field-added-to-card-transactions-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Transaction Initiator Field Available In Asa",
+          "path": "/changelog/new-transaction-initiator-field-available-in-asa",
+          "fullUrl": "https://docs.lithic.com/changelog/new-transaction-initiator-field-available-in-asa",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Payment Allocation Details Added To Loan Tape Api",
+          "path": "/changelog/payment-allocation-details-added-to-loan-tape-api",
+          "fullUrl": "https://docs.lithic.com/changelog/payment-allocation-details-added-to-loan-tape-api",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Paymenttype Added To Ach Payments",
+          "path": "/changelog/paymenttype-added-to-ach-payments",
+          "fullUrl": "https://docs.lithic.com/changelog/paymenttype-added-to-ach-payments",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Removed Duplicate Credit Account State Fields",
+          "path": "/changelog/removed-duplicate-credit-account-state-fields",
+          "fullUrl": "https://docs.lithic.com/changelog/removed-duplicate-credit-account-state-fields",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Retrieve All Applicable Authorization Rules For A Card Or Account",
+          "path": "/changelog/retrieve-all-applicable-authorization-rules-for-a-card-or-account",
+          "fullUrl": "https://docs.lithic.com/changelog/retrieve-all-applicable-authorization-rules-for-a-card-or-account",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Structured Amounts Object Now Available In Asa Requests",
+          "path": "/changelog/structured-amounts-object-now-available-in-asa-requests",
+          "fullUrl": "https://docs.lithic.com/changelog/structured-amounts-object-now-available-in-asa-requests",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "View Velocity Limit Progress In The Lithic Dashboard",
+          "path": "/changelog/view-velocity-limit-progress-in-the-lithic-dashboard",
+          "fullUrl": "https://docs.lithic.com/changelog/view-velocity-limit-progress-in-the-lithic-dashboard",
+          "level": 0,
+          "group": ""
         }
       ]
     }

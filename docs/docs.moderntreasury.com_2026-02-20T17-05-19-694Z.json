@@ -1,441 +1,988 @@
 {
   "site": "docs.moderntreasury.com",
   "navType": "projects",
+  "tabs": [],
   "sections": [
     {
-      "name": "platform/guides",
+      "name": "payments/Guides",
       "pages": [
         {
-          "title": "Platform Overview",
-          "path": "/platform/docs/platform-overview",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/platform-overview",
+          "title": "Payments Overview",
+          "path": "/payments/docs/overview",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/overview",
           "level": 1,
-          "group": "Get Started"
+          "group": "GET STARTED"
         },
         {
-          "title": "Signing up for an account",
-          "path": "/platform/docs/get-started",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/get-started",
+          "title": "Payments Quickstart",
+          "path": "/payments/docs/quickstart",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/quickstart",
           "level": 1,
-          "group": "Get Started"
+          "group": "GET STARTED"
         },
         {
-          "title": "SDKs & Libraries",
-          "path": "/platform/docs/sdks-libraries",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/sdks-libraries",
+          "title": "Building in Sandbox",
+          "path": "/payments/docs/payments-sandbox-overview",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/payments-sandbox-overview",
           "level": 1,
-          "group": "Developer Tools"
+          "group": "GET STARTED"
         },
         {
-          "title": "NodeJS",
-          "path": "/platform/docs/nodejs",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/nodejs",
+          "title": "Internal Accounts",
+          "path": "/payments/docs/sandbox-internal-accounts",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/sandbox-internal-accounts",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "GET STARTED"
         },
         {
-          "title": "Python",
-          "path": "/platform/docs/python",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/python",
+          "title": "Counterparties",
+          "path": "/payments/docs/test-counterparties",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/test-counterparties",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "GET STARTED"
         },
         {
-          "title": "Go",
-          "path": "/platform/docs/go",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/go",
+          "title": "Simulate a Return",
+          "path": "/payments/docs/simulating-a-return",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/simulating-a-return",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "GET STARTED"
         },
         {
-          "title": "Java/Kotlin",
-          "path": "/platform/docs/javakotlin",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/javakotlin",
+          "title": "Simulate an Incoming Payment Detail",
+          "path": "/payments/docs/simulate-an-incoming-payment-detail",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/simulate-an-incoming-payment-detail",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "GET STARTED"
         },
         {
-          "title": "Ruby",
-          "path": "/platform/docs/ruby",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/ruby",
+          "title": "Simulate a Payment Order Failure",
+          "path": "/payments/docs/simulate-a-payment-order-failure",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/simulate-a-payment-order-failure",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "GET STARTED"
         },
         {
-          "title": "OpenAPI Specification",
-          "path": "/platform/docs/openapi-specification",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/openapi-specification",
+          "title": "Simulate Bank Transactions",
+          "path": "/payments/docs/simulate-bank-transactions",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/simulate-bank-transactions",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "GET STARTED"
         },
         {
-          "title": "API Keys",
-          "path": "/platform/docs/api-keys-1",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/api-keys-1",
+          "title": "Simulate Externally Originated Payment Reconciliation",
+          "path": "/payments/docs/simulate-unoriginated-payment-reconciliation",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/simulate-unoriginated-payment-reconciliation",
+          "level": 2,
+          "group": "GET STARTED"
+        },
+        {
+          "title": "Opening accounts",
+          "path": "/payments/docs/open-accounts",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/open-accounts",
           "level": 1,
-          "group": "Developer Tools"
+          "group": "Money Movement"
         },
         {
-          "title": "Create an API key",
-          "path": "/platform/docs/create-an-api-key",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/create-an-api-key",
+          "title": "Onboard an Individual",
+          "path": "/payments/docs/onboard-an-individual",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/onboard-an-individual",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "Money Movement"
         },
         {
-          "title": "API Key Permissions",
-          "path": "/platform/docs/api-key-permissions",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/api-key-permissions",
+          "title": "Required Fields for Individuals",
+          "path": "/payments/docs/required-fields-for-individuals",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/required-fields-for-individuals",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "Money Movement"
         },
         {
-          "title": "Retrieve an API key",
-          "path": "/platform/docs/retrieve-an-api-key",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/retrieve-an-api-key",
+          "title": "Onboard a Business",
+          "path": "/payments/docs/onboard-a-business",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/onboard-a-business",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "Money Movement"
         },
         {
-          "title": "Edit an API key",
-          "path": "/platform/docs/edit-an-api-key",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/edit-an-api-key",
+          "title": "Required Fields for Businesses",
+          "path": "/payments/docs/required-fields-for-businesses",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/required-fields-for-businesses",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "Money Movement"
         },
         {
-          "title": "Deactivate an API key",
-          "path": "/platform/docs/deactivate-an-api-key",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/deactivate-an-api-key",
+          "title": "Embed Terms of Use",
+          "path": "/payments/docs/embed-terms-of-use",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/embed-terms-of-use",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "Money Movement"
         },
         {
-          "title": "Webhooks",
-          "path": "/platform/docs/webhooks-1",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/webhooks-1",
+          "title": "Creating counterparties for payments",
+          "path": "/payments/docs/counterparty-management-overview",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/counterparty-management-overview",
           "level": 1,
-          "group": "Developer Tools"
+          "group": "Money Movement"
         },
         {
-          "title": "Best Practices",
-          "path": "/platform/docs/webhook-endpoint-best-practices",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/webhook-endpoint-best-practices",
+          "title": "Create a Counterparty",
+          "path": "/payments/docs/create-a-counterparty",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/create-a-counterparty",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "Money Movement"
         },
         {
-          "title": "View webhook events",
-          "path": "/platform/docs/view-webhook-events",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/view-webhook-events",
+          "title": "Embeddable Account Collection",
+          "path": "/payments/docs/account-collection-pre-built-ui",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/account-collection-pre-built-ui",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "Money Movement"
         },
         {
-          "title": "Add a webhook endpoint",
-          "path": "/platform/docs/set-a-webhook-url",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/set-a-webhook-url",
+          "title": "Hosted Counterparty Onboarding",
+          "path": "/payments/docs/counterparty-invitation-pre-built-ui",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/counterparty-invitation-pre-built-ui",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "Money Movement"
         },
         {
-          "title": "Verify a webhook event",
-          "path": "/platform/docs/verifying-webhooks",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/verifying-webhooks",
+          "title": "Counterparty Invitation Overview",
+          "path": "/payments/docs/counterparty-invitation-overview",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/counterparty-invitation-overview",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Backfill counterparties with CSVs",
+          "path": "/payments/docs/create-counterparties-in-bulk",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/create-counterparties-in-bulk",
           "level": 2,
-          "group": "Developer Tools"
+          "group": "Money Movement"
         },
         {
-          "title": "Resend a webhook",
-          "path": "/platform/docs/resend-a-webhook",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/resend-a-webhook",
-          "level": 2,
-          "group": "Developer Tools"
-        },
-        {
-          "title": "Request Logs",
-          "path": "/platform/docs/request-logs",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/request-logs",
+          "title": "Verifying external bank accounts",
+          "path": "/payments/docs/verifying-bank-accounts",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/verifying-bank-accounts",
           "level": 1,
-          "group": "Developer Tools"
+          "group": "Money Movement"
         },
         {
-          "title": "Customizing Pre-Built UIs",
-          "path": "/platform/docs/customizing-pre-built-uis",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/customizing-pre-built-uis",
+          "title": "Verify account with micro-deposits",
+          "path": "/payments/docs/verify-account-with-micro-deposits",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/verify-account-with-micro-deposits",
+          "level": 2,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Instant Micro-Deposits",
+          "path": "/payments/docs/instant-micro-deposits",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/instant-micro-deposits",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Verify account using Plaid",
+          "path": "/payments/docs/verify-account-using-plaid",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/verify-account-using-plaid",
+          "level": 2,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Verify an account using a pre-note",
+          "path": "/payments/docs/send-an-ach-prenote",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/send-an-ach-prenote",
+          "level": 2,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Originating Payments",
+          "path": "/payments/docs/making-payments",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/making-payments",
           "level": 1,
-          "group": "Developer Tools"
+          "group": "Money Movement"
         },
         {
-          "title": "Inviting Users",
-          "path": "/platform/docs/user-invitations-overview",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/user-invitations-overview",
+          "title": "Choosing the right payment rail",
+          "path": "/payments/docs/choose-the-right-payment-rail",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/choose-the-right-payment-rail",
+          "level": 2,
+          "group": "Money Movement"
+        },
+        {
+          "title": "ACH",
+          "path": "/payments/docs/ach",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/ach",
+          "level": 2,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Originate an ACH credit",
+          "path": "/payments/docs/initiate-an-ach-credit",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/initiate-an-ach-credit",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Originate an ACH debit",
+          "path": "/payments/docs/initiate-an-ach-debit",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/initiate-an-ach-debit",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Customize SEC codes",
+          "path": "/payments/docs/customize-sec-codes",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/customize-sec-codes",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "ACH Return Codes",
+          "path": "/payments/docs/ach-return-codes",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/ach-return-codes",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "ACH Return Risk Thresholds",
+          "path": "/payments/docs/ach-return-risk-thresholds",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/ach-return-risk-thresholds",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Notification of Change (NOC)",
+          "path": "/payments/docs/notification-of-change-noc",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/notification-of-change-noc",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Wire",
+          "path": "/payments/docs/wire",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/wire",
+          "level": 2,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Originate a US wire transfer",
+          "path": "/payments/docs/initiate-a-wire-transfer",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/initiate-a-wire-transfer",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Originate a SWIFT wire transfer",
+          "path": "/payments/docs/send-a-swift-wire",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/send-a-swift-wire",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Setting the charge bearer for a SWIFT wire",
+          "path": "/payments/docs/charge-bearer",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/charge-bearer",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Setting fixed and variable currencies for FX",
+          "path": "/payments/docs/copy-of-customize-a-swift-wire",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/copy-of-customize-a-swift-wire",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "SWIFT wires FAQs",
+          "path": "/payments/docs/global-payouts-faqs",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/global-payouts-faqs",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Real-Time Payment (RTP)",
+          "path": "/payments/docs/real-time-payment",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/real-time-payment",
+          "level": 2,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Originate a Real-Time Payment (RTP)",
+          "path": "/payments/docs/originate-a-real-time-payment",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/originate-a-real-time-payment",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Automatic Retries for RTP",
+          "path": "/payments/docs/automatic-retries-for-rtp",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/automatic-retries-for-rtp",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Stablecoins",
+          "path": "/payments/docs/stablecoins",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/stablecoins",
+          "level": 2,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Originate a Stablecoin transfer (On-ramp)",
+          "path": "/payments/docs/sending-a-stablecoin-payment",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/sending-a-stablecoin-payment",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Handling payment returns",
+          "path": "/payments/docs/returns-overview",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/returns-overview",
+          "level": 2,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Send payments to brokerage accounts",
+          "path": "/payments/docs/send-payment-to-brokerage",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/send-payment-to-brokerage",
+          "level": 2,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Embeddable Payment Flows",
+          "path": "/payments/docs/embed-payment-flow",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/embed-payment-flow",
+          "level": 2,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Hosted Invoicing",
+          "path": "/payments/docs/invoicing",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/invoicing",
+          "level": 2,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Invoice Notifications",
+          "path": "/payments/docs/invoice-notifications",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/invoice-notifications",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Enable notifications for an invoice",
+          "path": "/payments/docs/enable-notifications-for-an-invoice",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/enable-notifications-for-an-invoice",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Invoice Payments",
+          "path": "/payments/docs/invoice-payments",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/invoice-payments",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Mapping payment objects and invoices",
+          "path": "/payments/docs/invoice-payment-object-connection",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/invoice-payment-object-connection",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Hosted Invoice Links",
+          "path": "/payments/docs/hosted-invoice-links",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/hosted-invoice-links",
+          "level": 3,
+          "group": "Money Movement"
+        },
+        {
+          "title": "Receiving Payments",
+          "path": "/payments/docs/receiving-payments",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/receiving-payments",
           "level": 1,
-          "group": "Organization Management"
+          "group": "Money Movement"
         },
         {
-          "title": "Roles and Permissions",
-          "path": "/platform/docs/roles-and-permissions",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/roles-and-permissions",
-          "level": 1,
-          "group": "Organization Management"
-        },
-        {
-          "title": "Standard Options for Permission Sets and Roles",
-          "path": "/platform/docs/standard-options-for-permission-sets-and-roles",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/standard-options-for-permission-sets-and-roles",
+          "title": "Retrieving Internal Account Details",
+          "path": "/payments/docs/identifying-internal-account-details",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/identifying-internal-account-details",
           "level": 2,
-          "group": "Organization Management"
+          "group": "Money Movement"
         },
         {
-          "title": "Application Access Management",
-          "path": "/platform/docs/application-access-management",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/application-access-management",
+          "title": "Receive a Stablecoin transfer (Off-ramp)",
+          "path": "/payments/docs/receiving-a-stablecoin-payment",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/receiving-a-stablecoin-payment",
           "level": 2,
-          "group": "Organization Management"
+          "group": "Money Movement"
         },
         {
-          "title": "Organization Change Approvals",
-          "path": "/platform/docs/organization-change-approvals",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/organization-change-approvals",
-          "level": 1,
-          "group": "Organization Management"
-        },
-        {
-          "title": "Approving or Denying an Organization Change",
-          "path": "/platform/docs/approve-or-deny-an-organization-change",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/approve-or-deny-an-organization-change",
+          "title": "Tracking Received Payments",
+          "path": "/payments/docs/tracking-received-payments",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/tracking-received-payments",
           "level": 2,
-          "group": "Organization Management"
+          "group": "Money Movement"
         },
         {
-          "title": "Roles and Permissions (User Management) Changes",
-          "path": "/platform/docs/proposed-changes-user-management",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/proposed-changes-user-management",
+          "title": "Reconciling received payments",
+          "path": "/payments/docs/managing-externally-originated-payments",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/managing-externally-originated-payments",
           "level": 2,
-          "group": "Organization Management"
+          "group": "Money Movement"
         },
         {
-          "title": "Payment Approval Rule Changes",
-          "path": "/platform/docs/payment-approval-rule-changes",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/payment-approval-rule-changes",
-          "level": 2,
-          "group": "Organization Management"
+          "title": "Defining Reconciliation Rules",
+          "path": "/payments/docs/defining-reconciliation-rules",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/defining-reconciliation-rules",
+          "level": 3,
+          "group": "Money Movement"
         },
         {
-          "title": "Transaction Categorization Rule Changes",
-          "path": "/platform/docs/transaction-categorization-rule-changes",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/transaction-categorization-rule-changes",
-          "level": 2,
-          "group": "Organization Management"
+          "title": "Example: Automatic Reconciliation at ToyCo",
+          "path": "/payments/docs/example-automatic-reconciliation-at-toyco",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/example-automatic-reconciliation-at-toyco",
+          "level": 3,
+          "group": "Money Movement"
         },
         {
-          "title": "System for Cross-domain Identity Management (SCIM)",
-          "path": "/platform/docs/user-lifecycle-management-with-scim",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/user-lifecycle-management-with-scim",
-          "level": 1,
-          "group": "Organization Management"
+          "title": "Advanced Matching Using Expected Payments",
+          "path": "/payments/docs/advanced-matching-using-expected-payments",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/advanced-matching-using-expected-payments",
+          "level": 3,
+          "group": "Money Movement"
         },
         {
-          "title": "Connect Your Identity Provider",
-          "path": "/platform/docs/connect-identity-provider-scim",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/connect-identity-provider-scim",
-          "level": 2,
-          "group": "Organization Management"
+          "title": "Valid conditions for Reconciliation Rules",
+          "path": "/payments/docs/valid-conditions-for-reconciliation-rules",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/valid-conditions-for-reconciliation-rules",
+          "level": 3,
+          "group": "Money Movement"
         },
         {
-          "title": "Assign Permissions to Directory Synced Groups",
-          "path": "/platform/docs/assign-permissions-to-provisioned-roles",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/assign-permissions-to-provisioned-roles",
-          "level": 2,
-          "group": "Organization Management"
+          "title": "Exception Handling - Manual Reconciliation",
+          "path": "/payments/docs/exception-handling-manual-reconciliation",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/exception-handling-manual-reconciliation",
+          "level": 3,
+          "group": "Money Movement"
         },
         {
-          "title": "Manage users with SCIM",
-          "path": "/platform/docs/managing-users-and-roles-with-scim",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/managing-users-and-roles-with-scim",
-          "level": 2,
-          "group": "Organization Management"
-        },
-        {
-          "title": "Manage groups with SCIM",
-          "path": "/platform/docs/managing-your-organizations-roles",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/managing-your-organizations-roles",
-          "level": 2,
-          "group": "Organization Management"
-        },
-        {
-          "title": "Managing Your Environments",
-          "path": "/platform/docs/organizations-overview",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/organizations-overview",
-          "level": 1,
-          "group": "Organization Management"
-        },
-        {
-          "title": "Custom Email Domains",
-          "path": "/platform/docs/custom-email-domains",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/custom-email-domains",
-          "level": 1,
-          "group": "Organization Management"
-        },
-        {
-          "title": "Security Overview",
-          "path": "/platform/docs/security-overview",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/security-overview",
-          "level": 1,
-          "group": "Organization Management"
-        },
-        {
-          "title": "Data Retention",
-          "path": "/platform/docs/data-retention",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/data-retention",
-          "level": 2,
-          "group": "Organization Management"
-        },
-        {
-          "title": "Audit Trail",
-          "path": "/platform/docs/audit-trail",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/audit-trail",
-          "level": 2,
-          "group": "Organization Management"
-        },
-        {
-          "title": "Data Privacy Controls",
-          "path": "/platform/docs/data-privacy-controls-1",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/data-privacy-controls-1",
-          "level": 2,
-          "group": "Organization Management"
-        },
-        {
-          "title": "Single Sign On (SSO)",
-          "path": "/platform/docs/single-sign-on-sso",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/single-sign-on-sso",
-          "level": 2,
-          "group": "Organization Management"
-        },
-        {
-          "title": "Enable Multi-Factor Authentication (MFA)",
-          "path": "/platform/docs/multi-factor-authentication",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/multi-factor-authentication",
-          "level": 2,
-          "group": "Organization Management"
-        },
-        {
-          "title": "IP Allowlist",
-          "path": "/platform/docs/ip-allowlist",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/ip-allowlist",
-          "level": 2,
-          "group": "Organization Management"
-        },
-        {
-          "title": "Exporting CSVs from the dashboard",
-          "path": "/platform/docs/exports-overview",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/exports-overview",
+          "title": "Account Groups Overview",
+          "path": "/payments/docs/account-groups",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/account-groups",
           "level": 1,
           "group": "Workflows & Reporting"
         },
         {
-          "title": "Reporting Overview",
-          "path": "/platform/docs/reporting-overview",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/reporting-overview",
+          "title": "Configuring automatic sweeps",
+          "path": "/payments/docs/sweep-rules",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/sweep-rules",
           "level": 1,
           "group": "Workflows & Reporting"
         },
         {
-          "title": "Create a Report",
-          "path": "/platform/docs/create-a-report",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/create-a-report",
-          "level": 2,
-          "group": "Workflows & Reporting"
-        },
-        {
-          "title": "Schedule send a Report",
-          "path": "/platform/docs/schedule-send-a-report",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/schedule-send-a-report",
-          "level": 2,
-          "group": "Workflows & Reporting"
-        },
-        {
-          "title": "Export a Report",
-          "path": "/platform/docs/schedule-send-a-report-copy",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/schedule-send-a-report-copy",
-          "level": 2,
-          "group": "Workflows & Reporting"
-        },
-        {
-          "title": "Manage Report access",
-          "path": "/platform/docs/manage-report-access",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/manage-report-access",
-          "level": 2,
-          "group": "Workflows & Reporting"
-        },
-        {
-          "title": "Report on Payment Orders and Transactions",
-          "path": "/platform/docs/reporting-on-payment-orders-and-transactions",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/reporting-on-payment-orders-and-transactions",
-          "level": 2,
-          "group": "Workflows & Reporting"
-        },
-        {
-          "title": "Push to Warehouse",
-          "path": "/platform/docs/push-to-warehouse",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/push-to-warehouse",
+          "title": "Remove Modern Treasury branding from pre-built UIs",
+          "path": "/payments/docs/remove-modern-treasury-branding",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/remove-modern-treasury-branding",
           "level": 1,
-          "group": "Integrations"
+          "group": "Workflows & Reporting"
         },
         {
-          "title": "Push to Warehouse Schema",
-          "path": "/platform/docs/push-to-warehouse-schema",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/push-to-warehouse-schema",
-          "level": 2,
-          "group": "Integrations"
-        },
-        {
-          "title": "Push to Warehouse UI",
-          "path": "/platform/docs/push-to-warehouse-ui",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/push-to-warehouse-ui",
-          "level": 2,
-          "group": "Integrations"
-        },
-        {
-          "title": "Push to Warehouse IP Addresses",
-          "path": "/platform/docs/push-to-warehouse-ip-addresses",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/push-to-warehouse-ip-addresses",
-          "level": 2,
-          "group": "Integrations"
-        },
-        {
-          "title": "SIEM Integration",
-          "path": "/platform/docs/siem",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/siem",
+          "title": "Tracking Account Balances",
+          "path": "/payments/docs/tracking-account-balances",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/tracking-account-balances",
           "level": 1,
-          "group": "Integrations"
+          "group": "Workflows & Reporting"
         },
         {
-          "title": "SIEM detection with DataDog",
-          "path": "/platform/docs/siem-detection-with-datadog",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/siem-detection-with-datadog",
-          "level": 2,
-          "group": "Integrations"
-        },
-        {
-          "title": "Supported destinations for SIEM",
-          "path": "/platform/docs/supported-destinations-for-siem",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/supported-destinations-for-siem",
-          "level": 2,
-          "group": "Integrations"
-        },
-        {
-          "title": "Configure your API client for Performance & Reliability",
-          "path": "/platform/docs/reliable-api-clients",
-          "fullUrl": "https://docs.moderntreasury.com/platform/docs/reliable-api-clients",
+          "title": "Payment Order Management",
+          "path": "/payments/docs/payment-order-management",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/payment-order-management",
           "level": 1,
-          "group": "Best Practices"
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Create a Payment Order",
+          "path": "/payments/docs/create-a-single-payment-order",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/create-a-single-payment-order",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Create Payment Orders in Bulk",
+          "path": "/payments/docs/create-payment-orders-in-bulk",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/create-payment-orders-in-bulk",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Cancel a Payment Order",
+          "path": "/payments/docs/cancel-a-payment-order",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/cancel-a-payment-order",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Schedule a payment",
+          "path": "/payments/docs/schedule-a-payment",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/schedule-a-payment",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Audit a Payment Order",
+          "path": "/payments/docs/audit-a-payment-order",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/audit-a-payment-order",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Payment Templates Overview",
+          "path": "/payments/docs/payment-order-templates-overview",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/payment-order-templates-overview",
+          "level": 1,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Create a new Payment Template",
+          "path": "/payments/docs/create-a-new-payment-template",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/create-a-new-payment-template",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "View a Payment Template",
+          "path": "/payments/docs/view-a-payment-template",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/view-a-payment-template",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Create a Payment Order using a Template",
+          "path": "/payments/docs/create-a-payment-order-using-a-template",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/create-a-payment-order-using-a-template",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Manage Permissions on a Payment Template",
+          "path": "/payments/docs/manage-permissions-on-a-payment-template",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/manage-permissions-on-a-payment-template",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Add Payment Templates to Approval Rules",
+          "path": "/payments/docs/add-payment-templates-to-payment-order-approval-rules",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/add-payment-templates-to-payment-order-approval-rules",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Approval Rules Overview",
+          "path": "/payments/docs/approval-rules-overview",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/approval-rules-overview",
+          "level": 1,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Creating an Approval Rule for Payment Orders",
+          "path": "/payments/docs/create-an-approval-rule",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/create-an-approval-rule",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Creating an Approval Rule for External Accounts",
+          "path": "/payments/docs/copy-of-creating-an-approval-rule",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/copy-of-creating-an-approval-rule",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Changing Approval Rule Sequence",
+          "path": "/payments/docs/change-approval-rule-sequence",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/change-approval-rule-sequence",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Managing your Approval Queue",
+          "path": "/payments/docs/approval-reviews",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/approval-reviews",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Getting notified about pending approvals",
+          "path": "/payments/docs/approval-notifications",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/approval-notifications",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Entity Linking Overview",
+          "path": "/payments/docs/link-payment-orders-to-expected-payments-entity-linking",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/link-payment-orders-to-expected-payments-entity-linking",
+          "level": 1,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "When to use Entity Linking",
+          "path": "/payments/docs/when-to-use-entity-linking",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/when-to-use-entity-linking",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Transaction Categorization",
+          "path": "/payments/docs/transaction-categorization",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/transaction-categorization",
+          "level": 1,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Metadata Allow-List",
+          "path": "/payments/docs/metadata-allow-list",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/metadata-allow-list",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Create a Categorization Rule",
+          "path": "/payments/docs/create-a-categorization-rule",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/create-a-categorization-rule",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Manage Categorization Rules",
+          "path": "/payments/docs/manage-categorization-rules",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/manage-categorization-rules",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Example Categorization Rules",
+          "path": "/payments/docs/example-categorization-rules",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/example-categorization-rules",
+          "level": 2,
+          "group": "Workflows & Reporting"
+        },
+        {
+          "title": "Managing your bank integrations",
+          "path": "/payments/docs/internal-accounts-overview",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/internal-accounts-overview",
+          "level": 1,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Connecting to your bank",
+          "path": "/payments/docs/banks",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/banks",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Penny test your Internal Account",
+          "path": "/payments/docs/penny-test-an-internal-account",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/penny-test-an-internal-account",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Intraday vs Prior-Day Reporting",
+          "path": "/payments/docs/intraday-vs-prior-day-reporting",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/intraday-vs-prior-day-reporting",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Using foreign currency accounts",
+          "path": "/payments/docs/use-foreign-currency-accounts",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/use-foreign-currency-accounts",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Processing Windows",
+          "path": "/payments/docs/processing-windows",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/processing-windows",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Download outbound bank files",
+          "path": "/payments/docs/download-outbound-bank-files",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/download-outbound-bank-files",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "ACH Timings",
+          "path": "/payments/docs/ach-timings",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/ach-timings",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Understanding the transaction.type field",
+          "path": "/payments/docs/transaction-types",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/transaction-types",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Import Transactions via BAI2 Files",
+          "path": "/payments/docs/import-transactions-via-bai2-files",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/import-transactions-via-bai2-files",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Import Transactions via API",
+          "path": "/payments/docs/import-transactions-via-api",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/import-transactions-via-api",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Managing FX",
+          "path": "/payments/docs/foreign-exchange-fx-platform-overview",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/foreign-exchange-fx-platform-overview",
+          "level": 1,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Foreign Exchange Rate",
+          "path": "/payments/docs/foreign-exchange-fx-rate",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/foreign-exchange-fx-rate",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Foreign Exchange Quotes",
+          "path": "/payments/docs/foreign-exchange-fx-quotes",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/foreign-exchange-fx-quotes",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Create a Foreign Exchange (FX) Quote",
+          "path": "/payments/docs/create-a-foreign-exchange-fx-quote",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/create-a-foreign-exchange-fx-quote",
+          "level": 3,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Using Payment Actions",
+          "path": "/payments/docs/payment-actions",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/payment-actions",
+          "level": 1,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Create a Payment Action",
+          "path": "/payments/docs/create-a-payment-action",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/create-a-payment-action",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Sharing Legal Entity Data with Banks",
+          "path": "/payments/docs/share-legal-entity-data-with-banks",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/share-legal-entity-data-with-banks",
+          "level": 1,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Connecting a Legal Entity to an Internal Account",
+          "path": "/payments/docs/connecting-a-legal-entity-to-an-internal-account",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/connecting-a-legal-entity-to-an-internal-account",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Legal Entities at Cross River Bank",
+          "path": "/payments/docs/legal-entities-at-cross-river-bank",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/legal-entities-at-cross-river-bank",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Legal Entities at Column",
+          "path": "/payments/docs/legal-entities-at-column",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/legal-entities-at-column",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Legal Entities at Increase",
+          "path": "/payments/docs/legal-entities-at-increase",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/legal-entities-at-increase",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Making payments via bank-specific rails",
+          "path": "/payments/docs/making-payments-via-bank-specific-rails",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/making-payments-via-bank-specific-rails",
+          "level": 1,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Originate a Global ACH payment",
+          "path": "/payments/docs/send-a-global-ach-payment",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/send-a-global-ach-payment",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Originate an ACH return",
+          "path": "/payments/docs/originate-an-ach-return",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/originate-an-ach-return",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Reverse an ACH payment",
+          "path": "/payments/docs/reverse-an-ach-payment",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/reverse-an-ach-payment",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Originate a wire return",
+          "path": "/payments/docs/originate-a-wire-return",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/originate-a-wire-return",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Originate an international wire with true remitter data at SVB",
+          "path": "/payments/docs/originate-an-international-wire-with-true-remitter-data",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/originate-an-international-wire-with-true-remitter-data",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Executing a foreign exchange contract",
+          "path": "/payments/docs/customize-swift-wires",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/customize-swift-wires",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Check",
+          "path": "/payments/docs/check",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/check",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Set up check print",
+          "path": "/payments/docs/set-up-check-print",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/set-up-check-print",
+          "level": 3,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Send a check with an attachment",
+          "path": "/payments/docs/send-a-check-with-an-attachment",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/send-a-check-with-an-attachment",
+          "level": 3,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Check statuses with Lob",
+          "path": "/payments/docs/check-statuses-with-lob",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/check-statuses-with-lob",
+          "level": 3,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Canadian EFT",
+          "path": "/payments/docs/eft",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/eft",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Originate a Canadian EFT payment",
+          "path": "/payments/docs/originate-a-canadian-eft-payment",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/originate-a-canadian-eft-payment",
+          "level": 3,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Managing bank holds on payments",
+          "path": "/payments/docs/holds",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/holds",
+          "level": 1,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Mark as Held",
+          "path": "/payments/docs/mark-as-held",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/mark-as-held",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Mark as Resolved",
+          "path": "/payments/docs/mark-as-resolved",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/mark-as-resolved",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Virtual Accounts",
+          "path": "/payments/docs/virtual-accounts",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/virtual-accounts",
+          "level": 1,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Creating Virtual Accounts",
+          "path": "/payments/docs/creating-virtual-accounts",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/creating-virtual-accounts",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Creating Nested Internal Accounts",
+          "path": "/payments/docs/creating-nested-internal-accounts",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/creating-nested-internal-accounts",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Virtual Account Testing",
+          "path": "/payments/docs/virtual-account-testing",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/virtual-account-testing",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Virtual Account Bank and Capability Support",
+          "path": "/payments/docs/virtual-account-testing-1",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/virtual-account-testing-1",
+          "level": 2,
+          "group": "Bring your own Bank"
+        },
+        {
+          "title": "Monitoring Incoming Payment Details",
+          "path": "/payments/docs/monitoring-incoming-payment-details",
+          "fullUrl": "https://docs.moderntreasury.com/payments/docs/monitoring-incoming-payment-details",
+          "level": 2,
+          "group": "Bring your own Bank"
         }
       ]
     },
     {
-      "name": "platform/reference",
+      "name": "payments/API Reference",
       "pages": [
         {
           "title": "Getting Started",

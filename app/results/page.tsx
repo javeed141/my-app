@@ -27,10 +27,11 @@ interface Section {
 interface ScrapeResult {
   site: string;
   navType: NavType;
+  tabs?: string[];
   sections: Section[];
 }
 
-// ── Colors for groups ────────────────────────────────────────────────────────
+// ── Colors ───────────────────────────────────────────────────────────────────
 
 const GROUP_COLORS = [
   { border: "border-emerald-200", text: "text-emerald-700", bg: "bg-emerald-50", dot: "bg-emerald-500", badge: "bg-emerald-100 text-emerald-700" },
@@ -45,6 +46,17 @@ const GROUP_COLORS = [
 
 function getGroupColor(index: number) {
   return GROUP_COLORS[index % GROUP_COLORS.length];
+}
+
+const SECTION_TAB_COLORS: Record<string, { active: string; inactive: string; count: string }> = {
+  "Guides":        { active: "bg-emerald-100 text-emerald-700", inactive: "text-emerald-600 hover:bg-emerald-50", count: "text-emerald-400" },
+  "API Reference": { active: "bg-sky-100 text-sky-700", inactive: "text-sky-600 hover:bg-sky-50", count: "text-sky-400" },
+  "Changelog":     { active: "bg-amber-100 text-amber-700", inactive: "text-amber-600 hover:bg-amber-50", count: "text-amber-400" },
+  "Recipes":       { active: "bg-violet-100 text-violet-700", inactive: "text-violet-600 hover:bg-violet-50", count: "text-violet-400" },
+};
+
+function getSectionTabColor(name: string) {
+  return SECTION_TAB_COLORS[name] || { active: "bg-indigo-100 text-indigo-700", inactive: "text-gray-500 hover:text-gray-700 hover:bg-gray-100", count: "text-indigo-400" };
 }
 
 // ── Tree builder ─────────────────────────────────────────────────────────────
@@ -72,10 +84,7 @@ function buildTree(pages: PageItem[]): TreeNode[] {
 // ── Sidebar node ─────────────────────────────────────────────────────────────
 
 function SidebarNode({
-  node,
-  selectedPath,
-  onSelect,
-  depth,
+  node, selectedPath, onSelect, depth,
 }: {
   node: TreeNode;
   selectedPath: string | null;
@@ -134,14 +143,12 @@ function SidebarNode({
 }
 
 // ── Sidebar group ────────────────────────────────────────────────────────────
+//
+//  FIX: _ungrouped items are ALWAYS visible (no toggle, always open).
+//  Named groups start collapsed but have a toggle button.
 
 function SidebarGroup({
-  group,
-  tree,
-  selectedPath,
-  onSelect,
-  defaultOpen,
-  colorIndex,
+  group, tree, selectedPath, onSelect, defaultOpen, colorIndex,
 }: {
   group: string;
   tree: TreeNode[];
@@ -150,8 +157,8 @@ function SidebarGroup({
   defaultOpen: boolean;
   colorIndex: number;
 }) {
-  const [open, setOpen] = useState(defaultOpen);
   const isUngrouped = group === "_ungrouped";
+  const [open, setOpen] = useState(isUngrouped ? true : defaultOpen);
   const color = getGroupColor(colorIndex);
 
   function countAll(nodes: TreeNode[]): number {
@@ -178,7 +185,8 @@ function SidebarGroup({
         </button>
       )}
 
-      {open && (
+      {/* ALWAYS render for ungrouped, toggle for named groups */}
+      {(isUngrouped || open) && (
         <div className={isUngrouped ? "" : "ml-2"}>
           {tree.map((node, i) => (
             <SidebarNode key={i} node={node} selectedPath={selectedPath} onSelect={onSelect} depth={0} />
@@ -247,7 +255,7 @@ export default function ResultsPage() {
     <div className="min-h-screen bg-gray-50 text-gray-900 flex flex-col">
 
       {/* ── Top bar ── */}
-      <header className="h-14 border-b border-gray-200 bg-white flex items-center px-5 gap-4 sticky top-0 z-20 shadow-sm">
+      <header className="min-h-[56px] border-b border-gray-200 bg-white flex items-center px-5 gap-4 sticky top-0 z-20 shadow-sm flex-wrap py-2">
         <button
           onClick={() => setSidebarOpen((v) => !v)}
           className="p-1.5 text-gray-400 hover:text-gray-700 transition-colors rounded-md hover:bg-gray-100"
@@ -257,28 +265,48 @@ export default function ResultsPage() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-
         <div className="w-px h-6 bg-gray-200" />
 
         <span className="text-base font-bold text-gray-900">{data.site}</span>
         <span className="text-xs px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-700 font-semibold">{data.navType}</span>
 
+        {/* Detected tabs badges */}
+        {data.tabs && data.tabs.length > 0 && (
+          <div className="flex items-center gap-1">
+            {data.tabs.map((t) => {
+              const hasSection = data.sections.some(s => s.name === t);
+              return (
+                <span
+                  key={t}
+                  className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                    hasSection ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-400"
+                  }`}
+                  title={hasSection ? `${t}: scraped` : `${t}: no pages found`}
+                >
+                  {t}
+                </span>
+              );
+            })}
+          </div>
+        )}
+
         {/* Section tabs */}
         <div className="flex gap-1 ml-4">
-          {data.sections.map((s, i) => (
-            <button
-              key={i}
-              onClick={() => { setActiveSection(i); setSelectedPage(null); setSearch(""); }}
-              className={`px-3.5 py-1.5 text-sm font-medium transition-colors rounded-lg ${
-                i === activeSection
-                  ? "bg-indigo-100 text-indigo-700"
-                  : "text-gray-500 hover:text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              {s.name}
-              <span className={`ml-1.5 ${i === activeSection ? "text-indigo-400" : "text-gray-400"}`}>{s.pages.length}</span>
-            </button>
-          ))}
+          {data.sections.map((s, i) => {
+            const color = getSectionTabColor(s.name);
+            return (
+              <button
+                key={i}
+                onClick={() => { setActiveSection(i); setSelectedPage(null); setSearch(""); }}
+                className={`px-3.5 py-1.5 text-sm font-medium transition-colors rounded-lg ${
+                  i === activeSection ? color.active : color.inactive
+                }`}
+              >
+                {s.name}
+                <span className={`ml-1.5 ${i === activeSection ? color.count : "text-gray-400"}`}>{s.pages.length}</span>
+              </button>
+            );
+          })}
         </div>
 
         <div className="ml-auto flex items-center gap-4">
@@ -294,7 +322,7 @@ export default function ResultsPage() {
 
       <div className="flex flex-1 overflow-hidden">
 
-        {/* ── Sidebar ── */}
+        {/* ── Sidebar (always shown) ── */}
         {sidebarOpen && (
           <aside className="w-72 shrink-0 border-r border-gray-200 bg-white flex flex-col overflow-hidden">
             <div className="p-3">
@@ -346,6 +374,8 @@ export default function ResultsPage() {
               section={currentSection!}
               groupedTree={groupedTree}
               onSelect={setSelectedPage}
+              search={search}
+              onSearchChange={setSearch}
             />
           )}
         </main>
@@ -357,13 +387,13 @@ export default function ResultsPage() {
 // ── Section overview ─────────────────────────────────────────────────────────
 
 function SectionOverview({
-  section,
-  groupedTree,
-  onSelect,
+  section, groupedTree, onSelect, search, onSearchChange,
 }: {
   section: Section;
   groupedTree: Map<string, TreeNode[]>;
   onSelect: (p: PageItem) => void;
+  search: string;
+  onSearchChange: (s: string) => void;
 }) {
   return (
     <div>
@@ -401,10 +431,7 @@ function SectionOverview({
 // ── Overview node ────────────────────────────────────────────────────────────
 
 function OverviewNode({
-  node,
-  depth,
-  onSelect,
-  isLast,
+  node, depth, onSelect, isLast,
 }: {
   node: TreeNode;
   depth: number;

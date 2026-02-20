@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { scrapeUrl } from "@/lib/scrape";
 
 const categories = [
   {
@@ -32,7 +31,7 @@ const categories = [
     label: "Tabs + Versions + Sidebar",
     desc: "Multiple tabs with a version selector",
     links: [
-      { name: "Pennylane", url: "https://pennylane.readme.io/docs/getting-started" },
+      { name: "Pennylane", url: "https://pennylane.readme.io/docs/" },
       { name: "Datafiniti", url: "https://docs.datafiniti.co/docs" },
       { name: "360Learning", url: "https://360learning.readme.io/docs/introduction" },
       { name: "ShippingEasy", url: "https://shippingeasy.readme.io/reference/getting-started" },
@@ -69,8 +68,9 @@ export default function FetchPage() {
   const [error, setError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const doScrape = useCallback(async (targetUrl: string) => {
-    const trimmed = targetUrl.trim();
+  // ─── THIS IS THE ONLY FUNCTION THAT CALLS THE API ───
+  async function handleScrapeClick() {
+    const trimmed = url.trim();
     if (!trimmed) return;
 
     try {
@@ -84,7 +84,18 @@ export default function FetchPage() {
     setError(null);
 
     try {
-      const data = await scrapeUrl(trimmed);
+      const res = await fetch("/api/scrape", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url: trimmed }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || `HTTP ${res.status}`);
+      }
+
+      const data = await res.json();
       localStorage.setItem("scrape_result", JSON.stringify(data));
       router.push("/results");
     } catch (e: unknown) {
@@ -92,21 +103,6 @@ export default function FetchPage() {
     } finally {
       setLoading(false);
     }
-  }, [router]);
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    doScrape(url);
-  }
-
-  function handlePaste(e: React.ClipboardEvent<HTMLInputElement>) {
-    const pasted = e.clipboardData.getData("text").trim();
-    if (pasted) setUrl(pasted);
-  }
-
-  function handleQuickLink(linkUrl: string) {
-    setUrl(linkUrl);
-    doScrape(linkUrl);
   }
 
   return (
@@ -119,27 +115,31 @@ export default function FetchPage() {
           Paste a documentation URL to extract its navigation structure.
         </p>
 
-        {/* Input */}
-        <form onSubmit={handleSubmit} className="flex gap-2 mb-4">
+        {/* Input + Scrape Button (NO form, NO onSubmit, NO auto-trigger) */}
+        <div className="flex gap-2 mb-4">
           <input
             ref={inputRef}
-            id="doc-url"
-            type="url"
+            type="text"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            onPaste={handlePaste}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                handleScrapeClick();
+              }
+            }}
             placeholder="https://docs.example.com"
-            autoComplete="url"
             className="flex-1 bg-white border border-gray-300 text-gray-900 placeholder:text-gray-400
                        rounded-lg px-4 py-2.5 text-sm font-mono focus:outline-none focus:border-indigo-500
                        focus:ring-2 focus:ring-indigo-500/20 transition-all shadow-sm"
           />
           <button
-            type="submit"
+            type="button"
+            onClick={handleScrapeClick}
             disabled={loading || !url.trim()}
             className="px-5 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg
                        hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed
-                       transition-colors flex items-center gap-2 shadow-sm"
+                       transition-colors flex items-center gap-2 shadow-sm whitespace-nowrap"
           >
             {loading ? (
               <>
@@ -147,11 +147,11 @@ export default function FetchPage() {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                 </svg>
-                Scraping
+                Scraping...
               </>
             ) : "Scrape"}
           </button>
-        </form>
+        </div>
 
         {/* Error */}
         {error && (
@@ -161,7 +161,7 @@ export default function FetchPage() {
         {/* Divider */}
         <div className="border-t border-gray-200 my-8" />
 
-        {/* Quick links */}
+        {/* Quick links — ONLY sets URL, never calls API */}
         <p className="text-xs text-gray-400 uppercase tracking-wider font-medium mb-3">
           Quick test
         </p>
@@ -169,7 +169,11 @@ export default function FetchPage() {
           {quickLinks.map((link) => (
             <button
               key={link.url}
-              onClick={() => handleQuickLink(link.url)}
+              type="button"
+              onClick={() => {
+                setUrl(link.url);
+                setError(null);
+              }}
               disabled={loading}
               className="text-xs px-3 py-1.5 rounded-md border border-gray-200 text-gray-600 bg-white
                          hover:text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50
@@ -180,7 +184,7 @@ export default function FetchPage() {
           ))}
         </div>
 
-        {/* Categories */}
+        {/* Categories — ONLY sets URL, never calls API */}
         <div className="grid gap-4 mt-8">
           {categories.map((cat) => (
             <div
@@ -201,7 +205,11 @@ export default function FetchPage() {
                 {cat.links.map((link) => (
                   <button
                     key={link.url}
-                    onClick={() => handleQuickLink(link.url)}
+                    type="button"
+                    onClick={() => {
+                      setUrl(link.url);
+                      setError(null);
+                    }}
                     className="text-xs px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-600/40
                                text-slate-300 hover:text-purple-300 hover:border-purple-500/50 hover:bg-purple-500/10
                                transition-colors cursor-pointer"
