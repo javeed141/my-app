@@ -1,5 +1,4 @@
-import { load, type CheerioAPI } from "cheerio";
-import type { AnyNode } from "domhandler";
+import { load } from "cheerio";
 import {
   fetchPage,
   normalizePrefix,
@@ -7,8 +6,6 @@ import {
   PREFIX_TO_SECTION,
   NAV_SELECTORS,
   TAB_PATTERNS,
-  type ScrapePageItem,
-  type PageMeta,
 } from "./types";
 import {
   parseSidebarLookups,
@@ -32,11 +29,11 @@ import {
  *  e.g. a link with href="/docs" → tab named "Guides"
  *  e.g. a link with href="/reference" → tab named "API Reference"
  *  Returns an array of detected tabs with their names and paths. */
-export function detectTabs($: CheerioAPI, baseUrl: string): { name: string; path: string }[] {
-  const tabs: { name: string; path: string }[] = [];
-  const seen = new Set<string>(); // Prevent duplicate tabs (same link in header + mobile nav)
+export function detectTabs($, baseUrl) {
+  const tabs = [];
+  const seen = new Set(); // Prevent duplicate tabs (same link in header + mobile nav)
 
-  $(NAV_SELECTORS).each((_: number, el: AnyNode) => {
+  $(NAV_SELECTORS).each((_, el) => {
     let href = ($(el).attr("href") || "").replace(/\/$/, "");
     try {
       // Convert absolute URLs to relative paths for pattern matching
@@ -65,12 +62,12 @@ export function detectTabs($: CheerioAPI, baseUrl: string): { name: string; path
  *  Handles both relative (/payments/docs) and absolute
  *  (https://docs.example.com/payments/docs) hrefs — same-origin
  *  absolute URLs are normalized to relative paths before matching. */
-export function detectProjects($: CheerioAPI, baseUrl: string): Set<string> {
-  const projects = new Set<string>();
+export function detectProjects($, baseUrl) {
+  const projects = new Set();
   // These look like project names but are actually standard path segments
   const ignored = new Set(["docs", "reference", "main", "en", "v1", "v2", "v3", "v4", "v5", "beta"]);
 
-  $("header a, nav a, [class*='Header'] a").each((_: number, el: AnyNode) => {
+  $("header a, nav a, [class*='Header'] a").each((_, el) => {
     let href = $(el).attr("href") || "";
     // Convert absolute same-origin URLs to relative paths for matching
     // (same normalization that detectTabs already does)
@@ -96,18 +93,13 @@ export function detectProjects($: CheerioAPI, baseUrl: string): Set<string> {
 //  then scrapes links from each page using parseHtmlFallback().
 // ════════════════════════════════════════════════════════════
 
-export async function buildProjectSections(
-  projects: Set<string>,
-  baseUrl: string,
-  currentUrl: string,
-  currentHtml: string
-): Promise<{ name: string; pages: ScrapePageItem[] }[]> {
-  const sections: { name: string; pages: ScrapePageItem[] }[] = [];
+export async function buildProjectSections(projects, baseUrl, currentUrl, currentHtml) {
+  const sections = [];
 
   // Build list of all pages to fetch: each project × (docs + reference)
-  const fetches: { name: string; url: string }[] = [];
+  const fetches = [];
   for (const p of projects) {
-    for (const type of ["docs", "reference"] as const) {
+    for (const type of ["docs", "reference"]) {
       fetches.push({
         name: `${p}/${PREFIX_TO_SECTION[type] || type}`,
         url: `${baseUrl}/${p}/${type}`,
@@ -164,19 +156,13 @@ export async function buildProjectSections(
 //    SITEMAP = supplement (catches pages sidebar doesn't list)
 // ════════════════════════════════════════════════════════════
 
-export async function buildSitemapSections(
-  sitemapGroups: Map<string, string[]>,
-  sidebarLookups: Map<string, Map<string, PageMeta>>,
-  tabs: { name: string; path: string }[],
-  baseUrl: string,
-  currentUrl: string
-): Promise<{ name: string; pages: ScrapePageItem[] }[]> {
-  const sections: { name: string; pages: ScrapePageItem[] }[] = [];
+export async function buildSitemapSections(sitemapGroups, sidebarLookups, tabs, baseUrl, currentUrl) {
+  const sections = [];
 
   // Determine which URL prefixes to include based on detected navigation.
   // If tabs were found (e.g. "Guides" + "API Reference"), only process those.
   // Otherwise, use the current page's first path segment (e.g. "docs").
-  let allowedPrefixes: string[];
+  let allowedPrefixes;
   if (tabs.length > 0) {
     allowedPrefixes = tabs.map((t) => t.path.replace(/^\//, ""));
   } else {
@@ -199,7 +185,7 @@ export async function buildSitemapSections(
   // The current page's HTML only contains sidebar JSON for ONE tab.
   // If there are other tabs (e.g. "API Reference" when we're on "Guides"),
   // we need to fetch those pages to extract THEIR sidebar data.
-  const tabFetches = new Map<string, Promise<string | null>>();
+  const tabFetches = new Map();
   for (const prefix of prefixesToProcess) {
     const normalized = normalizePrefix(prefix);
     const hasLookup = sidebarLookups.has(prefix) || sidebarLookups.has(normalized);
@@ -223,13 +209,13 @@ export async function buildSitemapSections(
   }
 
   // Await all tab fetches concurrently
-  const tabHtmlMap = new Map<string, string | null>();
+  const tabHtmlMap = new Map();
   const entries = [...tabFetches.entries()];
   const results = await Promise.all(entries.map(([, promise]) => promise));
   entries.forEach(([key], i) => tabHtmlMap.set(key, results[i]));
 
   // ── Build sections — one per URL prefix ──
-  const outputSections = new Set<string>(); // Tracks processed normalized prefixes
+  const outputSections = new Set(); // Tracks processed normalized prefixes
 
   for (const prefix of prefixesToProcess) {
     const normalized = normalizePrefix(prefix);
@@ -241,7 +227,7 @@ export async function buildSitemapSections(
     // Get sidebar lookup for this prefix — try current page first, then fetched tab
     let lookup = sidebarLookups.get(prefix)
       || sidebarLookups.get(normalized)
-      || new Map<string, PageMeta>();
+      || new Map();
 
     // If no sidebar data found yet, parse the fetched tab HTML for it
     if (lookup.size === 0 && prefix !== "changelog") {
@@ -255,8 +241,8 @@ export async function buildSitemapSections(
     }
 
     const pathPrefix = `/${prefix}`;
-    const pages: ScrapePageItem[] = [];
-    const includedSlugs = new Set<string>();
+    const pages = [];
+    const includedSlugs = new Set();
 
     // ────────────────────────────────────────────────
     // STEP 1: Sidebar pages FIRST (correct order + groups)
@@ -329,17 +315,12 @@ export async function buildSitemapSections(
 //    3. Fetches remaining uncovered tabs
 // ════════════════════════════════════════════════════════════
 
-export async function buildNoSitemapSections(
-  sidebarLookups: Map<string, Map<string, PageMeta>>,
-  tabs: { name: string; path: string }[],
-  baseUrl: string,
-  currentHtml: string
-): Promise<{ name: string; pages: ScrapePageItem[] }[]> {
-  const sections: { name: string; pages: ScrapePageItem[] }[] = [];
+export async function buildNoSitemapSections(sidebarLookups, tabs, baseUrl, currentHtml) {
+  const sections = [];
 
   // Build from sidebar data (best quality — has real titles, groups, order)
   if (sidebarLookups.size > 0) {
-    const seenNormalized = new Set<string>();
+    const seenNormalized = new Set();
     for (const [sectionKey, lookup] of sidebarLookups) {
       const normalized = normalizePrefix(sectionKey);
       // Skip duplicates (e.g. "refs" after we already processed "reference")
@@ -348,7 +329,7 @@ export async function buildNoSitemapSections(
 
       const pathPrefix = `/${sectionKey}`;
       const entries = [...lookup.entries()].sort((a, b) => a[1].order - b[1].order);
-      const pages: ScrapePageItem[] = entries.map(([slug, meta]) => ({
+      const pages = entries.map(([slug, meta]) => ({
         title: meta.title,
         path: `${pathPrefix}/${slug}`,
         fullUrl: `${baseUrl}${pathPrefix}/${slug}`,
@@ -368,7 +349,7 @@ export async function buildNoSitemapSections(
   }
 
   // Figure out which tab prefixes we've already covered
-  const coveredPrefixes = new Set<string>();
+  const coveredPrefixes = new Set();
   for (const s of sections) {
     for (const [prefix, name] of Object.entries(PREFIX_TO_SECTION)) {
       if (s.name === name) coveredPrefixes.add(normalizePrefix(prefix));

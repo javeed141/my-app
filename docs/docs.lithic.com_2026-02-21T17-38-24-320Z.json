@@ -1,0 +1,2735 @@
+{
+  "site": "docs.lithic.com",
+  "navType": "tabs",
+  "tabs": [
+    "Guides",
+    "API Reference",
+    "Changelog"
+  ],
+  "sections": [
+    {
+      "name": "Guides",
+      "pages": [
+        {
+          "title": "Lithic Developer Documentation",
+          "path": "/docs/welcome",
+          "fullUrl": "https://docs.lithic.com/docs/welcome",
+          "level": 1,
+          "group": "Welcome"
+        },
+        {
+          "title": "Processing vs. Program Managed",
+          "path": "/docs/po-vs-pm",
+          "fullUrl": "https://docs.lithic.com/docs/po-vs-pm",
+          "level": 1,
+          "group": "Welcome"
+        },
+        {
+          "title": "Sign Up",
+          "path": "/docs/sign-up",
+          "fullUrl": "https://docs.lithic.com/docs/sign-up",
+          "level": 1,
+          "group": "Welcome"
+        },
+        {
+          "title": "Generate an API Key",
+          "path": "/docs/get-api-key",
+          "fullUrl": "https://docs.lithic.com/docs/get-api-key",
+          "level": 1,
+          "group": "Getting Started"
+        },
+        {
+          "title": "Postman",
+          "path": "/docs/postman",
+          "fullUrl": "https://docs.lithic.com/docs/postman",
+          "level": 1,
+          "group": "Getting Started"
+        },
+        {
+          "title": "Quickstart",
+          "path": "/docs/create-card",
+          "fullUrl": "https://docs.lithic.com/docs/create-card",
+          "level": 1,
+          "group": "Getting Started"
+        },
+        {
+          "title": "2. Authorize a Transaction",
+          "path": "/docs/simulate-auth",
+          "fullUrl": "https://docs.lithic.com/docs/simulate-auth",
+          "level": 2,
+          "group": "Getting Started"
+        },
+        {
+          "title": "3. View Transaction",
+          "path": "/docs/get-pending-transaction",
+          "fullUrl": "https://docs.lithic.com/docs/get-pending-transaction",
+          "level": 2,
+          "group": "Getting Started"
+        },
+        {
+          "title": "4. Authorize a Transaction",
+          "path": "/docs/simulate-clearing",
+          "fullUrl": "https://docs.lithic.com/docs/simulate-clearing",
+          "level": 2,
+          "group": "Getting Started"
+        },
+        {
+          "title": "5. View a Transaction",
+          "path": "/docs/get-cleared-transaction",
+          "fullUrl": "https://docs.lithic.com/docs/get-cleared-transaction",
+          "level": 2,
+          "group": "Getting Started"
+        },
+        {
+          "title": "Dashboard Overview",
+          "path": "/docs/managing-your-program-with-lithic-dashboard",
+          "fullUrl": "https://docs.lithic.com/docs/managing-your-program-with-lithic-dashboard",
+          "level": 1,
+          "group": "Lithic Dashboard"
+        },
+        {
+          "title": "API Basics",
+          "path": "/docs/api-basics",
+          "fullUrl": "https://docs.lithic.com/docs/api-basics",
+          "level": 1,
+          "group": "Developer"
+        },
+        {
+          "title": "Environments",
+          "path": "/docs/enviornments",
+          "fullUrl": "https://docs.lithic.com/docs/enviornments",
+          "level": 1,
+          "group": "Developer"
+        },
+        {
+          "title": "API Libraries and OpenAPI Spec",
+          "path": "/docs/api-libraries",
+          "fullUrl": "https://docs.lithic.com/docs/api-libraries",
+          "level": 1,
+          "group": "Developer"
+        },
+        {
+          "title": "Idempotent Requests",
+          "path": "/docs/idempotent-requests",
+          "fullUrl": "https://docs.lithic.com/docs/idempotent-requests",
+          "level": 1,
+          "group": "Developer"
+        },
+        {
+          "title": "Rate Limits",
+          "path": "/docs/rate-limits",
+          "fullUrl": "https://docs.lithic.com/docs/rate-limits",
+          "level": 1,
+          "group": "Developer"
+        },
+        {
+          "title": "Account Holders (Individuals)",
+          "path": "/docs/account-holders-kyc",
+          "fullUrl": "https://docs.lithic.com/docs/account-holders-kyc",
+          "level": 1,
+          "group": "Account Holders"
+        },
+        {
+          "title": "Account Holders (Businesses/KYB)",
+          "path": "/docs/account-holders-kyb",
+          "fullUrl": "https://docs.lithic.com/docs/account-holders-kyb",
+          "level": 1,
+          "group": "Account Holders"
+        },
+        {
+          "title": "KYC/KYB Status",
+          "path": "/docs/kyckyb-status",
+          "fullUrl": "https://docs.lithic.com/docs/kyckyb-status",
+          "level": 1,
+          "group": "Account Holders"
+        },
+        {
+          "title": "Card Accounts",
+          "path": "/docs/accounts",
+          "fullUrl": "https://docs.lithic.com/docs/accounts",
+          "level": 1,
+          "group": "Account Holders"
+        },
+        {
+          "title": "Editing Account Holder Details",
+          "path": "/docs/editing-account-holder-details",
+          "fullUrl": "https://docs.lithic.com/docs/editing-account-holder-details",
+          "level": 1,
+          "group": "Account Holders"
+        },
+        {
+          "title": "Ledger Overview",
+          "path": "/docs/ledger-overview",
+          "fullUrl": "https://docs.lithic.com/docs/ledger-overview",
+          "level": 1,
+          "group": "Ledger Solutions"
+        },
+        {
+          "title": "Ledger Principles",
+          "path": "/docs/ledger-principles",
+          "fullUrl": "https://docs.lithic.com/docs/ledger-principles",
+          "level": 1,
+          "group": "Ledger Solutions"
+        },
+        {
+          "title": "Ledger Use Cases and Funds Flows",
+          "path": "/docs/ledger-use-cases",
+          "fullUrl": "https://docs.lithic.com/docs/ledger-use-cases",
+          "level": 1,
+          "group": "Ledger Solutions"
+        },
+        {
+          "title": "Financial Accounts",
+          "path": "/docs/financial-accounts",
+          "fullUrl": "https://docs.lithic.com/docs/financial-accounts",
+          "level": 1,
+          "group": "Ledger Solutions"
+        },
+        {
+          "title": "Financial Account Closures [BETA]",
+          "path": "/docs/financial-account-closures-beta",
+          "fullUrl": "https://docs.lithic.com/docs/financial-account-closures-beta",
+          "level": 2,
+          "group": "Ledger Solutions"
+        },
+        {
+          "title": "Balances",
+          "path": "/docs/balances",
+          "fullUrl": "https://docs.lithic.com/docs/balances",
+          "level": 1,
+          "group": "Ledger Solutions"
+        },
+        {
+          "title": "Cards",
+          "path": "/docs/cards",
+          "fullUrl": "https://docs.lithic.com/docs/cards",
+          "level": 1,
+          "group": "Cards"
+        },
+        {
+          "title": "Managing Cards",
+          "path": "/docs/managing-cards",
+          "fullUrl": "https://docs.lithic.com/docs/managing-cards",
+          "level": 2,
+          "group": "Cards"
+        },
+        {
+          "title": "Managing Online PIN Cards",
+          "path": "/docs/pin-management",
+          "fullUrl": "https://docs.lithic.com/docs/pin-management",
+          "level": 2,
+          "group": "Cards"
+        },
+        {
+          "title": "Managing Offline PIN Cards",
+          "path": "/docs/offline-pin-cards",
+          "fullUrl": "https://docs.lithic.com/docs/offline-pin-cards",
+          "level": 2,
+          "group": "Cards"
+        },
+        {
+          "title": "Embedded Card UI",
+          "path": "/docs/embedded-card-ui",
+          "fullUrl": "https://docs.lithic.com/docs/embedded-card-ui",
+          "level": 1,
+          "group": "Cards"
+        },
+        {
+          "title": "View Card PANs & CVVs - Quick Start Guide",
+          "path": "/docs/quick-start-card-ui",
+          "fullUrl": "https://docs.lithic.com/docs/quick-start-card-ui",
+          "level": 2,
+          "group": "Cards"
+        },
+        {
+          "title": "Embedded Card UI - React Frontend",
+          "path": "/docs/embedded-card-ui-react",
+          "fullUrl": "https://docs.lithic.com/docs/embedded-card-ui-react",
+          "level": 2,
+          "group": "Cards"
+        },
+        {
+          "title": "Physical Cards Setup",
+          "path": "/docs/physical-cards-setup-guide",
+          "fullUrl": "https://docs.lithic.com/docs/physical-cards-setup-guide",
+          "level": 1,
+          "group": "Cards"
+        },
+        {
+          "title": "Auth Stream Access (ASA)",
+          "path": "/docs/auth-stream-access-asa",
+          "fullUrl": "https://docs.lithic.com/docs/auth-stream-access-asa",
+          "level": 1,
+          "group": "Authorization"
+        },
+        {
+          "title": "Partial Approval",
+          "path": "/docs/partial-approval",
+          "fullUrl": "https://docs.lithic.com/docs/partial-approval",
+          "level": 2,
+          "group": "Authorization"
+        },
+        {
+          "title": "Merchant Category Codes (MCCs)",
+          "path": "/docs/merchant-category-codes-mccs",
+          "fullUrl": "https://docs.lithic.com/docs/merchant-category-codes-mccs",
+          "level": 1,
+          "group": "Authorization"
+        },
+        {
+          "title": "Spend Limits",
+          "path": "/docs/spend-limits",
+          "fullUrl": "https://docs.lithic.com/docs/spend-limits",
+          "level": 1,
+          "group": "Authorization"
+        },
+        {
+          "title": "Authorization Rules",
+          "path": "/docs/authorization-rules-v2",
+          "fullUrl": "https://docs.lithic.com/docs/authorization-rules-v2",
+          "level": 1,
+          "group": "Authorization"
+        },
+        {
+          "title": "Backtesting Authorization Rules",
+          "path": "/docs/backtesting-authorization-rules",
+          "fullUrl": "https://docs.lithic.com/docs/backtesting-authorization-rules",
+          "level": 2,
+          "group": "Authorization"
+        },
+        {
+          "title": "Lithic Dashboard - Authorization Rules UI",
+          "path": "/docs/lithic-dashboard-rules-ui",
+          "fullUrl": "https://docs.lithic.com/docs/lithic-dashboard-rules-ui",
+          "level": 2,
+          "group": "Authorization"
+        },
+        {
+          "title": "Authorization Challenges",
+          "path": "/docs/authorization-challenges",
+          "fullUrl": "https://docs.lithic.com/docs/authorization-challenges",
+          "level": 1,
+          "group": "Authorization"
+        },
+        {
+          "title": "Transaction Object",
+          "path": "/docs/transactions",
+          "fullUrl": "https://docs.lithic.com/docs/transactions",
+          "level": 1,
+          "group": "Card Transactions"
+        },
+        {
+          "title": "Transaction Flow",
+          "path": "/docs/transaction-flow",
+          "fullUrl": "https://docs.lithic.com/docs/transaction-flow",
+          "level": 1,
+          "group": "Card Transactions"
+        },
+        {
+          "title": "Enhanced Commercial Data (L2/L3)",
+          "path": "/docs/enhanced-commercial-data",
+          "fullUrl": "https://docs.lithic.com/docs/enhanced-commercial-data",
+          "level": 1,
+          "group": "Card Transactions"
+        },
+        {
+          "title": "About Digital Wallets",
+          "path": "/docs/about-digital-wallets",
+          "fullUrl": "https://docs.lithic.com/docs/about-digital-wallets",
+          "level": 1,
+          "group": "Tokenization"
+        },
+        {
+          "title": "About Merchant Tokenization",
+          "path": "/docs/about-merchant-tokens",
+          "fullUrl": "https://docs.lithic.com/docs/about-merchant-tokens",
+          "level": 1,
+          "group": "Tokenization"
+        },
+        {
+          "title": "In-App Push Provisioning",
+          "path": "/docs/push-provisioning",
+          "fullUrl": "https://docs.lithic.com/docs/push-provisioning",
+          "level": 1,
+          "group": "Tokenization"
+        },
+        {
+          "title": "Web Push Provisioning",
+          "path": "/docs/web-push-provisioning",
+          "fullUrl": "https://docs.lithic.com/docs/web-push-provisioning",
+          "level": 1,
+          "group": "Tokenization"
+        },
+        {
+          "title": "Tokenization Management",
+          "path": "/docs/token-management",
+          "fullUrl": "https://docs.lithic.com/docs/token-management",
+          "level": 1,
+          "group": "Tokenization"
+        },
+        {
+          "title": "Tokenization Decisioning",
+          "path": "/docs/tokenization-control",
+          "fullUrl": "https://docs.lithic.com/docs/tokenization-control",
+          "level": 1,
+          "group": "Tokenization"
+        },
+        {
+          "title": "2FA for Tokenization",
+          "path": "/docs/2fa-for-tokenization",
+          "fullUrl": "https://docs.lithic.com/docs/2fa-for-tokenization",
+          "level": 1,
+          "group": "Tokenization"
+        },
+        {
+          "title": "About 3DS",
+          "path": "/docs/about-3ds",
+          "fullUrl": "https://docs.lithic.com/docs/about-3ds",
+          "level": 1,
+          "group": "3-D Secure (3DS)"
+        },
+        {
+          "title": "3DS Decisioning Models",
+          "path": "/docs/3ds-decisioning-models",
+          "fullUrl": "https://docs.lithic.com/docs/3ds-decisioning-models",
+          "level": 1,
+          "group": "3-D Secure (3DS)"
+        },
+        {
+          "title": "3DS Lithic Decisioning",
+          "path": "/docs/3ds-decisioning",
+          "fullUrl": "https://docs.lithic.com/docs/3ds-decisioning",
+          "level": 2,
+          "group": "3-D Secure (3DS)"
+        },
+        {
+          "title": "3DS Customer Decisioning",
+          "path": "/docs/3ds-customer-decisioning",
+          "fullUrl": "https://docs.lithic.com/docs/3ds-customer-decisioning",
+          "level": 2,
+          "group": "3-D Secure (3DS)"
+        },
+        {
+          "title": "3DS Challenge Flows",
+          "path": "/docs/3ds-challenges",
+          "fullUrl": "https://docs.lithic.com/docs/3ds-challenges",
+          "level": 1,
+          "group": "3-D Secure (3DS)"
+        },
+        {
+          "title": "Lithic Orchestration - 3DS Challenges",
+          "path": "/docs/challenge-flow-lithic-decisioning",
+          "fullUrl": "https://docs.lithic.com/docs/challenge-flow-lithic-decisioning",
+          "level": 2,
+          "group": "3-D Secure (3DS)"
+        },
+        {
+          "title": "Customer Orchestration - 3DS Challenges",
+          "path": "/docs/3ds-challenge-flow",
+          "fullUrl": "https://docs.lithic.com/docs/3ds-challenge-flow",
+          "level": 2,
+          "group": "3-D Secure (3DS)"
+        },
+        {
+          "title": "3DS Authentication Rules",
+          "path": "/docs/3ds-authentication-rules",
+          "fullUrl": "https://docs.lithic.com/docs/3ds-authentication-rules",
+          "level": 1,
+          "group": "3-D Secure (3DS)"
+        },
+        {
+          "title": "Managed Disputes",
+          "path": "/docs/managed-disputes",
+          "fullUrl": "https://docs.lithic.com/docs/managed-disputes",
+          "level": 1,
+          "group": "Disputes"
+        },
+        {
+          "title": "Overview",
+          "path": "/docs/overview",
+          "fullUrl": "https://docs.lithic.com/docs/overview",
+          "level": 2,
+          "group": "Disputes"
+        },
+        {
+          "title": "Dispute Lifecycle",
+          "path": "/docs/dispute-lifecycle",
+          "fullUrl": "https://docs.lithic.com/docs/dispute-lifecycle",
+          "level": 2,
+          "group": "Disputes"
+        },
+        {
+          "title": "Liability and Money Movement",
+          "path": "/docs/liability-and-money-movement",
+          "fullUrl": "https://docs.lithic.com/docs/liability-and-money-movement",
+          "level": 2,
+          "group": "Disputes"
+        },
+        {
+          "title": "Regulatory Requirements",
+          "path": "/docs/regulatory-requirements",
+          "fullUrl": "https://docs.lithic.com/docs/regulatory-requirements",
+          "level": 2,
+          "group": "Disputes"
+        },
+        {
+          "title": "Filing Disputes",
+          "path": "/docs/working-with-disputes",
+          "fullUrl": "https://docs.lithic.com/docs/working-with-disputes",
+          "level": 2,
+          "group": "Disputes"
+        },
+        {
+          "title": "Tracking Disputes",
+          "path": "/docs/tracking-disputes",
+          "fullUrl": "https://docs.lithic.com/docs/tracking-disputes",
+          "level": 2,
+          "group": "Disputes"
+        },
+        {
+          "title": "The Dispute Object",
+          "path": "/docs/understanding-the-api",
+          "fullUrl": "https://docs.lithic.com/docs/understanding-the-api",
+          "level": 2,
+          "group": "Disputes"
+        },
+        {
+          "title": "Accounting & Ledger Impact",
+          "path": "/docs/accounting-ledger-impact",
+          "fullUrl": "https://docs.lithic.com/docs/accounting-ledger-impact",
+          "level": 2,
+          "group": "Disputes"
+        },
+        {
+          "title": "Cardholder Communications",
+          "path": "/docs/cardholder-communications",
+          "fullUrl": "https://docs.lithic.com/docs/cardholder-communications",
+          "level": 2,
+          "group": "Disputes"
+        },
+        {
+          "title": "Modifying Dispute Configurations",
+          "path": "/docs/modifying-dispute-configurations",
+          "fullUrl": "https://docs.lithic.com/docs/modifying-dispute-configurations",
+          "level": 2,
+          "group": "Disputes"
+        },
+        {
+          "title": "Chargebacks",
+          "path": "/docs/disputes-api",
+          "fullUrl": "https://docs.lithic.com/docs/disputes-api",
+          "level": 1,
+          "group": "Disputes"
+        },
+        {
+          "title": "Financial Transactions",
+          "path": "/docs/financial-transactions",
+          "fullUrl": "https://docs.lithic.com/docs/financial-transactions",
+          "level": 1,
+          "group": "Financial Transactions"
+        },
+        {
+          "title": "Book Transfers",
+          "path": "/docs/book-transfers",
+          "fullUrl": "https://docs.lithic.com/docs/book-transfers",
+          "level": 1,
+          "group": "Transfer"
+        },
+        {
+          "title": "Settlement API",
+          "path": "/docs/settlement-reporting",
+          "fullUrl": "https://docs.lithic.com/docs/settlement-reporting",
+          "level": 1,
+          "group": "Reporting"
+        },
+        {
+          "title": "Intro to ACH",
+          "path": "/docs/intro-to-ach",
+          "fullUrl": "https://docs.lithic.com/docs/intro-to-ach",
+          "level": 1,
+          "group": "ACH Payments"
+        },
+        {
+          "title": "ACH at Lithic",
+          "path": "/docs/ach-overview",
+          "fullUrl": "https://docs.lithic.com/docs/ach-overview",
+          "level": 1,
+          "group": "ACH Payments"
+        },
+        {
+          "title": "ACH Payment API",
+          "path": "/docs/payments-api",
+          "fullUrl": "https://docs.lithic.com/docs/payments-api",
+          "level": 1,
+          "group": "ACH Payments"
+        },
+        {
+          "title": "ACH Payments Lifecycle",
+          "path": "/docs/ach-payments-lifecycle",
+          "fullUrl": "https://docs.lithic.com/docs/ach-payments-lifecycle",
+          "level": 1,
+          "group": "ACH Payments"
+        },
+        {
+          "title": "External Bank Accounts",
+          "path": "/docs/external-accounts-api",
+          "fullUrl": "https://docs.lithic.com/docs/external-accounts-api",
+          "level": 1,
+          "group": "ACH Payments"
+        },
+        {
+          "title": "Quick Start - ACH Originations",
+          "path": "/docs/quick-start-ach-originations",
+          "fullUrl": "https://docs.lithic.com/docs/quick-start-ach-originations",
+          "level": 1,
+          "group": "ACH Payments"
+        },
+        {
+          "title": "Quick Start - ACH Funding in Sandbox",
+          "path": "/docs/quick-start-ach-funding-in-sandbox",
+          "fullUrl": "https://docs.lithic.com/docs/quick-start-ach-funding-in-sandbox",
+          "level": 1,
+          "group": "ACH Payments"
+        },
+        {
+          "title": "ACH Auth Rules [BETA]",
+          "path": "/docs/ach-auth-rules",
+          "fullUrl": "https://docs.lithic.com/docs/ach-auth-rules",
+          "level": 1,
+          "group": "ACH Payments"
+        },
+        {
+          "title": "Credit Configurations",
+          "path": "/docs/credit-products",
+          "fullUrl": "https://docs.lithic.com/docs/credit-products",
+          "level": 1,
+          "group": "Credit"
+        },
+        {
+          "title": "Charge Card",
+          "path": "/docs/commercial-charge-card-overview",
+          "fullUrl": "https://docs.lithic.com/docs/commercial-charge-card-overview",
+          "level": 1,
+          "group": "Credit"
+        },
+        {
+          "title": "Quick Start - Commercial Charge Card",
+          "path": "/docs/quick-start-commercial-charge-card",
+          "fullUrl": "https://docs.lithic.com/docs/quick-start-commercial-charge-card",
+          "level": 2,
+          "group": "Credit"
+        },
+        {
+          "title": "Quick Start - Secured Charge Card",
+          "path": "/docs/quick-start-secured-charge-card",
+          "fullUrl": "https://docs.lithic.com/docs/quick-start-secured-charge-card",
+          "level": 2,
+          "group": "Credit"
+        },
+        {
+          "title": "Commercial Revolving Credit Cards",
+          "path": "/docs/commercial-revolving-credit-cards",
+          "fullUrl": "https://docs.lithic.com/docs/commercial-revolving-credit-cards",
+          "level": 1,
+          "group": "Credit"
+        },
+        {
+          "title": "Quick Start - Commercial Revolving Credit",
+          "path": "/docs/quick-start-commercial-revolving-credit",
+          "fullUrl": "https://docs.lithic.com/docs/quick-start-commercial-revolving-credit",
+          "level": 2,
+          "group": "Credit"
+        },
+        {
+          "title": "Credit Statements",
+          "path": "/docs/credit-statements",
+          "fullUrl": "https://docs.lithic.com/docs/credit-statements",
+          "level": 1,
+          "group": "Credit"
+        },
+        {
+          "title": "Events API and Webhooks",
+          "path": "/docs/events-api",
+          "fullUrl": "https://docs.lithic.com/docs/events-api",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Types of Events",
+          "path": "/docs/types-of-events",
+          "fullUrl": "https://docs.lithic.com/docs/types-of-events",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Migrate from Legacy Transaction Webhooks to our Events API",
+          "path": "/docs/migrate-from-legacy-transaction-webhooks-to-our-events-api",
+          "fullUrl": "https://docs.lithic.com/docs/migrate-from-legacy-transaction-webhooks-to-our-events-api",
+          "level": 1,
+          "group": "Webhooks"
+        },
+        {
+          "title": "Simulating Account Holder Creation",
+          "path": "/docs/simulating-account-holder-creation",
+          "fullUrl": "https://docs.lithic.com/docs/simulating-account-holder-creation",
+          "level": 1,
+          "group": "Testing in Sandbox"
+        },
+        {
+          "title": "Simulating Card Transactions",
+          "path": "/docs/simulating-transactions",
+          "fullUrl": "https://docs.lithic.com/docs/simulating-transactions",
+          "level": 1,
+          "group": "Testing in Sandbox"
+        },
+        {
+          "title": "Simulating Tokenizations",
+          "path": "/docs/simulating-tokenizations",
+          "fullUrl": "https://docs.lithic.com/docs/simulating-tokenizations",
+          "level": 1,
+          "group": "Testing in Sandbox"
+        },
+        {
+          "title": "Simulating Webhook Events",
+          "path": "/docs/simulating-webhooks",
+          "fullUrl": "https://docs.lithic.com/docs/simulating-webhooks",
+          "level": 1,
+          "group": "Testing in Sandbox"
+        },
+        {
+          "title": "Funding Events",
+          "path": "/docs/funding-events-1",
+          "fullUrl": "https://docs.lithic.com/docs/funding-events-1",
+          "level": 1,
+          "group": "Funding"
+        },
+        {
+          "title": "Legal Templates",
+          "path": "/docs/legal-templates",
+          "fullUrl": "https://docs.lithic.com/docs/legal-templates",
+          "level": 1,
+          "group": "Legal Library"
+        },
+        {
+          "title": "Marketing Guidelines",
+          "path": "/docs/marketing-guidelines",
+          "fullUrl": "https://docs.lithic.com/docs/marketing-guidelines",
+          "level": 1,
+          "group": "Legal Library"
+        }
+      ]
+    },
+    {
+      "name": "API Reference",
+      "pages": [
+        {
+          "title": "🤖Lithic MCP",
+          "path": "/reference/mcp",
+          "fullUrl": "https://docs.lithic.com/reference/mcp",
+          "level": 1,
+          "group": "MCP Server"
+        },
+        {
+          "title": "3DS",
+          "path": "/reference/getthreedsauthenticationbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/getthreedsauthenticationbytoken",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate 3DS authenticationpost",
+          "path": "/reference/postsimulateauthentication",
+          "fullUrl": "https://docs.lithic.com/reference/postsimulateauthentication",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate entering OTP into 3DS Challenge UIpost",
+          "path": "/reference/post_v1-three-ds-decisioning-simulate-enter-otp",
+          "fullUrl": "https://docs.lithic.com/reference/post_v1-three-ds-decisioning-simulate-enter-otp",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Retrieve the 3DS Decisioning HMAC secret keyget",
+          "path": "/reference/getthreedsdecisioningsecret",
+          "fullUrl": "https://docs.lithic.com/reference/getthreedsdecisioningsecret",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Rotate the 3DS Decisioning HMAC secret keypost",
+          "path": "/reference/rotatethreedsdecisioningsecret",
+          "fullUrl": "https://docs.lithic.com/reference/rotatethreedsdecisioningsecret",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Respond to a Challenge Requestpost",
+          "path": "/reference/post_v1-three-ds-decisioning-challenge-response",
+          "fullUrl": "https://docs.lithic.com/reference/post_v1-three-ds-decisioning-challenge-response",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "3DS Decisioning Requestpost",
+          "path": "/reference/post_three-ds-authentication-approval-request",
+          "fullUrl": "https://docs.lithic.com/reference/post_three-ds-authentication-approval-request",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Account",
+          "path": "/reference/getaccounts",
+          "fullUrl": "https://docs.lithic.com/reference/getaccounts",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get accountget",
+          "path": "/reference/getaccountbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/getaccountbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Update accountpatch",
+          "path": "/reference/patchaccountbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/patchaccountbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get account's available spend limitsget",
+          "path": "/reference/getaccountspendlimits",
+          "fullUrl": "https://docs.lithic.com/reference/getaccountspendlimits",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Account Holder",
+          "path": "/reference/getaccountholders",
+          "fullUrl": "https://docs.lithic.com/reference/getaccountholders",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Create an individual or business account holderpost",
+          "path": "/reference/postaccountholders",
+          "fullUrl": "https://docs.lithic.com/reference/postaccountholders",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get an individual or business account holderget",
+          "path": "/reference/getaccountholder",
+          "fullUrl": "https://docs.lithic.com/reference/getaccountholder",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Update account holder information and possibly resubmit for evaluationpatch",
+          "path": "/reference/patchaccountholder",
+          "fullUrl": "https://docs.lithic.com/reference/patchaccountholder",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get account holder document uploadsget",
+          "path": "/reference/getaccountholderdocuments",
+          "fullUrl": "https://docs.lithic.com/reference/getaccountholderdocuments",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Initiate account holder document uploadpost",
+          "path": "/reference/postaccountholderdocuments",
+          "fullUrl": "https://docs.lithic.com/reference/postaccountholderdocuments",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get account holder document upload statusget",
+          "path": "/reference/getaccountholderdocumentbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/getaccountholderdocumentbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate an account holder's enrollment reviewpost",
+          "path": "/reference/simulateaccountholderenrollmentreview",
+          "fullUrl": "https://docs.lithic.com/reference/simulateaccountholderenrollmentreview",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate an account holder document upload's reviewpost",
+          "path": "/reference/simulateaccountholderenrollmentdocumentreview",
+          "fullUrl": "https://docs.lithic.com/reference/simulateaccountholderenrollmentdocumentreview",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Auth Stream Access (ASA)",
+          "path": "/reference/post_card-authorization-approval-request",
+          "fullUrl": "https://docs.lithic.com/reference/post_card-authorization-approval-request",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Retrieve the ASA HMAC secret keyget",
+          "path": "/reference/getauthstreamsecret",
+          "fullUrl": "https://docs.lithic.com/reference/getauthstreamsecret",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Rotate the ASA HMAC secret keypost",
+          "path": "/reference/rotateauthstreamsecret",
+          "fullUrl": "https://docs.lithic.com/reference/rotateauthstreamsecret",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Auth Rules",
+          "path": "/reference/post_v2-auth-rules",
+          "fullUrl": "https://docs.lithic.com/reference/post_v2-auth-rules",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List rulesget",
+          "path": "/reference/get_v2-auth-rules",
+          "fullUrl": "https://docs.lithic.com/reference/get_v2-auth-rules",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Fetch a ruleget",
+          "path": "/reference/get_v2-auth-rules-auth-rule-token",
+          "fullUrl": "https://docs.lithic.com/reference/get_v2-auth-rules-auth-rule-token",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Update a rulepatch",
+          "path": "/reference/patch_v2-auth-rules-auth-rule-token",
+          "fullUrl": "https://docs.lithic.com/reference/patch_v2-auth-rules-auth-rule-token",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Delete a ruledel",
+          "path": "/reference/delete_v2-auth-rules-auth-rule-token",
+          "fullUrl": "https://docs.lithic.com/reference/delete_v2-auth-rules-auth-rule-token",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Draft a new rule versionpost",
+          "path": "/reference/post_v2-auth-rules-auth-rule-token-draft",
+          "fullUrl": "https://docs.lithic.com/reference/post_v2-auth-rules-auth-rule-token-draft",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Promote a rule versionpost",
+          "path": "/reference/post_v2-auth-rules-auth-rule-token-promote",
+          "fullUrl": "https://docs.lithic.com/reference/post_v2-auth-rules-auth-rule-token-promote",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Retrieve a performance reportget",
+          "path": "/reference/get_v2-auth-rules-auth-rule-token-report",
+          "fullUrl": "https://docs.lithic.com/reference/get_v2-auth-rules-auth-rule-token-report",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Request a backtestpost",
+          "path": "/reference/post_v2-auth-rules-auth-rule-token-backtests",
+          "fullUrl": "https://docs.lithic.com/reference/post_v2-auth-rules-auth-rule-token-backtests",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Retrieve backtest resultsget",
+          "path": "/reference/get_v2-auth-rules-auth-rule-token-backtests-auth-rule-backtest-token",
+          "fullUrl": "https://docs.lithic.com/reference/get_v2-auth-rules-auth-rule-token-backtests-auth-rule-backtest-token",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Calculated Feature valuesget",
+          "path": "/reference/get_v2-auth-rules-auth-rule-token-features",
+          "fullUrl": "https://docs.lithic.com/reference/get_v2-auth-rules-auth-rule-token-features",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List rule evaluation resultsget",
+          "path": "/reference/get_v2-auth-rules-results",
+          "fullUrl": "https://docs.lithic.com/reference/get_v2-auth-rules-results",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Balance",
+          "path": "/reference/getbalances",
+          "fullUrl": "https://docs.lithic.com/reference/getbalances",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get balancesget",
+          "path": "/reference/getbalance",
+          "fullUrl": "https://docs.lithic.com/reference/getbalance",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Book Transfer",
+          "path": "/reference/posttransfer",
+          "fullUrl": "https://docs.lithic.com/reference/posttransfer",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List book transfersget",
+          "path": "/reference/getbooktransfers",
+          "fullUrl": "https://docs.lithic.com/reference/getbooktransfers",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Create book transferpost",
+          "path": "/reference/postbooktransfers",
+          "fullUrl": "https://docs.lithic.com/reference/postbooktransfers",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get book transfer by tokenget",
+          "path": "/reference/getbooktransfer",
+          "fullUrl": "https://docs.lithic.com/reference/getbooktransfer",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Reverse book transferpost",
+          "path": "/reference/reversebooktransfer",
+          "fullUrl": "https://docs.lithic.com/reference/reversebooktransfer",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Retry book transferpost",
+          "path": "/reference/retrybooktransfer",
+          "fullUrl": "https://docs.lithic.com/reference/retrybooktransfer",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Card",
+          "path": "/reference/getcardprograms",
+          "fullUrl": "https://docs.lithic.com/reference/getcardprograms",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get card programget",
+          "path": "/reference/getcardprogram",
+          "fullUrl": "https://docs.lithic.com/reference/getcardprogram",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List cardsget",
+          "path": "/reference/getcards",
+          "fullUrl": "https://docs.lithic.com/reference/getcards",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Create cardpost",
+          "path": "/reference/postcards",
+          "fullUrl": "https://docs.lithic.com/reference/postcards",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Search for card by PANpost",
+          "path": "/reference/searchcardbypan",
+          "fullUrl": "https://docs.lithic.com/reference/searchcardbypan",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get cardget",
+          "path": "/reference/getcardbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/getcardbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Update cardpatch",
+          "path": "/reference/patchcardbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/patchcardbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get card balancesget",
+          "path": "/reference/getcardbalance",
+          "fullUrl": "https://docs.lithic.com/reference/getcardbalance",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List card financial transactionsget",
+          "path": "/reference/getcardfinancialtransactions",
+          "fullUrl": "https://docs.lithic.com/reference/getcardfinancialtransactions",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get card financial transactionget",
+          "path": "/reference/getcardfinancialtransactionbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/getcardfinancialtransactionbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Provision card (Digital Wallet)post",
+          "path": "/reference/postcardprovision",
+          "fullUrl": "https://docs.lithic.com/reference/postcardprovision",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Web Push Provision card (Digital Wallet)post",
+          "path": "/reference/postcardwebprovision",
+          "fullUrl": "https://docs.lithic.com/reference/postcardwebprovision",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Reissue physical cardpost",
+          "path": "/reference/postcardreissue",
+          "fullUrl": "https://docs.lithic.com/reference/postcardreissue",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Renew a cardpost",
+          "path": "/reference/postcardrenew",
+          "fullUrl": "https://docs.lithic.com/reference/postcardrenew",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Convert virtual to physical cardpost",
+          "path": "/reference/postconvertphysical",
+          "fullUrl": "https://docs.lithic.com/reference/postconvertphysical",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get card's available spend limitget",
+          "path": "/reference/getcardspendlimits",
+          "fullUrl": "https://docs.lithic.com/reference/getcardspendlimits",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Embedded card UIget",
+          "path": "/reference/getembedcard",
+          "fullUrl": "https://docs.lithic.com/reference/getembedcard",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Card Bulk Orders",
+          "path": "/reference/getcardbulkorders",
+          "fullUrl": "https://docs.lithic.com/reference/getcardbulkorders",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Create bulk orderpost",
+          "path": "/reference/postcardbulkorder",
+          "fullUrl": "https://docs.lithic.com/reference/postcardbulkorder",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get bulk orderget",
+          "path": "/reference/getcardbulkorder",
+          "fullUrl": "https://docs.lithic.com/reference/getcardbulkorder",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Update bulk orderpatch",
+          "path": "/reference/patchcardbulkorder",
+          "fullUrl": "https://docs.lithic.com/reference/patchcardbulkorder",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Chargebacks",
+          "path": "/reference/getdisputes",
+          "fullUrl": "https://docs.lithic.com/reference/getdisputes",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Initiate disputepost",
+          "path": "/reference/postdisputes",
+          "fullUrl": "https://docs.lithic.com/reference/postdisputes",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Withdraw disputedel",
+          "path": "/reference/deletedisputebytoken",
+          "fullUrl": "https://docs.lithic.com/reference/deletedisputebytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get disputeget",
+          "path": "/reference/getdisputebytoken",
+          "fullUrl": "https://docs.lithic.com/reference/getdisputebytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Update disputepatch",
+          "path": "/reference/updatedisputebytoken",
+          "fullUrl": "https://docs.lithic.com/reference/updatedisputebytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List dispute evidencesget",
+          "path": "/reference/getdisputeevidences",
+          "fullUrl": "https://docs.lithic.com/reference/getdisputeevidences",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Initiate dispute evidence uploadpost",
+          "path": "/reference/postevidencedocument",
+          "fullUrl": "https://docs.lithic.com/reference/postevidencedocument",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Withdraw dispute evidencedel",
+          "path": "/reference/deletedisputeevidencebytoken",
+          "fullUrl": "https://docs.lithic.com/reference/deletedisputeevidencebytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get dispute evidenceget",
+          "path": "/reference/getdisputeevidencebytoken",
+          "fullUrl": "https://docs.lithic.com/reference/getdisputeevidencebytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Credit Product",
+          "path": "/reference/getextendedcredit",
+          "fullUrl": "https://docs.lithic.com/reference/getextendedcredit",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get Credit Product Prime Ratesget",
+          "path": "/reference/getprimerates",
+          "fullUrl": "https://docs.lithic.com/reference/getprimerates",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Post Credit Product Prime Ratepost",
+          "path": "/reference/createprimerates",
+          "fullUrl": "https://docs.lithic.com/reference/createprimerates",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Event",
+          "path": "/reference/geteventsubscriptions",
+          "fullUrl": "https://docs.lithic.com/reference/geteventsubscriptions",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Create event subscriptionpost",
+          "path": "/reference/createeventsubscription",
+          "fullUrl": "https://docs.lithic.com/reference/createeventsubscription",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Delete event subscriptiondel",
+          "path": "/reference/deleteeventsubscription",
+          "fullUrl": "https://docs.lithic.com/reference/deleteeventsubscription",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get event subscriptionget",
+          "path": "/reference/geteventsubscription",
+          "fullUrl": "https://docs.lithic.com/reference/geteventsubscription",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Update event subscriptionpatch",
+          "path": "/reference/updateeventsubscription",
+          "fullUrl": "https://docs.lithic.com/reference/updateeventsubscription",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List message attempts for an event subscriptionget",
+          "path": "/reference/getmessageattemptsforeventsubscription",
+          "fullUrl": "https://docs.lithic.com/reference/getmessageattemptsforeventsubscription",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Resend failed messagespost",
+          "path": "/reference/recovereventsubscription",
+          "fullUrl": "https://docs.lithic.com/reference/recovereventsubscription",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Replay missing messagespost",
+          "path": "/reference/replaymissingeventsubscription",
+          "fullUrl": "https://docs.lithic.com/reference/replaymissingeventsubscription",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get event subscription secretget",
+          "path": "/reference/geteventsubscriptionsecret",
+          "fullUrl": "https://docs.lithic.com/reference/geteventsubscriptionsecret",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Rotate event subscription secretpost",
+          "path": "/reference/rotateeventsubscriptionsecret",
+          "fullUrl": "https://docs.lithic.com/reference/rotateeventsubscriptionsecret",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List eventsget",
+          "path": "/reference/getevents",
+          "fullUrl": "https://docs.lithic.com/reference/getevents",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get eventget",
+          "path": "/reference/getevent",
+          "fullUrl": "https://docs.lithic.com/reference/getevent",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List message attempts for an eventget",
+          "path": "/reference/getmessageattemptsforevent",
+          "fullUrl": "https://docs.lithic.com/reference/getmessageattemptsforevent",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Resend eventpost",
+          "path": "/reference/resendevent",
+          "fullUrl": "https://docs.lithic.com/reference/resendevent",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Send event type example messagepost",
+          "path": "/reference/sendeventsubscriptionexample",
+          "fullUrl": "https://docs.lithic.com/reference/sendeventsubscriptionexample",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Managed Disputes",
+          "path": "/reference/getdisputesv2",
+          "fullUrl": "https://docs.lithic.com/reference/getdisputesv2",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Retrieve a disputeget",
+          "path": "/reference/getdisputebytokenv2",
+          "fullUrl": "https://docs.lithic.com/reference/getdisputebytokenv2",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "External Bank Account",
+          "path": "/reference/searchexternalbankaccounts",
+          "fullUrl": "https://docs.lithic.com/reference/searchexternalbankaccounts",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Create external bank accountpost",
+          "path": "/reference/createexternalbankaccount",
+          "fullUrl": "https://docs.lithic.com/reference/createexternalbankaccount",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get external bank account by tokenget",
+          "path": "/reference/getexternalbankaccountbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/getexternalbankaccountbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Update external bank accountpatch",
+          "path": "/reference/patchexternalbankaccountbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/patchexternalbankaccountbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Verify external bank account via micro deposit amountspost",
+          "path": "/reference/verifyexternalbankaccountbymicrodeposits",
+          "fullUrl": "https://docs.lithic.com/reference/verifyexternalbankaccountbymicrodeposits",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Retry external bank account via micro depositpost",
+          "path": "/reference/retrymicrodeposit",
+          "fullUrl": "https://docs.lithic.com/reference/retrymicrodeposit",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Retry external bank account via prenotepost",
+          "path": "/reference/retryprenote",
+          "fullUrl": "https://docs.lithic.com/reference/retryprenote",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Set verification methodpost",
+          "path": "/reference/setverificationmethod",
+          "fullUrl": "https://docs.lithic.com/reference/setverificationmethod",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Unpause external bank accountpost",
+          "path": "/reference/unpauseexternalbankaccount",
+          "fullUrl": "https://docs.lithic.com/reference/unpauseexternalbankaccount",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "External Payments",
+          "path": "/reference/getexternalpayments",
+          "fullUrl": "https://docs.lithic.com/reference/getexternalpayments",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Create external paymentpost",
+          "path": "/reference/postexternalpayments",
+          "fullUrl": "https://docs.lithic.com/reference/postexternalpayments",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get external paymentget",
+          "path": "/reference/getexternalpayment",
+          "fullUrl": "https://docs.lithic.com/reference/getexternalpayment",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Settle external paymentpost",
+          "path": "/reference/settleexternalpayment",
+          "fullUrl": "https://docs.lithic.com/reference/settleexternalpayment",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Release external paymentpost",
+          "path": "/reference/releaseexternalpayment",
+          "fullUrl": "https://docs.lithic.com/reference/releaseexternalpayment",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Cancel external paymentpost",
+          "path": "/reference/cancelexternalpayment",
+          "fullUrl": "https://docs.lithic.com/reference/cancelexternalpayment",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Reverse external paymentpost",
+          "path": "/reference/reverseexternalpayment",
+          "fullUrl": "https://docs.lithic.com/reference/reverseexternalpayment",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Financial Account",
+          "path": "/reference/getfinancialaccounts",
+          "fullUrl": "https://docs.lithic.com/reference/getfinancialaccounts",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Create financial accountpost",
+          "path": "/reference/createfinancialaccount",
+          "fullUrl": "https://docs.lithic.com/reference/createfinancialaccount",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get financial accountget",
+          "path": "/reference/getfinancialaccountbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/getfinancialaccountbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Update financial accountpatch",
+          "path": "/reference/updatefinancialaccountbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/updatefinancialaccountbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get account credit configurationget",
+          "path": "/reference/getaccountcreditconfiguration",
+          "fullUrl": "https://docs.lithic.com/reference/getaccountcreditconfiguration",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Update account credit configurationpatch",
+          "path": "/reference/patchaccountcreditconfiguration",
+          "fullUrl": "https://docs.lithic.com/reference/patchaccountcreditconfiguration",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List financial transactionsget",
+          "path": "/reference/getfinancialtransactions",
+          "fullUrl": "https://docs.lithic.com/reference/getfinancialtransactions",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get financial transactionget",
+          "path": "/reference/getfinancialtransactionbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/getfinancialtransactionbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Register Account Numberpost",
+          "path": "/reference/registeraccountnumber",
+          "fullUrl": "https://docs.lithic.com/reference/registeraccountnumber",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Update financial account statuspost",
+          "path": "/reference/updatefinancialaccountstatus",
+          "fullUrl": "https://docs.lithic.com/reference/updatefinancialaccountstatus",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List Account Activityget",
+          "path": "/reference/listaccountactivity",
+          "fullUrl": "https://docs.lithic.com/reference/listaccountactivity",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get Single Transaction from Account Activityget",
+          "path": "/reference/getaccountactivity",
+          "fullUrl": "https://docs.lithic.com/reference/getaccountactivity",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Fraud Report",
+          "path": "/reference/getfraudreport",
+          "fullUrl": "https://docs.lithic.com/reference/getfraudreport",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Create or update a fraud report for a transactionpost",
+          "path": "/reference/createupdatefraudreport",
+          "fullUrl": "https://docs.lithic.com/reference/createupdatefraudreport",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Funding Events",
+          "path": "/reference/getfundingevents",
+          "fullUrl": "https://docs.lithic.com/reference/getfundingevents",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get funding event by IDget",
+          "path": "/reference/getfundingeventbyid",
+          "fullUrl": "https://docs.lithic.com/reference/getfundingeventbyid",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get funding event detailsget",
+          "path": "/reference/getfundingeventdetailsbyid",
+          "fullUrl": "https://docs.lithic.com/reference/getfundingeventdetailsbyid",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Management Operations",
+          "path": "/reference/getmanagementoperations",
+          "fullUrl": "https://docs.lithic.com/reference/getmanagementoperations",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Create management operationpost",
+          "path": "/reference/postmanagementoperations",
+          "fullUrl": "https://docs.lithic.com/reference/postmanagementoperations",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get management operationget",
+          "path": "/reference/getmanagementoperation",
+          "fullUrl": "https://docs.lithic.com/reference/getmanagementoperation",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Reverse management operationpost",
+          "path": "/reference/reversemanagementoperation",
+          "fullUrl": "https://docs.lithic.com/reference/reversemanagementoperation",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Network Program",
+          "path": "/reference/getnetworkprograms",
+          "fullUrl": "https://docs.lithic.com/reference/getnetworkprograms",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get network programget",
+          "path": "/reference/getnetworkprogram",
+          "fullUrl": "https://docs.lithic.com/reference/getnetworkprogram",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Payment",
+          "path": "/reference/searchpayments",
+          "fullUrl": "https://docs.lithic.com/reference/searchpayments",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Create paymentpost",
+          "path": "/reference/createpayment",
+          "fullUrl": "https://docs.lithic.com/reference/createpayment",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get payment by tokenget",
+          "path": "/reference/getpaymentbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/getpaymentbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Retry paymentpost",
+          "path": "/reference/retrypayment",
+          "fullUrl": "https://docs.lithic.com/reference/retrypayment",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate receiptpost",
+          "path": "/reference/simulatepaymentsreceipt",
+          "fullUrl": "https://docs.lithic.com/reference/simulatepaymentsreceipt",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate release paymentpost",
+          "path": "/reference/simulatepaymentsrelease",
+          "fullUrl": "https://docs.lithic.com/reference/simulatepaymentsrelease",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate return paymentpost",
+          "path": "/reference/simulatepaymentsreturn",
+          "fullUrl": "https://docs.lithic.com/reference/simulatepaymentsreturn",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate payment lifecycle eventpost",
+          "path": "/reference/simulatepaymentaction",
+          "fullUrl": "https://docs.lithic.com/reference/simulatepaymentaction",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Return paymentpost",
+          "path": "/reference/returnpayment",
+          "fullUrl": "https://docs.lithic.com/reference/returnpayment",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Responder Endpoints",
+          "path": "/reference/deleteresponderendpoint",
+          "fullUrl": "https://docs.lithic.com/reference/deleteresponderendpoint",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Check the status of a responder endpointget",
+          "path": "/reference/getresponderendpoints",
+          "fullUrl": "https://docs.lithic.com/reference/getresponderendpoints",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Enroll a responder endpointpost",
+          "path": "/reference/postresponderendpoints",
+          "fullUrl": "https://docs.lithic.com/reference/postresponderendpoints",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Settlement Report",
+          "path": "/reference/getsettlementdetails",
+          "fullUrl": "https://docs.lithic.com/reference/getsettlementdetails",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get settlement summaryget",
+          "path": "/reference/getsummary",
+          "fullUrl": "https://docs.lithic.com/reference/getsummary",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List network totalsget",
+          "path": "/reference/listnetworktotals",
+          "fullUrl": "https://docs.lithic.com/reference/listnetworktotals",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get network totalget",
+          "path": "/reference/getnetworktotal",
+          "fullUrl": "https://docs.lithic.com/reference/getnetworktotal",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Statements",
+          "path": "/reference/getstatements",
+          "fullUrl": "https://docs.lithic.com/reference/getstatements",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get statement by tokenget",
+          "path": "/reference/getstatement",
+          "fullUrl": "https://docs.lithic.com/reference/getstatement",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List line items for a statementget",
+          "path": "/reference/getstatementlineitems",
+          "fullUrl": "https://docs.lithic.com/reference/getstatementlineitems",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List loan tapesget",
+          "path": "/reference/getloantapes",
+          "fullUrl": "https://docs.lithic.com/reference/getloantapes",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get loan tape by tokenget",
+          "path": "/reference/getloantape",
+          "fullUrl": "https://docs.lithic.com/reference/getloantape",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Status",
+          "path": "/reference/getstatus",
+          "fullUrl": "https://docs.lithic.com/reference/getstatus",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Tokenization",
+          "path": "/reference/getdigitalcardart",
+          "fullUrl": "https://docs.lithic.com/reference/getdigitalcardart",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get digital card art by tokenget",
+          "path": "/reference/getdigitalcardartbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/getdigitalcardartbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate a card's tokenizationpost",
+          "path": "/reference/postsimulatetokenizations",
+          "fullUrl": "https://docs.lithic.com/reference/postsimulatetokenizations",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Retrieve the Tokenization Decisioning HMAC secret keyget",
+          "path": "/reference/gettokenizationdecisioningsecret",
+          "fullUrl": "https://docs.lithic.com/reference/gettokenizationdecisioningsecret",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Rotate the Tokenization Decisioning HMAC secret keypost",
+          "path": "/reference/rotatetokenizationdecisioningsecret",
+          "fullUrl": "https://docs.lithic.com/reference/rotatetokenizationdecisioningsecret",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get a card's tokenizationsget",
+          "path": "/reference/gettokenizations",
+          "fullUrl": "https://docs.lithic.com/reference/gettokenizations",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get a single card tokenizationget",
+          "path": "/reference/gettokenization",
+          "fullUrl": "https://docs.lithic.com/reference/gettokenization",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Pause a card tokenizationpost",
+          "path": "/reference/pausetokenization",
+          "fullUrl": "https://docs.lithic.com/reference/pausetokenization",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Unpause a card tokenizationpost",
+          "path": "/reference/unpausetokenization",
+          "fullUrl": "https://docs.lithic.com/reference/unpausetokenization",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Deactivate a card tokenizationpost",
+          "path": "/reference/deactivatetokenization",
+          "fullUrl": "https://docs.lithic.com/reference/deactivatetokenization",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Activate a card tokenizationpost",
+          "path": "/reference/activatetokenization",
+          "fullUrl": "https://docs.lithic.com/reference/activatetokenization",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Resend activation code for a card tokenizationpost",
+          "path": "/reference/resendactivationcodefortokenization",
+          "fullUrl": "https://docs.lithic.com/reference/resendactivationcodefortokenization",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Update digital card art for a card tokenizationpost",
+          "path": "/reference/updatedigitalcardartfortokenization",
+          "fullUrl": "https://docs.lithic.com/reference/updatedigitalcardartfortokenization",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Tokenization Decisioning Requestpost",
+          "path": "/reference/post_tokenization-decisioning-request",
+          "fullUrl": "https://docs.lithic.com/reference/post_tokenization-decisioning-request",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Transfer Limits",
+          "path": "/reference/gettransferlimits",
+          "fullUrl": "https://docs.lithic.com/reference/gettransferlimits",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Transaction",
+          "path": "/reference/transaction",
+          "fullUrl": "https://docs.lithic.com/reference/transaction",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get card transactionget",
+          "path": "/reference/gettransactionbytoken",
+          "fullUrl": "https://docs.lithic.com/reference/gettransactionbytoken",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List card transactionsget",
+          "path": "/reference/gettransactions",
+          "fullUrl": "https://docs.lithic.com/reference/gettransactions",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List enhanced commercial dataget",
+          "path": "/reference/listenhancedtransactiondata",
+          "fullUrl": "https://docs.lithic.com/reference/listenhancedtransactiondata",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Expire an authorizationpost",
+          "path": "/reference/expireauthorization",
+          "fullUrl": "https://docs.lithic.com/reference/expireauthorization",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get enhanced commercial dataget",
+          "path": "/reference/getenhancedtransactiondata",
+          "fullUrl": "https://docs.lithic.com/reference/getenhancedtransactiondata",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate authorization advicepost",
+          "path": "/reference/postsimulateauthorizationadvice",
+          "fullUrl": "https://docs.lithic.com/reference/postsimulateauthorizationadvice",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate authorizationpost",
+          "path": "/reference/postsimulateauthorize",
+          "fullUrl": "https://docs.lithic.com/reference/postsimulateauthorize",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate clearingpost",
+          "path": "/reference/postsimulateclearing",
+          "fullUrl": "https://docs.lithic.com/reference/postsimulateclearing",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate credit authorization advicepost",
+          "path": "/reference/postsimulatecreditauthorizationadvice",
+          "fullUrl": "https://docs.lithic.com/reference/postsimulatecreditauthorizationadvice",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate returnpost",
+          "path": "/reference/postsimulatereturn",
+          "fullUrl": "https://docs.lithic.com/reference/postsimulatereturn",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate return reversalpost",
+          "path": "/reference/postsimulatereturnreversal",
+          "fullUrl": "https://docs.lithic.com/reference/postsimulatereturnreversal",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Simulate voidpost",
+          "path": "/reference/postsimulatevoid",
+          "fullUrl": "https://docs.lithic.com/reference/postsimulatevoid",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Event Types",
+          "path": "/reference/post_account-holder-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_account-holder-created",
+          "level": 1,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "account_holder.updatedpost",
+          "path": "/reference/post_account-holder-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_account-holder-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "account_holder.verificationpost",
+          "path": "/reference/post_account-holder-verification",
+          "fullUrl": "https://docs.lithic.com/reference/post_account-holder-verification",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "account_holder_document.updatedpost",
+          "path": "/reference/post_account-holder-document-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_account-holder-document-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "auth_rules.backtest_report.createdpost",
+          "path": "/reference/post_auth-rules-backtest-report-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_auth-rules-backtest-report-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "balance.updatedpost",
+          "path": "/reference/post_balance-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_balance-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "book_transfer_transaction.createdpost",
+          "path": "/reference/post_book-transfer-transaction-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_book-transfer-transaction-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "book_transfer_transaction.updatedpost",
+          "path": "/reference/post_book-transfer-transaction-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_book-transfer-transaction-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "card.createdpost",
+          "path": "/reference/post_card-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_card-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "card.updatedpost",
+          "path": "/reference/post_card-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_card-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "card.convertedpost",
+          "path": "/reference/post_card-converted",
+          "fullUrl": "https://docs.lithic.com/reference/post_card-converted",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "card.renewedpost",
+          "path": "/reference/post_card-renewed",
+          "fullUrl": "https://docs.lithic.com/reference/post_card-renewed",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "card.reissuedpost",
+          "path": "/reference/post_card-reissued",
+          "fullUrl": "https://docs.lithic.com/reference/post_card-reissued",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "card.shippedpost",
+          "path": "/reference/post_card-shipped",
+          "fullUrl": "https://docs.lithic.com/reference/post_card-shipped",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "card_transaction.updatedpost",
+          "path": "/reference/post_card-transaction-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_card-transaction-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "card_transaction.enhanced_data.createdpost",
+          "path": "/reference/post_card-transaction-enhanced-data-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_card-transaction-enhanced-data-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "card_transaction.enhanced_data.updatedpost",
+          "path": "/reference/post_card-transaction-enhanced-data-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_card-transaction-enhanced-data-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "digital_wallet.tokenization_approval_requestpost",
+          "path": "/reference/post_digital-wallet-tokenization-approval-request",
+          "fullUrl": "https://docs.lithic.com/reference/post_digital-wallet-tokenization-approval-request",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "digital_wallet.tokenization_resultpost",
+          "path": "/reference/post_digital-wallet-tokenization-result",
+          "fullUrl": "https://docs.lithic.com/reference/post_digital-wallet-tokenization-result",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "digital_wallet.tokenization_two_factor_authentication_codepost",
+          "path": "/reference/post_digital-wallet-tokenization-two-factor-authentication-code",
+          "fullUrl": "https://docs.lithic.com/reference/post_digital-wallet-tokenization-two-factor-authentication-code",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "digital_wallet.tokenization_two_factor_authentication_code_sentpost",
+          "path": "/reference/post_digital-wallet-tokenization-two-factor-authentication-code-sent",
+          "fullUrl": "https://docs.lithic.com/reference/post_digital-wallet-tokenization-two-factor-authentication-code-sent",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "digital_wallet.tokenization_updatedpost",
+          "path": "/reference/post_digital-wallet-tokenization-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_digital-wallet-tokenization-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "dispute.updatedpost",
+          "path": "/reference/post_dispute-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_dispute-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "dispute_evidence.upload_failedpost",
+          "path": "/reference/post_dispute-evidence-upload-failed",
+          "fullUrl": "https://docs.lithic.com/reference/post_dispute-evidence-upload-failed",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "external_bank_account.createdpost",
+          "path": "/reference/post_external-bank-account-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_external-bank-account-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "external_bank_account.updatedpost",
+          "path": "/reference/post_external-bank-account-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_external-bank-account-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "external_payment.createdpost",
+          "path": "/reference/post_external-payment-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_external-payment-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "external_payment.updatedpost",
+          "path": "/reference/post_external-payment-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_external-payment-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "financial_account.createdpost",
+          "path": "/reference/post_financial-account-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_financial-account-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "financial_account.updatedpost",
+          "path": "/reference/post_financial-account-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_financial-account-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "funding_event.createdpost",
+          "path": "/reference/post_funding-event-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_funding-event-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "loan_tape.createdpost",
+          "path": "/reference/post_loan-tape-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_loan-tape-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "loan_tape.updatedpost",
+          "path": "/reference/post_loan-tape-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_loan-tape-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "management_operation.createdpost",
+          "path": "/reference/post_management-operation-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_management-operation-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "management_operation.updatedpost",
+          "path": "/reference/post_management-operation-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_management-operation-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "internal_transaction.createdpost",
+          "path": "/reference/post_internal-transaction-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_internal-transaction-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "internal_transaction.updatedpost",
+          "path": "/reference/post_internal-transaction-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_internal-transaction-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "network_total.createdpost",
+          "path": "/reference/post_network-total-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_network-total-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "network_total.updatedpost",
+          "path": "/reference/post_network-total-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_network-total-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "payment_transaction.createdpost",
+          "path": "/reference/post_payment-transaction-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_payment-transaction-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "payment_transaction.updatedpost",
+          "path": "/reference/post_payment-transaction-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_payment-transaction-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "settlement_report.updatedpost",
+          "path": "/reference/post_settlement-report-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_settlement-report-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "statements.createdpost",
+          "path": "/reference/post_statements-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_statements-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "three_ds_authentication.createdpost",
+          "path": "/reference/post_three-ds-authentication-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_three-ds-authentication-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "three_ds_authentication.updatedpost",
+          "path": "/reference/post_three-ds-authentication-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_three-ds-authentication-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "three_ds_authentication.challengepost",
+          "path": "/reference/post_three-ds-authentication-challenge",
+          "fullUrl": "https://docs.lithic.com/reference/post_three-ds-authentication-challenge",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "tokenization.approval_requestpost",
+          "path": "/reference/post_tokenization-approval-request",
+          "fullUrl": "https://docs.lithic.com/reference/post_tokenization-approval-request",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "tokenization.resultpost",
+          "path": "/reference/post_tokenization-result",
+          "fullUrl": "https://docs.lithic.com/reference/post_tokenization-result",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "tokenization.two_factor_authentication_codepost",
+          "path": "/reference/post_tokenization-two-factor-authentication-code",
+          "fullUrl": "https://docs.lithic.com/reference/post_tokenization-two-factor-authentication-code",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "tokenization.two_factor_authentication_code_sentpost",
+          "path": "/reference/post_tokenization-two-factor-authentication-code-sent",
+          "fullUrl": "https://docs.lithic.com/reference/post_tokenization-two-factor-authentication-code-sent",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "tokenization.updatedpost",
+          "path": "/reference/post_tokenization-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_tokenization-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "dispute_transaction.createdpost",
+          "path": "/reference/post_dispute-transaction-created",
+          "fullUrl": "https://docs.lithic.com/reference/post_dispute-transaction-created",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "dispute_transaction.updatedpost",
+          "path": "/reference/post_dispute-transaction-updated",
+          "fullUrl": "https://docs.lithic.com/reference/post_dispute-transaction-updated",
+          "level": 2,
+          "group": "Lithic Developer API"
+        }
+      ]
+    },
+    {
+      "name": "Changelog",
+      "pages": [
+        {
+          "title": "Structured Amounts Object Now Available In Asa Requests",
+          "path": "/changelog/structured-amounts-object-now-available-in-asa-requests",
+          "fullUrl": "https://docs.lithic.com/changelog/structured-amounts-object-now-available-in-asa-requests",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Auth Rule Evaluation Results Now Available Via Api",
+          "path": "/changelog/auth-rule-evaluation-results-now-available-via-api",
+          "fullUrl": "https://docs.lithic.com/changelog/auth-rule-evaluation-results-now-available-via-api",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Naics",
+          "path": "/changelog/naics",
+          "fullUrl": "https://docs.lithic.com/changelog/naics",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Merchant Fields In Sandbox",
+          "path": "/changelog/new-merchant-fields-in-sandbox",
+          "fullUrl": "https://docs.lithic.com/changelog/new-merchant-fields-in-sandbox",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Payment Allocation Details Added To Loan Tape Api",
+          "path": "/changelog/payment-allocation-details-added-to-loan-tape-api",
+          "fullUrl": "https://docs.lithic.com/changelog/payment-allocation-details-added-to-loan-tape-api",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Card Updated Event",
+          "path": "/changelog/new-card-updated-event",
+          "fullUrl": "https://docs.lithic.com/changelog/new-card-updated-event",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Idempotency For Create Card",
+          "path": "/changelog/idempotency-for-create-card",
+          "fullUrl": "https://docs.lithic.com/changelog/idempotency-for-create-card",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Tags Field Added To Card Transactions 1",
+          "path": "/changelog/new-tags-field-added-to-card-transactions-1",
+          "fullUrl": "https://docs.lithic.com/changelog/new-tags-field-added-to-card-transactions-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Added User Defined Status To Financial Accounts",
+          "path": "/changelog/added-user_defined_status-to-financial-accounts",
+          "fullUrl": "https://docs.lithic.com/changelog/added-user_defined_status-to-financial-accounts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Detailed Transaction Breakout In Statements",
+          "path": "/changelog/detailed-transaction-breakout-in-statements",
+          "fullUrl": "https://docs.lithic.com/changelog/detailed-transaction-breakout-in-statements",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Custom Ach Holds Added",
+          "path": "/changelog/custom-ach-holds-added",
+          "fullUrl": "https://docs.lithic.com/changelog/custom-ach-holds-added",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Transfer Limits Api Now Available",
+          "path": "/changelog/get-transfer-limits-api-now-available",
+          "fullUrl": "https://docs.lithic.com/changelog/get-transfer-limits-api-now-available",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Ach Rules Now Available In Lithic Dashboard",
+          "path": "/changelog/ach-rules-now-available-in-lithic-dashboard",
+          "fullUrl": "https://docs.lithic.com/changelog/ach-rules-now-available-in-lithic-dashboard",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Decline Reason Added Auth Rule",
+          "path": "/changelog/new-decline-reason-added-auth_rule",
+          "fullUrl": "https://docs.lithic.com/changelog/new-decline-reason-added-auth_rule",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Bulk Shipping 2",
+          "path": "/changelog/bulk-shipping-2",
+          "fullUrl": "https://docs.lithic.com/changelog/bulk-shipping-2",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Deprecating Aggregate Balance Endpoints",
+          "path": "/changelog/deprecating-aggregate-balance-endpoints",
+          "fullUrl": "https://docs.lithic.com/changelog/deprecating-aggregate-balance-endpoints",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Added Ach Events To Auth Rules Api",
+          "path": "/changelog/added-ach-events-to-auth-rules-api",
+          "fullUrl": "https://docs.lithic.com/changelog/added-ach-events-to-auth-rules-api",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "View Velocity Limit Progress In The Lithic Dashboard",
+          "path": "/changelog/view-velocity-limit-progress-in-the-lithic-dashboard",
+          "fullUrl": "https://docs.lithic.com/changelog/view-velocity-limit-progress-in-the-lithic-dashboard",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Added Payment Returns Api",
+          "path": "/changelog/added-payment-returns-api",
+          "fullUrl": "https://docs.lithic.com/changelog/added-payment-returns-api",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Removed Duplicate Credit Account State Fields",
+          "path": "/changelog/removed-duplicate-credit-account-state-fields",
+          "fullUrl": "https://docs.lithic.com/changelog/removed-duplicate-credit-account-state-fields",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "D 1",
+          "path": "/changelog/d-1",
+          "fullUrl": "https://docs.lithic.com/changelog/d-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Fraud Reporting Now Available In Lithic Dashboard",
+          "path": "/changelog/fraud-reporting-now-available-in-lithic-dashboard",
+          "fullUrl": "https://docs.lithic.com/changelog/fraud-reporting-now-available-in-lithic-dashboard",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Available Now Authorization Challenges",
+          "path": "/changelog/available-now-authorization-challenges",
+          "fullUrl": "https://docs.lithic.com/changelog/available-now-authorization-challenges",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Digital Wallet Card Provisioning Sdk Update",
+          "path": "/changelog/digital-wallet-card-provisioning-sdk-update",
+          "fullUrl": "https://docs.lithic.com/changelog/digital-wallet-card-provisioning-sdk-update",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Auto Collections Enabled For Credit Accounts",
+          "path": "/changelog/auto-collections-enabled-for-credit-accounts",
+          "fullUrl": "https://docs.lithic.com/changelog/auto-collections-enabled-for-credit-accounts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Asa Response Suspected Fraud",
+          "path": "/changelog/new-asa-response-suspected_fraud",
+          "fullUrl": "https://docs.lithic.com/changelog/new-asa-response-suspected_fraud",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Added Device Id To Tokenization Responses",
+          "path": "/changelog/added-device-id-to-tokenization-responses",
+          "fullUrl": "https://docs.lithic.com/changelog/added-device-id-to-tokenization-responses",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Making Dob Field Optional For External Bank Accounts",
+          "path": "/changelog/making-dob-field-optional-for-external-bank-accounts",
+          "fullUrl": "https://docs.lithic.com/changelog/making-dob-field-optional-for-external-bank-accounts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Custom Calendar Cycles Now Available For Velocity Limits",
+          "path": "/changelog/custom-calendar-cycles-now-available-for-velocity-limits",
+          "fullUrl": "https://docs.lithic.com/changelog/custom-calendar-cycles-now-available-for-velocity-limits",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Business Accout Binding For Authorization Rules",
+          "path": "/changelog/business-accout-binding-for-authorization-rules",
+          "fullUrl": "https://docs.lithic.com/changelog/business-accout-binding-for-authorization-rules",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Mobile Device Info For 3ds Authentications",
+          "path": "/changelog/new-mobile-device-info-for-3ds-authentications",
+          "fullUrl": "https://docs.lithic.com/changelog/new-mobile-device-info-for-3ds-authentications",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Paymenttype Added To Ach Payments",
+          "path": "/changelog/paymenttype-added-to-ach-payments",
+          "fullUrl": "https://docs.lithic.com/changelog/paymenttype-added-to-ach-payments",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Challenge Status Now Available In 3ds Authentication Responses",
+          "path": "/changelog/challenge-status-now-available-in-3ds-authentication-responses",
+          "fullUrl": "https://docs.lithic.com/changelog/challenge-status-now-available-in-3ds-authentication-responses",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Transaction Initiator Field Available In Asa",
+          "path": "/changelog/new-transaction-initiator-field-available-in-asa",
+          "fullUrl": "https://docs.lithic.com/changelog/new-transaction-initiator-field-available-in-asa",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Account Activity Api Transactions Family Attribute",
+          "path": "/changelog/new-account-activity-api-transactions-family-attribute",
+          "fullUrl": "https://docs.lithic.com/changelog/new-account-activity-api-transactions-family-attribute",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Retrieve All Applicable Authorization Rules For A Card Or Account",
+          "path": "/changelog/retrieve-all-applicable-authorization-rules-for-a-card-or-account",
+          "fullUrl": "https://docs.lithic.com/changelog/retrieve-all-applicable-authorization-rules-for-a-card-or-account",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "New Enum Value In Settlement Api",
+          "path": "/changelog/new-enum-value-in-settlement-api",
+          "fullUrl": "https://docs.lithic.com/changelog/new-enum-value-in-settlement-api",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "July 14 2025 1",
+          "path": "/changelog/july-14-2025-1",
+          "fullUrl": "https://docs.lithic.com/changelog/july-14-2025-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "July 3 2025",
+          "path": "/changelog/july-3-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/july-3-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "June 25 2025",
+          "path": "/changelog/june-25-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/june-25-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "June 24 2025",
+          "path": "/changelog/june-24-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/june-24-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "June 12 2025",
+          "path": "/changelog/june-12-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/june-12-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "May 28 2025",
+          "path": "/changelog/may-28-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/may-28-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "May 13 2025 1",
+          "path": "/changelog/may-13-2025-1",
+          "fullUrl": "https://docs.lithic.com/changelog/may-13-2025-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "May 5 2025",
+          "path": "/changelog/may-5-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/may-5-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "April 17 2025",
+          "path": "/changelog/april-17-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/april-17-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "March 31 2025",
+          "path": "/changelog/march-31-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/march-31-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "March 26 2025",
+          "path": "/changelog/march-26-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/march-26-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "March 18 2025",
+          "path": "/changelog/march-18-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/march-18-2025",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "March 11 2025",
+          "path": "/changelog/march-11-2025",
+          "fullUrl": "https://docs.lithic.com/changelog/march-11-2025",
+          "level": 0,
+          "group": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,4 @@
-import { load, type CheerioAPI, type Cheerio } from "cheerio";
-import type { AnyNode } from "domhandler";
+import { load } from "cheerio";
 import {
   fetchPage,
   extractBalancedJson,
@@ -13,9 +12,6 @@ import {
   MIN_SIDEBAR_LINKS,
   MAX_GROUP_HEADING_LENGTH,
   MAX_DOM_WALK_DEPTH,
-  type ScrapePageItem,
-  type SidebarJsonPage,
-  type PageMeta,
 } from "./types";
 
 // ════════════════════════════════════════════════════════════
@@ -32,13 +28,13 @@ import {
 //  (real titles, groups, correct order).
 // ════════════════════════════════════════════════════════════
 
-export async function fetchSitemapUrls(baseUrl: string): Promise<Map<string, string[]>> {
-  const grouped = new Map<string, string[]>();
+export async function fetchSitemapUrls(baseUrl) {
+  const grouped = new Map();
   const xml = await fetchPage(`${baseUrl}/sitemap.xml`);
   if (!xml) return grouped;
 
   const $ = load(xml, { xml: true });
-  $("url > loc").each((_: number, el: AnyNode) => {
+  $("url > loc").each((_, el) => {
     const loc = $(el).text().trim();
     if (!loc) return;
     try {
@@ -48,7 +44,7 @@ export async function fetchSitemapUrls(baseUrl: string): Promise<Map<string, str
       const prefix = segments[0];
       if (prefix === "discuss") return; // Forum pages, not docs
       if (!grouped.has(prefix)) grouped.set(prefix, []);
-      grouped.get(prefix)!.push(loc);
+      grouped.get(prefix).push(loc);
     } catch (err) {
       console.warn(`[scraper] Bad sitemap URL: ${loc}`, err instanceof Error ? err.message : "");
     }
@@ -89,13 +85,7 @@ export async function fetchSitemapUrls(baseUrl: string): Promise<Map<string, str
  * sequentially via counter.n++ to preserve the sidebar's display order.
  * This is what makes pages appear in sidebar order instead of alphabetical.
  */
-function walkJsonSidebar(
-  nodes: SidebarJsonPage[],
-  lookup: Map<string, PageMeta>,
-  group: string,
-  depth: number,
-  counter: { n: number }
-): void {
+function walkJsonSidebar(nodes, lookup, group, depth, counter) {
   for (const node of nodes) {
     // ── CRASH GUARD ──────────────────────────────────────────
     // If the sidebar JSON is malformed and contains null entries
@@ -137,16 +127,13 @@ function walkJsonSidebar(
  *
  * The category.title becomes the group name shown in the sidebar.
  */
-function processSidebars(
-  sidebars: Record<string, unknown>,
-  result: Map<string, Map<string, PageMeta>>
-): void {
+function processSidebars(sidebars, result) {
   for (const [sectionKey, sectionPages] of Object.entries(sidebars)) {
     if (!Array.isArray(sectionPages)) continue;
 
-    const lookup = new Map<string, PageMeta>();
+    const lookup = new Map();
     const counter = { n: 0 };
-    for (const category of sectionPages as SidebarJsonPage[]) {
+    for (const category of sectionPages) {
       // ── CRASH GUARD ──────────────────────────────────────────
       // Same issue as walkJsonSidebar: the array might contain null
       // entries like [null, { title: "Auth" }]. Accessing category.title
@@ -166,15 +153,15 @@ function processSidebars(
   }
 }
 
-export function parseSidebarJson(html: string): Map<string, Map<string, PageMeta>> {
-  const result = new Map<string, Map<string, PageMeta>>();
+export function parseSidebarJson(html) {
+  const result = new Map();
   const $ = load(html);
 
   // Collect <script> tags that might contain sidebar JSON.
   // Skip tiny scripts (< MIN_SCRIPT_LENGTH chars) — they're analytics/tracking tags,
   // not sidebar data. Also must mention "sidebar" somewhere in the text.
-  const scripts: string[] = [];
-  $("script").each((_: number, el: AnyNode) => {
+  const scripts = [];
+  $("script").each((_, el) => {
     const text = $(el).text();
     if (text.length > MIN_SCRIPT_LENGTH && (text.includes("sidebars") || text.includes("sidebar"))) {
       scripts.push(text);
@@ -197,7 +184,7 @@ export function parseSidebarJson(html: string): Map<string, Map<string, PageMeta
       if (!jsonStr) continue;
 
       try {
-        const sidebars = JSON.parse(jsonStr) as Record<string, unknown>;
+        const sidebars = JSON.parse(jsonStr);
         processSidebars(sidebars, result);
         if (result.size > 0) return result; // Found valid sidebar data, stop searching
       } catch (err) {
@@ -210,13 +197,13 @@ export function parseSidebarJson(html: string): Map<string, Map<string, PageMeta
   // ReadMe uses Next.js, which serializes all page props into __NEXT_DATA__.
   // The sidebar data is nested inside at varying depths — findNestedKey() searches for it.
   $('script[id="__NEXT_DATA__"], script[type="application/json"]').each(
-    (_: number, el: AnyNode) => {
+    (_, el) => {
       if (result.size > 0) return; // Already found sidebar data from Method A
       try {
-        const data = JSON.parse($(el).text()) as Record<string, unknown>;
+        const data = JSON.parse($(el).text());
         const sidebars = findNestedKey(data, "sidebars", 0);
         if (sidebars && typeof sidebars === "object") {
-          processSidebars(sidebars as Record<string, unknown>, result);
+          processSidebars(sidebars, result);
         }
       } catch (err) {
         console.warn("[scraper] Failed to parse __NEXT_DATA__:", err instanceof Error ? err.message : "");
@@ -249,7 +236,7 @@ export function parseSidebarJson(html: string): Map<string, Map<string, PageMeta
 /** Finds the sidebar element by trying selectors from most specific to least.
  *  Returns the first element that has enough links to be a real sidebar
  *  (not just a header nav with 2 links). */
-export function findSidebarElement($: CheerioAPI): Cheerio<AnyNode> | null {
+export function findSidebarElement($) {
   for (const sel of SIDEBAR_SELECTORS) {
     const $el = $(sel);
     if ($el.length && $el.find("a").length > MIN_SIDEBAR_LINKS) return $el;
@@ -261,7 +248,7 @@ export function findSidebarElement($: CheerioAPI): Cheerio<AnyNode> | null {
  *  e.g. "/reference/get-users" → { prefix: "reference", slug: "get-users" }
  *  e.g. "https://docs.site.com/docs/auth/setup" → { prefix: "docs", slug: "auth/setup" }
  *  Returns null for hrefs that are too short or invalid. */
-function extractSlugAndPrefix(href: string): { prefix: string; slug: string } | null {
+function extractSlugAndPrefix(href) {
   try {
     let path = href;
     if (href.startsWith("http")) path = new URL(href).pathname;
@@ -273,8 +260,8 @@ function extractSlugAndPrefix(href: string): { prefix: string; slug: string } | 
   }
 }
 
-export function parseDomSidebar(html: string): Map<string, Map<string, PageMeta>> {
-  const result = new Map<string, Map<string, PageMeta>>();
+export function parseDomSidebar(html) {
+  const result = new Map();
   const $ = load(html);
 
   const $sidebar = findSidebarElement($);
@@ -282,7 +269,7 @@ export function parseDomSidebar(html: string): Map<string, Map<string, PageMeta>
 
   const counter = { n: 0 };
 
-  function walkDom($el: Cheerio<AnyNode>, group: string, depth: number): void {
+  function walkDom($el, group, depth) {
     // ── CRASH GUARD ──────────────────────────────────────────
     // Malformed HTML can create deeply nested DOM trees.
     // Without a depth limit, this recursive function would eventually
@@ -290,9 +277,9 @@ export function parseDomSidebar(html: string): Map<string, Map<string, PageMeta>
     // Normal sidebars are 3–5 levels deep; 50 is extremely generous.
     if (depth > MAX_DOM_WALK_DEPTH) return;
 
-    $el.children().each((_: number, child: AnyNode) => {
+    $el.children().each((_, child) => {
       const $c = $(child);
-      const tag = ((child as { tagName?: string }).tagName || "").toLowerCase();
+      const tag = (child.tagName || "").toLowerCase();
       const cls = ($c.attr("class") || "").toLowerCase();
 
       // Detect group headings — e.g. <h3>Getting Started</h3> or
@@ -317,7 +304,7 @@ export function parseDomSidebar(html: string): Map<string, Map<string, PageMeta>
           if (extracted) {
             const { prefix, slug } = extracted;
             if (!result.has(prefix)) result.set(prefix, new Map());
-            const lookup = result.get(prefix)!;
+            const lookup = result.get(prefix);
             // Only keep the first occurrence — duplicates happen when
             // the same link appears in both desktop and mobile sidebars
             if (!lookup.has(slug)) {
@@ -343,12 +330,12 @@ export function parseDomSidebar(html: string): Map<string, Map<string, PageMeta>
 // ════════════════════════════════════════════════════════════
 //  COMBINED SIDEBAR PARSER
 //
-//  This is the main entry point used by route.ts and builders.ts.
+//  This is the main entry point used by route.js and builders.js.
 //  Try JSON first (reliable on modern ReadMe/Next.js sites),
 //  fall back to DOM parsing (for older ReadMe sites).
 // ════════════════════════════════════════════════════════════
 
-export function parseSidebarLookups(html: string): Map<string, Map<string, PageMeta>> {
+export function parseSidebarLookups(html) {
   const lookups = parseSidebarJson(html);
   if (lookups.size > 0) return lookups;
   return parseDomSidebar(html);
@@ -370,10 +357,7 @@ export function parseSidebarLookups(html: string): Map<string, Map<string, PageM
 
 /** Adds a link to the pages array if it looks like a doc page.
  *  Checks that the href matches DOC_PATH_PATTERN (/docs/, /reference/, etc). */
-function addLink(
-  $: CheerioAPI, el: AnyNode, baseUrl: string,
-  pages: ScrapePageItem[], group: string, level: number
-): void {
+function addLink($, el, baseUrl, pages, group, level) {
   const href = $(el).attr("href") || "";
   const title = $(el).text().trim();
   if (!title || !href || !DOC_PATH_PATTERN.test(href)) return;
@@ -387,19 +371,16 @@ function addLink(
 }
 
 /** Walks sidebar HTML collecting links.
- *  Similar to walkDom() above but outputs ScrapePageItem[] directly
+ *  Similar to walkDom() above but outputs page items directly
  *  instead of Map<slug, PageMeta>. Used by parseHtmlFallback(). */
-function walkSidebarHtml(
-  $: CheerioAPI, $el: Cheerio<AnyNode>, baseUrl: string,
-  pages: ScrapePageItem[], group: string, depth: number
-): void {
+function walkSidebarHtml($, $el, baseUrl, pages, group, depth) {
   // ── CRASH GUARD ──────────────────────────────────────────
   // Same as walkDom — prevents stack overflow on deeply nested HTML.
   if (depth > MAX_DOM_WALK_DEPTH) return;
 
-  $el.children().each((_: number, child: AnyNode) => {
+  $el.children().each((_, child) => {
     const $c = $(child);
-    const tag = ((child as { tagName?: string }).tagName || "").toLowerCase();
+    const tag = (child.tagName || "").toLowerCase();
     const cls = ($c.attr("class") || "").toLowerCase();
 
     if (/^h[1-6]$/.test(tag) || cls.includes("header") || cls.includes("category") || cls.includes("group")) {
@@ -413,9 +394,9 @@ function walkSidebarHtml(
   });
 }
 
-export function parseHtmlFallback(html: string, baseUrl: string): ScrapePageItem[] {
+export function parseHtmlFallback(html, baseUrl) {
   const $ = load(html);
-  const pages: ScrapePageItem[] = [];
+  const pages = [];
 
   // Try structured sidebar first (preserves order and groups)
   const $sidebar = findSidebarElement($);
@@ -424,12 +405,12 @@ export function parseHtmlFallback(html: string, baseUrl: string): ScrapePageItem
   // If sidebar gave us nothing, scan ALL <a> tags on the page as last resort
   if (pages.length === 0) {
     $('a[href*="/docs/"], a[href*="/reference/"], a[href*="/refs/"], a[href*="/changelog/"]').each(
-      (_: number, a: AnyNode) => addLink($, a, baseUrl, pages, "", 0)
+      (_, a) => addLink($, a, baseUrl, pages, "", 0)
     );
   }
 
   // Deduplicate by path — the same link can appear in header, sidebar, and footer
-  const unique = new Map<string, ScrapePageItem>();
+  const unique = new Map();
   for (const p of pages) if (!unique.has(p.path)) unique.set(p.path, p);
   return [...unique.values()];
 }

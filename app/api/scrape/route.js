@@ -1,6 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { load } from "cheerio";
-import type { AnyNode } from "domhandler";
 import { writeFile, mkdir } from "fs/promises";
 import { existsSync } from "fs";
 import { join } from "path";
@@ -11,8 +10,6 @@ import {
   SAVE_FILES,
   DOC_HREF_PATTERN,
   MAX_TITLE_LENGTH,
-  type ScrapeResult,
-  type ScrapePageItem,
 } from "./functions/types";
 import { fetchSitemapUrls, parseSidebarLookups } from "./functions/parsers";
 import {
@@ -31,7 +28,7 @@ import {
 //  Fire-and-forget — never blocks the API response.
 // ════════════════════════════════════════════════════════════
 
-async function saveResultToFile(out: ScrapeResult): Promise<void> {
+async function saveResultToFile(out) {
   if (!SAVE_FILES) return;
   try {
     const docsDir = join(process.cwd(), "docs");
@@ -65,9 +62,9 @@ async function saveResultToFile(out: ScrapeResult): Promise<void> {
 //  instead of letting Next.js show a generic 500 page.
 // ════════════════════════════════════════════════════════════
 
-export async function POST(req: NextRequest) {
+export async function POST(req) {
   // ── Input validation ──────────────────────────────────────
-  let body: { url?: string };
+  let body;
   try {
     body = await req.json();
   } catch {
@@ -79,7 +76,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "URL required" }, { status: 400 });
   }
 
-  let baseUrl: string;
+  let baseUrl;
   try {
     baseUrl = new URL(url).origin;
   } catch {
@@ -113,7 +110,7 @@ export async function POST(req: NextRequest) {
     const tabs = detectTabs($, baseUrl);
     const projects = detectProjects($, baseUrl);
 
-    const out: ScrapeResult = {
+    const out = {
       site: new URL(url).hostname,
       navType: "simple",
       tabs: tabs.map((t) => t.name),
@@ -150,10 +147,10 @@ export async function POST(req: NextRequest) {
     // This catches sites with unusual navigation structures.
     if (out.sections.length === 0) {
       out.navType = "fallback";
-      const pages: ScrapePageItem[] = [];
-      const seenHrefs = new Set<string>();
+      const pages = [];
+      const seenHrefs = new Set();
 
-      $("a").each((_: number, a: AnyNode) => {
+      $("a").each((_, a) => {
         const href = $(a).attr("href") || "";
         const title = $(a).text().trim();
         // Skip empty titles, overly long text (probably not a page title),
@@ -174,7 +171,7 @@ export async function POST(req: NextRequest) {
     saveResultToFile(out).catch(() => {});
 
     return NextResponse.json(out);
-  } catch (e: unknown) {
+  } catch (e) {
     // Catch-all: ensures we always return a JSON error response
     // instead of letting Next.js show a generic 500 error page.
     console.error("[scraper] Unhandled error:", e);
