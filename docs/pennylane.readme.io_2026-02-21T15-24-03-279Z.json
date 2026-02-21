@@ -1,0 +1,1476 @@
+{
+  "site": "pennylane.readme.io",
+  "navType": "tabs",
+  "tabs": [
+    "Guides",
+    "API Reference",
+    "Changelog",
+    "Discussions"
+  ],
+  "sections": [
+    {
+      "name": "Guides",
+      "pages": [
+        {
+          "title": "API Overview",
+          "path": "/docs/api-overview",
+          "fullUrl": "https://pennylane.readme.io/docs/api-overview",
+          "level": 1,
+          "group": "getting started"
+        },
+        {
+          "title": "Introduction to the Pennylane API",
+          "path": "/docs/getting-started",
+          "fullUrl": "https://pennylane.readme.io/docs/getting-started",
+          "level": 1,
+          "group": "getting started"
+        },
+        {
+          "title": "Choose the Right API for Your Integration",
+          "path": "/docs/what-apis-are-available",
+          "fullUrl": "https://pennylane.readme.io/docs/what-apis-are-available",
+          "level": 1,
+          "group": "getting started"
+        },
+        {
+          "title": "Data Sharing or API: Which Should You Use?",
+          "path": "/docs/should-i-use-data-sharing-or-the-api-1",
+          "fullUrl": "https://pennylane.readme.io/docs/should-i-use-data-sharing-or-the-api-1",
+          "level": 1,
+          "group": "getting started"
+        },
+        {
+          "title": "Authentication",
+          "path": "/docs/generating-my-api-token",
+          "fullUrl": "https://pennylane.readme.io/docs/generating-my-api-token",
+          "level": 1,
+          "group": "getting started"
+        },
+        {
+          "title": "Create a Firm API Token",
+          "path": "/docs/firm-api",
+          "fullUrl": "https://pennylane.readme.io/docs/firm-api",
+          "level": 2,
+          "group": "getting started"
+        },
+        {
+          "title": "Implement OAuth 2.0",
+          "path": "/docs/oauth-20-walkthrough",
+          "fullUrl": "https://pennylane.readme.io/docs/oauth-20-walkthrough",
+          "level": 2,
+          "group": "getting started"
+        },
+        {
+          "title": "Understand Scopes",
+          "path": "/docs/v2-scopes",
+          "fullUrl": "https://pennylane.readme.io/docs/v2-scopes",
+          "level": 2,
+          "group": "getting started"
+        },
+        {
+          "title": "Setup & Configuration",
+          "path": "/docs/error-handling-status-codes",
+          "fullUrl": "https://pennylane.readme.io/docs/error-handling-status-codes",
+          "level": 1,
+          "group": "getting started"
+        },
+        {
+          "title": "Use Cases",
+          "path": "/docs/supported-use-cases",
+          "fullUrl": "https://pennylane.readme.io/docs/supported-use-cases",
+          "level": 1,
+          "group": "tutorials"
+        },
+        {
+          "title": "Point of Sale Integration",
+          "path": "/docs/how-to-build-a-pos-integration",
+          "fullUrl": "https://pennylane.readme.io/docs/how-to-build-a-pos-integration",
+          "level": 2,
+          "group": "tutorials"
+        },
+        {
+          "title": "Accounting Management",
+          "path": "/docs/accounting-reporting",
+          "fullUrl": "https://pennylane.readme.io/docs/accounting-reporting",
+          "level": 2,
+          "group": "tutorials"
+        },
+        {
+          "title": "Create Ledger Entries via API",
+          "path": "/docs/create-a-ledger-entry",
+          "fullUrl": "https://pennylane.readme.io/docs/create-a-ledger-entry",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Invoicing Management",
+          "path": "/docs/invoicing-use-cases",
+          "fullUrl": "https://pennylane.readme.io/docs/invoicing-use-cases",
+          "level": 2,
+          "group": "tutorials"
+        },
+        {
+          "title": "Import a Supplier Invoice via API",
+          "path": "/docs/supplier-invoicing",
+          "fullUrl": "https://pennylane.readme.io/docs/supplier-invoicing",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Import a Customer Invoice via API",
+          "path": "/docs/customer-invoicing",
+          "fullUrl": "https://pennylane.readme.io/docs/customer-invoicing",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Create a Customer Invoice via API",
+          "path": "/docs/create-a-customer-invoice-use-case",
+          "fullUrl": "https://pennylane.readme.io/docs/create-a-customer-invoice-use-case",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Feature Guides",
+          "path": "/docs/setting-up-filters",
+          "fullUrl": "https://pennylane.readme.io/docs/setting-up-filters",
+          "level": 1,
+          "group": "tutorials"
+        },
+        {
+          "title": "Filter Customer Invoices",
+          "path": "/docs/filter-my-customer-invoices",
+          "fullUrl": "https://pennylane.readme.io/docs/filter-my-customer-invoices",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Filter Supplier Invoices",
+          "path": "/docs/filter-my-supplier-invoices",
+          "fullUrl": "https://pennylane.readme.io/docs/filter-my-supplier-invoices",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Filter Draft Invoices",
+          "path": "/docs/filter-my-draft-invoices",
+          "fullUrl": "https://pennylane.readme.io/docs/filter-my-draft-invoices",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Filter Credit Notes",
+          "path": "/docs/filter-my-credit-notes",
+          "fullUrl": "https://pennylane.readme.io/docs/filter-my-credit-notes",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Filter Customers",
+          "path": "/docs/filter-my-customers",
+          "fullUrl": "https://pennylane.readme.io/docs/filter-my-customers",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Filter Suppliers",
+          "path": "/docs/filter-my-suppliers",
+          "fullUrl": "https://pennylane.readme.io/docs/filter-my-suppliers",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Filter Ledger Accounts",
+          "path": "/docs/filter-my-ledger-accounts",
+          "fullUrl": "https://pennylane.readme.io/docs/filter-my-ledger-accounts",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Filter Ledger Entries",
+          "path": "/docs/filter-my-ledger-entries",
+          "fullUrl": "https://pennylane.readme.io/docs/filter-my-ledger-entries",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Filter Ledger Entry Lines",
+          "path": "/docs/filter-my-ledger-entry-lines",
+          "fullUrl": "https://pennylane.readme.io/docs/filter-my-ledger-entry-lines",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Filter Categories",
+          "path": "/docs/filter-my-categories",
+          "fullUrl": "https://pennylane.readme.io/docs/filter-my-categories",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Filter Products",
+          "path": "/docs/filter-my-products",
+          "fullUrl": "https://pennylane.readme.io/docs/filter-my-products",
+          "level": 3,
+          "group": "tutorials"
+        },
+        {
+          "title": "Automate Payment Matching",
+          "path": "/docs/automating-payment-matching",
+          "fullUrl": "https://pennylane.readme.io/docs/automating-payment-matching",
+          "level": 2,
+          "group": "tutorials"
+        },
+        {
+          "title": "Use Cursor-Based Pagination",
+          "path": "/docs/using-cursor-based-pagination",
+          "fullUrl": "https://pennylane.readme.io/docs/using-cursor-based-pagination",
+          "level": 2,
+          "group": "tutorials"
+        },
+        {
+          "title": "Track Data Changes with the API",
+          "path": "/docs/tracking-data-changes-with-pennylane-api",
+          "fullUrl": "https://pennylane.readme.io/docs/tracking-data-changes-with-pennylane-api",
+          "level": 2,
+          "group": "tutorials"
+        },
+        {
+          "title": "Create a Downpayment Invoice",
+          "path": "/docs/create-a-downpayment-invoice-facture-dacompte",
+          "fullUrl": "https://pennylane.readme.io/docs/create-a-downpayment-invoice-facture-dacompte",
+          "level": 2,
+          "group": "tutorials"
+        },
+        {
+          "title": "Send Documents by Email",
+          "path": "/docs/sending-documents-by-email",
+          "fullUrl": "https://pennylane.readme.io/docs/sending-documents-by-email",
+          "level": 2,
+          "group": "tutorials"
+        },
+        {
+          "title": "Concepts",
+          "path": "/docs/string-characters-limit",
+          "fullUrl": "https://pennylane.readme.io/docs/string-characters-limit",
+          "level": 1,
+          "group": "CONCEPTS & BEST PRACTICES"
+        },
+        {
+          "title": "Best Practices",
+          "path": "/docs/what-is-the-difference-between-a-payment-and-a-matched-transaction",
+          "fullUrl": "https://pennylane.readme.io/docs/what-is-the-difference-between-a-payment-and-a-matched-transaction",
+          "level": 1,
+          "group": "CONCEPTS & BEST PRACTICES"
+        },
+        {
+          "title": "Import vs Create a Customer Invoice",
+          "path": "/docs/import-vs-create-a-customer-invoice-whats-the-difference",
+          "fullUrl": "https://pennylane.readme.io/docs/import-vs-create-a-customer-invoice-whats-the-difference",
+          "level": 2,
+          "group": "CONCEPTS & BEST PRACTICES"
+        },
+        {
+          "title": "Understanding VAT Rates on Ledger Accounts",
+          "path": "/docs/handle-vat-rates-by-ledger-accounts",
+          "fullUrl": "https://pennylane.readme.io/docs/handle-vat-rates-by-ledger-accounts",
+          "level": 2,
+          "group": "CONCEPTS & BEST PRACTICES"
+        },
+        {
+          "title": "Rate Limiting in API v2",
+          "path": "/docs/rate-limiting-1",
+          "fullUrl": "https://pennylane.readme.io/docs/rate-limiting-1",
+          "level": 1,
+          "group": "ADVANCED GUIDES"
+        },
+        {
+          "title": "Migrate from API v1 to v2",
+          "path": "/docs/api-v2-vs-v1",
+          "fullUrl": "https://pennylane.readme.io/docs/api-v2-vs-v1",
+          "level": 1,
+          "group": "MIGRATION & RELEASE NOTES"
+        },
+        {
+          "title": "API Changelog",
+          "path": "/docs/stay-updated-with-our-api-changes",
+          "fullUrl": "https://pennylane.readme.io/docs/stay-updated-with-our-api-changes",
+          "level": 1,
+          "group": "MIGRATION & RELEASE NOTES"
+        },
+        {
+          "title": "Public Roadmap",
+          "path": "/docs/api-public-roadmap",
+          "fullUrl": "https://pennylane.readme.io/docs/api-public-roadmap",
+          "level": 1,
+          "group": "MIGRATION & RELEASE NOTES"
+        },
+        {
+          "title": "2026 API changes Migration Guide",
+          "path": "/docs/2026-api-changes-guide",
+          "fullUrl": "https://pennylane.readme.io/docs/2026-api-changes-guide",
+          "level": 1,
+          "group": "MIGRATION & RELEASE NOTES"
+        },
+        {
+          "title": "Glossary",
+          "path": "/docs/glossary",
+          "fullUrl": "https://pennylane.readme.io/docs/glossary",
+          "level": 1,
+          "group": "RESOURCES"
+        },
+        {
+          "title": "How to reach out to us",
+          "path": "/docs/how-to-reach-out-to-us",
+          "fullUrl": "https://pennylane.readme.io/docs/how-to-reach-out-to-us",
+          "level": 1,
+          "group": "Need support?"
+        }
+      ]
+    },
+    {
+      "name": "API Reference",
+      "pages": [
+        {
+          "title": "Journals",
+          "path": "/reference/getjournals",
+          "fullUrl": "https://pennylane.readme.io/reference/getjournals",
+          "level": 1,
+          "group": "Accounting"
+        },
+        {
+          "title": "Retrieve a journalget",
+          "path": "/reference/getjournal",
+          "fullUrl": "https://pennylane.readme.io/reference/getjournal",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "Create a journalpost",
+          "path": "/reference/postjournals",
+          "fullUrl": "https://pennylane.readme.io/reference/postjournals",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "Ledger Accounts",
+          "path": "/reference/getledgeraccounts",
+          "fullUrl": "https://pennylane.readme.io/reference/getledgeraccounts",
+          "level": 1,
+          "group": "Accounting"
+        },
+        {
+          "title": "Get a ledger accountget",
+          "path": "/reference/getledgeraccount",
+          "fullUrl": "https://pennylane.readme.io/reference/getledgeraccount",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "Create a ledger accountpost",
+          "path": "/reference/postledgeraccounts",
+          "fullUrl": "https://pennylane.readme.io/reference/postledgeraccounts",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "Update a ledger accountput",
+          "path": "/reference/updateledgeraccount",
+          "fullUrl": "https://pennylane.readme.io/reference/updateledgeraccount",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "Ledger Attachments",
+          "path": "/reference/postledgerattachments",
+          "fullUrl": "https://pennylane.readme.io/reference/postledgerattachments",
+          "level": 1,
+          "group": "Accounting"
+        },
+        {
+          "title": "Ledger Entries",
+          "path": "/reference/getledgerentries",
+          "fullUrl": "https://pennylane.readme.io/reference/getledgerentries",
+          "level": 1,
+          "group": "Accounting"
+        },
+        {
+          "title": "List ledger entry lines of a Ledger Entryget",
+          "path": "/reference/getledgerentriesledgerentrylines",
+          "fullUrl": "https://pennylane.readme.io/reference/getledgerentriesledgerentrylines",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "Retrieve a Ledger entryget",
+          "path": "/reference/getledgerentry",
+          "fullUrl": "https://pennylane.readme.io/reference/getledgerentry",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "Create a ledger entrypost",
+          "path": "/reference/postledgerentries",
+          "fullUrl": "https://pennylane.readme.io/reference/postledgerentries",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "Update a ledger entryput",
+          "path": "/reference/putledgerentries",
+          "fullUrl": "https://pennylane.readme.io/reference/putledgerentries",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "Ledger Entry Lines",
+          "path": "/reference/getledgerentrylines",
+          "fullUrl": "https://pennylane.readme.io/reference/getledgerentrylines",
+          "level": 1,
+          "group": "Accounting"
+        },
+        {
+          "title": "Retrieve a Ledger entry lineget",
+          "path": "/reference/getledgerentryline",
+          "fullUrl": "https://pennylane.readme.io/reference/getledgerentryline",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "List ledger entry lines lettered to a given ledger entry lineget",
+          "path": "/reference/getledgerentrylinesletteredledgerentrylines",
+          "fullUrl": "https://pennylane.readme.io/reference/getledgerentrylinesletteredledgerentrylines",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "List categories of a Ledger Entry lineget",
+          "path": "/reference/getledgerentrylinescategories",
+          "fullUrl": "https://pennylane.readme.io/reference/getledgerentrylinescategories",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "Link Analytical Categories to a Ledger Entry lineput",
+          "path": "/reference/putledgerentrylinescategories",
+          "fullUrl": "https://pennylane.readme.io/reference/putledgerentrylinescategories",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "Letter ledger entry linespost",
+          "path": "/reference/postledgerentrylinesletter",
+          "fullUrl": "https://pennylane.readme.io/reference/postledgerentrylinesletter",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "Unletter ledger entry linesdel",
+          "path": "/reference/deleteledgerentrylinesunletter",
+          "fullUrl": "https://pennylane.readme.io/reference/deleteledgerentrylinesunletter",
+          "level": 2,
+          "group": "Accounting"
+        },
+        {
+          "title": "Trial balance",
+          "path": "/reference/gettrialbalance",
+          "fullUrl": "https://pennylane.readme.io/reference/gettrialbalance",
+          "level": 1,
+          "group": "Accounting"
+        },
+        {
+          "title": "Fiscal years",
+          "path": "/reference/company-fiscal-years",
+          "fullUrl": "https://pennylane.readme.io/reference/company-fiscal-years",
+          "level": 1,
+          "group": "Accounting"
+        },
+        {
+          "title": "ProAccountMandates",
+          "path": "/reference/getproaccountmandates",
+          "fullUrl": "https://pennylane.readme.io/reference/getproaccountmandates",
+          "level": 1,
+          "group": "Accounting"
+        },
+        {
+          "title": "Exports",
+          "path": "/reference/exportanalyticalgeneralledger",
+          "fullUrl": "https://pennylane.readme.io/reference/exportanalyticalgeneralledger",
+          "level": 1,
+          "group": "Accounting exports"
+        },
+        {
+          "title": "Retrieve an Analytical General Ledger exportget",
+          "path": "/reference/getanalyticalgeneralledgerexport",
+          "fullUrl": "https://pennylane.readme.io/reference/getanalyticalgeneralledgerexport",
+          "level": 2,
+          "group": "Accounting exports"
+        },
+        {
+          "title": "Create a FEC exportpost",
+          "path": "/reference/exportfec",
+          "fullUrl": "https://pennylane.readme.io/reference/exportfec",
+          "level": 2,
+          "group": "Accounting exports"
+        },
+        {
+          "title": "Retrieve a FEC exportget",
+          "path": "/reference/getfecexport",
+          "fullUrl": "https://pennylane.readme.io/reference/getfecexport",
+          "level": 2,
+          "group": "Accounting exports"
+        },
+        {
+          "title": "Category Groups",
+          "path": "/reference/getcategorygroups",
+          "fullUrl": "https://pennylane.readme.io/reference/getcategorygroups",
+          "level": 1,
+          "group": "Analytics"
+        },
+        {
+          "title": "Retrieve a category groupget",
+          "path": "/reference/getcategorygroup",
+          "fullUrl": "https://pennylane.readme.io/reference/getcategorygroup",
+          "level": 2,
+          "group": "Analytics"
+        },
+        {
+          "title": "Categories",
+          "path": "/reference/getcategorygroupcategories",
+          "fullUrl": "https://pennylane.readme.io/reference/getcategorygroupcategories",
+          "level": 1,
+          "group": "Analytics"
+        },
+        {
+          "title": "List categoriesget",
+          "path": "/reference/getcategories",
+          "fullUrl": "https://pennylane.readme.io/reference/getcategories",
+          "level": 2,
+          "group": "Analytics"
+        },
+        {
+          "title": "Retrieve a categoryget",
+          "path": "/reference/getcategory",
+          "fullUrl": "https://pennylane.readme.io/reference/getcategory",
+          "level": 2,
+          "group": "Analytics"
+        },
+        {
+          "title": "Create a categorypost",
+          "path": "/reference/postcategories",
+          "fullUrl": "https://pennylane.readme.io/reference/postcategories",
+          "level": 2,
+          "group": "Analytics"
+        },
+        {
+          "title": "Update a categoryput",
+          "path": "/reference/updatecategory",
+          "fullUrl": "https://pennylane.readme.io/reference/updatecategory",
+          "level": 2,
+          "group": "Analytics"
+        },
+        {
+          "title": "Billing Subscriptions",
+          "path": "/reference/getbillingsubscriptions",
+          "fullUrl": "https://pennylane.readme.io/reference/getbillingsubscriptions",
+          "level": 1,
+          "group": "Billing Subscriptions"
+        },
+        {
+          "title": "Get a billing subscriptionget",
+          "path": "/reference/getbillingsubscription",
+          "fullUrl": "https://pennylane.readme.io/reference/getbillingsubscription",
+          "level": 2,
+          "group": "Billing Subscriptions"
+        },
+        {
+          "title": "Create a billing subscriptionpost",
+          "path": "/reference/postbillingsubscriptions",
+          "fullUrl": "https://pennylane.readme.io/reference/postbillingsubscriptions",
+          "level": 2,
+          "group": "Billing Subscriptions"
+        },
+        {
+          "title": "Update a billing subscriptionput",
+          "path": "/reference/putbillingsubscriptions",
+          "fullUrl": "https://pennylane.readme.io/reference/putbillingsubscriptions",
+          "level": 2,
+          "group": "Billing Subscriptions"
+        },
+        {
+          "title": "List invoice lines for a billing subscriptionget",
+          "path": "/reference/getbillingsubscriptioninvoicelines",
+          "fullUrl": "https://pennylane.readme.io/reference/getbillingsubscriptioninvoicelines",
+          "level": 2,
+          "group": "Billing Subscriptions"
+        },
+        {
+          "title": "List the invoice line sections of a billing subscriptionget",
+          "path": "/reference/getbillingsubscriptioninvoicelinesections",
+          "fullUrl": "https://pennylane.readme.io/reference/getbillingsubscriptioninvoicelinesections",
+          "level": 2,
+          "group": "Billing Subscriptions"
+        },
+        {
+          "title": "Changelogs",
+          "path": "/reference/getcustomerinvoiceschanges",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomerinvoiceschanges",
+          "level": 1,
+          "group": "Changelogs"
+        },
+        {
+          "title": "Get supplier invoices changes eventsget",
+          "path": "/reference/getsupplierinvoiceschanges",
+          "fullUrl": "https://pennylane.readme.io/reference/getsupplierinvoiceschanges",
+          "level": 2,
+          "group": "Changelogs"
+        },
+        {
+          "title": "Get customer changes eventsget",
+          "path": "/reference/getcustomerchanges",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomerchanges",
+          "level": 2,
+          "group": "Changelogs"
+        },
+        {
+          "title": "Get supplier changes eventsget",
+          "path": "/reference/getsupplierchanges",
+          "fullUrl": "https://pennylane.readme.io/reference/getsupplierchanges",
+          "level": 2,
+          "group": "Changelogs"
+        },
+        {
+          "title": "Get product change eventsget",
+          "path": "/reference/getproductchanges",
+          "fullUrl": "https://pennylane.readme.io/reference/getproductchanges",
+          "level": 2,
+          "group": "Changelogs"
+        },
+        {
+          "title": "Get ledger entry line change eventsget",
+          "path": "/reference/getledgerentrylinechanges",
+          "fullUrl": "https://pennylane.readme.io/reference/getledgerentrylinechanges",
+          "level": 2,
+          "group": "Changelogs"
+        },
+        {
+          "title": "Get transaction change eventsget",
+          "path": "/reference/gettransactionchanges",
+          "fullUrl": "https://pennylane.readme.io/reference/gettransactionchanges",
+          "level": 2,
+          "group": "Changelogs"
+        },
+        {
+          "title": "Get quotes changes eventsget",
+          "path": "/reference/getquotechanges",
+          "fullUrl": "https://pennylane.readme.io/reference/getquotechanges",
+          "level": 2,
+          "group": "Changelogs"
+        },
+        {
+          "title": "Commercial Documents",
+          "path": "/reference/listcommercialdocuments",
+          "fullUrl": "https://pennylane.readme.io/reference/listcommercialdocuments",
+          "level": 1,
+          "group": "COMMERCIAL DOCUMENTS"
+        },
+        {
+          "title": "Retrieve a commercial documentget",
+          "path": "/reference/getcommercialdocument",
+          "fullUrl": "https://pennylane.readme.io/reference/getcommercialdocument",
+          "level": 2,
+          "group": "COMMERCIAL DOCUMENTS"
+        },
+        {
+          "title": "List invoice line sections for a commercial documentget",
+          "path": "/reference/getcommercialdocumentinvoicelinesections",
+          "fullUrl": "https://pennylane.readme.io/reference/getcommercialdocumentinvoicelinesections",
+          "level": 2,
+          "group": "COMMERCIAL DOCUMENTS"
+        },
+        {
+          "title": "List invoice lines for a commercial documentget",
+          "path": "/reference/getcommercialdocumentinvoicelines",
+          "fullUrl": "https://pennylane.readme.io/reference/getcommercialdocumentinvoicelines",
+          "level": 2,
+          "group": "COMMERCIAL DOCUMENTS"
+        },
+        {
+          "title": "List appendices of a commercial documentget",
+          "path": "/reference/getcommercialdocumentappendices",
+          "fullUrl": "https://pennylane.readme.io/reference/getcommercialdocumentappendices",
+          "level": 2,
+          "group": "COMMERCIAL DOCUMENTS"
+        },
+        {
+          "title": "Upload an appendix for a commercial documentpost",
+          "path": "/reference/postcommercialdocumentappendices",
+          "fullUrl": "https://pennylane.readme.io/reference/postcommercialdocumentappendices",
+          "level": 2,
+          "group": "COMMERCIAL DOCUMENTS"
+        },
+        {
+          "title": "Customer Invoices",
+          "path": "/reference/getcustomerinvoices",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomerinvoices",
+          "level": 1,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "List invoice line sections for a customer invoiceget",
+          "path": "/reference/getcustomerinvoiceinvoicelinesections",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomerinvoiceinvoicelinesections",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "List invoice lines for a customer invoiceget",
+          "path": "/reference/getcustomerinvoiceinvoicelines",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomerinvoiceinvoicelines",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "List payments for a customer invoiceget",
+          "path": "/reference/getcustomerinvoicepayments",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomerinvoicepayments",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "List matched transactions for a customer invoiceget",
+          "path": "/reference/getcustomerinvoicematchedtransactions",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomerinvoicematchedtransactions",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "List appendices of a customer invoiceget",
+          "path": "/reference/getcustomerinvoiceappendices",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomerinvoiceappendices",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "List categories of a customer invoiceget",
+          "path": "/reference/getcustomerinvoicecategories",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomerinvoicecategories",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Retrieve a customer invoiceget",
+          "path": "/reference/getcustomerinvoice",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomerinvoice",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Upload an appendix for a customer invoicepost",
+          "path": "/reference/postcustomerinvoiceappendices",
+          "fullUrl": "https://pennylane.readme.io/reference/postcustomerinvoiceappendices",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Send a customer invoice by emailpost",
+          "path": "/reference/sendbyemailcustomerinvoice",
+          "fullUrl": "https://pennylane.readme.io/reference/sendbyemailcustomerinvoice",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Create a customer invoicepost",
+          "path": "/reference/postcustomerinvoices",
+          "fullUrl": "https://pennylane.readme.io/reference/postcustomerinvoices",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Import an invoice with file attachedpost",
+          "path": "/reference/importcustomerinvoices",
+          "fullUrl": "https://pennylane.readme.io/reference/importcustomerinvoices",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Link a credit note to a customer invoicepost",
+          "path": "/reference/linkcreditnote",
+          "fullUrl": "https://pennylane.readme.io/reference/linkcreditnote",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Create a customer invoice from a quotepost",
+          "path": "/reference/createcustomerinvoicefromquote",
+          "fullUrl": "https://pennylane.readme.io/reference/createcustomerinvoicefromquote",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Update a customer invoiceput",
+          "path": "/reference/updatecustomerinvoice",
+          "fullUrl": "https://pennylane.readme.io/reference/updatecustomerinvoice",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Mark a customer invoice as paidput",
+          "path": "/reference/markaspaidcustomerinvoice",
+          "fullUrl": "https://pennylane.readme.io/reference/markaspaidcustomerinvoice",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Categorize a customer invoiceput",
+          "path": "/reference/putcustomerinvoicecategories",
+          "fullUrl": "https://pennylane.readme.io/reference/putcustomerinvoicecategories",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Update an Imported customer invoiceput",
+          "path": "/reference/updateimportedcustomerinvoice",
+          "fullUrl": "https://pennylane.readme.io/reference/updateimportedcustomerinvoice",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Turn the draft invoice into a finalized invoice.put",
+          "path": "/reference/finalizecustomerinvoice",
+          "fullUrl": "https://pennylane.readme.io/reference/finalizecustomerinvoice",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Delete draft invoicedel",
+          "path": "/reference/deletecustomerinvoices",
+          "fullUrl": "https://pennylane.readme.io/reference/deletecustomerinvoices",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "List custom header fields for a customer invoiceget",
+          "path": "/reference/getcustomerinvoicecustomheaderfields",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomerinvoicecustomheaderfields",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Products",
+          "path": "/reference/getproducts",
+          "fullUrl": "https://pennylane.readme.io/reference/getproducts",
+          "level": 1,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Retrieve a productget",
+          "path": "/reference/getproduct",
+          "fullUrl": "https://pennylane.readme.io/reference/getproduct",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Create a productpost",
+          "path": "/reference/postproducts-1",
+          "fullUrl": "https://pennylane.readme.io/reference/postproducts-1",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Update a productput",
+          "path": "/reference/putproduct",
+          "fullUrl": "https://pennylane.readme.io/reference/putproduct",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Customer Invoice Templates",
+          "path": "/reference/getcustomerinvoicetemplates",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomerinvoicetemplates",
+          "level": 1,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Customers",
+          "path": "/reference/getcompanycustomer",
+          "fullUrl": "https://pennylane.readme.io/reference/getcompanycustomer",
+          "level": 1,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Retrieve an individual customerget",
+          "path": "/reference/getindividualcustomer",
+          "fullUrl": "https://pennylane.readme.io/reference/getindividualcustomer",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "List customers (company and individual)get",
+          "path": "/reference/getcustomers",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomers",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Retrieve a customerget",
+          "path": "/reference/getcustomer",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomer",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Create a company customerpost",
+          "path": "/reference/postcompanycustomer",
+          "fullUrl": "https://pennylane.readme.io/reference/postcompanycustomer",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Create an individual customerpost",
+          "path": "/reference/postindividualcustomer",
+          "fullUrl": "https://pennylane.readme.io/reference/postindividualcustomer",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Update a company customerput",
+          "path": "/reference/putcompanycustomer",
+          "fullUrl": "https://pennylane.readme.io/reference/putcompanycustomer",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Update an individual customerput",
+          "path": "/reference/putindividualcustomer",
+          "fullUrl": "https://pennylane.readme.io/reference/putindividualcustomer",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "List contacts of a customerget",
+          "path": "/reference/getcustomercontacts",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomercontacts",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "List categories of a customerget",
+          "path": "/reference/getcustomercategories",
+          "fullUrl": "https://pennylane.readme.io/reference/getcustomercategories",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "Categorize a customerput",
+          "path": "/reference/putcustomercategories",
+          "fullUrl": "https://pennylane.readme.io/reference/putcustomercategories",
+          "level": 2,
+          "group": "Customer Invoices"
+        },
+        {
+          "title": "E-Invoices",
+          "path": "/reference/createeinvoiceimport",
+          "fullUrl": "https://pennylane.readme.io/reference/createeinvoiceimport",
+          "level": 1,
+          "group": "E-Invoices"
+        },
+        {
+          "title": "File Attachments",
+          "path": "/reference/postfileattachments",
+          "fullUrl": "https://pennylane.readme.io/reference/postfileattachments",
+          "level": 1,
+          "group": "File upload"
+        },
+        {
+          "title": "Mandates",
+          "path": "/reference/postsepamandates",
+          "fullUrl": "https://pennylane.readme.io/reference/postsepamandates",
+          "level": 1,
+          "group": "Mandates"
+        },
+        {
+          "title": "List SEPA mandatesget",
+          "path": "/reference/getsepamandates",
+          "fullUrl": "https://pennylane.readme.io/reference/getsepamandates",
+          "level": 2,
+          "group": "Mandates"
+        },
+        {
+          "title": "Get a SEPA mandateget",
+          "path": "/reference/getsepamandate",
+          "fullUrl": "https://pennylane.readme.io/reference/getsepamandate",
+          "level": 2,
+          "group": "Mandates"
+        },
+        {
+          "title": "Update a SEPA mandateput",
+          "path": "/reference/putsepamandate",
+          "fullUrl": "https://pennylane.readme.io/reference/putsepamandate",
+          "level": 2,
+          "group": "Mandates"
+        },
+        {
+          "title": "Delete a SEPA mandatedel",
+          "path": "/reference/deletesepamandate",
+          "fullUrl": "https://pennylane.readme.io/reference/deletesepamandate",
+          "level": 2,
+          "group": "Mandates"
+        },
+        {
+          "title": "List gocardless mandatesget",
+          "path": "/reference/getgocardlessmandates",
+          "fullUrl": "https://pennylane.readme.io/reference/getgocardlessmandates",
+          "level": 2,
+          "group": "Mandates"
+        },
+        {
+          "title": "Get a Gocardless mandateget",
+          "path": "/reference/getgocardlessmandate",
+          "fullUrl": "https://pennylane.readme.io/reference/getgocardlessmandate",
+          "level": 2,
+          "group": "Mandates"
+        },
+        {
+          "title": "Send a GoCardless mandate email requestpost",
+          "path": "/reference/postgocardlessmandatemailrequests",
+          "fullUrl": "https://pennylane.readme.io/reference/postgocardlessmandatemailrequests",
+          "level": 2,
+          "group": "Mandates"
+        },
+        {
+          "title": "Associate a GoCardless mandate to a customerpost",
+          "path": "/reference/postgocardlessmandateassociations",
+          "fullUrl": "https://pennylane.readme.io/reference/postgocardlessmandateassociations",
+          "level": 2,
+          "group": "Mandates"
+        },
+        {
+          "title": "Cancel a Gocardless mandatepost",
+          "path": "/reference/postgocardlessmandatecancellations",
+          "fullUrl": "https://pennylane.readme.io/reference/postgocardlessmandatecancellations",
+          "level": 2,
+          "group": "Mandates"
+        },
+        {
+          "title": "Quotes",
+          "path": "/reference/listquotes",
+          "fullUrl": "https://pennylane.readme.io/reference/listquotes",
+          "level": 1,
+          "group": "QUOTES"
+        },
+        {
+          "title": "Retrieve a quoteget",
+          "path": "/reference/getquote",
+          "fullUrl": "https://pennylane.readme.io/reference/getquote",
+          "level": 2,
+          "group": "QUOTES"
+        },
+        {
+          "title": "List invoice line sections for a quoteget",
+          "path": "/reference/getquoteinvoicelinesections",
+          "fullUrl": "https://pennylane.readme.io/reference/getquoteinvoicelinesections",
+          "level": 2,
+          "group": "QUOTES"
+        },
+        {
+          "title": "List invoice lines for a quoteget",
+          "path": "/reference/getquoteinvoicelines",
+          "fullUrl": "https://pennylane.readme.io/reference/getquoteinvoicelines",
+          "level": 2,
+          "group": "QUOTES"
+        },
+        {
+          "title": "List appendices of a quoteget",
+          "path": "/reference/getquoteappendices",
+          "fullUrl": "https://pennylane.readme.io/reference/getquoteappendices",
+          "level": 2,
+          "group": "QUOTES"
+        },
+        {
+          "title": "Create a quotepost",
+          "path": "/reference/postquotes",
+          "fullUrl": "https://pennylane.readme.io/reference/postquotes",
+          "level": 2,
+          "group": "QUOTES"
+        },
+        {
+          "title": "Upload an appendix for a quotepost",
+          "path": "/reference/postquoteappendices",
+          "fullUrl": "https://pennylane.readme.io/reference/postquoteappendices",
+          "level": 2,
+          "group": "QUOTES"
+        },
+        {
+          "title": "Send a quote by emailpost",
+          "path": "/reference/sendbyemailquote",
+          "fullUrl": "https://pennylane.readme.io/reference/sendbyemailquote",
+          "level": 2,
+          "group": "QUOTES"
+        },
+        {
+          "title": "Update a quoteput",
+          "path": "/reference/updatequote",
+          "fullUrl": "https://pennylane.readme.io/reference/updatequote",
+          "level": 2,
+          "group": "QUOTES"
+        },
+        {
+          "title": "Update status of a quoteput",
+          "path": "/reference/updatestatusquote",
+          "fullUrl": "https://pennylane.readme.io/reference/updatestatusquote",
+          "level": 2,
+          "group": "QUOTES"
+        },
+        {
+          "title": "Supplier Invoices",
+          "path": "/reference/getsupplierinvoicelines",
+          "fullUrl": "https://pennylane.readme.io/reference/getsupplierinvoicelines",
+          "level": 1,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "List supplier invoicesget",
+          "path": "/reference/getsupplierinvoices",
+          "fullUrl": "https://pennylane.readme.io/reference/getsupplierinvoices",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Retrieve a supplier invoiceget",
+          "path": "/reference/getsupplierinvoice",
+          "fullUrl": "https://pennylane.readme.io/reference/getsupplierinvoice",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "List categories of a supplier invoiceget",
+          "path": "/reference/getsupplierinvoicecategories",
+          "fullUrl": "https://pennylane.readme.io/reference/getsupplierinvoicecategories",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "List payments for a supplier invoiceget",
+          "path": "/reference/getsupplierinvoicepayments",
+          "fullUrl": "https://pennylane.readme.io/reference/getsupplierinvoicepayments",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "List matched transactions for a supplier invoiceget",
+          "path": "/reference/getsupplierinvoicematchedtransactions",
+          "fullUrl": "https://pennylane.readme.io/reference/getsupplierinvoicematchedtransactions",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Import a supplier invoice with a file attachedpost",
+          "path": "/reference/importsupplierinvoice",
+          "fullUrl": "https://pennylane.readme.io/reference/importsupplierinvoice",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Link a purchase request to a supplier invoicepost",
+          "path": "/reference/postsupplierinvoicelinkedpurchaserequests",
+          "fullUrl": "https://pennylane.readme.io/reference/postsupplierinvoicelinkedpurchaserequests",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Update a supplier invoiceput",
+          "path": "/reference/putsupplierinvoice",
+          "fullUrl": "https://pennylane.readme.io/reference/putsupplierinvoice",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Categorize a supplier invoiceput",
+          "path": "/reference/putsupplierinvoicecategories",
+          "fullUrl": "https://pennylane.readme.io/reference/putsupplierinvoicecategories",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Update a supplier invoice payment statusput",
+          "path": "/reference/updatesupplierinvoicepaymentstatus",
+          "fullUrl": "https://pennylane.readme.io/reference/updatesupplierinvoicepaymentstatus",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Validate the accounting of a supplier invoiceput",
+          "path": "/reference/validateaccountingsupplierinvoice",
+          "fullUrl": "https://pennylane.readme.io/reference/validateaccountingsupplierinvoice",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Purchase Requests",
+          "path": "/reference/getpurchaserequests",
+          "fullUrl": "https://pennylane.readme.io/reference/getpurchaserequests",
+          "level": 1,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Retrieve a purchase requestget",
+          "path": "/reference/getpurchaserequest",
+          "fullUrl": "https://pennylane.readme.io/reference/getpurchaserequest",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Import a purchase order.post",
+          "path": "/reference/createpurchaserequestimport",
+          "fullUrl": "https://pennylane.readme.io/reference/createpurchaserequestimport",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Suppliers",
+          "path": "/reference/getsuppliers",
+          "fullUrl": "https://pennylane.readme.io/reference/getsuppliers",
+          "level": 1,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Retrieve a supplierget",
+          "path": "/reference/getsupplier",
+          "fullUrl": "https://pennylane.readme.io/reference/getsupplier",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Create a Supplierpost",
+          "path": "/reference/postsupplier",
+          "fullUrl": "https://pennylane.readme.io/reference/postsupplier",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Update a supplierput",
+          "path": "/reference/putsupplier",
+          "fullUrl": "https://pennylane.readme.io/reference/putsupplier",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "List categories of a supplierget",
+          "path": "/reference/getsuppliercategories",
+          "fullUrl": "https://pennylane.readme.io/reference/getsuppliercategories",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Categorize a supplierput",
+          "path": "/reference/putsuppliercategories",
+          "fullUrl": "https://pennylane.readme.io/reference/putsuppliercategories",
+          "level": 2,
+          "group": "Supplier invoices"
+        },
+        {
+          "title": "Bank accounts",
+          "path": "/reference/getbankestablishments",
+          "fullUrl": "https://pennylane.readme.io/reference/getbankestablishments",
+          "level": 1,
+          "group": "Transactions"
+        },
+        {
+          "title": "List bank accountsget",
+          "path": "/reference/getbankaccounts",
+          "fullUrl": "https://pennylane.readme.io/reference/getbankaccounts",
+          "level": 2,
+          "group": "Transactions"
+        },
+        {
+          "title": "Retrieve a bank accountget",
+          "path": "/reference/getbankaccount",
+          "fullUrl": "https://pennylane.readme.io/reference/getbankaccount",
+          "level": 2,
+          "group": "Transactions"
+        },
+        {
+          "title": "Create a bank accountpost",
+          "path": "/reference/postbankaccount",
+          "fullUrl": "https://pennylane.readme.io/reference/postbankaccount",
+          "level": 2,
+          "group": "Transactions"
+        },
+        {
+          "title": "Transactions",
+          "path": "/reference/gettransactions",
+          "fullUrl": "https://pennylane.readme.io/reference/gettransactions",
+          "level": 1,
+          "group": "Transactions"
+        },
+        {
+          "title": "Retrieve a transactionget",
+          "path": "/reference/gettransaction",
+          "fullUrl": "https://pennylane.readme.io/reference/gettransaction",
+          "level": 2,
+          "group": "Transactions"
+        },
+        {
+          "title": "List invoices matched to a bank transactionget",
+          "path": "/reference/gettransactionmatchedinvoices",
+          "fullUrl": "https://pennylane.readme.io/reference/gettransactionmatchedinvoices",
+          "level": 2,
+          "group": "Transactions"
+        },
+        {
+          "title": "List categories of a bank transactionget",
+          "path": "/reference/gettransactioncategories",
+          "fullUrl": "https://pennylane.readme.io/reference/gettransactioncategories",
+          "level": 2,
+          "group": "Transactions"
+        },
+        {
+          "title": "Create a transactionpost",
+          "path": "/reference/createtransaction",
+          "fullUrl": "https://pennylane.readme.io/reference/createtransaction",
+          "level": 2,
+          "group": "Transactions"
+        },
+        {
+          "title": "Match a transaction to a customer invoicepost",
+          "path": "/reference/postcustomerinvoicematchedtransactions",
+          "fullUrl": "https://pennylane.readme.io/reference/postcustomerinvoicematchedtransactions",
+          "level": 2,
+          "group": "Transactions"
+        },
+        {
+          "title": "Match a transaction to a supplier invoicepost",
+          "path": "/reference/postsupplierinvoicematchedtransactions",
+          "fullUrl": "https://pennylane.readme.io/reference/postsupplierinvoicematchedtransactions",
+          "level": 2,
+          "group": "Transactions"
+        },
+        {
+          "title": "Categorize a bank transactionput",
+          "path": "/reference/puttransactioncategories",
+          "fullUrl": "https://pennylane.readme.io/reference/puttransactioncategories",
+          "level": 2,
+          "group": "Transactions"
+        },
+        {
+          "title": "Update a transactionput",
+          "path": "/reference/updatetransaction",
+          "fullUrl": "https://pennylane.readme.io/reference/updatetransaction",
+          "level": 2,
+          "group": "Transactions"
+        },
+        {
+          "title": "Unmatch a transaction to a customer invoicedel",
+          "path": "/reference/deletecustomerinvoicematchedtransactions",
+          "fullUrl": "https://pennylane.readme.io/reference/deletecustomerinvoicematchedtransactions",
+          "level": 2,
+          "group": "Transactions"
+        },
+        {
+          "title": "Unmatch a transaction to a supplier invoicedel",
+          "path": "/reference/deletesupplierinvoicematchedtransactions",
+          "fullUrl": "https://pennylane.readme.io/reference/deletesupplierinvoicematchedtransactions",
+          "level": 2,
+          "group": "Transactions"
+        },
+        {
+          "title": "Users",
+          "path": "/reference/getme",
+          "fullUrl": "https://pennylane.readme.io/reference/getme",
+          "level": 1,
+          "group": "Users"
+        }
+      ]
+    },
+    {
+      "name": "Changelog",
+      "pages": [
+        {
+          "title": "List categories and Categorize a supplier/customer endpoints",
+          "path": "/changelog/list-categories-and-categorize-a-suppliercustomer-endpoints",
+          "fullUrl": "https://pennylane.readme.io/changelog/list-categories-and-categorize-a-suppliercustomer-endpoints",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Quotes - Get changes events endpoint",
+          "path": "/changelog/quotes-get-changes-events-endpoint",
+          "fullUrl": "https://pennylane.readme.io/changelog/quotes-get-changes-events-endpoint",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get quotes changes events",
+          "path": "/reference/getquotechanges",
+          "fullUrl": "https://pennylane.readme.io/reference/getquotechanges",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "E-invoices import - Add invoice ID to response",
+          "path": "/changelog/e-invoices-import-add-invoice-id-to-response",
+          "fullUrl": "https://pennylane.readme.io/changelog/e-invoices-import-add-invoice-id-to-response",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Supplier invoices - filtering by payment_status",
+          "path": "/changelog/supplier-invoices-filtering-by-payment_status",
+          "fullUrl": "https://pennylane.readme.io/changelog/supplier-invoices-filtering-by-payment_status",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List supplier invoices",
+          "path": "/reference/getsupplierinvoices",
+          "fullUrl": "https://pennylane.readme.io/reference/getsupplierinvoices",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Customer Invoices - Auto-populate invoice line fields from product data",
+          "path": "/changelog/customer-invoices-auto-populate-invoice-line-fields-from-product-data",
+          "fullUrl": "https://pennylane.readme.io/changelog/customer-invoices-auto-populate-invoice-line-fields-from-product-data",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Ledger Entries - Adding `due_date` on create",
+          "path": "/changelog/ledger-entries-adding-due_date-on-create",
+          "fullUrl": "https://pennylane.readme.io/changelog/ledger-entries-adding-due_date-on-create",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Deprecate ledger_attachment_id from the request body params of Ledger entries create and update endpoints",
+          "path": "/changelog/deprecate-ledger_attachment_id-from-the-request-body-params-of-ledger-entries-create-and-update-endpoints",
+          "fullUrl": "https://pennylane.readme.io/changelog/deprecate-ledger_attachment_id-from-the-request-body-params-of-ledger-entries-create-and-update-endpoints",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Ledger Entries - Adding `piece_number` in the request body",
+          "path": "/changelog/ledger-entries-adding-piece_number-in-the-request-body",
+          "fullUrl": "https://pennylane.readme.io/changelog/ledger-entries-adding-piece_number-in-the-request-body",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Transactions - Adding `interbank_code` in the response",
+          "path": "/changelog/transactions-adding-interbank_code-in-the-response",
+          "fullUrl": "https://pennylane.readme.io/changelog/transactions-adding-interbank_code-in-the-response",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Updated error messages",
+          "path": "/changelog/updated-error-messages",
+          "fullUrl": "https://pennylane.readme.io/changelog/updated-error-messages",
+          "level": 0,
+          "group": ""
+        }
+      ]
+    }
+  ]
+}

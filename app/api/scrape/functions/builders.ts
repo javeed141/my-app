@@ -17,21 +17,35 @@ import {
 
 // ════════════════════════════════════════════════════════════
 //  NAVIGATION DETECTORS
+//
+//  These functions analyze the page's header/navbar links to determine
+//  what type of site structure we're dealing with:
+//
+//    "projects" → Multi-project site like /{project}/docs/
+//    "tabs"     → Standard site with top-level tabs (Guides, API Reference, etc.)
+//    "simple"   → Single-section site with no visible tabs
+//
+//  This classification determines which section builder function gets called.
 // ════════════════════════════════════════════════════════════
 
+/** Scans all navigation links on the page to find known tab patterns.
+ *  e.g. a link with href="/docs" → tab named "Guides"
+ *  e.g. a link with href="/reference" → tab named "API Reference"
+ *  Returns an array of detected tabs with their names and paths. */
 export function detectTabs($: CheerioAPI, baseUrl: string): { name: string; path: string }[] {
   const tabs: { name: string; path: string }[] = [];
-  const seen = new Set<string>();
+  const seen = new Set<string>(); // Prevent duplicate tabs (same link in header + mobile nav)
 
   $(NAV_SELECTORS).each((_: number, el: AnyNode) => {
     let href = ($(el).attr("href") || "").replace(/\/$/, "");
     try {
+      // Convert absolute URLs to relative paths for pattern matching
       if (href.startsWith("http")) {
         const u = new URL(href);
         if (u.origin === baseUrl) href = u.pathname.replace(/\/$/, "");
       }
     } catch {
-      // keep href as-is
+      // Keep href as-is if URL parsing fails (e.g. "javascript:void(0)")
     }
 
     for (const [pattern, name] of TAB_PATTERNS) {
@@ -44,12 +58,30 @@ export function detectTabs($: CheerioAPI, baseUrl: string): { name: string; path
   return tabs;
 }
 
-export function detectProjects($: CheerioAPI): Set<string> {
+/** Detects multi-project sites where docs are organized as /{project}/docs/.
+ *  e.g. some API platforms have /connect/docs/, /terminal/docs/, etc.
+ *  Returns the set of unique project names found in navigation links.
+ *
+ *  Handles both relative (/payments/docs) and absolute
+ *  (https://docs.example.com/payments/docs) hrefs — same-origin
+ *  absolute URLs are normalized to relative paths before matching. */
+export function detectProjects($: CheerioAPI, baseUrl: string): Set<string> {
   const projects = new Set<string>();
+  // These look like project names but are actually standard path segments
   const ignored = new Set(["docs", "reference", "main", "en", "v1", "v2", "v3", "v4", "v5", "beta"]);
 
   $("header a, nav a, [class*='Header'] a").each((_: number, el: AnyNode) => {
-    const href = $(el).attr("href") || "";
+    let href = $(el).attr("href") || "";
+    // Convert absolute same-origin URLs to relative paths for matching
+    // (same normalization that detectTabs already does)
+    try {
+      if (href.startsWith("http")) {
+        const u = new URL(href);
+        if (u.origin === baseUrl) href = u.pathname.replace(/\/$/, "");
+      }
+    } catch {
+      // Keep href as-is if URL parsing fails
+    }
     const m = href.match(/^\/([\w-]+)\/(docs|reference)\/?$/);
     if (m && !ignored.has(m[1])) projects.add(m[1]);
   });
@@ -58,6 +90,10 @@ export function detectProjects($: CheerioAPI): Set<string> {
 
 // ════════════════════════════════════════════════════════════
 //  SECTION BUILDER: Multi-Project Sites
+//
+//  For sites with URL structure: /{project}/docs/ and /{project}/reference/
+//  Fetches each project's doc and reference pages in parallel,
+//  then scrapes links from each page using parseHtmlFallback().
 // ════════════════════════════════════════════════════════════
 
 export async function buildProjectSections(
@@ -68,6 +104,7 @@ export async function buildProjectSections(
 ): Promise<{ name: string; pages: ScrapePageItem[] }[]> {
   const sections: { name: string; pages: ScrapePageItem[] }[] = [];
 
+  // Build list of all pages to fetch: each project × (docs + reference)
   const fetches: { name: string; url: string }[] = [];
   for (const p of projects) {
     for (const type of ["docs", "reference"] as const) {
@@ -78,11 +115,27 @@ export async function buildProjectSections(
     }
   }
 
+  // Fetch all project pages in parallel
   const htmlResults = await Promise.all(
-    fetches.map(async (f) => ({
-      name: f.name,
-      html: f.url === currentUrl ? currentHtml : await fetchPage(f.url),
-    }))
+    fetches.map(async (f) => {
+      try {
+        return {
+          name: f.name,
+          // Reuse current page HTML if it matches — avoids a redundant fetch
+          html: f.url === currentUrl ? currentHtml : await fetchPage(f.url),
+        };
+      } catch {
+        // ── CRASH GUARD ──────────────────────────────────────
+        // fetchPage() normally returns null on failure instead of throwing.
+        // But if something truly unexpected happens (e.g. the fetch()
+        // implementation throws synchronously), without this catch,
+        // Promise.all would reject immediately and ALL other fetches
+        // would be discarded — even the ones that succeeded.
+        //
+        // By catching here, one failing project doesn't kill the others.
+        return { name: f.name, html: null };
+      }
+    })
   );
 
   for (const { name, html } of htmlResults) {
@@ -97,16 +150,18 @@ export async function buildProjectSections(
 // ════════════════════════════════════════════════════════════
 //  SECTION BUILDER: Sidebar-First + Sitemap Supplement
 //
-//  OLD (broken):
-//    Loop sitemap URLs → try match sidebar → sort by order
-//    Problem: slug mismatch → alphabetical + ugly titles
+//  This is the PRIMARY path for most ReadMe sites.
 //
-//  NEW (fixed):
-//    Step 1: Sidebar pages first (already correct order + groups)
-//    Step 2: Append sitemap-only URLs at the end (extras sidebar missed)
+//  KEY INSIGHT (bug fix):
+//    OLD approach: Loop sitemap URLs → try match sidebar → sort by order
+//    Problem: slug mismatch → everything got order 999999 → alphabetical
 //
-//  SIDEBAR = primary (titles, groups, order, pages)
-//  SITEMAP = supplement (catches hidden/unlisted pages)
+//    NEW approach:
+//      Step 1: Sidebar pages FIRST (already has correct order + groups)
+//      Step 2: Append sitemap-only URLs at the end (hidden/unlisted extras)
+//
+//    SIDEBAR = primary source (titles, groups, order)
+//    SITEMAP = supplement (catches pages sidebar doesn't list)
 // ════════════════════════════════════════════════════════════
 
 export async function buildSitemapSections(
@@ -118,7 +173,9 @@ export async function buildSitemapSections(
 ): Promise<{ name: string; pages: ScrapePageItem[] }[]> {
   const sections: { name: string; pages: ScrapePageItem[] }[] = [];
 
-  // Only process prefixes matching detected navigation
+  // Determine which URL prefixes to include based on detected navigation.
+  // If tabs were found (e.g. "Guides" + "API Reference"), only process those.
+  // Otherwise, use the current page's first path segment (e.g. "docs").
   let allowedPrefixes: string[];
   if (tabs.length > 0) {
     allowedPrefixes = tabs.map((t) => t.path.replace(/^\//, ""));
@@ -129,7 +186,8 @@ export async function buildSitemapSections(
 
   const normalizedAllowed = new Set(allowedPrefixes.map(normalizePrefix));
 
-  // Collect all prefixes we need to process (from both tabs and sitemap)
+  // Collect all prefixes to process — union of tab prefixes and sitemap prefixes
+  // that match our allowed set. Deduplicates via Set.
   const prefixesToProcess = [...new Set([
     ...allowedPrefixes,
     ...[...sitemapGroups.keys()].filter(
@@ -137,7 +195,10 @@ export async function buildSitemapSections(
     ),
   ])];
 
-  // Pre-fetch all tab pages that need sidebar data (in parallel)
+  // ── Pre-fetch tab pages that need sidebar data (in parallel) ──
+  // The current page's HTML only contains sidebar JSON for ONE tab.
+  // If there are other tabs (e.g. "API Reference" when we're on "Guides"),
+  // we need to fetch those pages to extract THEIR sidebar data.
   const tabFetches = new Map<string, Promise<string | null>>();
   for (const prefix of prefixesToProcess) {
     const normalized = normalizePrefix(prefix);
@@ -145,12 +206,17 @@ export async function buildSitemapSections(
     if (!hasLookup && prefix !== "changelog") {
       const tabUrl = `${baseUrl}/${prefix}`;
       if (tabUrl !== currentUrl && !tabFetches.has(prefix)) {
-        tabFetches.set(prefix, fetchPage(tabUrl));
+        // ── CRASH GUARD ──────────────────────────────────────
+        // .catch(() => null) ensures that if one tab fetch throws
+        // (not just returns null, but actually throws an exception),
+        // it doesn't reject the entire Promise.all and lose all
+        // other successfully fetched tabs.
+        tabFetches.set(prefix, fetchPage(tabUrl).catch(() => null));
       }
       if (prefix !== normalized) {
         const altUrl = `${baseUrl}/${normalized}`;
         if (altUrl !== currentUrl && !tabFetches.has(normalized)) {
-          tabFetches.set(normalized, fetchPage(altUrl));
+          tabFetches.set(normalized, fetchPage(altUrl).catch(() => null));
         }
       }
     }
@@ -162,19 +228,22 @@ export async function buildSitemapSections(
   const results = await Promise.all(entries.map(([, promise]) => promise));
   entries.forEach(([key], i) => tabHtmlMap.set(key, results[i]));
 
-  // Build sections
-  const outputSections = new Set<string>();
+  // ── Build sections — one per URL prefix ──
+  const outputSections = new Set<string>(); // Tracks processed normalized prefixes
 
   for (const prefix of prefixesToProcess) {
     const normalized = normalizePrefix(prefix);
+    // Skip if already processed under a different name
+    // (e.g. "refs" and "reference" both normalize to "reference")
     if (outputSections.has(normalized)) continue;
     outputSections.add(normalized);
 
-    // Get sidebar lookup — from current page or fetched tab
+    // Get sidebar lookup for this prefix — try current page first, then fetched tab
     let lookup = sidebarLookups.get(prefix)
       || sidebarLookups.get(normalized)
       || new Map<string, PageMeta>();
 
+    // If no sidebar data found yet, parse the fetched tab HTML for it
     if (lookup.size === 0 && prefix !== "changelog") {
       for (const key of [prefix, normalized]) {
         const tabHtml = tabHtmlMap.get(key);
@@ -192,10 +261,11 @@ export async function buildSitemapSections(
     // ────────────────────────────────────────────────
     // STEP 1: Sidebar pages FIRST (correct order + groups)
     //
-    // Sidebar already has the right order from walkJsonSidebar.
-    // No sorting needed — just iterate in order.
-    // This gives us: "Search and Downloads", "Business Data"...
-    // NOT: "Api Status Check", "Authentication", "Businesses"...
+    // The sidebar lookup already has correct order from walkJsonSidebar
+    // (counter.n++ assigns sequential numbers as it walks the JSON tree).
+    //
+    // This gives us real titles: "Search and Downloads", "Business Data"
+    // Instead of slug-derived: "Api Status Check", "Authentication"
     // ────────────────────────────────────────────────
     if (lookup.size > 0) {
       const sorted = [...lookup.entries()].sort((a, b) => a[1].order - b[1].order);
@@ -214,8 +284,9 @@ export async function buildSitemapSections(
     // ────────────────────────────────────────────────
     // STEP 2: Append sitemap-only extras at the end
     //
-    // Pages in sitemap but NOT in sidebar (hidden/unlisted).
-    // These get slugToTitle() since we have no real metadata.
+    // Pages that exist in the sitemap but NOT in the sidebar.
+    // These are typically hidden, unlisted, or deprecated pages.
+    // They get slugToTitle() fallback since we have no real metadata.
     // ────────────────────────────────────────────────
     const sitemapUrls = sitemapGroups.get(prefix) || [];
     for (const fullUrl of sitemapUrls) {
@@ -250,6 +321,12 @@ export async function buildSitemapSections(
 
 // ════════════════════════════════════════════════════════════
 //  SECTION BUILDER: No Sitemap Fallback
+//
+//  Used when sitemap.xml is missing, empty, or unreachable.
+//  Builds sections from:
+//    1. Sidebar data (if available) — best quality
+//    2. HTML link scraping — last resort
+//    3. Fetches remaining uncovered tabs
 // ════════════════════════════════════════════════════════════
 
 export async function buildNoSitemapSections(
@@ -260,11 +337,12 @@ export async function buildNoSitemapSections(
 ): Promise<{ name: string; pages: ScrapePageItem[] }[]> {
   const sections: { name: string; pages: ScrapePageItem[] }[] = [];
 
-  // Build from sidebar data
+  // Build from sidebar data (best quality — has real titles, groups, order)
   if (sidebarLookups.size > 0) {
     const seenNormalized = new Set<string>();
     for (const [sectionKey, lookup] of sidebarLookups) {
       const normalized = normalizePrefix(sectionKey);
+      // Skip duplicates (e.g. "refs" after we already processed "reference")
       if (seenNormalized.has(normalized)) continue;
       seenNormalized.add(normalized);
 
@@ -289,7 +367,7 @@ export async function buildNoSitemapSections(
     if (pages.length > 0) sections.push({ name: "Guides", pages });
   }
 
-  // Fetch remaining tabs in parallel
+  // Figure out which tab prefixes we've already covered
   const coveredPrefixes = new Set<string>();
   for (const s of sections) {
     for (const [prefix, name] of Object.entries(PREFIX_TO_SECTION)) {
@@ -297,6 +375,7 @@ export async function buildNoSitemapSections(
     }
   }
 
+  // Fetch remaining uncovered tabs in parallel
   const uncoveredTabs = tabs.filter((tab) => {
     const prefix = tab.path.replace(/^\//, "");
     return !coveredPrefixes.has(normalizePrefix(prefix)) && prefix !== "discuss";
@@ -304,10 +383,19 @@ export async function buildNoSitemapSections(
 
   if (uncoveredTabs.length > 0) {
     const tabResults = await Promise.all(
-      uncoveredTabs.map(async (tab) => ({
-        name: tab.name,
-        html: await fetchPage(`${baseUrl}${tab.path}`),
-      }))
+      uncoveredTabs.map(async (tab) => {
+        try {
+          return {
+            name: tab.name,
+            html: await fetchPage(`${baseUrl}${tab.path}`),
+          };
+        } catch {
+          // ── CRASH GUARD ──────────────────────────────────────
+          // Same as buildProjectSections: one failing tab fetch
+          // should not reject Promise.all and discard all other tabs.
+          return { name: tab.name, html: null };
+        }
+      })
     );
     for (const { name, html } of tabResults) {
       if (!html) continue;

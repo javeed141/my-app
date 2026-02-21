@@ -10,6 +10,7 @@ import {
   isUrlAllowed,
   SAVE_FILES,
   DOC_HREF_PATTERN,
+  MAX_TITLE_LENGTH,
   type ScrapeResult,
   type ScrapePageItem,
 } from "./functions/types";
@@ -22,7 +23,13 @@ import {
   buildNoSitemapSections,
 } from "./functions/builders";
 
-// ── File Saving (async, non-blocking) ──────────────────────
+// ════════════════════════════════════════════════════════════
+//  FILE SAVING (dev only, async, non-blocking)
+//
+//  Saves scrape results to /docs/{site}_{timestamp}.json
+//  for local debugging. Only runs when NODE_ENV=development.
+//  Fire-and-forget — never blocks the API response.
+// ════════════════════════════════════════════════════════════
 
 async function saveResultToFile(out: ScrapeResult): Promise<void> {
   if (!SAVE_FILES) return;
@@ -40,10 +47,26 @@ async function saveResultToFile(out: ScrapeResult): Promise<void> {
   }
 }
 
-// ── Route Handler ──────────────────────────────────────────
+// ════════════════════════════════════════════════════════════
+//  ROUTE HANDLER — POST /api/scrape
+//
+//  Entry point for the scraper API. Receives a URL, returns
+//  a structured JSON response with all doc pages found.
+//
+//  EXECUTION FLOW:
+//    1. Validate input URL + SSRF protection
+//    2. Fetch page HTML + sitemap.xml in parallel
+//    3. Detect navigation type (projects / tabs / simple)
+//    4. Build sections using the appropriate strategy
+//    5. Final fallback: scan all <a> tags on the page
+//    6. Save result (dev only) + return JSON response
+//
+//  The outer try/catch ensures we always return a JSON error
+//  instead of letting Next.js show a generic 500 page.
+// ════════════════════════════════════════════════════════════
 
 export async function POST(req: NextRequest) {
-  // ── Input validation ──
+  // ── Input validation ──────────────────────────────────────
   let body: { url?: string };
   try {
     body = await req.json();
@@ -63,12 +86,15 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid URL" }, { status: 400 });
   }
 
+  // SSRF protection — block requests to internal/private networks
   if (!isUrlAllowed(url)) {
     return NextResponse.json({ error: "URL not allowed" }, { status: 403 });
   }
 
   try {
-    // ── Step 1: Fetch page HTML + sitemap in parallel ──
+    // ── Step 1: Fetch page HTML + sitemap in parallel ────────
+    // Both requests run concurrently to minimize total wait time.
+    // If either fails, we handle it gracefully (null check below).
     const [html, sitemapGroups] = await Promise.all([
       fetchPage(url),
       fetchSitemapUrls(baseUrl),
@@ -78,10 +104,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Failed to fetch URL" }, { status: 502 });
     }
 
-    // ── Step 2: Detect navigation type ──
+    // ── Step 2: Detect navigation type ──────────────────────
+    // Analyze the page's header/nav links to classify the site:
+    //   - "projects" → multi-project site (/{project}/docs/)
+    //   - "tabs"     → standard tabs (Guides, API Reference, etc.)
+    //   - "simple"   → single-section, no visible tabs
     const $ = load(html);
     const tabs = detectTabs($, baseUrl);
-    const projects = detectProjects($);
+    const projects = detectProjects($, baseUrl);
 
     const out: ScrapeResult = {
       site: new URL(url).hostname,
@@ -90,27 +120,34 @@ export async function POST(req: NextRequest) {
       sections: [],
     };
 
-    // ── Step 3: Build sections based on navigation type ──
+    // ── Step 3: Build sections based on navigation type ─────
     if (projects.size > 0) {
+      // Multi-project site: fetch each project's docs + reference pages
       out.navType = "projects";
       out.sections = await buildProjectSections(projects, baseUrl, url, html);
 
     } else {
+      // Standard site: use sidebar + sitemap data
       out.navType = tabs.length > 0 ? "tabs" : "simple";
       const sidebarLookups = parseSidebarLookups(html);
 
       if (sitemapGroups.size > 0) {
+        // Sitemap available: sidebar-first approach + sitemap supplements
         out.sections = await buildSitemapSections(
           sitemapGroups, sidebarLookups, tabs, baseUrl, url
         );
       } else {
+        // No sitemap: build from sidebar data + HTML scraping
         out.sections = await buildNoSitemapSections(
           sidebarLookups, tabs, baseUrl, html
         );
       }
     }
 
-    // ── Step 4: Last resort — scan all <a> tags ──
+    // ── Step 4: Last resort — scan all <a> tags on the page ─
+    // If none of the above strategies found any pages, scan every
+    // link on the page that matches a doc-like URL pattern.
+    // This catches sites with unusual navigation structures.
     if (out.sections.length === 0) {
       out.navType = "fallback";
       const pages: ScrapePageItem[] = [];
@@ -119,7 +156,9 @@ export async function POST(req: NextRequest) {
       $("a").each((_: number, a: AnyNode) => {
         const href = $(a).attr("href") || "";
         const title = $(a).text().trim();
-        if (!title || title.length > 100 || seenHrefs.has(href)) return;
+        // Skip empty titles, overly long text (probably not a page title),
+        // and duplicate hrefs (same link in header + footer)
+        if (!title || title.length > MAX_TITLE_LENGTH || seenHrefs.has(href)) return;
         if (DOC_HREF_PATTERN.test(href)) {
           seenHrefs.add(href);
           pages.push({ title, path: href, fullUrl: baseUrl + href, level: 0, group: "" });
@@ -129,11 +168,15 @@ export async function POST(req: NextRequest) {
       if (pages.length > 0) out.sections.push({ name: "all", pages });
     }
 
-    // ── Step 5: Save + respond ──
+    // ── Step 5: Save (dev only) + respond ───────────────────
+    // saveResultToFile is fire-and-forget: .catch(() => {}) means
+    // a file write error never blocks or crashes the API response.
     saveResultToFile(out).catch(() => {});
 
     return NextResponse.json(out);
   } catch (e: unknown) {
+    // Catch-all: ensures we always return a JSON error response
+    // instead of letting Next.js show a generic 500 error page.
     console.error("[scraper] Unhandled error:", e);
     return NextResponse.json(
       { error: e instanceof Error ? e.message : "Unknown error" },

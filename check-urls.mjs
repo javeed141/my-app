@@ -64,6 +64,7 @@ const urls = [
   { name: "Trinsic", url: "https://trinsic.readme.io/docs" },
   { name: "Shyft", url: "https://shyft.readme.io/docs" },
   { name: "EnableX", url: "https://enablex.readme.io/docs" },
+  {name:"developer",url:"https://developer.monday.com/apps"}
 ];
 
 async function checkUrl(entry) {

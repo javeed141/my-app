@@ -1,0 +1,2813 @@
+{
+  "site": "dev.frontapp.com",
+  "navType": "tabs",
+  "tabs": [
+    "Guides",
+    "API Reference"
+  ],
+  "sections": [
+    {
+      "name": "Guides",
+      "pages": [
+        {
+          "title": "Welcome",
+          "path": "/docs/welcome",
+          "fullUrl": "https://dev.frontapp.com/docs/welcome",
+          "level": 1,
+          "group": "Getting Started"
+        },
+        {
+          "title": "Partnering With Front",
+          "path": "/docs/partnering-with-front",
+          "fullUrl": "https://dev.frontapp.com/docs/partnering-with-front",
+          "level": 1,
+          "group": "Getting Started"
+        },
+        {
+          "title": "Create, manage, and publish apps",
+          "path": "/docs/create-and-manage-apps",
+          "fullUrl": "https://dev.frontapp.com/docs/create-and-manage-apps",
+          "level": 1,
+          "group": "Getting Started"
+        },
+        {
+          "title": "Join our Developer Community",
+          "path": "/docs/join-our-developer-community",
+          "fullUrl": "https://dev.frontapp.com/docs/join-our-developer-community",
+          "level": 1,
+          "group": "Getting Started"
+        },
+        {
+          "title": "Overview",
+          "path": "/docs/core-api-overview",
+          "fullUrl": "https://dev.frontapp.com/docs/core-api-overview",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Getting Started with the Core API",
+          "path": "/docs/core-api-getting-started",
+          "fullUrl": "https://dev.frontapp.com/docs/core-api-getting-started",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Authentication",
+          "path": "/docs/authentication",
+          "fullUrl": "https://dev.frontapp.com/docs/authentication",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "OAuth",
+          "path": "/docs/oauth",
+          "fullUrl": "https://dev.frontapp.com/docs/oauth",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "API tokens",
+          "path": "/docs/create-and-revoke-api-tokens",
+          "fullUrl": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Fundamentals",
+          "path": "/docs/fundamentals",
+          "fullUrl": "https://dev.frontapp.com/docs/fundamentals",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Base URL",
+          "path": "/docs/base-url",
+          "fullUrl": "https://dev.frontapp.com/docs/base-url",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Rate limits",
+          "path": "/docs/rate-limiting",
+          "fullUrl": "https://dev.frontapp.com/docs/rate-limiting",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Pagination",
+          "path": "/docs/pagination",
+          "fullUrl": "https://dev.frontapp.com/docs/pagination",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Search",
+          "path": "/docs/search-1",
+          "fullUrl": "https://dev.frontapp.com/docs/search-1",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Query object 'q'",
+          "path": "/docs/query-object-q",
+          "fullUrl": "https://dev.frontapp.com/docs/query-object-q",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Resource Aliases",
+          "path": "/docs/resource-aliases-1",
+          "fullUrl": "https://dev.frontapp.com/docs/resource-aliases-1",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Attachments",
+          "path": "/docs/attachments-1",
+          "fullUrl": "https://dev.frontapp.com/docs/attachments-1",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Webhooks",
+          "path": "/docs/webhooks-1",
+          "fullUrl": "https://dev.frontapp.com/docs/webhooks-1",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Application webhooks",
+          "path": "/docs/application-webhooks",
+          "fullUrl": "https://dev.frontapp.com/docs/application-webhooks",
+          "level": 3,
+          "group": "Core API"
+        },
+        {
+          "title": "Rule webhooks",
+          "path": "/docs/rule-webhooks",
+          "fullUrl": "https://dev.frontapp.com/docs/rule-webhooks",
+          "level": 3,
+          "group": "Core API"
+        },
+        {
+          "title": "Deprecation Policy",
+          "path": "/docs/deprecation-policy",
+          "fullUrl": "https://dev.frontapp.com/docs/deprecation-policy",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Application Triggers",
+          "path": "/docs/application-triggers",
+          "fullUrl": "https://dev.frontapp.com/docs/application-triggers",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Tools",
+          "path": "/docs/tools",
+          "fullUrl": "https://dev.frontapp.com/docs/tools",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Sample Applications",
+          "path": "/docs/sample-application",
+          "fullUrl": "https://dev.frontapp.com/docs/sample-application",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Overview",
+          "path": "/docs/plugin-overview",
+          "fullUrl": "https://dev.frontapp.com/docs/plugin-overview",
+          "level": 1,
+          "group": "Plugins"
+        },
+        {
+          "title": "Getting Started with the Plugin SDK",
+          "path": "/docs/plugin-getting-started",
+          "fullUrl": "https://dev.frontapp.com/docs/plugin-getting-started",
+          "level": 1,
+          "group": "Plugins"
+        },
+        {
+          "title": "Fundamentals",
+          "path": "/docs/fundamentals-1",
+          "fullUrl": "https://dev.frontapp.com/docs/fundamentals-1",
+          "level": 1,
+          "group": "Plugins"
+        },
+        {
+          "title": "Plugin Terminology 101",
+          "path": "/docs/plugin-terminology-101",
+          "fullUrl": "https://dev.frontapp.com/docs/plugin-terminology-101",
+          "level": 2,
+          "group": "Plugins"
+        },
+        {
+          "title": "Creating a plugin",
+          "path": "/docs/creating-a-plugin",
+          "fullUrl": "https://dev.frontapp.com/docs/creating-a-plugin",
+          "level": 2,
+          "group": "Plugins"
+        },
+        {
+          "title": "Security",
+          "path": "/docs/security",
+          "fullUrl": "https://dev.frontapp.com/docs/security",
+          "level": 2,
+          "group": "Plugins"
+        },
+        {
+          "title": "Front UI Kit",
+          "path": "/docs/front-ui-kit",
+          "fullUrl": "https://dev.frontapp.com/docs/front-ui-kit",
+          "level": 2,
+          "group": "Plugins"
+        },
+        {
+          "title": "Pagination",
+          "path": "/docs/pagination-1",
+          "fullUrl": "https://dev.frontapp.com/docs/pagination-1",
+          "level": 2,
+          "group": "Plugins"
+        },
+        {
+          "title": "Open a sidebar plugin from a URL",
+          "path": "/docs/open-a-sidebar-plugin-from-a-url",
+          "fullUrl": "https://dev.frontapp.com/docs/open-a-sidebar-plugin-from-a-url",
+          "level": 2,
+          "group": "Plugins"
+        },
+        {
+          "title": "Migration guide",
+          "path": "/docs/plugin-sdk-migration-guide",
+          "fullUrl": "https://dev.frontapp.com/docs/plugin-sdk-migration-guide",
+          "level": 1,
+          "group": "Plugins"
+        },
+        {
+          "title": "FAQ",
+          "path": "/docs/plugin-faq",
+          "fullUrl": "https://dev.frontapp.com/docs/plugin-faq",
+          "level": 1,
+          "group": "Plugins"
+        },
+        {
+          "title": "Tools",
+          "path": "/docs/tools-1",
+          "fullUrl": "https://dev.frontapp.com/docs/tools-1",
+          "level": 1,
+          "group": "Plugins"
+        },
+        {
+          "title": "Sample Applications",
+          "path": "/docs/sample-applications",
+          "fullUrl": "https://dev.frontapp.com/docs/sample-applications",
+          "level": 1,
+          "group": "Plugins"
+        },
+        {
+          "title": "Logistics TMS plugin",
+          "path": "/docs/logistics-tms-plugin",
+          "fullUrl": "https://dev.frontapp.com/docs/logistics-tms-plugin",
+          "level": 2,
+          "group": "Plugins"
+        },
+        {
+          "title": "Auth0 - React - Vite template plugin",
+          "path": "/docs/auth0-react-vite-template-plugin",
+          "fullUrl": "https://dev.frontapp.com/docs/auth0-react-vite-template-plugin",
+          "level": 2,
+          "group": "Plugins"
+        },
+        {
+          "title": "Build plugins easily with AI",
+          "path": "/docs/ai-prompt-for-scaffolding-plugins",
+          "fullUrl": "https://dev.frontapp.com/docs/ai-prompt-for-scaffolding-plugins",
+          "level": 1,
+          "group": "Plugins"
+        },
+        {
+          "title": "AI Prompt File",
+          "path": "/docs/ai-prompt-file",
+          "fullUrl": "https://dev.frontapp.com/docs/ai-prompt-file",
+          "level": 2,
+          "group": "Plugins"
+        },
+        {
+          "title": "Overview",
+          "path": "/docs/channels-overview",
+          "fullUrl": "https://dev.frontapp.com/docs/channels-overview",
+          "level": 1,
+          "group": "Channels"
+        },
+        {
+          "title": "Application Channels",
+          "path": "/docs/partner-channels",
+          "fullUrl": "https://dev.frontapp.com/docs/partner-channels",
+          "level": 1,
+          "group": "Channels"
+        },
+        {
+          "title": "Getting Started with Application Channels",
+          "path": "/docs/getting-started-with-partner-channels",
+          "fullUrl": "https://dev.frontapp.com/docs/getting-started-with-partner-channels",
+          "level": 2,
+          "group": "Channels"
+        },
+        {
+          "title": "Fundamentals of Application Channels",
+          "path": "/docs/creating-a-partner-channel",
+          "fullUrl": "https://dev.frontapp.com/docs/creating-a-partner-channel",
+          "level": 2,
+          "group": "Channels"
+        },
+        {
+          "title": "Token instrospection for channel identification",
+          "path": "/docs/token-instrospection-for-channel-identification",
+          "fullUrl": "https://dev.frontapp.com/docs/token-instrospection-for-channel-identification",
+          "level": 3,
+          "group": "Channels"
+        },
+        {
+          "title": "Application Channel Message Templates",
+          "path": "/docs/application-channel-message-templates",
+          "fullUrl": "https://dev.frontapp.com/docs/application-channel-message-templates",
+          "level": 2,
+          "group": "Channels"
+        },
+        {
+          "title": "Custom Channels",
+          "path": "/docs/custom-channels",
+          "fullUrl": "https://dev.frontapp.com/docs/custom-channels",
+          "level": 1,
+          "group": "Channels"
+        },
+        {
+          "title": "Creating a Custom Channel",
+          "path": "/docs/creating-a-custom-channel",
+          "fullUrl": "https://dev.frontapp.com/docs/creating-a-custom-channel",
+          "level": 2,
+          "group": "Channels"
+        },
+        {
+          "title": "FAQ",
+          "path": "/docs/channels-faq",
+          "fullUrl": "https://dev.frontapp.com/docs/channels-faq",
+          "level": 1,
+          "group": "Channels"
+        },
+        {
+          "title": "Tools",
+          "path": "/docs/tools-2",
+          "fullUrl": "https://dev.frontapp.com/docs/tools-2",
+          "level": 1,
+          "group": "Channels"
+        },
+        {
+          "title": "Overview",
+          "path": "/docs/overview-2",
+          "fullUrl": "https://dev.frontapp.com/docs/overview-2",
+          "level": 1,
+          "group": "Connectors"
+        },
+        {
+          "title": "Security",
+          "path": "/docs/security-1",
+          "fullUrl": "https://dev.frontapp.com/docs/security-1",
+          "level": 1,
+          "group": "Connectors"
+        },
+        {
+          "title": "Sample applications",
+          "path": "/docs/sample-applications-1",
+          "fullUrl": "https://dev.frontapp.com/docs/sample-applications-1",
+          "level": 1,
+          "group": "Connectors"
+        },
+        {
+          "title": "Basic application object handler",
+          "path": "/docs/basic-dynamic-object-handler",
+          "fullUrl": "https://dev.frontapp.com/docs/basic-dynamic-object-handler",
+          "level": 2,
+          "group": "Connectors"
+        },
+        {
+          "title": "No-code application object",
+          "path": "/docs/no-code-dynamic-object",
+          "fullUrl": "https://dev.frontapp.com/docs/no-code-dynamic-object",
+          "level": 2,
+          "group": "Connectors"
+        },
+        {
+          "title": "Creating new API records using Connectors and App Triggers",
+          "path": "/docs/creating-new-api-records-using-connectors-and-app-triggers",
+          "fullUrl": "https://dev.frontapp.com/docs/creating-new-api-records-using-connectors-and-app-triggers",
+          "level": 2,
+          "group": "Connectors"
+        },
+        {
+          "title": "Connectors Academy course",
+          "path": "/docs/connectors-academy-course",
+          "fullUrl": "https://dev.frontapp.com/docs/connectors-academy-course",
+          "level": 1,
+          "group": "Connectors"
+        },
+        {
+          "title": "Connectors Community space",
+          "path": "/docs/connectors-community-space",
+          "fullUrl": "https://dev.frontapp.com/docs/connectors-community-space",
+          "level": 1,
+          "group": "Connectors"
+        },
+        {
+          "title": "Overview",
+          "path": "/docs/overview-1",
+          "fullUrl": "https://dev.frontapp.com/docs/overview-1",
+          "level": 1,
+          "group": "Links"
+        },
+        {
+          "title": "Creating a Links partner integration",
+          "path": "/docs/creating-a-links-integration",
+          "fullUrl": "https://dev.frontapp.com/docs/creating-a-links-integration",
+          "level": 1,
+          "group": "Links"
+        },
+        {
+          "title": "Overview",
+          "path": "/docs/chat-overview",
+          "fullUrl": "https://dev.frontapp.com/docs/chat-overview",
+          "level": 1,
+          "group": "Chat Widget"
+        },
+        {
+          "title": "Chat Widget SDK Reference",
+          "path": "/docs/chat-sdk-reference",
+          "fullUrl": "https://dev.frontapp.com/docs/chat-sdk-reference",
+          "level": 1,
+          "group": "Chat Widget"
+        },
+        {
+          "title": "Install the Chat Widget in an iOS app",
+          "path": "/docs/install-the-chat-widget-in-an-ios-app",
+          "fullUrl": "https://dev.frontapp.com/docs/install-the-chat-widget-in-an-ios-app",
+          "level": 1,
+          "group": "Chat Widget"
+        },
+        {
+          "title": "Install the Chat Widget in an Android app",
+          "path": "/docs/install-the-chat-widget-in-an-android-app",
+          "fullUrl": "https://dev.frontapp.com/docs/install-the-chat-widget-in-an-android-app",
+          "level": 1,
+          "group": "Chat Widget"
+        },
+        {
+          "title": "Identify users",
+          "path": "/docs/identify-users",
+          "fullUrl": "https://dev.frontapp.com/docs/identify-users",
+          "level": 1,
+          "group": "Chat Widget"
+        },
+        {
+          "title": "Content Security Policy",
+          "path": "/docs/content-security-policy",
+          "fullUrl": "https://dev.frontapp.com/docs/content-security-policy",
+          "level": 1,
+          "group": "Chat Widget"
+        },
+        {
+          "title": "Sample applications",
+          "path": "/docs/sample-applications-2",
+          "fullUrl": "https://dev.frontapp.com/docs/sample-applications-2",
+          "level": 1,
+          "group": "Chat Widget"
+        }
+      ]
+    },
+    {
+      "name": "API Reference",
+      "pages": [
+        {
+          "title": "API Terminology 101",
+          "path": "/reference/api-terminology-101",
+          "fullUrl": "https://dev.frontapp.com/reference/api-terminology-101",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Plugin SDK Reference",
+          "path": "/reference/plugin-sdk-introduction",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-introduction",
+          "level": 1,
+          "group": "Plugins"
+        },
+        {
+          "title": "Application Channel API Reference",
+          "path": "/reference/channel-api",
+          "fullUrl": "https://dev.frontapp.com/reference/channel-api",
+          "level": 2,
+          "group": "Channels"
+        },
+        {
+          "title": "Application Message Templates",
+          "path": "/reference/application-message-templates",
+          "fullUrl": "https://dev.frontapp.com/reference/application-message-templates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Sync Application Message Template",
+          "path": "/reference/sync-application-message-template",
+          "fullUrl": "https://dev.frontapp.com/reference/sync-application-message-template",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Application Message Template",
+          "path": "/reference/update-application-message-template",
+          "fullUrl": "https://dev.frontapp.com/reference/update-application-message-template",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Sync Inbound Message",
+          "path": "/reference/sync-inbound-message",
+          "fullUrl": "https://dev.frontapp.com/reference/sync-inbound-message",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Sync Outbound Message",
+          "path": "/reference/sync-outbound-message",
+          "fullUrl": "https://dev.frontapp.com/reference/sync-outbound-message",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Channel 1",
+          "path": "/reference/update-channel-1",
+          "fullUrl": "https://dev.frontapp.com/reference/update-channel-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update External Message Status",
+          "path": "/reference/update-external-message-status",
+          "fullUrl": "https://dev.frontapp.com/reference/update-external-message-status",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Introduction 1",
+          "path": "/reference/introduction-1",
+          "fullUrl": "https://dev.frontapp.com/reference/introduction-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Contact To Account",
+          "path": "/reference/add-contact-to-account",
+          "fullUrl": "https://dev.frontapp.com/reference/add-contact-to-account",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Account",
+          "path": "/reference/create-account",
+          "fullUrl": "https://dev.frontapp.com/reference/create-account",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete An Account",
+          "path": "/reference/delete-an-account",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-an-account",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Fetch An Account",
+          "path": "/reference/fetch-an-account",
+          "fullUrl": "https://dev.frontapp.com/reference/fetch-an-account",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Account Contacts",
+          "path": "/reference/list-account-contacts",
+          "fullUrl": "https://dev.frontapp.com/reference/list-account-contacts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Accounts",
+          "path": "/reference/list-accounts",
+          "fullUrl": "https://dev.frontapp.com/reference/list-accounts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Remove Contact From Account",
+          "path": "/reference/remove-contact-from-account",
+          "fullUrl": "https://dev.frontapp.com/reference/remove-contact-from-account",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Account",
+          "path": "/reference/update-account",
+          "fullUrl": "https://dev.frontapp.com/reference/update-account",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Analytics Export",
+          "path": "/reference/create-analytics-export",
+          "fullUrl": "https://dev.frontapp.com/reference/create-analytics-export",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Analytics Report",
+          "path": "/reference/create-analytics-report",
+          "fullUrl": "https://dev.frontapp.com/reference/create-analytics-report",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Analytics Export",
+          "path": "/reference/get-analytics-export",
+          "fullUrl": "https://dev.frontapp.com/reference/get-analytics-export",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Analytics Report",
+          "path": "/reference/get-analytics-report",
+          "fullUrl": "https://dev.frontapp.com/reference/get-analytics-report",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Analytics",
+          "path": "/reference/analytics",
+          "fullUrl": "https://dev.frontapp.com/reference/analytics",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Trigger App Event",
+          "path": "/reference/trigger-app-event",
+          "fullUrl": "https://dev.frontapp.com/reference/trigger-app-event",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Download Attachment For A Comment",
+          "path": "/reference/download-attachment-for-a-comment",
+          "fullUrl": "https://dev.frontapp.com/reference/download-attachment-for-a-comment",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Download Attachment For A Message Template",
+          "path": "/reference/download-attachment-for-a-message-template",
+          "fullUrl": "https://dev.frontapp.com/reference/download-attachment-for-a-message-template",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Download Attachment For A Message",
+          "path": "/reference/download-attachment-for-a-message",
+          "fullUrl": "https://dev.frontapp.com/reference/download-attachment-for-a-message",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Download Attachment",
+          "path": "/reference/download-attachment",
+          "fullUrl": "https://dev.frontapp.com/reference/download-attachment",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Attachments",
+          "path": "/reference/attachments",
+          "fullUrl": "https://dev.frontapp.com/reference/attachments",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create A Channel",
+          "path": "/reference/create-a-channel",
+          "fullUrl": "https://dev.frontapp.com/reference/create-a-channel",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Channel",
+          "path": "/reference/get-channel",
+          "fullUrl": "https://dev.frontapp.com/reference/get-channel",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Channels",
+          "path": "/reference/channels",
+          "fullUrl": "https://dev.frontapp.com/reference/channels",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Channels",
+          "path": "/reference/list-channels",
+          "fullUrl": "https://dev.frontapp.com/reference/list-channels",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Team Channels",
+          "path": "/reference/list-team-channels",
+          "fullUrl": "https://dev.frontapp.com/reference/list-team-channels",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammate Channels",
+          "path": "/reference/list-teammate-channels",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammate-channels",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Channel",
+          "path": "/reference/update-channel",
+          "fullUrl": "https://dev.frontapp.com/reference/update-channel",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Validate Channel",
+          "path": "/reference/validate-channel",
+          "fullUrl": "https://dev.frontapp.com/reference/validate-channel",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Comment Reply",
+          "path": "/reference/add-comment-reply",
+          "fullUrl": "https://dev.frontapp.com/reference/add-comment-reply",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Comment",
+          "path": "/reference/add-comment",
+          "fullUrl": "https://dev.frontapp.com/reference/add-comment",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Comment",
+          "path": "/reference/get-comment",
+          "fullUrl": "https://dev.frontapp.com/reference/get-comment",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Comments",
+          "path": "/reference/comments",
+          "fullUrl": "https://dev.frontapp.com/reference/comments",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Comment Mentions",
+          "path": "/reference/list-comment-mentions",
+          "fullUrl": "https://dev.frontapp.com/reference/list-comment-mentions",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Conversation Comments",
+          "path": "/reference/list-conversation-comments",
+          "fullUrl": "https://dev.frontapp.com/reference/list-conversation-comments",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Comment",
+          "path": "/reference/update-comment",
+          "fullUrl": "https://dev.frontapp.com/reference/update-comment",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Contacts To Group",
+          "path": "/reference/add-contacts-to-group",
+          "fullUrl": "https://dev.frontapp.com/reference/add-contacts-to-group",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Group",
+          "path": "/reference/create-group",
+          "fullUrl": "https://dev.frontapp.com/reference/create-group",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Team Group",
+          "path": "/reference/create-team-group",
+          "fullUrl": "https://dev.frontapp.com/reference/create-team-group",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Teammate Group",
+          "path": "/reference/create-teammate-group",
+          "fullUrl": "https://dev.frontapp.com/reference/create-teammate-group",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete Group",
+          "path": "/reference/delete-group",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-group",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Contact Groups",
+          "path": "/reference/contact-groups",
+          "fullUrl": "https://dev.frontapp.com/reference/contact-groups",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Contacts In Group",
+          "path": "/reference/list-contacts-in-group",
+          "fullUrl": "https://dev.frontapp.com/reference/list-contacts-in-group",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Groups",
+          "path": "/reference/list-groups",
+          "fullUrl": "https://dev.frontapp.com/reference/list-groups",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Team Groups",
+          "path": "/reference/list-team-groups",
+          "fullUrl": "https://dev.frontapp.com/reference/list-team-groups",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammate Groups",
+          "path": "/reference/list-teammate-groups",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammate-groups",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Remove Contacts From Group",
+          "path": "/reference/remove-contacts-from-group",
+          "fullUrl": "https://dev.frontapp.com/reference/remove-contacts-from-group",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Contact Handle",
+          "path": "/reference/add-contact-handle",
+          "fullUrl": "https://dev.frontapp.com/reference/add-contact-handle",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete Contact Handle",
+          "path": "/reference/delete-contact-handle",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-contact-handle",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Contacts To Contact List",
+          "path": "/reference/add-contacts-to-contact-list",
+          "fullUrl": "https://dev.frontapp.com/reference/add-contacts-to-contact-list",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Contact List",
+          "path": "/reference/create-contact-list",
+          "fullUrl": "https://dev.frontapp.com/reference/create-contact-list",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Team Contact List",
+          "path": "/reference/create-team-contact-list",
+          "fullUrl": "https://dev.frontapp.com/reference/create-team-contact-list",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Teammate Contact List",
+          "path": "/reference/create-teammate-contact-list",
+          "fullUrl": "https://dev.frontapp.com/reference/create-teammate-contact-list",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete Contact List",
+          "path": "/reference/delete-contact-list",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-contact-list",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Contact Lists",
+          "path": "/reference/contact-lists",
+          "fullUrl": "https://dev.frontapp.com/reference/contact-lists",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Contact Lists",
+          "path": "/reference/list-contact-lists",
+          "fullUrl": "https://dev.frontapp.com/reference/list-contact-lists",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Contacts In Contact List",
+          "path": "/reference/list-contacts-in-contact-list",
+          "fullUrl": "https://dev.frontapp.com/reference/list-contacts-in-contact-list",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Team Contact Lists",
+          "path": "/reference/list-team-contact-lists",
+          "fullUrl": "https://dev.frontapp.com/reference/list-team-contact-lists",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammate Contact Lists",
+          "path": "/reference/list-teammate-contact-lists",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammate-contact-lists",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Remove Contacts From Contact List",
+          "path": "/reference/remove-contacts-from-contact-list",
+          "fullUrl": "https://dev.frontapp.com/reference/remove-contacts-from-contact-list",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Note",
+          "path": "/reference/add-note",
+          "fullUrl": "https://dev.frontapp.com/reference/add-note",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Notes",
+          "path": "/reference/list-notes",
+          "fullUrl": "https://dev.frontapp.com/reference/list-notes",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Contact",
+          "path": "/reference/create-contact",
+          "fullUrl": "https://dev.frontapp.com/reference/create-contact",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Team Contact",
+          "path": "/reference/create-team-contact",
+          "fullUrl": "https://dev.frontapp.com/reference/create-team-contact",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Teammate Contact",
+          "path": "/reference/create-teammate-contact",
+          "fullUrl": "https://dev.frontapp.com/reference/create-teammate-contact",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete A Contact",
+          "path": "/reference/delete-a-contact",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-a-contact",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Contact",
+          "path": "/reference/get-contact",
+          "fullUrl": "https://dev.frontapp.com/reference/get-contact",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Contacts",
+          "path": "/reference/contacts",
+          "fullUrl": "https://dev.frontapp.com/reference/contacts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Contact Conversations",
+          "path": "/reference/list-contact-conversations",
+          "fullUrl": "https://dev.frontapp.com/reference/list-contact-conversations",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Contacts",
+          "path": "/reference/list-contacts",
+          "fullUrl": "https://dev.frontapp.com/reference/list-contacts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Team Contacts",
+          "path": "/reference/list-team-contacts",
+          "fullUrl": "https://dev.frontapp.com/reference/list-team-contacts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammate Contacts",
+          "path": "/reference/list-teammate-contacts",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammate-contacts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Merge Contacts",
+          "path": "/reference/merge-contacts",
+          "fullUrl": "https://dev.frontapp.com/reference/merge-contacts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update A Contact",
+          "path": "/reference/update-a-contact",
+          "fullUrl": "https://dev.frontapp.com/reference/update-a-contact",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Conversation Followers",
+          "path": "/reference/add-conversation-followers",
+          "fullUrl": "https://dev.frontapp.com/reference/add-conversation-followers",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Conversation Link",
+          "path": "/reference/add-conversation-link",
+          "fullUrl": "https://dev.frontapp.com/reference/add-conversation-link",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Conversation Tag",
+          "path": "/reference/add-conversation-tag",
+          "fullUrl": "https://dev.frontapp.com/reference/add-conversation-tag",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Conversation",
+          "path": "/reference/create-conversation",
+          "fullUrl": "https://dev.frontapp.com/reference/create-conversation",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete Conversation Followers",
+          "path": "/reference/delete-conversation-followers",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-conversation-followers",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete Conversation",
+          "path": "/reference/delete-conversation",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-conversation",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Conversation By Id",
+          "path": "/reference/get-conversation-by-id",
+          "fullUrl": "https://dev.frontapp.com/reference/get-conversation-by-id",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Conversations",
+          "path": "/reference/conversations",
+          "fullUrl": "https://dev.frontapp.com/reference/conversations",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Conversation Events",
+          "path": "/reference/list-conversation-events",
+          "fullUrl": "https://dev.frontapp.com/reference/list-conversation-events",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Conversation Followers",
+          "path": "/reference/list-conversation-followers",
+          "fullUrl": "https://dev.frontapp.com/reference/list-conversation-followers",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Conversation Inboxes",
+          "path": "/reference/list-conversation-inboxes",
+          "fullUrl": "https://dev.frontapp.com/reference/list-conversation-inboxes",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Conversation Messages",
+          "path": "/reference/list-conversation-messages",
+          "fullUrl": "https://dev.frontapp.com/reference/list-conversation-messages",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Conversations",
+          "path": "/reference/list-conversations",
+          "fullUrl": "https://dev.frontapp.com/reference/list-conversations",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Remove Conversation Links",
+          "path": "/reference/remove-conversation-links",
+          "fullUrl": "https://dev.frontapp.com/reference/remove-conversation-links",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Remove Conversation Tag",
+          "path": "/reference/remove-conversation-tag",
+          "fullUrl": "https://dev.frontapp.com/reference/remove-conversation-tag",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Search Conversations",
+          "path": "/reference/search-conversations",
+          "fullUrl": "https://dev.frontapp.com/reference/search-conversations",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Conversation Assignee",
+          "path": "/reference/update-conversation-assignee",
+          "fullUrl": "https://dev.frontapp.com/reference/update-conversation-assignee",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Conversation Reminders",
+          "path": "/reference/update-conversation-reminders",
+          "fullUrl": "https://dev.frontapp.com/reference/update-conversation-reminders",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Conversation",
+          "path": "/reference/update-conversation",
+          "fullUrl": "https://dev.frontapp.com/reference/update-conversation",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Custom Fields",
+          "path": "/reference/custom-fields",
+          "fullUrl": "https://dev.frontapp.com/reference/custom-fields",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Account Custom Fields",
+          "path": "/reference/list-account-custom-fields",
+          "fullUrl": "https://dev.frontapp.com/reference/list-account-custom-fields",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Contact Custom Fields",
+          "path": "/reference/list-contact-custom-fields",
+          "fullUrl": "https://dev.frontapp.com/reference/list-contact-custom-fields",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Conversation Custom Fields",
+          "path": "/reference/list-conversation-custom-fields",
+          "fullUrl": "https://dev.frontapp.com/reference/list-conversation-custom-fields",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Custom Fields",
+          "path": "/reference/list-custom-fields",
+          "fullUrl": "https://dev.frontapp.com/reference/list-custom-fields",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Inbox Custom Fields",
+          "path": "/reference/list-inbox-custom-fields",
+          "fullUrl": "https://dev.frontapp.com/reference/list-inbox-custom-fields",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Link Custom Fields",
+          "path": "/reference/list-link-custom-fields",
+          "fullUrl": "https://dev.frontapp.com/reference/list-link-custom-fields",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammate Custom Fields",
+          "path": "/reference/list-teammate-custom-fields",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammate-custom-fields",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Draft Reply",
+          "path": "/reference/create-draft-reply",
+          "fullUrl": "https://dev.frontapp.com/reference/create-draft-reply",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Draft",
+          "path": "/reference/create-draft",
+          "fullUrl": "https://dev.frontapp.com/reference/create-draft",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete Draft",
+          "path": "/reference/delete-draft",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-draft",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Edit Draft",
+          "path": "/reference/edit-draft",
+          "fullUrl": "https://dev.frontapp.com/reference/edit-draft",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Drafts",
+          "path": "/reference/drafts",
+          "fullUrl": "https://dev.frontapp.com/reference/drafts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Conversation Drafts",
+          "path": "/reference/list-conversation-drafts",
+          "fullUrl": "https://dev.frontapp.com/reference/list-conversation-drafts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Event",
+          "path": "/reference/get-event",
+          "fullUrl": "https://dev.frontapp.com/reference/get-event",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Events",
+          "path": "/reference/events",
+          "fullUrl": "https://dev.frontapp.com/reference/events",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Events",
+          "path": "/reference/list-events",
+          "fullUrl": "https://dev.frontapp.com/reference/list-events",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Inbox Access",
+          "path": "/reference/add-inbox-access",
+          "fullUrl": "https://dev.frontapp.com/reference/add-inbox-access",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Inbox",
+          "path": "/reference/create-inbox",
+          "fullUrl": "https://dev.frontapp.com/reference/create-inbox",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Team Inbox",
+          "path": "/reference/create-team-inbox",
+          "fullUrl": "https://dev.frontapp.com/reference/create-team-inbox",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Inbox",
+          "path": "/reference/get-inbox",
+          "fullUrl": "https://dev.frontapp.com/reference/get-inbox",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Inboxes",
+          "path": "/reference/inboxes",
+          "fullUrl": "https://dev.frontapp.com/reference/inboxes",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Inbox Access",
+          "path": "/reference/list-inbox-access",
+          "fullUrl": "https://dev.frontapp.com/reference/list-inbox-access",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Inbox Channels",
+          "path": "/reference/list-inbox-channels",
+          "fullUrl": "https://dev.frontapp.com/reference/list-inbox-channels",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Inbox Conversations",
+          "path": "/reference/list-inbox-conversations",
+          "fullUrl": "https://dev.frontapp.com/reference/list-inbox-conversations",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Inboxes",
+          "path": "/reference/list-inboxes",
+          "fullUrl": "https://dev.frontapp.com/reference/list-inboxes",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Team Inboxes",
+          "path": "/reference/list-team-inboxes",
+          "fullUrl": "https://dev.frontapp.com/reference/list-team-inboxes",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammate Private Inboxes",
+          "path": "/reference/list-teammate-private-inboxes",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammate-private-inboxes",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Removes Inbox Access",
+          "path": "/reference/removes-inbox-access",
+          "fullUrl": "https://dev.frontapp.com/reference/removes-inbox-access",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Introduction",
+          "path": "/reference/introduction",
+          "fullUrl": "https://dev.frontapp.com/reference/introduction",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create A Knowledge Base",
+          "path": "/reference/create-a-knowledge-base",
+          "fullUrl": "https://dev.frontapp.com/reference/create-a-knowledge-base",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get A Knowledge Base With Content In Default Locale",
+          "path": "/reference/get-a-knowledge-base-with-content-in-default-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/get-a-knowledge-base-with-content-in-default-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get A Knowledge Base With Content In Specified Locale",
+          "path": "/reference/get-a-knowledge-base-with-content-in-specified-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/get-a-knowledge-base-with-content-in-specified-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get A Knowledge Base",
+          "path": "/reference/get-a-knowledge-base",
+          "fullUrl": "https://dev.frontapp.com/reference/get-a-knowledge-base",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Knowledge Bases",
+          "path": "/reference/knowledge-bases",
+          "fullUrl": "https://dev.frontapp.com/reference/knowledge-bases",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Article In A Knowledge Base In Default Locale",
+          "path": "/reference/create-article-in-a-knowledge-base-in-default-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/create-article-in-a-knowledge-base-in-default-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Article In A Knowledge Base In Specified Locale",
+          "path": "/reference/create-article-in-a-knowledge-base-in-specified-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/create-article-in-a-knowledge-base-in-specified-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete An Article",
+          "path": "/reference/delete-an-article",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-an-article",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Download Attachment From An Article",
+          "path": "/reference/download-attachment-from-an-article",
+          "fullUrl": "https://dev.frontapp.com/reference/download-attachment-from-an-article",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get A Knowledge Base Article",
+          "path": "/reference/get-a-knowledge-base-article",
+          "fullUrl": "https://dev.frontapp.com/reference/get-a-knowledge-base-article",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Knowledge Base Article With Content In Default Locale",
+          "path": "/reference/get-knowledge-base-article-with-content-in-default-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/get-knowledge-base-article-with-content-in-default-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Knowledge Base Article With Content In Specified Locale",
+          "path": "/reference/get-knowledge-base-article-with-content-in-specified-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/get-knowledge-base-article-with-content-in-specified-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Article Content In Default Locale",
+          "path": "/reference/update-article-content-in-default-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/update-article-content-in-default-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Article Content In Specified Locale",
+          "path": "/reference/update-article-content-in-specified-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/update-article-content-in-specified-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Knowledge Base Category In Default Locale",
+          "path": "/reference/create-knowledge-base-category-in-default-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/create-knowledge-base-category-in-default-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Knowledge Base Category In Specified Locale",
+          "path": "/reference/create-knowledge-base-category-in-specified-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/create-knowledge-base-category-in-specified-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete A Knowledge Base Category",
+          "path": "/reference/delete-a-knowledge-base-category",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-a-knowledge-base-category",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get A Knowledge Base Category",
+          "path": "/reference/get-a-knowledge-base-category",
+          "fullUrl": "https://dev.frontapp.com/reference/get-a-knowledge-base-category",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Knowledge Base Category Content In Default Locale",
+          "path": "/reference/get-knowledge-base-category-content-in-default-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/get-knowledge-base-category-content-in-default-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Knowledge Base Category With Content In Specified Locale",
+          "path": "/reference/get-knowledge-base-category-with-content-in-specified-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/get-knowledge-base-category-with-content-in-specified-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Articles In A Category",
+          "path": "/reference/list-articles-in-a-category",
+          "fullUrl": "https://dev.frontapp.com/reference/list-articles-in-a-category",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Knowledge Base Category In Default Locale",
+          "path": "/reference/update-knowledge-base-category-in-default-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/update-knowledge-base-category-in-default-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Knowledge Base Category In Specified Locale",
+          "path": "/reference/update-knowledge-base-category-in-specified-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/update-knowledge-base-category-in-specified-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Articles In A Knowledge Base",
+          "path": "/reference/list-articles-in-a-knowledge-base",
+          "fullUrl": "https://dev.frontapp.com/reference/list-articles-in-a-knowledge-base",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Categories In A Knowledge Base",
+          "path": "/reference/list-categories-in-a-knowledge-base",
+          "fullUrl": "https://dev.frontapp.com/reference/list-categories-in-a-knowledge-base",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Knowledge Bases",
+          "path": "/reference/list-knowledge-bases",
+          "fullUrl": "https://dev.frontapp.com/reference/list-knowledge-bases",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Knowledge Base In Default Locale",
+          "path": "/reference/update-knowledge-base-in-default-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/update-knowledge-base-in-default-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Knowledge Base In Specified Locale",
+          "path": "/reference/update-knowledge-base-in-specified-locale",
+          "fullUrl": "https://dev.frontapp.com/reference/update-knowledge-base-in-specified-locale",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Link",
+          "path": "/reference/create-link",
+          "fullUrl": "https://dev.frontapp.com/reference/create-link",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Link",
+          "path": "/reference/get-link",
+          "fullUrl": "https://dev.frontapp.com/reference/get-link",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Links",
+          "path": "/reference/links",
+          "fullUrl": "https://dev.frontapp.com/reference/links",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Link Conversations",
+          "path": "/reference/list-link-conversations",
+          "fullUrl": "https://dev.frontapp.com/reference/list-link-conversations",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Links",
+          "path": "/reference/list-links",
+          "fullUrl": "https://dev.frontapp.com/reference/list-links",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update A Link",
+          "path": "/reference/update-a-link",
+          "fullUrl": "https://dev.frontapp.com/reference/update-a-link",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Child Folder",
+          "path": "/reference/create-child-folder",
+          "fullUrl": "https://dev.frontapp.com/reference/create-child-folder",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Folder",
+          "path": "/reference/create-folder",
+          "fullUrl": "https://dev.frontapp.com/reference/create-folder",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Team Folder",
+          "path": "/reference/create-team-folder",
+          "fullUrl": "https://dev.frontapp.com/reference/create-team-folder",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Teammate Folder",
+          "path": "/reference/create-teammate-folder",
+          "fullUrl": "https://dev.frontapp.com/reference/create-teammate-folder",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete Folder",
+          "path": "/reference/delete-folder",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-folder",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Child Folders",
+          "path": "/reference/get-child-folders",
+          "fullUrl": "https://dev.frontapp.com/reference/get-child-folders",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Folder",
+          "path": "/reference/get-folder",
+          "fullUrl": "https://dev.frontapp.com/reference/get-folder",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Folders",
+          "path": "/reference/list-folders",
+          "fullUrl": "https://dev.frontapp.com/reference/list-folders",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Team Folders",
+          "path": "/reference/list-team-folders",
+          "fullUrl": "https://dev.frontapp.com/reference/list-team-folders",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammate Folders",
+          "path": "/reference/list-teammate-folders",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammate-folders",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Folder",
+          "path": "/reference/update-folder",
+          "fullUrl": "https://dev.frontapp.com/reference/update-folder",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Child Template",
+          "path": "/reference/create-child-template",
+          "fullUrl": "https://dev.frontapp.com/reference/create-child-template",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Message Template",
+          "path": "/reference/create-message-template",
+          "fullUrl": "https://dev.frontapp.com/reference/create-message-template",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Team Message Template",
+          "path": "/reference/create-team-message-template",
+          "fullUrl": "https://dev.frontapp.com/reference/create-team-message-template",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Teammate Message Template",
+          "path": "/reference/create-teammate-message-template",
+          "fullUrl": "https://dev.frontapp.com/reference/create-teammate-message-template",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete Message Template",
+          "path": "/reference/delete-message-template",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-message-template",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Child Templates",
+          "path": "/reference/get-child-templates",
+          "fullUrl": "https://dev.frontapp.com/reference/get-child-templates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Message Template",
+          "path": "/reference/get-message-template",
+          "fullUrl": "https://dev.frontapp.com/reference/get-message-template",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Message Templates",
+          "path": "/reference/message-templates",
+          "fullUrl": "https://dev.frontapp.com/reference/message-templates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Message Templates",
+          "path": "/reference/list-message-templates",
+          "fullUrl": "https://dev.frontapp.com/reference/list-message-templates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Team Message Templates",
+          "path": "/reference/list-team-message-templates",
+          "fullUrl": "https://dev.frontapp.com/reference/list-team-message-templates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammate Message Templates",
+          "path": "/reference/list-teammate-message-templates",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammate-message-templates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Message Template",
+          "path": "/reference/update-message-template",
+          "fullUrl": "https://dev.frontapp.com/reference/update-message-template",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Message Reply",
+          "path": "/reference/create-message-reply",
+          "fullUrl": "https://dev.frontapp.com/reference/create-message-reply",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Message",
+          "path": "/reference/create-message",
+          "fullUrl": "https://dev.frontapp.com/reference/create-message",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Message Seen Status",
+          "path": "/reference/get-message-seen-status",
+          "fullUrl": "https://dev.frontapp.com/reference/get-message-seen-status",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Message",
+          "path": "/reference/get-message",
+          "fullUrl": "https://dev.frontapp.com/reference/get-message",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Import Inbox Message",
+          "path": "/reference/import-inbox-message",
+          "fullUrl": "https://dev.frontapp.com/reference/import-inbox-message",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Messages",
+          "path": "/reference/messages",
+          "fullUrl": "https://dev.frontapp.com/reference/messages",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Mark Message Seen",
+          "path": "/reference/mark-message-seen",
+          "fullUrl": "https://dev.frontapp.com/reference/mark-message-seen",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Receive Custom Messages",
+          "path": "/reference/receive-custom-messages",
+          "fullUrl": "https://dev.frontapp.com/reference/receive-custom-messages",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Response Body Structure",
+          "path": "/reference/response-body-structure",
+          "fullUrl": "https://dev.frontapp.com/reference/response-body-structure",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Rule",
+          "path": "/reference/get-rule",
+          "fullUrl": "https://dev.frontapp.com/reference/get-rule",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Rules",
+          "path": "/reference/rules",
+          "fullUrl": "https://dev.frontapp.com/reference/rules",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List All Company Rules",
+          "path": "/reference/list-all-company-rules",
+          "fullUrl": "https://dev.frontapp.com/reference/list-all-company-rules",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Rules",
+          "path": "/reference/list-rules",
+          "fullUrl": "https://dev.frontapp.com/reference/list-rules",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Team Rules",
+          "path": "/reference/list-team-rules",
+          "fullUrl": "https://dev.frontapp.com/reference/list-team-rules",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammate Rules",
+          "path": "/reference/list-teammate-rules",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammate-rules",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Teammates To Shift",
+          "path": "/reference/add-teammates-to-shift",
+          "fullUrl": "https://dev.frontapp.com/reference/add-teammates-to-shift",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Shift",
+          "path": "/reference/create-shift",
+          "fullUrl": "https://dev.frontapp.com/reference/create-shift",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Team Shift",
+          "path": "/reference/create-team-shift",
+          "fullUrl": "https://dev.frontapp.com/reference/create-team-shift",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Shift",
+          "path": "/reference/get-shift",
+          "fullUrl": "https://dev.frontapp.com/reference/get-shift",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Shifts",
+          "path": "/reference/shifts",
+          "fullUrl": "https://dev.frontapp.com/reference/shifts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Shifts Teammates",
+          "path": "/reference/list-shifts-teammates",
+          "fullUrl": "https://dev.frontapp.com/reference/list-shifts-teammates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Shifts",
+          "path": "/reference/list-shifts",
+          "fullUrl": "https://dev.frontapp.com/reference/list-shifts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Team Shifts",
+          "path": "/reference/list-team-shifts",
+          "fullUrl": "https://dev.frontapp.com/reference/list-team-shifts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammate Shifts",
+          "path": "/reference/list-teammate-shifts",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammate-shifts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Remove Teammates From Shift",
+          "path": "/reference/remove-teammates-from-shift",
+          "fullUrl": "https://dev.frontapp.com/reference/remove-teammates-from-shift",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Shift",
+          "path": "/reference/update-shift",
+          "fullUrl": "https://dev.frontapp.com/reference/update-shift",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Team Signature",
+          "path": "/reference/create-team-signature",
+          "fullUrl": "https://dev.frontapp.com/reference/create-team-signature",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Teammate Signature",
+          "path": "/reference/create-teammate-signature",
+          "fullUrl": "https://dev.frontapp.com/reference/create-teammate-signature",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete Signature",
+          "path": "/reference/delete-signature",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-signature",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Signatures",
+          "path": "/reference/get-signatures",
+          "fullUrl": "https://dev.frontapp.com/reference/get-signatures",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Team Signatures",
+          "path": "/reference/list-team-signatures",
+          "fullUrl": "https://dev.frontapp.com/reference/list-team-signatures",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammate Signatures",
+          "path": "/reference/list-teammate-signatures",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammate-signatures",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Signature",
+          "path": "/reference/update-signature",
+          "fullUrl": "https://dev.frontapp.com/reference/update-signature",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Ticket Status By Id",
+          "path": "/reference/get-ticket-status-by-id",
+          "fullUrl": "https://dev.frontapp.com/reference/get-ticket-status-by-id",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Statuses",
+          "path": "/reference/statuses",
+          "fullUrl": "https://dev.frontapp.com/reference/statuses",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Company Ticket Statuses",
+          "path": "/reference/list-company-ticket-statuses",
+          "fullUrl": "https://dev.frontapp.com/reference/list-company-ticket-statuses",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Child Tag",
+          "path": "/reference/create-child-tag",
+          "fullUrl": "https://dev.frontapp.com/reference/create-child-tag",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Company Tag",
+          "path": "/reference/create-company-tag",
+          "fullUrl": "https://dev.frontapp.com/reference/create-company-tag",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Tag",
+          "path": "/reference/create-tag",
+          "fullUrl": "https://dev.frontapp.com/reference/create-tag",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Team Tag",
+          "path": "/reference/create-team-tag",
+          "fullUrl": "https://dev.frontapp.com/reference/create-team-tag",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Teammate Tag",
+          "path": "/reference/create-teammate-tag",
+          "fullUrl": "https://dev.frontapp.com/reference/create-teammate-tag",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete Tag",
+          "path": "/reference/delete-tag",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-tag",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Tag",
+          "path": "/reference/get-tag",
+          "fullUrl": "https://dev.frontapp.com/reference/get-tag",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Tags",
+          "path": "/reference/tags",
+          "fullUrl": "https://dev.frontapp.com/reference/tags",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Company Tags",
+          "path": "/reference/list-company-tags",
+          "fullUrl": "https://dev.frontapp.com/reference/list-company-tags",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Tag Children",
+          "path": "/reference/list-tag-children",
+          "fullUrl": "https://dev.frontapp.com/reference/list-tag-children",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Tagged Conversations",
+          "path": "/reference/list-tagged-conversations",
+          "fullUrl": "https://dev.frontapp.com/reference/list-tagged-conversations",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Tags",
+          "path": "/reference/list-tags",
+          "fullUrl": "https://dev.frontapp.com/reference/list-tags",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Team Tags",
+          "path": "/reference/list-team-tags",
+          "fullUrl": "https://dev.frontapp.com/reference/list-team-tags",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammate Tags",
+          "path": "/reference/list-teammate-tags",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammate-tags",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update A Tag",
+          "path": "/reference/update-a-tag",
+          "fullUrl": "https://dev.frontapp.com/reference/update-a-tag",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Company Teammate Group Team Inboxes",
+          "path": "/reference/add-company-teammate-group-team-inboxes",
+          "fullUrl": "https://dev.frontapp.com/reference/add-company-teammate-group-team-inboxes",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Company Teammate Group Teammates",
+          "path": "/reference/add-company-teammate-group-teammates",
+          "fullUrl": "https://dev.frontapp.com/reference/add-company-teammate-group-teammates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Company Teammate Group Teams",
+          "path": "/reference/add-company-teammate-group-teams",
+          "fullUrl": "https://dev.frontapp.com/reference/add-company-teammate-group-teams",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Company Teammate Group",
+          "path": "/reference/create-company-teammate-group",
+          "fullUrl": "https://dev.frontapp.com/reference/create-company-teammate-group",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete Company Teammate Group",
+          "path": "/reference/delete-company-teammate-group",
+          "fullUrl": "https://dev.frontapp.com/reference/delete-company-teammate-group",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Company Teammate Group",
+          "path": "/reference/get-company-teammate-group",
+          "fullUrl": "https://dev.frontapp.com/reference/get-company-teammate-group",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Teammate Groups",
+          "path": "/reference/teammate-groups",
+          "fullUrl": "https://dev.frontapp.com/reference/teammate-groups",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Company Teammate Group Team Inboxes",
+          "path": "/reference/list-company-teammate-group-team-inboxes",
+          "fullUrl": "https://dev.frontapp.com/reference/list-company-teammate-group-team-inboxes",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Company Teammate Group Teammates",
+          "path": "/reference/list-company-teammate-group-teammates",
+          "fullUrl": "https://dev.frontapp.com/reference/list-company-teammate-group-teammates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Company Teammate Group Teams",
+          "path": "/reference/list-company-teammate-group-teams",
+          "fullUrl": "https://dev.frontapp.com/reference/list-company-teammate-group-teams",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Company Teammate Groups",
+          "path": "/reference/list-company-teammate-groups",
+          "fullUrl": "https://dev.frontapp.com/reference/list-company-teammate-groups",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Remove Company Teammate Group Team Inboxes",
+          "path": "/reference/remove-company-teammate-group-team-inboxes",
+          "fullUrl": "https://dev.frontapp.com/reference/remove-company-teammate-group-team-inboxes",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Remove Company Teammate Group Teammates",
+          "path": "/reference/remove-company-teammate-group-teammates",
+          "fullUrl": "https://dev.frontapp.com/reference/remove-company-teammate-group-teammates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Remove Company Teammate Group Teams",
+          "path": "/reference/remove-company-teammate-group-teams",
+          "fullUrl": "https://dev.frontapp.com/reference/remove-company-teammate-group-teams",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update A Company Teammate Group",
+          "path": "/reference/update-a-company-teammate-group",
+          "fullUrl": "https://dev.frontapp.com/reference/update-a-company-teammate-group",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Teammate",
+          "path": "/reference/get-teammate",
+          "fullUrl": "https://dev.frontapp.com/reference/get-teammate",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Teammates",
+          "path": "/reference/teammates",
+          "fullUrl": "https://dev.frontapp.com/reference/teammates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Assigned Conversations",
+          "path": "/reference/list-assigned-conversations",
+          "fullUrl": "https://dev.frontapp.com/reference/list-assigned-conversations",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammate Inboxes",
+          "path": "/reference/list-teammate-inboxes",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammate-inboxes",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teammates",
+          "path": "/reference/list-teammates",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teammates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update Teammate",
+          "path": "/reference/update-teammate",
+          "fullUrl": "https://dev.frontapp.com/reference/update-teammate",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add Teammates To Team",
+          "path": "/reference/add-teammates-to-team",
+          "fullUrl": "https://dev.frontapp.com/reference/add-teammates-to-team",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get Team",
+          "path": "/reference/get-team",
+          "fullUrl": "https://dev.frontapp.com/reference/get-team",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Teams",
+          "path": "/reference/teams",
+          "fullUrl": "https://dev.frontapp.com/reference/teams",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Teams",
+          "path": "/reference/list-teams",
+          "fullUrl": "https://dev.frontapp.com/reference/list-teams",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Remove Teammates From Team",
+          "path": "/reference/remove-teammates-from-team",
+          "fullUrl": "https://dev.frontapp.com/reference/remove-teammates-from-team",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Api Token Details",
+          "path": "/reference/api-token-details",
+          "fullUrl": "https://dev.frontapp.com/reference/api-token-details",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Add View Teammates",
+          "path": "/reference/add-view-teammates",
+          "fullUrl": "https://dev.frontapp.com/reference/add-view-teammates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create Team View",
+          "path": "/reference/create-team-view",
+          "fullUrl": "https://dev.frontapp.com/reference/create-team-view",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Get View",
+          "path": "/reference/get-view",
+          "fullUrl": "https://dev.frontapp.com/reference/get-view",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Views",
+          "path": "/reference/views",
+          "fullUrl": "https://dev.frontapp.com/reference/views",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Team Views",
+          "path": "/reference/list-team-views",
+          "fullUrl": "https://dev.frontapp.com/reference/list-team-views",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List Views",
+          "path": "/reference/list-views",
+          "fullUrl": "https://dev.frontapp.com/reference/list-views",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Update View",
+          "path": "/reference/update-view",
+          "fullUrl": "https://dev.frontapp.com/reference/update-view",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Context Updates",
+          "path": "/reference/context-updates",
+          "fullUrl": "https://dev.frontapp.com/reference/context-updates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Event Observables",
+          "path": "/reference/event-observables",
+          "fullUrl": "https://dev.frontapp.com/reference/event-observables",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Addlink Copy",
+          "path": "/reference/addlink-copy",
+          "fullUrl": "https://dev.frontapp.com/reference/addlink-copy",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Addlink",
+          "path": "/reference/addlink",
+          "fullUrl": "https://dev.frontapp.com/reference/addlink",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Addtopic",
+          "path": "/reference/addtopic",
+          "fullUrl": "https://dev.frontapp.com/reference/addtopic",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Assign",
+          "path": "/reference/assign",
+          "fullUrl": "https://dev.frontapp.com/reference/assign",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Close",
+          "path": "/reference/close",
+          "fullUrl": "https://dev.frontapp.com/reference/close",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Closedraft",
+          "path": "/reference/closedraft",
+          "fullUrl": "https://dev.frontapp.com/reference/closedraft",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Createdraft",
+          "path": "/reference/createdraft",
+          "fullUrl": "https://dev.frontapp.com/reference/createdraft",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Downloadattachment",
+          "path": "/reference/downloadattachment",
+          "fullUrl": "https://dev.frontapp.com/reference/downloadattachment",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Fetchdraft",
+          "path": "/reference/fetchdraft",
+          "fullUrl": "https://dev.frontapp.com/reference/fetchdraft",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Fetchpath",
+          "path": "/reference/fetchpath",
+          "fullUrl": "https://dev.frontapp.com/reference/fetchpath",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Api",
+          "path": "/reference/plugin-sdk-api",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-api",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Listchannels",
+          "path": "/reference/listchannels",
+          "fullUrl": "https://dev.frontapp.com/reference/listchannels",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Listcomments",
+          "path": "/reference/listcomments",
+          "fullUrl": "https://dev.frontapp.com/reference/listcomments",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Listinboxes",
+          "path": "/reference/listinboxes",
+          "fullUrl": "https://dev.frontapp.com/reference/listinboxes",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Listmessages",
+          "path": "/reference/listmessages",
+          "fullUrl": "https://dev.frontapp.com/reference/listmessages",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Listrecipients",
+          "path": "/reference/listrecipients",
+          "fullUrl": "https://dev.frontapp.com/reference/listrecipients",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Listtags",
+          "path": "/reference/listtags",
+          "fullUrl": "https://dev.frontapp.com/reference/listtags",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Listteammates",
+          "path": "/reference/listteammates",
+          "fullUrl": "https://dev.frontapp.com/reference/listteammates",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Listticketstatuses",
+          "path": "/reference/listticketstatuses",
+          "fullUrl": "https://dev.frontapp.com/reference/listticketstatuses",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Move",
+          "path": "/reference/move",
+          "fullUrl": "https://dev.frontapp.com/reference/move",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Openconversationinpopup",
+          "path": "/reference/openconversationinpopup",
+          "fullUrl": "https://dev.frontapp.com/reference/openconversationinpopup",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Openurl",
+          "path": "/reference/openurl",
+          "fullUrl": "https://dev.frontapp.com/reference/openurl",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Openurlinpopup",
+          "path": "/reference/openurlinpopup",
+          "fullUrl": "https://dev.frontapp.com/reference/openurlinpopup",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Removelink",
+          "path": "/reference/removelink",
+          "fullUrl": "https://dev.frontapp.com/reference/removelink",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Search",
+          "path": "/reference/search",
+          "fullUrl": "https://dev.frontapp.com/reference/search",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Setstatus",
+          "path": "/reference/setstatus",
+          "fullUrl": "https://dev.frontapp.com/reference/setstatus",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Tag",
+          "path": "/reference/tag",
+          "fullUrl": "https://dev.frontapp.com/reference/tag",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Untag",
+          "path": "/reference/untag",
+          "fullUrl": "https://dev.frontapp.com/reference/untag",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Updatedraft",
+          "path": "/reference/updatedraft",
+          "fullUrl": "https://dev.frontapp.com/reference/updatedraft",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Installation",
+          "path": "/reference/installation",
+          "fullUrl": "https://dev.frontapp.com/reference/installation",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Terminology 101",
+          "path": "/reference/plugin-terminology-101",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-terminology-101",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Comment",
+          "path": "/reference/comment",
+          "fullUrl": "https://dev.frontapp.com/reference/comment",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Customfield",
+          "path": "/reference/customfield",
+          "fullUrl": "https://dev.frontapp.com/reference/customfield",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Objects",
+          "path": "/reference/plugin-sdk-objects",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-objects",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Link",
+          "path": "/reference/link",
+          "fullUrl": "https://dev.frontapp.com/reference/link",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Attachment",
+          "path": "/reference/plugin-sdk-attachment",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-attachment",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Cancel Token",
+          "path": "/reference/plugin-sdk-cancel-token",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-cancel-token",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Channel",
+          "path": "/reference/plugin-sdk-channel",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-channel",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Contact",
+          "path": "/reference/plugin-sdk-contact",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-contact",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Entrypoint",
+          "path": "/reference/entrypoint",
+          "fullUrl": "https://dev.frontapp.com/reference/entrypoint",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Context",
+          "path": "/reference/plugin-sdk-context",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-context",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Conversation",
+          "path": "/reference/plugin-sdk-conversation",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-conversation",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Draft",
+          "path": "/reference/plugin-sdk-draft",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-draft",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Message",
+          "path": "/reference/plugin-sdk-message",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-message",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Pagination Token",
+          "path": "/reference/plugin-sdk-pagination-token",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-pagination-token",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Recipient",
+          "path": "/reference/plugin-sdk-recipient",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-recipient",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Tag",
+          "path": "/reference/plugin-sdk-tag",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-tag",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Teammate",
+          "path": "/reference/plugin-sdk-teammate",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-teammate",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugin Sdk Topic",
+          "path": "/reference/plugin-sdk-topic",
+          "fullUrl": "https://dev.frontapp.com/reference/plugin-sdk-topic",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Plugn Sdk Inbox",
+          "path": "/reference/plugn-sdk-inbox",
+          "fullUrl": "https://dev.frontapp.com/reference/plugn-sdk-inbox",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Ticketstatus",
+          "path": "/reference/ticketstatus",
+          "fullUrl": "https://dev.frontapp.com/reference/ticketstatus",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Buildcanceltokensource",
+          "path": "/reference/buildcanceltokensource",
+          "fullUrl": "https://dev.frontapp.com/reference/buildcanceltokensource",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delegateanchorclickstofront",
+          "path": "/reference/delegateanchorclickstofront",
+          "fullUrl": "https://dev.frontapp.com/reference/delegateanchorclickstofront",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delegatenewwindowstofront",
+          "path": "/reference/delegatenewwindowstofront",
+          "fullUrl": "https://dev.frontapp.com/reference/delegatenewwindowstofront",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Iscancelerror",
+          "path": "/reference/iscancelerror",
+          "fullUrl": "https://dev.frontapp.com/reference/iscancelerror",
+          "level": 0,
+          "group": ""
+        }
+      ]
+    }
+  ]
+}
