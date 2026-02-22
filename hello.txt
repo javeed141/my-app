@@ -1,0 +1,6972 @@
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Headings and Text
+Reference for headings, paragraphs, inline styles, links, and spacing using both the editor UI and MDX.
+
+Overview
+
+Headings, paragraphs, inline formatting, and links are the core building blocks for every page in your Documentation.AI project. You use them to:
+
+Structure content into clear sections with headings.
+
+Write readable paragraphs with appropriate spacing.
+
+Emphasize important terms using bold, italic, or inline code.
+
+Add links to related docs, external sites, and API references.
+
+The page title renders as H1, so body headings typically begin at ##. You can work with this content either in the Web Editor (visual editing with a slash menu and toolbar) or the Code Editor (direct MDX/Markdown). Both editors use the same underlying MDX syntax.
+
+For lists and tabular data, see Lists and Tables. For highlighting important notes or warnings, use Callout. For code examples, use Code and Groups.
+
+Using with Web Editor
+
+The Web Editor lets you manage headings, body text, emphasis, links, and spacing visually, while still generating MDX under the hood.
+
+Headings
+
+Place your cursor on a new line.
+
+Open the slash menu with /.
+
+Choose Heading 2, Heading 3, or Heading 4.
+
+Type your heading text.
+
+Use '/' menu in Web Editor to choose Headings
+Use '/' menu in Web Editor to choose Headings
+You can also:
+
+Use the left-hand block dropdown to switch between Paragraph and heading levels.
+
+Promote or demote a heading by changing the level in the block dropdown (for example, Heading 3 → Heading 2).
+
+Paragraphs and basic text
+
+Start typing in a Paragraph block (the default block type).
+
+Press Enter once to create a new paragraph.
+
+Use the block dropdown to change a heading back to Paragraph.
+
+Use short paragraphs focused on a single idea. For bullets or numbered steps, switch to list blocks (see Lists and Tables).
+
+Inline emphasis and formatting
+
+To format part of a sentence:
+
+Select the text you want to format inside a paragraph or heading.
+
+Use the floating toolbar:
+
+B – bold
+
+I – italic
+
+S – strikethrough
+
+`</>` – inline code
+
+⌨ – keyboard or shortcut style
+
+You can combine styles (for example, bold + link or italic + inline code) when it improves clarity.
+
+Inline formatting options on selecting text
+Inline formatting options on selecting text
+Links
+
+Inline text link in Web Editor
+Inline text link in Web Editor
+Select the text you want to turn into a link.
+
+Click the link icon in the floating toolbar or press the link shortcut (if available in your browser).
+
+In the link dialog:
+
+Internal link
+
+Type / to search existing documentation pages.
+
+Pick a result to create a link to that page (for example, /getting-started/quickstart).
+
+External link
+
+Paste the full URL (for example, https://documentation.ai) and press Enter.
+To edit or remove a link, place your cursor inside the linked text and reopen the link dialog.
+
+Line breaks and spacing
+
+New paragraph: Press Enter once.
+
+Continue the same paragraph: Use soft-wrap by letting the editor wrap long lines automatically.
+
+Avoid stacked blank lines: Use headings, paragraphs, and components like Callout or Steps instead of adding multiple empty lines for spacing.
+
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+Using with Code Editor
+
+In the Code Editor, you work directly with MDX/Markdown to define headings, paragraphs, inline styles, links, and spacing. The same syntax is available when you switch the Web Editor into MDX view.
+
+Headings
+
+Use # characters at the start of a line to create headings. The page title renders as H1, so start body content at ##:
+
+
+## Section title
+### Subsection
+#### Detail (H4 is usually the deepest level)
+Keep heading text short and descriptive so AI features and navigation can understand the structure.
+
+Paragraphs
+
+Separate paragraphs with a single blank line:
+
+
+This is a paragraph with one idea.
+
+This is another paragraph that advances the topic.
+Avoid adding multiple consecutive blank lines; one blank line is enough.
+
+Inline emphasis and formatting
+
+Use standard Markdown syntax for inline styles:
+
+
+**Bold** text for strong emphasis.
+
+*Italic* text for subtle emphasis.
+
+~~Strikethrough~~ for removed or deprecated content.
+
+Use `inline code` for code-like terms, HTTP methods, or field names.
+
+Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.
+Rendered result:
+
+Bold text
+
+Italic text
+
+Strikethrough
+
+inline code
+
+Ctrl + C
+
+You can combine styles, such as **\GET /v1/projects`**` to make an entire inline code phrase bold.
+
+Links
+
+Internal links
+
+Use absolute paths from the docs root:
+
+
+[Quickstart](/getting-started/quickstart)
+[Lists and Tables](/components/lists-and-tables)
+[Code and Groups](/components/code-blocks-and-groups)
+External links
+
+Use full URLs:
+
+
+[Documentation.AI](https://documentation.ai/)
+You can also combine links with emphasis:
+
+
+See the **[Callout component](/components/callout)** for highlighting important notes.
+Line breaks and spacing
+
+Use a blank line for paragraph breaks:
+
+
+First paragraph.
+
+Second paragraph.
+For a manual line break inside a single paragraph, you can rely on MDX line breaks:
+
+
+First line with an intentional break. \
+Second line continues the same paragraph.
+Rendered:
+
+First line with an intentional break.
+Second line continues the same paragraph.
+
+Advanced options
+
+Use these patterns when you need finer control or are designing page-wide typography.
+
+Heading depth and hierarchy
+
+Use the frontmatter title for the page H1.
+
+Start body sections at ## and organize content as a clear outline:
+
+## for main sections (for example, "Using with Web Editor").
+
+### for subsections (for example, "Inline emphasis and formatting").
+
+#### for fine-grained details when absolutely necessary.
+
+Keeping a consistent hierarchy improves readability, search, and AI summaries.
+
+Manual line breaks with <br />
+
+When you need a visual break inside a paragraph without starting a new paragraph (for example, addresses or compact command sequences), use <br /> explicitly:
+
+
+Run these commands in order:<br />
+1. Install dependencies<br />
+2. Start the dev server
+Rendered:
+
+Run these commands in order:
+
+Install dependencies
+
+Start the dev server
+
+Use <br /> sparingly. Prefer separate paragraphs, lists, Steps, or Tabs for most layout and flow needs.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Code Editor
+Next
+Lists and Tables
+Built with Documentation.AI
+Last updated Jan 1, 2026
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Headings
+Paragraphs and basic text
+Inline emphasis and formatting
+Links
+Line breaks and spacing
+Using with Code Editor
+Headings
+Paragraphs
+Inline emphasis and formatting
+Links
+Line breaks and spacing
+Advanced options
+Heading depth and hierarchy
+Manual line breaks with <br />
+Headings and Text - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Lists and Tables
+Reference for creating ordered lists, unordered lists, nested lists, and tables using both the editor UI and MDX.
+
+Overview
+
+Lists and tables help you structure content so readers can quickly scan procedures, options, and structured data.
+
+Lists are best for sequences and grouped items:
+Use ordered lists for step-by-step procedures or rankings.
+Use unordered lists for features, options, or requirements.
+Use nested lists to show hierarchy or sub-tasks.
+Tables are best when you need to compare fields, options, or statuses in a grid.
+In Documentation.AI pages, lists and tables work alongside other components:
+
+For detailed, numbered procedures, consider using <Steps> instead of a long ordered list.
+For inline notes or warnings around lists and tables, use <Callout>.
+For code-heavy content, combine lists/tables with code examples from Code and Groups.
+You can add lists and tables either through the Web Editor or by writing Markdown/MDX in the Code Editor.
+
+Using with Web Editor
+
+Use the Web Editor when you prefer a visual, WYSIWYG-style workflow.
+
+Insert and manage lists
+
+Place your cursor on a new line.
+Type / to open the block menu.
+Under Lists & Formatting, choose:
+Bullet List (unordered)
+Numbered List (ordered)
+Start typing your first item.
+Then:
+
+Press Enter to create the next item.
+Press Tab to create a nested list under the current item.
+Use Shift + Tab to outdent and move back up a level.
+You can also switch an existing paragraph to a list (or back to a paragraph) using the block dropdown on the left of the line.
+
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+Insert and manage tables
+
+Place your cursor on a new line.
+Type / to open the block menu.
+Select Table.
+A basic table is inserted:
+
+The first row is the header row. Text in this row is styled as headings (bold).
+From the second row onward, you can enter regular cell content.
+Row controls
+
+Hover near the left edge of a row to reveal the row toolbar:
+
+H – Toggle header styling on or off for that row.
+Up/Down arrows – Move the current row up or down.
+Trash (when present) – Delete the row.
+Row controls for a table in the Web Editor
+Row controls for a table in the Web Editor
+Use these controls to:
+
+Turn a content row into a header row or demote it back.
+Reorder rows without copy-paste.
+Column controls
+
+Hover over the top of a column to reveal the column toolbar (three-dot icon):
+
+Change alignment for the column (left, center, or right).
+Move the column left or right using the arrows.
+Delete the column if you no longer need it.
+Column controls for a table in the Web Editor
+Column controls for a table in the Web Editor
+If you need more complex, API-style tables, you can also use dedicated components like <ParamField> and <ResponseField>.
+
+Using with Code Editor
+
+Use the Code Editor when you want full control over Markdown/MDX syntax or when working from a Git workflow. Lists and tables use standard Markdown syntax and render the same way as content created via the Web Editor.
+
+Lists
+
+Ordered lists
+
+Use numbers followed by periods:
+
+
+1. First item
+2. Second item
+3. Third item
+Renders as:
+
+First item
+Second item
+Third item
+Markdown automatically sequences ordered lists. You can use 1. for every item, and it will still render in order.
+
+Unordered lists
+
+Use dashes, asterisks, or plus signs:
+
+
+- First item
+- Second item
+- Third item
+Renders as:
+
+First item
+Second item
+Third item
+For consistency across your docs, prefer using - for unordered lists.
+
+Nested lists
+
+Indent nested items with spaces (commonly 2 or 4 spaces). Tabs also work, but spaces are more predictable in version control.
+
+
+1. First item
+   - Nested unordered item
+   - Another nested item
+2. Second item
+   1. Nested ordered item
+   2. Another nested ordered item
+3. Third item
+Renders as:
+
+First item
+Nested unordered item
+Another nested item
+Second item
+Nested ordered item
+Another nested ordered item
+Third item
+Mixing different unordered markers (-, *, +) within the same list can cause inconsistent rendering across Markdown parsers. Stick to a single marker per list.
+
+For long, multi-step procedures, consider using the Steps component, which gives you more control over step titles and icons.
+
+Tables
+
+Basic table syntax
+
+Use pipes (|) to separate columns and dashes (-) to define the header row:
+
+
+| Feature        | Description         | Status      |
+| -------------- | ------------------- | ----------- |
+| Authentication | User login system   | Complete    |
+| Dashboard      | Main user interface | In progress |
+| Reports        | Data analytics      | Planned     |
+Renders as:
+
+Feature	Description	Status
+Authentication	User login system	Complete
+Dashboard	Main user interface	In progress
+Reports	Data analytics	Planned
+Alignment and readability
+
+You can add colons to the header separator row to control alignment:
+
+
+| Name  | Role      | Status   |
+| :---- | :-------- | -------: |
+| Alice | Developer | Active   |
+| Bob   | Designer  | Inactive |
+:---- makes a column left-aligned.
+:----: makes a column center-aligned.
+----: makes a column right-aligned.
+It is not required to perfectly align the pipes in your raw Markdown, but it can make tables easier to edit in code.
+
+Advanced options
+
+Indentation and nested content
+
+When nesting lists:
+
+Use consistent indentation (for example, 2 or 4 spaces) for each nesting level.
+Avoid mixing tabs and spaces within the same list.
+Keep nested lists short; if you need deep hierarchies, consider using Expandables or separate sections instead.
+Table formatting best practices
+
+Keep column labels short and scannable; use separate paragraphs or Callout for long explanations.
+Prefer multiple smaller tables over one very wide table that may require horizontal scrolling.
+For API schemas or complex field documentation, use the dedicated API Components instead of hand-written Markdown tables.
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Headings and Text
+Next
+Card
+Built with Documentation.AI
+Last updated Dec 31, 2025
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Insert and manage lists
+Insert and manage tables
+Using with Code Editor
+Lists
+Tables
+Advanced options
+Indentation and nested content
+Table formatting best practices
+Lists and Tables - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Card
+Reference for creating interactive cards with icons, images, and call-to-action buttons using both the editor UI and the Card component.
+
+Overview
+
+Cards let you create visually rich navigation and feature blocks with titles, descriptions, icons, images, and call-to-action (CTA) text.
+
+Use cards when you want to:
+
+Build navigation hubs that link to key areas like Getting Started, API Reference, or Support.
+
+Create feature grids that highlight product capabilities with icons and short descriptions.
+
+Surface resources such as GitHub, community, or external tools in a scannable layout.
+
+Guide readers through structured flows, linking to tutorials or multi-step guides.
+
+In the Documentation.AI component system:
+
+<Card> defines a single interactive block.
+
+<Columns> arranges multiple cards into responsive grids.
+
+Cards often sit alongside:
+
+Headings and Text for section structure.
+
+Images when you want visual emphasis.
+
+Columns when you need multi-column layouts.
+
+Getting Started
+
+Learn the fundamentals and get your project up and running in minutes.
+
+API Reference
+
+Explore the core authentication flows and API usage.
+
+Using with Web Editor
+
+You can add and configure cards visually in the Web Editor without writing MDX.
+
+Insert a single card
+
+Place your cursor on a new line.
+
+Type / to open the component picker.
+
+Select Card.
+
+A new card appears with a default title and description.
+
+Edit title and description
+
+Title: Click the three-dot menu on the card, then update the Title field.
+
+Description: Click the description text inside the card and type your own content. You can remove it entirely if you prefer a very compact card.
+
+If you don’t want a description, click the placeholder and delete it.
+
+Configure card settings
+
+Click the three-dot menu on the card.
+
+In Card Settings, you can configure:
+
+Title: Main heading shown at the top of the card.
+
+URL: Link destination (internal path like /getting-started/quickstart or an external URL).
+
+Image Path: Optional header image displayed above the card content.
+
+Icon: Lucide icon name, chosen via Select Icon.
+
+Call-to-Action Text: Optional CTA label such as “Learn more”.
+
+Horizontal Layout: Toggle to switch between vertical (default) and side-by-side layout.
+
+Link Target:
+
+_self – Open in the same tab (default).
+
+_blank – Open in a new tab.
+
+Card settings in Web Editor
+Card settings in Web Editor
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+Card groups in the Web Editor
+
+Use Card Group to lay out multiple cards in columns without touching MDX.
+
+Place your cursor on a new line.
+
+Type / and select Card Group.
+
+A group with two cards appears by default.
+
+Card columns configuration in Web Editor
+Card columns configuration in Web Editor
+You can then:
+
+Configure columns: Open Card Group Settings from the group’s three-dot menu and choose 2, 3, or 4 columns.
+
+Add cards: Click the + icon next to the group’s menu.
+
+Remove cards: Use the trash icon on any card.
+
+Edit each card: Use each card’s three-dot menu to set its own title, URL, icon, image, CTA, and layout.
+
+Using with Code Editor
+
+Use the <Card> component directly when editing MDX in the Code Editor. This gives you full control over structure and reuse.
+
+Single card
+
+A minimal card with a title, icon, and link:
+
+
+<Card title="Quickstart" icon="zap" href="/getting-started/quickstart">
+  Get up and running with Documentation.AI in a few minutes.
+</Card>
+Rendered example:
+
+Quickstart
+
+Get up and running with Documentation.AI in a few minutes.
+
+Small card grid with Columns
+
+Combine <Card> with <Columns> for a responsive feature or navigation grid. See Columns for more layout details.
+
+
+<Columns cols={3}>
+  <Card title="Get started" icon="book-open" href="/getting-started/introduction">
+    Learn the basics of your documentation project.
+  </Card>
+  <Card title="Write in the Web Editor" icon="monitor" href="/write-and-publish/web-editor">
+    Edit content visually with rich components.
+  </Card>
+  <Card title="Write in code" icon="code" href="/write-and-publish/code-editor">
+    Keep docs alongside your codebase using MDX.
+  </Card>
+</Columns>
+Get started
+
+Learn the basics of your documentation project.
+
+Write in the Web Editor
+
+Edit content visually with rich components.
+
+Write in code
+
+Keep docs alongside your codebase using MDX.
+
+Horizontal layout
+
+Use horizontal cards when you want a compact row-like treatment, for example in a resources section:
+
+
+<Card
+  title="GitHub Repository"
+  icon="github"
+  href="https://github.com/example/repo"
+  cta="View on GitHub"
+  horizontal={true}
+>
+  Explore the source code and contribute to the project.
+</Card>
+GitHub Repository
+
+Explore the source code and contribute to the project.
+
+View on GitHub
+Cards with images
+
+Add an image to make a card stand out. For more image options, see Images.
+
+
+<Card
+  title="Deployment guide"
+  icon="cloud"
+  href="/deployment-and-hosting/deploy-your-documentation"
+  image="https://example.com/deploy-guide-header.png"
+>
+  Follow step-by-step instructions to ship your docs.
+</Card>
+
+## Advanced options
+
+Use these details when you need precise control over card appearance and behavior, or when you are standardizing card usage across your docs.
+
+### Icons
+
+Cards use [Lucide](https://lucide.dev/icons) icon names in the `icon` prop. Use the icon name only (no `Icon` suffix), for example:
+
+```jsx
+<Card title="Security" icon="shield" href="#security">
+  Implement industry-standard security measures.
+</Card>
+Commonly used icon names include:
+
+book-open, code, database, lock, users
+
+zap, cloud, terminal, settings
+
+shield, bar-chart, github, rocket
+
+Security
+
+Implement industry-standard security measures.
+
+Performance
+
+Optimize for speed and efficiency.
+
+Analytics
+
+Track metrics and user behavior.
+
+Images
+
+Use the image prop to render a header image above the card content:
+
+Images display at full card width.
+
+Prefer a consistent aspect ratio across a grid to avoid height jumps.
+
+Host images in your project’s asset storage or a stable CDN.
+
+
+<Card
+  title="Database Management"
+  icon="database"
+  href="#database"
+  image="https://example.com/database-header.png"
+>
+  Master schema design, migrations, and performance tuning.
+</Card>
+Targets and external links
+
+Use target="_blank" for external destinations that should open in a new tab:
+
+
+<Card
+  title="Community Discord"
+  icon="users"
+  href="https://discord.gg/example"
+  target="_blank"
+  cta="Join now"
+>
+  Connect with other users, ask questions, and share feedback.
+</Card>
+If you omit target, cards default to _self (same tab), which is recommended for internal docs navigation.
+
+Layout: horizontal vs vertical
+
+Control card orientation with the horizontal prop:
+
+horizontal={false} (default): Icon and content stacked vertically.
+
+horizontal={true}: Icon and text arranged side by side.
+
+Horizontal cards work best when:
+
+The description is short (one or two lines).
+
+You want a “list of resources” look rather than a grid.
+
+
+<Card
+  title="Support center"
+  icon="help-circle"
+  href="/help/contact-us"
+  horizontal={true}
+>
+  Reach out to our team for assistance.
+</Card>
+Attribute reference
+
+These attributes are available on the <Card> component.
+
+path
+title
+string
+Required
+Card heading text displayed prominently at the top.
+
+path
+href
+string
+Required
+Link destination URL. Can be relative (/getting-started/quickstart) or absolute (https://example.com).
+
+path
+icon
+string
+Lucide icon name (without Icon suffix). Displays in the card header.
+
+path
+image
+string
+Header image URL displayed above card content at full width.
+
+path
+cta
+string
+Call-to-action text displayed as a link-style button, typically at the bottom of the card.
+
+path
+horizontal
+boolean
+Use horizontal layout with icon beside content (horizontal={true}) instead of stacked layout.
+
+path
+target
+string
+Link target: _self (same tab, default) or _blank (new tab).
+
+Pair cards with Columns, Headings and Text, and Images to build clear, scannable sections that are easy to maintain in both the Web Editor and Code Editor.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Lists and Tables
+Next
+Columns
+Built with Documentation.AI
+Last updated Jan 1, 2026
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Insert a single card
+Configure card settings
+Card groups in the Web Editor
+Using with Code Editor
+Single card
+Small card grid with Columns
+Horizontal layout
+Cards with images
+Images
+Targets and external links
+Layout: horizontal vs vertical
+Attribute reference
+Card - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Columns
+Reference for creating responsive grid layouts using the Columns component.
+
+Overview
+
+Use the Columns component to create responsive multi-column layouts in your docs. It is most often used to:
+
+Arrange Card grids for feature or navigation sections
+
+Place images side by side using Images
+
+Split content into two or more columns for comparisons or dense link lists
+
+Combine Cards, Images, Callouts, and other components in a single grid
+
+Columns is a layout wrapper only. It does not change the content itself; it controls how child components are placed across the page and how they respond to different screen sizes.
+
+Responsive
+
+Automatically adapts to mobile, tablet, and desktop screens.
+
+Flexible
+
+Support for 2, 3, or 4 column layouts.
+
+Consistent
+
+Maintains consistent spacing between items.
+
+Using with Web Editor
+
+In the Web Editor, there are two main ways to create multi-column layouts:
+
+Card Group (visual, card-only grids)
+
+MDX view with Columns (fully flexible mixed content)
+
+Card Group (visual editor)
+
+Use Card Group when you want a simple grid of navigation or feature cards:
+
+Open a page in the Web Editor.
+
+Insert a Card Group block.
+
+Configure columns: Open Card Group Settings from the group’s three-dot menu and choose 2, 3, or 4 columns.
+
+Card columns configuration in Web Editor
+Card columns configuration in Web Editor
+This is the quickest way to build feature or navigation grids using Card without writing code.
+
+MDX view with Columns (mixed content)
+
+When you need more control or want to mix Cards, Images, Callouts, and text in a single grid, switch the Web Editor into MDX view and use the Columns component directly.
+
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+A simple example using Cards:
+
+Get started
+
+Learn the core concepts and how Documentation.AI is structured.
+
+Write docs
+
+Author and maintain documentation using MDX in your codebase.
+
+Add media
+
+Use images and screenshots to clarify long or complex flows.
+
+
+<Columns cols={3}>
+  <Card title="Get started" icon="book-open" href="/getting-started/introduction">
+    Learn the core concepts and how Documentation.AI is structured.
+  </Card>
+  <Card title="Write docs" icon="code" href="/write-and-publish/code-editor">
+    Author and maintain documentation using MDX in your codebase.
+  </Card>
+  <Card title="Add media" icon="image" href="/components/images">
+    Use images and screenshots to clarify long or complex flows.
+  </Card>
+</Columns>
+Using with Code Editor
+
+In the Code Editor (or any MDX file in your repository), you can import and use Columns directly.
+
+Basic syntax
+
+Wrap any components in <Columns> to create a grid layout:
+
+
+<Columns cols={2}>
+  <Card title="First Item" icon="circle" href="#">
+    Content for the first column.
+  </Card>
+  <Card title="Second Item" icon="square" href="#">
+    Content for the second column.
+  </Card>
+</Columns>
+First Item
+
+Content for the first column.
+
+Second Item
+
+Content for the second column.
+
+Column configurations
+
+Two columns:
+
+Perfect for side-by-side comparisons or paired content:
+
+
+<Columns cols={2}>
+  <Card title="Before" icon="circle-x" href="#">
+    Original implementation with manual configuration.
+  </Card>
+  <Card title="After" icon="check-circle" href="#">
+    Simplified approach using our automated tools.
+  </Card>
+</Columns>
+Before
+
+Original implementation with manual configuration.
+
+After
+
+Simplified approach using our automated tools.
+
+Three columns:
+
+Ideal for feature showcases or grouped information:
+
+
+<Columns cols={3}>
+  <Card title="Fast" icon="zap" href="#">
+    Optimized for performance and speed.
+  </Card>
+  <Card title="Secure" icon="shield" href="#">
+    Built with security best practices.
+  </Card>
+  <Card title="Scalable" icon="trending-up" href="#">
+    Grows with your application needs.
+  </Card>
+</Columns>
+Fast
+
+Optimized for performance and speed.
+
+Secure
+
+Built with security best practices.
+
+Scalable
+
+Grows with your application needs.
+
+Four columns:
+
+Great for extensive feature lists or navigation grids:
+
+
+<Columns cols={4}>
+  <Card title="Docs" icon="book-open" href="#">
+    Read the documentation.
+  </Card>
+  <Card title="API" icon="code" href="#">
+    Explore the API reference.
+  </Card>
+  <Card title="Support" icon="help-circle" href="#">
+    Get help from our team.
+  </Card>
+  <Card title="Community" icon="users" href="#">
+    Join the community.
+  </Card>
+</Columns>
+Docs
+
+Read the documentation.
+
+API
+
+Explore the API reference.
+
+Support
+
+Get help from our team.
+
+Community
+
+Join the community.
+
+Use horizontal cards with 4 columns for better content fit on desktop screens.
+
+Mixed-content example
+
+Columns is not limited to Cards. You can mix text, Images, Callouts, and other components in the same grid.
+
+
+<Columns cols={2}>
+  <div>
+    ### First Section
+    Regular markdown content in the first column.
+  </div>
+  
+  <div>
+    ### Second Section
+    More content in the second column with **formatting**.
+  </div>
+</Columns>
+With Images:
+
+
+<Columns cols={3}>
+  <Image src="./image1.jpg" alt="First" width="300" height="200" />
+  <Image src="./image2.jpg" alt="Second" width="300" height="200" />
+  <Image src="./image3.jpg" alt="Third" width="300" height="200" />
+</Columns>
+
+With Callouts:
+
+
+<Columns cols={2}>
+  <Callout kind="info">
+    This is an informational callout in the first column.
+  </Callout>
+  <Callout kind="tip">
+    This is a tip callout in the second column.
+  </Callout>
+</Columns>
+You can also place Columns inside other sections of a page, as long as it is used at the block level and wraps valid MDX content or components.
+
+Advanced options
+
+Responsive behavior
+
+Columns automatically adapts to screen size:
+
+On mobile, content stacks into a single column for readability.
+
+On tablet, layouts typically show 2 columns (for cols={2}, cols={3}, or cols={4}).
+
+On desktop, the full number of columns specified by cols is used (up to the configured limit).
+
+Screen Size	cols={2}	cols={3}	cols={4}
+Mobile	1 column	1 column	1 column
+Tablet	2 columns	2 columns	2 columns
+Desktop	2 columns	3 columns	4 columns
+This means you can safely use cols={3} or cols={4} without breaking mobile layouts; items will stack in a logical reading order (left to right, top to bottom).
+
+Layout and content best practices
+
+Prefer 2 columns for text-heavy content or detailed comparisons.
+
+Use 3 columns for most feature or navigation grids.
+
+Use 4–5 columns only for short labels or icon-based content.
+
+Keep titles and descriptions similar in length across columns so the grid feels balanced.
+
+Avoid placing large blocks of unstructured text in more than 2 columns; instead, use headings, lists, or Cards to break it up.
+
+Test key pages at mobile and tablet sizes to confirm that stacked content remains clear and in a sensible reading order.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Card
+Next
+Images
+Built with Documentation.AI
+Last updated Jan 1, 2026
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Card Group (visual editor)
+MDX view with Columns (mixed content)
+Using with Code Editor
+Basic syntax
+Column configurations
+Mixed-content example
+Advanced options
+Responsive behavior
+Layout and content best practices
+Columns - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Images
+Reference for adding images using the editor UI and the Image component.
+
+Overview
+
+Use images to illustrate concepts, show UI, and make your documentation easier to scan. Documentation.AI automatically optimizes images uploaded through the Web Editor and serves them from a CDN, so you get:
+
+Fast, cached delivery for all uploaded images.
+
+Responsive sizing with preserved aspect ratio.
+
+Built-in support for accessibility via required alt text.
+
+You can add images in two ways:
+
+Web Editor: Insert and manage images visually.
+
+Code Editor / MDX: Use the <Image> component with explicit props.
+
+Images can also be combined with other layout components such as <Card> (via its image prop) and <Columns> to build richer page layouts.
+
+Using with Web Editor
+
+Use the Web Editor to insert and manage images without writing code. For more on the editor itself, see Web Editor.
+
+Sample image abstract pattern with colorful shapes
+Sample image abstract pattern with colorful shapes
+Insert an image
+
+Place your cursor on a new line.
+
+Type / to open the command menu.
+
+Select Image.
+
+In the picker that appears, either:
+
+Click Upload image to choose a file from your computer, or
+
+Select an already uploaded image from the list.
+
+The selected image is inserted into the page and served from an optimized CDN.
+
+Upload image picker in Web Editor
+Upload image picker in Web Editor
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+Resize, align, and manage the image
+
+Hover over an image to reveal controls:
+
+Top-left badge: Shows current image dimensions (width × height).
+
+Side drag handles: Drag horizontally from the left or right edge to resize the width; height adjusts automatically to preserve aspect ratio.
+
+Top-right toolbar:
+
+Alignment icon: Align the image (for example, left, center, or right).
+
+Zoom icon: Open the image in full size.
+
+Trash icon: Remove the image from the page.
+
+Edit image properties
+
+Hover over the image and click the three-dot menu in the top-right corner.
+
+In Image properties, you can update:
+
+Image URL: The full CDN URL for the uploaded image.
+
+Caption: Optional text displayed below the image.
+
+Alt text: Required descriptive text for accessibility and SEO.
+
+The alt text field is mandatory for SEO and accessibility. Describe what is in the image, not just the file name.
+
+You can copy the image URL from image properties and reuse it in other components, such as <Card image="...">, <Columns>, or additional <Image> blocks.
+
+Using with Code Editor
+
+When editing pages as MDX (for example in the Code Editor), use the <Image> component to add images directly in code.
+
+Basic usage
+
+
+<Image
+  src="https://your-cdn.com/image.png"
+  alt="Description of the image"
+  width="800"
+  height="600"
+/>
+Abstract geometric pattern with colorful shapes
+Abstract geometric pattern with colorful shapes
+The alt attribute is required. Provide concise, descriptive text that explains the image content to screen readers.
+
+Key props
+
+Use these props to control how images render:
+
+path
+src
+string
+Required
+Absolute image URL. Prefer CDN URLs, including those copied from the Web Editor.
+
+path
+alt
+string
+Required
+Descriptive text for accessibility and SEO. This is read by screen readers and shown when the image cannot load.
+
+path
+width
+string
+Image width in pixels. Helps optimize layout and prevent layout shift.
+
+path
+height
+string
+Image height in pixels. Used with width to reserve space and reduce layout shift.
+
+path
+style
+string
+Inline CSS styles for alignment, sizing, and positioning. Use for custom layout behavior.
+
+path
+priority
+boolean
+Load the image immediately instead of lazy loading. Use for above-the-fold images only (default: false).
+
+path
+fetchpriority
+string
+Browser loading priority: high, low, or auto. Use high for critical images such as hero banners.
+
+Alignment and sizing example
+
+
+<Image
+  src="https://your-cdn.com/image.png"
+  alt="Center aligned image"
+  width="400"
+  height="300"
+  style="width: 400px; height: auto; margin: 0 auto;"
+/>
+Center aligned abstract pattern
+Center aligned abstract pattern
+You can combine <Image> with layout components like <Columns> or include an image in a <Card> via its image prop to create more complex grids and feature blocks.
+
+Advanced options
+
+Performance and loading behavior
+
+Use priority and fetchpriority to fine-tune how critical images load:
+
+
+<Image
+  src="https://your-cdn.com/hero-image.png"
+  alt="Hero banner showing product features"
+  width="1200"
+  height="600"
+  priority={true}
+  fetchpriority="high"
+/>
+Reserve performance options for above-the-fold or otherwise critical images. Overusing priority or fetchpriority="high" can hurt overall page performance.
+
+External URLs
+
+You can reference external images directly in MDX:
+
+
+<Image
+  src="https://external-cdn.com/image.jpg"
+  alt="External image description"
+  width="600"
+  height="400"
+/>
+External images are not optimized by Documentation.AI's CDN. Whenever possible, upload images through the Web Editor and reuse their CDN URLs for better caching and performance.
+
+Specifications
+
+URL format: Only absolute URLs are supported.
+
+Alt text: Required for all images (for accessibility and SEO).
+
+Supported formats: JPEG, JPG, PNG, GIF, WebP, SVG, ICO.
+
+CDN: Images uploaded via the Web Editor are automatically optimized and cached.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Columns
+Next
+Videos and Iframes
+Built with Documentation.AI
+Last updated Jan 1, 2026
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Insert an image
+Resize, align, and manage the image
+Edit image properties
+Using with Code Editor
+Basic usage
+Key props
+Alignment and sizing example
+Advanced options
+Performance and loading behavior
+External URLs
+Specifications
+Images - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Videos and iframes
+Reference for embedding videos and iframes using the editor UI and the Video / Iframe components.
+
+Overview
+
+Use videos and iframes to embed rich, interactive content directly in your docs, such as:
+
+Product walkthroughs and demos (YouTube, Vimeo, Loom)
+
+Self-hosted video files (MP4, WebM, OGG)
+
+External tools and dashboards (forms, analytics, sandboxes)
+
+In Documentation.AI you can:
+
+Use the Web Editor to paste links or embed codes and adjust layout visually.
+
+Use the Code Editor to write <Video> and <Iframe> components in MDX for full control.
+
+For static images, see Images. For showing embed code examples (such as iframe snippets) as code instead of rendering them, use Code and Groups.
+
+Please note that we do not support uploading videos directly on to the platform. You need to use a 3rd party platform such as YouTube, Vimeo, Loom or even MP4 URL.
+
+Using with Web Editor
+
+Insert a video or iframe
+
+Place your cursor on a new line in the Web Editor.
+
+Type / and select Video.
+
+In the Video URL or Embed Code dialog, paste either:
+
+A video URL (YouTube, Vimeo, Loom, MP4 URL, etc.), or
+
+An iframe embed code copied from another tool.
+
+Click Insert Video. The video or iframe appears in your document.
+
+You can use the same block for both direct video URLs and iframe-based embeds from other platforms.
+
+Video embed block with alignment and resize controls in the Web Editor
+Video embed block with alignment and resize controls in the Web Editor
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+Align and resize
+
+Hover over the embedded video or iframe to reveal controls:
+
+Top-right toolbar
+
+Alignment icon: Change alignment (for example, left, center, or right), similar to images.
+
+Other actions: May include zoom or delete, depending on your configuration.
+
+Side drag handles
+
+Drag the left or right handle to adjust the width.
+
+The height adjusts automatically to keep the original aspect ratio for videos.
+
+Use these controls to keep layouts consistent with nearby content and images.
+
+Using with Code Editor
+
+In the Code Editor, you work directly in MDX using the <Video> and <Iframe> components.
+
+<Video> component (iframe mode)
+
+Use iframe mode for platforms that provide an embed URL, such as YouTube, Vimeo, Loom, or Wistia.
+
+
+<Video
+  src="https://www.youtube.com/embed/Reu01KxMSF0"
+  title="Feature overview video"
+  width="672"
+  height="378"
+  allow-full-screen="true"
+  style="width: 100%; max-width: 672px; height: auto;"
+/>
+Key props:
+
+src (string, required): Video embed URL from the platform.
+
+width / height (string): Player dimensions in pixels.
+
+title (string): Accessible title for screen readers.
+
+allow-full-screen (boolean-like): Allow fullscreen playback (defaults to true).
+
+priority (boolean-like): Load immediately instead of lazy loading.
+
+style (string): Inline styles for alignment and sizing.
+
+<Video> component (HTML5 mode)
+
+Use HTML5 mode for self-hosted video files, with native browser controls.
+
+
+<Video
+  src="https://example.com/video/feature-walkthrough.mp4"
+  width="672"
+  height="378"
+  controls="true"
+  poster="https://example.com/video/feature-walkthrough-poster.jpg"
+  preload="metadata"
+  fetchPriority="high"
+  style="width: 100%; max-width: 672px; height: auto;"
+/>
+Additional props for HTML5 playback:
+
+controls (boolean-like): Show video controls (defaults to true).
+
+autoplay (boolean-like): Start playing when the page loads.
+
+muted (boolean-like): Start muted (often required for autoplay).
+
+loop (boolean-like): Loop playback.
+
+poster (string): Poster image shown before playback.
+
+preload (string): none, metadata, or auto.
+
+fetchPriority (string): high, low, or auto.
+
+<Iframe> component
+
+Use <Iframe> for non-video embeds such as forms, dashboards, and interactive tools.
+
+
+<Iframe
+  src="https://docs.google.com/forms/d/e/1FAIpQLSexample/viewform"
+  title="Customer feedback form"
+  width="100%"
+  height="600"
+  sandbox="allow-scripts allow-same-origin allow-presentation"
+  allow-full-screen="true"
+  style="border: 1px solid #e5e7eb; border-radius: 8px;"
+/>
+Key props:
+
+src (string, required): URL of the external content.
+
+width / height (string): Dimensions in pixels or percentages.
+
+title (string): Accessible title for screen readers.
+
+allow-full-screen (boolean-like): Allow fullscreen where supported.
+
+sandbox (string): Space-separated sandbox restrictions.
+
+priority (boolean-like): Load immediately instead of lazy loading.
+
+style (string): Inline styles for borders and layout.
+
+Use Code and Groups when you want to show iframe snippets as examples rather than render them.
+
+Advanced options
+
+Platform support
+
+Commonly used video sources:
+
+Video platforms: YouTube, Vimeo, Loom, Wistia
+
+Video formats (HTML5): MP4, WebM, OGG
+
+Most platforms provide both a shareable URL and an iframe embed code; use whichever best matches your workflow (Web Editor block or MDX component).
+
+Accessibility and layout best practices
+
+Always set a meaningful title on <Video> (iframe mode) and <Iframe> for better screen reader support.
+
+Specify width and height to improve layout stability and avoid content shifting as media loads.
+
+Use responsive styles (for example, style="width: 100%; max-width: 672px; height: auto;") so embeds look good on smaller screens.
+
+For important, above-the-fold media, consider priority="true" or fetchPriority="high"; otherwise, rely on lazy loading to keep pages fast.
+
+Security considerations for iframes
+
+Use the sandbox attribute on <Iframe> to limit what embedded content can do.
+
+Start with a restrictive value and add only what you need, for example:
+
+sandbox="allow-scripts allow-same-origin allow-presentation"
+Only embed content from origins you trust, especially when allowing scripts or same-origin access.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Images
+Next
+Code and Groups
+Built with Documentation.AI
+Last updated 2 weeks ago
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Insert a video or iframe
+Align and resize
+Using with Code Editor
+<Video> component (iframe mode)
+<Video> component (HTML5 mode)
+<Iframe> component
+Advanced options
+Platform support
+Accessibility and layout best practices
+Security considerations for iframes
+Videos and iframes - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Code blocks and groups
+Display inline code and code blocks with syntax highlighting, line highlighting, focus effects, and tabbed interfaces for multiple examples.
+
+Overview
+
+Use code blocks to show syntax-highlighted code with a built-in copy button. Use code groups when you want tabs (for example, "JavaScript," "Python," and "cURL") so readers can switch between multiple examples in one place.
+
+Code blocks and groups are ideal for:
+
+Single code snippets with syntax highlighting and copy support
+
+Multi-language SDK examples in tabs (similar to Tabs)
+
+Before/after, request/response, or setup/usage comparisons
+
+Step-by-step walkthroughs when combined with Steps
+
+At a high level:
+
+Code blocks: One snippet, one language.
+
+Code groups: Multiple snippets, each with its own language and tab.
+
+You can create both from the Web Editor or by writing MDX/Markdown in the Code Editor. The underlying syntax is the same, so you can safely switch between editors.
+
+Using with Web Editor
+
+In the Web Editor, use the slash menu to insert and manage code blocks and groups.
+
+Insert a code block
+
+Place your cursor on a new line.
+
+Type / and select Code Block.
+
+A code block appears with the placeholder "Add your code here…". Paste or type your code into the block.
+
+Use the language dropdown on the top-right of the block to pick the correct language. This controls syntax highlighting and the copy behavior.
+
+Code block in Web Editor
+Code block in Web Editor
+Insert a code group
+
+Place your cursor on a new line.
+
+Type / and select Code Group.
+
+A group is created with a default tab (for example, Tab 1) and a code editor area.
+
+Code Group in Web Editor
+Code Group in Web Editor
+Inside a code group you can:
+
+Add a tab: Click the + next to the last tab.
+
+Rename a tab: Double-click the tab label (for example, "Tab 1") and type a new name (for example, "TypeScript" or "Python").
+
+Remove a tab: Use the tab's close icon (if available) or delete the last remaining tab to remove the group.
+
+Pick a language per tab: Use the language dropdown on each tab's code block.
+
+The group toolbar also lets you duplicate or delete the entire group.
+
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+Using with Code Editor
+
+When working in a code editor, you write code blocks and code groups with standard fenced code syntax and the <CodeGroup> component.
+
+Single code block
+
+Use fenced code blocks with three backticks and a language identifier:
+
+
+const apiCall = async () => {
+  const response = await fetch("/api/docs");
+  return response.json();
+};
+
+```typescript
+const apiCall = async () => {
+  const response = await fetch("/api/docs");
+  return response.json();
+};
+```
+CodeGroup with multiple languages
+
+Wrap multiple fenced code blocks in a <CodeGroup> component to render them as tabs:
+
+
+<CodeGroup tabs="TypeScript,Python,Bash">
+```typescript
+const response = await fetch("/api/docs", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ title: "Getting Started" })
+});
+```
+
+```python
+import requests
+
+response = requests.post(
+  "https://api.example.com/docs",
+  json={"title": "Getting Started"}
+)
+```
+
+```bash
+curl -X POST https://api.example.com/docs \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Getting Started"}'
+```
+</CodeGroup>
+Notes:
+
+Each fenced block inside <CodeGroup> must have a language tag (for example, typescript, python, bash).
+
+tabs="TypeScript,Python,Bash" controls the visible tab labels. If you omit tabs, the language names are used instead.
+
+You can combine <CodeGroup> with Tabs or Steps when you need more complex layouts.
+
+Advanced options
+
+Use these attributes and patterns to fine-tune how code blocks and groups render.
+
+Line highlighting
+
+Use the highlight prop on a fenced code block to emphasize specific lines:
+
+
+const greeting = "Hello, World!";
+function sayHello() {
+  console.log(greeting);
+}
+sayHello();
+
+```javascript highlight="1-2,5"
+const greeting = "Hello, World!";
+function sayHello() {
+  console.log(greeting);
+}
+sayHello();
+```
+Line focus
+
+Use the focus prop to dim non-focused lines and draw attention to a subset of the code:
+
+
+const greeting = "Hello, World!";
+function sayHello() {
+  console.log(greeting);
+}
+sayHello();
+
+```javascript focus="2,4-5"
+const greeting = "Hello, World!";
+function sayHello() {
+  console.log(greeting);
+}
+sayHello();
+```
+Line numbers
+
+Combine highlighting or focus with line numbers using show-lines={true}:
+
+
+interface User {
+  name: string;
+  age: number;
+}
+
+```typescript highlight="1,3" show-lines="true"
+interface User {
+  name: string;
+  age: number;
+}
+```
+Wrap long lines
+
+Use the wrap parameter to control whether long lines stay on a single row with horizontal scrolling or automatically wrap onto the next visual line inside the code block.
+
+You can enable wrapping in several equivalent ways on a fenced block: wrap, wrap="true", wrap=true.
+
+
+const longLine = "This is a very long line of code that would normally require horizontal scrolling, but with wrap enabled it will wrap to the width of the container instead of overflowing.";
+
+const longLine = "This is a very long line of code that would normally require horizontal scrolling, but with wrap enabled it will wrap to the width of the container instead of overflowing.";
+You can also combine wrap with other parameters like highlight and show-lines:
+
+
+const longLine = "This line is highlighted, shows a line number, and wraps instead of scrolling horizontally across the viewport.";
+
+```typescript wrap
+const longLine = "This is a very long line of code that would normally require horizontal scrolling, but with wrap enabled it will wrap to the width of the container instead of overflowing.";
+```
+
+```typescript wrap="true"
+const longLine = "This is a very long line of code that would normally require horizontal scrolling, but with wrap enabled it will wrap to the width of the container instead of overflowing.";
+```
+
+```typescript highlight="1" show-lines="true" wrap="true"
+const longLine = "This line is highlighted, shows a line number, and wraps instead of scrolling horizontally across the viewport.";
+```
+When to use wrapping:
+
+Use wrap when you want readers to see the full line without side-scrolling (for example, configuration files or long shell commands), especially in narrow layouts or on mobile devices.
+
+Avoid wrap when alignment and spacing matter (for example, formatted logs, tables, or columns rendered in code), where wrapping can make structure harder to see.
+
+CodeGroup options
+
+<CodeGroup> supports the same block-level props (for example, highlight, focus, show-lines) inside each tabbed code block.
+
+
+<CodeGroup tabs="TypeScript,Python,Bash">
+```typescript
+const response = await fetch('/api/docs', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ title: 'Getting Started' })
+});
+```
+
+```python
+import requests
+response = requests.post('/api/docs',
+  json={'title': 'Getting Started'}
+)
+```
+
+```bash
+curl -X POST https://api.example.com/docs \\
+  -H "Content-Type: application/json" \\
+  -d '{"title": "Getting Started"}'
+```
+</CodeGroup>
+tsx
+python
+bash
+
+const response = await fetch('/api/docs', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ title: 'Getting Started' })
+});
+
+You can also control tabs explicitly:
+
+tabs: Comma-separated list of tab labels, for example tabs="TypeScript,Python,Bash".
+
+show-lines: Set on the component (for example, show-lines={true}) to show line numbers for all blocks in the group.
+
+
+<CodeGroup show-lines={true} tabs="Highlighted,Focused">
+```javascript highlight="2-3"
+const greeting = "Hello, World!";
+function sayHello() {
+  console.log(greeting);
+}
+```
+
+```javascript focus="1,3"
+const greeting = "Hello, World!";
+function sayHello() {
+  console.log(greeting);
+}
+```
+</CodeGroup>
+If you omit tabs, language identifiers are used as labels:
+
+
+<CodeGroup>
+```typescript
+const example = "This tab shows: typescript";
+```
+
+```python
+example = "This tab shows: python";
+```
+</CodeGroup>
+Auto-detected tabs
+
+Without the tabs attribute, CodeGroup automatically uses language identifiers as tab names:
+
+tsx
+python
+
+const example = "This tab shows: typescript";
+
+
+<CodeGroup>
+```typescript
+const example = "This tab shows: typescript";
+```
+
+```python
+example = "This tab shows: python"
+```
+</CodeGroup>
+CodeGroup with highlighting and focus
+
+Line highlighting and focus effects work within CodeGroup tabs:
+
+jsx
+jsx
+
+const greeting = "Hello, World!";
+function sayHello() {
+  console.log(greeting);
+}
+
+<CodeGroup tabs="Highlighted,Focused">
+```javascript
+const greeting = "Hello, World!";
+function sayHello() {
+  console.log(greeting);
+}
+```
+
+```javascript
+const greeting = "Hello, World!";
+function sayHello() {
+  console.log(greeting);
+}
+```
+</CodeGroup>
+Nested code examples (four backticks)
+
+When you need to show code that itself contains code fences, wrap the outer block in four backticks:
+
+
+````typescript
+```typescript
+function calculateTotal(price: number, tax: number): number {
+  return price + (price * tax);
+}
+```
+````
+Attribute reference
+
+Use these attributes on fenced code blocks or <CodeGroup>:
+
+path
+highlight
+string
+Line numbers or ranges to highlight. Examples: "1", "1-3", "1,3,5-7".
+
+path
+focus
+string
+Line numbers or ranges to focus on (blurs other lines). Examples: "2", "2-4", "1,4-6".
+
+path
+show-lines
+boolean | string
+Set to {true} to show line numbers for a block or an entire group.
+
+path
+tabs
+string
+Comma-separated custom tab names (for example, "TypeScript,Python,Bash"). Overrides auto-detected language labels.
+
+path
+wrap
+boolean | string
+Controls whether long lines wrap inside the code block. Defaults to false (no wrapping, horizontal scrolling). Set using wrap, wrap="true", or wrap={true} to enable white-space: pre-wrap and word-break: break-word with vertical scrolling only.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Videos and Iframes
+Next
+Mermaid Diagrams
+Built with Documentation.AI
+Last updated Jan 16, 2026
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Insert a code block
+Insert a code group
+Using with Code Editor
+Single code block
+CodeGroup with multiple languages
+Advanced options
+Line highlighting
+Line focus
+Line numbers
+Wrap long lines
+CodeGroup options
+Auto-detected tabs
+CodeGroup with highlighting and focus
+Nested code examples (four backticks)
+Attribute reference
+Code blocks and groups - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Mermaid Diagrams
+Reference for creating interactive diagrams using Mermaid syntax with zoom and fullscreen capabilities.
+
+Overview
+
+Use Mermaid diagrams to add flowcharts, sequence diagrams, and other structured visuals directly in your docs. In Documentation.AI, Mermaid diagrams are rendered from fenced code blocks and automatically gain:
+
+Interactive zoom controls (in and out, plus reset)
+
+Fullscreen viewing for complex diagrams
+
+Automatic light/dark theme support that matches your site
+
+Mermaid is a good fit when you want:
+
+Repeatable, version-controlled diagrams defined in text
+
+Architecture or API flows that evolve with your product
+
+Visual explanations that stay readable across themes and layouts
+
+Diagrams are created using the same code block system as other snippets. For a detailed overview of code blocks, see Code and Groups.
+
+Diagrams automatically switch between light and dark themes based on your site's theme settings.
+
+Using with Web Editor
+
+In the Web Editor, Mermaid diagrams are just code blocks with the language set to mermaid.
+
+Open or create a page in the Web Editor.
+
+Use the slash menu (/) to insert a Code block.
+
+In the code block language dropdown, choose mermaid.
+
+Paste or write your Mermaid definition inside the block.
+
+For example, in the Web Editor you would configure a code block with language mermaid and content similar to:
+
+Write Mermaid in Code Block
+Write Mermaid in Code Block
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+For more on inserting and configuring code blocks in the Web Editor, see Code and Groups.
+
+Using with Code Editor
+
+In the Code Editor (Markdown/MDX), Mermaid diagrams are defined as fenced code blocks with the mermaid language identifier.
+
+Basic Syntax
+
+
+```mermaid
+graph TD
+    A[Start] --> B[Process]
+    B --> C[End]
+```
+Rendered example:
+
+You can mix Mermaid blocks with any other Markdown or MDX content, including Code and Groups when you want to show Mermaid alongside other languages.
+
+Zoom controls
+
+Hover over any diagram to reveal zoom controls in the top-right corner:
+
+Zoom In - Magnify the diagram up to 300%
+
+Zoom Out - Reduce the diagram down to 50%
+
+Reset - Click the percentage to reset to 100%
+
+Fullscreen - View the diagram in fullscreen mode
+
+Use fullscreen mode for complex diagrams with many nodes and connections.
+
+Advanced Options
+
+Diagram types:
+
+Flowcharts
+
+Visualize processes, workflows, and decision trees:
+
+
+```mermaid
+graph TD
+    A[User Request] --> B{Authenticated?}
+    B -->|Yes| C[Process Request]
+    B -->|No| D[Redirect to Login]
+    C --> E[Return Response]
+    D --> F[Show Login Page]
+```
+Sequence diagrams
+
+Document API calls, interactions, and message flows:
+
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant API
+    participant Database
+    
+    Client->>API: POST /users
+    API->>Database: INSERT user
+    Database-->>API: Success
+    API-->>Client: 201 Created
+```
+Class diagrams
+
+Show object-oriented structures and relationships:
+
+
+```mermaid
+classDiagram
+    class User {
+        +String name
+        +String email
+        +login()
+        +logout()
+    }
+    class Admin {
+        +String permissions
+        +manageUsers()
+    }
+    User <|-- Admin
+```
+State diagrams
+
+Illustrate application states and transitions:
+
+
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Processing: Start
+    Processing --> Success: Complete
+    Processing --> Error: Fail
+    Success --> [*]
+    Error --> Idle: Retry
+```
+Entity relationship diagrams
+
+Design database schemas and relationships:
+
+
+```mermaid
+erDiagram
+    USER ||--o{ ORDER : places
+    USER {
+        string id PK
+        string name
+        string email
+    }
+    ORDER {
+        string id PK
+        string user_id FK
+        date created_at
+    }
+```
+Gantt charts
+
+Plan project timelines and milestones:
+
+
+```mermaid
+gantt
+    title Project Timeline
+    dateFormat YYYY-MM-DD
+    section Phase 1
+    Design           :2024-01-01, 30d
+    Development      :2024-01-15, 45d
+    section Phase 2
+    Testing          :2024-02-15, 20d
+    Deployment       :2024-03-07, 10d
+```
+Git graphs
+
+Visualize branching strategies and workflows:
+
+
+```mermaid
+gitGraph
+    commit
+    branch develop
+    checkout develop
+    commit
+    branch feature
+    checkout feature
+    commit
+    commit
+    checkout develop
+    merge feature
+    checkout main
+    merge develop
+```
+Graph directions:
+
+Control flowchart layout orientation:
+
+Direction	Code	Description
+Top to Bottom	graph TD	Vertical flow (default)
+Left to Right	graph LR	Horizontal flow
+Bottom to Top	graph BT	Reverse vertical
+Right to Left	graph RL	Reverse horizontal
+
+```mermaid
+graph LR
+    A[Input] --> B[Process] --> C[Output]
+```
+Node shapes
+
+Customize node appearance in flowcharts:
+
+
+```mermaid
+graph TD
+    A[Rectangle]
+    B(Rounded Rectangle)
+    C([Stadium Shape])
+    D[[Subroutine]]
+    E[(Database)]
+    F((Circle))
+    G>Asymmetric]
+    H{Diamond}
+    I{{Hexagon}}
+```
+Arrow types
+
+Define different connection styles:
+
+
+```mermaid
+graph LR
+    A --> B
+    C --- D
+    E -.-> F
+    G ==> H
+    I -- Text --> J
+```
+Theme support
+
+Diagrams automatically match your documentation theme:
+
+Light mode - Uses default Mermaid theme with light backgrounds
+
+Dark mode - Uses dark Mermaid theme with appropriate colors
+
+Automatic switching - Updates when theme changes
+
+No additional configuration needed. Theme switching is automatic and instant.
+
+Syntax
+
+path
+language
+string
+Required
+Use mermaid as the language identifier in fenced code blocks.
+
+path
+chart
+string
+Required
+Mermaid diagram definition using valid Mermaid syntax.
+
+path
+id
+string
+Custom identifier for the diagram. Auto-generated if not provided.
+
+Best practices
+
+Keep diagrams readable and accessible:
+
+Focus each diagram on a single concept or flow
+
+Prefer 10–15 nodes or fewer per diagram
+
+Use clear, concise labels for nodes and edges
+
+Check readability in both light and dark themes
+
+Add nearby text that explains the diagram for screen readers
+
+Use the Mermaid Live Editor at mermaid.live to prototype and validate your diagrams before adding them to your documentation.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Code and Groups
+Next
+Callout
+Built with Documentation.AI
+Last updated Jan 1, 2026
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Using with Code Editor
+Basic Syntax
+Zoom controls
+Advanced Options
+Diagram types:
+Flowcharts
+Sequence diagrams
+Class diagrams
+State diagrams
+Entity relationship diagrams
+Gantt charts
+Git graphs
+Graph directions:
+Node shapes
+Arrow types
+Theme support
+Syntax
+Best practices
+Mermaid Diagrams - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Callout
+Reference for displaying highlighted information and alerts using the Callout component.
+
+Overview
+
+Callouts are boxed sections used to highlight tips, warnings, success messages, and other important notes inside your Documentation.AI pages.
+
+Use callouts when you need to:
+
+Draw attention to key information without breaking reading flow.
+
+Warn about breaking changes, security risks, or destructive actions.
+
+Provide tips and best practices alongside procedural steps.
+
+Confirm successful outcomes (for example, deployment complete, sync finished).
+
+Callouts work alongside your regular Headings and Text and are often used with Expandables when you want to hide long notes or advanced caveats behind a collapsible section.
+
+Available callout kinds:
+
+info: Neutral information.
+
+tip: Helpful suggestions and best practices.
+
+success: Positive confirmations and results.
+
+alert: Warnings and cautions.
+
+danger: Critical errors and destructive actions.
+
+Using with Web Editor
+
+In the Web Editor, you can insert callouts without writing any code.
+
+Place your cursor where you want the callout.
+
+Type / to open the block menu.
+
+Search for Callout and choose the style you want (Info, Tip, Alert, Danger, or Success).
+
+Start typing inside the callout block to add or edit content like a normal paragraph.
+
+All callout styles:
+
+This is an info callout for neutral notes or clarifications in your docs.
+
+This is a tip callout for shortcuts, recommendations, and best practices.
+
+This is a success callout to confirm that an action or process completed correctly.
+
+This is an alert callout to flag something that needs extra attention.
+
+This is a danger callout for high-risk or destructive actions that users should double-check.
+
+If you need to keep long disclaimers or edge cases out of the main flow, consider wrapping the callout content inside an Expandable instead.
+
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+Using with Code Editor
+
+In MDX, use the Callout component with a kind attribute to control the visual style. The kind value must be one of info, tip, success, alert, or danger.
+
+Basic syntax
+
+
+<Callout kind="info">
+  This is an informational callout.
+</Callout>
+Info
+
+Use for neutral notes or clarifications.
+
+
+<Callout kind="info">
+  Configure your API key in the settings before making requests.
+</Callout>
+Configure your API key in the settings before making requests.
+
+Tip
+
+Use for recommendations, shortcuts, or best practices.
+
+
+<Callout kind="tip">
+  Use environment variables to store sensitive configuration like API keys.
+</Callout>
+Use environment variables to store sensitive configuration like API keys.
+
+Alert
+
+Use for warnings that require extra attention but are not strictly fatal.
+
+
+<Callout kind="alert">
+  This action cannot be undone. Make sure you have a backup before proceeding.
+</Callout>
+This action cannot be undone. Make sure you have a backup before proceeding.
+
+Danger
+
+Use for destructive or high-risk actions.
+
+
+<Callout kind="danger">
+  Deleting this workspace will permanently remove all documentation and cannot be recovered.
+</Callout>
+Deleting this workspace will permanently remove all documentation and cannot be recovered.
+
+Success
+
+Use for confirmations and positive outcomes.
+
+
+<Callout kind="success">
+  Your documentation has been successfully deployed and is live.
+</Callout>
+Your documentation has been successfully deployed and is live.
+
+Attributes
+
+path
+kind
+string
+Visual style and icon for the callout. One of: info (default), tip, success, alert, danger.
+
+Advanced options
+
+Callouts support a collapsed state to help keep pages scannable when you have long explanations or optional details.
+
+collapsed="false": The callout content is fully visible.
+
+collapsed="true": The callout content is hidden until the reader expands it.
+
+Example:
+
+
+<Callout kind="info" collapsed="true">
+  This is an optional deep-dive explanation that starts collapsed.
+</Callout>
+When you need more structured or multi-paragraph content that should start hidden, combine callouts with Expandables or use headings and body copy from Headings and Text inside the callout for clearer hierarchy.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Mermaid Diagrams
+Next
+Expandables
+Built with Documentation.AI
+Last updated Jan 1, 2026
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Using with Code Editor
+Basic syntax
+Info
+Tip
+Alert
+Danger
+Success
+Attributes
+Advanced options
+Callout - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Expandables
+Reference for creating collapsible content sections using the editor UI and the Expandable / ExpandableGroup components.
+
+Overview
+
+Expandables let you hide detailed content behind a clickable title. They are useful anywhere you want progressive disclosure in your docs instead of long, uninterrupted sections.
+
+Use expandables to:
+
+Build FAQ sections where each question expands to show the answer
+Tuck away optional configuration details or advanced settings
+Hide long troubleshooting sections until they are needed
+Group related details under a shared heading
+In Documentation.AI you can add expandables in two ways:
+
+Web Editor – Insert Expandable / Expandable Group blocks from the slash menu.
+Code Editor (MDX) – Use the <Expandable> and <ExpandableGroup> components.
+You can freely mix expandables with other components such as Callout and Steps to create richer, more scannable pages.
+
+
+Example expandable
+Using with Web Editor
+
+In the Web Editor, Expandable and Expandable Group are available as blocks from the slash menu.
+
+Add a single expandable
+
+Place your cursor on a new line where you want the collapsible section.
+Type / and search for Expandable.
+Select Expandable to insert an accordion-style block.
+Click the title text in the header to rename it.
+Click inside the content area to start adding body content.
+Each expandable has:
+
+A title row – what readers click to open or close the section.
+A content area – where you can add rich content such as text, images, Callout, or Steps.
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+Control default open or closed
+
+For each expandable block:
+
+Use the expand/collapse icon on the right side of the header to set the default state.
+When you click it while open, the tooltip shows “Set Default State to Collapsed” (and vice versa).
+The default state only affects how the page appears when it first loads; readers can still open and close it.
+Add and manage an expandable group
+
+Use Expandable Group when you want multiple expandables that belong together, such as an FAQ list or a set of configuration topics.
+
+To add and manage a group:
+
+Place your cursor on a new line.
+Type / and search for Expandable Group, then insert it.
+Inside the group:
+Use the + button at the bottom of the group to add another item.
+Click the trash icon on an item to delete just that expandable.
+Use the drag handle to reorder items.
+Edit titles and content just like a single expandable.
+Expandable Group ensures consistent spacing, borders, and behavior across all items in the group.
+
+Using with Code Editor
+
+In the Code Editor (MDX), you work directly with the <Expandable> and <ExpandableGroup> components.
+
+<Expandable> component
+
+Use <Expandable> for a single collapsible section.
+
+
+<Expandable title="Click to expand" default-open="false">
+  Add your content here...
+</Expandable>
+The two main attributes are:
+
+title – text shown in the header that users click.
+default-open – "true" to start open, "false" to start closed (defaults to "false").
+
+<Expandable title="Getting started guide" default-open="true">
+  This section starts open by default and is useful for key onboarding content.
+</Expandable>
+Expandables can contain rich content including lists, code blocks, Callout, and Steps:
+
+
+<Expandable title="API configuration" default-open="false">
+## Environment variables
+
+Set these variables in your `.env` file:
+
+- `API_KEY` - Your API authentication key
+- `API_URL` - Base URL for API calls
+
+```bash
+# Example .env file
+API_KEY=your-secret-key
+API_URL=https://api.example.com
+```
+
+<Callout kind="danger">
+  Never commit API keys to version control.
+</Callout>
+</Expandable>
+<ExpandableGroup> component
+
+Use <ExpandableGroup> to group multiple <Expandable> components together with consistent styling.
+
+
+<ExpandableGroup>
+  <Expandable title="Installation" default-open="true">
+    Install the package using your preferred package manager:
+
+    ```bash
+    npm install documentation-ai
+    ```
+  </Expandable>
+
+  <Expandable title="Configuration" default-open="false">
+    Create a configuration file in your project root:
+
+    ```json
+    {
+      "name": "My Documentation",
+      "theme": "light",
+      "sidebar": true
+    }
+    ```
+  </Expandable>
+
+  <Expandable title="Deployment" default-open="false">
+    Deploy your documentation using the CLI:
+
+    ```bash
+    npm run deploy
+    ```
+  </Expandable>
+</ExpandableGroup>
+<ExpandableGroup> itself does not take any attributes; it is a simple wrapper that applies layout and spacing to the child <Expandable> components.
+
+Attribute reference
+
+path
+title
+string
+Header text displayed in the expandable button (default: "Click to expand").
+
+path
+default-open
+string
+Initial state: "true" (open) or "false" (closed). Defaults to "false".
+
+Advanced options
+
+Content and layout best practices
+
+Use for progressive disclosure
+Keep pages scannable by showing only the essentials by default, and placing advanced details or edge cases in expandables.
+
+Keep titles short and specific
+Aim for clear, action-oriented titles such as "Advanced configuration", "Troubleshooting", or "See full example" rather than full sentences.
+
+Avoid nesting deeply
+While you can place many components (including Callout and Steps) inside an expandable, avoid deeply nested expandables or many layers of headings, which can be harder to navigate.
+
+Use groups for related items
+Prefer <ExpandableGroup> when you have several related items so spacing, borders, and behavior feel consistent.
+
+Behavioral notes and limitations
+
+Expandables control only visibility, not navigation; readers cannot link directly to an individual expandable item unless you add an anchor heading inside the content.
+The default-open state is evaluated on initial page load only. User open/close actions are not persisted across sessions.
+<ExpandableGroup> does not currently support additional props such as single-open-only or auto-close behavior; all items expand and collapse independently.
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Callout
+Next
+Steps
+Built with Documentation.AI
+Last updated Dec 31, 2025
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Add a single expandable
+Control default open or closed
+Add and manage an expandable group
+Using with Code Editor
+<Expandable> component
+<ExpandableGroup> component
+Attribute reference
+Advanced options
+Content and layout best practices
+Behavioral notes and limitations
+Expandables - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Steps
+Display sequential instructions or processes with numbered or icon-based steps and connecting lines.
+
+Overview
+
+The Steps component creates visually connected step-by-step instructions with automatic numbering, optional icons, and rich content inside each step.
+
+You can add steps in two ways:
+
+Editor UI: Insert Steps from the / commands menu and edit them visually (no code required).
+MDX: Use the <Steps> and <Step> components directly in your content.
+Common use cases:
+
+Installation and setup guides
+Multi-step tutorials and onboarding flows
+Process documentation showing workflow stages
+Configuration guides and migration procedures
+Using with Web Editor
+
+Add a steps block
+
+Choose placement
+
+Click in the editor where you want the steps to appear.
+
+Open the command menu
+
+Type / to open the component picker and search for Steps
+
+Insert the block
+
+Select Steps to add a steps block with the first step already created.
+
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+To add more steps:
+
+Click the + button below the last step.
+New steps are added with automatic numbering by default (1, 2, 3, …).
+
+Edit the step title, icon, and heading level
+
+For each step:
+
+Click the three-dot menu on the right side of the step.
+In Step Settings:
+Title: Change the step title text.
+
+Icon (optional): Search for a Lucide icon (for example, check, arrow-right, database) and select it.
+
+When you choose an icon, it replaces the number for that step.
+Heading Level: Choose how the title should render:
+
+p – Paragraph style (default).
+h2 – Heading level 2.
+h3 – Heading level 3.
+This controls the underlying HTML heading level for better SEO and accessibility.
+Click Save to apply your changes.
+
+
+Edit the step description
+
+Click in the description area (“Description for this step…”) to edit it directly.
+You can add any rich content inside the description:
+Text, headings, lists
+Images and videos
+Code blocks and Code Groups
+Callouts, tables, expandables, and more
+Each step behaves like a mini content section, so you can structure complex instructions clearly.
+
+Using with Code Editor
+
+
+<Steps>
+  <Step title="Install dependencies" icon="download">
+    Run the installation command to add required packages to your project.
+    
+    ```bash
+    npm install documentation-ai
+    ```
+  </Step>
+  <Step title="Configure settings" icon="settings">
+    Create a configuration file in your project root with your API credentials.
+    
+    ```javascript
+    module.exports = {
+      apiKey: process.env.DOC_AI_KEY
+    }
+    ```
+  </Step>
+  <Step title="Deploy documentation" icon="rocket">
+    Push your changes and deploy to production.
+    
+    ```bash
+    npm run deploy
+    ```
+  </Step>
+</Steps>
+Install dependencies
+
+Run the installation command to add required packages to your project.
+
+
+npm install documentation-ai
+Configure settings
+
+Create a configuration file in your project root with your API credentials.
+
+
+module.exports = {
+  apiKey: process.env.DOC_AI_KEY
+}
+Deploy documentation
+
+Push your changes and deploy to production.
+
+
+npm run deploy
+Basic syntax
+
+Use the <Steps> component as a container with individual <Step> components for each instruction:
+
+
+<Steps>
+  <Step title="First step" icon="circle-check">
+    Description and content for the first step.
+  </Step>
+  <Step title="Second step" icon="circle-check">
+    Description and content for the second step.
+  </Step>
+</Steps>
+First step
+
+Description and content for the first step.
+
+Second step
+
+Description and content for the second step.
+
+Automatic numbering
+
+Omit the icon attribute to display automatic sequential numbering:
+
+
+<Steps>
+  <Step title="Create your account">
+    Sign up with your email address and create a secure password.
+  </Step>
+  <Step title="Verify your email">
+    Check your inbox for the verification link and click to confirm.
+  </Step>
+  <Step title="Complete your profile">
+    Add your organization details and team information.
+  </Step>
+  <Step title="Start building">
+    Create your first documentation project and invite team members.
+  </Step>
+</Steps>
+Create your account
+
+Sign up with your email address and create a secure password.
+
+Verify your email
+
+Check your inbox for the verification link and click to confirm.
+
+Complete your profile
+
+Add your organization details and team information.
+
+Start building
+
+Create your first documentation project and invite team members.
+
+Automatic numbering is ideal for sequential processes where order matters and each step builds on the previous one.
+
+Custom icons
+
+Add visual context to each step using Lucide icons:
+
+
+<Steps>
+  <Step title="Clone repository" icon="git-branch">
+    Clone the project repository to your local machine.
+    
+    ```bash
+    git clone https://github.com/your-org/project.git
+    ```
+  </Step>
+  <Step title="Install packages" icon="package">
+    Install all project dependencies using your package manager.
+    
+    ```bash
+    npm install
+    ```
+  </Step>
+  <Step title="Start development" icon="play-circle">
+    Launch the development server and open in your browser.
+    
+    ```bash
+    npm run dev
+    ```
+  </Step>
+</Steps>
+Clone repository
+
+Clone the project repository to your local machine.
+
+
+git clone https://github.com/your-org/project.git
+Install packages
+
+Install all project dependencies using your package manager.
+
+
+npm install
+Start development
+
+Launch the development server and open in your browser.
+
+
+npm run dev
+Icon names use Lucide icon library. Reference the Lucide icon directory for available options.
+
+Heading levels
+
+Control the semantic heading level of step titles using the title-type attribute:
+
+
+<Steps>
+  <Step title="Database setup" title-type="h2" icon="database">
+    Configure your database connection and run initial migrations.
+  </Step>
+  <Step title="API configuration" title-type="h2" icon="server">
+    Set up API endpoints and authentication middleware.
+  </Step>
+  <Step title="Frontend integration" title-type="h2" icon="monitor">
+    Connect your frontend application to the API.
+  </Step>
+</Steps>
+Database setup
+Configure your database connection and run initial migrations.
+
+API configuration
+Set up API endpoints and authentication middleware.
+
+Frontend integration
+Connect your frontend application to the API.
+
+SEO and accessibility
+
+Use appropriate heading levels to maintain proper document structure and improve SEO:
+
+
+<Steps>
+  <Step title="Planning phase" title-type="h3" icon="clipboard-list">
+    Define project requirements and create technical specifications.
+  </Step>
+  <Step title="Development phase" title-type="h3" icon="code">
+    Build features according to specifications and coding standards.
+  </Step>
+  <Step title="Testing phase" title-type="h3" icon="bug">
+    Conduct thorough testing including unit, integration, and end-to-end tests.
+  </Step>
+  <Step title="Deployment phase" title-type="h3" icon="cloud-upload">
+    Deploy to staging environment and prepare for production release.
+  </Step>
+</Steps>
+Planning phase
+Define project requirements and create technical specifications.
+
+Development phase
+Build features according to specifications and coding standards.
+
+Testing phase
+Conduct thorough testing including unit, integration, and end-to-end tests.
+
+Deployment phase
+Deploy to staging environment and prepare for production release.
+
+Choose heading levels that fit your document hierarchy. Avoid skipping levels to maintain proper semantic structure.
+
+Rich content support
+
+Steps support any MDX content, including code blocks, callouts, lists, and other components:
+
+
+<Steps>
+  <Step title="Environment setup" icon="folder-cog">
+    Create environment variables for different deployment stages.
+    
+    <Callout kind="info">
+      Store sensitive credentials in environment variables, never commit them to version control.
+    </Callout>
+    
+    ```bash
+    # .env.local
+    DATABASE_URL=postgresql://localhost:5432/mydb
+    API_KEY=your-api-key-here
+    NEXT_PUBLIC_APP_URL=http://localhost:3000
+    ```
+  </Step>
+  <Step title="Security checklist" icon="shield-check">
+    Verify your security configuration before deploying:
+    
+    - Enable HTTPS for all production environments
+    - Configure CORS policies for API endpoints
+    - Implement rate limiting on public endpoints
+    - Set up monitoring and alerting for suspicious activity
+    - Review and update dependency versions
+  </Step>
+  <Step title="Deploy to production" icon="rocket">
+    Run the production deployment command and verify the deployment.
+    
+    ```bash
+    npm run build
+    npm run start
+    ```
+    
+    <Callout kind="success">
+      Monitor application logs and performance metrics for the first 24 hours after deployment.
+    </Callout>
+  </Step>
+</Steps>
+Environment setup
+
+Create environment variables for different deployment stages.
+
+Store sensitive credentials in environment variables, never commit them to version control.
+
+
+# .env.local
+DATABASE_URL=postgresql://localhost:5432/mydb
+API_KEY=your-api-key-here
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+Security checklist
+
+Verify your security configuration before deploying:
+
+Enable HTTPS for all production environments
+
+Configure CORS policies for API endpoints
+
+Implement rate limiting on public endpoints
+
+Set up monitoring and alerting for suspicious activity
+
+Review and update dependency versions
+
+Deploy to production
+
+Run the production deployment command and verify the deployment.
+
+
+npm run build
+npm run start
+Monitor application logs and performance metrics for the first 24 hours after deployment.
+
+Advanced options
+
+Attributes
+
+Steps component
+
+The <Steps> component acts as a container and has no configurable attributes. It automatically manages step numbering and layout.
+
+Step component
+
+path
+title
+string
+Required
+The heading text is displayed for this step. Serves as the main identifier for each instruction.
+
+path
+icon
+string
+Lucide icon name to display instead of automatic numbering. Omit this attribute to show sequential numbers. Reference Lucide icons for available options.
+
+path
+title-type
+string
+The HTML heading level for the step title. Accepts: p, h2, or h3. Default: p. Use heading levels to maintain proper document structure and improve accessibility.
+
+path
+children
+node
+Required
+The content of the step. Supports all MDX content including text, code blocks, callouts, lists, images, and other components.
+
+Common patterns
+
+Installation guides: Use numbered steps for clear sequential setup.
+Configuration workflows: Combine icons, headings, and code blocks to guide users through complex configuration.
+Migration procedures: Use heading levels and icons to represent phases (Plan → Migrate → Verify → Clean up).
+Troubleshooting flows: Create “Check X, then Y, then Z” diagnostic sequences with clear visual indicators.
+Onboarding sequences: Introduce features step by step with rich descriptions, screenshots, and links.
+Steps automatically draw connecting lines between each step, giving your guides a polished, professional feel with no extra styling required.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Expandables
+Next
+Tabs
+Built with Documentation.AI
+Last updated 4 weeks ago
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Add a steps block
+Edit the step title, icon, and heading level
+Edit the step description
+Using with Code Editor
+Basic syntax
+Automatic numbering
+Custom icons
+Heading levels
+SEO and accessibility
+Rich content support
+Advanced options
+Attributes
+Common patterns
+Steps - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Tabs
+Organize content into tabbed interfaces with optional icons and smooth animated transitions.
+
+Overview
+
+The Tabs component creates an interactive tabbed interface with smooth animations and optional icons.
+Each tab has a title and supports any rich content, including text, code blocks, callouts, images, and other components.
+
+You can work with Tabs in two ways:
+
+Editor UI: Insert and manage tabs visually (no code required).
+
+MDX: Use the <Tabs> and <Tab> components in your source files.
+
+Common use cases:
+
+Platform-specific installation instructions
+
+API examples in multiple programming languages
+
+Feature documentation with different implementation options
+
+Environment-specific configuration (dev, staging, prod)
+
+Version-specific docs showing differences between releases
+
+Using with Web Editor
+
+The Web Editor lets you insert and manage Tabs visually while still generating valid MDX under the hood.
+
+Insert a Tabs block
+
+Place your cursor where you want the tabs to appear.
+
+Type / to open the command menu and search for Tabs.
+
+Select Tabs. A tabs block is added with two tabs created by default.
+
+Sample tab:
+
+Overview
+Details
+This tab gives a quick summary of the topic.
+You can introduce the main idea, explain what the reader will learn,
+or provide a short description to set the context.
+
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+Edit tab content
+
+Title: Double-click the tab label you want to edit.
+
+Content: Start typing in the content area below the tabs. You can add any rich content: text, lists, images, code blocks, images, callouts, cards, etc.
+
+Example of a Tabs block in the Web Editor
+Example of a Tabs block in the Web Editor
+Manage tabs
+
+Add a tab: Click the + button on the right side of the tab bar.
+
+Remove a tab: Click the X icon on the tab you want to delete.
+
+Rename a tab: Double-click the tab’s name and type a new label.
+
+Tabs created in the editor UI map directly to <Tabs> and <Tab> components in MDX.
+
+In the editor UI, you add icons to tabs by asking the AI Agent in the editor to “add icons to each tab,” and it will update the Tabs block for you.
+
+Prefer to do it yourself? You can add it through the MDX.
+
+Using with Code Editor
+
+You can define Tabs directly in your MDX files using the <Tabs> and <Tab> components.
+
+
+<Tabs>
+  <Tab title="macOS" icon="apple">
+    Install using Homebrew for the best experience on macOS.
+    
+    ```bash
+    brew install documentation-ai
+    ```
+  </Tab>
+  <Tab title="Windows" icon="monitor">
+    Download and run the Windows installer from the releases page.
+    
+    ```bash
+    winget install documentation-ai
+    ```
+  </Tab>
+  <Tab title="Linux" icon="terminal">
+    Use your package manager or download the binary directly.
+    
+    ```bash
+    sudo apt install documentation-ai
+    ```
+  </Tab>
+</Tabs>
+macOS
+Windows
+Linux
+Install using Homebrew for the best experience on macOS.
+
+
+brew install documentation-ai
+Basic syntax
+
+Use the <Tabs> component as a container with individual <Tab> components for each section:
+
+
+<Tabs>
+  <Tab title="JavaScript">
+    Content for JavaScript tab
+  </Tab>
+  <Tab title="Python">
+    Content for Python tab
+  </Tab>
+</Tabs>
+JavaScript
+Python
+Content for JavaScript tab
+
+Tab icons
+
+Add visual context to tabs using Lucide icons for better recognition:
+
+
+<Tabs>
+  <Tab title="Overview" icon="book-open">
+    Get started with the fundamentals of DocumentationAI and learn core concepts.
+  </Tab>
+  <Tab title="Installation" icon="download">
+    Follow step-by-step instructions to install and configure your environment.
+  </Tab>
+  <Tab title="Configuration" icon="settings">
+    Customize your setup with advanced configuration options and best practices.
+  </Tab>
+  <Tab title="Deployment" icon="rocket">
+    Deploy your documentation to production with automated CI/CD workflows.
+  </Tab>
+</Tabs>
+Overview
+Installation
+Configuration
+Deployment
+Get started with the fundamentals of DocumentationAI and learn core concepts.
+
+Icon names use the Lucide icon library. Reference the Lucide icon directory for all available options.
+
+Rich content support
+
+Tabs support any MDX content, including nested components, callouts, images, and complex layouts:
+
+
+<Tabs>
+  <Tab title="Quick Start" icon="zap">
+    Get up and running in under 5 minutes with our streamlined setup process.
+    
+    <Callout kind="success">
+      All dependencies are automatically installed and configured for you.
+    </Callout>
+    
+    ```bash
+    npm create documentation-ai@latest
+    cd my-docs
+    npm run dev
+    ```
+  </Tab>
+  <Tab title="Manual Setup" icon="wrench">
+    For advanced users who want full control over their configuration.
+    
+    <Steps>
+      <Step title="Create project directory" icon="folder">
+        Set up your project structure and initialize package.json.
+      </Step>
+      <Step title="Install dependencies" icon="package">
+        Add DocumentationAI and required peer dependencies.
+      </Step>
+      <Step title="Configure settings" icon="settings">
+        Create your documentation.json configuration file.
+      </Step>
+    </Steps>
+    
+    <Callout kind="alert">
+      Manual setup requires Node.js 18 or higher and npm 8 or higher.
+    </Callout>
+  </Tab>
+  <Tab title="Migration" icon="move">
+    Migrate from existing documentation platforms to DocumentationAI.
+    
+    Supported migration sources:
+    - GitBook documentation
+    - Docusaurus sites
+    - ReadTheDocs projects
+    - Custom static sites
+    
+    <Callout kind="info">
+      Contact our migration team for assistance with large-scale projects.
+    </Callout>
+  </Tab>
+</Tabs>
+Quick Start
+Manual Setup
+Migration
+Get up and running in under 5 minutes with our streamlined setup process.
+
+All dependencies are automatically installed and configured for you.
+
+
+npm create documentation-ai@latest
+cd my-docs
+npm run dev
+Advanced options
+
+Platform-specific instructions
+
+Create platform-specific guides that adapt to your users' operating systems:
+
+
+<Tabs>
+  <Tab title="npm" icon="package">
+    ```bash
+    npm install @documentation-ai/sdk
+    npm install --save-dev @documentation-ai/cli
+    ```
+    
+    Add scripts to your package.json:
+    
+    ```json
+    {
+      "scripts": {
+        "docs:dev": "doc-ai dev",
+        "docs:build": "doc-ai build",
+        "docs:deploy": "doc-ai deploy"
+      }
+    }
+    ```
+  </Tab>
+  <Tab title="pnpm" icon="package">
+    ```bash
+    pnpm add @documentation-ai/sdk
+    pnpm add -D @documentation-ai/cli
+    ```
+    
+    Add scripts to your package.json:
+    
+    ```json
+    {
+      "scripts": {
+        "docs:dev": "doc-ai dev",
+        "docs:build": "doc-ai build",
+        "docs:deploy": "doc-ai deploy"
+      }
+    }
+    ```
+  </Tab>
+  <Tab title="Yarn" icon="package">
+    ```bash
+    yarn add @documentation-ai/sdk
+    yarn add --dev @documentation-ai/cli
+    ```
+    
+    Add scripts to your package.json:
+    
+    ```json
+    {
+      "scripts": {
+        "docs:dev": "doc-ai dev",
+        "docs:build": "doc-ai build",
+        "docs:deploy": "doc-ai deploy"
+      }
+    }
+    ```
+  </Tab>
+</Tabs>
+npm
+pnpm
+Yarn
+
+npm install @documentation-ai/sdk
+npm install --save-dev @documentation-ai/cli
+Add scripts to your package.json:
+
+
+{
+  "scripts": {
+    "docs:dev": "doc-ai dev",
+    "docs:build": "doc-ai build",
+    "docs:deploy": "doc-ai deploy"
+  }
+}
+Attributes
+
+Tabs component
+
+The <Tabs> component acts as a container and has no configurable attributes. It automatically manages tab state and animations.
+
+Tab component
+
+path
+title
+string
+Required
+The tab label displayed in the navigation bar. This text identifies each tab and should be concise and descriptive.
+
+path
+icon
+string
+Optional Lucide icon name to display alongside the tab title. Enhances visual recognition and improves user experience. Reference Lucide icons for available options.
+
+path
+children
+node
+Required
+The content displayed when the tab is active. Supports all MDX content including text, code blocks, callouts, images, lists, tables, and other components.
+
+Common patterns
+
+Multi-language code samples: JavaScript, Python, Go, cURL, etc.
+
+Platform guides: Windows, macOS, Linux install instructions.
+
+Framework integrations: React, Vue, Angular, Svelte in separate tabs.
+
+Environment configs: Dev, staging, production settings.
+
+Version notes: v1, v2, v3 differences and migration tips.
+
+Tabs include an animated underline indicator that moves with the active tab, giving users clear visual feedback about which content they’re viewing.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Steps
+Next
+Update
+Built with Documentation.AI
+Last updated Dec 31, 2025
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Insert a Tabs block
+Edit tab content
+Manage tabs
+Using with Code Editor
+Basic syntax
+Tab icons
+Rich content support
+Advanced options
+Platform-specific instructions
+Attributes
+Common patterns
+Tabs - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Update
+Display changelog entries, version updates, and product announcements with labeled sections and timeline layouts.
+
+Overview
+
+The Update component creates clean, timeline-style blocks with a label on the left (date, version, or tag) and rich content on the right. It’s perfect for:
+
+Release notes and changelog entries
+
+Product or feature announcements
+
+Version upgrade/deprecation notices
+
+Roadmap milestones or status updates
+
+You can use Updates in two ways:
+
+Editor UI: Insert and edit Update blocks visually (no code needed).
+
+MDX: Use the <Update> component with label, description, and tags props.
+
+2025-12-11
+v0.1.0
+New Feature
+Example: New features
+
+We've added support for real-time collaboration and team workspaces.
+
+Multi-user editing with live cursor tracking
+
+Team workspace management
+
+Enhanced permission controls
+
+Using with Web Editor
+
+Add an Update block
+
+Place your cursor where you want the update.
+
+Type / to open the Search and Add menu.
+
+Search for Update and select it.
+
+A new update is created with the current date as the label.
+
+
+Write update content
+
+Click in the content area to the right of the label (where it says Type here…).
+
+Start writing your update.
+
+You can add any rich content here:
+
+Text, headings, bullet or numbered lists
+
+Images, videos, tables, code blocks, callouts, cards, steps, tabs, etc.
+
+Each Update block is just like a regular content section, styled as a changelog row.
+
+
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+Edit label, description, and tags
+
+On the right side of the Update block, click the three-dot menu.
+
+The Update Settings panel opens with:
+
+Label: The main tag shown on the left (for example, 2025-12-11 or v2.3.0).
+
+Keep a consistent format across updates (for product updates, dates usually work best).
+Description: A short note shown under the label (for example, New, Patch, v2.3.0, or Performance improvements).
+
+Tags – Optional tags for each update. Type multiple tags separated by commas, e.g. Bug fix, New.
+
+Click Save to apply the changes.
+
+
+Create a timeline of updates
+
+Add multiple Update blocks, one after another, to build a changelog timeline.
+
+Use labels (dates or versions) + tags (e.g. New, Bug fix, Breaking) to help readers quickly scan what changed and when.
+
+Using with Code Editor
+
+Basic syntax
+
+Use the <Update> component to create changelog entries with labels and descriptions:
+
+
+<Update label="2024-10-15" description="v1.2.0">
+  Released new analytics dashboard with real-time metrics and custom reporting.
+</Update>
+2024-10-15
+v1.2.0
+Released new analytics dashboard with real-time metrics and custom reporting.
+
+Tags
+
+Add optional tags to categorize and label updates:
+
+
+<Update 
+  label="2024-10-20" 
+  description="v2.0.0"
+  tags={["breaking", "security", "performance"]}
+>
+  ### Example: Major release
+  
+  This release includes breaking changes and performance improvements.
+  
+  - Updated API authentication flow requiring new credentials
+  - Optimized database queries for 3x faster response times
+  - Enhanced security with improved encryption standards
+</Update>
+2024-10-20
+v2.0.0
+breaking
+security
+performance
+Example: Major release
+
+This release includes breaking changes and performance improvements.
+
+Updated API authentication flow requiring new credentials
+
+Optimized database queries for 3x faster response times
+
+Enhanced security with improved encryption standards
+
+Use tags to highlight update categories like "breaking", "feature", "bugfix", "security", or "deprecated".
+
+Rich content
+
+Updates support all MDX components including code blocks, images, cards, and other components:
+
+
+<Update label="2024-10-18" description="Feature Launch" tags={["feature"]}>
+  ### Example: API Playground
+  
+  Test API endpoints directly from documentation with our new interactive playground.
+  
+  <Columns cols={2}>
+    <Card title="Try it now" icon="play-circle" href="/api-documentation-and-playground/interactive-playground-setup">
+      Explore the playground with live examples
+    </Card>
+    <Card title="API Reference" icon="book-open" href="/api-documentation-and-playground/api-authentication">
+      View complete endpoint documentation
+    </Card>
+  </Columns>
+  
+  <Callout kind="tip">
+    The playground supports all authentication methods and provides instant response previews.
+  </Callout>
+</Update>
+2024-10-18
+Feature Launch
+feature
+Example: API Playground
+
+Test API endpoints directly from documentation with our new interactive playground.
+
+Try it now
+
+Explore the playground with live examples
+
+API Reference
+
+View complete endpoint documentation
+
+The playground supports all authentication methods and provides instant response previews.
+
+Sequential updates
+
+Stack multiple updates to create a changelog timeline:
+
+
+<Update label="2024-10-22" description="v2.1.1" tags={["bugfix"]}>
+  - Fixed authentication token refresh issue
+  - Improved error messages for API validation
+  - Updated dependencies for security patches
+</Update>
+
+<Update label="2024-10-15" description="v2.1.0" tags={["feature"]}>
+  - Added bulk export functionality
+  - Implemented advanced search filters
+  - Enhanced mobile responsive design
+</Update>
+
+<Update label="2024-10-01" description="v2.0.0" tags={["breaking", "feature"]}>
+  - Complete UI redesign with modern interface
+  - New team collaboration features
+  - Performance improvements across all modules
+</Update>
+2024-10-22
+v2.1.1
+bugfix
+Fixed authentication token refresh issue
+
+Improved error messages for API validation
+
+Updated dependencies for security patches
+
+2024-10-15
+v2.1.0
+feature
+Added bulk export functionality
+
+Implemented advanced search filters
+
+Enhanced mobile responsive design
+
+2024-10-01
+v2.0.0
+breaking
+feature
+Complete UI redesign with modern interface
+
+New team collaboration features
+
+Performance improvements across all modules
+
+The sidebar uses sticky positioning on desktop to remain visible while scrolling through long updates.
+
+Advanced options
+
+Attributes
+
+path
+label
+string
+Required
+The primary label displayed in the sidebar. Typically used for dates (YYYY-MM-DD format) or version identifiers.
+
+path
+description
+string
+Required
+Supporting description displayed below the label. Commonly used for version numbers, release types, or brief categorizations.
+
+path
+tags
+array
+Optional array of tag strings to categorize the update. Tags display as small badges below the label and description.
+
+path
+children
+node
+Required
+The main content of the update. Supports all MDX content including headings, text, code blocks, images, cards, callouts, and other components.
+
+Common patterns
+
+Release changelog: Dates as labels, versions as descriptions, with tags like feature, bugfix, and breaking.
+
+Product announcements: Feature name or launch date as label, tags like New or Improvement.
+
+API changes: Version labels plus tags like deprecated, security, or migration.
+
+Security notices: Use tags such as security and critical for quick scanning.
+
+Roadmap highlights: Milestones labeled by quarter or date, with tags such as Planned, In progress, Released.
+
+Combine Update blocks with Cards, Callouts, Steps, and Tabs to build rich changelog and announcement pages that are easy to scan and delightful to read.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Tabs
+Next
+Param Field
+Built with Documentation.AI
+Last updated Dec 31, 2025
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+2025-12-11
+Using with Web Editor
+Add an Update block
+Write update content
+Edit label, description, and tags
+Create a timeline of updates
+Using with Code Editor
+Basic syntax
+2024-10-15
+Tags
+2024-10-20
+Rich content
+2024-10-18
+Sequential updates
+2024-10-22
+2024-10-15
+2024-10-01
+Advanced options
+Attributes
+Common patterns
+Update - Documentation.AI'
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Param Field
+Reference for documenting API parameters with location badges, types, and status indicators.
+
+Overview
+
+The ParamField component lets you describe API parameters with:
+
+Location badges: Path, Query, Header, or Body
+
+Type labels: Such as string, integer, or boolean
+
+Status tags: Required and Deprecated
+
+Rich descriptions: Supporting any MDX content
+
+You can work with ParamField in two ways:
+
+Editor UI: Add and edit parameters visually with a form-based panel.
+
+MDX: Use the <ParamField> component directly in your content.
+
+Using with Web Editor
+
+Add a ParamField block
+
+Place your cursor where you want the parameter description.
+Type / to open the command menu and search for Param Field (or Param).
+Select Param Field to insert the component.
+A new parameter row appears with default badges and a description placeholder.
+
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+Edit parameter metadata
+
+
+To change the badges and tags:
+
+Click the three-dot menu on the right side of the ParamField block.
+In the Parameter settings panel, you can edit:
+Location: Choose Path, Query, Body, or Header.
+Parameter Name: Set the name shown next to the badge (for example, id, limit, Authorization).
+Type: Enter the data type (for example, string, integer, boolean).
+Required: Toggle on to mark the parameter as required.
+Deprecated: Toggle on to show the Deprecated badge.
+Click Save to apply your changes.
+
+Edit the description
+
+Click in the description area under the badges (for example, Parameter description…).
+
+Add your explanation using any supported content:
+
+Text and headings
+Lists and tables
+Code blocks
+Callouts and other MDX components
+
+Want to hide the location badge entirely? This is currently controlled in MDX using show-location="false".
+
+You can either control location in MDX view or ask the AI Agent to “hide the location badge for this parameter” and let it update the code for you.
+
+Using with Code Editor
+
+Basic syntax
+
+Use the <ParamField> component to document API parameters with their location, type, and requirements.
+
+
+<ParamField path="id" param-type="string" required="true">
+  Unique identifier for the resource.
+</ParamField>
+path
+id
+string
+Required
+Unique identifier for the resource.
+
+Hide location badge
+
+Use show-location="false" to hide the location badge:
+
+
+<ParamField query="token" param-type="string" show-location="false" required="true">
+  Authentication token without location badge.
+</ParamField>
+query
+token
+string
+Required
+Authentication token without location badge.
+
+Advanced options
+
+Attributes
+
+path
+path
+string
+Parameter name for URL path parameters.
+
+query
+query
+string
+Parameter name for query string parameters.
+
+header
+header
+string
+Parameter name for HTTP headers.
+
+body
+body
+string
+Parameter name for request body fields.
+
+query
+param-type
+string
+Data type: string, integer, boolean, object, array, etc.
+
+query
+required
+string
+Set to "true" for required parameters (default: "false").
+
+query
+deprecated
+string
+Set to "true" to mark as deprecated (default: "false").
+
+query
+show-location
+string
+Set to "false" to hide the location badge (default: "true").
+
+Use exactly one location attribute (path, query, header, or body) per ParamField.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Update
+Next
+Response Field
+Built with Documentation.AI
+Last updated 4 weeks ago
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Add a ParamField block
+Edit parameter metadata
+Edit the description
+Using with Code Editor
+Basic syntax
+Hide location badge
+Advanced options
+Attributes
+Param Field - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+Response Field
+Reference for documenting API response fields with types, requirements, and status indicators.
+
+Overview
+
+The ResponseField component documents the fields returned by your API responses. It shows:
+
+Field name: The key in the JSON or response object.
+Type: The data type such as string, integer, or object.
+Status: Required and Deprecated badges.
+Rich descriptions: Human-readable explanations of what the field represents.
+You can use ResponseField in two ways:
+
+Editor UI: Add and edit response fields visually with a form-based panel.
+MDX: Use the <ResponseField> component directly in your content.
+ResponseField is similar to ParamField but specifically designed for documenting API response bodies and returned data structures.
+
+Using with Web Editor
+
+Add a ResponseField block
+
+Place your cursor where you want to describe a response field.
+Type / to open the command menu and search for Response Field.
+Select Response Field to insert the component.
+A new response field row appears with a default name and type plus a description placeholder.
+
+ResponseField block in the Web Editor
+ResponseField block in the Web Editor
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+Edit field metadata
+
+To change the label and status:
+
+Click the three-dot menu on the right side of the ResponseField block.
+In the Response Field settings panel, you can edit:
+Field Name: The name of the field in the response payload (for example, id, status, user).
+Type: The data type of the field (for example, string, integer, boolean, object, array).
+Required: Toggle on to mark the field as required in the response.
+Deprecated: Toggle on to show that the field is deprecated.
+Click Save to apply your changes.
+
+Edit the description
+
+Click in the description area under the badges (for example, Response field description…).
+
+Add your explanation using any supported content:
+
+Text and headings
+Lists and tables
+Code blocks showing example responses
+Callouts and other MDX components
+Using with Code Editor
+
+Basic syntax
+
+Use the <ResponseField> component to document API response fields with their type and status.
+
+
+<ResponseField name="id" field-type="string" required="true">
+  Unique identifier for the resource.
+</ResponseField>
+id
+string
+Required
+Unique identifier for the resource.
+
+Examples
+
+Optional field
+
+
+<ResponseField name="description" field-type="string">
+  Optional description text for the resource.
+</ResponseField>
+description
+string
+Optional description text for the resource.
+
+Deprecated field
+
+
+<ResponseField name="legacy_id" field-type="integer" deprecated="true">
+  Deprecated legacy identifier. Use `id` instead.
+</ResponseField>
+legacy_id
+integer
+Deprecated
+Deprecated legacy identifier. Use id instead.
+
+Complex type
+
+
+<ResponseField name="user" field-type="object" required="true">
+  User object containing profile information and preferences.
+</ResponseField>
+user
+object
+Required
+User object containing profile information and preferences.
+
+Advanced options
+
+Attributes
+
+path
+name
+string
+Field name displayed in the response documentation (default: "response").
+
+path
+field-type
+string
+Data type: string, integer, boolean, object, array, etc.
+
+path
+required
+string
+Set to "true" for required fields (default: "false").
+
+path
+deprecated
+string
+Set to "true" to mark as deprecated (default: "false").
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Param Field
+Next
+API Components
+Built with Documentation.AI
+Last updated Dec 31, 2025
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Using with Web Editor
+Add a ResponseField block
+Edit field metadata
+Edit the description
+Using with Code Editor
+Basic syntax
+Examples
+Advanced options
+Attributes
+Response Field - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Components
+API Components
+Reference for Request and Response components that automatically display in the right panel for API documentation.
+
+Overview
+
+The Request and Response components create a two-column layout for API examples:
+
+Desktop: Requests and responses appear in a sticky right sidebar while your main documentation stays on the left.
+
+Mobile: Components render as regular code blocks inside the main content.
+
+These components are designed for developers and work like sidebar versions of CodeGroup.
+
+Common use cases:
+
+Endpoint docs: Request and response examples for each API route.
+
+Multi-language SDKs: Tabs for JavaScript, Python, cURL, and more.
+
+Status examples: Response examples for different HTTP status codes.
+
+Tutorials: Before/after or success/error examples next to explanations.
+
+Using with Web Editor
+
+Request in the editor UI
+
+Place your cursor where you want the sidebar example.
+
+Type / and search for Request.
+
+Select Request to insert a Request block.
+
+Inside the Request block:
+
+Tabs row: One tab is created by default, with a + button to add more.
+
+Rename tabs: Double-click a tab name (for example, request) and type a new label.
+
+Code editor: Click in the code area, paste or write your example.
+
+Language selector: Use the dropdown on the right to choose the language for that tab.
+
+
+Response in the editor UI
+
+Place your cursor under the related Request (or wherever you want the response).
+
+Type / and search for Response.
+
+Select Response to insert a Response block.
+
+Inside the Response block:
+
+Tabs row: One tab is created by default, with a + button to add more.
+
+Rename tabs: Double-click a tab name (commonly use status codes like 200, 404).
+
+Code editor: Paste or write your JSON or other response example.
+
+Language selector: Choose the language (usually JSON) from the dropdown on the right.
+
+
+Prefer writing in code?
+
+You can switch to MDX view inside the Web Editor to write or edit this component using the same syntax as the Code Editor. This is useful if you want full control while staying in the Web Editor.
+
+Using with Code Editor
+
+Request in MDX
+
+Use Request to display API request examples in the right sidebar. This component works like CodeGroup but displays in the sidebar instead of inline.
+
+
+<Request tabs="JavaScript,Python">
+```javascript
+const response = await fetch('/api/docs', {
+  method: 'POST',
+  headers: { 'Authorization': 'Bearer TOKEN' },
+  body: JSON.stringify({ title: 'Getting Started' })
+});
+```
+
+```python
+import requests
+response = requests.post('/api/docs',
+  headers={'Authorization': 'Bearer TOKEN'},
+  json={'title': 'Getting Started'}
+)
+```
+</Request>
+Response in MDX
+
+Use Response to display API response examples in the right sidebar beneath any Request content on the same page.
+
+
+<Response tabs="200,500">
+```json
+{
+  "id": "doc-123",
+  "status": "success"
+}
+```
+
+```json
+{
+  "error": "Internal server error",
+  "code": "INTERNAL_ERROR"
+}
+```
+</Response>
+Advanced options
+
+Request attributes
+
+path
+tabs
+string
+Comma-separated tab names. Overrides auto-detected languages.
+
+path
+show-lines
+string
+Shows line numbers when set to "true". Request shows lines by default.
+
+path
+default-tab
+string
+Default active tab index (1-based).
+
+Response attributes
+
+path
+tabs
+string
+Comma-separated tab names. Commonly HTTP status codes or formats.
+
+path
+show-lines
+string
+Shows line numbers when set to "true". Response hides lines by default.
+
+path
+default-tab
+string
+Default active tab index (1-based).
+
+Common patterns
+
+Per-endpoint examples: Pair one Request and one Response block for each API operation.
+
+Multi-language SDKs: Use Request tabs for JavaScript, Python, Bash, and other SDKs.
+
+Status-specific responses: Use Response tabs labeled 200, 400, 404, 500 to show different outcomes.
+
+Guided walkthroughs: Keep Request and Response in the sidebar while the left column explains parameters, flows, and edge cases.
+
+Request and Response automatically participate in the sidebar layout on desktop, so you get a polished API reference without custom layout work.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Response Field
+Next
+Using Cursor
+Built with Documentation.AI
+Last updated Dec 31, 2025
+
+javascript
+bash
+
+const response = await fetch('/api/docs', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer TOKEN',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ title: 'Getting Started' })
+});
+const response = await fetch('/api/docs', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer TOKEN',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ title: 'Getting Started' })
+});
+const response = await fetch('/api/docs', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer TOKEN',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ title: 'Getting Started' })
+});
+const response = await fetch('/api/docs', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer TOKEN',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ title: 'Getting Started' })
+});
+
+json
+json
+
+{
+  "id": "doc-123",
+  "title": "Getting Started",
+  "status": "published",
+  "created_at": "2024-01-15T10:30:00Z"
+}
+{
+  "id": "doc-123",
+  "title": "Getting Started",
+  "status": "published",
+  "created_at": "2024-01-15T10:30:00Z"
+}
+{
+  "id": "doc-123",
+  "title": "Getting Started",
+  "status": "published",
+  "created_at": "2024-01-15T10:30:00Z"
+}
+API Components - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Organize
+Organize documentation structure
+Understand the optional Dimensions → Views → Content model and how to plan a maintainable documentation structure in Documentation.AI.
+
+Why organization matters
+
+Good content is not enough if people cannot find it.
+
+In Documentation.AI, navigation is a first-class concern for both human readers and AI agents. A clear organizing model helps you:
+
+Avoid duplicated sections and hard-to-maintain sidebars
+Plan for product growth, versions, and languages
+Keep navigation consistent across Web Editor and code-based workflows
+Give AI features a predictable map of your docs
+This page introduces the core organizing model and points you to the detailed guides for dimensions, views, groups, pages, and API-specific structure.
+
+If you work primarily from the code editor, also review Code Editor to see how the same concepts map to documentation.json.
+
+The core model: Dimensions → Views → Content
+
+Documentation.AI uses a three-layer navigation architecture:
+
+
+100%
+
+
+Dimensions
+Optional context
+
+Views
+Layout & navigation
+
+Content
+Pages, groups, API
+
+At a high level:
+
+Dimensions (optional) define where the reader is (for example, product, version, language).
+Views define how navigation is arranged in that context (tabs and dropdowns).
+Content defines what the reader can read (pages, groups, API references).
+You can:
+
+Use Views + Content only, with no Dimensions, for simple sites.
+Add one or more Dimensions when you need parallel variants of the docs that readers can switch between globally.
+Dimensions: define context (optional outer layer)
+
+Dimensions are top-level context selectors that split docs into parallel variants and define where a reader is.
+
+Use dimensions when you need parallel sets of docs that share structure but differ in content. For example:
+
+Product A vs. Product B
+Stable vs. Beta versions
+English vs. Spanish
+Key rules:
+
+Dimensions are always the outermost layer in your structure.
+A project can have zero, one, or multiple dimensions, but most sites work best with one or two.
+Dimensions can map directly to content, or to views that then organize content:
+Dimensions → Views → Content or Dimensions → Content.
+See Dimensions for examples and design patterns.
+
+Views: define navigation and layout
+
+Views control how content is organized and navigated within a dimension context, or at the root when you do not use dimensions.
+
+Views answer:
+
+Which high-level areas are visible at once?
+Do I switch between areas via tabs or a dropdown?
+How does the sidebar change when I change the view?
+Supported view types:
+
+Tabs: horizontal tabs for mutually exclusive areas (for example, Guides vs. API).
+Dropdowns: a select-style control for modes or profiles (for example, Cloud vs. Self-hosted).
+Views:
+
+Never create new content; they only arrange content.
+Never contain dimensions (dimensions are always outside views).
+Always sit between the outer context (dimension or root) and the content they expose.
+See Views for supported nesting patterns and visual examples.
+
+Content: groups, pages, and API reference
+
+The content layer is what readers actually consume:
+
+Pages: MDX-backed units with unique path values (slugs).
+See Pages for how paths work and how to move or rename pages safely.
+Groups: sidebar sections that collect related pages (and nested groups).
+See Groups for grouping strategies and rules.
+API-backed sections: OpenAPI- or schema-driven API references and playgrounds.
+See Organize API Reference and OpenAPI / JSON Schema Import.
+You shape content structure using parent/child relationships (groups that contain pages, nested groups, or API sections) while views determine when and where that structure appears.
+
+Key structure rules to remember
+
+This section summarizes the most important constraints from the detailed reference pages so you can design a valid structure up front.
+
+Dimensions and views
+
+Dimensions are optional but always outermost
+If you use dimensions, the order is always: Dimensions → Views (optional) → Content.
+Views never contain dimensions
+You cannot add dimensions inside a tab or dropdown; a view always lives inside a dimension context or at the root.
+For deeper rules and examples, see Dimensions and Views.
+
+The one-child rule for containers (views)
+
+Views obey a strict one-child rule:
+
+Tabs can contain exactly one child type:
+Pages or
+Groups or
+Dropdowns
+Dropdowns can contain exactly one child type:
+Pages or
+Groups or
+Tabs or
+Dropdowns
+You cannot mix different child types at the same level inside a single tabs or dropdowns container.
+
+See Views for diagrams of valid and invalid combinations.
+
+Groups and pages
+
+From the Groups and Pages guides:
+
+Groups are sidebar sections
+Once you introduce groups at a level, treat that level as “grouped”.
+Groups can contain pages, nested groups, and API/OpenAPI-backed sections.
+Avoid mixing grouped and ungrouped content at the same level
+Choose either:
+A flat list of pages, or
+Only groups (each group then contains pages or nested groups).
+Pages are the fundamental content units
+The stable identifier is the page path (slug), which becomes part of the URL.
+Reference path values without the .mdx extension.
+Prefer moving pages between groups over renaming their paths; if you change a slug, add a redirect.
+A practical planning workflow
+
+When you plan or refactor a docs set, work from the outside in.
+
+Decide if you need dimensions
+
+Decide which axes of variation are real, not just labels.
+
+Start with product, version, and language.
+Only add a dimension if it meaningfully changes content across many pages.
+Most sites are either:
+No dimensions (single product, single language), or
+One dimension for versions or deployment models.
+Design views for navigation
+
+Within each dimension context (or at the root), decide how people move around.
+
+Use tabs for big, mutually exclusive areas (for example, "Guides" vs. "API").
+Use dropdowns where the choice feels like a mode or profile (for example, "Cloud" vs. "Self-hosted").
+Apply the one-child rule: each tabs or dropdowns container uses a single child type.
+Shape groups, pages, and API sections
+
+Once views are defined, structure the actual docs.
+
+Create groups for logical sections (for example, "Getting Started", "Advanced Topics").
+At each sidebar level, choose either all pages or all groups (plus their children), not a mix.
+Add API/OpenAPI-backed sections alongside pages in groups when needed.
+Validate with real journeys
+
+Before publishing, test with real workflows.
+
+Trace key user journeys: onboarding, first integration, troubleshooting, API evaluation.
+Ensure each journey has a straightforward path with minimal context switches.
+If journeys require frequent dimension or view changes, simplify your structure.
+This outside-in approach keeps your organizing decisions deliberate and prevents ad hoc sidebars over time.
+
+Example structures for common docs types
+
+This section gives you three lightweight patterns you can adapt. Each shows the structural idea, not the full configuration.
+
+1. Simple product docs with tabs (no dimensions)
+
+Use this when you have a single product and language, and you want a clear split between narrative guides and API reference.
+
+Structure (conceptual):
+
+
+Root (no dimensions)
+└─ Views: Tabs
+   ├─ Tab: Guides
+   │  └─ Groups
+   │     ├─ Getting Started
+   │     │  ├─ Introduction
+   │     │  └─ Quickstart
+   │     └─ How-to Guides
+   └─ Tab: API
+      └─ Groups
+         ├─ Authentication
+         └─ API Reference (OpenAPI-backed)
+When to use
+
+You do not need product, version, or language switching at the top level.
+You want a stable Guides vs. API split that aligns with common reader expectations.
+You can keep the number of tabs small (usually 2–3).
+Relevant deep dives:
+
+Views for tabs configuration and the one-child rule
+Groups and Pages for shaping the Guides sidebar
+Organize API Reference for the API tab
+2. Versioned docs using a version dimension
+
+Use this when you maintain multiple live versions (for example, v1, v2, Beta) that differ meaningfully in content.
+
+Structure (conceptual):
+
+
+Dimension: Version
+├─ Value: v1
+│  └─ Views (optional) or Content
+│     └─ Groups
+│        ├─ Getting Started
+│        └─ API Reference (v1)
+└─ Value: v2
+   └─ Views (optional) or Content
+      └─ Groups
+         ├─ Getting Started
+         └─ API Reference (v2)
+You can:
+
+Reuse the same group and page structure across versions.
+Vary content per version while keeping navigation familiar.
+When to use
+
+Content differences by version are substantial (not just a few small notes).
+Readers must know which version they are in at all times.
+You want a top-level switcher for version context.
+Relevant deep dives:
+
+Dimensions for modeling version context
+Groups for mirroring structure across versions
+Organize API Reference and OpenAPI / JSON Schema Import for versioned API definitions
+3. API-heavy docs with dropdowns and grouped reference
+
+Use this when your primary surface is the API, possibly with multiple products, deployment models, or platforms.
+
+Structure (conceptual):
+
+
+Root (or inside a Dimension)
+└─ Views: Dropdown (for mode)
+   ├─ Option: Cloud
+   │  └─ Tabs
+   │     ├─ Guides
+   │     │  └─ Groups
+   │     │     ├─ Getting Started
+   │     │     └─ Integration Guides
+   │     └─ API
+   │        └─ Groups
+   │           ├─ Authentication
+   │           └─ OpenAPI-backed Reference
+   └─ Option: Self-hosted
+      └─ Tabs (mirrors Cloud, with self-hosted specifics)
+When to use
+
+You need a clear separation between deployment models, platforms, or profiles (for example, public vs. partner APIs).
+API reference is large enough that you want:
+A dedicated API area (tab), and
+Careful grouping within that area (by resource, domain, or team).
+You plan to import or sync schemas for a large API surface.
+Relevant deep dives:
+
+Views for combining dropdowns and tabs in a valid way
+Groups for structuring a large API sidebar
+Organize API Reference and OpenAPI / JSON Schema Import for schema-driven reference
+Choose your next step
+
+Use this section to jump into the right detailed guide, depending on what you are planning now.
+
+Dimensions
+
+Learn when to introduce product, version, or language dimensions and how they relate to views and content, so your structure can scale without duplication.
+
+Plan products, versions, and languages
+Views
+
+Understand how to define views (tabs and dropdowns), supported nesting patterns, and the one-child rule for clean, predictable navigation.
+
+Design tabs and dropdowns
+Groups
+
+See how to use groups as sidebar sections, what they can contain, and patterns for keeping long sidebars scannable and maintainable.
+
+Shape the sidebar
+Pages
+
+Learn how pages work as MDX-backed units, how paths and slugs are referenced, and how to rename or move pages safely.
+
+Manage page units and paths
+Best practices
+
+What usually works well
+
+Start with context, not sidebars
+Decide whether you need dimensions (product, version, language) before tuning view and group structure.
+
+Favor stable top-level choices
+Once you add a tab, dropdown, or dimension value, keep it stable so links and AI references stay valid.
+
+Keep hierarchies shallow
+Aim for 2–3 levels deep: dimension (optional) → view → group → pages or API sections.
+
+Reuse patterns across dimensions
+Mirror the same group and page structure across versions or languages whenever possible.
+
+Name for search and scanability
+Use concise, descriptive titles that work in search results and sidebars.
+
+Common anti-patterns to avoid
+
+Using dimensions for cosmetic labels
+Do not add a dimension if the content is identical or only slightly different; use a section, group, or callout instead.
+
+Breaking the one-child rule in views
+Do not mix pages, groups, tabs, and dropdowns inside a single tabs or dropdowns container.
+
+Mixing grouped and ungrouped content
+Avoid sidebars where some items at a level are loose pages and others are groups; pick one mode per level.
+
+Too many top-level views
+A long row of tabs or nested dropdowns makes navigation harder, not easier.
+
+Frequent path renames without redirects
+Changing page paths often can break links and confuse users; plan structure early and evolve it carefully, using redirects when needed.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Helpful Prompts
+Next
+Dimensions
+Built with Documentation.AI
+Last updated Dec 31, 2025
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Why organization matters
+The core model: Dimensions → Views → Content
+Dimensions: define context (optional outer layer)
+Views: define navigation and layout
+Content: groups, pages, and API reference
+Key structure rules to remember
+Dimensions and views
+The one-child rule for containers (views)
+Groups and pages
+A practical planning workflow
+Example structures for common docs types
+1. Simple product docs with tabs (no dimensions)
+2. Versioned docs using a version dimension
+3. API-heavy docs with dropdowns and grouped reference
+Choose your next step
+Best practices
+What usually works well
+Common anti-patterns to avoid
+Organize documentation structure - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Organize
+Dimensions
+Plan and configure products, versions, and languages as dimensions for organized, multi-context documentation in Documentation.AI.
+
+Overview
+
+Dimensions are top-level context selectors that split your documentation into parallel variants. They define where a reader is in your docs: which product, version, or language they are viewing.
+
+Dimensions sit at the top of your navigation architecture:
+
+
+100%
+
+
+Dimensions
+Define Context
+
+Views
+Define Navigation
+
+Content
+Define Documentation
+
+Dimensions define the context (for example, Product A / v2 / English).
+
+Views define how navigation is presented within that context (tabs, groups, dropdowns).
+
+Content is the actual pages and groups that readers see.
+
+Dimensions are the top layer of the navigation structure. A project can have multiple dimensions (for example, Product + Version + Language), but most sites work best with one or two.
+
+You can manage Dimensions in:
+
+Web Editor (Navigation panel) for UI-based setup and everyday edits
+
+documentation.json (Site Configuration) for file-based setup and bulk changes (via Code Editor)
+
+See Site Configuration for file-based management: /customize/site-configuration.
+
+When to use dimensions
+
+Dimensions are powerful, but you should only add them when your docs truly exist in parallel variants.
+
+Good use cases
+
+Use a dimension only when your docs truly exist in parallel variants and readers need to switch context globally.
+
+Good use cases:
+
+Products (Cloud vs On-prem) with mostly parallel docs
+
+Versions (v1 vs v2) where users frequently switch versions
+
+Languages (English vs Español) where most pages are translated
+
+Avoid dimensions when:
+
+Only a few pages differ across variants
+
+Differences are audience-based (Admin vs Developer) rather than true variants
+
+Variation can be handled inside pages (tabs, callouts) or with groups/views
+
+Start with no dimensions. Add a dimension only once the variants are stable and long-lived.
+
+How dimensions interact with views and content
+
+Dimensions → Views (optional) → Content
+
+Once a reader selects values for all active dimensions, they see the navigation tree for that context. From there, your structure can go in either direction:
+
+Dimensions → Views → Content
+Use Views (Tabs/Dropdowns) when you need layout and navigation structure inside a dimension.
+
+Dimensions → Content
+Views are not required. You can place content directly under a dimension branch (for example, a flat list of pages, or groups/pages without tabs or dropdowns).
+
+In all cases, the same structural constraints apply within a branch (including the one-child rule).
+
+Working with Dimensions in the Web Editor
+
+In the Web Editor, Dimensions are managed from the Navigation panel. Dimensions can be added either as a parent layer (wrapping what currently exists) or as a child layer (nesting a new dimension inside an existing one).
+
+Before you start: confirm what’s currently at the top
+
+Open Editor → Navigation and check what your current top layer is:
+
+If you see Dimension selectors (Product/Version/Language), Dimensions already exist.
+
+Web editor view with 'Dimension' already added
+Web editor view with 'Dimension' already added
+If you see Tabs/Dropdowns first, your top layer is a View.
+
+Web editor view without 'Dimensions'
+Web editor view without 'Dimensions'
+If you see only Groups or Pages, your structure is currently flat content (no Views or Dimensions yet).
+
+Add a Dimension
+
+You can add a Dimension in two ways:
+
+A) Add a Dimension as a parent (wrap the existing top layer)
+
+Use this to add a Dimension above whatever currently exists at the top—an existing Dimension, a View (Tabs/Dropdowns), or a flat content structure (Groups/Pages).
+
+Steps:
+
+In the sidebar navigation area, hover over the top-left of the current top layer header (the topmost layer you see—Dimension/View/Groups/Pages).
+
+Click the top+ icon (Add Parent layer).
+
+Adding 'Dimension' as a parent to flat structure & tab view
+Adding 'Dimension' as a parent to flat structure & tab view
+Choose Add Dimension, then select the dimension type (Product / Version / Language).
+
+Create the first value (for example, Cloud, v1.0, or English) and save.
+
+What happens:
+
+The Editor wraps your existing structure inside the new Dimension.
+
+Your existing navigation/content is moved under the first value of that Dimension.
+
+You can add additional values as siblings (for example, v2.0) and configure each branch independently.
+
+B) Add a Dimension as a child (nest inside an existing Dimension)
+
+Use this when you already have one Dimension (for example, Product) and want to add another Dimension under it (for example, Version).
+
+Steps:
+
+Hover on the existing Dimension value you want to nest under (for example, Version: v1.0).
+
+Click the bottom+ icon (Add Child layer).
+
+Adding 'Dimension' as a child layer to another dimension
+Adding 'Dimension' as a child layer to another dimension
+Choose Add Child Dimension, then select the dimension type (Product / Version / Language).
+
+Create the first value (for example, Product A) and save.
+
+What happens:
+
+The Editor inserts a new child Dimension under the selected Dimension value.
+
+All existing content under that Dimension value is moved under the first value of the new child Dimension.
+
+You can create sibling values for the new child Dimension (for example, Product B) and then customize or distribute content per value.
+
+Add and manage Dimension values
+
+After a Dimension exists, you can maintain it from the Dimension selector area:
+
+Add more values (for example, add v2.0 next to v1.0).
+
+Switch between values to edit the Views and content under each branch.
+
+Rename values to match your naming conventions (for example, v1 → v1.0).
+
+Reorder values so the default or recommended option appears first.
+
+Remove or hide values when a variant is deprecated (plan redirects if URLs will change).
+
+Tip: After creating new values, switch between them immediately to confirm you’re editing the correct branch and that navigation/content appears where you expect.
+
+Managing Dimensions in configuration (documentation.json)
+
+For file-based management, configure Dimensions in documentation.json using Site Configuration. This is useful when you want:
+
+Version-controlled navigation changes
+
+Bulk edits across many dimension branches
+
+Structured review in pull requests
+
+See Site Configuration to manage it via the Code Editor.
+
+Designing dimensions: guidelines and pitfalls
+
+Use this section as a checklist when you plan or refactor dimensions.
+
+Decide if you truly need a dimension
+
+List your current and planned variants (products, versions, languages).
+
+Ask whether readers must switch context globally, or if a few local differences are enough.
+
+If most content is shared and differences are small or short‑lived, avoid adding a dimension.
+
+Choose a single root dimension
+
+Your navigation must start with one dimension type at the root level.
+
+Typical root choices:
+
+Product → then Version → then Language
+
+Product → then Language
+
+Version only (for a single product with multiple API versions)
+
+Pick the root based on what users think about first when arriving at your docs.
+
+Keep the number of dimensions small
+
+Most sites work well with one or two dimensions.
+
+Three dimensions (Product + Version + Language) are possible but more complex to maintain.
+
+If your matrix of combinations starts to feel large or sparse, reconsider whether you can:
+
+Drop a dimension.
+
+Represent some variation inside pages (tabs, callouts).
+
+Merge rarely used variants.
+
+Align views across variants where it helps
+
+Within a dimension, keep major groups consistent:
+
+Use the same group names and order where possible.
+
+Mirror key entry points (for example, "Quickstart", "API Reference").
+
+This makes it easy for readers to switch product or version and stay oriented.
+
+Plan for lifecycle changes
+
+Versions and some products eventually deprecate.
+
+Decide ahead of time how you will:
+
+Mark older variants as legacy or deprecated.
+
+Hide or demote variants once usage is low.
+
+Redirect readers from removed variants to supported ones.
+
+Keep at least one clearly marked "current" path to reduce confusion.
+
+Common pitfalls
+
+Avoid these patterns when designing dimensions:
+
+Over‑segmenting
+Creating dimensions for every role, plan, or platform when a single docs tree with tabs and callouts would be simpler.
+
+Uneven variants
+Having many pages in one variant and only a few in another, leaving large gaps or empty navigation states.
+
+Frequent reconfiguration
+Changing dimension types or order often. This makes URLs, bookmarks, and mental models unstable for readers.
+
+Deep nesting with many dimensions
+Combining several dimensions with heavily nested views. This is hard to reason about and maintain for both humans and AI agents.
+
+Before adding or changing dimensions, map a few end-to-end user journeys (for example, "New API user for Product B / v2 / English") and confirm they can find key pages with minimal context switching.
+
+Related reading
+
+Organize overview for how dimensions fit into the broader organization features.
+
+Site Configuration for configuring dimensions, views, and content in code.
+
+Organize content and navigation in the Web Editor for editor-based navigation management.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Overview
+Next
+Views
+Built with Documentation.AI
+Last updated Dec 31, 2025
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+When to use dimensions
+Good use cases
+How dimensions interact with views and content
+Working with Dimensions in the Web Editor
+Before you start: confirm what’s currently at the top
+Add a Dimension
+A) Add a Dimension as a parent (wrap the existing top layer)
+B) Add a Dimension as a child (nest inside an existing Dimension)
+Add and manage Dimension values
+Managing Dimensions in configuration (documentation.json)
+Designing dimensions: guidelines and pitfalls
+Common pitfalls
+Related reading
+Dimensions - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Organize
+Views
+Understand views (tabs and dropdowns), how they relate to dimensions and content, and how to choose and manage navigation patterns in the Web Editor.
+
+Overview
+
+Views control how content is organized and navigated within a Dimension context in Documentation.AI.
+
+Dimensions decide which content is in scope (for example, product, audience, or version).
+
+Views decide how that scoped content appears in the UI (Tabs, Sidebar Dropdowns, and how they nest).
+
+Content items (Groups, Pages, Page Groups, OpenAPI References) live inside Views to form your navigation tree.
+
+You work with views in two places:
+
+In the Web Editor, when you organize navigation for a project.
+
+In site configuration, when you define views and patterns programmatically (see Site configuration).
+
+This page focuses on:
+
+The conceptual model and reference rules for views.
+
+A Web Editor–focused workflow for adding and organizing tabs and dropdowns.
+
+Think of a dimension as a filter on content, and a view as the layout for navigating that filtered content.
+
+Supported view types
+
+Documentation.AI supports two view types at the layout layer:
+
+Tabs: horizontal, top-level navigation areas.
+
+Dropdowns: collapsible sidebar categories.
+
+Both types act as containers for content or other containers.
+
+Tabs
+
+Tabs are top-level navigation sections such as Guides, API Reference, or Changelog.
+
+Use Tabs when:
+
+You have 2–5 major sections readers switch between often.
+
+Each section needs its own navigation branch.
+
+You want clear separation between content types (Guides vs API) or audiences (Developers vs Admins).
+
+What Tabs do:Switching Tabs changes the active navigation branch and typically changes what appears in the sidebar.
+
+You will often see tabs used in patterns like:
+
+Guides | API Reference | Changelog
+
+Developers | Admins
+
+Dropdowns
+
+Dropdowns are collapsible sidebar categories such as Getting Started, Integrations, or SDKs.
+
+Use Dropdowns when:
+
+The sidebar is long and needs clear categories.
+
+You need hierarchy inside a section.
+
+You want readers to drill down through categories.
+
+What Dropdowns do:
+
+A Dropdown is a container: it reveals child items when expanded.
+
+Dropdowns can nest, but keep nesting shallow in most docs.
+
+In practice, your main sidebar will often be composed of dropdowns with groups and pages inside.
+
+Two starting states: with Dimensions vs without Dimensions
+
+Your project can be organized in either of these ways:
+
+With Dimensions: you first select a Dimension value (for example, Version: v1.0), then build Views inside it.
+
+Without Dimensions: there is only one global navigation tree, and you build Views directly at the root.
+
+The Editor supports both. The steps for adding Views change slightly depending on which starting state you’re in.
+
+Working with Views in the Web Editor
+
+Before you start: choose the correct branch
+
+Open Editor → Navigation.
+
+If you see Product/Version/Language selectors, your project has Dimensions. If you don’t, you’re editing a single global navigation tree (no Dimensions).
+
+Confirm you’re editing the right branch by switching the available selectors and verifying the navigation tree changes as expected.
+
+How layering works (Parent vs Child)
+
+Add Parent layer (top “+”): wraps the current level in a new container and moves existing items under it. Use when you want to restructure everything at that level.
+
+Add Child layer (bottom/inline “+”): adds a new container only inside the selected item. Use when you want to restructure only that section.
+
+Layers can wrap Views or Content, but Views can’t be added above Dimensions.
+
+Scenario 1: Add Views when your project has Dimensions
+
+1) Select the correct Dimension branch:
+
+Open the Editor and go to the Navigation panel.
+
+Select the Dimension value you want to edit (for example, Version: v1.0).
+
+Confirm you’re in the right branch by switching Dimension values and verifying the sidebar content changes.
+
+You always add Views inside the selected Dimension branch.
+
+2) Add Tabs or Dropdowns using layers:
+
+Use Add Parent layer (top-level +) when you want to wrap the current level and introduce a new container above it (for example, adding another view above existing tabs).
+
+Adding a parent layer 'view'
+Adding a parent layer 'view'
+Use Add Child layer (bottom +) when you only want to add structure inside the selected item (for example, a new tab inside a version).
+
+Adding a child layer 'view'
+Adding a child layer 'view'
+Then choose either Add Tabs or Add Dropdowns.
+
+3) Name and add sibling Views
+
+Name the first tab/dropdown item clearly.
+
+The Editor moves your existing content under the new View layer automatically.
+
+Add more sibling tabs/dropdowns at the same level (for example, add “API Reference” after “Guides”).
+
+4) Confirm placement
+
+Switch between tabs/dropdowns and confirm you see the expected content under each.
+
+If content moved unexpectedly, you likely used Parent where you intended Child (or vice versa).
+
+Scenario 2: Add Views when your project has no Dimensions
+
+When there are no Dimensions, you are editing a single global navigation tree. Views are added directly at the root (or inside any existing View).
+
+** Start at the root navigation**
+
+Open the Editor and go to the Navigation panel.
+
+If you do not see any Dimension selectors, your project is using no Dimensions.
+
+The structure you see is the root navigation tree for the entire site.
+
+Introduce Views at the root (recommended)
+This is the safest way to add structure after you already have pages.
+
+Use Add Parent layer at the root level:
+Hover on the top area above the Groups/Pages Section heading and click Add Parent layer (top+) to wrap the existing root content.
+
+Adding 'view' in flat document structure
+Adding 'view' in flat document structure
+Choose Add Tabs or Add Dropdowns to add Views.
+
+Enter the first tab or dropdown name and create sibling items.
+
+Validate:Switch between newly created tabs/dropdowns and confirm content is split as intended.
+
+Adding Views inside existing Views (nested Views)
+
+Once a View exists, you can add another View underneath it, as long as the one-child rule is respected.
+
+Common examples:
+
+Add Dropdowns under a Tab to create sidebar categories.
+
+Nest Dropdowns inside a Dropdown for sub-categories.
+
+Add Tabs inside a Dropdown only if your intended pattern supports it (Dropdown → Tabs → Dropdown).
+
+If an “Add Tabs” or “Add Dropdowns” option is missing:
+
+It usually means adding it there would violate the one-child rule.
+
+Fix by wrapping content using Add Parent layer, or by moving items into a container that already uses the child type you need.
+
+Adding a 'view' inside a View (Tabs)
+Adding a 'view' inside a View (Tabs)
+How Views connect to Groups and Pages in the sidebar
+
+After you select a branch (for example: Version: v1.0 → Tab: Guides → Dropdown: Integrations), the sidebar will show the content level for that branch:
+
+If that branch uses Groups, you’ll see a Groups section and add pages inside a group.
+
+If that branch is flat, you’ll see a Pages section and add pages at the top level.
+
+Views determine where you are in the navigation tree. Groups/Pages determine what content exists inside that branch.
+
+Core rules for Views
+
+These rules explain how Views work and why the Web Editor shows (or hides) certain actions.
+
+1) Views never contain Dimensions
+
+Dimensions (when used) are always the outermost layer of the navigation tree.
+
+You can add a View as a parent for another View or for Content.
+
+You cannot add a View as a parent for Dimensions.
+
+If you need Product/Version/Language selectors, add a Dimension layer first. Then add Views inside each dimension branch.
+
+2) The one-child rule
+
+Every container can contain exactly one child type.
+
+A Tab can contain only one of: Pages, Groups, or Dropdowns.
+
+A Dropdown can contain only one of: Pages, Groups, Tabs, or Dropdowns.
+
+You cannot mix child types at the same level (for example, a dropdown cannot contain both Pages and Dropdowns as siblings).
+
+This is why the Web Editor hides “Add …” options at certain levels—it only shows actions that keep the tree valid.
+
+3) Common supported nesting patterns
+
+The standard UI templates support these patterns between tabs and dropdowns:
+
+Pattern	Structure	Typical use case
+Pattern 1	Dropdown → Tabs → Dropdown	Complex, category-first navigation with sub-sections
+Pattern 2	Dropdown → Dropdown	Pure hierarchical sidebar without horizontal tabs
+Pattern 3	Tabs → Dropdown → Dropdown	Tabbed sections each with their own nested categories
+In each pattern:
+
+Tabs and dropdowns act as the layout containers.
+
+Groups and pages are the leaf-level content or light-weight containers under those views.
+
+How views relate to dimensions, groups, and pages
+
+To design navigation that scales, it helps to keep the layering clear:
+
+Dimension
+
+Defines a scope such as Product, Version, or Audience.
+
+Within each dimension context, you define views.
+
+Views (tabs, dropdowns)
+
+Control layout and interaction patterns inside that dimension.
+
+Determine whether users first choose between top-level sections (tabs) or drill down categories (dropdowns).
+
+Groups and pages
+
+Represent actual documentation content and sections.
+
+Are placed beneath views according to the one-child rule.
+
+A common pattern for a dimension might look like:
+
+Tabs: Guides | API Reference
+
+Each tab has:
+
+Sidebar dropdowns like Getting Started, Tutorials, Integration Guides.
+
+Groups/pages inside each dropdown.
+
+When designing across multiple dimensions, try to keep view patterns consistent so users do not have to relearn navigation for each context.
+
+Design guidelines and common patterns
+
+When to use tabs vs dropdowns
+
+Use tabs when:
+
+You need clear, top-level separation between modes, audiences, or content types.
+
+You have 2–5 major sections that users should be able to switch between quickly.
+
+You want the sidebar structure to reset depending on the active section.
+
+Use dropdowns when:
+
+You are organizing related content within a single section or tab.
+
+The sidebar is long enough that scannability becomes an issue.
+
+You need 2–3 levels of hierarchy for complex topics (for example, deep API reference structures).
+
+If you are unsure, default to:
+
+A small number of tabs at the top level.
+
+Dropdowns in the sidebar under each tab to group content.
+
+Choosing a nesting pattern
+
+Use these heuristic patterns:
+
+Pattern 1:****Dropdown → Tabs → Dropdown
+Use when:
+
+Users first choose a high-level area in the sidebar (like Product A vs Product B).
+
+Inside that area, they need multiple parallel sections exposed as tabs.
+
+Each tab then has its own dropdown-based sidebar.
+
+Pattern 2:Dropdown → Dropdown
+Use when:
+
+Your project is small or focused enough that tabs are not necessary.
+
+You want a single continuous sidebar with hierarchical categories.
+
+Pattern 3:Tabs → Dropdown → Dropdown
+Good default for most medium-to-large documentation sets:
+
+Tabs separate high-level sections.
+
+The first level of dropdowns groups major categories.
+
+A second dropdown level is available for large categories (for example, many APIs).
+
+Consistency and maintenance tips
+
+Align across dimensions
+If you have a Version dimension, for example, keep the tab labels and dropdown structure consistent across versions to reduce cognitive load.
+
+Minimize depth
+Even though dropdowns can nest, prefer no more than two dropdown levels deep in most projects. Beyond that, content is often better split into an additional tab or dimension.
+
+Name views by user intent
+Use labels that match how readers think:
+
+Prefer Getting Started over Onboarding Docs.
+
+Prefer API Reference over Backend.
+
+Plan before implementing
+Sketch your dimension, view, and content hierarchy before editing navigation:
+
+What dimensions exist?
+
+Which tabs are required in each dimension?
+
+How will dropdowns group content inside each tab?
+
+For concrete field names and configuration examples, see:
+
+Dimensions for how dimension selectors define context.
+
+Groups and Pages for what lives under views.
+
+Site configuration for JSON configuration patterns of views, tabs, and dropdowns.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Dimensions
+Next
+Groups
+Built with Documentation.AI
+Last updated Dec 30, 2025
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Supported view types
+Tabs
+Dropdowns
+Two starting states: with Dimensions vs without Dimensions
+Working with Views in the Web Editor
+How layering works (Parent vs Child)
+Scenario 1: Add Views when your project has Dimensions
+Scenario 2: Add Views when your project has no Dimensions
+Adding Views inside existing Views (nested Views)
+How Views connect to Groups and Pages in the sidebar
+Core rules for Views
+1) Views never contain Dimensions
+2) The one-child rule
+3) Common supported nesting patterns
+How views relate to dimensions, groups, and pages
+Design guidelines and common patterns
+When to use tabs vs dropdowns
+Choosing a nesting pattern
+Consistency and maintenance tips
+Views - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Organize
+Groups
+Understand how Groups organize pages in the sidebar, when to use them, and how they differ from dropdowns and page-level grouping.
+
+Overview
+
+Groups are sidebar sections that organize related pages into clear, collapsible chunks like "Getting Started" or "API Documentation".
+
+At the configuration level, a group is defined with properties such as group, icon, expandable, openapi, and pages. At the reader level, that same group appears as a labeled section in the left sidebar that can contain pages and nested sections.
+
+Use groups when you want to:
+
+Collect related pages under a shared heading
+
+Control whether sections start collapsed or expanded
+
+Attach API or OpenAPI definitions to a section of the sidebar
+
+Keep large documentation sets scannable and predictable
+
+For low-level configuration details, see Site Configuration. For UI-based workflows, read below.
+
+Adding groups in the Web Editor
+
+You can create groups directly from the Web Editor sidebar without touching configuration files. A Group is a labeled sidebar section that contains pages, created via Add Group from the Pages menu.
+
+Select the correct Dimension and View:
+
+Open the Editor from your dashboard.
+
+In the sidebar, select the Dimension and View from the dropdowns at the top.
+
+The sidebar content list below updates for that Dimension + View.
+
+When the sidebar shows Groups already exist:
+
+You are already using group-based navigation for the selected Dimension + View.
+
+To create a new group at this level, click the + icon next to the Groups section.
+
+Name the group (for example, “Getting Started”) and save.
+
+Adding a new group in web editor, if groups exist
+Adding a new group in web editor, if groups exist
+After the group is created, you can add pages inside it using the + icon next to the group name.
+
+When the sidebar section is still flat (only pages):
+
+This Dimension + View currently has a flat page list (no groups at that level).
+
+Click the + menu next to Pages, then select Add Group.
+
+Give the group a clear name and, optionally, drag it to adjust its position.
+
+After you add a group, new pages at this level should be created inside groups.
+
+Adding a new group in web editor, if no groups exist (only pages)
+Adding a new group in web editor, if no groups exist (only pages)
+Once groups exist at a level, new pages are created inside groups, not as root-level siblings. To keep navigation predictable, avoid mixing grouped and ungrouped content at the same level.
+
+Add pages inside a group
+
+When the sidebar shows Groups:
+
+Find the group you want (for example, “Getting Started”).
+
+Click the + icon next to that group name to add a page inside it.
+
+What a group is (and is not)
+
+Groups in the navigation layer
+
+In the navigation and site configuration, groups:
+
+Are top-level or nested sidebar sections
+
+Have a group name shown as the label
+
+Can have a Lucide icon next to the label
+
+Can be expandable so readers can collapse or expand them
+
+Contain a pages array that holds:
+
+Page entries (individual docs)
+
+Nested group entries (subsections)
+
+API/OpenAPI-backed sections, via openapi
+
+The pages array is where you structure the hierarchy of your sidebar.
+
+How groups differ from dropdowns
+
+"Dropdown" behavior in the header or navbar is separate from groups:
+
+Groups: control the left sidebar content tree.
+
+Dropdowns: live in the top navigation bar and typically link into existing sidebar locations or external URLs.
+
+You can link a top-nav dropdown item into a group section, but the dropdown itself does not define groups or their structure.
+
+How groups differ from page-level grouping
+
+Some pages may use headings, tabs, or other components to group content inside a single page. That is page-level grouping, not navigation-level grouping.
+
+Groups organize where pages live in the sidebar.
+
+Page-level grouping organizes content inside a page.
+
+A long conceptual guide might live as a single page inside one group, even if it uses headings, tabs, or other components to structure its internal content.
+
+When to introduce groups vs keep flat pages
+
+You do not need groups for every section. In many cases, a flat list of pages is simpler and easier to manage.
+
+Use flat pages when
+
+A section has only a handful of pages (for example, 2–5)
+
+The topic is narrow and easy to scan without categories
+
+You are still shaping the information architecture and do not yet know stable categories
+
+Flat sections are easier to maintain early on and avoid over-structuring.
+
+Introduce groups when
+
+Consider introducing groups inside a tab or section when:
+
+There are more than 5–7 pages at a given level
+
+You have distinct themes like "Getting Started", "Guides", "Reference"
+
+You mix different content types, such as:
+
+Conceptual guides
+
+How-to topics
+
+API reference sections
+
+You want collapsible behavior to keep the sidebar compact
+
+You are importing or organizing a larger API reference and need separate sections per service or tag
+
+From the Web Editor perspective, once you add a group at a level:
+
+The label in that area changes from "Pages" to "Groups"
+
+You create new sections by adding groups
+
+You add content inside a group instead of as sibling pages
+
+Avoid mixing grouped and ungrouped content at the same level. Decide whether a level should consist entirely of pages or entirely of groups, and keep that choice consistent.
+
+What groups can contain
+
+Groups define their children using a pages array. That array can hold:
+
+Individual page items
+
+Nested groups
+
+API/OpenAPI-backed sections
+
+These can be mixed in a single pages array.
+
+Pages inside a group
+
+A standard group may look like:
+
+
+{
+  "group": "Getting Started",
+  "icon": "info",
+  "expandable": true,
+  "pages": [
+    { "title": "Introduction", "path": "getting-started/introduction" },
+    { "title": "Core concepts", "path": "getting-started/core-concepts" },
+    { "title": "Quickstart", "path": "getting-started/quickstart" }
+  ]
+}
+This renders a "Getting Started" section with three pages under it.
+
+Nested groups
+
+You can nest groups within other groups to add another level of structure:
+
+
+{
+  "group": "Customize",
+  "icon": "palette",
+  "expandable": true,
+  "pages": [
+    {
+      "group": "SEO & GEO",
+      "icon": "search-check-icon",
+      "pages": [
+        {
+          "title": "Structured Data",
+          "path": "seo-and-geo/structured-data"
+        },
+        {
+          "title": "Sitemap",
+          "path": "seo-and-geo/sitemap"
+        }
+      ]
+    },
+    {
+      "title": "Site Configuration",
+      "path": "customize/site-configuration"
+    }
+  ]
+}
+Here, "SEO & GEO" is a nested group inside "Customize", alongside other pages.
+
+API/OpenAPI-backed groups
+
+Groups can also bind directly to an OpenAPI specification using the openapi property in site configuration. In that case, the group acts as a container for generated API docs:
+
+The group label appears in the sidebar.
+
+The openapi path tells the system where to load the spec from.
+
+The generated API reference structure renders inside that group.
+
+For practical organization patterns, see Organize API Reference and OpenAPI / JSON Schema Import.
+
+How this fits with the "one-child" rule
+
+In navigation, the key constraint is consistency at each level:
+
+At any given level:
+
+Either keep items as ungrouped pages, or
+
+Organize them inside groups.
+
+Within a group, the pages array may mix:
+
+Page items
+
+Nested groups
+
+API/OpenAPI-backed entries
+
+Internally, this keeps a clear parent-child relationship:
+
+Tabs contain groups or pages.
+
+Groups contain pages and/or more groups.
+
+API/OpenAPI-backed groups generate their own deeper structure, but still hang off a single group node in the tree.
+
+Practical patterns and gotchas
+
+Common grouping patterns
+
+Use these patterns as starting points for your sidebar:
+
+Intro + concepts + guides
+
+Group: "Getting Started"
+
+Pages: "Introduction", "Quickstart"
+Group: "Concepts"
+
+Pages: "Core concepts", "Architecture overview"
+Group: "How-to guides"
+
+Pages: "Authenticate", "Handle errors", "Migrate from v1"
+Product areas
+
+Group: "Workspace"
+
+Group: "Data sources"
+
+Group: "AI features"
+
+Group: "Administration"
+
+API-heavy docs
+
+Group: "REST API"
+
+Uses openapi to generate routes
+Group: "GraphQL API"
+
+Pages: "Overview", "Schema", "Examples"
+Group: "SDKs"
+
+Pages per language
+Gotchas to avoid
+
+Mixing pages and groups at the same top level
+Once you introduce a group at a level, convert other siblings at that level into groups too, instead of leaving some as raw pages.
+
+Over-nesting
+Deeply nested groups make navigation harder. Prefer 2–3 levels of depth in the sidebar.
+
+Unclear group names
+Use concise, action-neutral names that reflect content, such as "Customize", "Analytics", or "AI Features", rather than vague labels like "Misc" or "Other".
+
+Misusing groups for single pages
+If a group will only ever contain one page, it may be simpler to keep that page at the parent level instead of wrapping it in a group.
+
+When reorganizing an existing site, start by grouping the noisiest sections first (for example, API, integrations, or many small guides). Once those areas are structured, revisit smaller sections and only introduce groups where they improve scanability.
+
+Where to configure and manage groups
+
+You can manage groups in two primary ways:
+
+Web Editor: Use the Web Editor view to create, rename, and reorder groups visually.
+
+Site configuration file: Edit the tabs and groups structure directly in your configuration to define group, icon, expandable, openapi, and pages. See Site Configuration.
+
+Use whichever workflow fits your team: the Web Editor for everyday maintenance, and configuration files for bulk changes or version-controlled navigation.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Views
+Next
+Pages
+Built with Documentation.AI
+Last updated Dec 29, 2025
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Adding groups in the Web Editor
+When the sidebar shows Groups already exist:
+When the sidebar section is still flat (only pages):
+Add pages inside a group
+What a group is (and is not)
+Groups in the navigation layer
+How groups differ from dropdowns
+How groups differ from page-level grouping
+When to introduce groups vs keep flat pages
+Use flat pages when
+Introduce groups when
+What groups can contain
+Pages inside a group
+Nested groups
+API/OpenAPI-backed groups
+How this fits with the "one-child" rule
+Practical patterns and gotchas
+Common grouping patterns
+Gotchas to avoid
+Where to configure and manage groups
+Groups - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Organize
+Pages
+Understand how pages work as the building blocks of your docs, how to add them in the Web Editor, and how to keep their slugs and paths stable over time.
+
+Overview
+
+Pages are the fundamental building blocks of your documentation. Each page is:
+
+Backed by a single MDX file in your repo or workspace
+
+Referenced from navigation via a configuration entry
+
+Addressable by a stable path or slug that becomes part of the URL
+
+In the Organize area, you combine pages with groups, views, and dimensions to build a structured docs site. This guide focuses on working with pages in the Web Editor first, then covers how they are referenced in configuration and how to keep their identifiers stable.
+
+Adding a new page in the Web Editor
+
+You add pages from the Web Editor sidebar. What you can do depends on the Dimension and View you have selected, and whether your docs under that selection use Groups.
+
+Select the right Dimension and View
+
+Open the Editor from your dashboard.
+
+In the editor sidebar, use the dropdowns at the top to select the appropriate:
+
+Dimension
+
+View
+
+The sidebar list below the dropdowns updates to show the content available under that Dimension + View.
+
+The sidebar supports two structures. What you see depends on whether Groups exist under the selected Dimension + View.
+
+Add a page from the sidebar, if Groups exist
+
+You’ll see a Groups section in the sidebar.
+
+Below it, you’ll see a list of Groups (for example, “Getting Started”), and each group contains its Pages.
+
+To add a new page, click the + icon on the right side of the Group name where you want the new page to live.
+
+Example: If “Getting Started” is a group, click the+* next to “Getting Started” to add a new page inside that group.*
+
+Adding a new page from sidebar, if groups exist
+Adding a new page from sidebar, if groups exist
+When Groups are present, you can add a page only inside a group (not at the root).
+
+Add a page from the sidebar, if no Groups exist
+
+You’ll see a Pages section in the sidebar (instead of Groups).
+
+All pages are listed directly below, without being categorized into groups.
+
+To add a new page, click the + icon next to the Pages heading.
+
+In this structure, pages are created at the root under the selected Dimension + View.
+
+Adding a new page from sidebar, if no groups exist
+Adding a new page from sidebar, if no groups exist
+Fill in page details
+
+Page name: The label shown in navigation (maps to the page title).
+
+Page URL (slug): The path segment used in the URL.
+
+Enter only a slug or relative path (example: organize/pages), not a full URL.
+
+Use lowercase kebab-case and keep it unique across your docs.
+
+Icon (optional): The icon shown next to the page in the sidebar.
+
+Confirm the page location
+
+Save/confirm to create the page.
+
+The page appears in the sidebar:
+
+Inside the selected Group (if the sidebar shows Groups), or
+
+In the Pages list at the top level (if the sidebar shows Pages).
+
+When you create a page in the Web Editor, it updates navigation configuration for you, so you do not need to edit JSON or YAML directly.
+
+Page types you can add from the Pages menu
+
+The Pages heading has a + menu with several content item types. Each one controls how content appears and is organized in your sidebar.
+
+Quick comparison
+
+Page: A normal documentation page backed by MDX.
+
+Group: A labeled sidebar section that contains pages, but does not need its own content.
+
+Page Group: A nested container (like a folder) that can hold pages and other page groups.
+
+OpenAPI Reference: A set of generated API pages created from an OpenAPI spec.
+
+Unpublished Page: An existing page that currently does not appear in navigation.
+
+Page
+
+A Page is a standard documentation entry backed by an MDX file.
+
+Created via Add Page.
+
+You provide a Page name, Page URL (slug), and optional Icon.
+
+Appears directly in the sidebar at the level where you created it.
+
+Can be moved between groups or page groups without changing the MDX file.
+
+Use normal pages for most narrative docs, guides, references, and conceptual content.
+
+Group
+
+A Group is a labeled sidebar section that contains pages.
+
+Created via Add Group from the Pages menu.
+
+Acts as a visual and structural container in the sidebar.
+
+Does not require its own MDX file unless you intentionally create a landing page for it.
+
+Use groups when you want to introduce a top-level or mid-level section in the sidebar, such as “Getting Started” or “Organize”.
+
+Page group
+
+A Page Group is a nested container of pages, similar to a folder.
+
+Created via Add Page Group or via the + button next to an existing group or page group.
+
+Lets you nest pages and page groups inside one another to create deeper hierarchies.
+
+Does not require its own MDX file unless you want a landing page.
+
+Use page groups when you need a more granular structure inside a larger group, such as organizing several related guides under a product or feature.
+
+OpenAPI reference
+
+An OpenAPI Reference creates generated API documentation from an OpenAPI spec.
+
+Created via Add OpenAPI Reference.
+
+You upload, paste, or select an OpenAPI JSON or YAML file.
+
+The editor generates API pages (for example, endpoints and schemas) and adds them to navigation, typically under a dedicated API group or page group.
+
+Use OpenAPI references when you want your API endpoints and schemas to be maintained from a single OpenAPI document, while still fitting into the same navigation as the rest of your docs. For more details, see OpenAPI / JSON Schema Import and Organize API Reference.
+
+Unpublished page
+
+An Unpublished Page is a page that exists but is not currently visible in navigation.
+
+Appears when you remove a page from navigation but keep its MDX file.
+
+Accessible via Add Unpublished Page in the Pages menu.
+
+You can browse unpublished pages and re-add them to navigation in a new location.
+
+Use unpublished pages to:
+
+Temporarily hide content during a restructure.
+
+Stage or review content before exposing it in navigation.
+
+Restore previously removed pages without recreating them.
+
+How pages are referenced
+
+Whether you configure navigation in the Web Editor or via code, each page entry uses a small set of core properties.
+
+Core page properties
+
+From the site configuration, pages support:
+
+title (required): The display name shown in navigation and used in the browser title.
+
+path (optional for internal pages): The relative path to your MDX file, without the .mdx extension. This is required unless you use href.
+
+href (optional for external links): A full URL for links that point outside your docs. Use this instead of path for external resources.
+
+icon (optional): A Lucide icon name that appears next to the page in navigation.
+
+method (optional): HTTP method label for API endpoint pages (for example, GET, POST), used in API navigation.
+
+tags (optional): Free-form labels that help categorize or filter pages in views.
+
+badge (optional): A short label (e.g., "New", "Beta", "Deprecated") displayed as a colored pill next to the page title in the sidebar.
+
+show-sidebar (optional): Controls left sidebar visibility on this page. Defaults to true. Set to false to hide the sidebar and expand the content area.
+
+show-toc (optional): Controls the right-side Table of Contents panel visibility. Defaults to true. Set to false to hide the TOC.
+
+show-parent-label (optional): Controls whether the group/parent name label appears above the page title. Defaults to true.
+
+content-width (optional): Controls the maximum width of the content area. Accepted values: "narrow", "normal" (default), or "wide".
+
+In the Web Editor, the same concepts appear as:
+
+Page name maps to title.
+
+Page URL (slug) maps to path.
+
+Icon maps to icon.
+
+You do not need to think about JSON or YAML when using the Web Editor; it writes the configuration for you.
+
+All content pages must be authored in MDX. When you reference them in configuration, always use the path without the .mdx extension.
+
+Paths, slugs, and URLs
+
+For internal content:
+
+The slug you choose in the Web Editor becomes the path used in configuration.
+
+That path is combined with your site base URL (and any custom subpath) to form the public URL.
+
+The path must be unique across your docs so navigation and routing remain unambiguous.
+
+For external content:
+
+You omit path and provide an href.
+
+The page appears in navigation like any other entry but opens the external URL, typically in a new tab.
+
+How pages relate to groups, views, and dimensions
+
+Pages are content; groups, views, and dimensions are ways of organizing or slicing that content.
+
+Groups define the sidebar tree structure. A page can:
+
+Live at the root.
+
+Be nested under one or more levels of groups or page groups.
+
+Views allow the same set of pages to appear in different contexts without duplication. For example:
+
+A “Developer” view that shows only technical pages.
+
+A “Customer” view that emphasizes onboarding and how-to content.
+
+Dimensions apply cross-cutting filters such as:
+
+Version (for example, v1 vs v2).
+
+Locale or language.
+
+Audience or plan level.
+
+From a maintenance perspective:
+
+The MDX file and its path identify the page.
+
+Groups, views, and dimensions control where and when that page shows up for readers.
+
+Best practices for naming, slugs, and restructuring
+
+A clear, stable page model makes your docs easier to maintain and safer to evolve.
+
+Naming and titles
+
+Use descriptive titles that reflect user tasks or topics (for example, “Organize API reference” instead of “API Stuff”).
+
+Keep titles concise; avoid repeating group names if the surrounding context already makes them obvious.
+
+Align page titles with navigation labels so readers see consistent wording.
+
+Slugs and paths as stable identifiers
+
+Treat path as the page’s stable identifier:
+
+Choose slugs that are:
+
+Lowercase, using - as a separator (for example, organize/pages, api-documentation-and-playground/openapi-import).
+
+Meaningful but not over-specific to current UI labels.
+
+Avoid using:
+
+Dates or version numbers in slugs unless versioning is a primary dimension.
+
+Team-internal abbreviations that will not make sense later.
+
+When you must change a slug:
+
+Update the path in configuration or via the Web Editor.
+
+Add redirects in Redirects & Rewrites so existing links continue to work.
+
+Communicate the change if external integrations or apps rely on the old URL.
+
+Plan slugs as if they will live for a long time. It is easier to adjust titles and group structure than to rename paths once other systems and users depend on them.
+
+Safe restructuring
+
+When reorganizing navigation:
+
+Prefer moving pages between groups over renaming path.
+
+Use page groups to add hierarchy instead of duplicating pages.
+
+Use unpublished pages to temporarily remove items while you redesign structure.
+
+For API content, consider adjusting OpenAPI grouping or API reference organization rather than editing many individual pages.
+
+By treating pages as stable content units, and using groups, views, and dimensions as flexible layers on top, you can evolve your docs structure confidently without breaking URLs or confusing readers.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Groups
+Next
+Colors & Typography
+Built with Documentation.AI
+Last updated 2 days ago
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Overview
+Adding a new page in the Web Editor
+Select the right Dimension and View
+Add a page from the sidebar, if Groups exist
+Add a page from the sidebar, if no Groups exist
+Fill in page details
+Confirm the page location
+Page types you can add from the Pages menu
+Quick comparison
+Page
+Group
+Page group
+OpenAPI reference
+Unpublished page
+How pages are referenced
+Core page properties
+Paths, slugs, and URLs
+How pages relate to groups, views, and dimensions
+Best practices for naming, slugs, and restructuring
+Naming and titles
+Slugs and paths as stable identifiers
+Safe restructuring
+Pages - Documentation.AI
+logo
+Search
+Ctrl+K
+
+Ask AI
+Login
+Get Started
+
+Documentation
+Changelog
+Help
+Getting Started
+
+Write and Publish
+
+Organize
+
+Customize
+
+API Documentation
+
+AI Features
+
+Integrations and Workflows
+
+Analytics
+
+Customize
+Set Up Header and Navbar
+Add action buttons and navigation links to your documentation site's header to guide users to key actions and resources.
+
+Set up your documentation site's header with action buttons and navigation links. The Documentation.AI platform displays your navbar at the top of every page, providing users with easy access to key actions and external resources.
+
+Prerequisites
+
+Access to your documentation.json file
+List of key actions you want users to take (signup, login, contact, etc.)
+URLs for external resources or contact methods
+Understanding of your user journey and primary conversion goals
+Set Up Your Header Navigation
+
+Follow these steps to add action buttons and links to your site header.
+
+Step 1: Plan your header strategy
+
+Determine what actions you want users to take:
+
+Primary action: Main conversion goal (signup, trial, demo)
+Secondary actions: Supporting links (login, support, external resources)
+Contact methods: Email, phone, or chat support
+Step 2: Add navbar configuration
+
+Open your documentation.json file and add the navbar section:
+
+
+{
+  "navbar": {
+    "actions": {
+      "primary": {
+        "title": "Get Started",
+        "link": "https://dashboard.example.com/signup"
+      },
+      "links": [
+        {
+          "title": "Login", 
+          "link": "https://dashboard.example.com/login"
+        }
+      ]
+    }
+  }
+}
+Step 3: Configure primary action button
+
+Set up your main call-to-action button:
+
+Choose action-oriented text ("Get Started", "Try Free", "Sign Up")
+Link to your primary conversion URL
+Ensure the URL works and loads quickly
+
+{
+  "primary": {
+    "title": "Get Started",
+    "link": "https://dashboard.example.com/signup"
+  }
+}
+primary
+object
+Main call-to-action button for user engagement.
+
+
+Button Configuration
+Step 4: Add secondary navigation links
+
+Include additional helpful links:
+
+
+{
+  "links": [
+    {
+      "title": "Login",
+      "link": "https://dashboard.example.com/login"
+    },
+    {
+      "title": "Support",
+      "link": "mailto:support@example.com"
+    }
+  ]
+}
+links
+array
+Array of secondary navigation links displayed as text in the navbar.
+
+
+Link Configuration
+Step 5: Add contact links
+
+Include direct contact options using special protocols:
+
+
+{
+  "links": [
+    {
+      "title": "Email Support",
+      "link": "mailto:support@example.com"
+    },
+    {
+      "title": "Call Sales",
+      "link": "tel:+1-555-0123"
+    }
+  ]
+}
+Supported link types:
+
+Web URLs: https://example.com
+Email: mailto:support@example.com
+Phone: tel:+1-555-0123
+Step 6: Test your header setup
+
+Save your documentation.json file
+Deploy or preview your changes
+Verify all links work correctly
+Test on different screen sizes (mobile, tablet, desktop)
+Check that contact links open appropriate applications
+Optimize Your Header
+
+Choose effective button text
+
+Use action verbs: "Get Started", "Try Free", "Sign Up"
+Keep text short (1-3 words)
+Match your brand voice and user expectations
+Prioritize link order
+
+Place most important links first
+Limit secondary links to 3-4 items
+Consider user workflow and priority
+Test across devices
+
+Ensure header works on mobile devices
+Verify touch targets are appropriately sized
+Check that text remains readable at all sizes
+Complete Header Example
+
+
+{
+  "navbar": {
+    "actions": {
+      "primary": {
+        "title": "Start Free Trial",
+        "link": "https://app.example.com/signup"
+      },
+      "links": [
+        {
+          "title": "Sign In",
+          "link": "https://app.example.com/login"
+        },
+        {
+          "title": "Pricing",
+          "link": "https://example.com/pricing"
+        },
+        {
+          "title": "Get Help",
+          "link": "mailto:support@example.com"
+        }
+      ]
+    }
+  }
+}
+Troubleshooting Header Issues
+
+Button not appearing: Verify JSON syntax and proper nesting under navbar.actions
+
+Links not working: Check URLs are complete and accessible
+
+Mobile display issues: Test responsive behavior on different screen sizes
+
+Contact links not opening: Ensure proper mailto: or tel: protocol format
+
+What's Next
+
+Set up your site branding and logos
+Configure navigation structure
+Customize colors and typography
+See complete site configuration reference
+Header configuration is completely optional. You can include just a primary button, just secondary links, or both. The platform automatically handles responsive design and optimal placement across all device sizes.
+
+Was this page helpful?
+
+Yes
+
+No
+Previous
+Navigation & Sidebar
+Next
+Branding
+Built with Documentation.AI
+Last updated Dec 23, 2025
+
+
+Copy page as markdown
+Anthropic
+Open in Claude
+ChatGPT
+Open in ChatGPT
+Page contents:
+Prerequisites
+Set Up Your Header Navigation
+Step 1: Plan your header strategy
+Step 2: Add navbar configuration
+Step 3: Configure primary action button
+Step 4: Add secondary navigation links
+Step 5: Add contact links
+Step 6: Test your header setup
+Optimize Your Header
+Choose effective button text
+Prioritize link order
+Test across devices
+Complete Header Example
+Troubleshooting Header Issues
+What's Next
+Set Up Header and Navbar - Documentation.AI
