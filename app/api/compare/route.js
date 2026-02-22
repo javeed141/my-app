@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 // POST /api/compare
 //
@@ -10,7 +10,7 @@ import { NextRequest, NextResponse } from "next/server";
 //   3. Checks which ones are missing from the scraper JSON
 //   4. Returns { matched, missing, total }
 
-export async function POST(req: NextRequest) {
+export async function POST(req) {
   try {
     const { sitemapUrl, scraperJson } = await req.json();
 
@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
 
     // ── Step 2: Parse all <loc> URLs from sitemap ──────────────
 
-    const sitemapUrls: string[] = [];
+    const sitemapUrls = [];
     const locRegex = /<loc>(.*?)<\/loc>/g;
     let match;
     while ((match = locRegex.exec(xml)) !== null) {
@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
 
     // ── Step 3: Collect all URLs from scraper JSON ─────────────
 
-    const jsonUrls = new Set<string>();
+    const jsonUrls = new Set();
 
     for (const section of scraperJson.sections || []) {
       for (const page of section.pages || []) {
@@ -68,8 +68,8 @@ export async function POST(req: NextRequest) {
     // ── Step 4: Compare ────────────────────────────────────────
     // Simple rule: in sitemap but not in JSON = missing = bug
 
-    const matched: string[] = [];
-    const missing: string[] = [];
+    const matched = [];
+    const missing = [];
 
     for (const url of sitemapUrls) {
       if (jsonUrls.has(url)) {
@@ -89,7 +89,7 @@ export async function POST(req: NextRequest) {
       missing,   // URLs in sitemap but NOT in JSON
       matched,   // URLs found in both
     });
-  } catch (e: unknown) {
+  } catch (e) {
     const msg = e instanceof Error ? e.message : "Unknown error";
     return NextResponse.json({ error: msg }, { status: 500 });
   }
@@ -99,7 +99,7 @@ export async function POST(req: NextRequest) {
 // - Remove trailing slash
 // - Lowercase
 // - Remove query params and hash
-function normalize(url: string): string {
+function normalize(url) {
   try {
     const u = new URL(url.trim());
     return (u.origin + u.pathname).replace(/\/+$/, "").toLowerCase();

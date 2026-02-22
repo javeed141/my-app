@@ -7,7 +7,7 @@ export default function Page() {
       <header className="border-b border-white/10 px-8 py-4 flex items-center justify-between">
         <span className="text-white font-bold text-lg tracking-tight">MyApp</span>
         <nav className="flex gap-2">
-         
+
           <Link
             href="/fetch"
             className="px-4 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 text-sm font-medium transition-colors"
@@ -40,7 +40,7 @@ export default function Page() {
 
           {/* CTA cards */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-         
+
 
             <Link
               href="/fetch"

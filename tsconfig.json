@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/api/scrape/route.js", "app/fetch/crawl.js", "app/converter/page.jsx"  ],
+, "app/api/scrape/route.js", "app/converter/page.jsx"  ],
   "exclude": ["node_modules"]
 }
