@@ -65,52 +65,19 @@ export const MAX_SCRIPT_SCAN_LENGTH = 500_000;
  *  50 is far more than any real sidebar needs, but catches pathological cases. */
 export const MAX_DOM_WALK_DEPTH = 50;
 
-// ── Types ──────────────────────────────────────────────────
-
-/** A single page in the scraper's output. */
-export interface ScrapePageItem {
-  title: string;   // Page title (from sidebar JSON, DOM text, or slugToTitle fallback)
-  path: string;    // Relative URL path, e.g. "/reference/get-users"
-  fullUrl: string; // Absolute URL, e.g. "https://docs.example.com/reference/get-users"
-  level: number;   // Nesting depth in sidebar (0 = top-level, 1 = child, etc.)
-  group: string;   // Sidebar group heading, e.g. "Authentication" (empty if none)
-}
-
-/** The complete scraper response returned to the frontend. */
-export interface ScrapeResult {
-  site: string;
-  navType: "projects" | "tabs" | "simple" | "fallback";
-  tabs: string[];
-  sections: { name: string; pages: ScrapePageItem[] }[];
-}
-
-/** Shape of a single page node in ReadMe's sidebar JSON.
- *  The JSON tree looks like: { title, slug, children: [{ title, slug, ... }] }
- *  Some sites use "pages" instead of "children" — we handle both. */
-export interface SidebarJsonPage {
-  title?: string;
-  slug?: string;
-  uri?: string;
-  children?: SidebarJsonPage[];
-  pages?: SidebarJsonPage[];
-}
-
-/** Metadata extracted from the sidebar for a single page.
- *  Stored in a Map<slug, PageMeta> lookup table.
- *  "order" preserves the sidebar's display order (assigned sequentially). */
-export interface PageMeta {
-  title: string;
-  level: number;
-  group: string;
-  order: number;
-}
+// ── Types (reference only — no runtime enforcement) ────────
+//
+// ScrapePageItem  = { title, path, fullUrl, level, group }
+// ScrapeResult    = { site, navType, tabs, sections: [{ name, pages }] }
+// SidebarJsonPage = { title?, slug?, uri?, children?, pages? }
+// PageMeta        = { title, level, group, order }
 
 // ── Constants ──────────────────────────────────────────────
 
 /** Maps URL path prefix → human-readable section name.
  *  e.g. URLs starting with /reference/ get grouped under "API Reference".
  *  Used when building the final output sections. */
-export const PREFIX_TO_SECTION: Record<string, string> = {
+export const PREFIX_TO_SECTION = {
   docs: "Guides",
   reference: "API Reference",
   refs: "API Reference",
@@ -123,7 +90,7 @@ export const PREFIX_TO_SECTION: Record<string, string> = {
 /** Some ReadMe sites use /refs/ instead of /reference/ for the same content.
  *  This maps alternate prefixes to their canonical form
  *  so we don't accidentally create duplicate sections for the same content. */
-export const PREFIX_ALIASES: Record<string, string> = {
+export const PREFIX_ALIASES = {
   refs: "reference",
 };
 
@@ -148,7 +115,7 @@ export const NAV_SELECTORS = [
 /** Regex patterns to classify navigation links as known tab types.
  *  e.g. href="/docs" or href="/docs/" → tab named "Guides".
  *  Used by detectTabs() to figure out what sections the site has. */
-export const TAB_PATTERNS: [RegExp, string][] = [
+export const TAB_PATTERNS = [
   [/^\/?docs\/?$/, "Guides"],
   [/^\/?reference\/?$/, "API Reference"],
   [/^\/?refs\/?$/, "API Reference"],
@@ -185,7 +152,7 @@ export const SLUG_STRIP_PATTERN = /^\/?(docs|reference|refs|recipes|changelog)\/
  *    - 0.0.0.0, ::1 (special addresses) */
 const BLOCKED_HOSTS = /^(localhost|127\.|10\.|172\.(1[6-9]|2\d|3[01])\.|192\.168\.|0\.0\.0\.0|::1|\[::1\])/i;
 
-export function isUrlAllowed(urlStr: string): boolean {
+export function isUrlAllowed(urlStr) {
   try {
     const u = new URL(urlStr);
     if (!["http:", "https:"].includes(u.protocol)) return false;
@@ -200,14 +167,14 @@ export function isUrlAllowed(urlStr: string): boolean {
 
 /** Converts alternate prefixes to their canonical form.
  *  e.g. "refs" → "reference" so we don't create duplicate sections. */
-export function normalizePrefix(prefix: string): string {
+export function normalizePrefix(prefix) {
   return PREFIX_ALIASES[prefix] || prefix;
 }
 
 /** Converts a URL slug to a human-readable title.
  *  e.g. "get-all-users" → "Get All Users"
  *  Used as fallback when we have no sidebar metadata for a page. */
-export function slugToTitle(slug: string): string {
+export function slugToTitle(slug) {
   return slug.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()).trim();
 }
 
@@ -226,7 +193,7 @@ export function slugToTitle(slug: string): string {
  *   serverless timeout. We bail out early if the text is too large — ReadMe
  *   sidebar JSON scripts are typically 10KB–50KB, so 500KB is very generous.
  */
-export function extractBalancedJson(text: string, start: number): string | null {
+export function extractBalancedJson(text, start) {
   if (text[start] !== "{") return null;
 
   // CRASH GUARD: Skip huge scripts that would freeze the event loop.
@@ -266,11 +233,10 @@ export function extractBalancedJson(text: string, start: number): string | null 
  *   Prevents stack overflow on deeply nested or circular-ish JSON structures.
  *   5 levels covers all known ReadMe sites (sidebar is typically 2–3 levels deep).
  */
-export function findNestedKey(obj: unknown, key: string, depth: number): unknown {
+export function findNestedKey(obj, key, depth) {
   if (depth > MAX_NESTED_SEARCH_DEPTH || !obj || typeof obj !== "object") return null;
-  const record = obj as Record<string, unknown>;
-  if (key in record) return record[key];
-  for (const val of Object.values(record)) {
+  if (key in obj) return obj[key];
+  for (const val of Object.values(obj)) {
     const found = findNestedKey(val, key, depth + 1);
     if (found) return found;
   }
@@ -294,7 +260,7 @@ export function findNestedKey(obj: unknown, key: string, depth: number): unknown
  * RETURNS null on any failure instead of throwing, so callers can gracefully
  * skip failed pages without try/catch at every call site.
  */
-export async function fetchPage(url: string): Promise<string | null> {
+export async function fetchPage(url) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
 
