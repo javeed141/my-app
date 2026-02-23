@@ -5,6 +5,7 @@ import {
   findNestedKey,
   slugToTitle,
   normalizePrefix,
+  stripVersionPrefix,
   SIDEBAR_SELECTORS,
   SLUG_STRIP_PATTERN,
   DOC_PATH_PATTERN,
@@ -246,12 +247,15 @@ export function findSidebarElement($) {
 
 /** Extracts the URL prefix and slug from an href.
  *  e.g. "/reference/get-users" → { prefix: "reference", slug: "get-users" }
+ *  e.g. "/v3/docs/get-started" → { prefix: "docs", slug: "get-started" }
  *  e.g. "https://docs.site.com/docs/auth/setup" → { prefix: "docs", slug: "auth/setup" }
  *  Returns null for hrefs that are too short or invalid. */
 function extractSlugAndPrefix(href) {
   try {
     let path = href;
     if (href.startsWith("http")) path = new URL(href).pathname;
+    // Strip version prefix so "/v3/docs/page" is treated as "/docs/page"
+    path = stripVersionPrefix(path);
     const segments = path.split("/").filter(Boolean);
     if (segments.length < 2) return null;
     return { prefix: segments[0], slug: segments.slice(1).join("/") };

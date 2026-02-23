@@ -3,6 +3,7 @@ import {
   fetchPage,
   normalizePrefix,
   slugToTitle,
+  stripVersionPrefix,
   PREFIX_TO_SECTION,
   NAV_SELECTORS,
   TAB_PATTERNS,
@@ -45,10 +46,14 @@ export function detectTabs($, baseUrl) {
       // Keep href as-is if URL parsing fails (e.g. "javascript:void(0)")
     }
 
+    // Strip version prefix before matching (e.g. "/v3/docs" → "/docs")
+    const stripped = stripVersionPrefix(href);
+
     for (const [pattern, name] of TAB_PATTERNS) {
-      if (pattern.test(href) && !seen.has(name)) {
+      if (pattern.test(stripped) && !seen.has(name)) {
         seen.add(name);
-        tabs.push({ name, path: "/" + href.replace(/^\//, "") });
+        // Store the STRIPPED path so downstream code works with canonical prefixes
+        tabs.push({ name, path: "/" + stripped.replace(/^\//, "") });
       }
     }
   });
@@ -79,7 +84,9 @@ export function detectProjects($, baseUrl) {
     } catch {
       // Keep href as-is if URL parsing fails
     }
-    const m = href.match(/^\/([\w-]+)\/(docs|reference)\/?$/);
+    // Strip version prefix before matching (e.g. "/v3/connect/docs" → "/connect/docs")
+    const stripped = stripVersionPrefix(href);
+    const m = stripped.match(/^\/([\w-]+)\/(docs|reference)\/?$/);
     if (m && !ignored.has(m[1])) projects.add(m[1]);
   });
   return projects;
