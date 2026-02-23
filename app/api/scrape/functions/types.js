@@ -112,6 +112,26 @@ export const NAV_SELECTORS = [
   "[class*='NavItem'] a", ".rm-Header-bottom a",
 ].join(", ");
 
+/** Matches versioned URL prefixes like /v3/, /v4/, /v1.0/ etc.
+ *  Used to strip version segments before pattern matching.
+ *  e.g. "/v3/docs" → "/docs", "/v4/reference" → "/reference" */
+export const VERSION_PREFIX_PATTERN = /^\/v\d+(\.\d+)*/;
+
+/** Strips a leading version prefix from a path.
+ *  e.g. "/v3/docs/get-started" → "/docs/get-started"
+ *  e.g. "/docs/get-started" → "/docs/get-started" (no-op) */
+export function stripVersionPrefix(path) {
+  return path.replace(VERSION_PREFIX_PATTERN, "");
+}
+
+/** Extracts the version prefix from a URL path, if any.
+ *  e.g. "/v3/docs/get-started" → "/v3"
+ *  e.g. "/docs/get-started" → "" */
+export function extractVersionPrefix(path) {
+  const m = path.match(VERSION_PREFIX_PATTERN);
+  return m ? m[0] : "";
+}
+
 /** Regex patterns to classify navigation links as known tab types.
  *  e.g. href="/docs" or href="/docs/" → tab named "Guides".
  *  Used by detectTabs() to figure out what sections the site has. */
@@ -131,13 +151,15 @@ export const DOC_PATH_PATTERN = /\/(docs|reference|refs|recipes|page|changelog)\
 
 /** Matches hrefs that START with a doc-like path — stricter than DOC_PATH_PATTERN.
  *  Used in route.ts final fallback to avoid matching external links
- *  that happen to contain "/docs/" in the middle. */
-export const DOC_HREF_PATTERN = /^\/(docs|reference|refs|recipes|page|changelog)\/.+/;
+ *  that happen to contain "/docs/" in the middle.
+ *  Supports optional version prefix (e.g. /v3/docs/...). */
+export const DOC_HREF_PATTERN = /^\/(v\d+(\.\d+)*\/)?(docs|reference|refs|recipes|page|changelog)\/.+/;
 
 /** Strips the leading prefix from a slug path.
  *  e.g. "/reference/get-users" → "get-users"
+ *  e.g. "/v3/docs/get-started" → "get-started"
  *  Used when the sidebar JSON includes the full path but we only want the slug. */
-export const SLUG_STRIP_PATTERN = /^\/?(docs|reference|refs|recipes|changelog)\//;
+export const SLUG_STRIP_PATTERN = /^\/?(v\d+(\.\d+)*\/)?(docs|reference|refs|recipes|changelog)\//;
 
 // ── SSRF Protection ────────────────────────────────────────
 

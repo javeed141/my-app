@@ -7,6 +7,7 @@ import { join } from "path";
 import {
   fetchPage,
   isUrlAllowed,
+  extractVersionPrefix,
   SAVE_FILES,
   DOC_HREF_PATTERN,
   MAX_TITLE_LENGTH,
@@ -77,8 +78,12 @@ export async function POST(req) {
   }
 
   let baseUrl;
+  let siteBase; // origin + version prefix (e.g. "https://docs.example.com/v3")
   try {
-    baseUrl = new URL(url).origin;
+    const parsed = new URL(url);
+    baseUrl = parsed.origin;
+    const versionPrefix = extractVersionPrefix(parsed.pathname);
+    siteBase = baseUrl + versionPrefix;
   } catch {
     return NextResponse.json({ error: "Invalid URL" }, { status: 400 });
   }
@@ -118,10 +123,12 @@ export async function POST(req) {
     };
 
     // ── Step 3: Build sections based on navigation type ─────
+    // Use siteBase (origin + version prefix) for constructing page URLs.
+    // e.g. "https://docs.example.com/v3" instead of "https://docs.example.com"
     if (projects.size > 0) {
       // Multi-project site: fetch each project's docs + reference pages
       out.navType = "projects";
-      out.sections = await buildProjectSections(projects, baseUrl, url, html);
+      out.sections = await buildProjectSections(projects, siteBase, url, html);
 
     } else {
       // Standard site: use sidebar + sitemap data
@@ -131,12 +138,12 @@ export async function POST(req) {
       if (sitemapGroups.size > 0) {
         // Sitemap available: sidebar-first approach + sitemap supplements
         out.sections = await buildSitemapSections(
-          sitemapGroups, sidebarLookups, tabs, baseUrl, url
+          sitemapGroups, sidebarLookups, tabs, siteBase, url
         );
       } else {
         // No sitemap: build from sidebar data + HTML scraping
         out.sections = await buildNoSitemapSections(
-          sidebarLookups, tabs, baseUrl, html
+          sidebarLookups, tabs, siteBase, html
         );
       }
     }
@@ -158,7 +165,7 @@ export async function POST(req) {
         if (!title || title.length > MAX_TITLE_LENGTH || seenHrefs.has(href)) return;
         if (DOC_HREF_PATTERN.test(href)) {
           seenHrefs.add(href);
-          pages.push({ title, path: href, fullUrl: baseUrl + href, level: 0, group: "" });
+          pages.push({ title, path: href, fullUrl: siteBase + href, level: 0, group: "" });
         }
       });
 
