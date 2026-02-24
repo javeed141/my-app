@@ -1,0 +1,1434 @@
+{
+  "name": "360learning",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Documentation",
+            "pages": [
+              {
+                "title": "360Learning API v2",
+                "path": "docs/introduction"
+              },
+              {
+                "group": "Getting started",
+                "pages": [
+                  {
+                    "title": "Step 1: Obtain API v2 credentials",
+                    "path": "docs/step-1-get-your-api-credentials"
+                  },
+                  {
+                    "title": "Step 2: Get an access token",
+                    "path": "docs/step-2-create-an-access-token"
+                  },
+                  {
+                    "title": "Step 3: Make your first API call using the access token",
+                    "path": "docs/step-3"
+                  },
+                  {
+                    "title": "Next steps",
+                    "path": "docs/whats-next"
+                  }
+                ]
+              },
+              {
+                "group": "Authentication",
+                "pages": [
+                  {
+                    "title": "Manage API credentials",
+                    "path": "docs/manage-api-keys"
+                  },
+                  {
+                    "title": "Authentication best practices",
+                    "path": "docs/authentication-best-practices"
+                  }
+                ]
+              },
+              {
+                "group": "Scopes and permissions",
+                "pages": [
+                  {
+                    "title": "Scopes best practices",
+                    "path": "docs/scopes-best-practices"
+                  }
+                ]
+              },
+              {
+                "title": "Pagination",
+                "path": "docs/pagination"
+              },
+              {
+                "title": "Filtering",
+                "path": "docs/filtering"
+              },
+              {
+                "title": "Bulk operations",
+                "path": "docs/bulk-operations-1"
+              },
+              {
+                "group": "Error handling",
+                "pages": [
+                  {
+                    "title": "Authentication errors",
+                    "path": "docs/authentication-errors"
+                  },
+                  {
+                    "title": "Scope errors",
+                    "path": "docs/scopes-errors"
+                  },
+                  {
+                    "title": "Rate limiting errors",
+                    "path": "docs/rate-limiting-errors"
+                  }
+                ]
+              },
+              {
+                "group": "Webhooks",
+                "pages": [
+                  {
+                    "title": "Subscriptions",
+                    "path": "docs/subscriptions"
+                  },
+                  {
+                    "title": "Event payload and headers",
+                    "path": "docs/event-payload-and-headers"
+                  },
+                  {
+                    "title": "Webhooks security and signature verification",
+                    "path": "docs/security-and-signature-verification"
+                  },
+                  {
+                    "title": "Retry logic",
+                    "path": "docs/retry-logic"
+                  },
+                  {
+                    "title": "Testing webhooks",
+                    "path": "docs/testing-webhooks"
+                  },
+                  {
+                    "title": "Webhooks processing best practices",
+                    "path": "docs/webhooks-processing-best-practices"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Migration guides",
+            "pages": [
+              {
+                "title": "Why migrate from API v1 to API v2?",
+                "path": "docs/api-v1-to-v2-migration-1"
+              },
+              {
+                "title": "Endpoint mapping",
+                "path": "docs/endpoint-mapping-1"
+              },
+              {
+                "group": "Core API migration guides",
+                "pages": [
+                  {
+                    "title": "Classrooms migration",
+                    "path": "docs/replace-an-attendance-sheet"
+                  },
+                  {
+                    "group": "Courses migration",
+                    "pages": [
+                      {
+                        "title": "List all courses: Migration guide",
+                        "path": "docs/list-all-courses-migration-guide"
+                      },
+                      {
+                        "title": "List all courses statistics: Migration guide",
+                        "path": "docs/list-all-courses-statistics-migration-guide"
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Custom fields migration",
+                    "pages": [
+                      {
+                        "title": "Delete a custom field: Migration guide",
+                        "path": "docs/delete-a-custom-field-migration-guide"
+                      },
+                      {
+                        "title": "List all custom fields: Migration guide",
+                        "path": "docs/list-all-custom-fields-migration-guide"
+                      },
+                      {
+                        "title": "Replace a user custom fields values: Migration guide",
+                        "path": "docs/replace-a-user-custom-fields-values-migration-guide"
+                      }
+                    ]
+                  },
+                  {
+                    "group": "External IDs migration",
+                    "pages": [
+                      {
+                        "title": "List all ID mappings: Migration guide",
+                        "path": "docs/list-all-id-mappings-migration-guide"
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Groups migration",
+                    "pages": [
+                      {
+                        "title": "List all memberships in a group: Migration guide",
+                        "path": "docs/list-all-memberships-in-a-group-migration-guide"
+                      },
+                      {
+                        "title": "List all groups: Migration guide",
+                        "path": "docs/list-all-groups-migration-guide"
+                      },
+                      {
+                        "title": "Create a group: Migration guide",
+                        "path": "docs/create-a-group-migration-guide"
+                      },
+                      {
+                        "title": "Edit a group: Migration guide",
+                        "path": "docs/edit-a-group-migration-guide"
+                      },
+                      {
+                        "title": "Delete a group: Migration guide",
+                        "path": "docs/delete-a-group-migration-guide"
+                      },
+                      {
+                        "title": "Add a user's role: Migration guides",
+                        "path": "docs/add-a-user-role-migration-guide"
+                      },
+                      {
+                        "title": "Remove a user's role: Migration guide",
+                        "path": "docs/remove-a-user-role-migration-guide"
+                      },
+                      {
+                        "title": "List all content IDs in a group catalog: Migration guide",
+                        "path": "docs/list-all-content-ids-in-a-group-catalog-migration-guide"
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Paths migration",
+                    "pages": [
+                      {
+                        "title": "Edit a path: Migration guide",
+                        "path": "docs/edit-a-path-migration-guide"
+                      },
+                      {
+                        "title": "Retrieve metrics for a path session: Migration guide",
+                        "path": "docs/retrieve-metrics-for-a-path-session-migration-guide"
+                      },
+                      {
+                        "title": "List all enrollments: Migration guide",
+                        "path": "docs/list-all-enrollments-migration-guide"
+                      },
+                      {
+                        "title": "Replace a path session audience: Migration guide",
+                        "path": "docs/replace-a-path-session-audience-migration-guide"
+                      },
+                      {
+                        "title": "List all user (path session) statistics: Migration guide",
+                        "path": "docs/list-all-user-path-session-statistics-migration-guide"
+                      },
+                      {
+                        "title": "List all sessions in a path: Migration guide",
+                        "path": "docs/list-all-sessions-in-a-path-migration-guide"
+                      },
+                      {
+                        "title": "Create a path session: Migration guide",
+                        "path": "docs/create-a-path-session-migration-guide"
+                      },
+                      {
+                        "title": "Retrieve a path session: Migration guide",
+                        "path": "docs/retrieve-a-path-session-migration-guide"
+                      },
+                      {
+                        "title": "Edit a path session: Migration guide",
+                        "path": "docs/edit-a-path-session-migration-guide"
+                      },
+                      {
+                        "title": "Delete a path session: Migration guide",
+                        "path": "docs/delete-a-path-session-migration-guide"
+                      },
+                      {
+                        "title": "List all paths: Migration guide",
+                        "path": "docs/list-all-paths-migration-guide"
+                      },
+                      {
+                        "title": "Retrieve a path : Migration guide",
+                        "path": "docs/retrieve-a-path-migration-guide"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Skills migration",
+                    "path": "docs/skills-migration"
+                  },
+                  {
+                    "group": "Tags migration",
+                    "pages": [
+                      {
+                        "title": "Replace a tag: Migration guide",
+                        "path": "docs/replace-a-tag-migration-guide"
+                      },
+                      {
+                        "title": "List all tags: Migration guide",
+                        "path": "docs/list-all-tags"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Translations migration",
+                    "path": "docs/translations-migration"
+                  },
+                  {
+                    "group": "Users migration",
+                    "pages": [
+                      {
+                        "title": "Edit a user: Migration guide",
+                        "path": "docs/edit-a-user-migration-guide"
+                      },
+                      {
+                        "title": "Retrieve a user: Migration guide",
+                        "path": "docs/retrieve-a-user-migration-guide"
+                      },
+                      {
+                        "title": "Delete a user: Migration guide",
+                        "path": "docs/delete-a-user-migration-guide"
+                      },
+                      {
+                        "title": "List all users: Migration guide",
+                        "path": "docs/list-all-users-migration-guide"
+                      },
+                      {
+                        "title": "Add a manager to a user: Migration guide",
+                        "path": "docs/add-a-manager-to-a-user-migration-guide"
+                      },
+                      {
+                        "title": "Remove a manager from a user: Migration guide",
+                        "path": "docs/remove-a-manager-from-a-user-migration-guide"
+                      },
+                      {
+                        "title": "List all memberships of a user: Migration guide",
+                        "path": "docs/list-all-memberships-of-a-user-migration-guide"
+                      },
+                      {
+                        "title": "Pseudonymize user: Migration guide",
+                        "path": "docs/pseudonymize-user-migration-guide"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Integrations migration",
+                    "path": "docs/retrieve-an-external-course-migration-guide"
+                  }
+                ]
+              },
+              {
+                "group": "Bulk API migration guides",
+                "pages": [
+                  {
+                    "group": "Groups migration",
+                    "pages": [
+                      {
+                        "title": "Remove content from catalogs: Migration guide",
+                        "path": "docs/remove-content-from-catalogs"
+                      },
+                      {
+                        "title": "Add content to libraries: Migration guide",
+                        "path": "docs/add-content-to-libraries-migration-guide"
+                      },
+                      {
+                        "title": "Remove content from libraries: Migration guide",
+                        "path": "docs/remove-content-from-libraries-migration-guide"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Skills migration",
+                    "path": "docs/skills-2"
+                  },
+                  {
+                    "title": "Subscriptions migration",
+                    "path": "docs/template-v2-endpoint-name-migration-guide-copy"
+                  },
+                  {
+                    "title": "Integrations migration",
+                    "path": "docs/archive-external-courses-migration-guide"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Integrators Hub",
+            "pages": [
+              {
+                "group": "Create an API-based integration",
+                "pages": [
+                  {
+                    "title": "Step 1: Authenticate",
+                    "path": "docs/step-1-authenticate"
+                  },
+                  {
+                    "title": "Step 2: Configure the integration",
+                    "path": "docs/step-2"
+                  },
+                  {
+                    "title": "Step 3: Synchronize content",
+                    "path": "docs/step-3-synchronize-content"
+                  },
+                  {
+                    "title": "Step 4: Synchronize statistics",
+                    "path": "docs/step-4-synchronize-statistics"
+                  },
+                  {
+                    "title": "Next steps",
+                    "path": "docs/next-steps"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Core API",
+            "pages": [
+              {
+                "group": "Users",
+                "pages": [
+                  {
+                    "title": "Add a manager to a user",
+                    "path": "reference/v2usersaddmanagercontroller_addmanager",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Remove a manager from a user",
+                    "path": "reference/v2usersdeletemanagercontroller_deletemanager",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Create an invited user",
+                    "path": "reference/v2userscreateusercontroller_createuser",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Create a custom user link",
+                    "path": "reference/v2userscreatecustomuserlinkcontroller_createcustomuserlink",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "List all users",
+                    "path": "reference/v2usersgetuserscontroller_getusers",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Delete a user",
+                    "path": "reference/v2usersdeleteusercontroller_deleteuser",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Retrieve a user",
+                    "path": "reference/v2usersgetusercontroller_getuser",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Edit a user",
+                    "path": "reference/v2usersupdateusercontroller_updateuser",
+                    "method": "PATCH"
+                  },
+                  {
+                    "title": "Delete a custom user link",
+                    "path": "reference/v2usersdeletecustomuserlinkcontroller_deletecustomuserlink",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Import a certificate",
+                    "path": "reference/v2userscreateusercertificatecontroller_createusercertificate",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "List all custom user links for a user",
+                    "path": "reference/v2usersgetcustomuserlinkscontroller_getcustomuserlinks",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Replace custom user links",
+                    "path": "reference/v2usersupdatecustomuserlinkcontroller_updatecustomuserlink",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "List all manager IDs for a user",
+                    "path": "reference/v2usersgetmanagerscontroller_getmanagers",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List all subordinate IDs for a user",
+                    "path": "reference/v2usersgetsubordinatescontroller_getsubordinates",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List all custom field values for a user",
+                    "path": "reference/v2usersgetusercustomfieldvaluescontroller_getusercustomfieldvalues",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Replace a user custom fields values",
+                    "path": "reference/v2usersupdateusercustomfieldvaluescontroller_updateusercustomfieldvalues",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "List all memberships of a user",
+                    "path": "reference/v2usersgetuserrolesingroupscontroller_getuserrolesingroups",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Replace the password of a user",
+                    "path": "reference/v2usersreplacepasswordcontroller_replacepassword",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Retrieve a certificate PDF file",
+                    "path": "reference/v2usersgetusercertificateaspdfcontroller_getusercertificateaspdf",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List all certificates for a user",
+                    "path": "reference/v2usersgetusercertificatescontroller_getusercertificates",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Pseudonymize user",
+                    "path": "reference/v2userspseudonymizeusercontroller_pseudonymizeuser",
+                    "method": "PUT"
+                  }
+                ]
+              },
+              {
+                "group": "Groups",
+                "pages": [
+                  {
+                    "title": "Remove a user's role",
+                    "path": "reference/v2groupsremoveuserrolefromgroupcontroller_removeuserrolefromgroup",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Create a group",
+                    "path": "reference/v2groupscreategroupcontroller_creategroup",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "List all groups",
+                    "path": "reference/v2groupsgetgroupscontroller_getgroups",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Retrieve a group",
+                    "path": "reference/v2groupsgetgroupcontroller_getgroup",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Delete a group",
+                    "path": "reference/v2groupsdeletegroupcontroller_deletegroup",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "List all memberships in a group",
+                    "path": "reference/v2groupsgetgroupmemberscontroller_getgroupmembers",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Edit a group",
+                    "path": "reference/v2groupsupdategroupcontroller_updategroup",
+                    "method": "PATCH"
+                  },
+                  {
+                    "title": "List all content IDs in a group catalog",
+                    "path": "reference/v2groupsgetcatalogcontentidscontroller_getcatalogcontentids",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List all content IDs in a group library",
+                    "path": "reference/v2groupsgetlibrarycontentidscontroller_getlibrarycontentids",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Set group branding",
+                    "path": "reference/v2groupsupsertgroupcustomizationcolorscontroller_upsertgroupcustomizationcolors",
+                    "method": "PATCH"
+                  }
+                ]
+              },
+              {
+                "group": "Integrations",
+                "pages": [
+                  {
+                    "title": "List integration configurations",
+                    "path": "reference/v2integrationsgetintegrationscontroller_getintegrations",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Delete an integration configuration",
+                    "path": "reference/v2integrationsdeleteintegrationcontroller_deleteintegration",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Edit an integration configuration",
+                    "path": "reference/v2integrationseditintegrationcontroller_editintegration",
+                    "method": "PATCH"
+                  },
+                  {
+                    "title": "Retrieve an external course",
+                    "path": "reference/v2integrationsgetexternalcoursecontroller_getexternalcourse",
+                    "method": "GET"
+                  }
+                ]
+              },
+              {
+                "group": "Classrooms",
+                "pages": [
+                  {
+                    "title": "List all classrooms",
+                    "path": "reference/v2classroomsgetclassroomscontroller_getclassrooms",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Retrieve a classroom",
+                    "path": "reference/v2classroomsgetclassroomcontroller_getclassroom",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Edit a classroom",
+                    "path": "reference/v2classroomsupdateclassroomcontroller_updateclassroom",
+                    "method": "PATCH"
+                  },
+                  {
+                    "title": "Add a slot to a classroom",
+                    "path": "reference/v2classroomscreateclassroomslotcontroller_createclassroomslot",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "List all slots in a classroom",
+                    "path": "reference/v2classroomsgetclassroomslotscontroller_getclassroomslots",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Remove a slot from a classroom",
+                    "path": "reference/v2classroomsdeleteclassroomslotcontroller_deleteclassroomslot",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Create an attendance sheet",
+                    "path": "reference/v2classroomscreateattendancesheetcontroller_createattendancesheet",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Edit a classroom slot",
+                    "path": "reference/v2classroomsupdateclassroomslotcontroller_updateclassroomslot",
+                    "method": "PATCH"
+                  },
+                  {
+                    "title": "List all attendance sheets",
+                    "path": "reference/v2classroomsgetattendancesheetscontroller_getattendancesheets",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Delete an attendance sheet",
+                    "path": "reference/v2classroomsdeleteattendancesheetcontroller_deleteattendancesheet",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Replace an attendance sheet",
+                    "path": "reference/v2classroomsupdateattendancesheetcontroller_updateattendancesheet",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "List all attendances",
+                    "path": "reference/v2classroomsgetattendancescontroller_getattendances",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Register a user to a classroom slot",
+                    "path": "reference/v2classroomsaddslotregistrationcontroller_addslotregistration",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "List all registrations in a classroom slot",
+                    "path": "reference/v2classroomsgetslotregistrationscontroller_getslotregistrations",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Edit a classroom slot registration",
+                    "path": "reference/v2classroomsupdateslotregistrationcontroller_updateslotregistration",
+                    "method": "PATCH"
+                  }
+                ]
+              },
+              {
+                "group": "Skills",
+                "pages": [
+                  {
+                    "title": "List all skills",
+                    "path": "reference/v2skillsgetskillscontroller_getskills",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Replace all jobs for a user",
+                    "path": "reference/v2skillsreplaceuserjobscontroller_replaceuserjobs",
+                    "method": "PUT"
+                  }
+                ]
+              },
+              {
+                "group": "Courses",
+                "pages": [
+                  {
+                    "title": "Archive or restore a course",
+                    "path": "reference/v2coursesarchiveorunarchivecoursecontroller_archiveorunarchivecourse",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Retrieve a course",
+                    "path": "reference/v2coursesgetcoursecontroller_getcourse",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List all courses",
+                    "path": "reference/v2coursesgetcoursescontroller_getcourses",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List all tags in a course",
+                    "path": "reference/v2coursesgetcoursetagscontroller_gettags",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Replace all tags in a course",
+                    "path": "reference/v2coursesupdatetagscontroller_updatetags",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Create an eLearning standard course",
+                    "path": "reference/v2coursescreateelearningstandardcoursecontroller_createelearningstandardcourse",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Edit an eLearning standard course",
+                    "path": "reference/v2coursesupdateelearningstandardcoursecontroller_updateelearningstandardcourse",
+                    "method": "PATCH"
+                  }
+                ]
+              },
+              {
+                "title": "Authentication",
+                "path": "reference/v2authenticationgeneratetokencontroller_generatetoken"
+              },
+              {
+                "group": "Certificate Outlines",
+                "pages": [
+                  {
+                    "title": "Create certificate outline",
+                    "path": "reference/v2certificateoutlinescreatecertificateoutlinecontroller_createcertificateoutline",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Delete a certificate outline",
+                    "path": "reference/v2certificateoutlinesdeletecertificateoutlinecontroller_deletecertificateoutline",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Edit a certificate outline",
+                    "path": "reference/v2certificateoutlinesupdatecertificateoutlinecontroller_updatecertificateoutline",
+                    "method": "PATCH"
+                  }
+                ]
+              },
+              {
+                "group": "Custom Fields",
+                "pages": [
+                  {
+                    "title": "List all custom fields",
+                    "path": "reference/v2customfieldsgetcustomfieldscontroller_getcustomfields",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Delete a custom field",
+                    "path": "reference/v2customfieldsdeletecustomfieldcontroller_deletecustomfield",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Edit a custom field",
+                    "path": "reference/v2customfieldsupdatecustomfieldcontroller_updatecustomfield",
+                    "method": "PATCH"
+                  },
+                  {
+                    "title": "List all authorized values",
+                    "path": "reference/v2customfieldsgetauthorizedvaluescontroller_getauthorizedvalues",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Replace all authorized values",
+                    "path": "reference/v2customfieldsreplaceauthorizedvaluescontroller_replaceauthorizedvalues",
+                    "method": "PUT"
+                  }
+                ]
+              },
+              {
+                "group": "External IDs",
+                "pages": [
+                  {
+                    "title": "List all ID mappings",
+                    "path": "reference/v2externalidsgetexternalidscontroller_getexternalids",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Delete an ID mapping",
+                    "path": "reference/v2externalidsdeleteexternalidcontroller_deleteexternalid",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Replace an ID mapping",
+                    "path": "reference/v2externalidsupdateexternalidcontroller_updateexternalid",
+                    "method": "PUT"
+                  }
+                ]
+              },
+              {
+                "group": "Paths",
+                "pages": [
+                  {
+                    "title": "Archive or restore a path",
+                    "path": "reference/v2pathsarchiveorunarchivepathcontroller_archiveorunarchivepath",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Create a path session",
+                    "path": "reference/v2pathscreatepathsessioncontroller_createpathsession",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Create a path",
+                    "path": "reference/v2pathscreatepathcontroller_createpath",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "List all sessions in a path",
+                    "path": "reference/v2pathsgetpathsessionscontroller_getpathsessions",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Delete a path session",
+                    "path": "reference/v2pathsdeletepathsessioncontroller_deletepathsession",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Retrieve a path session",
+                    "path": "reference/v2pathsgetpathsessioncontroller_getpathsession",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Edit a path session",
+                    "path": "reference/v2pathsmodifypathsessioncontroller_modifypathsession",
+                    "method": "PATCH"
+                  },
+                  {
+                    "title": "Delete a path",
+                    "path": "reference/v2pathsdeletepathcontroller_deletepath",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "List all enrollments",
+                    "path": "reference/v2pathsgetenrollmentscontroller_getenrollments",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Retrieve a path",
+                    "path": "reference/v2pathsgetpathcontroller_getpath",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List all paths",
+                    "path": "reference/v2pathsgetpathscontroller_getpaths",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Retrieve a path session audience",
+                    "path": "reference/v2pathsgetsessionaudiencecontroller_getsessionaudience",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Replace an audience for a path session",
+                    "path": "reference/v2pathsupdatesessionaudiencecontroller_updatesessionaudience",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Retrieve metrics for a path session",
+                    "path": "reference/v2pathsv2pathsgetsessionstatscontroller_getsessionstats",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List all tags in a path",
+                    "path": "reference/v2pathsgetpathtagscontroller_gettags",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List all user statistics",
+                    "path": "reference/v2pathsgetuserstatscontroller_getuserstats",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Edit a child path session",
+                    "path": "reference/v2pathsmodifychildpathsessioncontroller_modifychildpathsession",
+                    "method": "PATCH"
+                  },
+                  {
+                    "title": "Replace all steps",
+                    "path": "reference/v2pathsupdatestepscontroller_updatesteps",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Replace all tags in a path",
+                    "path": "reference/v2pathsupdatetagscontroller_updatetags",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Replace all translations for a path",
+                    "path": "reference/v2pathsreplacepathtranslationscontroller_replacepathtranslations",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Edit a path",
+                    "path": "reference/v2pathsupdatepathcontroller_updatepath",
+                    "method": "PATCH"
+                  },
+                  {
+                    "title": "List all path statistics",
+                    "path": "reference/v2pathsgetpathstatscontroller_getpathstats",
+                    "method": "GET"
+                  }
+                ]
+              },
+              {
+                "title": "Projects",
+                "path": "reference/v2projectsgetprojectscontroller_getprojects"
+              },
+              {
+                "title": "Learning Needs",
+                "path": "reference/v2learningneedsgetlearningneedscontroller_getlearningneeds"
+              },
+              {
+                "group": "Tags",
+                "pages": [
+                  {
+                    "title": "List all tags",
+                    "path": "reference/v2tagsgettagscontroller_gettags",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Delete a tag",
+                    "path": "reference/v2tagsdeletetagcontroller_deletetag",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Retrieve a tag",
+                    "path": "reference/v2tagsgettagcontroller_gettag",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Replace a tag",
+                    "path": "reference/v2tagsupdatetagcontroller_updatetag",
+                    "method": "PUT"
+                  }
+                ]
+              },
+              {
+                "group": "Custom Links",
+                "pages": [
+                  {
+                    "title": "Create a custom link",
+                    "path": "reference/v2customlinkscreatecustomlinkcontroller_createcustomlink",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Delete a custom link",
+                    "path": "reference/v2customlinksdeletecustomlinkcontroller_deletecustomlink",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Replace a custom link",
+                    "path": "reference/v2customlinksreplacecustomlinkcontroller_replacecustomlink",
+                    "method": "PUT"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Bulk API",
+            "pages": [
+              {
+                "title": "Subscriptions",
+                "path": "reference/v2bulksubscriptionscreatesubscriptioneventscontroller_createsubscriptionevents"
+              },
+              {
+                "group": "Groups",
+                "pages": [
+                  {
+                    "title": "Add users to groups",
+                    "path": "reference/v2bulkgroupsadduserstogroupscontroller_adduserstogroups",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Add content to catalogs",
+                    "path": "reference/v2bulkgroupsaddcontentstogroupscatalogcontroller_addcontentstogroupscatalog",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Remove users from groups",
+                    "path": "reference/v2bulkgroupsremoveusersfromgroupscontroller_removeusersfromgroups",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Remove content from catalogs",
+                    "path": "reference/v2bulkgroupsremovecontentsfromgroupscatalogcontroller_removecontentsfromgroupscatalog",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Add content to libraries",
+                    "path": "reference/v2bulkgroupsaddcontentstogroupslibrarycontroller_addcontentstogroupslibrary",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Remove content from libraries",
+                    "path": "reference/v2bulkgroupsremovecontentsfromgroupslibrarycontroller_removecontentsfromgroupslibrary",
+                    "method": "DELETE"
+                  }
+                ]
+              },
+              {
+                "group": "Operations",
+                "pages": [
+                  {
+                    "title": "Retrieve a bulk operation result",
+                    "path": "reference/v2bulkoperationsgetbulkoperationresultscontroller_getbulkoperationresults",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List all bulk operations",
+                    "path": "reference/v2bulkoperationsgetbulkoperationscontroller_getbulkoperations",
+                    "method": "GET"
+                  }
+                ]
+              },
+              {
+                "group": "Integrations",
+                "pages": [
+                  {
+                    "title": "Archive external courses",
+                    "path": "reference/v2bulkintegrationsarchiveexternalcoursescontroller_archiveexternalcourses",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Upsert external courses",
+                    "path": "reference/v2bulkintegrationsimportexternalcoursescontroller_importexternalcourses",
+                    "method": "PUT"
+                  }
+                ]
+              },
+              {
+                "group": "Skills",
+                "pages": [
+                  {
+                    "title": "Add skill reviews",
+                    "path": "reference/v2bulkskillsaddskillreviewscontroller_addskillreviews",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Replace jobs skills",
+                    "path": "reference/v2bulkskillsreplacejobsskillscontroller_replacejobsskills",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Delete jobs",
+                    "path": "reference/v2bulkskillsdeletejobscontroller_deletejobs",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Replace users jobs",
+                    "path": "reference/v2bulkskillsreplaceusersjobscontroller_replaceusersjobs",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Upsert jobs",
+                    "path": "reference/v2bulkskillsupsertjobscontroller_upsertjobs",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Delete skills",
+                    "path": "reference/v2bulkskillsdeleteskillscontroller_deleteskills",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Upsert libraries",
+                    "path": "reference/v2bulkskillsupsertlibrariescontroller_upsertlibraries",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Upsert skills",
+                    "path": "reference/v2bulkskillsupsertskillscontroller_upsertskills",
+                    "method": "PUT"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Webhook API",
+            "pages": [
+              {
+                "group": "Subscriptions",
+                "pages": [
+                  {
+                    "title": "Create a webhook subscription",
+                    "path": "reference/v2webhooksubscriptionscreatesubscriptioncontroller_createsubscription",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "List all webhook subscriptions",
+                    "path": "reference/v2webhooksubscriptionsgetsubscriptionscontroller_getsubscriptions",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Delete a webhook subscription",
+                    "path": "reference/v2webhooksubscriptionsdeletesubscriptioncontroller_deletesubscription",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Retrieve a webhook subscription",
+                    "path": "reference/v2webhooksubscriptionsgetsubscriptioncontroller_getsubscription",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Edit a webhook subscription",
+                    "path": "reference/v2webhooksubscriptionsupdatesubscriptioncontroller_updatesubscription",
+                    "method": "PATCH"
+                  },
+                  {
+                    "title": "Retrieve the signing secret of a webhook subscription",
+                    "path": "reference/v2webhooksubscriptionsgetsigningsecretcontroller_getsigningsecret",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Rotate the signing secret of a webhook subscription",
+                    "path": "reference/v2webhooksubscriptionsrotatesigningsecretcontroller_rotatesigningsecret",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Retry the failed webhook events of a webhook subscription",
+                    "path": "reference/v2webhooksubscriptionsretryeventfailurescontroller_retryeventfailures",
+                    "method": "POST"
+                  }
+                ]
+              },
+              {
+                "group": "xAPI",
+                "pages": [
+                  {
+                    "title": "xAPI",
+                    "path": "reference/webhookxapi",
+                    "method": "POST"
+                  }
+                ]
+              },
+              {
+                "group": "Events",
+                "pages": [
+                  {
+                    "title": "Group deleted",
+                    "path": "reference/webhookgroupdeleted",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Group created",
+                    "path": "reference/webhookgroupcreated",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "User reactivated",
+                    "path": "reference/webhookuserreactivated",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "User invited",
+                    "path": "reference/webhookuserinvited",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "User deleted",
+                    "path": "reference/webhookuserdeleted",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "User activated",
+                    "path": "reference/webhookuseractivated",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Bulk operation ended",
+                    "path": "reference/webhookbulkoperationended",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Bulk operation created",
+                    "path": "reference/webhookbulkoperationcreated",
+                    "method": "POST"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "User Authorized API",
+            "pages": [
+              {
+                "title": "Users",
+                "path": "reference/v2usersgetprofilecontroller_getprofile"
+              }
+            ]
+          },
+          {
+            "group": "Plugin API",
+            "pages": [
+              {
+                "group": "Authentication",
+                "pages": [
+                  {
+                    "title": "Create an access token for plugin (client)",
+                    "path": "reference/v2authenticationgeneratepluginclienttokencontroller_generatepluginclienttoken",
+                    "method": "POST"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "General",
+            "pages": [
+              {
+                "title": "2026-02-18",
+                "path": "changelog/2026-02-18"
+              },
+              {
+                "title": "Set group branding",
+                "path": "reference/v2groupsupsertgroupcustomizationcolorscontroller_upsertgroupcustomizationcolors"
+              },
+              {
+                "title": "Create a custom link",
+                "path": "reference/v2customlinkscreatecustomlinkcontroller_createcustomlink"
+              },
+              {
+                "title": "List custom links",
+                "path": "reference/v2customlinksgetcustomlinksbycompanycontroller_getcustomlinksbycompany"
+              },
+              {
+                "title": "Delete a custom link",
+                "path": "reference/v2customlinksdeletecustomlinkcontroller_deletecustomlink"
+              },
+              {
+                "title": "Replace a custom link",
+                "path": "reference/v2customlinksreplacecustomlinkcontroller_replacecustomlink"
+              },
+              {
+                "title": "Bulk operation created",
+                "path": "reference/webhookbulkoperationcreated"
+              },
+              {
+                "title": "Bulk operation ended",
+                "path": "reference/webhookbulkoperationended"
+              },
+              {
+                "title": "Delete skills",
+                "path": "reference/v2bulkskillsdeleteskillscontroller_deleteskills"
+              },
+              {
+                "title": "2026-01-28",
+                "path": "changelog/2026-01-28"
+              },
+              {
+                "title": "Create an invited user",
+                "path": "reference/v2userscreateusercontroller_createuser"
+              },
+              {
+                "title": "Edit a webhook subscription",
+                "path": "reference/v2webhooksubscriptionsupdatesubscriptioncontroller_updatesubscription"
+              },
+              {
+                "title": "2026-01-07",
+                "path": "changelog/2026-01-07"
+              },
+              {
+                "title": "Delete groups",
+                "path": "reference/v2bulkgroupsdeletegroupscontroller_deletegroups"
+              },
+              {
+                "title": "List all path statistics",
+                "path": "reference/v2pathsgetpathstatscontroller_getpathstats"
+              },
+              {
+                "title": "List all learning needs",
+                "path": "reference/v2learningneedsgetlearningneedscontroller_getlearningneeds"
+              },
+              {
+                "title": "List all projects",
+                "path": "reference/v2projectsgetprojectscontroller_getprojects"
+              },
+              {
+                "title": "User invited",
+                "path": "reference/webhookuserinvited"
+              },
+              {
+                "title": "User activated",
+                "path": "reference/webhookuseractivated"
+              },
+              {
+                "title": "User deleted",
+                "path": "reference/webhookuserdeleted"
+              },
+              {
+                "title": "User reactivated",
+                "path": "reference/webhookuserreactivated"
+              },
+              {
+                "title": "2025-12-17",
+                "path": "changelog/pot-au-feu"
+              },
+              {
+                "title": "Create a path",
+                "path": "reference/v2pathscreatepathcontroller_createpath"
+              },
+              {
+                "title": "Edit a path",
+                "path": "reference/v2pathsupdatepathcontroller_updatepath"
+              },
+              {
+                "title": "Delete a path",
+                "path": "reference/v2pathsdeletepathcontroller_deletepath"
+              },
+              {
+                "title": "Archive or restore a course",
+                "path": "reference/v2coursesarchiveorunarchivecoursecontroller_archiveorunarchivecourse"
+              },
+              {
+                "title": "Create an eLearning standard course",
+                "path": "reference/v2coursescreateelearningstandardcoursecontroller_createelearningstandardcourse"
+              },
+              {
+                "title": "Edit an eLearning standard course",
+                "path": "reference/v2coursesupdateelearningstandardcoursecontroller_updateelearningstandardcourse"
+              },
+              {
+                "title": "Upsert external courses",
+                "path": "reference/v2bulkintegrationsimportexternalcoursescontroller_importexternalcourses"
+              },
+              {
+                "title": "Import integration statistics",
+                "path": "reference/v2bulkintegrationsimportexternalstatisticscontroller_importexternalstatistics"
+              },
+              {
+                "title": "Retrieve an external course",
+                "path": "reference/v2integrationsgetexternalcoursecontroller_getexternalcourse"
+              },
+              {
+                "title": "Archive external courses",
+                "path": "reference/v2bulkintegrationsarchiveexternalcoursescontroller_archiveexternalcourses"
+              },
+              {
+                "title": "List all tags in a course",
+                "path": "reference/v2coursesgetcoursetagscontroller_gettags"
+              },
+              {
+                "title": "2025-11-26",
+                "path": "changelog/2025-11-26"
+              },
+              {
+                "title": "Delete libraries",
+                "path": "reference/v2bulkskillsdeletelibrariescontroller_deletelibraries"
+              },
+              {
+                "title": "Rate limiting errors",
+                "path": "docs/rate-limiting-errors"
+              },
+              {
+                "title": "Upsert libraries",
+                "path": "reference/v2bulkskillsupsertlibrariescontroller_upsertlibraries"
+              },
+              {
+                "title": "Upsert jobs",
+                "path": "reference/v2bulkskillsupsertjobscontroller_upsertjobs"
+              },
+              {
+                "title": "2025-11-04",
+                "path": "changelog/2025-11-04"
+              },
+              {
+                "title": "2025-10-15",
+                "path": "changelog/2025-10-15"
+              },
+              {
+                "title": "Edit a user",
+                "path": "reference/v2usersupdateusercontroller_updateuser"
+              },
+              {
+                "title": "List all users",
+                "path": "reference/v2usersgetuserscontroller_getusers"
+              },
+              {
+                "title": "Remove users from groups",
+                "path": "reference/v2bulkgroupsremoveusersfromgroupscontroller_removeusersfromgroups"
+              },
+              {
+                "title": "Remove a user's role",
+                "path": "reference/v2groupsremoveuserrolefromgroupcontroller_removeuserrolefromgroup"
+              },
+              {
+                "title": "2025-09-24",
+                "path": "changelog/welcome-to-360learning-arnaud"
+              },
+              {
+                "title": "List all certificate outlines",
+                "path": "reference/v2certificateoutlinesgetcertificateoutlinescontroller_getcertificateoutlines"
+              },
+              {
+                "title": "Create certificate outline",
+                "path": "reference/v2certificateoutlinescreatecertificateoutlinecontroller_createcertificateoutline"
+              },
+              {
+                "title": "Delete a certificate outline",
+                "path": "reference/v2certificateoutlinesdeletecertificateoutlinecontroller_deletecertificateoutline"
+              },
+              {
+                "title": "Edit a certificate outline",
+                "path": "reference/v2certificateoutlinesupdatecertificateoutlinecontroller_updatecertificateoutline"
+              },
+              {
+                "title": "Import a certificate",
+                "path": "reference/v2userscreateusercertificatecontroller_createusercertificate"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

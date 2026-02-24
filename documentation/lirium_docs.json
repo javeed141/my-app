@@ -1,0 +1,384 @@
+{
+  "name": "Lirium",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Lirium API Docs",
+        "pages": [
+          {
+            "title": "Welcome",
+            "path": "refs/welcome"
+          }
+        ]
+      },
+      {
+        "group": "Authentication",
+        "pages": [
+          {
+            "title": "Authentication Setup",
+            "path": "refs/setup"
+          },
+          {
+            "title": "JWT Generation",
+            "path": "refs/jwt-generation"
+          }
+        ]
+      },
+      {
+        "group": "General definitions",
+        "pages": [
+          {
+            "group": "Fields",
+            "pages": [
+              {
+                "title": "IDs",
+                "path": "refs/fields-ids"
+              },
+              {
+                "title": "Reference IDs",
+                "path": "refs/fields-reference-ids"
+              },
+              {
+                "title": "Timestamps",
+                "path": "refs/fields-timestamps"
+              },
+              {
+                "title": "Amount",
+                "path": "refs/fields-amount"
+              },
+              {
+                "title": "Money Dictionary",
+                "path": "refs/fields-money-dictionary"
+              }
+            ]
+          },
+          {
+            "title": "Pagination",
+            "path": "refs/pagination"
+          },
+          {
+            "title": "Errors and Error Codes",
+            "path": "refs/error-codes"
+          },
+          {
+            "title": "Fee collection",
+            "path": "refs/fee-collection"
+          }
+        ]
+      },
+      {
+        "group": "Partner",
+        "pages": [
+          {
+            "title": "Partner Reference",
+            "path": "refs/partner-reference"
+          },
+          {
+            "title": "Partner Details",
+            "path": "refs/partner-details"
+          },
+          {
+            "title": "Partner Balances",
+            "path": "refs/partner-balances"
+          },
+          {
+            "group": "Archives",
+            "pages": [
+              {
+                "title": "Partner Archive Details",
+                "path": "refs/partner-archives-deprecated"
+              },
+              {
+                "title": "Archive Details",
+                "path": "refs/get-archive"
+              },
+              {
+                "title": "Search Archives",
+                "path": "refs/search-archives"
+              }
+            ]
+          },
+          {
+            "group": "Orders",
+            "pages": [
+              {
+                "title": "Withdrawal Destinations",
+                "path": "refs/withdrawal-destinations"
+              },
+              {
+                "title": "Create Order",
+                "path": "refs/create-partner-order"
+              },
+              {
+                "title": "Order Details",
+                "path": "refs/partner-order-details"
+              },
+              {
+                "title": "Search Orders",
+                "path": "refs/search-partner-orders"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Customers",
+        "pages": [
+          {
+            "title": "Customers Reference",
+            "path": "refs/customers-resource-reference"
+          },
+          {
+            "group": "Create Customer",
+            "pages": [
+              {
+                "title": "Individual",
+                "path": "refs/individual"
+              },
+              {
+                "title": "Business",
+                "path": "refs/business"
+              }
+            ]
+          },
+          {
+            "title": "Customer Details",
+            "path": "refs/customer-details"
+          },
+          {
+            "title": "Customer Accounts",
+            "path": "refs/customer-accounts"
+          },
+          {
+            "title": "Customer Investments",
+            "path": "refs/customer-investments"
+          },
+          {
+            "title": "Upload KYC Document",
+            "path": "refs/upload-customer-document"
+          },
+          {
+            "title": "Update Customer",
+            "path": "refs/update-customer"
+          },
+          {
+            "title": "Search Customers",
+            "path": "refs/search-customers"
+          },
+          {
+            "group": "Address Book",
+            "pages": [
+              {
+                "title": "Create Adress Book Entry",
+                "path": "refs/create-adress-book-entry"
+              },
+              {
+                "title": "Get Address Book",
+                "path": "refs/get-address-book"
+              },
+              {
+                "title": "Update Address Book Item",
+                "path": "refs/update-address-book-item"
+              },
+              {
+                "title": "Delete Address Book Item",
+                "path": "refs/delete-address-book-item"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Receiving Addresses",
+        "pages": [
+          {
+            "title": "Create Receiving Address",
+            "path": "refs/create-receiving-address"
+          },
+          {
+            "title": "Receiving Address Details",
+            "path": "refs/receiving-address-details"
+          },
+          {
+            "title": "Receiving Addresses",
+            "path": "refs/list-receiving-addresses"
+          }
+        ]
+      },
+      {
+        "group": "Orders",
+        "pages": [
+          {
+            "title": "Orders Reference",
+            "path": "refs/orders-reference"
+          },
+          {
+            "group": "Create Order",
+            "pages": [
+              {
+                "title": "Buy and Sell amounts",
+                "path": "refs/asset-and-settlement"
+              },
+              {
+                "title": "Send amounts",
+                "path": "refs/asset-and-destination-amounts"
+              }
+            ]
+          },
+          {
+            "title": "Confirm Order",
+            "path": "refs/confirm-order"
+          },
+          {
+            "title": "Resend Confirmation Code",
+            "path": "refs/resend-confirmation-code"
+          },
+          {
+            "title": "Order Details",
+            "path": "refs/order-details"
+          },
+          {
+            "title": "Search Orders",
+            "path": "refs/search-orders"
+          },
+          {
+            "title": "Order receipt",
+            "path": "refs/order-receipt"
+          }
+        ]
+      },
+      {
+        "group": "Exchange Rates",
+        "pages": [
+          {
+            "title": "Exchange Rates",
+            "path": "refs/list-exchange-rates"
+          }
+        ]
+      },
+      {
+        "group": "Prices",
+        "pages": [
+          {
+            "title": "Get historical prices",
+            "path": "refs/get-historical-prices"
+          }
+        ]
+      },
+      {
+        "group": "Investments",
+        "pages": [
+          {
+            "title": "Get Investment Providers",
+            "path": "refs/get-investment-providers"
+          },
+          {
+            "title": "Get Investment Rates",
+            "path": "refs/get-investment-rates"
+          }
+        ]
+      },
+      {
+        "group": "CRYPTO CREDENTIALS",
+        "pages": [
+          {
+            "title": "Overview",
+            "path": "refs/overview"
+          },
+          {
+            "title": "Get Customer Alias",
+            "path": "refs/get-customer-alias"
+          },
+          {
+            "title": "Create or modify Customer Alias",
+            "path": "refs/get-customer-alias-copy"
+          }
+        ]
+      },
+      {
+        "group": "General",
+        "pages": [
+          {
+            "title": "Settings",
+            "path": "refs/settings"
+          }
+        ]
+      },
+      {
+        "group": "Webhooks",
+        "pages": [
+          {
+            "title": "Create Subscription",
+            "path": "refs/create-subscription"
+          },
+          {
+            "title": "Delete Subscription",
+            "path": "refs/delete-subscription"
+          },
+          {
+            "title": "Get Subscriptions",
+            "path": "refs/get-subscriptions"
+          },
+          {
+            "title": "Search Events",
+            "path": "refs/search-events"
+          },
+          {
+            "title": "Resend Event",
+            "path": "refs/resend-event"
+          }
+        ]
+      },
+      {
+        "group": "Receiving Webhook Calls",
+        "pages": [
+          {
+            "group": "Webhooks Reference",
+            "pages": [
+              {
+                "title": "Partner Order Created",
+                "path": "refs/partner-order-created"
+              },
+              {
+                "title": "Partner Order Updated",
+                "path": "refs/partner-order-updated"
+              },
+              {
+                "title": "Partner Order Closed",
+                "path": "refs/partner-order-closed"
+              },
+              {
+                "title": "Order closed",
+                "path": "refs/order-closed"
+              },
+              {
+                "title": "Order updated",
+                "path": "refs/order-updated"
+              },
+              {
+                "title": "Incoming Funds",
+                "path": "refs/incoming-funds"
+              },
+              {
+                "title": "Customer product changed",
+                "path": "refs/customer-state-changed"
+              },
+              {
+                "title": "Customer requirement rejected",
+                "path": "refs/customer-requirement-rejected"
+              }
+            ]
+          },
+          {
+            "title": "Webhooks Signature",
+            "path": "refs/webhooks-signature"
+          },
+          {
+            "title": "Webhooks Public Keys",
+            "path": "refs/webhooks-public-keys"
+          }
+        ]
+      }
+    ]
+  }
+}

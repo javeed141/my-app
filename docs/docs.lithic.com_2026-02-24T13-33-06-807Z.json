@@ -1801,6 +1801,48 @@
           "group": "Lithic Developer API"
         },
         {
+          "title": "Get loan tape configurationget",
+          "path": "/reference/getloantapeconfiguration",
+          "fullUrl": "https://docs.lithic.com/reference/getloantapeconfiguration",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "List interest tier schedulesget",
+          "path": "/reference/listinteresttierschedules",
+          "fullUrl": "https://docs.lithic.com/reference/listinteresttierschedules",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Create interest tier schedulepost",
+          "path": "/reference/createinteresttierschedule",
+          "fullUrl": "https://docs.lithic.com/reference/createinteresttierschedule",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Delete interest tier scheduledel",
+          "path": "/reference/deleteinteresttierschedule",
+          "fullUrl": "https://docs.lithic.com/reference/deleteinteresttierschedule",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Get interest tier scheduleget",
+          "path": "/reference/getinteresttierschedule",
+          "fullUrl": "https://docs.lithic.com/reference/getinteresttierschedule",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
+          "title": "Update interest tier scheduleput",
+          "path": "/reference/updateinteresttierschedule",
+          "fullUrl": "https://docs.lithic.com/reference/updateinteresttierschedule",
+          "level": 2,
+          "group": "Lithic Developer API"
+        },
+        {
           "title": "Status",
           "path": "/reference/getstatus",
           "fullUrl": "https://docs.lithic.com/reference/getstatus",

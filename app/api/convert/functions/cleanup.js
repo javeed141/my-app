@@ -1,4 +1,4 @@
-// cleanup.js
+// // cleanup.js
 // Cleanup pass — runs AFTER all component converters.
 // Strips ReadMe-specific artifacts and fixes MDX syntax issues.
 
@@ -75,7 +75,6 @@ export function removeReadmeCssClasses(content) {
 }
 
 // --- 4. Fix heading hierarchy ---
-// If all headings start at h3+, bump them up so the smallest becomes h2.
 
 export function fixHeadingHierarchy(content) {
   const changes = [];
@@ -100,36 +99,78 @@ export function fixHeadingHierarchy(content) {
   return { content: result, changes };
 }
 
-// --- 5. Collapse excessive blank lines (3+ → 2) ---
+// --- 5. Left-align all table columns ---
+
+export function fixTableAlignment(content) {
+  const changes = [];
+  let count = 0;
+
+  const lines = content.split("\n");
+  let inCodeBlock = false;
+  const result = [];
+
+  for (const line of lines) {
+    if (/^[ \t]*```/.test(line)) {
+      inCodeBlock = !inCodeBlock;
+      result.push(line);
+      continue;
+    }
+    if (inCodeBlock) {
+      result.push(line);
+      continue;
+    }
+
+    if (/^\|[\s:.-]+\|$/.test(line.trim()) && line.includes("-")) {
+      const cells = line.split("|");
+      const fixed = cells.map((cell) => {
+        const trimmed = cell.trim();
+        if (!trimmed) return cell;
+        if (!/^:?-+:?$/.test(trimmed)) return cell;
+        if (trimmed.startsWith(":") || trimmed.endsWith(":")) return cell;
+        const dashCount = trimmed.length;
+        count++;
+        return " :" + "-".repeat(Math.max(3, dashCount - 1)) + " ";
+      });
+      result.push(fixed.join("|"));
+    } else {
+      result.push(line);
+    }
+  }
+
+  if (count > 0) {
+    changes.push({
+      type: "table-alignment",
+      count,
+      detail: "left-aligned table columns (---- → :----)",
+    });
+  }
+  return { content: result.join("\n"), changes };
+}
+
+// --- 6. Collapse excessive blank lines (3+ → 2) ---
 
 export function collapseBlankLines(content) {
   return { content: content.replace(/\n{4,}/g, "\n\n\n"), changes: [] };
 }
 
 // --- 6a. Fix HTML comments → JSX comments ---
-// MDX doesn't support <!-- -->. Converts to {/* */}.
-// Skips content inside fenced code blocks and inline code.
 
 export function fixHtmlComments(content) {
   const changes = [];
   let count = 0;
 
-  // Split by fenced code blocks to protect them
   const parts = content.split(/(^[ \t]*```[\s\S]*?^[ \t]*```[ \t]*$)/m);
   const rebuilt = [];
 
   for (let p = 0; p < parts.length; p++) {
     const part = parts[p];
 
-    // Code blocks — pass through unchanged
     if (/^[ \t]*```/.test(part)) {
       rebuilt.push(part);
       continue;
     }
 
-    // Convert HTML comments to JSX in non-code content
     let fixed = part.replace(/<!--([\s\S]*?)-->/g, (match, inner) => {
-      // Skip if inside inline code backticks
       const idx = part.indexOf(match);
       let backtickCount = 0;
       for (let c = 0; c < idx; c++) {
@@ -155,20 +196,17 @@ export function fixHtmlComments(content) {
 }
 
 // --- 6b. Fix void HTML elements ---
-// MDX requires all void elements to be self-closing: <br> → <br/>
 
 export function fixVoidElements(content) {
   const changes = [];
   let count = 0;
 
-  // Split by fenced code blocks to protect them
   const parts = content.split(/(^[ \t]*```[\s\S]*?^[ \t]*```[ \t]*$)/m);
   const rebuilt = [];
 
   for (let p = 0; p < parts.length; p++) {
     const part = parts[p];
 
-    // Code blocks — pass through unchanged
     if (/^[ \t]*```/.test(part)) {
       rebuilt.push(part);
       continue;
@@ -194,18 +232,10 @@ export function fixVoidElements(content) {
 }
 
 // --- 7. Fix angle brackets that break MDX ---
-// MDX treats <anything> as a JSX tag. This converts:
-//   <https://...>  → [url](url)
-//   <user@host>    → [email](mailto:email)
-//   <PLACEHOLDER>  → `<PLACEHOLDER>`
-// Preserves real HTML/JSX tags and content inside code blocks/inline code.
 
-// Tags that are legitimate HTML or Documentation.AI components
 const SAFE_TAGS = new Set([
-  // HTML void
   "br", "hr", "img", "input", "meta", "link", "source", "area", "base",
   "col", "embed", "wbr",
-  // HTML container
   "div", "span", "p", "a", "table", "thead", "tbody", "tfoot", "tr", "th",
   "td", "ul", "ol", "li", "pre", "code", "blockquote",
   "h1", "h2", "h3", "h4", "h5", "h6",
@@ -215,7 +245,6 @@ const SAFE_TAGS = new Set([
   "nav", "main", "figure", "figcaption",
   "iframe", "video", "audio", "svg", "path", "circle", "rect", "line",
   "polyline", "polygon", "g", "dl", "dt", "dd",
-  // Documentation.AI components (all 16)
   "Callout",
   "Card", "Columns",
   "Image",
@@ -228,10 +257,67 @@ const SAFE_TAGS = new Set([
   "ParamField", "ResponseField",
   "Request", "Response",
   "Frame", "Icon",
-  // Legacy (kept for compatibility during conversion)
   "Column",
 ]);
+// --- Fix backslash escapes that break MDX ---
 
+export function fixBackslashEscapes(content) {
+  const changes = [];
+  let count = 0;
+
+  const lines = content.split("\n");
+  let inCodeBlock = false;
+  const result = [];
+
+  for (const line of lines) {
+    if (/^[ \t]*```/.test(line)) {
+      inCodeBlock = !inCodeBlock;
+      result.push(line);
+      continue;
+    }
+    if (inCodeBlock) {
+      result.push(line);
+      continue;
+    }
+
+    let fixed = "";
+    let inInlineCode = false;
+
+    for (let i = 0; i < line.length; i++) {
+      if (line[i] === "`") {
+        inInlineCode = !inInlineCode;
+        fixed += line[i];
+        continue;
+      }
+
+      if (inInlineCode) {
+        fixed += line[i];
+        continue;
+      }
+
+      if (line[i] === "\\" && i + 1 < line.length) {
+        const next = line[i + 1];
+        if ("_#|[](){}*~`<>!".includes(next)) {
+          count++;
+          continue;
+        }
+      }
+
+      fixed += line[i];
+    }
+
+    result.push(fixed);
+  }
+
+  if (count > 0) {
+    changes.push({
+      type: "backslash-escape",
+      count,
+      detail: "removed unnecessary backslash escapes that break MDX",
+    });
+  }
+  return { content: result.join("\n"), changes };
+}
 export function fixAngleBrackets(content) {
   const changes = [];
   let count = 0;
@@ -251,9 +337,16 @@ export function fixAngleBrackets(content) {
       continue;
     }
 
-    // Process character by character, respecting inline code
+    // Skip JSX comment lines entirely — don't touch angle brackets inside comments
+    const trimmedLine = line.trim();
+    if (trimmedLine.startsWith("{/*") && trimmedLine.endsWith("*/}")) {
+      result.push(line);
+      continue;
+    }
+
     let fixed = "";
     let inInlineCode = false;
+    let inJsxComment = false;
     let i = 0;
 
     while (i < line.length) {
@@ -265,6 +358,25 @@ export function fixAngleBrackets(content) {
       }
 
       if (inInlineCode) {
+        fixed += line[i];
+        i++;
+        continue;
+      }
+
+      // Track JSX comment boundaries within a line
+      if (line.substring(i, i + 3) === "{/*") {
+        inJsxComment = true;
+        fixed += line[i];
+        i++;
+        continue;
+      }
+      if (inJsxComment && line.substring(i, i + 3) === "*/}") {
+        fixed += "*/}";
+        i += 3;
+        inJsxComment = false;
+        continue;
+      }
+      if (inJsxComment) {
         fixed += line[i];
         i++;
         continue;
@@ -282,7 +394,6 @@ export function fixAngleBrackets(content) {
         const inside = line.substring(i + 1, closeIdx);
         const fullTag = line.substring(i, closeIdx + 1);
 
-        // Autolink URL: <https://...>
         if (/^https?:\/\//.test(inside)) {
           fixed += `[${inside}](${inside})`;
           count++;
@@ -290,7 +401,6 @@ export function fixAngleBrackets(content) {
           continue;
         }
 
-        // Email autolink: <user@example.com>
         if (
           /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(inside)
         ) {
@@ -300,7 +410,6 @@ export function fixAngleBrackets(content) {
           continue;
         }
 
-        // Known HTML/JSX tag → leave alone
         const tagNameMatch = inside.match(/^\/?([a-zA-Z][a-zA-Z0-9]*)/);
         if (tagNameMatch && SAFE_TAGS.has(tagNameMatch[1])) {
           fixed += fullTag;
@@ -308,7 +417,6 @@ export function fixAngleBrackets(content) {
           continue;
         }
 
-        // Unknown text in angle brackets → wrap in inline code
         fixed += "`" + fullTag + "`";
         count++;
         i = closeIdx + 1;
@@ -333,8 +441,6 @@ export function fixAngleBrackets(content) {
 }
 
 // --- 8. Fix curly braces that break MDX ---
-// MDX treats { } as JSX expressions. Bare braces in text get escaped: { → \{
-// Skips: code blocks, inline code, JSX attribute values (={...}), inside JSX tags
 
 export function fixCurlyBraces(content) {
   const changes = [];
@@ -355,7 +461,13 @@ export function fixCurlyBraces(content) {
       continue;
     }
 
-    // Build a mask of which characters are inside inline code
+    // Skip JSX comment lines entirely — don't escape braces inside comments
+    const trimmedLine = line.trim();
+    if (trimmedLine.startsWith("{/*") && trimmedLine.endsWith("*/}")) {
+      result.push(line);
+      continue;
+    }
+
     const inCode = new Array(line.length).fill(false);
     let inIC = false;
     for (let c = 0; c < line.length; c++) {
@@ -368,24 +480,40 @@ export function fixCurlyBraces(content) {
     }
 
     let fixed = "";
+    let inJsxComment = false;
+
     for (let i = 0; i < line.length; i++) {
       if (inCode[i]) {
         fixed += line[i];
         continue;
       }
 
+      // Track JSX comment boundaries within a line
+      if (line.substring(i, i + 3) === "{/*") {
+        inJsxComment = true;
+        fixed += line[i];
+        continue;
+      }
+      if (inJsxComment && line.substring(i, i + 3) === "*/}") {
+        fixed += "*/}";
+        i += 2; // +2 because loop does i++
+        inJsxComment = false;
+        continue;
+      }
+      if (inJsxComment) {
+        fixed += line[i];
+        continue;
+      }
+
       if (line[i] === "{") {
-        // JSX comment: {/* ... */} → skip
         if (line.substring(i, i + 3) === "{/*") {
           fixed += line[i];
           continue;
         }
-        // JSX attribute value: ={...} → skip
         if (i > 0 && line[i - 1] === "=") {
           fixed += line[i];
           continue;
         }
-        // Inside a JSX tag's attributes
         const beforeStr = line.substring(0, i);
         const lastOpen = beforeStr.lastIndexOf("<");
         const lastClose = beforeStr.lastIndexOf(">");
@@ -393,7 +521,6 @@ export function fixCurlyBraces(content) {
           fixed += line[i];
           continue;
         }
-        // Bare { in text → escape
         fixed += "\\{";
         count++;
         continue;
@@ -404,7 +531,6 @@ export function fixCurlyBraces(content) {
           fixed += line[i];
           continue;
         }
-        // JSX comment closing: */} → skip
         if (i >= 2 && line[i - 2] === "*" && line[i - 1] === "/") {
           fixed += line[i];
           continue;
@@ -441,11 +567,48 @@ export function fixCurlyBraces(content) {
   return { content: result.join("\n"), changes };
 }
 
+// --- 9. Remove orphaned }; ---
+
+export function removeOrphanedClosingBraces(content) {
+  const changes = [];
+  let count = 0;
+
+  const lines = content.split("\n");
+  let inCodeBlock = false;
+  const result = [];
+
+  for (const line of lines) {
+    if (/^[ \t]*```/.test(line)) {
+      inCodeBlock = !inCodeBlock;
+      result.push(line);
+      continue;
+    }
+    if (inCodeBlock) {
+      result.push(line);
+      continue;
+    }
+
+    if (/^[ \t]*\};?\s*$/.test(line)) {
+      count++;
+      continue;
+    }
+
+    result.push(line);
+  }
+
+  if (count > 0) {
+    changes.push({
+      type: "orphaned-brace",
+      count,
+      detail: "removed orphaned }; left after unknown component extraction",
+    });
+  }
+  return { content: result.join("\n"), changes };
+}
+
 // --- Scan for unknown components ---
-// Flags JSX components that Documentation.AI doesn't recognize.
 
 const KNOWN_COMPONENTS = new Set([
-  // HTML
   "div", "span", "p", "a", "img", "br", "hr", "table", "thead", "tbody",
   "tr", "th", "td", "ul", "ol", "li", "pre", "code", "blockquote",
   "h1", "h2", "h3", "h4", "h5", "h6", "em", "strong", "del", "sub", "sup",
@@ -453,7 +616,6 @@ const KNOWN_COMPONENTS = new Set([
   "nav", "main", "figure", "figcaption", "iframe", "video", "audio", "source",
   "svg", "path", "circle", "rect", "line", "polyline", "polygon", "g",
   "kbd", "input", "meta", "link",
-  // Documentation.AI components
   "Callout",
   "Card", "Columns",
   "Image",
@@ -470,6 +632,7 @@ const KNOWN_COMPONENTS = new Set([
 
 export function scanUnknownComponents(content) {
   const unknowns = new Map();
+  const componentBlocks = [];
 
   const tagRegex = /<([A-Z][A-Za-z0-9]*(?:\.[A-Za-z0-9]+)?)\b/g;
   let match;
@@ -480,12 +643,177 @@ export function scanUnknownComponents(content) {
     }
   }
 
-  const warnings = [];
-  for (const [name, cnt] of unknowns) {
-    warnings.push(
-      `{/* NOTE: <${name}> appears ${cnt} time(s). Documentation.AI does not have this component. Manual conversion needed. */}`
-    );
+  let cleanedContent = content;
+
+  for (const [name] of unknowns) {
+    let raw = "";
+
+    const definition = extractComponentDefinition(cleanedContent, name);
+    if (definition) {
+      raw += definition + "\n\n";
+      cleanedContent = cleanedContent.replace(definition, "");
+    }
+
+    let usage;
+    while ((usage = extractUsage(cleanedContent, name)) !== null) {
+      raw += usage + "\n\n";
+      cleanedContent = cleanedContent.replace(usage, "");
+    }
+
+    cleanedContent = cleanedContent.replace(/^\s*\};\s*$/gm, "");
+
+    const message = `{/* ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ UNKNOWN COMPONENT: <${name}> was removed. This component is not supported by Documentation.AI. Stored in /unknown-components/${name}.mdx — needs manual review or AI conversion. ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ */}`;
+
+    if (!cleanedContent.includes(message)) {
+      cleanedContent = message + "\n\n" + cleanedContent;
+    }
+
+    componentBlocks.push({ name, raw: raw.trim() });
   }
 
-  return { unknowns, warnings };
+  cleanedContent = cleanedContent.replace(/\n{3,}/g, "\n\n");
+
+  return { unknowns, componentBlocks, content: cleanedContent };
+}
+
+function extractComponentDefinition(content, name) {
+  const escaped = escapeRegex(name);
+
+  const startPatterns = [
+    new RegExp(`^export\\s+const\\s+${escaped}\\s*=`, "m"),
+    new RegExp(`^export\\s+function\\s+${escaped}\\s*\\(`, "m"),
+    new RegExp(`^const\\s+${escaped}\\s*=`, "m"),
+    new RegExp(`^function\\s+${escaped}\\s*\\(`, "m"),
+  ];
+
+  for (const regex of startPatterns) {
+    const match = regex.exec(content);
+    if (!match) continue;
+
+    const startIdx = match.index;
+
+    let braceDepth = 0;
+    let parenDepth = 0;
+    let foundFirstBrace = false;
+    let inString = false;
+    let stringChar = "";
+    let inTemplateLiteral = false;
+    let i = startIdx;
+
+    while (i < content.length) {
+      const ch = content[i];
+      const prev = i > 0 ? content[i - 1] : "";
+
+      if (!inTemplateLiteral && (ch === '"' || ch === "'")) {
+        if (!inString) {
+          inString = true;
+          stringChar = ch;
+        } else if (ch === stringChar && prev !== "\\") {
+          inString = false;
+        }
+        i++;
+        continue;
+      }
+
+      if (ch === "`" && !inString) {
+        inTemplateLiteral = !inTemplateLiteral;
+        i++;
+        continue;
+      }
+
+      if (inString || inTemplateLiteral) {
+        i++;
+        continue;
+      }
+
+      if (ch === "(") parenDepth++;
+      else if (ch === ")") parenDepth--;
+
+      if (ch === "{") {
+        if (parenDepth === 0) {
+          braceDepth++;
+          foundFirstBrace = true;
+        }
+      } else if (ch === "}") {
+        if (parenDepth === 0) {
+          braceDepth--;
+          if (foundFirstBrace && braceDepth === 0) {
+            let endIdx = i + 1;
+            while (endIdx < content.length && (content[endIdx] === ";" || content[endIdx] === " " || content[endIdx] === "\t")) {
+              endIdx++;
+            }
+            if (endIdx < content.length && content[endIdx] === "\n") {
+              endIdx++;
+            }
+            return content.slice(startIdx, endIdx).trim();
+          }
+        }
+      }
+
+      if (!foundFirstBrace && ch === ";" && braceDepth === 0 && parenDepth === 0) {
+        const slice = content.slice(startIdx, i + 1);
+        if (/=>/.test(slice)) {
+          return slice.trim();
+        }
+      }
+
+      i++;
+    }
+
+    const fallbackRegex = new RegExp(
+      escapeRegex(match[0]) + `[\\s\\S]*?(?=\\n\\n|\\nexport\\s|$)`,
+      "m"
+    );
+    const fallbackMatch = fallbackRegex.exec(content);
+    if (fallbackMatch) return fallbackMatch[0].trim();
+  }
+
+  return null;
+}
+
+function extractUsage(content, name) {
+  const escaped = escapeRegex(name);
+  const startMatch = new RegExp(`<${escaped}\\b`).exec(content);
+  if (!startMatch) return null;
+
+  const remaining = content.slice(startMatch.index);
+
+  const selfClosing = new RegExp(`^<${escaped}\\b[^>]*/>`);
+  const selfMatch = selfClosing.exec(remaining);
+  if (selfMatch) return selfMatch[0];
+
+  const openTag = new RegExp(`<${escaped}\\b`, "g");
+  const closeTag = new RegExp(`</${escaped}\\s*>`, "g");
+  let depth = 0;
+  let i = 0;
+
+  while (i < remaining.length) {
+    openTag.lastIndex = i;
+    closeTag.lastIndex = i;
+
+    const openMatch = openTag.exec(remaining);
+    const closeMatch = closeTag.exec(remaining);
+
+    if (!openMatch && !closeMatch) break;
+
+    const openIdx = openMatch ? openMatch.index : Infinity;
+    const closeIdx = closeMatch ? closeMatch.index : Infinity;
+
+    if (openIdx < closeIdx) {
+      depth++;
+      i = openIdx + openMatch[0].length;
+    } else {
+      depth--;
+      if (depth === 0) {
+        return remaining.slice(0, closeMatch.index + closeMatch[0].length);
+      }
+      i = closeIdx + closeMatch[0].length;
+    }
+  }
+
+  return null;
+}
+
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }

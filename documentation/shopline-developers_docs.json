@@ -1,0 +1,510 @@
+{
+  "name": "Shopline Developers",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "GETTING STARTED",
+            "pages": [
+              {
+                "title": "Introduction",
+                "path": "docs/get-started"
+              },
+              {
+                "title": "Features",
+                "path": "docs/features"
+              },
+              {
+                "title": "Contact Support",
+                "path": "docs/contact-support"
+              },
+              {
+                "title": "Latest News & Key Update",
+                "path": "docs/latest-news-update-coming-soon"
+              },
+              {
+                "title": "Important Reminder (Potential Breaking Change)",
+                "path": "docs/important-reminder-potential-breaking-change"
+              },
+              {
+                "title": "Introduction Document & Detailed Implementation Guide",
+                "path": "docs/app-implementation-guide-with-detailed-example"
+              }
+            ]
+          },
+          {
+            "group": "DEVELOPER CREATE APP",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "docs/intro"
+              },
+              {
+                "group": "Create Your Own Developer Account",
+                "pages": [
+                  {
+                    "title": "Team Manage",
+                    "path": "docs/team-manage"
+                  },
+                  {
+                    "title": "Account and My Profile",
+                    "path": "docs/account-and-my-profile"
+                  }
+                ]
+              },
+              {
+                "title": "Create Your First Awesome App",
+                "path": "docs/create-your-first-awesome-app"
+              },
+              {
+                "title": "1. API Keys & Open API access token",
+                "path": "docs/api-keys"
+              },
+              {
+                "title": "2. App Scopes",
+                "path": "docs/app-scopes"
+              },
+              {
+                "title": "3. Listing Info",
+                "path": "docs/listing-info"
+              },
+              {
+                "title": "4. Availability",
+                "path": "docs/availability"
+              },
+              {
+                "title": "5. Subscription Fee",
+                "path": "docs/pricing"
+              },
+              {
+                "group": "6. Advanced Settings",
+                "pages": [
+                  {
+                    "title": "Action Button",
+                    "path": "docs/action-button"
+                  },
+                  {
+                    "title": "Contact Information",
+                    "path": "docs/contact-information"
+                  },
+                  {
+                    "title": "Keys",
+                    "path": "docs/keys"
+                  },
+                  {
+                    "title": "Uninstall-able",
+                    "path": "docs/uninstall-able"
+                  }
+                ]
+              },
+              {
+                "group": "7. Deploy & Release",
+                "pages": [
+                  {
+                    "title": "Development Version & Testing",
+                    "path": "docs/development-version-testing"
+                  },
+                  {
+                    "title": "Release Version",
+                    "path": "docs/release-version"
+                  },
+                  {
+                    "title": "Ask merchant to reauthorize your apps",
+                    "path": "docs/ask-merchant-to-reauthorize-your-apps"
+                  }
+                ]
+              },
+              {
+                "group": "OAuth2 & Authorization Token",
+                "pages": [
+                  {
+                    "title": "Authorization Token",
+                    "path": "docs/authorization-server-uri-params"
+                  },
+                  {
+                    "title": "Token Exchange",
+                    "path": "docs/after-user-has-authorized"
+                  },
+                  {
+                    "title": "Refresh Token",
+                    "path": "docs/refresh-token"
+                  },
+                  {
+                    "title": "Token Info",
+                    "path": "docs/token-info"
+                  },
+                  {
+                    "title": "Revoke Token",
+                    "path": "docs/revoke-token"
+                  },
+                  {
+                    "title": "List of scopes",
+                    "path": "docs/list-of-scopes"
+                  },
+                  {
+                    "title": "OAuth Error code",
+                    "path": "docs/oauth-error-code"
+                  },
+                  {
+                    "title": "Select merchant in the authorization page",
+                    "path": "docs/select-merchant-in-the-authorization-page"
+                  },
+                  {
+                    "title": "Complete Integration Example 1",
+                    "path": "docs/complete-integration-example-1"
+                  }
+                ]
+              },
+              {
+                "group": "App Installation Token",
+                "pages": [
+                  {
+                    "title": "App Installation Token and Link Account",
+                    "path": "docs/app-installation-token-and-link-account"
+                  }
+                ]
+              },
+              {
+                "group": "Webhook",
+                "pages": [
+                  {
+                    "title": "Preview",
+                    "path": "docs/preview"
+                  },
+                  {
+                    "title": "1. Verification Instruction",
+                    "path": "docs/1-verification-instruction"
+                  },
+                  {
+                    "title": "2. Webhook topics",
+                    "path": "docs/2-webhook-topics-tabs"
+                  },
+                  {
+                    "title": "3. Webhook topics's destination",
+                    "path": "docs/3-webhook-topicss-destination"
+                  },
+                  {
+                    "title": "4. Webhook log",
+                    "path": "docs/4-webhook-log"
+                  },
+                  {
+                    "title": "5. Circuit breaker",
+                    "path": "docs/circuit-breaker"
+                  },
+                  {
+                    "title": "Webhook Signature",
+                    "path": "docs/webhook-signature"
+                  },
+                  {
+                    "title": "Best Practices",
+                    "path": "docs/best-practices"
+                  },
+                  {
+                    "title": "Key Scenarios of Webhook Events",
+                    "path": "docs/key-scenarios-of-webhook-events"
+                  },
+                  {
+                    "title": "Webhook Faqs",
+                    "path": "docs/remarks"
+                  },
+                  {
+                    "title": "Forward third-party webhook",
+                    "path": "docs/third-party-webhook"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Multipass",
+            "pages": [
+              {
+                "title": "Integration Guide",
+                "path": "docs/integration-guide-coming-soon"
+              },
+              {
+                "title": "Multipass Token Generator",
+                "path": "docs/multipass-token-generator"
+              }
+            ]
+          },
+          {
+            "group": "Merchant Customer Authentication",
+            "pages": [
+              {
+                "title": "Integration Guide for Merchant Customer Authentication",
+                "path": "docs/integration-guide-for-merchant-customer-authentication"
+              }
+            ]
+          },
+          {
+            "group": "Third-party customer oauth",
+            "pages": [
+              {
+                "title": "Integration Guide",
+                "path": "docs/integration-guide-2"
+              }
+            ]
+          },
+          {
+            "group": "Admin app extension",
+            "pages": [
+              {
+                "group": "Introduction",
+                "pages": [
+                  {
+                    "title": "Getting start on setting up admin app extension",
+                    "path": "docs/getting-start-on-set-up-admin-app-extension"
+                  },
+                  {
+                    "title": "Navigation link",
+                    "path": "docs/configure-navigation-link-1"
+                  },
+                  {
+                    "title": "Action link",
+                    "path": "docs/action-link"
+                  },
+                  {
+                    "title": "Bulk Action link",
+                    "path": "docs/bulk-action-link"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Storefront App Extension",
+            "pages": [
+              {
+                "title": "Introduction",
+                "path": "docs/storefront-app-extension-introduction"
+              },
+              {
+                "group": "Integration Guide",
+                "pages": [
+                  {
+                    "title": "App Extension Settings",
+                    "path": "docs/storefront-app-extension-settings"
+                  },
+                  {
+                    "title": "Merchant Settings in Admin",
+                    "path": "docs/storefront-app-extension-merchant-settings"
+                  },
+                  {
+                    "title": "Interacting with Storefront",
+                    "path": "docs/storefront-app-extension-storefront"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Storefront sdk",
+            "pages": [
+              {
+                "title": "Introduction",
+                "path": "docs/storefront-sdk-introduction"
+              },
+              {
+                "title": "Abstract flow & how to set up",
+                "path": "docs/abstract-flow-on-using-storefront-sdk"
+              },
+              {
+                "title": "Setting up Storefront SDK",
+                "path": "docs/setting-up-storefront-sdk"
+              },
+              {
+                "title": "Using the SDK functions",
+                "path": "docs/using-the-sdk-functions"
+              },
+              {
+                "title": "Why listen to SDK event & how to use event listener",
+                "path": "docs/storefront-sdk-events"
+              },
+              {
+                "title": "List of Available Utils Functions & Events",
+                "path": "docs/storefront-sdk-list-of-available-functions-events"
+              }
+            ]
+          },
+          {
+            "group": "STOREFRONT API [Beta]",
+            "pages": [
+              {
+                "title": "Introduction | Storefront API",
+                "path": "docs/introduction_storefront_api"
+              },
+              {
+                "group": "Customer Access Token",
+                "pages": [
+                  {
+                    "title": "Token Exchange",
+                    "path": "docs/customer-access-token-exchange"
+                  },
+                  {
+                    "title": "Token Info",
+                    "path": "docs/customer-access-token-info"
+                  },
+                  {
+                    "title": "Refresh Token",
+                    "path": "docs/customer-access-token-refresh"
+                  },
+                  {
+                    "title": "Revoke Token",
+                    "path": "docs/customer-access-token-revoke"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "App Proxy [Beta]",
+            "pages": [
+              {
+                "title": "App proxy",
+                "path": "docs/app-proxy-beta"
+              }
+            ]
+          },
+          {
+            "group": "Storefront App Widget [BETA]",
+            "pages": [
+              {
+                "title": "Introduction",
+                "path": "docs/app-widget-introduction"
+              },
+              {
+                "group": "Integration Guide",
+                "pages": [
+                  {
+                    "group": "App Widget Contents",
+                    "pages": [
+                      {
+                        "title": "App Widget Schema",
+                        "path": "docs/app-widget-schema"
+                      },
+                      {
+                        "title": "List of Setting Types",
+                        "path": "docs/list-of-setting-types"
+                      },
+                      {
+                        "title": "App Widget Schema Example",
+                        "path": "docs/app-widget-schema-example"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Supported Themes and Pages",
+                    "path": "docs/supported-themes-and-pages-1"
+                  },
+                  {
+                    "title": "App Widget in SHOP Builder",
+                    "path": "docs/app-widget-in-shop-builder"
+                  },
+                  {
+                    "title": "App Widget in Storefront",
+                    "path": "docs/app-widget-in-storefront"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Metafields",
+            "pages": [
+              {
+                "group": "Metafields （beta）",
+                "pages": [
+                  {
+                    "title": "Configure and set up Metafield",
+                    "path": "docs/configure-and-set-up-metafield"
+                  },
+                  {
+                    "title": "Guideline on using Cart Item Metafield to build app feature",
+                    "path": "docs/how-to-transform-cart-item-metafield-into-order-item-metafield"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Layout Engine",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "docs/layout-engine-overview"
+              }
+            ]
+          },
+          {
+            "group": "Apps Store",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "docs/overview"
+              },
+              {
+                "title": "App Visibility",
+                "path": "docs/app-visibility"
+              },
+              {
+                "title": "Checkout",
+                "path": "docs/subscription"
+              },
+              {
+                "title": "Installation",
+                "path": "docs/installation-1"
+              },
+              {
+                "title": "Using Your App",
+                "path": "docs/using-your-app"
+              }
+            ]
+          },
+          {
+            "group": "Subscription & Charges",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "docs/overview-1"
+              }
+            ]
+          },
+          {
+            "group": "FAQs",
+            "pages": [
+              {
+                "title": "Common questions",
+                "path": "docs/common-questions"
+              },
+              {
+                "title": "Request new app store to support non 1 year basket merchants",
+                "path": "docs/request-mini-app-store-to-support-non-1-year-basket-merchants"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "General",
+            "pages": [
+              {
+                "title": "Log In",
+                "path": "login?redirect_uri=/reference/open-api-comprehensive-guides"
+              },
+              {
+                "title": "Open API comprehensive guides",
+                "path": "reference/open-api-comprehensive-guides"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

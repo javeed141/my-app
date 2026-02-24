@@ -132,30 +132,60 @@ export const FA_TO_LUCIDE = {
 };
 
 // --- ReadMe-only frontmatter fields to strip ---
+// Based on ReadMe's page schema:
+//   title, excerpt, deprecated, hidden, icon, category,
+//   metadata (nested: title, description, keywords, robots, image),
+//   link (nested: url, new_tab), api (nested: file, operationId, webhook),
+//   fullscreen, recipe (nested: color, icon)
+//
+// We KEEP: title, description (mapped from excerpt or metadata.description)
+// We REMOVE: everything else
 
 export const README_ONLY_FIELDS = new Set([
+  // Page organization
   "category",
   "categorySlug",
   "slug",
-  "hidden",
   "order",
-  "excerpt",
   "type",
   "parentDoc",
   "parentDocSlug",
-  "api",
-  "next",
-  "previous",
-  "updatedAt",
-  "createdAt",
-  "version",
-  "id",
-  "_id",
-  "isReference",
+  "childrenPages",
+
+  // Visibility & status
+  "hidden",
+  "deprecated",
+
+  // ReadMe display
+  "excerpt",
+  "icon",
+  "fullscreen",
+
+  // SEO metadata (nested — we extract description before removing)
+  "metadata",
+
+  // Link pages
+  "link",
   "link_url",
   "link_external",
-  "metadata",
-  "childrenPages",
+
+  // API Reference pages
+  "api",
+  "isReference",
+
+  // Recipe pages
+  "recipe",
+
+  // Navigation
+  "next",
+  "previous",
+
+  // System fields
+  "id",
+  "_id",
+  "version",
+  "updatedAt",
+  "createdAt",
 ]);
 
 // --- SSRF Protection ---

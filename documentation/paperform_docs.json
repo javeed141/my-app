@@ -1,0 +1,305 @@
+{
+  "name": "Paperform",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Paperform API",
+        "pages": [
+          {
+            "title": "Getting Started",
+            "path": "refs/getting-started-1"
+          },
+          {
+            "group": "Forms",
+            "pages": [
+              {
+                "title": "/forms",
+                "path": "refs/listforms"
+              },
+              {
+                "title": "/forms/{slug_or_id}",
+                "path": "refs/getform"
+              },
+              {
+                "title": "/forms/{slug_or_id}",
+                "path": "refs/updateform"
+              }
+            ]
+          },
+          {
+            "group": "Form Fields",
+            "pages": [
+              {
+                "title": "/forms/{slug_or_id}/fields",
+                "path": "refs/listformfields"
+              },
+              {
+                "title": "/forms/{slug_or_id}/fields/{field_key}",
+                "path": "refs/getformfield"
+              },
+              {
+                "title": "/forms/{slug_or_id}/fields/{field_key}",
+                "path": "refs/updateformfield"
+              }
+            ]
+          },
+          {
+            "group": "Submissions",
+            "pages": [
+              {
+                "title": "/forms/{slug_or_id}/submissions",
+                "path": "refs/listformsubmissions"
+              },
+              {
+                "title": "/forms/{slug_or_id}/submissions/{id}",
+                "path": "refs/getformsubmission"
+              },
+              {
+                "title": "/forms/{slug_or_id}/submissions/{id}",
+                "path": "refs/deleteformsubmission"
+              },
+              {
+                "title": "/submissions/{id}",
+                "path": "refs/getsubmission"
+              },
+              {
+                "title": "/submissions/{id}",
+                "path": "refs/deletesubmission"
+              }
+            ]
+          },
+          {
+            "group": "Partial Submissions",
+            "pages": [
+              {
+                "title": "/forms/{slug_or_id}/partial-submissions",
+                "path": "refs/listformpartialsubmissions"
+              },
+              {
+                "title": "/forms/{slug_or_id}/partial-submissions/{id}",
+                "path": "refs/getformpartialsubmission"
+              },
+              {
+                "title": "/forms/{slug_or_id}/partial-submissions/{id}",
+                "path": "refs/deleteformpartialsubmission"
+              },
+              {
+                "title": "/partial-submissions/{id}",
+                "path": "refs/getpartialsubmission"
+              },
+              {
+                "title": "/partial-submissions/{id}",
+                "path": "refs/deletepartialsubmission"
+              }
+            ]
+          },
+          {
+            "group": "Products",
+            "pages": [
+              {
+                "title": "/forms/{slug_or_id}/products",
+                "path": "refs/listformproducts"
+              },
+              {
+                "title": "/forms/{slug_or_id}/products",
+                "path": "refs/postformproduct"
+              },
+              {
+                "title": "/forms/{slug_or_id}/products/{product_sku}",
+                "path": "refs/getformproduct"
+              },
+              {
+                "title": "/forms/{slug_or_id}/products/{product_sku}",
+                "path": "refs/updateformproduct"
+              },
+              {
+                "title": "/forms/{slug_or_id}/products/{product_sku}",
+                "path": "refs/deleteformproduct"
+              },
+              {
+                "title": "/forms/{slug_or_id}/products/{product_sku}/quantity",
+                "path": "refs/updateformproductquantity"
+              },
+              {
+                "title": "/forms/{slug_or_id}/products/{product_sku}/sold",
+                "path": "refs/updateformproductsold"
+              }
+            ]
+          },
+          {
+            "group": "Coupons",
+            "pages": [
+              {
+                "title": "/forms/{slug_or_id}/coupons",
+                "path": "refs/listformcoupons"
+              },
+              {
+                "title": "/forms/{slug_or_id}/coupons",
+                "path": "refs/createformcoupon"
+              },
+              {
+                "title": "/forms/{slug_or_id}/coupons/{code}",
+                "path": "refs/getformcoupon"
+              },
+              {
+                "title": "/forms/{slug_or_id}/coupons/{code}",
+                "path": "refs/updateformcoupon"
+              },
+              {
+                "title": "/forms/{slug_or_id}/coupons/{code}",
+                "path": "refs/deleteformcoupon"
+              }
+            ]
+          },
+          {
+            "group": "Webhooks",
+            "pages": [
+              {
+                "title": "/forms/{slug_or_id}/webhooks",
+                "path": "refs/listformwebhooks"
+              },
+              {
+                "title": "/forms/{slug_or_id}/webhooks",
+                "path": "refs/createformwebhook"
+              },
+              {
+                "title": "/webhooks/{id}",
+                "path": "refs/getformwebhook"
+              },
+              {
+                "title": "/webhooks/{id}",
+                "path": "refs/updateformwebhook"
+              },
+              {
+                "title": "/webhooks/{id}",
+                "path": "refs/deleteformwebhook"
+              }
+            ]
+          },
+          {
+            "group": "Spaces",
+            "pages": [
+              {
+                "title": "/spaces",
+                "path": "refs/listspaces"
+              },
+              {
+                "title": "/spaces",
+                "path": "refs/createspace"
+              },
+              {
+                "title": "/spaces/{id}",
+                "path": "refs/getspace"
+              },
+              {
+                "title": "/spaces/{id}",
+                "path": "refs/updatespace"
+              },
+              {
+                "title": "/spaces/{id}/forms",
+                "path": "refs/getspaceforms"
+              }
+            ]
+          },
+          {
+            "group": "Translations",
+            "pages": [
+              {
+                "title": "/translations",
+                "path": "refs/listtranslations"
+              },
+              {
+                "title": "/translations",
+                "path": "refs/createtranslation"
+              },
+              {
+                "title": "/translations/{id}",
+                "path": "refs/gettranslation"
+              },
+              {
+                "title": "/translations/{id}",
+                "path": "refs/updatetranslation"
+              },
+              {
+                "title": "/translations/{id}",
+                "path": "refs/deletetranslation"
+              }
+            ]
+          },
+          {
+            "group": "Papersign Documents",
+            "pages": [
+              {
+                "title": "/papersign/documents",
+                "path": "refs/listpapersigndocuments"
+              },
+              {
+                "title": "/papersign/documents/{id}",
+                "path": "refs/getpapersigndocument"
+              },
+              {
+                "title": "/papersign/documents/{id}/send",
+                "path": "refs/papersignsenddocument"
+              },
+              {
+                "title": "/papersign/documents/{id}/copy",
+                "path": "refs/papersigncopydocument"
+              },
+              {
+                "title": "/papersign/documents/{id}/cancel",
+                "path": "refs/papersigncanceldocument"
+              },
+              {
+                "title": "/papersign/documents/{id}/move",
+                "path": "refs/papersignmovedocument"
+              }
+            ]
+          },
+          {
+            "group": "Papersign Folders",
+            "pages": [
+              {
+                "title": "/papersign/folders",
+                "path": "refs/listpapersignfolders"
+              },
+              {
+                "title": "/papersign/folders",
+                "path": "refs/postpapersignfolders"
+              }
+            ]
+          },
+          {
+            "group": "Papersign Webhooks",
+            "pages": [
+              {
+                "title": "/papersign/folders/{id}/webhooks",
+                "path": "refs/getpapersignfolderwebhooks"
+              },
+              {
+                "title": "/papersign/folders/{id}/webhooks",
+                "path": "refs/postpapersignfolderwebhooks"
+              },
+              {
+                "title": "/papersign/webhooks/{id}",
+                "path": "refs/putpapersignfolderwebhooks"
+              },
+              {
+                "title": "/papersign/webhooks/{id}",
+                "path": "refs/deletepapersignfolderwebhooks"
+              }
+            ]
+          },
+          {
+            "group": "Papersign Spaces",
+            "pages": [
+              {
+                "title": "/papersign/spaces",
+                "path": "refs/listpapersignspaces"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

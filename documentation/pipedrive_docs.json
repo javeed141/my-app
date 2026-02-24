@@ -1,0 +1,449 @@
+{
+  "name": "Pipedrive",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              {
+                "title": "Getting started",
+                "path": "docs/getting-started"
+              },
+              {
+                "title": "Developer sandbox account",
+                "path": "docs/developer-sandbox-account"
+              },
+              {
+                "title": "Pipedrive API in Postman or Insomnia",
+                "path": "docs/run-pipedrive-api-in-postman-or-insomnia"
+              },
+              {
+                "title": "Creating an app",
+                "path": "docs/marketplace-creating-a-proper-app"
+              },
+              {
+                "title": "Pipedrive API v2 overview",
+                "path": "docs/pipedrive-api-v2"
+              },
+              {
+                "title": "Pipedrive API v2 migration guide",
+                "path": "docs/pipedrive-api-v2-migration-guide"
+              }
+            ]
+          },
+          {
+            "group": "Core API Concepts",
+            "pages": [
+              {
+                "title": "About the Pipedrive API",
+                "path": "docs/core-api-concepts-about-pipedrive-api"
+              },
+              {
+                "title": "Changes to the API",
+                "path": "docs/changes-to-the-api"
+              },
+              {
+                "title": "Requests",
+                "path": "docs/core-api-concepts-requests"
+              },
+              {
+                "title": "Rate limiting",
+                "path": "docs/core-api-concepts-rate-limiting"
+              },
+              {
+                "title": "Responses",
+                "path": "docs/core-api-concepts-responses"
+              },
+              {
+                "title": "Date format",
+                "path": "docs/core-api-concepts-date-format"
+              },
+              {
+                "title": "Pagination",
+                "path": "docs/core-api-concepts-pagination"
+              },
+              {
+                "title": "HTTP status codes",
+                "path": "docs/core-api-concepts-http-status-codes"
+              },
+              {
+                "title": "Authentication",
+                "path": "docs/core-api-concepts-authentication"
+              },
+              {
+                "title": "Custom fields",
+                "path": "docs/core-api-concepts-custom-fields"
+              }
+            ]
+          },
+          {
+            "group": "Marketplace",
+            "pages": [
+              {
+                "title": "About the Marketplace",
+                "path": "docs/about-the-marketplace"
+              },
+              {
+                "title": "App installation flows",
+                "path": "docs/app-installation-flows"
+              },
+              {
+                "group": "Developer Hub",
+                "pages": [
+                  {
+                    "title": "Registering a public app",
+                    "path": "docs/marketplace-registering-the-app"
+                  },
+                  {
+                    "title": "Registering a private app",
+                    "path": "docs/marketplace-registering-a-private-app"
+                  },
+                  {
+                    "title": "Updating approved apps",
+                    "path": "docs/marketplace-updating-the-existing-app"
+                  },
+                  {
+                    "title": "Deleting an app",
+                    "path": "docs/marketplace-deleting-the-existing-app"
+                  }
+                ]
+              },
+              {
+                "title": "Client ID and client secret",
+                "path": "docs/client-id-and-client-secret"
+              },
+              {
+                "title": "App approval process",
+                "path": "docs/marketplace-app-approval-process"
+              },
+              {
+                "title": "Pipedrive Developer Partner Agreement",
+                "path": "docs/marketplace-vendor-agreement"
+              }
+            ]
+          },
+          {
+            "group": "App extensions",
+            "pages": [
+              {
+                "title": "App extensions overview",
+                "path": "docs/app-extensions"
+              },
+              {
+                "title": "Link actions",
+                "path": "docs/app-extensions-actions"
+              },
+              {
+                "group": "JSON modals",
+                "pages": [
+                  {
+                    "title": "Component library",
+                    "path": "docs/json-modals-component-library"
+                  },
+                  {
+                    "title": "User interaction handling",
+                    "path": "docs/json-modals-user-interaction-handling"
+                  }
+                ]
+              },
+              {
+                "group": "JSON panels",
+                "pages": [
+                  {
+                    "title": "Adding a JSON panel",
+                    "path": "docs/json-panels-adding-a-panel"
+                  },
+                  {
+                    "title": "Actions in JSON panels",
+                    "path": "docs/json-panels-actions-in-panels"
+                  }
+                ]
+              },
+              {
+                "group": "Custom UI extensions",
+                "pages": [
+                  {
+                    "title": "Custom floating window",
+                    "path": "docs/custom-ui-extensions-floating-window"
+                  },
+                  {
+                    "title": "Custom panels",
+                    "path": "docs/custom-ui-extensions-panels"
+                  },
+                  {
+                    "title": "Custom modals",
+                    "path": "docs/custom-ui-extensions-modals"
+                  },
+                  {
+                    "title": "Custom UI for app settings",
+                    "path": "docs/custom-ui-extensions-app-settings"
+                  }
+                ]
+              },
+              {
+                "title": "Video calling app extension",
+                "path": "docs/video-calling-app-extension"
+              },
+              {
+                "group": "Messaging app extension",
+                "pages": [
+                  {
+                    "title": "Implementing messaging app extension",
+                    "path": "docs/implementing-messaging-app-extension"
+                  },
+                  {
+                    "title": "Error codes and troubleshooting",
+                    "path": "docs/error-codes-and-troubleshooting-for-messaging-app-extension"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "APP FUNCTIONALITIES",
+            "pages": [
+              {
+                "title": "App sharing: Adding apps to multiple users",
+                "path": "docs/app-sharing-adding-apps-to-multiple-users"
+              }
+            ]
+          },
+          {
+            "group": "OAuth 2.0",
+            "pages": [
+              {
+                "title": "OAuth 2.0 overview",
+                "path": "docs/marketplace-oauth-api"
+              },
+              {
+                "title": "OAuth authorization",
+                "path": "docs/marketplace-oauth-authorization"
+              },
+              {
+                "title": "Scopes and permission explanations",
+                "path": "docs/marketplace-scopes-and-permissions-explanations"
+              },
+              {
+                "title": "State parameter",
+                "path": "docs/marketplace-oauth-authorization-state-parameter"
+              },
+              {
+                "title": "Getting user data",
+                "path": "docs/marketplace-getting-user-data"
+              },
+              {
+                "title": "Webhooks for apps",
+                "path": "docs/webhooks-for-apps"
+              },
+              {
+                "title": "Handling user app uninstallation",
+                "path": "docs/app-uninstallation"
+              },
+              {
+                "title": "OAuth status codes",
+                "path": "docs/marketplace-oauth-and-api-proxy-status-codes"
+              },
+              {
+                "title": "Migrating existing integration users",
+                "path": "docs/marketplace-migrating-existing-integration-users"
+              }
+            ]
+          },
+          {
+            "group": "Tutorials and Articles",
+            "pages": [
+              {
+                "group": "Guide for Webhooks v2",
+                "pages": [
+                  {
+                    "title": "List of Webhooks v2",
+                    "path": "docs/list-of-webhooks-v2"
+                  }
+                ]
+              },
+              {
+                "title": "Webhooks v2 migration guide",
+                "path": "docs/webhooks-v2-migration-guide"
+              },
+              {
+                "group": "Guide for Webhooks",
+                "pages": [
+                  {
+                    "title": "List of Webhooks",
+                    "path": "docs/list-of-webhooks"
+                  }
+                ]
+              },
+              {
+                "title": "Guide for optimizing API usage",
+                "path": "docs/guide-for-optimizing-api-usage"
+              },
+              {
+                "title": "Subscriptions API migration guide",
+                "path": "docs/subscriptions-api-migration-guide"
+              },
+              {
+                "group": "Tutorials",
+                "pages": [
+                  {
+                    "title": "How to find the API token",
+                    "path": "docs/how-to-find-the-api-token"
+                  },
+                  {
+                    "title": "How to get the company domain",
+                    "path": "docs/how-to-get-the-company-domain"
+                  },
+                  {
+                    "title": "Enabling API for company users",
+                    "path": "docs/enabling-api-for-company-users"
+                  }
+                ]
+              },
+              {
+                "title": "Working with labels",
+                "path": "docs/working-with-labels"
+              },
+              {
+                "title": "LeadBooster Browser API",
+                "path": "docs/leadbooster-browser-api"
+              },
+              {
+                "title": "FAQ",
+                "path": "docs/faq"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "pipedrive-engineering",
+        "groups": [
+          {
+            "group": "Marketplace",
+            "pages": [
+              {
+                "title": "Tips on getting your app approved!",
+                "path": "pipedrive-engineering/getting-your-marketplace-app-approved-on-the-first-review-is-it-even-possible-628b7e5eca47"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "tutorials",
+        "groups": [
+          {
+            "group": "Tutorials and Articles",
+            "pages": [
+              {
+                "title": "Hello World Tutorial",
+                "path": "tutorials/build-your-first-pipedrive-hello-world-app"
+              },
+              {
+                "title": "Adding an Activity",
+                "path": "tutorials/add-activity-pipedrive-api"
+              },
+              {
+                "title": "Adding a new custom field",
+                "path": "tutorials/add-custom-field-pipedrive-api"
+              },
+              {
+                "title": "Updating custom fields' values",
+                "path": "tutorials/update-custom-field-pipedrive-api"
+              },
+              {
+                "title": "Deleting a custom field",
+                "path": "tutorials/delete-custom-field-pipedrive-api"
+              },
+              {
+                "title": "Creating a Deal",
+                "path": "tutorials/create-a-deal-pipedrive-api"
+              },
+              {
+                "title": "Getting all Deals",
+                "path": "tutorials/get-deals-pipedrive-api"
+              },
+              {
+                "title": "Getting details of a Deal",
+                "path": "tutorials/getting-details-of-a-deal-pipedrive-api"
+              },
+              {
+                "title": "Updating a Deal",
+                "path": "tutorials/update-a-deal-pipedrive-api"
+              },
+              {
+                "title": "Assigning a Deal to a certain User",
+                "path": "tutorials/assigning-a-deal-to-certain-user-pipedrive-api"
+              },
+              {
+                "title": "Merging two Deals",
+                "path": "tutorials/merging-deals-pipedrive-api"
+              },
+              {
+                "title": "Using Pagination to retrieve all Deal titles",
+                "path": "tutorials/pagination-pipedrive-api"
+              },
+              {
+                "title": "Adding a File",
+                "path": "tutorials/adding-files-via-pipedrive-api"
+              },
+              {
+                "title": "Adding a remote file",
+                "path": "tutorials/adding-remote-files-via-pipedrive-api"
+              },
+              {
+                "title": "Adding a Filter",
+                "path": "tutorials/adding-filter-pipedrive-api"
+              },
+              {
+                "title": "Adding a Lead",
+                "path": "tutorials/adding-leads-to-pipedrive"
+              },
+              {
+                "title": "Adding an Organization",
+                "path": "tutorials/adding-organizations-to-pipedrive"
+              },
+              {
+                "title": "Merging two Organizations",
+                "path": "tutorials/merging-two-organizations-via-pipedrive-api"
+              },
+              {
+                "title": "Merging two Persons",
+                "path": "tutorials/merging-two-persons-via-pipedrive-api"
+              },
+              {
+                "title": "Updating a Person",
+                "path": "tutorials/updating-a-person-in-pipedrive-via-api"
+              },
+              {
+                "title": "Adding a Product",
+                "path": "tutorials/adding-a-product-pipedrive-api"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "pipedrive",
+        "groups": [
+          {
+            "group": "Tools",
+            "pages": [
+              {
+                "title": "Node.js API client",
+                "path": "pipedrive/client-nodejs"
+              },
+              {
+                "title": "PHP API client",
+                "path": "pipedrive/client-php"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
