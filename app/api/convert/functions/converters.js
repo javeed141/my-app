@@ -1,18 +1,5 @@
-// ════════════════════════════════════════════════════════════
-//  COMPONENT CONVERTERS
-//
-//  Each function handles one ReadMe → Documentation.AI
-//  conversion. Applied in order by the pipeline.
-//
-//  Every function takes a string, returns:
-//    { content: string, changes: Change[] }
-//
-//  IMPORTANT MDX RULES:
-//    - No HTML comments <!-- --> (use JSX: {/* */})
-//    - No bare { } in text (escape: \{ \})
-//    - No <br>, must be <br/>
-//    - No <URL> angle brackets (escape or convert)
-// ════════════════════════════════════════════════════════════
+// converters.js
+// Each converter takes a string and returns { content: string, changes: Change[] }
 
 import {
   EMOJI_TO_CALLOUT_KIND,
@@ -21,14 +8,12 @@ import {
   FA_TO_LUCIDE,
 } from "./types.js";
 
-// ── Helper: regex-safe emoji alternation ─────────────────────
-const emojiPattern = CALLOUT_EMOJIS
-  .map((e) => e.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-  .join("|");
+// Regex-safe emoji alternation for callout matching
+const emojiPattern = CALLOUT_EMOJIS.map((e) =>
+  e.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+).join("|");
 
-// ── Helper: normalize callout kind ───────────────────────────
-// ReadMe uses: "info", "warning", "error", "success", "default"
-// Doc.AI uses: "info", "alert", "danger", "success", "tip"
+// ReadMe kind → Documentation.AI kind
 const KIND_MAP = {
   info: "info",
   default: "info",
@@ -49,25 +34,13 @@ function normalizeKind(value) {
   return KIND_MAP[value.toLowerCase().trim()] || "info";
 }
 
-// ── Helper: escape quotes for JSX attribute values ───────────
-// "Use "Single Family Dwelling"" → "Use &quot;Single Family Dwelling&quot;"
+// Escape quotes for JSX attribute values
 function escAttr(str) {
   return str.replace(/"/g, "&quot;");
 }
 
-// ════════════════════════════════════════════════════════════
-//  1. BLOCKQUOTE CALLOUT CONVERTER
-//
-//  Handles BOTH ReadMe patterns:
-//    > 📘 Title           (standard — v4 pages)
-//    > ## 📘 Title         (heading before emoji — v3/older pages)
-//    > 📘                  (empty — just emoji, no text)
-//
-//  Output:
-//    <Callout kind="info" title="Title">
-//    Body content
-//    </Callout>
-// ════════════════════════════════════════════════════════════
+// --- 1. Blockquote Callout Converter ---
+// > 📘 Title  or  > ## 📘 Title  →  <Callout kind="info" title="Title">
 
 export function convertBlockquoteCallouts(content) {
   const changes = [];
@@ -78,8 +51,6 @@ export function convertBlockquoteCallouts(content) {
   let i = 0;
 
   while (i < lines.length) {
-    // Match: >  optional-heading-hashes  EMOJI  optional-text
-    // The (?:#{1,6}\s+)? handles ReadMe's > ## 📘 pattern
     const calloutStart = new RegExp(
       `^([ \\t]*>[ \\t]*)(?:#{1,6}\\s+)?(${emojiPattern})[ \\t]*(.*?)$`
     );
@@ -123,26 +94,24 @@ export function convertBlockquoteCallouts(content) {
     }
 
     const titleAttr = title ? ` title="${escAttr(title)}"` : "";
-    result.push(`<Callout kind="${kind}"${titleAttr}>\n${body}\n</Callout>`);
+    result.push(`<Callout kind="${kind}"${titleAttr}>`);
+    result.push(body);
+    result.push("</Callout>");
   }
 
   if (count > 0) {
-    changes.push({ type: "callout", count, detail: `emoji blockquote → <Callout kind="...">` });
+    changes.push({
+      type: "callout",
+      count,
+      detail: `emoji blockquote → <Callout kind="...">`,
+    });
   }
 
   return { content: result.join("\n"), changes };
 }
 
-// ════════════════════════════════════════════════════════════
-//  2. JSX CALLOUT CONVERTER
-//
-//  Handles ReadMe's JSX callout attributes:
-//    <Callout type="info">              → kind="info"
-//    <Callout type="warning">           → kind="alert"
-//    <Callout theme="danger">           → kind="danger"
-//    <Callout icon="⚠️">               → kind="alert"
-//    <Callout emoji="📘">               → kind="info"
-// ════════════════════════════════════════════════════════════
+// --- 2. JSX Callout Converter ---
+// <Callout type="info"> → <Callout kind="info">
 
 export function convertJsxCallouts(content) {
   const changes = [];
@@ -154,30 +123,29 @@ export function convertJsxCallouts(content) {
       // Already has kind= → skip
       if (/\bkind\s*=/.test(attrsStr)) return fullMatch;
 
-      // Look for ReadMe-specific props
       const typeMatch = attrsStr.match(/\btype\s*=\s*(["'])([^"']*)\1/);
       const themeMatch = attrsStr.match(/\btheme\s*=\s*(["'])([^"']*)\1/);
       const iconMatch = attrsStr.match(/\bicon\s*=\s*(["'])([^"']*)\1/);
       const emojiMatch = attrsStr.match(/\bemoji\s*=\s*(["'])([^"']*)\1/);
 
-      // No ReadMe props found → leave as-is
       if (!typeMatch && !themeMatch && !iconMatch && !emojiMatch) {
         return fullMatch;
       }
 
-      // Determine kind (priority: type > theme > icon > emoji)
+      // Priority: type > theme > icon > emoji
       let kind = "info";
       if (typeMatch) {
         kind = normalizeKind(typeMatch[2]);
       } else if (themeMatch) {
         kind = normalizeKind(themeMatch[2]);
       } else if (iconMatch) {
-        kind = EMOJI_TO_CALLOUT_KIND[iconMatch[2].trim()] || normalizeKind(iconMatch[2]);
+        kind =
+          EMOJI_TO_CALLOUT_KIND[iconMatch[2].trim()] ||
+          normalizeKind(iconMatch[2]);
       } else if (emojiMatch) {
         kind = EMOJI_TO_CALLOUT_KIND[emojiMatch[2].trim()] || "info";
       }
 
-      // Preserve title prop if it exists
       const titleMatch = attrsStr.match(/\btitle\s*=\s*(["'])([^"']*)\1/);
       const titleAttr = titleMatch ? ` title="${escAttr(titleMatch[2])}"` : "";
 
@@ -187,15 +155,18 @@ export function convertJsxCallouts(content) {
   );
 
   if (count > 0) {
-    changes.push({ type: "callout-jsx", count, detail: `<Callout type/theme/icon> → kind="..."` });
+    changes.push({
+      type: "callout-jsx",
+      count,
+      detail: `<Callout type/theme/icon> → kind="..."`,
+    });
   }
 
   return { content: result, changes };
 }
 
-// ════════════════════════════════════════════════════════════
-//  3. ACCORDION → EXPANDABLE
-// ════════════════════════════════════════════════════════════
+// --- 3. Accordion → Expandable ---
+// Also removes unsupported "icon" prop from Accordion
 
 export function convertAccordions(content) {
   const changes = [];
@@ -214,45 +185,155 @@ export function convertAccordions(content) {
     }
   }
 
+  // Remove icon prop from Expandable (not supported in Documentation.AI)
   if (count > 0) {
-    changes.push({ type: "accordion", count, detail: `<Accordion> → <Expandable>` });
+    result = result.replace(
+      /(<Expandable\s[^>]*?)\s+icon\s*=\s*(["'])[^"']*\2/gi,
+      "$1"
+    );
+
+    changes.push({
+      type: "accordion",
+      count,
+      detail: `<Accordion> → <Expandable> (removed icon prop)`,
+    });
   }
 
   return { content: result, changes };
 }
 
-// ════════════════════════════════════════════════════════════
-//  4. CODE GROUP CONVERTER
-// ════════════════════════════════════════════════════════════
+// --- 4. Cards → Columns ---
+// <Cards columns={3}> → <Columns cols={3}>
+// Per mapping: Cards→Columns, columns→cols, Card stays Card
+
+export function convertCards(content) {
+  const changes = [];
+  let count = 0;
+
+  let result = content;
+
+  // Rename <Cards> → <Columns>
+  const openMatches = result.match(/<Cards(\s|>)/g);
+  if (openMatches) {
+    count += openMatches.length;
+    result = result.replace(/<Cards(\s|>)/g, "<Columns$1");
+    result = result.replace(/<\/Cards>/g, "</Columns>");
+
+    // Rename columns={N} → cols={N}
+    result = result.replace(
+      /(<Columns\s[^>]*?)columns\s*=\s*\{(\d+)\}/g,
+      "$1cols={$2}"
+    );
+  }
+
+  if (count > 0) {
+    changes.push({
+      type: "cards",
+      count,
+      detail: `<Cards columns={N}> → <Columns cols={N}>`,
+    });
+  }
+
+  return { content: result, changes };
+}
+
+// --- 5. Columns layout → cols ---
+// <Columns layout="auto"> → <Columns cols={N}> (count Column children)
+// Removes <Column> wrapper tags
+
+export function convertColumnsLayout(content) {
+  const changes = [];
+  let count = 0;
+
+  // Match <Columns layout="...">...</Columns> blocks
+  const result = content.replace(
+    /<Columns\s+layout\s*=\s*(["'])[^"']*\1\s*>([\s\S]*?)<\/Columns>/g,
+    (match, _quote, inner) => {
+      // Count <Column> children
+      const columnCount = (inner.match(/<Column[\s>]/g) || []).length || 2;
+
+      // Remove <Column> and </Column> wrappers
+      let cleaned = inner;
+      cleaned = cleaned.replace(/<Column\s*>/g, "");
+      cleaned = cleaned.replace(/<\/Column>/g, "");
+
+      count++;
+      return `<Columns cols={${columnCount}}>\n${cleaned.trim()}\n</Columns>`;
+    }
+  );
+
+  if (count > 0) {
+    changes.push({
+      type: "columns-layout",
+      count,
+      detail: `<Columns layout="auto"> → <Columns cols={N}>, removed <Column> wrappers`,
+    });
+  }
+
+  return { content: result, changes };
+}
+
+// --- 6. Code Group Converter ---
+// Wraps 2+ consecutive code blocks in <CodeGroup>
+// Extracts tab labels from code fence meta: ```javascript Tab A → tabs="Tab A,Tab B"
 
 export function convertCodeGroups(content) {
   const changes = [];
   let count = 0;
 
-  const consecutiveCodeBlocks = /(?:^```[\w-]*[^\n]*\n[\s\S]*?^```[ \t]*\n[ \t]*\n?){2,}/gm;
+  // Match 2+ consecutive fenced code blocks
+  // Each block: ```lang...\ncode\n```  followed by optional blank lines
+  // The last block may not have a trailing newline
+  const consecutiveCodeBlocks =
+    /(?:^```[\w-]*[^\n]*\n[\s\S]*?^```[ \t]*(?:\n[ \t]*\n?|$)){2,}/gm;
 
   const result = content.replace(consecutiveCodeBlocks, (match) => {
-    const langs = [...match.matchAll(/^```([\w-]*)/gm)].map((m) => m[1]);
-    const uniqueLangs = new Set(langs.filter(Boolean));
+    const blocks = [...match.matchAll(/^```([\w-]*)([^\n]*)\n([\s\S]*?)^```/gm)];
+    if (blocks.length < 2) return match;
 
-    if (uniqueLangs.size >= 2) {
-      count++;
-      const trimmed = match.replace(/\n+$/, "\n");
-      return `<CodeGroup>\n${trimmed}</CodeGroup>\n`;
-    }
-    return match;
+    const langs = blocks.map((b) => b[1]).filter(Boolean);
+    const uniqueLangs = new Set(langs);
+
+    // Only wrap if there are at least 2 different languages
+    if (uniqueLangs.size < 2) return match;
+
+    count++;
+
+    // Extract tab labels from the text after the language identifier
+    // e.g. ```javascript Tab A → tab label is "Tab A"
+    const tabLabels = blocks.map((b) => {
+      const meta = b[2].trim(); // text after language name
+      if (meta) return meta;
+      return b[1] || "Code"; // fallback to language name
+    });
+
+    const tabsAttr = ` tabs="${tabLabels.join(",")}"`;
+
+    // Rebuild each code block with clean spacing
+    const rebuilt = blocks
+      .map((b) => {
+        const lang = b[1] || "";
+        const code = b[3];
+        return "```" + lang + "\n" + code + "```";
+      })
+      .join("\n\n");
+
+    return `<CodeGroup${tabsAttr}>\n${rebuilt}\n</CodeGroup>\n`;
   });
 
   if (count > 0) {
-    changes.push({ type: "codegroup", count, detail: `consecutive code blocks → <CodeGroup>` });
+    changes.push({
+      type: "codegroup",
+      count,
+      detail: `consecutive code blocks → <CodeGroup tabs="...">`,
+    });
   }
 
   return { content: result, changes };
 }
 
-// ════════════════════════════════════════════════════════════
-//  5. EMBED CONVERTER
-// ════════════════════════════════════════════════════════════
+// --- 7. Embed Converter ---
+// [block:embed] JSON and @[title](url) → <iframe>
 
 export function convertEmbeds(content) {
   const changes = [];
@@ -264,8 +345,12 @@ export function convertEmbeds(content) {
       try {
         const data = JSON.parse(jsonStr);
         count++;
+        const url = data.url || data.html || "";
         const title = data.title ? ` title="${escAttr(data.title)}"` : "";
-        return `<iframe src="${escAttr(data.url || data.html)}"${title} width="100%" height="400" />`;
+
+        // Convert YouTube watch URL to embed URL
+        const embedUrl = toEmbedUrl(url);
+        return `<iframe src="${escAttr(embedUrl)}"${title} width="100%" height="400" />`;
       } catch {
         count++;
         return `{/* [block:embed] could not be parsed */}`;
@@ -273,56 +358,92 @@ export function convertEmbeds(content) {
     }
   );
 
-  result = result.replace(
-    /@\[([^\]]*)\]\(([^)]+)\)/g,
-    (match, title, url) => {
-      count++;
-      const titleAttr = title ? ` title="${escAttr(title)}"` : "";
-      return `<iframe src="${escAttr(url)}"${titleAttr} width="100%" height="400" />`;
-    }
-  );
+  // @[title](url) format
+  result = result.replace(/@\[([^\]]*)\]\(([^)]+)\)/g, (match, title, url) => {
+    count++;
+    const titleAttr = title ? ` title="${escAttr(title)}"` : "";
+    const embedUrl = toEmbedUrl(url);
+    return `<iframe src="${escAttr(embedUrl)}"${titleAttr} width="100%" height="400" />`;
+  });
 
   if (count > 0) {
-    changes.push({ type: "embed", count, detail: `@embed / [block:embed] → <iframe>` });
+    changes.push({
+      type: "embed",
+      count,
+      detail: `@embed / [block:embed] → <iframe>`,
+    });
   }
 
   return { content: result, changes };
 }
 
-// ════════════════════════════════════════════════════════════
-//  6. IMAGE FIXER
-// ════════════════════════════════════════════════════════════
+// Convert YouTube watch URL to embed URL
+// https://youtube.com/watch?v=abc123 → https://www.youtube.com/embed/abc123
+function toEmbedUrl(url) {
+  try {
+    const parsed = new URL(url);
+    if (
+      parsed.hostname.includes("youtube.com") &&
+      parsed.pathname === "/watch"
+    ) {
+      const videoId = parsed.searchParams.get("v");
+      if (videoId) return `https://www.youtube.com/embed/${videoId}`;
+    }
+    if (parsed.hostname === "youtu.be") {
+      const videoId = parsed.pathname.slice(1);
+      if (videoId) return `https://www.youtube.com/embed/${videoId}`;
+    }
+  } catch {
+    // Not a valid URL, return as-is
+  }
+  return url;
+}
+
+// --- 8. Image Fixer ---
+// Adds missing alt text, removes ReadMe-specific attributes (align, border)
+// Keeps image URLs as online links
 
 export function fixImages(content) {
   const changes = [];
   let count = 0;
 
-  let result = content.replace(/!\[\]\(([^)]+)\)/g, (match, url) => {
-    count++;
-    return `![Image](${url})`;
-  });
-
-  result = result.replace(
-    /<Image(\s[^>]*?)(\s*\/?>)/gi,
-    (match, attrs, close) => {
-      const cleaned = attrs
-        .replace(/\s+(align|border|caption)\s*=\s*(["'][^"']*["']|\{[^}]*\}|\S+)/gi, "")
-        .trim();
-      if (cleaned !== attrs.trim()) count++;
-      return `<Image ${cleaned}${close}`;
+  // Convert markdown images to <Image> component tags
+  // ![alt](url) → <Image src="url" width="1920" height="1080" alt="alt" />
+  // ![](url "title") → strips the "title" part, keeps just the URL
+  let result = content.replace(
+    /!\[([^\]]*)\]\(([^)]+)\)/g,
+    (match, alt, rawUrl) => {
+      count++;
+      // Strip optional title: url "title" or url 'title'
+      const url = rawUrl.replace(/\s+["'][^"']*["']\s*$/, "").trim();
+      return `<Image src="${url}" width="1920" height="1080" alt="${alt}" />`;
     }
   );
 
+  // Clean up existing <Image> tags: remove align, border props
+  result = result.replace(/<Image(\s[^>]*?)(\s*\/?>)/gi, (match, attrs, close) => {
+    const cleaned = attrs
+      .replace(
+        /\s+(align|border|caption)\s*=\s*(["'][^"']*["']|\{[^}]*\}|\S+)/gi,
+        ""
+      )
+      .trim();
+    if (cleaned !== attrs.trim()) count++;
+    return `<Image ${cleaned}${close}`;
+  });
+
   if (count > 0) {
-    changes.push({ type: "image", count, detail: `added alt text / removed align,border` });
+    changes.push({
+      type: "image",
+      count,
+      detail: `markdown images → <Image> component`,
+    });
   }
 
   return { content: result, changes };
 }
 
-// ════════════════════════════════════════════════════════════
-//  7. FONT AWESOME → LUCIDE ICON CONVERTER
-// ════════════════════════════════════════════════════════════
+// --- 9. Font Awesome → Lucide Icon Converter ---
 
 export function convertIcons(content) {
   const changes = [];
@@ -336,59 +457,28 @@ export function convertIcons(content) {
         count++;
         return `icon=${quote}${lucide}${quote}`;
       }
-      // Unknown FA icon — strip "fa-" prefix as best-effort fallback
+      // Unknown FA icon — strip "fa-" prefix as fallback
       count++;
       return `icon=${quote}${faIcon.replace(/^fa-/, "")}${quote}`;
     }
   );
 
   if (count > 0) {
-    changes.push({ type: "icon", count, detail: `Font Awesome → Lucide icon names` });
+    changes.push({
+      type: "icon",
+      count,
+      detail: `Font Awesome → Lucide icon names`,
+    });
   }
 
   return { content: result, changes };
 }
 
-// ════════════════════════════════════════════════════════════
-//  8. CARDS CONVERTER
-// ════════════════════════════════════════════════════════════
-
-export function convertCards(content) {
-  const changes = [];
-  let count = 0;
-
-  let result = content;
-  const openMatches = result.match(/<Cards(\s|>)/g);
-  if (openMatches) {
-    count += openMatches.length;
-    result = result.replace(/<Cards(\s|>)/g, "<CardGroup$1");
-    result = result.replace(/<\/Cards>/g, "</CardGroup>");
-  }
-
-  if (count > 0) {
-    changes.push({ type: "cards", count, detail: `<Cards> → <CardGroup>` });
-  }
-
-  return { content: result, changes };
-}
-
-// ════════════════════════════════════════════════════════════
-//  9. BLOCK SYNTAX CONVERTER
+// --- 10. Block Syntax Converter ---
+// ReadMe's [block:TYPE] JSON [/block] → MDX components or tables
 //
-//  ReadMe's legacy [block:TYPE] JSON [/block] syntax.
-//
-//  CRITICAL RULES:
-//    1. NEVER return raw match — the JSON { } breaks MDX
-//    2. NEVER use <!-- --> comments — MDX can't parse them
-//    3. Always use {/* JSX comments */} for fallbacks
-//
-//  Parameter block JSON format:
-//    {
-//      "data": { "h-0": "Header", "0-0": "Cell value" },
-//      "cols": 2,   ← number, NOT an array
-//      "rows": 3    ← number, NOT an array
-//    }
-// ════════════════════════════════════════════════════════════
+// Never returns raw JSON (bare {} breaks MDX).
+// Always uses {/* JSX comments */} for fallbacks, never <!-- -->.
 
 export function convertBlockSyntax(content) {
   const changes = [];
@@ -401,7 +491,6 @@ export function convertBlockSyntax(content) {
       try {
         data = JSON.parse(jsonStr);
       } catch {
-        // Can't leave raw { } in output — MDX will crash
         count++;
         return `{/* [block:${blockType}] could not be parsed */}`;
       }
@@ -409,8 +498,6 @@ export function convertBlockSyntax(content) {
       count++;
 
       switch (blockType) {
-
-        // ── Callout ─────────────────────────────────────
         case "callout": {
           const kind = normalizeKind(data.type);
           const title = data.title || "";
@@ -423,7 +510,6 @@ export function convertBlockSyntax(content) {
           return `<Callout kind="${kind}"${titleAttr}>\n${body}\n</Callout>`;
         }
 
-        // ── Code ────────────────────────────────────────
         case "code": {
           const codes = data.codes || [];
           if (codes.length === 0) return "";
@@ -432,32 +518,39 @@ export function convertBlockSyntax(content) {
             const c = codes[0];
             const lang = c.language || "";
             const name = c.name ? ` ${c.name}` : "";
-            return `\`\`\`${lang}${name}\n${c.code || ""}\n\`\`\``;
+            return "```" + lang + name + "\n" + (c.code || "") + "\n```";
           }
 
-          const blocks = codes.map((c) => {
-            const lang = c.language || "";
-            const name = c.name ? ` ${c.name}` : "";
-            return `\`\`\`${lang}${name}\n${c.code || ""}\n\`\`\``;
-          }).join("\n\n");
-          return `<CodeGroup>\n${blocks}\n</CodeGroup>`;
+          // Multiple code blocks → CodeGroup with tabs
+          const tabLabels = codes.map(
+            (c) => c.name || c.language || "Code"
+          );
+          const blocks = codes
+            .map((c) => {
+              const lang = c.language || "";
+              return "```" + lang + "\n" + (c.code || "") + "\n```";
+            })
+            .join("\n\n");
+
+          return `<CodeGroup tabs="${tabLabels.join(",")}">\n${blocks}\n</CodeGroup>`;
         }
 
-        // ── Image ───────────────────────────────────────
         case "image": {
           const images = data.images || [];
           if (images.length === 0) return "";
 
-          return images.map((img) => {
-            if (Array.isArray(img.image)) {
-              const [url, caption] = img.image;
-              return `![${caption || "Image"}](${url})`;
-            }
-            return `![${img.caption || "Image"}](${img.image || img.url || ""})`;
-          }).join("\n\n");
+          return images
+            .map((img) => {
+              if (Array.isArray(img.image)) {
+                const [url, caption] = img.image;
+                return `![${caption || "Image"}](${url})`;
+              }
+              return `![${img.caption || "Image"}](${img.image || img.url || ""})`;
+            })
+            .join("\n\n");
         }
 
-        // ── Parameters / API Header → Markdown Table ────
+        // Parameters / API Header → Markdown table
         case "parameters":
         case "api-header": {
           const numCols = data.cols || 0;
@@ -488,12 +581,10 @@ export function convertBlockSyntax(content) {
           return [headerRow, separator, ...bodyRows].join("\n");
         }
 
-        // ── HTML ────────────────────────────────────────
         case "html": {
           return data.body || data.html || "";
         }
 
-        // ── Unknown — NEVER return raw JSON ─────────────
         default: {
           return `{/* [block:${blockType}] needs manual review */}`;
         }
@@ -502,7 +593,11 @@ export function convertBlockSyntax(content) {
   );
 
   if (count > 0) {
-    changes.push({ type: "block-syntax", count, detail: `[block:...] → modern MDX components` });
+    changes.push({
+      type: "block-syntax",
+      count,
+      detail: `[block:...] → modern MDX components`,
+    });
   }
 
   return { content: result, changes };

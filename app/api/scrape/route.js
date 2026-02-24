@@ -81,6 +81,7 @@ export async function POST(req) {
   let siteBase; // origin + version prefix (e.g. "https://docs.example.com/v3")
   try {
     const parsed = new URL(url);
+    console.log(parsed)
     baseUrl = parsed.origin;
     const versionPrefix = extractVersionPrefix(parsed.pathname);
     siteBase = baseUrl + versionPrefix;

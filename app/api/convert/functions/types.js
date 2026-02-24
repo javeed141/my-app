@@ -1,32 +1,23 @@
-// ════════════════════════════════════════════════════════════
-//  CONFIG & CONSTANTS for MDX Converter
-// ════════════════════════════════════════════════════════════
+// Config & constants for the MDX converter
 
 export const FETCH_TIMEOUT_MS = 15_000;
-export const MAX_RESPONSE_BYTES = 2 * 1024 * 1024; // 2MB — raw MDX files are small
+export const MAX_RESPONSE_BYTES = 2 * 1024 * 1024; // 2MB
 
 export const FETCH_HEADERS = {
-  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
   Accept: "text/plain, text/markdown, text/x-markdown, */*",
 };
 
-// ── Emoji → Callout Kind Mapping ─────────────────────────────
-//
-// ReadMe uses emoji prefixes in blockquotes to indicate callout type:
-//   > 📘 Title        → info
-//   > 👍 Title        → success / tip
-//   > ⚠️ Title        → warning
-//   > 🚧 Title        → warning (construction)
-//   > ❗ Title         → danger / error
-//   > ❗️ Title        → danger (variant)
-//
-// Documentation.AI uses <Callout kind="..."> with these kinds:
-//   info, success, warning, danger, tip, note
+// --- Emoji → Callout Kind ---
+// ReadMe uses emoji prefixes in blockquotes: > 📘 Title → info
+// Documentation.AI uses <Callout kind="...">
 
 export const EMOJI_TO_CALLOUT_KIND = {
   "📘": "info",
   "ℹ️": "info",
   "📝": "info",
+  "💡": "info",
   "📗": "success",
   "👍": "tip",
   "✅": "success",
@@ -40,25 +31,17 @@ export const EMOJI_TO_CALLOUT_KIND = {
   "📕": "danger",
 };
 
-// All emoji characters used as callout prefixes (for regex building)
 export const CALLOUT_EMOJIS = Object.keys(EMOJI_TO_CALLOUT_KIND);
 
-// ── Component Rename Map ─────────────────────────────────────
-//
-// ReadMe component name → Documentation.AI component name
-// Only includes components that need renaming (not 1:1 matches)
+// --- Component Rename Map ---
+// ReadMe component → Documentation.AI component
 
 export const COMPONENT_RENAME = {
-  "Accordion": "Expandable",
-  "AccordionGroup": "ExpandableGroup",
+  Accordion: "Expandable",
+  AccordionGroup: "ExpandableGroup",
 };
 
-// ── Icon Mapping ─────────────────────────────────────────────
-//
-// ReadMe uses Font Awesome icons: fa-rocket, fa-check, etc.
-// Documentation.AI uses Lucide icons: rocket, check, etc.
-//
-// This maps the most common FA icons to their Lucide equivalents.
+// --- Font Awesome → Lucide Icon Map ---
 
 export const FA_TO_LUCIDE = {
   "fa-rocket": "rocket",
@@ -67,8 +50,9 @@ export const FA_TO_LUCIDE = {
   "fa-info-circle": "info",
   "fa-info": "info",
   "fa-warning": "triangle-alert",
-  "fa-exclamation-triangle": "triangle-alert",
+  "fa-exclamation-triangle": "alert-triangle",
   "fa-exclamation-circle": "alert-circle",
+  "fa-exclamation": "alert-triangle",
   "fa-times": "x",
   "fa-times-circle": "x-circle",
   "fa-star": "star",
@@ -97,12 +81,13 @@ export const FA_TO_LUCIDE = {
   "fa-cloud": "cloud",
   "fa-bolt": "zap",
   "fa-lightning": "zap",
-  "fa-book": "book",
+  "fa-book": "book-open",
   "fa-bookmark": "bookmark",
   "fa-eye": "eye",
+  "fa-eye-slash": "eye-off",
   "fa-edit": "pencil",
   "fa-pencil": "pencil",
-  "fa-trash": "trash",
+  "fa-trash": "trash-2",
   "fa-plus": "plus",
   "fa-minus": "minus",
   "fa-arrow-right": "arrow-right",
@@ -137,12 +122,16 @@ export const FA_TO_LUCIDE = {
   "fa-lightbulb": "lightbulb",
   "fa-plug": "plug",
   "fa-puzzle-piece": "puzzle",
+  "fa-cube": "package",
+  "fa-desktop": "monitor",
+  "fa-mobile": "smartphone",
+  "fa-github": "github",
+  "fa-apple": "apple",
+  "fa-windows": "monitor",
+  "fa-linux": "terminal",
 };
 
-// ── ReadMe Frontmatter Fields to Drop ────────────────────────
-//
-// These are ReadMe-only metadata fields that have no meaning
-// in Documentation.AI. They get stripped from the YAML frontmatter.
+// --- ReadMe-only frontmatter fields to strip ---
 
 export const README_ONLY_FIELDS = new Set([
   "category",
@@ -169,10 +158,10 @@ export const README_ONLY_FIELDS = new Set([
   "childrenPages",
 ]);
 
-// ── SSRF Protection ──────────────────────────────────────────
-// Same pattern as scrape API — block internal/private network URLs
+// --- SSRF Protection ---
 
-const BLOCKED_HOSTS = /^(localhost|127\.|10\.|172\.(1[6-9]|2\d|3[01])\.|192\.168\.|0\.0\.0\.0|::1|\[::1\])/i;
+const BLOCKED_HOSTS =
+  /^(localhost|127\.|10\.|172\.(1[6-9]|2\d|3[01])\.|192\.168\.|0\.0\.0\.0|::1|\[::1\])/i;
 
 export function isUrlAllowed(urlStr) {
   try {
@@ -185,7 +174,7 @@ export function isUrlAllowed(urlStr) {
   }
 }
 
-// ── Fetch with timeout + size limit ──────────────────────────
+// --- Fetch with timeout + size limit ---
 
 export async function fetchRaw(url) {
   const controller = new AbortController();
@@ -205,16 +194,19 @@ export async function fetchRaw(url) {
 
     const contentLength = res.headers.get("content-length");
     if (contentLength && parseInt(contentLength, 10) > MAX_RESPONSE_BYTES) {
-      console.warn(`[converter] Response too large (${contentLength} bytes) for ${url}`);
+      console.warn(`[converter] Response too large for ${url}`);
       return null;
     }
 
     return await res.text();
   } catch (err) {
     if (err instanceof DOMException && err.name === "AbortError") {
-      console.warn(`[converter] Timeout after ${FETCH_TIMEOUT_MS}ms for ${url}`);
+      console.warn(`[converter] Timeout for ${url}`);
     } else {
-      console.warn(`[converter] Fetch failed for ${url}:`, err instanceof Error ? err.message : err);
+      console.warn(
+        `[converter] Fetch failed for ${url}:`,
+        err instanceof Error ? err.message : err
+      );
     }
     return null;
   } finally {
