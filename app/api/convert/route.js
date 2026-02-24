@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-
+import { mkdir, writeFile } from "fs/promises";
+import { join } from "path";
 import { isUrlAllowed, fetchRaw } from "./functions/types.js";
 import { extractFrontmatter } from "./functions/frontmatter.js";
 import {
@@ -19,22 +20,34 @@ import {
   removeExports,
   removeReadmeCssClasses,
   fixHeadingHierarchy,
+  fixTableAlignment,
   fixHtmlComments,
   fixVoidElements,
+  fixBackslashEscapes,  // ← ADD
   fixAngleBrackets,
   fixCurlyBraces,
   collapseBlankLines,
   scanUnknownComponents,
 } from "./functions/cleanup.js";
 
-// Pipeline order matters — do not reorder
-//
-// Phase 1: Convert ReadMe components to Documentation.AI equivalents
-// Phase 2: Strip ReadMe-specific artifacts (imports, exports, CSS classes)
-// Phase 3: Fix MDX syntax issues (must run last)
+async function saveUnknownComponents(componentBlocks) {
+  if (componentBlocks.length === 0) return;
+
+  const dir = join(process.cwd(), "unknown-components");
+  await mkdir(dir, { recursive: true });
+
+  for (const block of componentBlocks) {
+    const fileName = `${block.name}.mdx`;
+    const filePath = join(dir, fileName);
+
+    let fileContent = `{/* Unknown component: <${block.name}> */}\n\n`;
+    fileContent += block.raw + "\n";
+
+    await writeFile(filePath, fileContent, "utf-8");
+  }
+}
 
 const CONVERTER_PIPELINE = [
-  // Phase 1 — Component conversion
   convertBlockSyntax,
   convertBlockquoteCallouts,
   convertJsxCallouts,
@@ -45,19 +58,18 @@ const CONVERTER_PIPELINE = [
   convertEmbeds,
   convertIcons,
   fixImages,
-  // Phase 2 — Cleanup
   removeImports,
   removeExports,
   removeReadmeCssClasses,
   fixHeadingHierarchy,
-  // Phase 3 — MDX safety
+  fixTableAlignment,
   fixHtmlComments,
   fixVoidElements,
+  fixBackslashEscapes,  // ← ADD before fixAngleBrackets
   fixAngleBrackets,
   fixCurlyBraces,
   collapseBlankLines,
 ];
-
 export async function POST(req) {
   let body;
   try {
@@ -116,21 +128,21 @@ export async function POST(req) {
       removedFields,
     } = extractFrontmatter(rawMdx);
 
-    // Step 2: Run converter pipeline
-    const allChanges = [];
+    // Step 2: Scan and remove unknown components BEFORE pipeline
     let content = mdxBody;
+    const { unknowns, componentBlocks, content: cleanedContent } = scanUnknownComponents(content);
+    await saveUnknownComponents(componentBlocks);
+    content = cleanedContent;
+
+    console.log(componentBlocks);
+
+    // Step 3: Run converter pipeline
+    const allChanges = [];
 
     for (const converter of CONVERTER_PIPELINE) {
       const result = converter(content);
       content = result.content;
       allChanges.push(...result.changes);
-    }
-
-    // Step 3: Flag unknown components with comments
-    const { unknowns, warnings } = scanUnknownComponents(content);
-
-    if (warnings.length > 0) {
-      content = warnings.join("\n") + "\n\n" + content;
     }
 
     // Step 4: Reassemble frontmatter + body
@@ -146,13 +158,14 @@ export async function POST(req) {
         detail: `removed fields: ${removedFields.join(", ")}`,
       });
     }
-    console.log(frontmatter + frontmatterStr)
-    return NextResponse.json({
+
+  return NextResponse.json({
       original: rawMdx,
       converted,
       frontmatter: frontmatter || {},
       changes: allChanges,
-      warnings,
+      warnings: [],  // ← ADD THIS
+      componentBlocks,
       stats: {
         originalLength: rawMdx.length,
         convertedLength: converted.length,

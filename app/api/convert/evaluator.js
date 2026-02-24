@@ -113,11 +113,75 @@ coverImage: https://cdn.readme.io/hero.png
 ---
 # Content`, [
   r => contains(r, "https://cdn.readme.io/hero.png"),
+  r => fieldRemoved(r, "coverImage"),
 ]);
 
-test("No frontmatter passes through", `# Just content\nSome text`, [
-  r => contains(r, "# Just content"),
+test("No frontmatter — extracts title from # heading", `# Just content\nSome text`, [
+  r => contains(r, "title: Just content"),
   r => contains(r, "Some text"),
+]);
+
+test("Nested frontmatter — strips metadata, link, api, recipe", `---
+title: API Guide
+metadata:
+  title: SEO Title
+  description: SEO description
+  keywords:
+    - api
+    - guide
+  robots: index
+link:
+  url: https://example.com
+  new_tab: true
+api:
+  file: spec.json
+  operationId: get_users
+recipe:
+  color: blue
+  icon: rocket
+---
+# Content`, [
+  r => contains(r, "title: API Guide"),
+  r => fieldRemoved(r, "metadata"),
+  r => fieldRemoved(r, "link"),
+  r => fieldRemoved(r, "api"),
+  r => fieldRemoved(r, "recipe"),
+]);
+
+test("Maps excerpt to description when no description", `---
+title: My Page
+excerpt: This is a summary
+hidden: true
+---
+# Content`, [
+  r => contains(r, "title: My Page"),
+  r => contains(r, "description: This is a summary"),
+  r => fieldRemoved(r, "excerpt"),
+  r => fieldRemoved(r, "hidden"),
+]);
+
+test("Maps metadata.description to description when no excerpt", `---
+title: My Page
+metadata:
+  description: SEO description here
+---
+# Content`, [
+  r => contains(r, "title: My Page"),
+  r => contains(r, "description: SEO description here"),
+  r => fieldRemoved(r, "metadata"),
+]);
+
+test("Strips deprecated, icon, fullscreen", `---
+title: Old Page
+deprecated: true
+icon: fad fa-handwave
+fullscreen: true
+---
+# Content`, [
+  r => contains(r, "title: Old Page"),
+  r => fieldRemoved(r, "deprecated"),
+  r => fieldRemoved(r, "icon"),
+  r => fieldRemoved(r, "fullscreen"),
 ]);
 
 // --- CALLOUTS (blockquote) ---

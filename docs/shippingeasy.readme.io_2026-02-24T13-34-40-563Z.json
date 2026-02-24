@@ -1,0 +1,280 @@
+{
+  "site": "shippingeasy.readme.io",
+  "navType": "tabs",
+  "tabs": [
+    "API Reference"
+  ],
+  "sections": [
+    {
+      "name": "API Reference",
+      "pages": [
+        {
+          "title": "Getting Started",
+          "path": "/refs/getting-started",
+          "fullUrl": "https://shippingeasy.readme.io/refs/getting-started",
+          "level": 0,
+          "group": "Documentation"
+        },
+        {
+          "title": "API Credentials",
+          "path": "/refs/api-credentials",
+          "fullUrl": "https://shippingeasy.readme.io/refs/api-credentials",
+          "level": 0,
+          "group": "Documentation"
+        },
+        {
+          "title": "Rate Limits and Throttling",
+          "path": "/refs/rate-limits-and-throttling",
+          "fullUrl": "https://shippingeasy.readme.io/refs/rate-limits-and-throttling",
+          "level": 0,
+          "group": "Documentation"
+        },
+        {
+          "title": "Official API Client Libraries",
+          "path": "/refs/official-libraries",
+          "fullUrl": "https://shippingeasy.readme.io/refs/official-libraries",
+          "level": 0,
+          "group": "Documentation"
+        },
+        {
+          "title": "Authentication",
+          "path": "/refs/authentication-signing-requests",
+          "fullUrl": "https://shippingeasy.readme.io/refs/authentication-signing-requests",
+          "level": 0,
+          "group": "Documentation"
+        },
+        {
+          "title": "Bruno API Example Collection",
+          "path": "/refs/bruno-api-example-collection",
+          "fullUrl": "https://shippingeasy.readme.io/refs/bruno-api-example-collection",
+          "level": 0,
+          "group": "Documentation"
+        },
+        {
+          "title": "/orders",
+          "path": "/refs/orders",
+          "fullUrl": "https://shippingeasy.readme.io/refs/orders",
+          "level": 0,
+          "group": "Customer API"
+        },
+        {
+          "title": "/orders/:id",
+          "path": "/refs/ordersid",
+          "fullUrl": "https://shippingeasy.readme.io/refs/ordersid",
+          "level": 0,
+          "group": "Customer API"
+        },
+        {
+          "title": "/stores",
+          "path": "/refs/stores",
+          "fullUrl": "https://shippingeasy.readme.io/refs/stores",
+          "level": 0,
+          "group": "Customer API"
+        },
+        {
+          "title": "/stores/:store_api_key/orders",
+          "path": "/refs/storesstore_api_keyorders",
+          "fullUrl": "https://shippingeasy.readme.io/refs/storesstore_api_keyorders",
+          "level": 0,
+          "group": "Customer API"
+        },
+        {
+          "title": "/stores/:store_api_key/orders/:external_order_identifier",
+          "path": "/refs/storesstore_api_keyordersexternal_order_identifier-1",
+          "fullUrl": "https://shippingeasy.readme.io/refs/storesstore_api_keyordersexternal_order_identifier-1",
+          "level": 0,
+          "group": "Customer API"
+        },
+        {
+          "title": "/stores/:store_api_key/orders",
+          "path": "/refs/apiorders",
+          "fullUrl": "https://shippingeasy.readme.io/refs/apiorders",
+          "level": 0,
+          "group": "Customer API"
+        },
+        {
+          "title": "/stores/:store_api_key/orders/:order_id/cancellations",
+          "path": "/refs/apiorderscancellations",
+          "fullUrl": "https://shippingeasy.readme.io/refs/apiorderscancellations",
+          "level": 0,
+          "group": "Customer API"
+        },
+        {
+          "title": "/stores/:store_api_key/orders/:external_order_identifier/status",
+          "path": "/refs/storesstore_api_keyordersexternal_order_identifier",
+          "fullUrl": "https://shippingeasy.readme.io/refs/storesstore_api_keyordersexternal_order_identifier",
+          "level": 0,
+          "group": "Customer API"
+        },
+        {
+          "title": "Quick Start",
+          "path": "/refs/getting-started-1",
+          "fullUrl": "https://shippingeasy.readme.io/refs/getting-started-1",
+          "level": 0,
+          "group": "Customer API"
+        },
+        {
+          "title": "Ecommerce Plugin Development",
+          "path": "/refs/ecommerce-plugin-development",
+          "fullUrl": "https://shippingeasy.readme.io/refs/ecommerce-plugin-development",
+          "level": 0,
+          "group": "Customer API"
+        },
+        {
+          "title": "Shipment notification callback",
+          "path": "/refs/shipment-notification-callback",
+          "fullUrl": "https://shippingeasy.readme.io/refs/shipment-notification-callback",
+          "level": 0,
+          "group": "Customer API"
+        },
+        {
+          "title": "Github Repository",
+          "path": "/refs/github-repository",
+          "fullUrl": "https://shippingeasy.readme.io/refs/github-repository",
+          "level": 0,
+          "group": "Ruby client"
+        },
+        {
+          "title": "Getting Started",
+          "path": "/refs/ruby-client-getting-started",
+          "fullUrl": "https://shippingeasy.readme.io/refs/ruby-client-getting-started",
+          "level": 0,
+          "group": "Ruby client"
+        },
+        {
+          "title": "Finding an order",
+          "path": "/refs/finding-an-order",
+          "fullUrl": "https://shippingeasy.readme.io/refs/finding-an-order",
+          "level": 0,
+          "group": "Ruby client"
+        },
+        {
+          "title": "Retrieving multiple orders",
+          "path": "/refs/retrieving-multiple-orders",
+          "fullUrl": "https://shippingeasy.readme.io/refs/retrieving-multiple-orders",
+          "level": 0,
+          "group": "Ruby client"
+        },
+        {
+          "title": "Creating an order",
+          "path": "/refs/creating-an-order",
+          "fullUrl": "https://shippingeasy.readme.io/refs/creating-an-order",
+          "level": 0,
+          "group": "Ruby client"
+        },
+        {
+          "title": "Canceling an order",
+          "path": "/refs/canceling-an-order",
+          "fullUrl": "https://shippingeasy.readme.io/refs/canceling-an-order",
+          "level": 0,
+          "group": "Ruby client"
+        },
+        {
+          "title": "Callback Authentication",
+          "path": "/refs/callback-authentication",
+          "fullUrl": "https://shippingeasy.readme.io/refs/callback-authentication",
+          "level": 0,
+          "group": "Ruby client"
+        },
+        {
+          "title": "Github Repository",
+          "path": "/refs/github-repository-1",
+          "fullUrl": "https://shippingeasy.readme.io/refs/github-repository-1",
+          "level": 0,
+          "group": "PHP client"
+        },
+        {
+          "title": "Getting Started",
+          "path": "/refs/php-getting-started",
+          "fullUrl": "https://shippingeasy.readme.io/refs/php-getting-started",
+          "level": 0,
+          "group": "PHP client"
+        },
+        {
+          "title": "Finding an order",
+          "path": "/refs/php-finding-an-order",
+          "fullUrl": "https://shippingeasy.readme.io/refs/php-finding-an-order",
+          "level": 0,
+          "group": "PHP client"
+        },
+        {
+          "title": "Retrieving multiple orders",
+          "path": "/refs/php-retrieving-multiple-orders",
+          "fullUrl": "https://shippingeasy.readme.io/refs/php-retrieving-multiple-orders",
+          "level": 0,
+          "group": "PHP client"
+        },
+        {
+          "title": "Creating an order",
+          "path": "/refs/creating-an-order-1",
+          "fullUrl": "https://shippingeasy.readme.io/refs/creating-an-order-1",
+          "level": 0,
+          "group": "PHP client"
+        },
+        {
+          "title": "Canceling an order",
+          "path": "/refs/canceling-an-order-1",
+          "fullUrl": "https://shippingeasy.readme.io/refs/canceling-an-order-1",
+          "level": 0,
+          "group": "PHP client"
+        },
+        {
+          "title": "Callback authentication",
+          "path": "/refs/php-callback-authentication",
+          "fullUrl": "https://shippingeasy.readme.io/refs/php-callback-authentication",
+          "level": 0,
+          "group": "PHP client"
+        },
+        {
+          "title": "Accessing Other APIs",
+          "path": "/refs/accessing-other-apis-1",
+          "fullUrl": "https://shippingeasy.readme.io/refs/accessing-other-apis-1",
+          "level": 0,
+          "group": "PHP client"
+        },
+        {
+          "title": "Github Repository",
+          "path": "/refs/github-repository-2",
+          "fullUrl": "https://shippingeasy.readme.io/refs/github-repository-2",
+          "level": 0,
+          "group": ".Net Client"
+        },
+        {
+          "title": "Getting Started",
+          "path": "/refs/dotnet-getting-started",
+          "fullUrl": "https://shippingeasy.readme.io/refs/dotnet-getting-started",
+          "level": 0,
+          "group": ".Net Client"
+        },
+        {
+          "title": "Creating an order",
+          "path": "/refs/creating-an-order-2",
+          "fullUrl": "https://shippingeasy.readme.io/refs/creating-an-order-2",
+          "level": 0,
+          "group": ".Net Client"
+        },
+        {
+          "title": "Callback Authentication",
+          "path": "/refs/callback-authentication-1",
+          "fullUrl": "https://shippingeasy.readme.io/refs/callback-authentication-1",
+          "level": 0,
+          "group": ".Net Client"
+        },
+        {
+          "title": "Accessing Other APIs",
+          "path": "/refs/accessing-other-apis",
+          "fullUrl": "https://shippingeasy.readme.io/refs/accessing-other-apis",
+          "level": 0,
+          "group": ".Net Client"
+        },
+        {
+          "title": "Example requests",
+          "path": "/refs/creating-a-signature",
+          "fullUrl": "https://shippingeasy.readme.io/refs/creating-a-signature",
+          "level": 0,
+          "group": "Making requests via curl"
+        }
+      ]
+    }
+  ]
+}

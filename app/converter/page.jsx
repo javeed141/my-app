@@ -1,210 +1,7 @@
 "use client";
 import { useState, useCallback, useRef, useMemo } from "react";
 import { cssText, styles } from "./styles";
-// ─── Types ───────────────────────────────────────────────────────────────────
-
-// Source (ReadMe.io)
-// { site, navType, tabs, sections: [{ name, pages: [{ title, path, fullUrl, level, group }] }] }
-
-// Target (Documentation.AI)
-// { name, navigation: { products|versions|tabs|groups|pages } }
-
-// ─── Conversion Engine ──────────────────────────────────────────────────────
-
-function cleanSiteName(site) {
-  let name = site
-    .replace(/\.readme\.io$/i, "")
-    .replace(/\.com$/i, "")
-    .replace(/\.co$/i, "")
-    .replace(/\.dev$/i, "");
-  name = name.replace(/^(docs?[_.]|dev[_.])/i, "");
-  return name
-    .replace(/[_-]/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase())
-    .trim();
-}
-
-function cleanPath(path) {
-  let p = path.replace(/^\/+/, "");
-  p = p.replace(/^main\//, "");
-  return p;
-}
-
-const METHOD_SUFFIXES = [
-  ["delete", "DELETE"],
-  ["patch", "PATCH"],
-  ["options", "OPTIONS"],
-  ["post", "POST"],
-  ["head", "HEAD"],
-  ["put", "PUT"],
-  ["get", "GET"],
-  ["del", "DELETE"],
-];
-
-function guessHttpMethod(title) {
-  const lower = title.toLowerCase().trim();
-  for (const [suffix, method] of METHOD_SUFFIXES) {
-    if (lower.endsWith(suffix) && lower.length > suffix.length) {
-      return method;
-    }
-  }
-  return null;
-}
-
-function cleanMethodFromTitle(title) {
-  const lower = title.toLowerCase().trim();
-  for (const [suffix] of METHOD_SUFFIXES) {
-    if (lower.endsWith(suffix) && lower.length > suffix.length) {
-      const cleaned = title.slice(0, -suffix.length).trim();
-      if (cleaned) return cleaned;
-    }
-  }
-  return title;
-}
-
-function buildPage(srcPage) {
-  const page = { title: srcPage.title.trim(), path: cleanPath(srcPage.path || "") };
-  const method = guessHttpMethod(srcPage.title);
-  if (method) {
-    page.method = method;
-    page.title = cleanMethodFromTitle(srcPage.title);
-  }
-  return page;
-}
-
-function buildNestedPages(pagesList) {
-  const result = [];
-  const stack = []; // [level, containerArray]
-
-  // Determine the minimum level dynamically so level 0 parents
-  // correctly nest their level 1 children instead of flattening.
-  const minLevel = pagesList.length > 0
-    ? Math.min(...pagesList.map((p) => p.level ?? 1))
-    : 1;
-
-  for (const srcPage of pagesList) {
-    const level = srcPage.level ?? 1;
-    const docPage = buildPage(srcPage);
-
-    if (level <= minLevel) {
-      result.push(docPage);
-      stack.length = 0;
-      stack.push([level, result]);
-    } else {
-      while (stack.length > 1 && stack[stack.length - 1][0] >= level) stack.pop();
-      const parentContainer = stack.length > 0 ? stack[stack.length - 1][1] : result;
-
-      if (parentContainer.length > 0) {
-        const parent = parentContainer[parentContainer.length - 1];
-        if (!parent.pages && !parent.group) {
-          const nestedGroup = { group: parent.title, pages: [docPage] };
-          parentContainer[parentContainer.length - 1] = nestedGroup;
-          stack.push([level, nestedGroup.pages]);
-        } else if (parent.pages) {
-          parent.pages.push(docPage);
-          stack.push([level, parent.pages]);
-        } else {
-          result.push(docPage);
-        }
-      } else {
-        result.push(docPage);
-      }
-    }
-  }
-  return result;
-}
-
-function groupPagesByGroupField(pages) {
-  const order = [];
-  const map = {};
-
-  for (const page of pages) {
-    const groupName = (page.group || "").trim() || "General";
-    if (!map[groupName]) {
-      map[groupName] = [];
-      order.push(groupName);
-    }
-    map[groupName].push(page);
-  }
-
-  return order.map((name) => ({
-    group: name,
-    pages: buildNestedPages(map[name]),
-  }));
-}
-
-function convertTabs(source) {
-  const tabs = source.sections.map((section) => ({
-    tab: section.name,
-    groups: groupPagesByGroupField(section.pages),
-  }));
-  if (tabs.length === 1) return { groups: tabs[0].groups };
-  return { tabs };
-}
-
-function convertSimple(source) {
-  const allPages = source.sections.flatMap((s) => s.pages);
-  return { groups: groupPagesByGroupField(allPages) };
-}
-
-function convertProjects(source) {
-  const productsMap = new Map();
-
-  for (const section of source.sections) {
-    const parts = section.name.split("/", 2);
-    const prodName = (parts[0] || section.name).trim().replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-    const tabName = (parts[1] || "Docs").trim();
-
-    if (!productsMap.has(prodName)) productsMap.set(prodName, new Map());
-    const tabsMap = productsMap.get(prodName);
-    if (!tabsMap.has(tabName)) tabsMap.set(tabName, []);
-    tabsMap.get(tabName).push(...groupPagesByGroupField(section.pages));
-  }
-
-  const products = [];
-  for (const [prodName, tabsMap] of productsMap) {
-    if (tabsMap.size === 1) {
-      const groups = [...tabsMap.values()][0];
-      products.push({ product: prodName, groups });
-    } else {
-      const tabs = [...tabsMap].map(([tabName, groups]) => ({ tab: tabName, groups }));
-      products.push({ product: prodName, tabs });
-    }
-  }
-  return { products };
-}
-
-function convert(source) {
-  const name = cleanSiteName(source.site || "Unknown");
-  let navigation;
-
-  switch (source.navType) {
-    case "projects":
-      navigation = convertProjects(source);
-      break;
-    case "tabs":
-      navigation = convertTabs(source);
-      break;
-    default:
-      navigation = convertSimple(source);
-  }
-
-  return { name, navigation };
-}
-
-function countPages(obj) {
-  if (!obj || typeof obj !== "object") return 0;
-  let count = 0;
-  if (Array.isArray(obj)) {
-    for (const item of obj) count += countPages(item);
-  } else {
-    if (obj.title && obj.path) count = 1;
-    for (const val of Object.values(obj)) {
-      if (typeof val === "object") count += countPages(val);
-    }
-  }
-  return count;
-}
+import { convert, countPages } from "./convert.js";
 
 // ─── Tree Visualization ────────────────────────────────────────────────────
 
@@ -254,6 +51,30 @@ export default function ReadmeToDocAIConverter() {
   const [dragOver, setDragOver] = useState(false);
   const [history, setHistory] = useState([]);
   const fileInputRef = useRef(null);
+
+  // ─── Batch state ───
+  const [batchRunning, setBatchRunning] = useState(false);
+  const [batchResult, setBatchResult] = useState(null);
+  const [batchError, setBatchError] = useState(null);
+
+  const handleBatchConvert = useCallback(async () => {
+    setBatchRunning(true);
+    setBatchError(null);
+    setBatchResult(null);
+    try {
+      const res = await fetch("/api/batch-convert", { method: "POST" });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || `HTTP ${res.status}`);
+      }
+      const data = await res.json();
+      setBatchResult(data);
+    } catch (e) {
+      setBatchError(e instanceof Error ? e.message : "Batch conversion failed");
+    } finally {
+      setBatchRunning(false);
+    }
+  }, []);
 
   const handleConvert = useCallback(
     (jsonStr) => {
@@ -354,6 +175,109 @@ export default function ReadmeToDocAIConverter() {
       </header>
 
       <main style={styles.main}>
+        {/* ─── Batch Convert All docs/ ─── */}
+        <section style={{
+          background: "linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)",
+          borderRadius: 16,
+          padding: "24px 28px",
+          marginBottom: 24,
+          border: "1px solid rgba(139,92,246,0.3)",
+        }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: batchResult ? 16 : 0 }}>
+            <div>
+              <h3 style={{ color: "#e0e7ff", fontSize: 15, fontWeight: 600, margin: 0 }}>
+                Batch Convert All
+              </h3>
+              <p style={{ color: "#a5b4fc", fontSize: 12, margin: "4px 0 0" }}>
+                Reads all JSON files from <code style={{ background: "rgba(255,255,255,0.1)", padding: "1px 5px", borderRadius: 4 }}>docs/</code> → converts → saves to <code style={{ background: "rgba(255,255,255,0.1)", padding: "1px 5px", borderRadius: 4 }}>documentation/</code>
+              </p>
+            </div>
+            <button
+              onClick={handleBatchConvert}
+              disabled={batchRunning}
+              style={{
+                display: "flex", alignItems: "center", gap: 8,
+                padding: "10px 20px", borderRadius: 10,
+                background: batchRunning ? "#4338ca" : "#7c3aed",
+                color: "#fff", border: "none", fontSize: 13, fontWeight: 600,
+                cursor: batchRunning ? "not-allowed" : "pointer",
+                opacity: batchRunning ? 0.7 : 1,
+                transition: "all 0.2s",
+              }}
+            >
+              {batchRunning ? (
+                <>
+                  <svg style={{ animation: "spin 1s linear infinite" }} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 12a9 9 0 11-6.219-8.56" />
+                  </svg>
+                  Converting...
+                </>
+              ) : (
+                <>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 3l14 9-14 9V3z" />
+                  </svg>
+                  Convert All
+                </>
+              )}
+            </button>
+          </div>
+
+          {batchError && (
+            <div style={{ background: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.3)", borderRadius: 8, padding: "8px 12px", color: "#fca5a5", fontSize: 12, marginTop: 12 }}>
+              {batchError}
+            </div>
+          )}
+
+          {batchResult && (
+            <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 10, padding: 16 }}>
+              <div style={{ display: "flex", gap: 16, marginBottom: 12 }}>
+                <div style={{ textAlign: "center" }}>
+                  <div style={{ fontSize: 22, fontWeight: 700, color: "#a5b4fc" }}>{batchResult.total}</div>
+                  <div style={{ fontSize: 10, color: "#818cf8", textTransform: "uppercase" }}>Total</div>
+                </div>
+                <div style={{ textAlign: "center" }}>
+                  <div style={{ fontSize: 22, fontWeight: 700, color: "#34d399" }}>{batchResult.converted}</div>
+                  <div style={{ fontSize: 10, color: "#6ee7b7", textTransform: "uppercase" }}>Converted</div>
+                </div>
+                {batchResult.failed > 0 && (
+                  <div style={{ textAlign: "center" }}>
+                    <div style={{ fontSize: 22, fontWeight: 700, color: "#f87171" }}>{batchResult.failed}</div>
+                    <div style={{ fontSize: 10, color: "#fca5a5", textTransform: "uppercase" }}>Failed</div>
+                  </div>
+                )}
+                {batchResult.skipped > 0 && (
+                  <div style={{ textAlign: "center" }}>
+                    <div style={{ fontSize: 22, fontWeight: 700, color: "#fbbf24" }}>{batchResult.skipped}</div>
+                    <div style={{ fontSize: 10, color: "#fcd34d", textTransform: "uppercase" }}>Skipped</div>
+                  </div>
+                )}
+              </div>
+              <div style={{ maxHeight: 200, overflowY: "auto" }}>
+                {batchResult.results.map((r, i) => (
+                  <div key={i} style={{
+                    display: "flex", alignItems: "center", gap: 8,
+                    padding: "5px 8px", borderRadius: 6, fontSize: 11,
+                    background: r.status === "ok" ? "rgba(52,211,153,0.08)" : r.status === "error" ? "rgba(248,113,113,0.08)" : "rgba(251,191,36,0.08)",
+                    marginBottom: 2,
+                  }}>
+                    <span style={{ color: r.status === "ok" ? "#34d399" : r.status === "error" ? "#f87171" : "#fbbf24", fontWeight: 600 }}>
+                      {r.status === "ok" ? "OK" : r.status === "error" ? "ERR" : "SKIP"}
+                    </span>
+                    <span style={{ color: "#c7d2fe", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      {r.name || r.file}
+                    </span>
+                    {r.pages != null && <span style={{ color: "#818cf8" }}>{r.pages}p</span>}
+                    {r.outputFile && <span style={{ color: "#6b7280", fontFamily: "monospace", fontSize: 10 }}>{r.outputFile}</span>}
+                    {r.error && <span style={{ color: "#fca5a5", fontSize: 10 }}>{r.error}</span>}
+                    {r.reason && <span style={{ color: "#fcd34d", fontSize: 10 }}>{r.reason}</span>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+
         {/* Upload / Input Section */}
         <section style={styles.inputSection}>
           <div
