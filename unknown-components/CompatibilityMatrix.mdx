@@ -1,0 +1,26 @@
+{/* Unknown component: <CompatibilityMatrix> */}
+
+export const CompatibilityMatrix = ({ features }) => (
+  <table>
+    <thead><tr><th>Feature</th><th>Free</th><th>Pro</th><th>Enterprise</th></tr></thead>
+    <tbody>
+      {features.map(f => (
+        <tr key={f.name}>
+          <td>{f.name}</td>
+          <td>{f.free ? "✅" : "❌"}</td>
+          <td>{f.pro ? "✅" : "❌"}</td>
+          <td>{f.enterprise ? "✅" : "❌"}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+);
+
+<CompatibilityMatrix features={[
+  { name: "REST API", free: true, pro: true, enterprise: true },
+  { name: "GraphQL API", free: false, pro: true, enterprise: true },
+  { name: "WebSocket API", free: false, pro: true, enterprise: true },
+  { name: "Batch Operations", free: false, pro: false, enterprise: true },
+  { name: "SSO / SAML", free: false, pro: false, enterprise: true },
+  { name: "Dedicated Support", free: false, pro: false, enterprise: true },
+]} />

@@ -1,0 +1,39 @@
+{/* Unknown component: <QuickLink> */}
+
+export const QuickLink = ({ title, description, href, icon }) => (
+  <a href={href} className="block p-4 border rounded-lg hover:shadow-md transition no-underline my-2">
+    <div className="flex items-center gap-2">
+      <i className={`fa-${icon} text-blue-500`} />
+      <strong>{title}</strong>
+    </div>
+    <p className="text-sm text-gray-500 mt-1">{description}</p>
+  </a>
+);
+
+<QuickLink 
+  title="API Reference" 
+  description="Complete reference for all API endpoints and parameters"
+  href="/api-reference"
+  icon="book"
+/>
+
+<QuickLink 
+  title="SDK Changelog" 
+  description="See what's new in each release"
+  href="/changelog"
+  icon="clock"
+/>
+
+<QuickLink 
+  title="GitHub Repository" 
+  description="View source code, report issues, and contribute"
+  href="https://github.com/acme/sdk"
+  icon="github"
+/>
+
+<QuickLink 
+  title="Community Discord" 
+  description="Get help from the community and Acme engineers"
+  href="https://discord.gg/acme"
+  icon="message-circle"
+/>

@@ -1,0 +1,4032 @@
+{
+  "suiteId": "eval-2026-02-24T16-15-02-659Z",
+  "runTimestamp": "2026-02-24T16:15:02.891Z",
+  "summary": {
+    "totalTests": 112,
+    "passed": 100,
+    "failed": 12,
+    "passRate": 0.8928571428571429,
+    "avgScores": {
+      "quality": 0.8803571428571442,
+      "relevance": 1,
+      "accuracy": 0.8928571428571429,
+      "formatCorrectness": 0.8928571428571429,
+      "completeness": 0.8928571428571429
+    },
+    "byCategory": {
+      "name-extraction": {
+        "total": 13,
+        "passed": 13,
+        "passRate": 1
+      },
+      "page-count": {
+        "total": 13,
+        "passed": 2,
+        "passRate": 0.15384615384615385
+      },
+      "path-cleaning": {
+        "total": 26,
+        "passed": 26,
+        "passRate": 1
+      },
+      "group-structure": {
+        "total": 13,
+        "passed": 12,
+        "passRate": 0.9230769230769231
+      },
+      "full-conversion": {
+        "total": 13,
+        "passed": 13,
+        "passRate": 1
+      },
+      "tab-handling": {
+        "total": 11,
+        "passed": 11,
+        "passRate": 1
+      },
+      "nesting": {
+        "total": 11,
+        "passed": 11,
+        "passRate": 1
+      },
+      "method-detection": {
+        "total": 12,
+        "passed": 12,
+        "passRate": 1
+      }
+    },
+    "byDifficulty": {
+      "simple": {
+        "total": 57,
+        "passed": 57,
+        "passRate": 1
+      },
+      "complex": {
+        "total": 22,
+        "passed": 10,
+        "passRate": 0.45454545454545453
+      },
+      "moderate": {
+        "total": 33,
+        "passed": 33,
+        "passRate": 1
+      }
+    },
+    "bySite": {
+      "360learning": {
+        "total": 9,
+        "passed": 8,
+        "passRate": 0.8888888888888888
+      },
+      "autocode": {
+        "total": 7,
+        "passed": 7,
+        "passRate": 1
+      },
+      "datafiniti": {
+        "total": 9,
+        "passed": 8,
+        "passRate": 0.8888888888888888
+      },
+      "floorplanner": {
+        "total": 9,
+        "passed": 8,
+        "passRate": 0.8888888888888888
+      },
+      "lirium": {
+        "total": 9,
+        "passed": 8,
+        "passRate": 0.8888888888888888
+      },
+      "lithic": {
+        "total": 9,
+        "passed": 8,
+        "passRate": 0.8888888888888888
+      },
+      "moderntreasury": {
+        "total": 8,
+        "passed": 6,
+        "passRate": 0.75
+      },
+      "paperform": {
+        "total": 9,
+        "passed": 8,
+        "passRate": 0.8888888888888888
+      },
+      "pennylane": {
+        "total": 9,
+        "passed": 8,
+        "passRate": 0.8888888888888888
+      },
+      "pipedrive": {
+        "total": 9,
+        "passed": 8,
+        "passRate": 0.8888888888888888
+      },
+      "readme": {
+        "total": 8,
+        "passed": 7,
+        "passRate": 0.875
+      },
+      "shippingeasy": {
+        "total": 8,
+        "passed": 8,
+        "passRate": 1
+      },
+      "shopline-developers": {
+        "total": 9,
+        "passed": 8,
+        "passRate": 0.8888888888888888
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": {
+        "id": "name-001",
+        "name": "360learning: Site name extracted",
+        "description": "The output should have a valid \"name\" field extracted from \"360learning.readme.io\"",
+        "category": "name-extraction",
+        "difficulty": "simple",
+        "site": "360learning",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "name",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Name: \"360learning\" | ✓ Domain suffix properly cleaned",
+      "details": [
+        {
+          "passed": true,
+          "message": "Name: \"360learning\""
+        },
+        {
+          "passed": true,
+          "message": "Domain suffix properly cleaned"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.868Z"
+    },
+    {
+      "testCase": {
+        "id": "pages-002",
+        "name": "360learning: Page count preserved (299 pages)",
+        "description": "All 299 pages from input should appear in output",
+        "category": "page-count",
+        "difficulty": "complex",
+        "site": "360learning",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "pages",
+          "completeness"
+        ]
+      },
+      "passed": false,
+      "scores": {
+        "quality": 0.3,
+        "relevance": 1,
+        "accuracy": 0,
+        "formatCorrectness": 0,
+        "completeness": 0
+      },
+      "feedback": "✗ Input: 299 pages, Output: 263 pages (DIFF: -36)",
+      "details": [
+        {
+          "passed": false,
+          "message": "Input: 299 pages, Output: 263 pages (DIFF: -36)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.868Z"
+    },
+    {
+      "testCase": {
+        "id": "path-003",
+        "name": "360learning: Paths cleaned (no leading slash)",
+        "description": "All output paths should have leading slashes removed",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "360learning",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 263 paths are clean",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 263 paths are clean"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.869Z"
+    },
+    {
+      "testCase": {
+        "id": "main-004",
+        "name": "360learning: No /main/ prefix in paths",
+        "description": "Paths should not start with main/ prefix",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "360learning",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ No main/ prefix found",
+      "details": [
+        {
+          "passed": true,
+          "message": "No main/ prefix found"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.870Z"
+    },
+    {
+      "testCase": {
+        "id": "grp-005",
+        "name": "360learning: Groups preserved (8 groups)",
+        "description": "All 8 groups from input should appear in output",
+        "category": "group-structure",
+        "difficulty": "complex",
+        "site": "360learning",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "groups",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 8 groups found in output",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 8 groups found in output"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.870Z"
+    },
+    {
+      "testCase": {
+        "id": "fmt-006",
+        "name": "360learning: Valid Documentation.AI JSON structure",
+        "description": "Output should have name + navigation with groups/tabs/products",
+        "category": "full-conversion",
+        "difficulty": "simple",
+        "site": "360learning",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "format",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Has \"name\" and \"navigation\" fields | ✓ Navigation type: tabs",
+      "details": [
+        {
+          "passed": true,
+          "message": "Has \"name\" and \"navigation\" fields"
+        },
+        {
+          "passed": true,
+          "message": "Navigation type: tabs"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.871Z"
+    },
+    {
+      "testCase": {
+        "id": "tab-007",
+        "name": "360learning: Multi-tab navigation preserved",
+        "description": "Input has 3 tabs — output should use tabs structure",
+        "category": "tab-handling",
+        "difficulty": "moderate",
+        "site": "360learning",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "tabs",
+          "navigation"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 3 tabs | ✓ All tabs present: Guides, API Reference, Changelog",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 3 tabs"
+        },
+        {
+          "passed": true,
+          "message": "All tabs present: Guides, API Reference, Changelog"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.871Z"
+    },
+    {
+      "testCase": {
+        "id": "nest-008",
+        "name": "360learning: Nested pages converted",
+        "description": "Pages with level > 0 should be nested under parent pages",
+        "category": "nesting",
+        "difficulty": "moderate",
+        "site": "360learning",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "nesting",
+          "hierarchy"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 45 groups (input base groups: 8). Nesting creates additional sub-groups.",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 45 groups (input base groups: 8). Nesting creates additional sub-groups."
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.871Z"
+    },
+    {
+      "testCase": {
+        "id": "method-009",
+        "name": "360learning: HTTP methods detected",
+        "description": "API endpoint pages should have method field where detectable",
+        "category": "method-detection",
+        "difficulty": "moderate",
+        "site": "360learning",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "api",
+          "methods"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Detected 135 HTTP methods: POST, DELETE, GET, PATCH, PUT",
+      "details": [
+        {
+          "passed": true,
+          "message": "Detected 135 HTTP methods: POST, DELETE, GET, PATCH, PUT"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.872Z"
+    },
+    {
+      "testCase": {
+        "id": "name-010",
+        "name": "autocode: Site name extracted",
+        "description": "The output should have a valid \"name\" field extracted from \"autocode.readme.io\"",
+        "category": "name-extraction",
+        "difficulty": "simple",
+        "site": "autocode",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "name",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Name: \"Autocode\" | ✓ Domain suffix properly cleaned",
+      "details": [
+        {
+          "passed": true,
+          "message": "Name: \"Autocode\""
+        },
+        {
+          "passed": true,
+          "message": "Domain suffix properly cleaned"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.872Z"
+    },
+    {
+      "testCase": {
+        "id": "pages-011",
+        "name": "autocode: Page count preserved (31 pages)",
+        "description": "All 31 pages from input should appear in output",
+        "category": "page-count",
+        "difficulty": "moderate",
+        "site": "autocode",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "pages",
+          "completeness"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Input: 31 pages, Output: 31 pages",
+      "details": [
+        {
+          "passed": true,
+          "message": "Input: 31 pages, Output: 31 pages"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.872Z"
+    },
+    {
+      "testCase": {
+        "id": "path-012",
+        "name": "autocode: Paths cleaned (no leading slash)",
+        "description": "All output paths should have leading slashes removed",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "autocode",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 31 paths are clean",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 31 paths are clean"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.872Z"
+    },
+    {
+      "testCase": {
+        "id": "main-013",
+        "name": "autocode: No /main/ prefix in paths",
+        "description": "Paths should not start with main/ prefix",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "autocode",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ No main/ prefix found",
+      "details": [
+        {
+          "passed": true,
+          "message": "No main/ prefix found"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.873Z"
+    },
+    {
+      "testCase": {
+        "id": "grp-014",
+        "name": "autocode: Groups preserved (6 groups)",
+        "description": "All 6 groups from input should appear in output",
+        "category": "group-structure",
+        "difficulty": "moderate",
+        "site": "autocode",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "groups",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 6 groups found in output",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 6 groups found in output"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.873Z"
+    },
+    {
+      "testCase": {
+        "id": "fmt-015",
+        "name": "autocode: Valid Documentation.AI JSON structure",
+        "description": "Output should have name + navigation with groups/tabs/products",
+        "category": "full-conversion",
+        "difficulty": "simple",
+        "site": "autocode",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "format",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Has \"name\" and \"navigation\" fields | ✓ Navigation type: groups",
+      "details": [
+        {
+          "passed": true,
+          "message": "Has \"name\" and \"navigation\" fields"
+        },
+        {
+          "passed": true,
+          "message": "Navigation type: groups"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.873Z"
+    },
+    {
+      "testCase": {
+        "id": "stab-016",
+        "name": "autocode: Single tab collapsed to groups",
+        "description": "Single-tab input should collapse to groups (no tabs wrapper)",
+        "category": "tab-handling",
+        "difficulty": "simple",
+        "site": "autocode",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "tabs",
+          "collapse"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Correctly collapsed single tab to groups",
+      "details": [
+        {
+          "passed": true,
+          "message": "Correctly collapsed single tab to groups"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.873Z"
+    },
+    {
+      "testCase": {
+        "id": "name-017",
+        "name": "datafiniti: Site name extracted",
+        "description": "The output should have a valid \"name\" field extracted from \"docs.datafiniti.co\"",
+        "category": "name-extraction",
+        "difficulty": "simple",
+        "site": "datafiniti",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "name",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Name: \"Datafiniti\" | ✓ Domain suffix properly cleaned",
+      "details": [
+        {
+          "passed": true,
+          "message": "Name: \"Datafiniti\""
+        },
+        {
+          "passed": true,
+          "message": "Domain suffix properly cleaned"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.873Z"
+    },
+    {
+      "testCase": {
+        "id": "pages-018",
+        "name": "datafiniti: Page count preserved (258 pages)",
+        "description": "All 258 pages from input should appear in output",
+        "category": "page-count",
+        "difficulty": "complex",
+        "site": "datafiniti",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "pages",
+          "completeness"
+        ]
+      },
+      "passed": false,
+      "scores": {
+        "quality": 0.3,
+        "relevance": 1,
+        "accuracy": 0,
+        "formatCorrectness": 0,
+        "completeness": 0
+      },
+      "feedback": "✗ Input: 258 pages, Output: 216 pages (DIFF: -42)",
+      "details": [
+        {
+          "passed": false,
+          "message": "Input: 258 pages, Output: 216 pages (DIFF: -42)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.873Z"
+    },
+    {
+      "testCase": {
+        "id": "path-019",
+        "name": "datafiniti: Paths cleaned (no leading slash)",
+        "description": "All output paths should have leading slashes removed",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "datafiniti",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 216 paths are clean",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 216 paths are clean"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.874Z"
+    },
+    {
+      "testCase": {
+        "id": "main-020",
+        "name": "datafiniti: No /main/ prefix in paths",
+        "description": "Paths should not start with main/ prefix",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "datafiniti",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ No main/ prefix found",
+      "details": [
+        {
+          "passed": true,
+          "message": "No main/ prefix found"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.874Z"
+    },
+    {
+      "testCase": {
+        "id": "grp-021",
+        "name": "datafiniti: Groups preserved (2 groups)",
+        "description": "All 2 groups from input should appear in output",
+        "category": "group-structure",
+        "difficulty": "complex",
+        "site": "datafiniti",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "groups",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 2 groups found in output",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 2 groups found in output"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.874Z"
+    },
+    {
+      "testCase": {
+        "id": "fmt-022",
+        "name": "datafiniti: Valid Documentation.AI JSON structure",
+        "description": "Output should have name + navigation with groups/tabs/products",
+        "category": "full-conversion",
+        "difficulty": "simple",
+        "site": "datafiniti",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "format",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Has \"name\" and \"navigation\" fields | ✓ Navigation type: tabs",
+      "details": [
+        {
+          "passed": true,
+          "message": "Has \"name\" and \"navigation\" fields"
+        },
+        {
+          "passed": true,
+          "message": "Navigation type: tabs"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.874Z"
+    },
+    {
+      "testCase": {
+        "id": "tab-023",
+        "name": "datafiniti: Multi-tab navigation preserved",
+        "description": "Input has 3 tabs — output should use tabs structure",
+        "category": "tab-handling",
+        "difficulty": "moderate",
+        "site": "datafiniti",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "tabs",
+          "navigation"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 3 tabs | ✓ All tabs present: Guides, API Reference, Changelog",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 3 tabs"
+        },
+        {
+          "passed": true,
+          "message": "All tabs present: Guides, API Reference, Changelog"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.874Z"
+    },
+    {
+      "testCase": {
+        "id": "nest-024",
+        "name": "datafiniti: Nested pages converted",
+        "description": "Pages with level > 0 should be nested under parent pages",
+        "category": "nesting",
+        "difficulty": "moderate",
+        "site": "datafiniti",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "nesting",
+          "hierarchy"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 46 groups (input base groups: 2). Nesting creates additional sub-groups.",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 46 groups (input base groups: 2). Nesting creates additional sub-groups."
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.874Z"
+    },
+    {
+      "testCase": {
+        "id": "method-025",
+        "name": "datafiniti: HTTP methods detected",
+        "description": "API endpoint pages should have method field where detectable",
+        "category": "method-detection",
+        "difficulty": "moderate",
+        "site": "datafiniti",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "api",
+          "methods"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Detected 0 HTTP methods: (none)",
+      "details": [
+        {
+          "passed": true,
+          "message": "Detected 0 HTTP methods: (none)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.875Z"
+    },
+    {
+      "testCase": {
+        "id": "name-026",
+        "name": "floorplanner: Site name extracted",
+        "description": "The output should have a valid \"name\" field extracted from \"floorplanner.readme.io\"",
+        "category": "name-extraction",
+        "difficulty": "simple",
+        "site": "floorplanner",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "name",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Name: \"Floorplanner\" | ✓ Domain suffix properly cleaned",
+      "details": [
+        {
+          "passed": true,
+          "message": "Name: \"Floorplanner\""
+        },
+        {
+          "passed": true,
+          "message": "Domain suffix properly cleaned"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.875Z"
+    },
+    {
+      "testCase": {
+        "id": "pages-027",
+        "name": "floorplanner: Page count preserved (201 pages)",
+        "description": "All 201 pages from input should appear in output",
+        "category": "page-count",
+        "difficulty": "complex",
+        "site": "floorplanner",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "pages",
+          "completeness"
+        ]
+      },
+      "passed": false,
+      "scores": {
+        "quality": 0.3,
+        "relevance": 1,
+        "accuracy": 0,
+        "formatCorrectness": 0,
+        "completeness": 0
+      },
+      "feedback": "✗ Input: 201 pages, Output: 172 pages (DIFF: -29)",
+      "details": [
+        {
+          "passed": false,
+          "message": "Input: 201 pages, Output: 172 pages (DIFF: -29)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.875Z"
+    },
+    {
+      "testCase": {
+        "id": "path-028",
+        "name": "floorplanner: Paths cleaned (no leading slash)",
+        "description": "All output paths should have leading slashes removed",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "floorplanner",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 172 paths are clean",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 172 paths are clean"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.875Z"
+    },
+    {
+      "testCase": {
+        "id": "main-029",
+        "name": "floorplanner: No /main/ prefix in paths",
+        "description": "Paths should not start with main/ prefix",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "floorplanner",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ No main/ prefix found",
+      "details": [
+        {
+          "passed": true,
+          "message": "No main/ prefix found"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.875Z"
+    },
+    {
+      "testCase": {
+        "id": "grp-030",
+        "name": "floorplanner: Groups preserved (8 groups)",
+        "description": "All 8 groups from input should appear in output",
+        "category": "group-structure",
+        "difficulty": "complex",
+        "site": "floorplanner",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "groups",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 8 groups found in output",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 8 groups found in output"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.876Z"
+    },
+    {
+      "testCase": {
+        "id": "fmt-031",
+        "name": "floorplanner: Valid Documentation.AI JSON structure",
+        "description": "Output should have name + navigation with groups/tabs/products",
+        "category": "full-conversion",
+        "difficulty": "simple",
+        "site": "floorplanner",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "format",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Has \"name\" and \"navigation\" fields | ✓ Navigation type: groups",
+      "details": [
+        {
+          "passed": true,
+          "message": "Has \"name\" and \"navigation\" fields"
+        },
+        {
+          "passed": true,
+          "message": "Navigation type: groups"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.876Z"
+    },
+    {
+      "testCase": {
+        "id": "stab-032",
+        "name": "floorplanner: Single tab collapsed to groups",
+        "description": "Single-tab input should collapse to groups (no tabs wrapper)",
+        "category": "tab-handling",
+        "difficulty": "simple",
+        "site": "floorplanner",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "tabs",
+          "collapse"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Correctly collapsed single tab to groups",
+      "details": [
+        {
+          "passed": true,
+          "message": "Correctly collapsed single tab to groups"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.876Z"
+    },
+    {
+      "testCase": {
+        "id": "nest-033",
+        "name": "floorplanner: Nested pages converted",
+        "description": "Pages with level > 0 should be nested under parent pages",
+        "category": "nesting",
+        "difficulty": "moderate",
+        "site": "floorplanner",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "nesting",
+          "hierarchy"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 37 groups (input base groups: 8). Nesting creates additional sub-groups.",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 37 groups (input base groups: 8). Nesting creates additional sub-groups."
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.876Z"
+    },
+    {
+      "testCase": {
+        "id": "method-034",
+        "name": "floorplanner: HTTP methods detected",
+        "description": "API endpoint pages should have method field where detectable",
+        "category": "method-detection",
+        "difficulty": "moderate",
+        "site": "floorplanner",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "api",
+          "methods"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Detected 0 HTTP methods: (none)",
+      "details": [
+        {
+          "passed": true,
+          "message": "Detected 0 HTTP methods: (none)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.876Z"
+    },
+    {
+      "testCase": {
+        "id": "name-035",
+        "name": "lirium: Site name extracted",
+        "description": "The output should have a valid \"name\" field extracted from \"lirium.readme.io\"",
+        "category": "name-extraction",
+        "difficulty": "simple",
+        "site": "lirium",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "name",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Name: \"Lirium\" | ✓ Domain suffix properly cleaned",
+      "details": [
+        {
+          "passed": true,
+          "message": "Name: \"Lirium\""
+        },
+        {
+          "passed": true,
+          "message": "Domain suffix properly cleaned"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.876Z"
+    },
+    {
+      "testCase": {
+        "id": "pages-036",
+        "name": "lirium: Page count preserved (75 pages)",
+        "description": "All 75 pages from input should appear in output",
+        "category": "page-count",
+        "difficulty": "complex",
+        "site": "lirium",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "pages",
+          "completeness"
+        ]
+      },
+      "passed": false,
+      "scores": {
+        "quality": 0.3,
+        "relevance": 1,
+        "accuracy": 0,
+        "formatCorrectness": 0,
+        "completeness": 0
+      },
+      "feedback": "✗ Input: 75 pages, Output: 68 pages (DIFF: -7)",
+      "details": [
+        {
+          "passed": false,
+          "message": "Input: 75 pages, Output: 68 pages (DIFF: -7)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.876Z"
+    },
+    {
+      "testCase": {
+        "id": "path-037",
+        "name": "lirium: Paths cleaned (no leading slash)",
+        "description": "All output paths should have leading slashes removed",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "lirium",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 68 paths are clean",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 68 paths are clean"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.876Z"
+    },
+    {
+      "testCase": {
+        "id": "main-038",
+        "name": "lirium: No /main/ prefix in paths",
+        "description": "Paths should not start with main/ prefix",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "lirium",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ No main/ prefix found",
+      "details": [
+        {
+          "passed": true,
+          "message": "No main/ prefix found"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.876Z"
+    },
+    {
+      "testCase": {
+        "id": "grp-039",
+        "name": "lirium: Groups preserved (14 groups)",
+        "description": "All 14 groups from input should appear in output",
+        "category": "group-structure",
+        "difficulty": "complex",
+        "site": "lirium",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "groups",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 14 groups found in output",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 14 groups found in output"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.877Z"
+    },
+    {
+      "testCase": {
+        "id": "fmt-040",
+        "name": "lirium: Valid Documentation.AI JSON structure",
+        "description": "Output should have name + navigation with groups/tabs/products",
+        "category": "full-conversion",
+        "difficulty": "simple",
+        "site": "lirium",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "format",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Has \"name\" and \"navigation\" fields | ✓ Navigation type: groups",
+      "details": [
+        {
+          "passed": true,
+          "message": "Has \"name\" and \"navigation\" fields"
+        },
+        {
+          "passed": true,
+          "message": "Navigation type: groups"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.877Z"
+    },
+    {
+      "testCase": {
+        "id": "stab-041",
+        "name": "lirium: Single tab collapsed to groups",
+        "description": "Single-tab input should collapse to groups (no tabs wrapper)",
+        "category": "tab-handling",
+        "difficulty": "simple",
+        "site": "lirium",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "tabs",
+          "collapse"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Correctly collapsed single tab to groups",
+      "details": [
+        {
+          "passed": true,
+          "message": "Correctly collapsed single tab to groups"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.877Z"
+    },
+    {
+      "testCase": {
+        "id": "nest-042",
+        "name": "lirium: Nested pages converted",
+        "description": "Pages with level > 0 should be nested under parent pages",
+        "category": "nesting",
+        "difficulty": "moderate",
+        "site": "lirium",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "nesting",
+          "hierarchy"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 21 groups (input base groups: 14). Nesting creates additional sub-groups.",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 21 groups (input base groups: 14). Nesting creates additional sub-groups."
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.877Z"
+    },
+    {
+      "testCase": {
+        "id": "method-043",
+        "name": "lirium: HTTP methods detected",
+        "description": "API endpoint pages should have method field where detectable",
+        "category": "method-detection",
+        "difficulty": "moderate",
+        "site": "lirium",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "api",
+          "methods"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Detected 0 HTTP methods: (none)",
+      "details": [
+        {
+          "passed": true,
+          "message": "Detected 0 HTTP methods: (none)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.877Z"
+    },
+    {
+      "testCase": {
+        "id": "name-044",
+        "name": "lithic: Site name extracted",
+        "description": "The output should have a valid \"name\" field extracted from \"docs.lithic.com\"",
+        "category": "name-extraction",
+        "difficulty": "simple",
+        "site": "lithic",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "name",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Name: \"Lithic\" | ✓ Domain suffix properly cleaned",
+      "details": [
+        {
+          "passed": true,
+          "message": "Name: \"Lithic\""
+        },
+        {
+          "passed": true,
+          "message": "Domain suffix properly cleaned"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.877Z"
+    },
+    {
+      "testCase": {
+        "id": "pages-045",
+        "name": "lithic: Page count preserved (393 pages)",
+        "description": "All 393 pages from input should appear in output",
+        "category": "page-count",
+        "difficulty": "complex",
+        "site": "lithic",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "pages",
+          "completeness"
+        ]
+      },
+      "passed": false,
+      "scores": {
+        "quality": 0.3,
+        "relevance": 1,
+        "accuracy": 0,
+        "formatCorrectness": 0,
+        "completeness": 0
+      },
+      "feedback": "✗ Input: 393 pages, Output: 355 pages (DIFF: -38)",
+      "details": [
+        {
+          "passed": false,
+          "message": "Input: 393 pages, Output: 355 pages (DIFF: -38)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.879Z"
+    },
+    {
+      "testCase": {
+        "id": "path-046",
+        "name": "lithic: Paths cleaned (no leading slash)",
+        "description": "All output paths should have leading slashes removed",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "lithic",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 355 paths are clean",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 355 paths are clean"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.879Z"
+    },
+    {
+      "testCase": {
+        "id": "main-047",
+        "name": "lithic: No /main/ prefix in paths",
+        "description": "Paths should not start with main/ prefix",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "lithic",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ No main/ prefix found",
+      "details": [
+        {
+          "passed": true,
+          "message": "No main/ prefix found"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.879Z"
+    },
+    {
+      "testCase": {
+        "id": "grp-048",
+        "name": "lithic: Groups preserved (23 groups)",
+        "description": "All 23 groups from input should appear in output",
+        "category": "group-structure",
+        "difficulty": "complex",
+        "site": "lithic",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "groups",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 23 groups found in output",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 23 groups found in output"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.880Z"
+    },
+    {
+      "testCase": {
+        "id": "fmt-049",
+        "name": "lithic: Valid Documentation.AI JSON structure",
+        "description": "Output should have name + navigation with groups/tabs/products",
+        "category": "full-conversion",
+        "difficulty": "simple",
+        "site": "lithic",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "format",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Has \"name\" and \"navigation\" fields | ✓ Navigation type: tabs",
+      "details": [
+        {
+          "passed": true,
+          "message": "Has \"name\" and \"navigation\" fields"
+        },
+        {
+          "passed": true,
+          "message": "Navigation type: tabs"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.880Z"
+    },
+    {
+      "testCase": {
+        "id": "tab-050",
+        "name": "lithic: Multi-tab navigation preserved",
+        "description": "Input has 3 tabs — output should use tabs structure",
+        "category": "tab-handling",
+        "difficulty": "moderate",
+        "site": "lithic",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "tabs",
+          "navigation"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 3 tabs | ✓ All tabs present: Guides, API Reference, Changelog",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 3 tabs"
+        },
+        {
+          "passed": true,
+          "message": "All tabs present: Guides, API Reference, Changelog"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.880Z"
+    },
+    {
+      "testCase": {
+        "id": "nest-051",
+        "name": "lithic: Nested pages converted",
+        "description": "Pages with level > 0 should be nested under parent pages",
+        "category": "nesting",
+        "difficulty": "moderate",
+        "site": "lithic",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "nesting",
+          "hierarchy"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 62 groups (input base groups: 23). Nesting creates additional sub-groups.",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 62 groups (input base groups: 23). Nesting creates additional sub-groups."
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.880Z"
+    },
+    {
+      "testCase": {
+        "id": "method-052",
+        "name": "lithic: HTTP methods detected",
+        "description": "API endpoint pages should have method field where detectable",
+        "category": "method-detection",
+        "difficulty": "moderate",
+        "site": "lithic",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "api",
+          "methods"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Detected 212 HTTP methods: POST, GET, PATCH, DELETE, PUT",
+      "details": [
+        {
+          "passed": true,
+          "message": "Detected 212 HTTP methods: POST, GET, PATCH, DELETE, PUT"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.880Z"
+    },
+    {
+      "testCase": {
+        "id": "name-053",
+        "name": "moderntreasury: Site name extracted",
+        "description": "The output should have a valid \"name\" field extracted from \"docs.moderntreasury.com\"",
+        "category": "name-extraction",
+        "difficulty": "simple",
+        "site": "moderntreasury",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "name",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Name: \"Moderntreasury\" | ✓ Domain suffix properly cleaned",
+      "details": [
+        {
+          "passed": true,
+          "message": "Name: \"Moderntreasury\""
+        },
+        {
+          "passed": true,
+          "message": "Domain suffix properly cleaned"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.880Z"
+    },
+    {
+      "testCase": {
+        "id": "pages-054",
+        "name": "moderntreasury: Page count preserved (1234 pages)",
+        "description": "All 1234 pages from input should appear in output",
+        "category": "page-count",
+        "difficulty": "complex",
+        "site": "moderntreasury",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "pages",
+          "completeness"
+        ]
+      },
+      "passed": false,
+      "scores": {
+        "quality": 0.3,
+        "relevance": 1,
+        "accuracy": 0,
+        "formatCorrectness": 0,
+        "completeness": 0
+      },
+      "feedback": "✗ Input: 1234 pages, Output: 283 pages (DIFF: -951)",
+      "details": [
+        {
+          "passed": false,
+          "message": "Input: 1234 pages, Output: 283 pages (DIFF: -951)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.881Z"
+    },
+    {
+      "testCase": {
+        "id": "path-055",
+        "name": "moderntreasury: Paths cleaned (no leading slash)",
+        "description": "All output paths should have leading slashes removed",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "moderntreasury",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 283 paths are clean",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 283 paths are clean"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.881Z"
+    },
+    {
+      "testCase": {
+        "id": "main-056",
+        "name": "moderntreasury: No /main/ prefix in paths",
+        "description": "Paths should not start with main/ prefix",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "moderntreasury",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ No main/ prefix found",
+      "details": [
+        {
+          "passed": true,
+          "message": "No main/ prefix found"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.881Z"
+    },
+    {
+      "testCase": {
+        "id": "grp-057",
+        "name": "moderntreasury: Groups preserved (33 groups)",
+        "description": "All 33 groups from input should appear in output",
+        "category": "group-structure",
+        "difficulty": "complex",
+        "site": "moderntreasury",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "groups",
+          "structure"
+        ]
+      },
+      "passed": false,
+      "scores": {
+        "quality": 0.3,
+        "relevance": 1,
+        "accuracy": 0,
+        "formatCorrectness": 0,
+        "completeness": 0
+      },
+      "feedback": "✗ Missing groups: Money Movement, Bring your own Bank, Accounts, Categories, Settlements, Reporting",
+      "details": [
+        {
+          "passed": false,
+          "message": "Missing groups: Money Movement, Bring your own Bank, Accounts, Categories, Settlements, Reporting"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.881Z"
+    },
+    {
+      "testCase": {
+        "id": "fmt-058",
+        "name": "moderntreasury: Valid Documentation.AI JSON structure",
+        "description": "Output should have name + navigation with groups/tabs/products",
+        "category": "full-conversion",
+        "difficulty": "simple",
+        "site": "moderntreasury",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "format",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Has \"name\" and \"navigation\" fields | ✓ Navigation type: products",
+      "details": [
+        {
+          "passed": true,
+          "message": "Has \"name\" and \"navigation\" fields"
+        },
+        {
+          "passed": true,
+          "message": "Navigation type: products"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.881Z"
+    },
+    {
+      "testCase": {
+        "id": "nest-059",
+        "name": "moderntreasury: Nested pages converted",
+        "description": "Pages with level > 0 should be nested under parent pages",
+        "category": "nesting",
+        "difficulty": "moderate",
+        "site": "moderntreasury",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "nesting",
+          "hierarchy"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 86 groups (input base groups: 33). Nesting creates additional sub-groups.",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 86 groups (input base groups: 33). Nesting creates additional sub-groups."
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.882Z"
+    },
+    {
+      "testCase": {
+        "id": "method-060",
+        "name": "moderntreasury: HTTP methods detected",
+        "description": "API endpoint pages should have method field where detectable",
+        "category": "method-detection",
+        "difficulty": "moderate",
+        "site": "moderntreasury",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "api",
+          "methods"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Detected 183 HTTP methods: POST, GET, PATCH, DELETE, PUT",
+      "details": [
+        {
+          "passed": true,
+          "message": "Detected 183 HTTP methods: POST, GET, PATCH, DELETE, PUT"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.882Z"
+    },
+    {
+      "testCase": {
+        "id": "name-061",
+        "name": "paperform: Site name extracted",
+        "description": "The output should have a valid \"name\" field extracted from \"paperform.readme.io\"",
+        "category": "name-extraction",
+        "difficulty": "simple",
+        "site": "paperform",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "name",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Name: \"Paperform\" | ✓ Domain suffix properly cleaned",
+      "details": [
+        {
+          "passed": true,
+          "message": "Name: \"Paperform\""
+        },
+        {
+          "passed": true,
+          "message": "Domain suffix properly cleaned"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.882Z"
+    },
+    {
+      "testCase": {
+        "id": "pages-062",
+        "name": "paperform: Page count preserved (70 pages)",
+        "description": "All 70 pages from input should appear in output",
+        "category": "page-count",
+        "difficulty": "complex",
+        "site": "paperform",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "pages",
+          "completeness"
+        ]
+      },
+      "passed": false,
+      "scores": {
+        "quality": 0.3,
+        "relevance": 1,
+        "accuracy": 0,
+        "formatCorrectness": 0,
+        "completeness": 0
+      },
+      "feedback": "✗ Input: 70 pages, Output: 57 pages (DIFF: -13)",
+      "details": [
+        {
+          "passed": false,
+          "message": "Input: 70 pages, Output: 57 pages (DIFF: -13)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.882Z"
+    },
+    {
+      "testCase": {
+        "id": "path-063",
+        "name": "paperform: Paths cleaned (no leading slash)",
+        "description": "All output paths should have leading slashes removed",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "paperform",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 57 paths are clean",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 57 paths are clean"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.882Z"
+    },
+    {
+      "testCase": {
+        "id": "main-064",
+        "name": "paperform: No /main/ prefix in paths",
+        "description": "Paths should not start with main/ prefix",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "paperform",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ No main/ prefix found",
+      "details": [
+        {
+          "passed": true,
+          "message": "No main/ prefix found"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.883Z"
+    },
+    {
+      "testCase": {
+        "id": "grp-065",
+        "name": "paperform: Groups preserved (1 groups)",
+        "description": "All 1 groups from input should appear in output",
+        "category": "group-structure",
+        "difficulty": "complex",
+        "site": "paperform",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "groups",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 1 groups found in output",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 1 groups found in output"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.883Z"
+    },
+    {
+      "testCase": {
+        "id": "fmt-066",
+        "name": "paperform: Valid Documentation.AI JSON structure",
+        "description": "Output should have name + navigation with groups/tabs/products",
+        "category": "full-conversion",
+        "difficulty": "simple",
+        "site": "paperform",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "format",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Has \"name\" and \"navigation\" fields | ✓ Navigation type: groups",
+      "details": [
+        {
+          "passed": true,
+          "message": "Has \"name\" and \"navigation\" fields"
+        },
+        {
+          "passed": true,
+          "message": "Navigation type: groups"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.883Z"
+    },
+    {
+      "testCase": {
+        "id": "stab-067",
+        "name": "paperform: Single tab collapsed to groups",
+        "description": "Single-tab input should collapse to groups (no tabs wrapper)",
+        "category": "tab-handling",
+        "difficulty": "simple",
+        "site": "paperform",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "tabs",
+          "collapse"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Correctly collapsed single tab to groups",
+      "details": [
+        {
+          "passed": true,
+          "message": "Correctly collapsed single tab to groups"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.883Z"
+    },
+    {
+      "testCase": {
+        "id": "nest-068",
+        "name": "paperform: Nested pages converted",
+        "description": "Pages with level > 0 should be nested under parent pages",
+        "category": "nesting",
+        "difficulty": "moderate",
+        "site": "paperform",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "nesting",
+          "hierarchy"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 14 groups (input base groups: 1). Nesting creates additional sub-groups.",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 14 groups (input base groups: 1). Nesting creates additional sub-groups."
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.883Z"
+    },
+    {
+      "testCase": {
+        "id": "method-069",
+        "name": "paperform: HTTP methods detected",
+        "description": "API endpoint pages should have method field where detectable",
+        "category": "method-detection",
+        "difficulty": "moderate",
+        "site": "paperform",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "api",
+          "methods"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Detected 0 HTTP methods: (none)",
+      "details": [
+        {
+          "passed": true,
+          "message": "Detected 0 HTTP methods: (none)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.883Z"
+    },
+    {
+      "testCase": {
+        "id": "name-070",
+        "name": "pennylane: Site name extracted",
+        "description": "The output should have a valid \"name\" field extracted from \"pennylane.readme.io\"",
+        "category": "name-extraction",
+        "difficulty": "simple",
+        "site": "pennylane",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "name",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Name: \"Pennylane\" | ✓ Domain suffix properly cleaned",
+      "details": [
+        {
+          "passed": true,
+          "message": "Name: \"Pennylane\""
+        },
+        {
+          "passed": true,
+          "message": "Domain suffix properly cleaned"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.883Z"
+    },
+    {
+      "testCase": {
+        "id": "pages-071",
+        "name": "pennylane: Page count preserved (207 pages)",
+        "description": "All 207 pages from input should appear in output",
+        "category": "page-count",
+        "difficulty": "complex",
+        "site": "pennylane",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "pages",
+          "completeness"
+        ]
+      },
+      "passed": false,
+      "scores": {
+        "quality": 0.3,
+        "relevance": 1,
+        "accuracy": 0,
+        "formatCorrectness": 0,
+        "completeness": 0
+      },
+      "feedback": "✗ Input: 207 pages, Output: 181 pages (DIFF: -26)",
+      "details": [
+        {
+          "passed": false,
+          "message": "Input: 207 pages, Output: 181 pages (DIFF: -26)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.883Z"
+    },
+    {
+      "testCase": {
+        "id": "path-072",
+        "name": "pennylane: Paths cleaned (no leading slash)",
+        "description": "All output paths should have leading slashes removed",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "pennylane",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 181 paths are clean",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 181 paths are clean"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.883Z"
+    },
+    {
+      "testCase": {
+        "id": "main-073",
+        "name": "pennylane: No /main/ prefix in paths",
+        "description": "Paths should not start with main/ prefix",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "pennylane",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ No main/ prefix found",
+      "details": [
+        {
+          "passed": true,
+          "message": "No main/ prefix found"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.883Z"
+    },
+    {
+      "testCase": {
+        "id": "grp-074",
+        "name": "pennylane: Groups preserved (21 groups)",
+        "description": "All 21 groups from input should appear in output",
+        "category": "group-structure",
+        "difficulty": "complex",
+        "site": "pennylane",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "groups",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 21 groups found in output",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 21 groups found in output"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.884Z"
+    },
+    {
+      "testCase": {
+        "id": "fmt-075",
+        "name": "pennylane: Valid Documentation.AI JSON structure",
+        "description": "Output should have name + navigation with groups/tabs/products",
+        "category": "full-conversion",
+        "difficulty": "simple",
+        "site": "pennylane",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "format",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Has \"name\" and \"navigation\" fields | ✓ Navigation type: tabs",
+      "details": [
+        {
+          "passed": true,
+          "message": "Has \"name\" and \"navigation\" fields"
+        },
+        {
+          "passed": true,
+          "message": "Navigation type: tabs"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.884Z"
+    },
+    {
+      "testCase": {
+        "id": "tab-076",
+        "name": "pennylane: Multi-tab navigation preserved",
+        "description": "Input has 3 tabs — output should use tabs structure",
+        "category": "tab-handling",
+        "difficulty": "moderate",
+        "site": "pennylane",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "tabs",
+          "navigation"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 3 tabs | ✓ All tabs present: Guides, API Reference, Changelog",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 3 tabs"
+        },
+        {
+          "passed": true,
+          "message": "All tabs present: Guides, API Reference, Changelog"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.884Z"
+    },
+    {
+      "testCase": {
+        "id": "nest-077",
+        "name": "pennylane: Nested pages converted",
+        "description": "Pages with level > 0 should be nested under parent pages",
+        "category": "nesting",
+        "difficulty": "moderate",
+        "site": "pennylane",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "nesting",
+          "hierarchy"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 48 groups (input base groups: 21). Nesting creates additional sub-groups.",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 48 groups (input base groups: 21). Nesting creates additional sub-groups."
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.884Z"
+    },
+    {
+      "testCase": {
+        "id": "method-078",
+        "name": "pennylane: HTTP methods detected",
+        "description": "API endpoint pages should have method field where detectable",
+        "category": "method-detection",
+        "difficulty": "moderate",
+        "site": "pennylane",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "api",
+          "methods"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Detected 122 HTTP methods: GET, POST, PUT, DELETE",
+      "details": [
+        {
+          "passed": true,
+          "message": "Detected 122 HTTP methods: GET, POST, PUT, DELETE"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.884Z"
+    },
+    {
+      "testCase": {
+        "id": "name-079",
+        "name": "pipedrive: Site name extracted",
+        "description": "The output should have a valid \"name\" field extracted from \"pipedrive.readme.io\"",
+        "category": "name-extraction",
+        "difficulty": "simple",
+        "site": "pipedrive",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "name",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Name: \"Pipedrive\" | ✓ Domain suffix properly cleaned",
+      "details": [
+        {
+          "passed": true,
+          "message": "Name: \"Pipedrive\""
+        },
+        {
+          "passed": true,
+          "message": "Domain suffix properly cleaned"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.884Z"
+    },
+    {
+      "testCase": {
+        "id": "pages-080",
+        "name": "pipedrive: Page count preserved (91 pages)",
+        "description": "All 91 pages from input should appear in output",
+        "category": "page-count",
+        "difficulty": "complex",
+        "site": "pipedrive",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "pages",
+          "completeness"
+        ]
+      },
+      "passed": false,
+      "scores": {
+        "quality": 0.3,
+        "relevance": 1,
+        "accuracy": 0,
+        "formatCorrectness": 0,
+        "completeness": 0
+      },
+      "feedback": "✗ Input: 91 pages, Output: 83 pages (DIFF: -8)",
+      "details": [
+        {
+          "passed": false,
+          "message": "Input: 91 pages, Output: 83 pages (DIFF: -8)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.885Z"
+    },
+    {
+      "testCase": {
+        "id": "path-081",
+        "name": "pipedrive: Paths cleaned (no leading slash)",
+        "description": "All output paths should have leading slashes removed",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "pipedrive",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 83 paths are clean",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 83 paths are clean"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.885Z"
+    },
+    {
+      "testCase": {
+        "id": "main-082",
+        "name": "pipedrive: No /main/ prefix in paths",
+        "description": "Paths should not start with main/ prefix",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "pipedrive",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ No main/ prefix found",
+      "details": [
+        {
+          "passed": true,
+          "message": "No main/ prefix found"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.885Z"
+    },
+    {
+      "testCase": {
+        "id": "grp-083",
+        "name": "pipedrive: Groups preserved (8 groups)",
+        "description": "All 8 groups from input should appear in output",
+        "category": "group-structure",
+        "difficulty": "complex",
+        "site": "pipedrive",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "groups",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 8 groups found in output",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 8 groups found in output"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.885Z"
+    },
+    {
+      "testCase": {
+        "id": "fmt-084",
+        "name": "pipedrive: Valid Documentation.AI JSON structure",
+        "description": "Output should have name + navigation with groups/tabs/products",
+        "category": "full-conversion",
+        "difficulty": "simple",
+        "site": "pipedrive",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "format",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Has \"name\" and \"navigation\" fields | ✓ Navigation type: tabs",
+      "details": [
+        {
+          "passed": true,
+          "message": "Has \"name\" and \"navigation\" fields"
+        },
+        {
+          "passed": true,
+          "message": "Navigation type: tabs"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.885Z"
+    },
+    {
+      "testCase": {
+        "id": "tab-085",
+        "name": "pipedrive: Multi-tab navigation preserved",
+        "description": "Input has 4 tabs — output should use tabs structure",
+        "category": "tab-handling",
+        "difficulty": "moderate",
+        "site": "pipedrive",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "tabs",
+          "navigation"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 4 tabs | ✓ All tabs present: Guides, pipedrive-engineering, tutorials, pipedrive",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 4 tabs"
+        },
+        {
+          "passed": true,
+          "message": "All tabs present: Guides, pipedrive-engineering, tutorials, pipedrive"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.885Z"
+    },
+    {
+      "testCase": {
+        "id": "nest-086",
+        "name": "pipedrive: Nested pages converted",
+        "description": "Pages with level > 0 should be nested under parent pages",
+        "category": "nesting",
+        "difficulty": "moderate",
+        "site": "pipedrive",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "nesting",
+          "hierarchy"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 18 groups (input base groups: 8). Nesting creates additional sub-groups.",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 18 groups (input base groups: 8). Nesting creates additional sub-groups."
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.885Z"
+    },
+    {
+      "testCase": {
+        "id": "method-087",
+        "name": "pipedrive: HTTP methods detected",
+        "description": "API endpoint pages should have method field where detectable",
+        "category": "method-detection",
+        "difficulty": "moderate",
+        "site": "pipedrive",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "api",
+          "methods"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Detected 0 HTTP methods: (none)",
+      "details": [
+        {
+          "passed": true,
+          "message": "Detected 0 HTTP methods: (none)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.885Z"
+    },
+    {
+      "testCase": {
+        "id": "name-088",
+        "name": "readme: Site name extracted",
+        "description": "The output should have a valid \"name\" field extracted from \"docs.readme.com\"",
+        "category": "name-extraction",
+        "difficulty": "simple",
+        "site": "readme",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "name",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Name: \"Readme\" | ✓ Domain suffix properly cleaned",
+      "details": [
+        {
+          "passed": true,
+          "message": "Name: \"Readme\""
+        },
+        {
+          "passed": true,
+          "message": "Domain suffix properly cleaned"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.885Z"
+    },
+    {
+      "testCase": {
+        "id": "pages-089",
+        "name": "readme: Page count preserved (307 pages)",
+        "description": "All 307 pages from input should appear in output",
+        "category": "page-count",
+        "difficulty": "complex",
+        "site": "readme",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "pages",
+          "completeness"
+        ]
+      },
+      "passed": false,
+      "scores": {
+        "quality": 0.3,
+        "relevance": 1,
+        "accuracy": 0,
+        "formatCorrectness": 0,
+        "completeness": 0
+      },
+      "feedback": "✗ Input: 307 pages, Output: 284 pages (DIFF: -23)",
+      "details": [
+        {
+          "passed": false,
+          "message": "Input: 307 pages, Output: 284 pages (DIFF: -23)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.886Z"
+    },
+    {
+      "testCase": {
+        "id": "path-090",
+        "name": "readme: Paths cleaned (no leading slash)",
+        "description": "All output paths should have leading slashes removed",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "readme",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 284 paths are clean",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 284 paths are clean"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.886Z"
+    },
+    {
+      "testCase": {
+        "id": "main-091",
+        "name": "readme: No /main/ prefix in paths",
+        "description": "Paths should not start with main/ prefix",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "readme",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ No main/ prefix found",
+      "details": [
+        {
+          "passed": true,
+          "message": "No main/ prefix found"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.886Z"
+    },
+    {
+      "testCase": {
+        "id": "grp-092",
+        "name": "readme: Groups preserved (11 groups)",
+        "description": "All 11 groups from input should appear in output",
+        "category": "group-structure",
+        "difficulty": "complex",
+        "site": "readme",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "groups",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 11 groups found in output",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 11 groups found in output"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.886Z"
+    },
+    {
+      "testCase": {
+        "id": "fmt-093",
+        "name": "readme: Valid Documentation.AI JSON structure",
+        "description": "Output should have name + navigation with groups/tabs/products",
+        "category": "full-conversion",
+        "difficulty": "simple",
+        "site": "readme",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "format",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Has \"name\" and \"navigation\" fields | ✓ Navigation type: groups",
+      "details": [
+        {
+          "passed": true,
+          "message": "Has \"name\" and \"navigation\" fields"
+        },
+        {
+          "passed": true,
+          "message": "Navigation type: groups"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.886Z"
+    },
+    {
+      "testCase": {
+        "id": "nest-094",
+        "name": "readme: Nested pages converted",
+        "description": "Pages with level > 0 should be nested under parent pages",
+        "category": "nesting",
+        "difficulty": "moderate",
+        "site": "readme",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "nesting",
+          "hierarchy"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 35 groups (input base groups: 11). Nesting creates additional sub-groups.",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 35 groups (input base groups: 11). Nesting creates additional sub-groups."
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.886Z"
+    },
+    {
+      "testCase": {
+        "id": "method-095",
+        "name": "readme: HTTP methods detected",
+        "description": "API endpoint pages should have method field where detectable",
+        "category": "method-detection",
+        "difficulty": "moderate",
+        "site": "readme",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "api",
+          "methods"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Detected 0 HTTP methods: (none)",
+      "details": [
+        {
+          "passed": true,
+          "message": "Detected 0 HTTP methods: (none)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.887Z"
+    },
+    {
+      "testCase": {
+        "id": "name-096",
+        "name": "shippingeasy: Site name extracted",
+        "description": "The output should have a valid \"name\" field extracted from \"shippingeasy.readme.io\"",
+        "category": "name-extraction",
+        "difficulty": "simple",
+        "site": "shippingeasy",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "name",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Name: \"Shippingeasy\" | ✓ Domain suffix properly cleaned",
+      "details": [
+        {
+          "passed": true,
+          "message": "Name: \"Shippingeasy\""
+        },
+        {
+          "passed": true,
+          "message": "Domain suffix properly cleaned"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.887Z"
+    },
+    {
+      "testCase": {
+        "id": "pages-097",
+        "name": "shippingeasy: Page count preserved (38 pages)",
+        "description": "All 38 pages from input should appear in output",
+        "category": "page-count",
+        "difficulty": "moderate",
+        "site": "shippingeasy",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "pages",
+          "completeness"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Input: 38 pages, Output: 38 pages",
+      "details": [
+        {
+          "passed": true,
+          "message": "Input: 38 pages, Output: 38 pages"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.887Z"
+    },
+    {
+      "testCase": {
+        "id": "path-098",
+        "name": "shippingeasy: Paths cleaned (no leading slash)",
+        "description": "All output paths should have leading slashes removed",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "shippingeasy",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 38 paths are clean",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 38 paths are clean"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.887Z"
+    },
+    {
+      "testCase": {
+        "id": "main-099",
+        "name": "shippingeasy: No /main/ prefix in paths",
+        "description": "Paths should not start with main/ prefix",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "shippingeasy",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ No main/ prefix found",
+      "details": [
+        {
+          "passed": true,
+          "message": "No main/ prefix found"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.887Z"
+    },
+    {
+      "testCase": {
+        "id": "grp-100",
+        "name": "shippingeasy: Groups preserved (6 groups)",
+        "description": "All 6 groups from input should appear in output",
+        "category": "group-structure",
+        "difficulty": "moderate",
+        "site": "shippingeasy",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "groups",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 6 groups found in output",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 6 groups found in output"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.887Z"
+    },
+    {
+      "testCase": {
+        "id": "fmt-101",
+        "name": "shippingeasy: Valid Documentation.AI JSON structure",
+        "description": "Output should have name + navigation with groups/tabs/products",
+        "category": "full-conversion",
+        "difficulty": "simple",
+        "site": "shippingeasy",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "format",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Has \"name\" and \"navigation\" fields | ✓ Navigation type: groups",
+      "details": [
+        {
+          "passed": true,
+          "message": "Has \"name\" and \"navigation\" fields"
+        },
+        {
+          "passed": true,
+          "message": "Navigation type: groups"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.887Z"
+    },
+    {
+      "testCase": {
+        "id": "stab-102",
+        "name": "shippingeasy: Single tab collapsed to groups",
+        "description": "Single-tab input should collapse to groups (no tabs wrapper)",
+        "category": "tab-handling",
+        "difficulty": "simple",
+        "site": "shippingeasy",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "tabs",
+          "collapse"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Correctly collapsed single tab to groups",
+      "details": [
+        {
+          "passed": true,
+          "message": "Correctly collapsed single tab to groups"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.887Z"
+    },
+    {
+      "testCase": {
+        "id": "method-103",
+        "name": "shippingeasy: HTTP methods detected",
+        "description": "API endpoint pages should have method field where detectable",
+        "category": "method-detection",
+        "difficulty": "moderate",
+        "site": "shippingeasy",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "api",
+          "methods"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Detected 0 HTTP methods: (none)",
+      "details": [
+        {
+          "passed": true,
+          "message": "Detected 0 HTTP methods: (none)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.887Z"
+    },
+    {
+      "testCase": {
+        "id": "name-104",
+        "name": "shopline-developers: Site name extracted",
+        "description": "The output should have a valid \"name\" field extracted from \"shopline-developers.readme.io\"",
+        "category": "name-extraction",
+        "difficulty": "simple",
+        "site": "shopline-developers",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "name",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Name: \"Shopline Developers\" | ✓ Domain suffix properly cleaned",
+      "details": [
+        {
+          "passed": true,
+          "message": "Name: \"Shopline Developers\""
+        },
+        {
+          "passed": true,
+          "message": "Domain suffix properly cleaned"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.887Z"
+    },
+    {
+      "testCase": {
+        "id": "pages-105",
+        "name": "shopline-developers: Page count preserved (99 pages)",
+        "description": "All 99 pages from input should appear in output",
+        "category": "page-count",
+        "difficulty": "complex",
+        "site": "shopline-developers",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "pages",
+          "completeness"
+        ]
+      },
+      "passed": false,
+      "scores": {
+        "quality": 0.3,
+        "relevance": 1,
+        "accuracy": 0,
+        "formatCorrectness": 0,
+        "completeness": 0
+      },
+      "feedback": "✗ Input: 99 pages, Output: 87 pages (DIFF: -12)",
+      "details": [
+        {
+          "passed": false,
+          "message": "Input: 99 pages, Output: 87 pages (DIFF: -12)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.887Z"
+    },
+    {
+      "testCase": {
+        "id": "path-106",
+        "name": "shopline-developers: Paths cleaned (no leading slash)",
+        "description": "All output paths should have leading slashes removed",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "shopline-developers",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 87 paths are clean",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 87 paths are clean"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.887Z"
+    },
+    {
+      "testCase": {
+        "id": "main-107",
+        "name": "shopline-developers: No /main/ prefix in paths",
+        "description": "Paths should not start with main/ prefix",
+        "category": "path-cleaning",
+        "difficulty": "simple",
+        "site": "shopline-developers",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "paths",
+          "cleaning"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ No main/ prefix found",
+      "details": [
+        {
+          "passed": true,
+          "message": "No main/ prefix found"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.888Z"
+    },
+    {
+      "testCase": {
+        "id": "grp-108",
+        "name": "shopline-developers: Groups preserved (16 groups)",
+        "description": "All 16 groups from input should appear in output",
+        "category": "group-structure",
+        "difficulty": "complex",
+        "site": "shopline-developers",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "groups",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ All 16 groups found in output",
+      "details": [
+        {
+          "passed": true,
+          "message": "All 16 groups found in output"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.888Z"
+    },
+    {
+      "testCase": {
+        "id": "fmt-109",
+        "name": "shopline-developers: Valid Documentation.AI JSON structure",
+        "description": "Output should have name + navigation with groups/tabs/products",
+        "category": "full-conversion",
+        "difficulty": "simple",
+        "site": "shopline-developers",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "format",
+          "structure"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Has \"name\" and \"navigation\" fields | ✓ Navigation type: tabs",
+      "details": [
+        {
+          "passed": true,
+          "message": "Has \"name\" and \"navigation\" fields"
+        },
+        {
+          "passed": true,
+          "message": "Navigation type: tabs"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.888Z"
+    },
+    {
+      "testCase": {
+        "id": "tab-110",
+        "name": "shopline-developers: Multi-tab navigation preserved",
+        "description": "Input has 2 tabs — output should use tabs structure",
+        "category": "tab-handling",
+        "difficulty": "moderate",
+        "site": "shopline-developers",
+        "checks": [
+          null,
+          null
+        ],
+        "tags": [
+          "tabs",
+          "navigation"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 2 tabs | ✓ All tabs present: Guides, API Reference",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 2 tabs"
+        },
+        {
+          "passed": true,
+          "message": "All tabs present: Guides, API Reference"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.888Z"
+    },
+    {
+      "testCase": {
+        "id": "nest-111",
+        "name": "shopline-developers: Nested pages converted",
+        "description": "Pages with level > 0 should be nested under parent pages",
+        "category": "nesting",
+        "difficulty": "moderate",
+        "site": "shopline-developers",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "nesting",
+          "hierarchy"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Output has 29 groups (input base groups: 16). Nesting creates additional sub-groups.",
+      "details": [
+        {
+          "passed": true,
+          "message": "Output has 29 groups (input base groups: 16). Nesting creates additional sub-groups."
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.888Z"
+    },
+    {
+      "testCase": {
+        "id": "method-112",
+        "name": "shopline-developers: HTTP methods detected",
+        "description": "API endpoint pages should have method field where detectable",
+        "category": "method-detection",
+        "difficulty": "moderate",
+        "site": "shopline-developers",
+        "checks": [
+          null
+        ],
+        "tags": [
+          "api",
+          "methods"
+        ]
+      },
+      "passed": true,
+      "scores": {
+        "quality": 0.95,
+        "relevance": 1,
+        "accuracy": 1,
+        "formatCorrectness": 1,
+        "completeness": 1
+      },
+      "feedback": "✓ Detected 0 HTTP methods: (none)",
+      "details": [
+        {
+          "passed": true,
+          "message": "Detected 0 HTTP methods: (none)"
+        }
+      ],
+      "timestamp": "2026-02-24T16:15:02.888Z"
+    }
+  ],
+  "inputFiles": [
+    "360learning.readme.io_2026-02-24T13-34-34-722Z.json",
+    "autocode.readme.io_2026-02-24T13-33-44-278Z.json",
+    "docs.datafiniti.co_2026-02-24T13-34-19-072Z.json",
+    "floorplanner.readme.io_2026-02-24T13-33-36-927Z.json",
+    "lirium.readme.io_2026-02-24T13-33-52-613Z.json",
+    "docs.lithic.com_2026-02-24T13-33-06-807Z.json",
+    "docs.moderntreasury.com_2026-02-24T13-34-53-079Z.json",
+    "paperform.readme.io_2026-02-24T13-33-27-528Z.json",
+    "pennylane.readme.io_2026-02-24T13-34-07-056Z.json",
+    "pipedrive.readme.io_2026-02-24T13-35-57-017Z.json",
+    "docs.readme.com_2026-02-24T13-33-14-080Z.json",
+    "shippingeasy.readme.io_2026-02-24T13-34-40-563Z.json",
+    "shopline-developers.readme.io_2026-02-24T13-32-49-484Z.json"
+  ],
+  "outputFiles": [
+    "360learning_docs.json",
+    "autocode_docs.json",
+    "datafiniti_docs.json",
+    "floorplanner_docs.json",
+    "lirium_docs.json",
+    "lithic_docs.json",
+    "moderntreasury_docs.json",
+    "paperform_docs.json",
+    "pennylane_docs.json",
+    "pipedrive_docs.json",
+    "readme_docs.json",
+    "shippingeasy_docs.json",
+    "shopline-developers_docs.json"
+  ]
+}
+

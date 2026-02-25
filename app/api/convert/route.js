@@ -3,6 +3,8 @@ import { mkdir, writeFile } from "fs/promises";
 import { join } from "path";
 import { isUrlAllowed, fetchRaw } from "./functions/types.js";
 import { extractFrontmatter } from "./functions/frontmatter.js";
+import { convertUnknownWithAI } from "./functions/ai-module.js";
+
 import {
   convertBlockquoteCallouts,
   convertJsxCallouts,
@@ -133,6 +135,18 @@ export async function POST(req) {
     const { unknowns, componentBlocks, content: cleanedContent } = scanUnknownComponents(content);
     await saveUnknownComponents(componentBlocks);
     content = cleanedContent;
+
+    // Step 2.5: AI-convert unknown components
+    let aiWarnings = [];
+    if (componentBlocks.length > 0) {
+      const { conversions, warnings } = await convertUnknownWithAI(componentBlocks);
+      aiWarnings = warnings;
+
+      // Replace each placeholder with AI-converted MDX
+      for (const [placeholderId, convertedMdx] of conversions) {
+  content = content.replace(placeholderId, "\n\n" + convertedMdx + "\n\n");
+      }
+    }
 
     console.log(componentBlocks);
 

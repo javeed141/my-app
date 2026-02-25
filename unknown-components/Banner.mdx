@@ -1,0 +1,12 @@
+{/* Unknown component: <Banner> */}
+
+export const Banner = ({ type, message, link }) => (
+  <div className={`p-4 rounded ${type === 'warning' ? 'bg-yellow-100' : 'bg-blue-100'}`}>
+    <strong>{message}</strong>
+    {link && <a href={link}> Learn more →</a>}
+  </div>
+);
+
+<Banner type="warning" message="This SDK requires Node.js 18 or higher" link="/docs/system-requirements" />
+
+<Banner type="info" message="New! WebSocket support is now available in v4.2" link="/docs/changelog#v4.2" />

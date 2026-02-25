@@ -28,17 +28,130 @@ export function removeImports(content) {
 
 // --- 2. Remove export statements ---
 
+// =====================================================================
+// FIX: Replace your removeExports function in cleanup.js with this one
+// =====================================================================
+//
+// BUG: The old removeExports only matched single-line exports like:
+//        export const foo = 'bar';
+//
+//      Multi-line exports like this were NEVER removed:
+//        export const QuickLink = ({ title }) => {
+//          return (<a>...</a>);
+//        };
+//
+//      This left raw JSX in the MDX content, causing:
+//        "Could not parse import/exports with acorn (line 1, column 28)"
+//
+// FIX: Added a second pass that uses brace-depth counting to find
+//      and remove multi-line export blocks (arrow functions, function
+//      declarations with JSX bodies, etc.)
+// =====================================================================
+
 export function removeExports(content) {
   const changes = [];
   let count = 0;
+  let result = content;
 
-  const result = content.replace(
-    /^export\s+(const|let|var)\s+\w+\s*=\s*.*?;\s*$/gm,
+  // Pass 1: Remove simple single-line exports
+  // e.g. export const API_URL = 'https://...';
+  result = result.replace(
+    /^export\s+(const|let|var)\s+\w+\s*=\s*[^{]*?;\s*$/gm,
     () => {
       count++;
       return "";
     }
   );
+
+  // Pass 2: Remove multi-line export blocks
+  // e.g. export const QuickLink = ({ title }) => { return (...); };
+  // e.g. export function MyComponent() { return (...); }
+  const multiLinePattern =
+    /^export\s+(?:(?:const|let|var)\s+\w+\s*=|function\s+\w+\s*\()/m;
+
+  let safetyLimit = 50;
+  let match;
+
+  while ((match = multiLinePattern.exec(result)) !== null && safetyLimit-- > 0) {
+    const startIdx = match.index;
+
+    // Skip exports inside code fences
+    const beforeMatch = result.substring(0, startIdx);
+    const fenceCount = (beforeMatch.match(/^[ \t]*```/gm) || []).length;
+    if (fenceCount % 2 === 1) break;
+
+    // Walk through the code counting braces to find the end of the block
+    let braceDepth = 0;
+    let parenDepth = 0;
+    let foundFirstBrace = false;
+    let inString = false;
+    let stringChar = "";
+    let i = startIdx;
+
+    while (i < result.length) {
+      const ch = result[i];
+      const prev = i > 0 ? result[i - 1] : "";
+
+      // Skip string contents
+      if (!inString && (ch === '"' || ch === "'")) {
+        inString = true;
+        stringChar = ch;
+        i++;
+        continue;
+      }
+      if (inString && ch === stringChar && prev !== "\\") {
+        inString = false;
+        i++;
+        continue;
+      }
+      if (inString) {
+        i++;
+        continue;
+      }
+
+      // Track parentheses
+      if (ch === "(") parenDepth++;
+      else if (ch === ")") parenDepth--;
+
+      // Track braces (only when not inside parens)
+      if (ch === "{" && parenDepth === 0) {
+        braceDepth++;
+        foundFirstBrace = true;
+      } else if (ch === "}" && parenDepth === 0) {
+        braceDepth--;
+
+        // When we're back to depth 0, we found the end
+        if (foundFirstBrace && braceDepth === 0) {
+          let endIdx = i + 1;
+
+          // Eat trailing semicolons and spaces
+          while (
+            endIdx < result.length &&
+            (result[endIdx] === ";" ||
+              result[endIdx] === " " ||
+              result[endIdx] === "\t")
+          ) {
+            endIdx++;
+          }
+
+          // Eat the newline after the block
+          if (endIdx < result.length && result[endIdx] === "\n") {
+            endIdx++;
+          }
+
+          // Remove the entire block
+          result = result.slice(0, startIdx) + result.slice(endIdx);
+          count++;
+          break;
+        }
+      }
+
+      i++;
+    }
+
+    // Safety: couldn't find closing brace — stop
+    if (i >= result.length) break;
+  }
 
   if (count > 0) {
     changes.push({
@@ -630,45 +743,81 @@ const KNOWN_COMPONENTS = new Set([
   "Frame", "Icon",
 ]);
 
+// ---------------------------------------------------------------
+// KNOWN parent→child relationships.
+// Parents must be extracted BEFORE children so children don't get
+// ripped out independently and leave the parent with broken content.
+// ---------------------------------------------------------------
+const PARENT_CHILD_MAP = {
+  Recipe: ["RecipeStep"],
+  Cards: ["Card"],
+  Tabs: ["Tab"],
+  Steps: ["Step"],
+  ExpandableGroup: ["Expandable"],
+};
+
 export function scanUnknownComponents(content) {
   const unknowns = new Map();
   const componentBlocks = [];
 
+  // PRE-PROCESS: close unclosed code fences
+  let cleanedContent = closeUnclosedFences(content);
+
+  // Build a fence map for O(1) "inside fence?" lookups
+  let fenceMap = buildFenceMap(cleanedContent);
+
+  // Find all unknown component names (skip inside code fences)
   const tagRegex = /<([A-Z][A-Za-z0-9]*(?:\.[A-Za-z0-9]+)?)\b/g;
   let match;
-  while ((match = tagRegex.exec(content)) !== null) {
+  while ((match = tagRegex.exec(cleanedContent)) !== null) {
     const name = match[1];
-    if (!KNOWN_COMPONENTS.has(name)) {
+    if (!KNOWN_COMPONENTS.has(name) && !isInsideFence(fenceMap, match.index)) {
       unknowns.set(name, (unknowns.get(name) || 0) + 1);
     }
   }
 
-  let cleanedContent = content;
+  // ORDER: parents before children
+  const ordered = orderParentsFirst(unknowns);
 
-  for (const [name] of unknowns) {
-    let raw = "";
+  let placeholderIndex = 0;
 
-    const definition = extractComponentDefinition(cleanedContent, name);
+  for (const name of ordered) {
+    // Extract the component definition (export const MyComp = ...)
+    const definition = extractComponentDefinition(cleanedContent, name, fenceMap);
     if (definition) {
-      raw += definition + "\n\n";
       cleanedContent = cleanedContent.replace(definition, "");
+      fenceMap = buildFenceMap(cleanedContent);
     }
+
+    // Extract each usage and replace with a placeholder
+    const usages = [];
+    const contexts = [];
+    const placeholderIds = [];
 
     let usage;
-    while ((usage = extractUsage(cleanedContent, name)) !== null) {
-      raw += usage + "\n\n";
-      cleanedContent = cleanedContent.replace(usage, "");
+    while ((usage = extractUsage(cleanedContent, name, fenceMap)) !== null) {
+      const usageIndex = cleanedContent.indexOf(usage);
+      const context = getContext(cleanedContent, usageIndex, usage.length);
+
+      const pid = `{/* __AI_CONVERT__${name}__${placeholderIndex}__ */}`;
+      placeholderIndex++;
+
+      usages.push(usage);
+      contexts.push(context);
+      placeholderIds.push(pid);
+
+      cleanedContent = cleanedContent.replace(usage, pid);
+      fenceMap = buildFenceMap(cleanedContent);
     }
 
-    cleanedContent = cleanedContent.replace(/^\s*\};\s*$/gm, "");
-
-    const message = `{/* ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ UNKNOWN COMPONENT: <${name}> was removed. This component is not supported by Documentation.AI. Stored in /unknown-components/${name}.mdx — needs manual review or AI conversion. ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ */}`;
-
-    if (!cleanedContent.includes(message)) {
-      cleanedContent = message + "\n\n" + cleanedContent;
-    }
-
-    componentBlocks.push({ name, raw: raw.trim() });
+    componentBlocks.push({
+      name,
+      definition: definition || null,
+      raw: [definition, ...usages].filter(Boolean).join("\n\n").trim(),
+      usages,
+      contexts,
+      placeholderIds,
+    });
   }
 
   cleanedContent = cleanedContent.replace(/\n{3,}/g, "\n\n");
@@ -676,7 +825,160 @@ export function scanUnknownComponents(content) {
   return { unknowns, componentBlocks, content: cleanedContent };
 }
 
-function extractComponentDefinition(content, name) {
+// ---------------------------------------------------------------
+// Order unknowns so parents are processed before their children.
+// ---------------------------------------------------------------
+function orderParentsFirst(unknowns) {
+  const names = [...unknowns.keys()];
+  const childSet = new Set();
+
+  for (const parent of Object.keys(PARENT_CHILD_MAP)) {
+    for (const child of PARENT_CHILD_MAP[parent]) {
+      childSet.add(child);
+    }
+  }
+
+  names.sort((a, b) => {
+    const aIsChild = childSet.has(a) ? 1 : 0;
+    const bIsChild = childSet.has(b) ? 1 : 0;
+    return aIsChild - bIsChild;
+  });
+
+  return names;
+}
+
+// ---------------------------------------------------------------
+// Build a fence map: sorted array of [openCharIdx, closeCharIdx]
+// ranges where content is inside a ``` code fence.
+// O(n) to build, O(fenceCount) to query.
+// ---------------------------------------------------------------
+function buildFenceMap(content) {
+  const lines = content.split("\n");
+  const fenceLines = []; // { lineIdx, charIdx, isOpener }
+
+  let charIdx = 0;
+  for (let i = 0; i < lines.length; i++) {
+    const trimmed = lines[i].trim();
+    if (/^```/.test(trimmed)) {
+      const isOpener = /^```\w/.test(trimmed); // ```jsx, ```python etc.
+      fenceLines.push({ lineIdx: i, charIdx, isOpener });
+    }
+    charIdx += lines[i].length + 1;
+  }
+
+  // Pair fences using open/close state tracking (same logic as closeUnclosedFences)
+  const ranges = [];
+  let openStart = null; // charIdx of current open fence
+
+  for (const fl of fenceLines) {
+    if (openStart === null) {
+      if (fl.isOpener) {
+        openStart = fl.charIdx;
+      }
+      // else: orphaned closer, ignore
+    } else {
+      if (fl.isOpener) {
+        // Two openers in a row — previous was unclosed, skip it
+        openStart = fl.charIdx;
+      } else {
+        // Closer — pair it
+        ranges.push([openStart, fl.charIdx + content.split("\n")[fl.lineIdx].length]);
+        openStart = null;
+      }
+    }
+  }
+
+  return { ranges };
+}
+
+function isInsideFence(fenceMap, charIdx) {
+  for (const [open, close] of fenceMap.ranges) {
+    if (charIdx > open && charIdx < close) return true;
+  }
+  return false;
+}
+
+// ---------------------------------------------------------------
+// Close unclosed code fences.
+//
+// Walks fences tracking open/close state using language hints:
+//   ```jsx    → opener (has language name)
+//   ```       → closer (bare)
+//
+// Two openers in a row = first was unclosed. Strip it.
+// Opener with no closer at EOF = unclosed. Strip it.
+// Closer with no opener = orphaned. Strip it.
+// ---------------------------------------------------------------
+function closeUnclosedFences(content) {
+  const lines = content.split("\n");
+  const fenceLineIndices = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    if (/^[ \t]*```/.test(lines[i])) {
+      fenceLineIndices.push(i);
+    }
+  }
+
+  if (fenceLineIndices.length === 0) return content;
+
+  if (fenceLineIndices.length === 1) {
+    // Single fence, definitely unclosed
+    lines[fenceLineIndices[0]] = "";
+    return lines.join("\n");
+  }
+
+  const toRemove = new Set();
+  let openIdx = null; // index into fenceLineIndices of current open fence
+
+  for (let fi = 0; fi < fenceLineIndices.length; fi++) {
+    const lineIdx = fenceLineIndices[fi];
+    const line = lines[lineIdx].trim();
+    const isOpener = /^```\w/.test(line);
+
+    if (openIdx === null) {
+      if (isOpener) {
+        openIdx = fi;
+      } else {
+        // Bare ``` with no open fence — orphaned closer
+        toRemove.add(lineIdx);
+      }
+    } else {
+      if (isOpener) {
+        // Two openers in a row — previous was unclosed
+        toRemove.add(fenceLineIndices[openIdx]);
+        openIdx = fi;
+      } else {
+        // Closer matches the opener
+        openIdx = null;
+      }
+    }
+  }
+
+  // Open fence at EOF — unclosed
+  if (openIdx !== null) {
+    toRemove.add(fenceLineIndices[openIdx]);
+  }
+
+  for (const idx of toRemove) {
+    lines[idx] = "";
+  }
+
+  return lines.join("\n");
+}
+
+
+// Grab ~3 lines before and after for AI context
+function getContext(content, startIndex, length) {
+  const before = content.substring(Math.max(0, startIndex - 200), startIndex);
+  const after = content.substring(startIndex + length, startIndex + length + 200);
+
+  const beforeLines = before.split("\n").slice(-3).join("\n").trim();
+  const afterLines = after.split("\n").slice(0, 3).join("\n").trim();
+
+  return `...${beforeLines}\n[COMPONENT HERE]\n${afterLines}...`;
+}
+
+function extractComponentDefinition(content, name, fenceMap) {
   const escaped = escapeRegex(name);
 
   const startPatterns = [
@@ -691,6 +993,9 @@ function extractComponentDefinition(content, name) {
     if (!match) continue;
 
     const startIdx = match.index;
+
+    // Skip if inside a code fence
+    if (isInsideFence(fenceMap, startIdx)) continue;
 
     let braceDepth = 0;
     let parenDepth = 0;
@@ -760,21 +1065,20 @@ function extractComponentDefinition(content, name) {
       i++;
     }
 
-    const fallbackRegex = new RegExp(
-      escapeRegex(match[0]) + `[\\s\\S]*?(?=\\n\\n|\\nexport\\s|$)`,
-      "m"
-    );
-    const fallbackMatch = fallbackRegex.exec(content);
-    if (fallbackMatch) return fallbackMatch[0].trim();
+    // Brace counter failed — return null.
+    // Do NOT use a fallback regex that grabs partial definitions.
   }
 
   return null;
 }
 
-function extractUsage(content, name) {
+function extractUsage(content, name, fenceMap) {
   const escaped = escapeRegex(name);
   const startMatch = new RegExp(`<${escaped}\\b`).exec(content);
   if (!startMatch) return null;
+
+  // Skip if inside a code fence
+  if (isInsideFence(fenceMap, startMatch.index)) return null;
 
   const remaining = content.slice(startMatch.index);
 

@@ -1,0 +1,28 @@
+{/* Unknown component: <Quiz> */}
+
+export const Quiz = ({ question, options, correct }) => {
+  const [selected, setSelected] = useState(null);
+  return (
+    <div className="quiz-container my-4 p-4 border rounded">
+      <p><strong>{question}</strong></p>
+      {options.map((opt, i) => (
+        <button key={i} onClick={() => setSelected(i)}
+          className={selected === i ? (i === correct ? 'bg-green-200' : 'bg-red-200') : 'bg-gray-100'}>
+          {opt}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+<Quiz
+  question="What authentication method does Acme SDK v2 use?"
+  options={["API Tokens", "OAuth 2.0", "Basic Auth", "JWT"]}
+  correct={1}
+/>
+
+<Quiz
+  question="Which plan includes WebSocket support?"
+  options={["Free", "Pro", "Enterprise only"]}
+  correct={1}
+/>

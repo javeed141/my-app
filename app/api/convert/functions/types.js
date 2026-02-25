@@ -1,4 +1,11 @@
 // Config & constants for the MDX converter
+// -------------------------------------------------------------------
+// ADD these 2 lines at the very bottom of functions/types.js
+// -------------------------------------------------------------------
+
+// --- AI Conversion Config ---
+export const AI_MODEL = "gemini-2.5-flash";
+export const AI_MAX_TOKENS = 4096;
 
 export const FETCH_TIMEOUT_MS = 15_000;
 export const MAX_RESPONSE_BYTES = 2 * 1024 * 1024; // 2MB

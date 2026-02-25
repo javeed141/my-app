@@ -1,0 +1,18 @@
+{/* Unknown component: <DeprecationBanner> */}
+
+export const DeprecationBanner = ({ children, version }) => {
+  return (
+    <div className="bg-red-100 border-l-4 border-red-500 p-4 my-4">
+      <span className="text-red-700 font-bold">⚠️ Deprecated in {version}:</span>
+      <span className="ml-2">{children}</span>
+    </div>
+  );
+};
+
+<DeprecationBanner version="v2.0">
+  The legacy authentication flow using API tokens is deprecated. Please migrate to OAuth 2.0 by December 2024.
+</DeprecationBanner>
+
+<DeprecationBanner version="v1.x">
+  All v1 endpoints will be shut down on March 1, 2025. Please migrate to v2 immediately.
+</DeprecationBanner>

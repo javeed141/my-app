@@ -1,0 +1,20 @@
+{/* Unknown component: <ApiEndpoint> */}
+
+export const ApiEndpoint = ({ method, path, description, auth }) => (
+  <div className={`api-endpoint p-4 rounded-lg my-3 border-l-4 ${method === 'GET' ? 'border-green-500 bg-green-50' : method === 'POST' ? 'border-blue-500 bg-blue-50' : method === 'DELETE' ? 'border-red-500 bg-red-50' : 'border-yellow-500 bg-yellow-50'}`}>
+    <div className="flex items-center gap-2">
+      <span className={`font-mono font-bold text-sm px-2 py-1 rounded ${method === 'GET' ? 'bg-green-200' : method === 'POST' ? 'bg-blue-200' : 'bg-red-200'}`}>{method}</span>
+      <code className="text-sm">{path}</code>
+      {auth && <span className="text-xs bg-yellow-100 px-2 py-0.5 rounded">🔒 Auth Required</span>}
+    </div>
+    <p className="mt-2 text-sm text-gray-700">{description}</p>
+  </div>
+);
+
+<ApiEndpoint method="GET" path="/v2/users" description="List all users in your organization. Supports pagination and filtering." auth={true} />
+
+<ApiEndpoint method="POST" path="/v2/users" description="Create a new user. Requires admin role." auth={true} />
+
+<ApiEndpoint method="GET" path="/v2/health" description="Check API health status. No authentication required." auth={false} />
+
+<ApiEndpoint method="DELETE" path="/v2/users/:id" description="Permanently delete a user. This action cannot be undone." auth={true} />
