@@ -1,8 +1,21 @@
 // ai-converter.js
-// Sends unknown components to Gemini Flash 2.5 and gets back
+// Sends unknown components to Grok 4.1 (xAI) and gets back
 // Documentation.AI compatible MDX. Falls back gracefully if AI is unavailable.
+//
+// FEATURES:
+// - Per-usage parallel calls with Promise.allSettled (not sequential)
+// - Classification hints injected into user prompt (from cleanup.js classifier)
+// - Rate limiting: max AI_MAX_CONCURRENT concurrent calls
+// - 1 retry on failure before falling back to manual review message
 
 import { AI_MODEL, AI_MAX_TOKENS } from "./types.js";
+
+// -------------------------------------------------------------------
+// Config
+// -------------------------------------------------------------------
+
+const AI_MAX_CONCURRENT = 10;  // Max parallel API calls
+const AI_RETRY_COUNT = 1;      // Retries per failed call
 
 // -------------------------------------------------------------------
 // System prompt — teaches the AI exactly how Documentation.AI works
@@ -115,11 +128,6 @@ GOOD:
   **Answer:** PUT — making the same PUT request multiple times always produces the same result.
 </Expandable>
 
-BAD (never do this):
-<Expandable title="...">
-  <ul><li>POST</li><li>PUT <Callout kind="success">Correct</Callout></li></ul>
-</Expandable>
-
 ### Styled Container / Wrapper (div with Tailwind classes)
 → If it highlights info: Callout. If it's just layout: plain markdown. If it's decorative: remove wrapper, keep content.
 
@@ -165,6 +173,7 @@ Return ONLY valid JSON (no markdown fences around it, no extra text before or af
 
 // -------------------------------------------------------------------
 // Main export — converts all unknown components
+// Same signature: takes componentBlocks, returns { conversions, warnings }
 // -------------------------------------------------------------------
 
 export async function convertUnknownWithAI(componentBlocks) {
@@ -172,8 +181,8 @@ export async function convertUnknownWithAI(componentBlocks) {
   const warnings = [];
 
   // No API key? Just show messages — don't try to convert programmatically
-  if (!process.env.GEMINI_API_KEY) {
-    warnings.push("AI conversion skipped — no GEMINI_API_KEY in .env");
+  if (!process.env.XAI_API_KEY) {
+    warnings.push("AI conversion skipped — no XAI_API_KEY in .env");
 
     for (const block of componentBlocks) {
       for (let i = 0; i < block.placeholderIds.length; i++) {
@@ -186,32 +195,59 @@ export async function convertUnknownWithAI(componentBlocks) {
     return { conversions, warnings };
   }
 
-  // Convert each usage INDIVIDUALLY so different usages get different results
+  // Build task list: one task per usage (not per component)
+  const tasks = [];
   for (const block of componentBlocks) {
     for (let i = 0; i < block.placeholderIds.length; i++) {
-      try {
-        const singleBlock = {
-          name: block.name,
-          definition: block.definition,
-          usages: [block.usages[i]],
-          contexts: [block.contexts[i]],
-        };
+      // TRY KNOWN PATTERN FIRST — no AI needed for common components
+      const knownResult = knownPatternConvert(
+        block.name,
+        block.usages[i],
+        block.definition,
+        block.classification
+      );
 
-        const result = await callGemini(singleBlock);
-        conversions.set(block.placeholderIds[i], result.converted);
+      if (knownResult) {
+        conversions.set(block.placeholderIds[i], knownResult);
+        continue;
+      }
 
-        if (result.confidence === "low") {
-          warnings.push(`Low confidence: <${block.name}> usage ${i + 1} — ${result.reasoning}`);
+      // No known pattern — queue for AI
+      tasks.push({
+        pid: block.placeholderIds[i],
+        name: block.name,
+        definition: block.definition,
+        usage: block.usages[i],
+        context: block.contexts[i],
+        classification: block.classification || null,
+      });
+    }
+  }
+
+  // Fire parallel calls in batches of AI_MAX_CONCURRENT
+  for (let batchStart = 0; batchStart < tasks.length; batchStart += AI_MAX_CONCURRENT) {
+    const batch = tasks.slice(batchStart, batchStart + AI_MAX_CONCURRENT);
+
+    const results = await Promise.allSettled(
+      batch.map((task) => callGrokWithRetry(task))
+    );
+
+    for (let i = 0; i < results.length; i++) {
+      const task = batch[i];
+      const result = results[i];
+
+      if (result.status === "fulfilled") {
+        conversions.set(task.pid, result.value.converted);
+
+        if (result.value.confidence === "low") {
+          warnings.push(`Low confidence: <${task.name}> — ${result.value.reasoning}`);
         }
-      } catch (err) {
-        console.warn(`[ai-converter] Failed for <${block.name}> usage ${i + 1}:`, err.message);
-        warnings.push(`AI failed for <${block.name}> usage ${i + 1}: ${err.message}`);
+      } else {
+        console.warn(`[ai-converter] Failed for <${task.name}>:`, result.reason?.message || result.reason);
+        warnings.push(`AI failed for <${task.name}>: ${result.reason?.message || "Unknown error"}`);
 
-        // AI failed — just show message, don't try programmatic conversion
-        conversions.set(
-          block.placeholderIds[i],
-          manualReviewMessage(block.name, block.usages[i])
-        );
+        // AI failed — show manual review message, don't try programmatic conversion
+        conversions.set(task.pid, manualReviewMessage(task.name, task.usage));
       }
     }
   }
@@ -221,77 +257,360 @@ export async function convertUnknownWithAI(componentBlocks) {
 
 
 // -------------------------------------------------------------------
-// Call Gemini Flash 2.5 API
+// Call Grok with retry
 // -------------------------------------------------------------------
 
-async function callGemini(block) {
-  // Build the prompt
-  let prompt = `Convert this unknown ReadMe component to Documentation.AI MDX.\n\n`;
-  prompt += `Component name: ${block.name}\n\n`;
-
-  if (block.definition) {
-    prompt += `### Component source code:\n\`\`\`jsx\n${block.definition}\n\`\`\`\n\n`;
-  }
-
-  for (let i = 0; i < block.usages.length; i++) {
-    prompt += `### Usage ${i + 1}:\n\`\`\`jsx\n${block.usages[i]}\n\`\`\`\n`;
-    if (block.contexts[i]) {
-      prompt += `\nSurrounding context:\n${block.contexts[i]}\n\n`;
+async function callGrokWithRetry(task) {
+  let lastError;
+  for (let attempt = 0; attempt <= AI_RETRY_COUNT; attempt++) {
+    try {
+      return await callGrok(task);
+    } catch (err) {
+      lastError = err;
+      if (attempt < AI_RETRY_COUNT) {
+        // Wait 500ms before retry
+        await new Promise((r) => setTimeout(r, 500));
+      }
     }
   }
+  throw lastError;
+}
 
-  prompt += `\nPreserve ALL text content. Make it look clean and natural. Return only JSON.`;
 
-  // Gemini REST API
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${AI_MODEL}:generateContent`;
+// -------------------------------------------------------------------
+// Call Grok 4.1 (xAI) API — OpenAI-compatible chat completions
+// -------------------------------------------------------------------
+
+async function callGrok(task) {
+  const prompt = buildUserPrompt(task);
+
+  const url = "https://api.x.ai/v1/chat/completions";
 
   const res = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "x-goog-api-key": process.env.GEMINI_API_KEY,
+      "Authorization": `Bearer ${process.env.XAI_API_KEY}`,
     },
     body: JSON.stringify({
-      system_instruction: {
-        parts: [{ text: SYSTEM_PROMPT }],
-      },
-      contents: [
+      model: AI_MODEL,
+      max_completion_tokens: AI_MAX_TOKENS,
+      temperature: 0.2,
+      messages: [
+        {
+          role: "system",
+          content: SYSTEM_PROMPT,
+        },
         {
           role: "user",
-          parts: [{ text: prompt }],
+          content: prompt,
         },
       ],
-      generationConfig: {
-        maxOutputTokens: AI_MAX_TOKENS,
-        temperature: 0.2,
+      response_format: {
+        type: "json_object",
       },
     }),
   });
 
   if (!res.ok) {
     const errText = await res.text().catch(() => "");
-    throw new Error(`Gemini API returned ${res.status}: ${errText.slice(0, 200)}`);
+    throw new Error(`Grok API returned ${res.status}: ${errText.slice(0, 200)}`);
   }
 
   const data = await res.json();
 
-  // Gemini response: data.candidates[0].content.parts[0].text
-  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+  // OpenAI-compatible response structure
+  const text = data?.choices?.[0]?.message?.content;
 
   if (!text) {
-    throw new Error("Empty response from Gemini");
+    throw new Error("Empty response from Grok");
   }
 
-  return parseResponse(text, block.name);
+  return parseResponse(text, task.name);
 }
 
 
 // -------------------------------------------------------------------
-// Parse Gemini's JSON response
+// Known pattern converter — handles common ReadMe components that
+// have a clear, deterministic mapping. Runs BEFORE the AI call.
+// Returns converted MDX string, or null if no pattern matches.
+// -------------------------------------------------------------------
+
+function knownPatternConvert(name, usage, definition, classification) {
+  if (!usage) return null;
+
+  // --- Recipe → Steps ---
+  if (/^Recipe$/i.test(name)) {
+    return convertRecipeToSteps(usage);
+  }
+
+  // --- RecipeStep alone (orphaned) → Step content ---
+  if (/^RecipeStep$/i.test(name)) {
+    return convertRecipeStepToStep(usage);
+  }
+
+  // --- ProgressBar → bold text ---
+  if (/^ProgressBar$/i.test(name)) {
+    return convertProgressBar(usage);
+  }
+
+  // --- Data table components (features/items prop with array of objects) ---
+  if (classification && classification.category === "table") {
+    const tableResult = convertDataTableComponent(name, usage);
+    if (tableResult) return tableResult;
+  }
+
+  // --- Simple wrapper with just text children + classification is high confidence ---
+  if (classification && classification.confidence === "high") {
+    // Only handle self-closing or simple wrappers with plain text
+    const innerMatch = usage.match(new RegExp(`<${escapeForRegex(name)}[^>]*>([\\s\\S]*?)</${escapeForRegex(name)}>`));
+    if (innerMatch) {
+      const inner = innerMatch[1].trim();
+      // Only convert if inner content is plain text (no nested JSX)
+      if (inner && !/<[A-Z]/.test(inner)) {
+        return convertByClassification(name, usage, inner, definition, classification);
+      }
+    }
+
+    // Self-closing with props
+    const selfClose = usage.match(new RegExp(`<${escapeForRegex(name)}\\b([^>]*)/>`));
+    if (selfClose) {
+      return convertByClassification(name, usage, null, definition, classification);
+    }
+  }
+
+  return null; // No known pattern — let AI handle it
+}
+
+
+// --- Recipe → Steps converter ---
+function convertRecipeToSteps(usage) {
+  const stepRegex = /<RecipeStep\s+title="([^"]*)"(?:\s+language="([^"]*)")?>([\s\S]*?)<\/RecipeStep>/g;
+  const steps = [];
+  let match;
+
+  while ((match = stepRegex.exec(usage)) !== null) {
+    const title = match[1];
+    const language = match[2] || "";
+    const content = match[3].trim();
+
+    let stepContent;
+    if (language) {
+      stepContent = `\`\`\`${language}\n${content}\n\`\`\``;
+    } else {
+      stepContent = content;
+    }
+
+    steps.push(`  <Step title="${title}">\n    ${stepContent}\n  </Step>`);
+  }
+
+  if (steps.length === 0) return null;
+
+  return `<Steps>\n${steps.join("\n")}\n</Steps>`;
+}
+
+
+// --- Single RecipeStep → Step ---
+function convertRecipeStepToStep(usage) {
+  const match = usage.match(/<RecipeStep\s+title="([^"]*)"(?:\s+language="([^"]*)")?>([\s\S]*?)<\/RecipeStep>/);
+  if (!match) return null;
+
+  const title = match[1];
+  const language = match[2] || "";
+  const content = match[3].trim();
+
+  let stepContent;
+  if (language) {
+    stepContent = `\`\`\`${language}\n${content}\n\`\`\``;
+  } else {
+    stepContent = content;
+  }
+
+  return `<Steps>\n  <Step title="${title}">\n    ${stepContent}\n  </Step>\n</Steps>`;
+}
+
+
+// --- ProgressBar → bold text ---
+function convertProgressBar(usage) {
+  const labelMatch = usage.match(/label="([^"]*)"/);
+  const valueMatch = usage.match(/value=\{?(\d+)\}?/);
+  const maxMatch = usage.match(/max=\{?(\d+)\}?/);
+
+  const label = labelMatch ? labelMatch[1] : "Progress";
+  const value = valueMatch ? valueMatch[1] : "?";
+  const max = maxMatch ? maxMatch[1] : "100";
+
+  return `**${label}:** ${value}/${max} (${Math.round((parseInt(value) / parseInt(max)) * 100)}%)`;
+}
+
+
+// --- Data table components (CompatibilityMatrix, etc.) ---
+// Parses a features/items/data prop that contains an array of objects
+// and converts to a markdown table.
+function convertDataTableComponent(name, usage) {
+  // Find the array prop — typically features={[...]}, items={[...]}, data={[...]}
+  const arrayMatch = usage.match(/(?:features|items|data|rows)=\{(\[[\s\S]*?\])\s*\}/);
+  if (!arrayMatch) return null;
+
+  try {
+    // Parse the JS array literal — replace true/false with JSON equivalents
+    // The array looks like: [{ name: "API Access", free: true, pro: true, enterprise: true }, ...]
+    let arrayStr = arrayMatch[1];
+    
+    // Convert JS object syntax to valid JSON:
+    // 1. Quote unquoted keys: { name: → { "name":
+    arrayStr = arrayStr.replace(/(\{|,)\s*([a-zA-Z_]\w*)\s*:/g, '$1 "$2":');
+    // 2. Replace single quotes with double quotes (for string values)
+    arrayStr = arrayStr.replace(/'/g, '"');
+    // 3. Remove trailing commas before ] or } (valid JS, invalid JSON)
+    arrayStr = arrayStr.replace(/,\s*([\]}])/g, '$1');
+
+    const items = JSON.parse(arrayStr);
+    if (!Array.isArray(items) || items.length === 0) return null;
+
+    // Get all unique keys from the objects
+    const allKeys = [];
+    const keySet = new Set();
+    for (const item of items) {
+      for (const key of Object.keys(item)) {
+        if (!keySet.has(key)) {
+          keySet.add(key);
+          allKeys.push(key);
+        }
+      }
+    }
+
+    if (allKeys.length === 0) return null;
+
+    // Build markdown table
+    // Header row
+    const headerCells = allKeys.map(k => {
+      // Capitalize first letter, add spaces before capitals
+      return k.charAt(0).toUpperCase() + k.slice(1).replace(/([A-Z])/g, ' $1');
+    });
+    const header = `| ${headerCells.join(" | ")} |`;
+    const separator = `| ${allKeys.map(() => "---").join(" | ")} |`;
+
+    // Data rows
+    const rows = items.map(item => {
+      const cells = allKeys.map(key => {
+        const val = item[key];
+        if (val === true) return "✅";
+        if (val === false) return "❌";
+        if (val === null || val === undefined) return "";
+        return String(val);
+      });
+      return `| ${cells.join(" | ")} |`;
+    });
+
+    return [header, separator, ...rows].join("\n");
+  } catch (e) {
+    // JSON parse failed — let AI handle it
+    return null;
+  }
+}
+
+
+// --- Convert by classification category ---
+function convertByClassification(name, usage, innerText, definition, classification) {
+  const cat = classification.category;
+
+  // Extract props from usage for context
+  const messageMatch = usage.match(/message="([^"]*)"/);
+  const typeMatch = usage.match(/type="([^"]*)"/);
+  const linkMatch = usage.match(/link="([^"]*)"/);
+  const hrefMatch = usage.match(/href="([^"]*)"/);
+  const titleMatch = usage.match(/title="([^"]*)"/);
+
+  if (cat === "alert" || cat === "tip" || cat === "info" || cat === "success") {
+    // Map category to Callout kind
+    const kindMap = { alert: "alert", tip: "tip", info: "info", success: "success" };
+    let kind = kindMap[cat] || "info";
+
+    // Check if type prop hints at a different kind
+    if (typeMatch) {
+      const t = typeMatch[1].toLowerCase();
+      if (t === "warning" || t === "alert" || t === "danger" || t === "error") kind = "alert";
+      else if (t === "tip" || t === "hint") kind = "tip";
+      else if (t === "success" || t === "ok") kind = "success";
+      else if (t === "info" || t === "note") kind = "info";
+    }
+
+    let content = innerText || "";
+    if (messageMatch) {
+      content = `**${messageMatch[1]}**`;
+      if (linkMatch) {
+        content += ` [Learn more →](${linkMatch[1]})`;
+      }
+    }
+
+    if (!content) return null;
+    return `<Callout kind="${kind}">\n  ${content}\n</Callout>`;
+  }
+
+  if (cat === "card") {
+    const title = titleMatch ? titleMatch[1] : name;
+    const href = hrefMatch ? hrefMatch[1] : linkMatch ? linkMatch[1] : "#";
+    const desc = innerText || "";
+    return `<Card title="${title}" href="${href}">\n  ${desc}\n</Card>`;
+  }
+
+  return null; // Can't convert this category deterministically
+}
+
+
+function escapeForRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+
+// -------------------------------------------------------------------
+// Build user prompt — includes classification hint from cleanup.js
+// -------------------------------------------------------------------
+
+function buildUserPrompt(task) {
+  let prompt = `Convert this unknown ReadMe component to Documentation.AI MDX.\n\n`;
+  prompt += `Component name: <${task.name}>\n\n`;
+
+  // CLASSIFICATION HINT — pre-analyzed by classifyComponent() in cleanup.js
+  if (task.classification && task.classification.category !== "unknown") {
+    prompt += `### Classification (pre-analyzed)\n`;
+    prompt += `Category: ${task.classification.category}\n`;
+    prompt += `Suggested target: ${task.classification.target}\n`;
+    prompt += `Confidence: ${task.classification.confidence}\n`;
+    prompt += `Signals: ${task.classification.signals.join(", ")}\n`;
+    prompt += `\nUse this classification as a strong hint, but override it if the actual content suggests otherwise.\n\n`;
+  }
+
+  if (task.definition) {
+    // Sanitize definition: replace backticks that could break the fenced code block
+    const safeDef = task.definition.replace(/`/g, "'");
+    prompt += `### Component source code:\n\`\`\`jsx\n${safeDef}\n\`\`\`\n\n`;
+  }
+
+  if (task.usage) {
+    const safeUsage = task.usage.replace(/`/g, "'");
+    prompt += `### Usage:\n\`\`\`jsx\n${safeUsage}\n\`\`\`\n`;
+  }
+
+  if (task.context) {
+    prompt += `\nSurrounding context:\n${task.context}\n\n`;
+  }
+
+  prompt += `\nPreserve ALL text content. Make it look clean and natural. Return only JSON.`;
+
+  return prompt;
+}
+
+
+// -------------------------------------------------------------------
+// Parse Grok's JSON response
+// With response_format: { type: "json_object" }, Grok tries to return
+// valid JSON. But we still handle edge cases defensively.
 // -------------------------------------------------------------------
 
 function parseResponse(text, componentName) {
-  // Strip markdown code fences if AI wrapped them
+  // Strip markdown code fences if Grok wrapped them
   const cleaned = text
     .replace(/^```json\s*/m, "")
     .replace(/^```\s*/m, "")
@@ -343,7 +662,6 @@ function manualReviewMessage(componentName, usage) {
     .replace(/\}/g, "\\}")
     .trim();
 
-  // Keep it short: component name + original usage in a comment block
   const lines = [
     `{/* ⚠️ MANUAL REVIEW NEEDED: <${componentName}> */}`,
     `{/* This component could not be automatically converted. */}`,

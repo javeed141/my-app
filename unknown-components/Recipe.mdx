@@ -1,23 +1,10 @@
 {/* Unknown component: <Recipe> */}
 
 <Recipe>
-  <RecipeStep title="Install the SDK" language="bash">
-    npm install @acme/sdk @acme/cli
+  <RecipeStep title="Install SDK" language="bash">
+    npm install @acme/sdk
   </RecipeStep>
-  <RecipeStep title="Configure your environment" language="bash">
-    export ACME_API_KEY=your-key-here
-    export ACME_ENV=production
-  </RecipeStep>
-  <RecipeStep title="Initialize in your app" language="javascript">
-    import { AcmeClient } from '@acme/sdk';
-
-    const client = new AcmeClient({
-      apiKey: process.env.ACME_API_KEY,
-      environment: process.env.ACME_ENV,
-    });
-  </RecipeStep>
-  <RecipeStep title="Make your first request" language="javascript">
-    const users = await client.users.list({ limit: 10 });
-    console.log(users);
+  <RecipeStep title="Initialize" language="javascript">
+    const client = new AcmeClient({ apiKey: 'demo' });
   </RecipeStep>
 </Recipe>

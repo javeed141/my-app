@@ -4,7 +4,7 @@
 // -------------------------------------------------------------------
 
 // --- AI Conversion Config ---
-export const AI_MODEL = "gemini-2.5-flash";
+export const AI_MODEL = "grok-4-1-fast-reasoning";
 export const AI_MAX_TOKENS = 4096;
 
 export const FETCH_TIMEOUT_MS = 15_000;

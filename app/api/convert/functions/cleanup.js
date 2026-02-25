@@ -75,11 +75,6 @@ export function removeExports(content) {
   while ((match = multiLinePattern.exec(result)) !== null && safetyLimit-- > 0) {
     const startIdx = match.index;
 
-    // Skip exports inside code fences
-    const beforeMatch = result.substring(0, startIdx);
-    const fenceCount = (beforeMatch.match(/^[ \t]*```/gm) || []).length;
-    if (fenceCount % 2 === 1) break;
-
     // Walk through the code counting braces to find the end of the block
     let braceDepth = 0;
     let parenDepth = 0;
@@ -756,6 +751,119 @@ const PARENT_CHILD_MAP = {
   ExpandableGroup: ["Expandable"],
 };
 
+// ---------------------------------------------------------------
+// CLASSIFIER ENGINE
+// Analyzes component name, definition, usage, and context to
+// produce a classification hint for the AI. This is NOT a
+// converter — it just tells the AI "this looks like an alert"
+// so it can do a more focused conversion.
+// ---------------------------------------------------------------
+
+const NAME_CLASSIFICATION_PATTERNS = [
+  { pattern: /banner|alert|warning|deprecat|caution/i, category: "alert", target: '<Callout kind="alert">', confidence: "high" },
+  { pattern: /tip|hint|bestpractice|pro.?tip/i, category: "tip", target: '<Callout kind="tip">', confidence: "high" },
+  { pattern: /info|note|notice|remind/i, category: "info", target: '<Callout kind="info">', confidence: "high" },
+  { pattern: /success|confirm|done|complete/i, category: "success", target: '<Callout kind="success">', confidence: "high" },
+  { pattern: /terminal|cli|console|shell|command/i, category: "code", target: "```bash code block", confidence: "high" },
+  { pattern: /card|quicklink|navlink|tile/i, category: "card", target: "<Card>", confidence: "high" },
+  { pattern: /feature|grid|highlight|showcase/i, category: "grid", target: "<Columns> + <Card>", confidence: "high" },
+  { pattern: /step|tutorial|recipe|guide|wizard/i, category: "steps", target: "<Steps>", confidence: "high" },
+  { pattern: /tab|switch|compare|toggle|platform/i, category: "tabs", target: "<Tabs>", confidence: "medium" },
+  { pattern: /faq|question|quiz|trivia/i, category: "expandable", target: "<Expandable>", confidence: "medium" },
+  { pattern: /table|matrix|compat|pricing/i, category: "table", target: "Markdown table", confidence: "medium" },
+  { pattern: /progress|status|bar|meter/i, category: "text", target: "Bold text with value", confidence: "medium" },
+  { pattern: /slider|carousel|gallery/i, category: "images", target: "Multiple <Image>", confidence: "low" },
+  { pattern: /code.?compare|before.?after|diff/i, category: "tabs", target: "<Tabs>", confidence: "medium" },
+];
+
+const TAILWIND_CLASSIFICATION_SIGNALS = [
+  { pattern: /bg-red|border-red|text-red/i, signal: "red-styling", hint: "alert/danger" },
+  { pattern: /bg-yellow|border-yellow|text-yellow/i, signal: "yellow-styling", hint: "warning" },
+  { pattern: /bg-blue|border-blue|text-blue/i, signal: "blue-styling", hint: "info" },
+  { pattern: /bg-green|border-green|text-green/i, signal: "green-styling", hint: "success/tip" },
+  { pattern: /bg-black.*text-green|font-mono/i, signal: "terminal-styling", hint: "CLI/terminal" },
+  { pattern: /grid|flex.*gap|columns/i, signal: "layout-classes", hint: "grid/columns" },
+];
+
+const JSX_CLASSIFICATION_SIGNALS = [
+  { pattern: /useState|useEffect|useRef|useCallback/i, signal: "react-hooks", hint: "interactive (low confidence)", downgradeTo: "low" },
+  { pattern: /fetch\(|axios|\.then\(/i, signal: "api-call", hint: "dynamic data", downgradeTo: "low" },
+  { pattern: /onClick|onChange|onSubmit/i, signal: "event-handler", hint: "interactive" },
+  { pattern: /\.map\s*\(/i, signal: "list-render", hint: "iterates data" },
+  { pattern: /<table|<thead|<tbody|<tr/i, signal: "html-table", hint: "table component" },
+  { pattern: /<a\s+href|<Link/i, signal: "navigation", hint: "link/card" },
+  { pattern: /props\.children|\{children\}/i, signal: "wrapper", hint: "content wrapper" },
+];
+
+const PROP_CLASSIFICATION_SIGNALS = [
+  { pattern: /commands\s*=|cmds\s*=/i, signal: "commands-prop", hint: "CLI terminal" },
+  { pattern: /columns\s*=|cols\s*=/i, signal: "columns-prop", hint: "grid layout" },
+  { pattern: /href\s*=|url\s*=|link\s*=/i, signal: "link-prop", hint: "navigation" },
+  { pattern: /icon\s*=|fa-/i, signal: "icon-prop", hint: "has icons" },
+  { pattern: /features\s*=|items\s*=/i, signal: "data-prop", hint: "data-driven" },
+  { pattern: /value\s*=|max\s*=|percent/i, signal: "value-prop", hint: "progress/status" },
+  { pattern: /question\s*=|options\s*=|correct\s*=/i, signal: "quiz-prop", hint: "quiz/trivia" },
+];
+
+export function classifyComponent(name, definition, usagesText) {
+  const signals = [];
+  let category = "unknown";
+  let confidence = "low";
+  let target = "AI decides";
+
+  // Signal 1: Component name pattern matching
+  for (const p of NAME_CLASSIFICATION_PATTERNS) {
+    if (p.pattern.test(name)) {
+      category = p.category;
+      target = p.target;
+      confidence = p.confidence;
+      signals.push(`name:${name}\u2192${p.category}`);
+      break;
+    }
+  }
+
+  // Signal 2: Tailwind classes in definition
+  if (definition) {
+    for (const t of TAILWIND_CLASSIFICATION_SIGNALS) {
+      if (t.pattern.test(definition)) {
+        signals.push(`tailwind:${t.signal}`);
+        if (confidence === "low") confidence = "medium";
+      }
+    }
+  }
+
+  // Signal 3: JSX structure in definition
+  if (definition) {
+    for (const j of JSX_CLASSIFICATION_SIGNALS) {
+      if (j.pattern.test(definition)) {
+        signals.push(`jsx:${j.signal}`);
+        if (j.downgradeTo) {
+          confidence = j.downgradeTo;
+        }
+      }
+    }
+  }
+
+  // Signal 4: Props from usage text
+  if (usagesText) {
+    for (const p of PROP_CLASSIFICATION_SIGNALS) {
+      if (p.pattern.test(usagesText)) {
+        signals.push(`prop:${p.signal}`);
+      }
+    }
+  }
+
+  if (signals.length === 0) {
+    signals.push("no-signals");
+  }
+
+  return { category, confidence, target, signals };
+}
+
+// ---------------------------------------------------------------
+// MAIN SCANNER
+// ---------------------------------------------------------------
+
 export function scanUnknownComponents(content) {
   const unknowns = new Map();
   const componentBlocks = [];
@@ -817,12 +925,19 @@ export function scanUnknownComponents(content) {
       usages,
       contexts,
       placeholderIds,
+      classification: classifyComponent(name, definition, usages.join("\n")),
     });
   }
 
   cleanedContent = cleanedContent.replace(/\n{3,}/g, "\n\n");
 
-  return { unknowns, componentBlocks, content: cleanedContent };
+  // Filter out components with 0 usages (detected in tag scan but
+  // all usages were inside code fences — nothing to convert)
+  const filteredBlocks = componentBlocks.filter(
+    (b) => b.usages.length > 0
+  );
+
+  return { unknowns, componentBlocks: filteredBlocks, content: cleanedContent };
 }
 
 // ---------------------------------------------------------------
@@ -866,9 +981,9 @@ function buildFenceMap(content) {
     charIdx += lines[i].length + 1;
   }
 
-  // Pair fences using open/close state tracking (same logic as closeUnclosedFences)
+  // Pair fences using open/close state tracking
   const ranges = [];
-  let openStart = null; // charIdx of current open fence
+  let openStart = null;
 
   for (const fl of fenceLines) {
     if (openStart === null) {
@@ -882,7 +997,7 @@ function buildFenceMap(content) {
         openStart = fl.charIdx;
       } else {
         // Closer — pair it
-        ranges.push([openStart, fl.charIdx + content.split("\n")[fl.lineIdx].length]);
+        ranges.push([openStart, fl.charIdx + lines[fl.lineIdx].length]);
         openStart = null;
       }
     }
@@ -901,13 +1016,11 @@ function isInsideFence(fenceMap, charIdx) {
 // ---------------------------------------------------------------
 // Close unclosed code fences.
 //
-// Walks fences tracking open/close state using language hints:
-//   ```jsx    → opener (has language name)
-//   ```       → closer (bare)
+// STRATEGY: Instead of just stripping orphaned openers (which leaks
+// the content as raw MDX), we ADD a closing ``` at the appropriate
+// place. This keeps code-like content safely inside a fence.
 //
-// Two openers in a row = first was unclosed. Strip it.
-// Opener with no closer at EOF = unclosed. Strip it.
-// Closer with no opener = orphaned. Strip it.
+// For orphaned closers (``` with no opener), we strip them.
 // ---------------------------------------------------------------
 function closeUnclosedFences(content) {
   const lines = content.split("\n");
@@ -921,49 +1034,178 @@ function closeUnclosedFences(content) {
 
   if (fenceLineIndices.length === 0) return content;
 
-  if (fenceLineIndices.length === 1) {
-    // Single fence, definitely unclosed
-    lines[fenceLineIndices[0]] = "";
-    return lines.join("\n");
-  }
+  // --- Walk through all fence markers and pair them ---
+  // Track: openers that have no matching closer
+  const unclosedOpeners = [];  // line indices of openers with no closer
+  const orphanedClosers = [];  // line indices of closers with no opener
 
-  const toRemove = new Set();
-  let openIdx = null; // index into fenceLineIndices of current open fence
+  let openLineIdx = null; // line index of currently open fence
 
   for (let fi = 0; fi < fenceLineIndices.length; fi++) {
     const lineIdx = fenceLineIndices[fi];
     const line = lines[lineIdx].trim();
-    const isOpener = /^```\w/.test(line);
+    const isOpener = /^```\w/.test(line) || (line === "```" && openLineIdx === null);
+    // A bare ``` is an opener if nothing is currently open, closer otherwise
 
-    if (openIdx === null) {
-      if (isOpener) {
-        openIdx = fi;
+    if (openLineIdx === null) {
+      if (/^```\w/.test(line)) {
+        // Typed opener (```jsx, ```bash, etc.)
+        openLineIdx = lineIdx;
       } else {
         // Bare ``` with no open fence — orphaned closer
-        toRemove.add(lineIdx);
+        orphanedClosers.push(lineIdx);
       }
     } else {
-      if (isOpener) {
-        // Two openers in a row — previous was unclosed
-        toRemove.add(fenceLineIndices[openIdx]);
-        openIdx = fi;
+      if (/^```\w/.test(line)) {
+        // New typed opener while previous is still open — previous is unclosed
+        unclosedOpeners.push(openLineIdx);
+        openLineIdx = lineIdx;
       } else {
-        // Closer matches the opener
-        openIdx = null;
+        // Bare ``` — this closes the current fence
+        openLineIdx = null;
       }
     }
   }
 
-  // Open fence at EOF — unclosed
-  if (openIdx !== null) {
-    toRemove.add(fenceLineIndices[openIdx]);
+  // If a fence is still open at EOF
+  if (openLineIdx !== null) {
+    unclosedOpeners.push(openLineIdx);
   }
 
-  for (const idx of toRemove) {
+  // --- Remove orphaned closers ---
+  for (const idx of orphanedClosers) {
     lines[idx] = "";
   }
 
+  // --- Smart-close unclosed openers ---
+  // Instead of closing at EOF, find where code-like content ends.
+  // Insert ``` at the best boundary.
+
+  // Process from bottom to top to preserve line indices
+  unclosedOpeners.sort((a, b) => b - a);
+
+  for (const openerLineIdx of unclosedOpeners) {
+    const bestClose = findSmartClosePoint(lines, openerLineIdx);
+    lines.splice(bestClose + 1, 0, "```");
+  }
+
   return lines.join("\n");
+}
+
+
+// -------------------------------------------------------------------
+// findSmartClosePoint(lines, openerLineIdx)
+//
+// Given an unclosed ``` opener, find the best line to insert a closing ```
+// AFTER. The goal is to capture the actual code block content without
+// swallowing unrelated components, prose, or markdown.
+//
+// Strategy:
+// 1. Walk line-by-line from the opener
+// 2. Track "code-like" content vs "documentation-like" content
+// 3. Close the fence when we hit a clear boundary:
+//    a) A line that looks like a markdown heading (# ...)
+//    b) A line that starts a new export const / export function
+//       (this is a separate component definition — close before it)
+//    c) A standalone component usage <CompName .../> or <CompName>
+//       that isn't HTML inside JSX (i.e. uppercase first letter, preceded
+//       by blank line)
+//    d) A blank line followed by normal prose (a sentence-like line)
+//    e) EOF
+//
+// We require at least 2 lines of code content before considering
+// early termination to avoid closing immediately.
+// -------------------------------------------------------------------
+
+function findSmartClosePoint(lines, openerLineIdx) {
+  let lastCodeLine = openerLineIdx;  // last line that looks like code
+  let codeLineCount = 0;
+
+  for (let i = openerLineIdx + 1; i < lines.length; i++) {
+    const line = lines[i];
+    const trimmed = line.trim();
+
+    // Empty lines don't count as code or prose — skip them
+    // but peek ahead to see what comes next
+    if (trimmed === "") {
+      // Look ahead for boundary signals
+      if (i + 1 < lines.length) {
+        const nextTrimmed = lines[i + 1].trim();
+
+        // Boundary: blank line followed by markdown heading
+        if (/^#{1,6}\s/.test(nextTrimmed) && codeLineCount >= 1) {
+          return i - 1;  // close before the blank line
+        }
+
+        // Boundary: blank line followed by new export (separate definition)
+        if (/^export\s+(?:const|function|default)\s/.test(nextTrimmed) && codeLineCount >= 1) {
+          return i - 1;
+        }
+
+        // Boundary: blank line followed by standalone uppercase component usage
+        // like <Banner ... /> or <ProgressBar ...
+        if (/^<[A-Z][A-Za-z0-9]*\b/.test(nextTrimmed) && codeLineCount >= 1) {
+          // Check it's not a continuation of the code (like <table> inside JSX)
+          // Heuristic: if the component name is NOT a standard HTML tag,
+          // it's probably a standalone usage
+          const tagMatch = nextTrimmed.match(/^<([A-Z][A-Za-z0-9]*)/);
+          if (tagMatch) {
+            return i - 1;  // close before blank line
+          }
+        }
+
+        // Boundary: blank line followed by prose (starts with letter, 
+        // contains spaces, doesn't look like code)
+        if (codeLineCount >= 2 && isProselike(nextTrimmed)) {
+          return i - 1;
+        }
+      }
+      continue;
+    }
+
+    // Another fence opener — close before it
+    if (/^[ \t]*```\w/.test(line) && codeLineCount >= 1) {
+      return i - 1;
+    }
+
+    // Looks like code content — keep going
+    codeLineCount++;
+    lastCodeLine = i;
+  }
+
+  // Reached EOF — close at last code line
+  return lastCodeLine;
+}
+
+
+// -------------------------------------------------------------------
+// Heuristic: does this line look like documentation prose rather than code?
+// -------------------------------------------------------------------
+
+function isProselike(trimmed) {
+  if (!trimmed) return false;
+  
+  // Starts with markdown syntax
+  if (/^#{1,6}\s/.test(trimmed)) return true;
+  if (/^\*\*/.test(trimmed)) return true;      // bold text
+  if (/^[-*]\s/.test(trimmed)) return true;     // list item
+  if (/^\d+\.\s/.test(trimmed)) return true;    // numbered list
+  if (/^\|/.test(trimmed)) return true;          // table row
+  if (/^>/.test(trimmed)) return true;           // blockquote
+
+  // Starts with a word (lowercase letter), contains spaces, has more
+  // than 5 words — probably prose
+  if (/^[a-z]/.test(trimmed)) {
+    const wordCount = trimmed.split(/\s+/).length;
+    if (wordCount >= 4) return true;
+  }
+
+  // Starts with The, A, An, If, When, This, etc.
+  if (/^(?:The|A|An|If|When|This|That|In|On|For|To|You|It|Available|Note)\s/.test(trimmed)) {
+    return true;
+  }
+
+  return false;
 }
 
 
