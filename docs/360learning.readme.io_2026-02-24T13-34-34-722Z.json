@@ -1,0 +1,2120 @@
+{
+  "site": "360learning.readme.io",
+  "navType": "tabs",
+  "tabs": [
+    "API Reference",
+    "Guides",
+    "Recipes",
+    "Changelog"
+  ],
+  "sections": [
+    {
+      "name": "Guides",
+      "pages": [
+        {
+          "title": "360Learning API v2",
+          "path": "/docs/introduction",
+          "fullUrl": "https://360learning.readme.io/docs/introduction",
+          "level": 1,
+          "group": "Documentation"
+        },
+        {
+          "title": "Getting started",
+          "path": "/docs/get-started",
+          "fullUrl": "https://360learning.readme.io/docs/get-started",
+          "level": 1,
+          "group": "Documentation"
+        },
+        {
+          "title": "Step 1: Obtain API v2 credentials",
+          "path": "/docs/step-1-get-your-api-credentials",
+          "fullUrl": "https://360learning.readme.io/docs/step-1-get-your-api-credentials",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Step 2: Get an access token",
+          "path": "/docs/step-2-create-an-access-token",
+          "fullUrl": "https://360learning.readme.io/docs/step-2-create-an-access-token",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Step 3: Make your first API call using the access token",
+          "path": "/docs/step-3",
+          "fullUrl": "https://360learning.readme.io/docs/step-3",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Next steps",
+          "path": "/docs/whats-next",
+          "fullUrl": "https://360learning.readme.io/docs/whats-next",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Authentication",
+          "path": "/docs/authentication",
+          "fullUrl": "https://360learning.readme.io/docs/authentication",
+          "level": 1,
+          "group": "Documentation"
+        },
+        {
+          "title": "Manage API credentials",
+          "path": "/docs/manage-api-keys",
+          "fullUrl": "https://360learning.readme.io/docs/manage-api-keys",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Authentication best practices",
+          "path": "/docs/authentication-best-practices",
+          "fullUrl": "https://360learning.readme.io/docs/authentication-best-practices",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Scopes and permissions",
+          "path": "/docs/oauth-scopes",
+          "fullUrl": "https://360learning.readme.io/docs/oauth-scopes",
+          "level": 1,
+          "group": "Documentation"
+        },
+        {
+          "title": "Scopes best practices",
+          "path": "/docs/scopes-best-practices",
+          "fullUrl": "https://360learning.readme.io/docs/scopes-best-practices",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Pagination",
+          "path": "/docs/pagination",
+          "fullUrl": "https://360learning.readme.io/docs/pagination",
+          "level": 1,
+          "group": "Documentation"
+        },
+        {
+          "title": "Filtering",
+          "path": "/docs/filtering",
+          "fullUrl": "https://360learning.readme.io/docs/filtering",
+          "level": 1,
+          "group": "Documentation"
+        },
+        {
+          "title": "Bulk operations",
+          "path": "/docs/bulk-operations-1",
+          "fullUrl": "https://360learning.readme.io/docs/bulk-operations-1",
+          "level": 1,
+          "group": "Documentation"
+        },
+        {
+          "title": "Error handling",
+          "path": "/docs/errors",
+          "fullUrl": "https://360learning.readme.io/docs/errors",
+          "level": 1,
+          "group": "Documentation"
+        },
+        {
+          "title": "Authentication errors",
+          "path": "/docs/authentication-errors",
+          "fullUrl": "https://360learning.readme.io/docs/authentication-errors",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Scope errors",
+          "path": "/docs/scopes-errors",
+          "fullUrl": "https://360learning.readme.io/docs/scopes-errors",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Rate limiting errors",
+          "path": "/docs/rate-limiting-errors",
+          "fullUrl": "https://360learning.readme.io/docs/rate-limiting-errors",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Webhooks",
+          "path": "/docs/webhooks",
+          "fullUrl": "https://360learning.readme.io/docs/webhooks",
+          "level": 1,
+          "group": "Documentation"
+        },
+        {
+          "title": "Subscriptions",
+          "path": "/docs/subscriptions",
+          "fullUrl": "https://360learning.readme.io/docs/subscriptions",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Event payload and headers",
+          "path": "/docs/event-payload-and-headers",
+          "fullUrl": "https://360learning.readme.io/docs/event-payload-and-headers",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Webhooks security and signature verification",
+          "path": "/docs/security-and-signature-verification",
+          "fullUrl": "https://360learning.readme.io/docs/security-and-signature-verification",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Retry logic",
+          "path": "/docs/retry-logic",
+          "fullUrl": "https://360learning.readme.io/docs/retry-logic",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Testing webhooks",
+          "path": "/docs/testing-webhooks",
+          "fullUrl": "https://360learning.readme.io/docs/testing-webhooks",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Webhooks processing best practices",
+          "path": "/docs/webhooks-processing-best-practices",
+          "fullUrl": "https://360learning.readme.io/docs/webhooks-processing-best-practices",
+          "level": 2,
+          "group": "Documentation"
+        },
+        {
+          "title": "Why migrate from API v1 to API v2?",
+          "path": "/docs/api-v1-to-v2-migration-1",
+          "fullUrl": "https://360learning.readme.io/docs/api-v1-to-v2-migration-1",
+          "level": 1,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Endpoint mapping",
+          "path": "/docs/endpoint-mapping-1",
+          "fullUrl": "https://360learning.readme.io/docs/endpoint-mapping-1",
+          "level": 1,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Core API migration guides",
+          "path": "/docs/classrooms-migration-guides",
+          "fullUrl": "https://360learning.readme.io/docs/classrooms-migration-guides",
+          "level": 1,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Classrooms migration",
+          "path": "/docs/replace-an-attendance-sheet",
+          "fullUrl": "https://360learning.readme.io/docs/replace-an-attendance-sheet",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Courses migration",
+          "path": "/docs/retrieve-a-course-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/retrieve-a-course-migration-guide",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all courses: Migration guide",
+          "path": "/docs/list-all-courses-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-courses-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all courses statistics: Migration guide",
+          "path": "/docs/list-all-courses-statistics-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-courses-statistics-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Custom fields migration",
+          "path": "/docs/create-a-custom-field-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/create-a-custom-field-migration-guide",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Delete a custom field: Migration guide",
+          "path": "/docs/delete-a-custom-field-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/delete-a-custom-field-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all custom fields: Migration guide",
+          "path": "/docs/list-all-custom-fields-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-custom-fields-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Replace a user custom fields values: Migration guide",
+          "path": "/docs/replace-a-user-custom-fields-values-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/replace-a-user-custom-fields-values-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "External IDs migration",
+          "path": "/docs/create-an-id-mapping-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/create-an-id-mapping-migration-guide",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all ID mappings: Migration guide",
+          "path": "/docs/list-all-id-mappings-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-id-mappings-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Groups migration",
+          "path": "/docs/retrieve-a-group-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/retrieve-a-group-migration-guide",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all memberships in a group: Migration guide",
+          "path": "/docs/list-all-memberships-in-a-group-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-memberships-in-a-group-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all groups: Migration guide",
+          "path": "/docs/list-all-groups-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-groups-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Create a group: Migration guide",
+          "path": "/docs/create-a-group-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/create-a-group-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Edit a group: Migration guide",
+          "path": "/docs/edit-a-group-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/edit-a-group-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Delete a group: Migration guide",
+          "path": "/docs/delete-a-group-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/delete-a-group-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Add a user's role: Migration guides",
+          "path": "/docs/add-a-user-role-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/add-a-user-role-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Remove a user's role: Migration guide",
+          "path": "/docs/remove-a-user-role-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/remove-a-user-role-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all content IDs in a group catalog: Migration guide",
+          "path": "/docs/list-all-content-ids-in-a-group-catalog-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-content-ids-in-a-group-catalog-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Paths migration",
+          "path": "/docs/create-a-path-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/create-a-path-migration-guide",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Edit a path: Migration guide",
+          "path": "/docs/edit-a-path-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/edit-a-path-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Retrieve metrics for a path session: Migration guide",
+          "path": "/docs/retrieve-metrics-for-a-path-session-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/retrieve-metrics-for-a-path-session-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all enrollments: Migration guide",
+          "path": "/docs/list-all-enrollments-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-enrollments-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Replace a path session audience: Migration guide",
+          "path": "/docs/replace-a-path-session-audience-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/replace-a-path-session-audience-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all user (path session) statistics: Migration guide",
+          "path": "/docs/list-all-user-path-session-statistics-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-user-path-session-statistics-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all sessions in a path: Migration guide",
+          "path": "/docs/list-all-sessions-in-a-path-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-sessions-in-a-path-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Create a path session: Migration guide",
+          "path": "/docs/create-a-path-session-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/create-a-path-session-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Retrieve a path session: Migration guide",
+          "path": "/docs/retrieve-a-path-session-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/retrieve-a-path-session-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Edit a path session: Migration guide",
+          "path": "/docs/edit-a-path-session-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/edit-a-path-session-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Delete a path session: Migration guide",
+          "path": "/docs/delete-a-path-session-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/delete-a-path-session-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all paths: Migration guide",
+          "path": "/docs/list-all-paths-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-paths-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Retrieve a path : Migration guide",
+          "path": "/docs/retrieve-a-path-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/retrieve-a-path-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Skills migration",
+          "path": "/docs/skills-migration",
+          "fullUrl": "https://360learning.readme.io/docs/skills-migration",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Tags migration",
+          "path": "/docs/create-a-tag-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/create-a-tag-migration-guide",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Replace a tag: Migration guide",
+          "path": "/docs/replace-a-tag-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/replace-a-tag-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all tags: Migration guide",
+          "path": "/docs/list-all-tags",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-tags",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Translations migration",
+          "path": "/docs/translations-migration",
+          "fullUrl": "https://360learning.readme.io/docs/translations-migration",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Users migration",
+          "path": "/docs/create-a-user-20-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/create-a-user-20-migration-guide",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Edit a user: Migration guide",
+          "path": "/docs/edit-a-user-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/edit-a-user-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Retrieve a user: Migration guide",
+          "path": "/docs/retrieve-a-user-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/retrieve-a-user-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Delete a user: Migration guide",
+          "path": "/docs/delete-a-user-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/delete-a-user-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all users: Migration guide",
+          "path": "/docs/list-all-users-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-users-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Add a manager to a user: Migration guide",
+          "path": "/docs/add-a-manager-to-a-user-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/add-a-manager-to-a-user-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Remove a manager from a user: Migration guide",
+          "path": "/docs/remove-a-manager-from-a-user-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/remove-a-manager-from-a-user-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "List all memberships of a user: Migration guide",
+          "path": "/docs/list-all-memberships-of-a-user-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/list-all-memberships-of-a-user-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Pseudonymize user: Migration guide",
+          "path": "/docs/pseudonymize-user-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/pseudonymize-user-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Integrations migration",
+          "path": "/docs/retrieve-an-external-course-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/retrieve-an-external-course-migration-guide",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Bulk API migration guides",
+          "path": "/docs/groups-2",
+          "fullUrl": "https://360learning.readme.io/docs/groups-2",
+          "level": 1,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Groups migration",
+          "path": "/docs/add-content-to-group-catalog-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/add-content-to-group-catalog-migration-guide",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Remove content from catalogs: Migration guide",
+          "path": "/docs/remove-content-from-catalogs",
+          "fullUrl": "https://360learning.readme.io/docs/remove-content-from-catalogs",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Add content to libraries: Migration guide",
+          "path": "/docs/add-content-to-libraries-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/add-content-to-libraries-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Remove content from libraries: Migration guide",
+          "path": "/docs/remove-content-from-libraries-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/remove-content-from-libraries-migration-guide",
+          "level": 3,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Skills migration",
+          "path": "/docs/skills-2",
+          "fullUrl": "https://360learning.readme.io/docs/skills-2",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Subscriptions migration",
+          "path": "/docs/template-v2-endpoint-name-migration-guide-copy",
+          "fullUrl": "https://360learning.readme.io/docs/template-v2-endpoint-name-migration-guide-copy",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Integrations migration",
+          "path": "/docs/archive-external-courses-migration-guide",
+          "fullUrl": "https://360learning.readme.io/docs/archive-external-courses-migration-guide",
+          "level": 2,
+          "group": "Migration guides"
+        },
+        {
+          "title": "Create an API-based integration",
+          "path": "/docs/create-an-api-based-integration",
+          "fullUrl": "https://360learning.readme.io/docs/create-an-api-based-integration",
+          "level": 1,
+          "group": "Integrators Hub"
+        },
+        {
+          "title": "Step 1: Authenticate",
+          "path": "/docs/step-1-authenticate",
+          "fullUrl": "https://360learning.readme.io/docs/step-1-authenticate",
+          "level": 2,
+          "group": "Integrators Hub"
+        },
+        {
+          "title": "Step 2: Configure the integration",
+          "path": "/docs/step-2",
+          "fullUrl": "https://360learning.readme.io/docs/step-2",
+          "level": 2,
+          "group": "Integrators Hub"
+        },
+        {
+          "title": "Step 3: Synchronize content",
+          "path": "/docs/step-3-synchronize-content",
+          "fullUrl": "https://360learning.readme.io/docs/step-3-synchronize-content",
+          "level": 2,
+          "group": "Integrators Hub"
+        },
+        {
+          "title": "Step 4: Synchronize statistics",
+          "path": "/docs/step-4-synchronize-statistics",
+          "fullUrl": "https://360learning.readme.io/docs/step-4-synchronize-statistics",
+          "level": 2,
+          "group": "Integrators Hub"
+        },
+        {
+          "title": "Next steps",
+          "path": "/docs/next-steps",
+          "fullUrl": "https://360learning.readme.io/docs/next-steps",
+          "level": 2,
+          "group": "Integrators Hub"
+        }
+      ]
+    },
+    {
+      "name": "API Reference",
+      "pages": [
+        {
+          "title": "Users",
+          "path": "/reference/v2usersactivateusercontroller_activateuser",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersactivateusercontroller_activateuser",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Add a manager to a userpost",
+          "path": "/reference/v2usersaddmanagercontroller_addmanager",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersaddmanagercontroller_addmanager",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Remove a manager from a userdel",
+          "path": "/reference/v2usersdeletemanagercontroller_deletemanager",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersdeletemanagercontroller_deletemanager",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Create an invited userpost",
+          "path": "/reference/v2userscreateusercontroller_createuser",
+          "fullUrl": "https://360learning.readme.io/reference/v2userscreateusercontroller_createuser",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Create a custom user linkpost",
+          "path": "/reference/v2userscreatecustomuserlinkcontroller_createcustomuserlink",
+          "fullUrl": "https://360learning.readme.io/reference/v2userscreatecustomuserlinkcontroller_createcustomuserlink",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all usersget",
+          "path": "/reference/v2usersgetuserscontroller_getusers",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersgetuserscontroller_getusers",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Delete a userdel",
+          "path": "/reference/v2usersdeleteusercontroller_deleteuser",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersdeleteusercontroller_deleteuser",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Retrieve a userget",
+          "path": "/reference/v2usersgetusercontroller_getuser",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersgetusercontroller_getuser",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Edit a userpatch",
+          "path": "/reference/v2usersupdateusercontroller_updateuser",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersupdateusercontroller_updateuser",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Delete a custom user linkdel",
+          "path": "/reference/v2usersdeletecustomuserlinkcontroller_deletecustomuserlink",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersdeletecustomuserlinkcontroller_deletecustomuserlink",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Import a certificatepost",
+          "path": "/reference/v2userscreateusercertificatecontroller_createusercertificate",
+          "fullUrl": "https://360learning.readme.io/reference/v2userscreateusercertificatecontroller_createusercertificate",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all custom user links for a userget",
+          "path": "/reference/v2usersgetcustomuserlinkscontroller_getcustomuserlinks",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersgetcustomuserlinkscontroller_getcustomuserlinks",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace custom user linksput",
+          "path": "/reference/v2usersupdatecustomuserlinkcontroller_updatecustomuserlink",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersupdatecustomuserlinkcontroller_updatecustomuserlink",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all manager IDs for a userget",
+          "path": "/reference/v2usersgetmanagerscontroller_getmanagers",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersgetmanagerscontroller_getmanagers",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all subordinate IDs for a userget",
+          "path": "/reference/v2usersgetsubordinatescontroller_getsubordinates",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersgetsubordinatescontroller_getsubordinates",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all custom field values for a userget",
+          "path": "/reference/v2usersgetusercustomfieldvaluescontroller_getusercustomfieldvalues",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersgetusercustomfieldvaluescontroller_getusercustomfieldvalues",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace a user custom fields valuesput",
+          "path": "/reference/v2usersupdateusercustomfieldvaluescontroller_updateusercustomfieldvalues",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersupdateusercustomfieldvaluescontroller_updateusercustomfieldvalues",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all memberships of a userget",
+          "path": "/reference/v2usersgetuserrolesingroupscontroller_getuserrolesingroups",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersgetuserrolesingroupscontroller_getuserrolesingroups",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace the password of a userput",
+          "path": "/reference/v2usersreplacepasswordcontroller_replacepassword",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersreplacepasswordcontroller_replacepassword",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Retrieve a certificate PDF fileget",
+          "path": "/reference/v2usersgetusercertificateaspdfcontroller_getusercertificateaspdf",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersgetusercertificateaspdfcontroller_getusercertificateaspdf",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all certificates for a userget",
+          "path": "/reference/v2usersgetusercertificatescontroller_getusercertificates",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersgetusercertificatescontroller_getusercertificates",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Pseudonymize userput",
+          "path": "/reference/v2userspseudonymizeusercontroller_pseudonymizeuser",
+          "fullUrl": "https://360learning.readme.io/reference/v2userspseudonymizeusercontroller_pseudonymizeuser",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Groups",
+          "path": "/reference/v2groupsadduserroletogroupcontroller_adduserroletogroup",
+          "fullUrl": "https://360learning.readme.io/reference/v2groupsadduserroletogroupcontroller_adduserroletogroup",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Remove a user's roledel",
+          "path": "/reference/v2groupsremoveuserrolefromgroupcontroller_removeuserrolefromgroup",
+          "fullUrl": "https://360learning.readme.io/reference/v2groupsremoveuserrolefromgroupcontroller_removeuserrolefromgroup",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Create a grouppost",
+          "path": "/reference/v2groupscreategroupcontroller_creategroup",
+          "fullUrl": "https://360learning.readme.io/reference/v2groupscreategroupcontroller_creategroup",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all groupsget",
+          "path": "/reference/v2groupsgetgroupscontroller_getgroups",
+          "fullUrl": "https://360learning.readme.io/reference/v2groupsgetgroupscontroller_getgroups",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Retrieve a groupget",
+          "path": "/reference/v2groupsgetgroupcontroller_getgroup",
+          "fullUrl": "https://360learning.readme.io/reference/v2groupsgetgroupcontroller_getgroup",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Delete a groupdel",
+          "path": "/reference/v2groupsdeletegroupcontroller_deletegroup",
+          "fullUrl": "https://360learning.readme.io/reference/v2groupsdeletegroupcontroller_deletegroup",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all memberships in a groupget",
+          "path": "/reference/v2groupsgetgroupmemberscontroller_getgroupmembers",
+          "fullUrl": "https://360learning.readme.io/reference/v2groupsgetgroupmemberscontroller_getgroupmembers",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Edit a grouppatch",
+          "path": "/reference/v2groupsupdategroupcontroller_updategroup",
+          "fullUrl": "https://360learning.readme.io/reference/v2groupsupdategroupcontroller_updategroup",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all content IDs in a group catalogget",
+          "path": "/reference/v2groupsgetcatalogcontentidscontroller_getcatalogcontentids",
+          "fullUrl": "https://360learning.readme.io/reference/v2groupsgetcatalogcontentidscontroller_getcatalogcontentids",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all content IDs in a group libraryget",
+          "path": "/reference/v2groupsgetlibrarycontentidscontroller_getlibrarycontentids",
+          "fullUrl": "https://360learning.readme.io/reference/v2groupsgetlibrarycontentidscontroller_getlibrarycontentids",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Set group brandingpatch",
+          "path": "/reference/v2groupsupsertgroupcustomizationcolorscontroller_upsertgroupcustomizationcolors",
+          "fullUrl": "https://360learning.readme.io/reference/v2groupsupsertgroupcustomizationcolorscontroller_upsertgroupcustomizationcolors",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Integrations",
+          "path": "/reference/v2integrationscreateintegrationcontroller_createintegration",
+          "fullUrl": "https://360learning.readme.io/reference/v2integrationscreateintegrationcontroller_createintegration",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "List integration configurationsget",
+          "path": "/reference/v2integrationsgetintegrationscontroller_getintegrations",
+          "fullUrl": "https://360learning.readme.io/reference/v2integrationsgetintegrationscontroller_getintegrations",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Delete an integration configurationdel",
+          "path": "/reference/v2integrationsdeleteintegrationcontroller_deleteintegration",
+          "fullUrl": "https://360learning.readme.io/reference/v2integrationsdeleteintegrationcontroller_deleteintegration",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Edit an integration configurationpatch",
+          "path": "/reference/v2integrationseditintegrationcontroller_editintegration",
+          "fullUrl": "https://360learning.readme.io/reference/v2integrationseditintegrationcontroller_editintegration",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Retrieve an external courseget",
+          "path": "/reference/v2integrationsgetexternalcoursecontroller_getexternalcourse",
+          "fullUrl": "https://360learning.readme.io/reference/v2integrationsgetexternalcoursecontroller_getexternalcourse",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Classrooms",
+          "path": "/reference/v2classroomscreateclassroomcontroller_createclassroom",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomscreateclassroomcontroller_createclassroom",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "List all classroomsget",
+          "path": "/reference/v2classroomsgetclassroomscontroller_getclassrooms",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomsgetclassroomscontroller_getclassrooms",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Retrieve a classroomget",
+          "path": "/reference/v2classroomsgetclassroomcontroller_getclassroom",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomsgetclassroomcontroller_getclassroom",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Edit a classroompatch",
+          "path": "/reference/v2classroomsupdateclassroomcontroller_updateclassroom",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomsupdateclassroomcontroller_updateclassroom",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Add a slot to a classroompost",
+          "path": "/reference/v2classroomscreateclassroomslotcontroller_createclassroomslot",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomscreateclassroomslotcontroller_createclassroomslot",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all slots in a classroomget",
+          "path": "/reference/v2classroomsgetclassroomslotscontroller_getclassroomslots",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomsgetclassroomslotscontroller_getclassroomslots",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Remove a slot from a classroomdel",
+          "path": "/reference/v2classroomsdeleteclassroomslotcontroller_deleteclassroomslot",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomsdeleteclassroomslotcontroller_deleteclassroomslot",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Create an attendance sheetpost",
+          "path": "/reference/v2classroomscreateattendancesheetcontroller_createattendancesheet",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomscreateattendancesheetcontroller_createattendancesheet",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Edit a classroom slotpatch",
+          "path": "/reference/v2classroomsupdateclassroomslotcontroller_updateclassroomslot",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomsupdateclassroomslotcontroller_updateclassroomslot",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all attendance sheetsget",
+          "path": "/reference/v2classroomsgetattendancesheetscontroller_getattendancesheets",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomsgetattendancesheetscontroller_getattendancesheets",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Delete an attendance sheetdel",
+          "path": "/reference/v2classroomsdeleteattendancesheetcontroller_deleteattendancesheet",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomsdeleteattendancesheetcontroller_deleteattendancesheet",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace an attendance sheetput",
+          "path": "/reference/v2classroomsupdateattendancesheetcontroller_updateattendancesheet",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomsupdateattendancesheetcontroller_updateattendancesheet",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all attendancesget",
+          "path": "/reference/v2classroomsgetattendancescontroller_getattendances",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomsgetattendancescontroller_getattendances",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Register a user to a classroom slotpost",
+          "path": "/reference/v2classroomsaddslotregistrationcontroller_addslotregistration",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomsaddslotregistrationcontroller_addslotregistration",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all registrations in a classroom slotget",
+          "path": "/reference/v2classroomsgetslotregistrationscontroller_getslotregistrations",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomsgetslotregistrationscontroller_getslotregistrations",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Edit a classroom slot registrationpatch",
+          "path": "/reference/v2classroomsupdateslotregistrationcontroller_updateslotregistration",
+          "fullUrl": "https://360learning.readme.io/reference/v2classroomsupdateslotregistrationcontroller_updateslotregistration",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Skills",
+          "path": "/reference/v2skillsgetpowerscontroller_getpowers",
+          "fullUrl": "https://360learning.readme.io/reference/v2skillsgetpowerscontroller_getpowers",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "List all skillsget",
+          "path": "/reference/v2skillsgetskillscontroller_getskills",
+          "fullUrl": "https://360learning.readme.io/reference/v2skillsgetskillscontroller_getskills",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace all jobs for a userput",
+          "path": "/reference/v2skillsreplaceuserjobscontroller_replaceuserjobs",
+          "fullUrl": "https://360learning.readme.io/reference/v2skillsreplaceuserjobscontroller_replaceuserjobs",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Courses",
+          "path": "/reference/v2coursesgetallcoursestatscontroller_getallcoursestats",
+          "fullUrl": "https://360learning.readme.io/reference/v2coursesgetallcoursestatscontroller_getallcoursestats",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Archive or restore a courseput",
+          "path": "/reference/v2coursesarchiveorunarchivecoursecontroller_archiveorunarchivecourse",
+          "fullUrl": "https://360learning.readme.io/reference/v2coursesarchiveorunarchivecoursecontroller_archiveorunarchivecourse",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Retrieve a courseget",
+          "path": "/reference/v2coursesgetcoursecontroller_getcourse",
+          "fullUrl": "https://360learning.readme.io/reference/v2coursesgetcoursecontroller_getcourse",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all coursesget",
+          "path": "/reference/v2coursesgetcoursescontroller_getcourses",
+          "fullUrl": "https://360learning.readme.io/reference/v2coursesgetcoursescontroller_getcourses",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all tags in a courseget",
+          "path": "/reference/v2coursesgetcoursetagscontroller_gettags",
+          "fullUrl": "https://360learning.readme.io/reference/v2coursesgetcoursetagscontroller_gettags",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace all tags in a courseput",
+          "path": "/reference/v2coursesupdatetagscontroller_updatetags",
+          "fullUrl": "https://360learning.readme.io/reference/v2coursesupdatetagscontroller_updatetags",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Create an eLearning standard coursepost",
+          "path": "/reference/v2coursescreateelearningstandardcoursecontroller_createelearningstandardcourse",
+          "fullUrl": "https://360learning.readme.io/reference/v2coursescreateelearningstandardcoursecontroller_createelearningstandardcourse",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Edit an eLearning standard coursepatch",
+          "path": "/reference/v2coursesupdateelearningstandardcoursecontroller_updateelearningstandardcourse",
+          "fullUrl": "https://360learning.readme.io/reference/v2coursesupdateelearningstandardcoursecontroller_updateelearningstandardcourse",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Authentication",
+          "path": "/reference/v2authenticationgeneratetokencontroller_generatetoken",
+          "fullUrl": "https://360learning.readme.io/reference/v2authenticationgeneratetokencontroller_generatetoken",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Certificate Outlines",
+          "path": "/reference/v2certificateoutlinesgetcertificateoutlinescontroller_getcertificateoutlines",
+          "fullUrl": "https://360learning.readme.io/reference/v2certificateoutlinesgetcertificateoutlinescontroller_getcertificateoutlines",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Create certificate outlinepost",
+          "path": "/reference/v2certificateoutlinescreatecertificateoutlinecontroller_createcertificateoutline",
+          "fullUrl": "https://360learning.readme.io/reference/v2certificateoutlinescreatecertificateoutlinecontroller_createcertificateoutline",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Delete a certificate outlinedel",
+          "path": "/reference/v2certificateoutlinesdeletecertificateoutlinecontroller_deletecertificateoutline",
+          "fullUrl": "https://360learning.readme.io/reference/v2certificateoutlinesdeletecertificateoutlinecontroller_deletecertificateoutline",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Edit a certificate outlinepatch",
+          "path": "/reference/v2certificateoutlinesupdatecertificateoutlinecontroller_updatecertificateoutline",
+          "fullUrl": "https://360learning.readme.io/reference/v2certificateoutlinesupdatecertificateoutlinecontroller_updatecertificateoutline",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Custom Fields",
+          "path": "/reference/v2customfieldscreatecustomfieldcontroller_createcustomfield",
+          "fullUrl": "https://360learning.readme.io/reference/v2customfieldscreatecustomfieldcontroller_createcustomfield",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "List all custom fieldsget",
+          "path": "/reference/v2customfieldsgetcustomfieldscontroller_getcustomfields",
+          "fullUrl": "https://360learning.readme.io/reference/v2customfieldsgetcustomfieldscontroller_getcustomfields",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Delete a custom fielddel",
+          "path": "/reference/v2customfieldsdeletecustomfieldcontroller_deletecustomfield",
+          "fullUrl": "https://360learning.readme.io/reference/v2customfieldsdeletecustomfieldcontroller_deletecustomfield",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Edit a custom fieldpatch",
+          "path": "/reference/v2customfieldsupdatecustomfieldcontroller_updatecustomfield",
+          "fullUrl": "https://360learning.readme.io/reference/v2customfieldsupdatecustomfieldcontroller_updatecustomfield",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all authorized valuesget",
+          "path": "/reference/v2customfieldsgetauthorizedvaluescontroller_getauthorizedvalues",
+          "fullUrl": "https://360learning.readme.io/reference/v2customfieldsgetauthorizedvaluescontroller_getauthorizedvalues",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace all authorized valuesput",
+          "path": "/reference/v2customfieldsreplaceauthorizedvaluescontroller_replaceauthorizedvalues",
+          "fullUrl": "https://360learning.readme.io/reference/v2customfieldsreplaceauthorizedvaluescontroller_replaceauthorizedvalues",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "External IDs",
+          "path": "/reference/v2externalidscreateexternalidcontroller_createexternalid",
+          "fullUrl": "https://360learning.readme.io/reference/v2externalidscreateexternalidcontroller_createexternalid",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "List all ID mappingsget",
+          "path": "/reference/v2externalidsgetexternalidscontroller_getexternalids",
+          "fullUrl": "https://360learning.readme.io/reference/v2externalidsgetexternalidscontroller_getexternalids",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Delete an ID mappingdel",
+          "path": "/reference/v2externalidsdeleteexternalidcontroller_deleteexternalid",
+          "fullUrl": "https://360learning.readme.io/reference/v2externalidsdeleteexternalidcontroller_deleteexternalid",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace an ID mappingput",
+          "path": "/reference/v2externalidsupdateexternalidcontroller_updateexternalid",
+          "fullUrl": "https://360learning.readme.io/reference/v2externalidsupdateexternalidcontroller_updateexternalid",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Paths",
+          "path": "/reference/v2pathsaddtokenscontroller_addtokens",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsaddtokenscontroller_addtokens",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Archive or restore a pathput",
+          "path": "/reference/v2pathsarchiveorunarchivepathcontroller_archiveorunarchivepath",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsarchiveorunarchivepathcontroller_archiveorunarchivepath",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Create a path sessionpost",
+          "path": "/reference/v2pathscreatepathsessioncontroller_createpathsession",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathscreatepathsessioncontroller_createpathsession",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Create a pathpost",
+          "path": "/reference/v2pathscreatepathcontroller_createpath",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathscreatepathcontroller_createpath",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all sessions in a pathget",
+          "path": "/reference/v2pathsgetpathsessionscontroller_getpathsessions",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsgetpathsessionscontroller_getpathsessions",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Delete a path sessiondel",
+          "path": "/reference/v2pathsdeletepathsessioncontroller_deletepathsession",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsdeletepathsessioncontroller_deletepathsession",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Retrieve a path sessionget",
+          "path": "/reference/v2pathsgetpathsessioncontroller_getpathsession",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsgetpathsessioncontroller_getpathsession",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Edit a path sessionpatch",
+          "path": "/reference/v2pathsmodifypathsessioncontroller_modifypathsession",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsmodifypathsessioncontroller_modifypathsession",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Delete a pathdel",
+          "path": "/reference/v2pathsdeletepathcontroller_deletepath",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsdeletepathcontroller_deletepath",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all enrollmentsget",
+          "path": "/reference/v2pathsgetenrollmentscontroller_getenrollments",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsgetenrollmentscontroller_getenrollments",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Retrieve a pathget",
+          "path": "/reference/v2pathsgetpathcontroller_getpath",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsgetpathcontroller_getpath",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all pathsget",
+          "path": "/reference/v2pathsgetpathscontroller_getpaths",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsgetpathscontroller_getpaths",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Retrieve a path session audienceget",
+          "path": "/reference/v2pathsgetsessionaudiencecontroller_getsessionaudience",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsgetsessionaudiencecontroller_getsessionaudience",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace an audience for a path sessionput",
+          "path": "/reference/v2pathsupdatesessionaudiencecontroller_updatesessionaudience",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsupdatesessionaudiencecontroller_updatesessionaudience",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Retrieve metrics for a path sessionget",
+          "path": "/reference/v2pathsv2pathsgetsessionstatscontroller_getsessionstats",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsv2pathsgetsessionstatscontroller_getsessionstats",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all tags in a pathget",
+          "path": "/reference/v2pathsgetpathtagscontroller_gettags",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsgetpathtagscontroller_gettags",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all user statisticsget",
+          "path": "/reference/v2pathsgetuserstatscontroller_getuserstats",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsgetuserstatscontroller_getuserstats",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Edit a child path sessionpatch",
+          "path": "/reference/v2pathsmodifychildpathsessioncontroller_modifychildpathsession",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsmodifychildpathsessioncontroller_modifychildpathsession",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace all stepsput",
+          "path": "/reference/v2pathsupdatestepscontroller_updatesteps",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsupdatestepscontroller_updatesteps",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace all tags in a pathput",
+          "path": "/reference/v2pathsupdatetagscontroller_updatetags",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsupdatetagscontroller_updatetags",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace all translations for a pathput",
+          "path": "/reference/v2pathsreplacepathtranslationscontroller_replacepathtranslations",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsreplacepathtranslationscontroller_replacepathtranslations",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Edit a pathpatch",
+          "path": "/reference/v2pathsupdatepathcontroller_updatepath",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsupdatepathcontroller_updatepath",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "List all path statisticsget",
+          "path": "/reference/v2pathsgetpathstatscontroller_getpathstats",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsgetpathstatscontroller_getpathstats",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Projects",
+          "path": "/reference/v2projectsgetprojectscontroller_getprojects",
+          "fullUrl": "https://360learning.readme.io/reference/v2projectsgetprojectscontroller_getprojects",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Learning Needs",
+          "path": "/reference/v2learningneedsgetlearningneedscontroller_getlearningneeds",
+          "fullUrl": "https://360learning.readme.io/reference/v2learningneedsgetlearningneedscontroller_getlearningneeds",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Tags",
+          "path": "/reference/v2tagscreatetagcontroller_createtag",
+          "fullUrl": "https://360learning.readme.io/reference/v2tagscreatetagcontroller_createtag",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "List all tagsget",
+          "path": "/reference/v2tagsgettagscontroller_gettags",
+          "fullUrl": "https://360learning.readme.io/reference/v2tagsgettagscontroller_gettags",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Delete a tagdel",
+          "path": "/reference/v2tagsdeletetagcontroller_deletetag",
+          "fullUrl": "https://360learning.readme.io/reference/v2tagsdeletetagcontroller_deletetag",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Retrieve a tagget",
+          "path": "/reference/v2tagsgettagcontroller_gettag",
+          "fullUrl": "https://360learning.readme.io/reference/v2tagsgettagcontroller_gettag",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace a tagput",
+          "path": "/reference/v2tagsupdatetagcontroller_updatetag",
+          "fullUrl": "https://360learning.readme.io/reference/v2tagsupdatetagcontroller_updatetag",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Custom Links",
+          "path": "/reference/v2customlinksgetcustomlinksbycompanycontroller_getcustomlinksbycompany",
+          "fullUrl": "https://360learning.readme.io/reference/v2customlinksgetcustomlinksbycompanycontroller_getcustomlinksbycompany",
+          "level": 1,
+          "group": "Core API"
+        },
+        {
+          "title": "Create a custom linkpost",
+          "path": "/reference/v2customlinkscreatecustomlinkcontroller_createcustomlink",
+          "fullUrl": "https://360learning.readme.io/reference/v2customlinkscreatecustomlinkcontroller_createcustomlink",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Delete a custom linkdel",
+          "path": "/reference/v2customlinksdeletecustomlinkcontroller_deletecustomlink",
+          "fullUrl": "https://360learning.readme.io/reference/v2customlinksdeletecustomlinkcontroller_deletecustomlink",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Replace a custom linkput",
+          "path": "/reference/v2customlinksreplacecustomlinkcontroller_replacecustomlink",
+          "fullUrl": "https://360learning.readme.io/reference/v2customlinksreplacecustomlinkcontroller_replacecustomlink",
+          "level": 2,
+          "group": "Core API"
+        },
+        {
+          "title": "Subscriptions",
+          "path": "/reference/v2bulksubscriptionscreatesubscriptioneventscontroller_createsubscriptionevents",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulksubscriptionscreatesubscriptioneventscontroller_createsubscriptionevents",
+          "level": 1,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Groups",
+          "path": "/reference/v2bulkgroupsdeletegroupscontroller_deletegroups",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkgroupsdeletegroupscontroller_deletegroups",
+          "level": 1,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Add users to groupspost",
+          "path": "/reference/v2bulkgroupsadduserstogroupscontroller_adduserstogroups",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkgroupsadduserstogroupscontroller_adduserstogroups",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Add content to catalogspost",
+          "path": "/reference/v2bulkgroupsaddcontentstogroupscatalogcontroller_addcontentstogroupscatalog",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkgroupsaddcontentstogroupscatalogcontroller_addcontentstogroupscatalog",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Remove users from groupsdel",
+          "path": "/reference/v2bulkgroupsremoveusersfromgroupscontroller_removeusersfromgroups",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkgroupsremoveusersfromgroupscontroller_removeusersfromgroups",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Remove content from catalogsdel",
+          "path": "/reference/v2bulkgroupsremovecontentsfromgroupscatalogcontroller_removecontentsfromgroupscatalog",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkgroupsremovecontentsfromgroupscatalogcontroller_removecontentsfromgroupscatalog",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Add content to librariespost",
+          "path": "/reference/v2bulkgroupsaddcontentstogroupslibrarycontroller_addcontentstogroupslibrary",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkgroupsaddcontentstogroupslibrarycontroller_addcontentstogroupslibrary",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Remove content from librariesdel",
+          "path": "/reference/v2bulkgroupsremovecontentsfromgroupslibrarycontroller_removecontentsfromgroupslibrary",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkgroupsremovecontentsfromgroupslibrarycontroller_removecontentsfromgroupslibrary",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Operations",
+          "path": "/reference/v2bulkoperationsgetbulkoperationcontroller_getbulkoperation",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkoperationsgetbulkoperationcontroller_getbulkoperation",
+          "level": 1,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Retrieve a bulk operation resultget",
+          "path": "/reference/v2bulkoperationsgetbulkoperationresultscontroller_getbulkoperationresults",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkoperationsgetbulkoperationresultscontroller_getbulkoperationresults",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "List all bulk operationsget",
+          "path": "/reference/v2bulkoperationsgetbulkoperationscontroller_getbulkoperations",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkoperationsgetbulkoperationscontroller_getbulkoperations",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Integrations",
+          "path": "/reference/v2bulkintegrationsimportexternalstatisticscontroller_importexternalstatistics",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkintegrationsimportexternalstatisticscontroller_importexternalstatistics",
+          "level": 1,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Archive external coursesdel",
+          "path": "/reference/v2bulkintegrationsarchiveexternalcoursescontroller_archiveexternalcourses",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkintegrationsarchiveexternalcoursescontroller_archiveexternalcourses",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Upsert external coursesput",
+          "path": "/reference/v2bulkintegrationsimportexternalcoursescontroller_importexternalcourses",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkintegrationsimportexternalcoursescontroller_importexternalcourses",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Skills",
+          "path": "/reference/v2bulkskillsdeletelibrariescontroller_deletelibraries",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkskillsdeletelibrariescontroller_deletelibraries",
+          "level": 1,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Add skill reviewspost",
+          "path": "/reference/v2bulkskillsaddskillreviewscontroller_addskillreviews",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkskillsaddskillreviewscontroller_addskillreviews",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Replace jobs skillsput",
+          "path": "/reference/v2bulkskillsreplacejobsskillscontroller_replacejobsskills",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkskillsreplacejobsskillscontroller_replacejobsskills",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Delete jobsdel",
+          "path": "/reference/v2bulkskillsdeletejobscontroller_deletejobs",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkskillsdeletejobscontroller_deletejobs",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Replace users jobsput",
+          "path": "/reference/v2bulkskillsreplaceusersjobscontroller_replaceusersjobs",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkskillsreplaceusersjobscontroller_replaceusersjobs",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Upsert jobsput",
+          "path": "/reference/v2bulkskillsupsertjobscontroller_upsertjobs",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkskillsupsertjobscontroller_upsertjobs",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Delete skillsdel",
+          "path": "/reference/v2bulkskillsdeleteskillscontroller_deleteskills",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkskillsdeleteskillscontroller_deleteskills",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Upsert librariesput",
+          "path": "/reference/v2bulkskillsupsertlibrariescontroller_upsertlibraries",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkskillsupsertlibrariescontroller_upsertlibraries",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Upsert skillsput",
+          "path": "/reference/v2bulkskillsupsertskillscontroller_upsertskills",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkskillsupsertskillscontroller_upsertskills",
+          "level": 2,
+          "group": "Bulk API"
+        },
+        {
+          "title": "Subscriptions",
+          "path": "/reference/v2webhooksubscriptionsgeteventscontroller_getevents",
+          "fullUrl": "https://360learning.readme.io/reference/v2webhooksubscriptionsgeteventscontroller_getevents",
+          "level": 1,
+          "group": "Webhook API"
+        },
+        {
+          "title": "Create a webhook subscriptionpost",
+          "path": "/reference/v2webhooksubscriptionscreatesubscriptioncontroller_createsubscription",
+          "fullUrl": "https://360learning.readme.io/reference/v2webhooksubscriptionscreatesubscriptioncontroller_createsubscription",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "List all webhook subscriptionsget",
+          "path": "/reference/v2webhooksubscriptionsgetsubscriptionscontroller_getsubscriptions",
+          "fullUrl": "https://360learning.readme.io/reference/v2webhooksubscriptionsgetsubscriptionscontroller_getsubscriptions",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "Delete a webhook subscriptiondel",
+          "path": "/reference/v2webhooksubscriptionsdeletesubscriptioncontroller_deletesubscription",
+          "fullUrl": "https://360learning.readme.io/reference/v2webhooksubscriptionsdeletesubscriptioncontroller_deletesubscription",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "Retrieve a webhook subscriptionget",
+          "path": "/reference/v2webhooksubscriptionsgetsubscriptioncontroller_getsubscription",
+          "fullUrl": "https://360learning.readme.io/reference/v2webhooksubscriptionsgetsubscriptioncontroller_getsubscription",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "Edit a webhook subscriptionpatch",
+          "path": "/reference/v2webhooksubscriptionsupdatesubscriptioncontroller_updatesubscription",
+          "fullUrl": "https://360learning.readme.io/reference/v2webhooksubscriptionsupdatesubscriptioncontroller_updatesubscription",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "Retrieve the signing secret of a webhook subscriptionget",
+          "path": "/reference/v2webhooksubscriptionsgetsigningsecretcontroller_getsigningsecret",
+          "fullUrl": "https://360learning.readme.io/reference/v2webhooksubscriptionsgetsigningsecretcontroller_getsigningsecret",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "Rotate the signing secret of a webhook subscriptionpost",
+          "path": "/reference/v2webhooksubscriptionsrotatesigningsecretcontroller_rotatesigningsecret",
+          "fullUrl": "https://360learning.readme.io/reference/v2webhooksubscriptionsrotatesigningsecretcontroller_rotatesigningsecret",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "Retry the failed webhook events of a webhook subscriptionpost",
+          "path": "/reference/v2webhooksubscriptionsretryeventfailurescontroller_retryeventfailures",
+          "fullUrl": "https://360learning.readme.io/reference/v2webhooksubscriptionsretryeventfailurescontroller_retryeventfailures",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "xAPI",
+          "path": "/reference/webhookxapistarted",
+          "fullUrl": "https://360learning.readme.io/reference/webhookxapistarted",
+          "level": 1,
+          "group": "Webhook API"
+        },
+        {
+          "title": "xAPIpost",
+          "path": "/reference/webhookxapi",
+          "fullUrl": "https://360learning.readme.io/reference/webhookxapi",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "Events",
+          "path": "/reference/webhookusercreated",
+          "fullUrl": "https://360learning.readme.io/reference/webhookusercreated",
+          "level": 1,
+          "group": "Webhook API"
+        },
+        {
+          "title": "Group deletedpost",
+          "path": "/reference/webhookgroupdeleted",
+          "fullUrl": "https://360learning.readme.io/reference/webhookgroupdeleted",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "Group createdpost",
+          "path": "/reference/webhookgroupcreated",
+          "fullUrl": "https://360learning.readme.io/reference/webhookgroupcreated",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "User reactivatedpost",
+          "path": "/reference/webhookuserreactivated",
+          "fullUrl": "https://360learning.readme.io/reference/webhookuserreactivated",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "User invitedpost",
+          "path": "/reference/webhookuserinvited",
+          "fullUrl": "https://360learning.readme.io/reference/webhookuserinvited",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "User deletedpost",
+          "path": "/reference/webhookuserdeleted",
+          "fullUrl": "https://360learning.readme.io/reference/webhookuserdeleted",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "User activatedpost",
+          "path": "/reference/webhookuseractivated",
+          "fullUrl": "https://360learning.readme.io/reference/webhookuseractivated",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "Bulk operation endedpost",
+          "path": "/reference/webhookbulkoperationended",
+          "fullUrl": "https://360learning.readme.io/reference/webhookbulkoperationended",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "Bulk operation createdpost",
+          "path": "/reference/webhookbulkoperationcreated",
+          "fullUrl": "https://360learning.readme.io/reference/webhookbulkoperationcreated",
+          "level": 2,
+          "group": "Webhook API"
+        },
+        {
+          "title": "Users",
+          "path": "/reference/v2usersgetprofilecontroller_getprofile",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersgetprofilecontroller_getprofile",
+          "level": 1,
+          "group": "User Authorized API"
+        },
+        {
+          "title": "Authentication",
+          "path": "/reference/v2authenticationgeneratepluginbackendtokencontroller_generatepluginbackendtoken",
+          "fullUrl": "https://360learning.readme.io/reference/v2authenticationgeneratepluginbackendtokencontroller_generatepluginbackendtoken",
+          "level": 1,
+          "group": "Plugin API"
+        },
+        {
+          "title": "Create an access token for plugin (client)post",
+          "path": "/reference/v2authenticationgeneratepluginclienttokencontroller_generatepluginclienttoken",
+          "fullUrl": "https://360learning.readme.io/reference/v2authenticationgeneratepluginclienttokencontroller_generatepluginclienttoken",
+          "level": 2,
+          "group": "Plugin API"
+        }
+      ]
+    },
+    {
+      "name": "Changelog",
+      "pages": [
+        {
+          "title": "2026-02-18",
+          "path": "/changelog/2026-02-18",
+          "fullUrl": "https://360learning.readme.io/changelog/2026-02-18",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Set group branding",
+          "path": "/reference/v2groupsupsertgroupcustomizationcolorscontroller_upsertgroupcustomizationcolors",
+          "fullUrl": "https://360learning.readme.io/reference/v2groupsupsertgroupcustomizationcolorscontroller_upsertgroupcustomizationcolors",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create a custom link",
+          "path": "/reference/v2customlinkscreatecustomlinkcontroller_createcustomlink",
+          "fullUrl": "https://360learning.readme.io/reference/v2customlinkscreatecustomlinkcontroller_createcustomlink",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List custom links",
+          "path": "/reference/v2customlinksgetcustomlinksbycompanycontroller_getcustomlinksbycompany",
+          "fullUrl": "https://360learning.readme.io/reference/v2customlinksgetcustomlinksbycompanycontroller_getcustomlinksbycompany",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete a custom link",
+          "path": "/reference/v2customlinksdeletecustomlinkcontroller_deletecustomlink",
+          "fullUrl": "https://360learning.readme.io/reference/v2customlinksdeletecustomlinkcontroller_deletecustomlink",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Replace a custom link",
+          "path": "/reference/v2customlinksreplacecustomlinkcontroller_replacecustomlink",
+          "fullUrl": "https://360learning.readme.io/reference/v2customlinksreplacecustomlinkcontroller_replacecustomlink",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Bulk operation created",
+          "path": "/reference/webhookbulkoperationcreated",
+          "fullUrl": "https://360learning.readme.io/reference/webhookbulkoperationcreated",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Bulk operation ended",
+          "path": "/reference/webhookbulkoperationended",
+          "fullUrl": "https://360learning.readme.io/reference/webhookbulkoperationended",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete skills",
+          "path": "/reference/v2bulkskillsdeleteskillscontroller_deleteskills",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkskillsdeleteskillscontroller_deleteskills",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "2026-01-28",
+          "path": "/changelog/2026-01-28",
+          "fullUrl": "https://360learning.readme.io/changelog/2026-01-28",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create an invited user",
+          "path": "/reference/v2userscreateusercontroller_createuser",
+          "fullUrl": "https://360learning.readme.io/reference/v2userscreateusercontroller_createuser",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Edit a webhook subscription",
+          "path": "/reference/v2webhooksubscriptionsupdatesubscriptioncontroller_updatesubscription",
+          "fullUrl": "https://360learning.readme.io/reference/v2webhooksubscriptionsupdatesubscriptioncontroller_updatesubscription",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "2026-01-07",
+          "path": "/changelog/2026-01-07",
+          "fullUrl": "https://360learning.readme.io/changelog/2026-01-07",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete groups",
+          "path": "/reference/v2bulkgroupsdeletegroupscontroller_deletegroups",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkgroupsdeletegroupscontroller_deletegroups",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List all path statistics",
+          "path": "/reference/v2pathsgetpathstatscontroller_getpathstats",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsgetpathstatscontroller_getpathstats",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List all learning needs",
+          "path": "/reference/v2learningneedsgetlearningneedscontroller_getlearningneeds",
+          "fullUrl": "https://360learning.readme.io/reference/v2learningneedsgetlearningneedscontroller_getlearningneeds",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List all projects",
+          "path": "/reference/v2projectsgetprojectscontroller_getprojects",
+          "fullUrl": "https://360learning.readme.io/reference/v2projectsgetprojectscontroller_getprojects",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "User invited",
+          "path": "/reference/webhookuserinvited",
+          "fullUrl": "https://360learning.readme.io/reference/webhookuserinvited",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "User activated",
+          "path": "/reference/webhookuseractivated",
+          "fullUrl": "https://360learning.readme.io/reference/webhookuseractivated",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "User deleted",
+          "path": "/reference/webhookuserdeleted",
+          "fullUrl": "https://360learning.readme.io/reference/webhookuserdeleted",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "User reactivated",
+          "path": "/reference/webhookuserreactivated",
+          "fullUrl": "https://360learning.readme.io/reference/webhookuserreactivated",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "2025-12-17",
+          "path": "/changelog/pot-au-feu",
+          "fullUrl": "https://360learning.readme.io/changelog/pot-au-feu",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create a path",
+          "path": "/reference/v2pathscreatepathcontroller_createpath",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathscreatepathcontroller_createpath",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Edit a path",
+          "path": "/reference/v2pathsupdatepathcontroller_updatepath",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsupdatepathcontroller_updatepath",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete a path",
+          "path": "/reference/v2pathsdeletepathcontroller_deletepath",
+          "fullUrl": "https://360learning.readme.io/reference/v2pathsdeletepathcontroller_deletepath",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Archive or restore a course",
+          "path": "/reference/v2coursesarchiveorunarchivecoursecontroller_archiveorunarchivecourse",
+          "fullUrl": "https://360learning.readme.io/reference/v2coursesarchiveorunarchivecoursecontroller_archiveorunarchivecourse",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create an eLearning standard course",
+          "path": "/reference/v2coursescreateelearningstandardcoursecontroller_createelearningstandardcourse",
+          "fullUrl": "https://360learning.readme.io/reference/v2coursescreateelearningstandardcoursecontroller_createelearningstandardcourse",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Edit an eLearning standard course",
+          "path": "/reference/v2coursesupdateelearningstandardcoursecontroller_updateelearningstandardcourse",
+          "fullUrl": "https://360learning.readme.io/reference/v2coursesupdateelearningstandardcoursecontroller_updateelearningstandardcourse",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Upsert external courses",
+          "path": "/reference/v2bulkintegrationsimportexternalcoursescontroller_importexternalcourses",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkintegrationsimportexternalcoursescontroller_importexternalcourses",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Import integration statistics",
+          "path": "/reference/v2bulkintegrationsimportexternalstatisticscontroller_importexternalstatistics",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkintegrationsimportexternalstatisticscontroller_importexternalstatistics",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Retrieve an external course",
+          "path": "/reference/v2integrationsgetexternalcoursecontroller_getexternalcourse",
+          "fullUrl": "https://360learning.readme.io/reference/v2integrationsgetexternalcoursecontroller_getexternalcourse",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Archive external courses",
+          "path": "/reference/v2bulkintegrationsarchiveexternalcoursescontroller_archiveexternalcourses",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkintegrationsarchiveexternalcoursescontroller_archiveexternalcourses",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List all tags in a course",
+          "path": "/reference/v2coursesgetcoursetagscontroller_gettags",
+          "fullUrl": "https://360learning.readme.io/reference/v2coursesgetcoursetagscontroller_gettags",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "2025-11-26",
+          "path": "/changelog/2025-11-26",
+          "fullUrl": "https://360learning.readme.io/changelog/2025-11-26",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete libraries",
+          "path": "/reference/v2bulkskillsdeletelibrariescontroller_deletelibraries",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkskillsdeletelibrariescontroller_deletelibraries",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Rate limiting errors",
+          "path": "/docs/rate-limiting-errors",
+          "fullUrl": "https://360learning.readme.io/docs/rate-limiting-errors",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Upsert libraries",
+          "path": "/reference/v2bulkskillsupsertlibrariescontroller_upsertlibraries",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkskillsupsertlibrariescontroller_upsertlibraries",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Upsert jobs",
+          "path": "/reference/v2bulkskillsupsertjobscontroller_upsertjobs",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkskillsupsertjobscontroller_upsertjobs",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "2025-11-04",
+          "path": "/changelog/2025-11-04",
+          "fullUrl": "https://360learning.readme.io/changelog/2025-11-04",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "2025-10-15",
+          "path": "/changelog/2025-10-15",
+          "fullUrl": "https://360learning.readme.io/changelog/2025-10-15",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Edit a user",
+          "path": "/reference/v2usersupdateusercontroller_updateuser",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersupdateusercontroller_updateuser",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List all users",
+          "path": "/reference/v2usersgetuserscontroller_getusers",
+          "fullUrl": "https://360learning.readme.io/reference/v2usersgetuserscontroller_getusers",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Remove users from groups",
+          "path": "/reference/v2bulkgroupsremoveusersfromgroupscontroller_removeusersfromgroups",
+          "fullUrl": "https://360learning.readme.io/reference/v2bulkgroupsremoveusersfromgroupscontroller_removeusersfromgroups",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Remove a user's role",
+          "path": "/reference/v2groupsremoveuserrolefromgroupcontroller_removeuserrolefromgroup",
+          "fullUrl": "https://360learning.readme.io/reference/v2groupsremoveuserrolefromgroupcontroller_removeuserrolefromgroup",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "2025-09-24",
+          "path": "/changelog/welcome-to-360learning-arnaud",
+          "fullUrl": "https://360learning.readme.io/changelog/welcome-to-360learning-arnaud",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "List all certificate outlines",
+          "path": "/reference/v2certificateoutlinesgetcertificateoutlinescontroller_getcertificateoutlines",
+          "fullUrl": "https://360learning.readme.io/reference/v2certificateoutlinesgetcertificateoutlinescontroller_getcertificateoutlines",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Create certificate outline",
+          "path": "/reference/v2certificateoutlinescreatecertificateoutlinecontroller_createcertificateoutline",
+          "fullUrl": "https://360learning.readme.io/reference/v2certificateoutlinescreatecertificateoutlinecontroller_createcertificateoutline",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Delete a certificate outline",
+          "path": "/reference/v2certificateoutlinesdeletecertificateoutlinecontroller_deletecertificateoutline",
+          "fullUrl": "https://360learning.readme.io/reference/v2certificateoutlinesdeletecertificateoutlinecontroller_deletecertificateoutline",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Edit a certificate outline",
+          "path": "/reference/v2certificateoutlinesupdatecertificateoutlinecontroller_updatecertificateoutline",
+          "fullUrl": "https://360learning.readme.io/reference/v2certificateoutlinesupdatecertificateoutlinecontroller_updatecertificateoutline",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Import a certificate",
+          "path": "/reference/v2userscreateusercertificatecontroller_createusercertificate",
+          "fullUrl": "https://360learning.readme.io/reference/v2userscreateusercertificatecontroller_createusercertificate",
+          "level": 0,
+          "group": ""
+        }
+      ]
+    }
+  ]
+}

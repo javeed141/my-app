@@ -1,0 +1,189 @@
+{
+  "name": "Shippingeasy",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Documentation",
+        "pages": [
+          {
+            "title": "Getting Started",
+            "path": "refs/getting-started"
+          },
+          {
+            "title": "API Credentials",
+            "path": "refs/api-credentials"
+          },
+          {
+            "title": "Rate Limits and Throttling",
+            "path": "refs/rate-limits-and-throttling"
+          },
+          {
+            "title": "Official API Client Libraries",
+            "path": "refs/official-libraries"
+          },
+          {
+            "title": "Authentication",
+            "path": "refs/authentication-signing-requests"
+          },
+          {
+            "title": "Bruno API Example Collection",
+            "path": "refs/bruno-api-example-collection"
+          }
+        ]
+      },
+      {
+        "group": "Customer API",
+        "pages": [
+          {
+            "title": "/orders",
+            "path": "refs/orders"
+          },
+          {
+            "title": "/orders/:id",
+            "path": "refs/ordersid"
+          },
+          {
+            "title": "/stores",
+            "path": "refs/stores"
+          },
+          {
+            "title": "/stores/:store_api_key/orders",
+            "path": "refs/storesstore_api_keyorders"
+          },
+          {
+            "title": "/stores/:store_api_key/orders/:external_order_identifier",
+            "path": "refs/storesstore_api_keyordersexternal_order_identifier-1"
+          },
+          {
+            "title": "/stores/:store_api_key/orders",
+            "path": "refs/apiorders"
+          },
+          {
+            "title": "/stores/:store_api_key/orders/:order_id/cancellations",
+            "path": "refs/apiorderscancellations"
+          },
+          {
+            "title": "/stores/:store_api_key/orders/:external_order_identifier/status",
+            "path": "refs/storesstore_api_keyordersexternal_order_identifier"
+          },
+          {
+            "title": "Quick Start",
+            "path": "refs/getting-started-1"
+          },
+          {
+            "title": "Ecommerce Plugin Development",
+            "path": "refs/ecommerce-plugin-development"
+          },
+          {
+            "title": "Shipment notification callback",
+            "path": "refs/shipment-notification-callback"
+          }
+        ]
+      },
+      {
+        "group": "Ruby client",
+        "pages": [
+          {
+            "title": "Github Repository",
+            "path": "refs/github-repository"
+          },
+          {
+            "title": "Getting Started",
+            "path": "refs/ruby-client-getting-started"
+          },
+          {
+            "title": "Finding an order",
+            "path": "refs/finding-an-order"
+          },
+          {
+            "title": "Retrieving multiple orders",
+            "path": "refs/retrieving-multiple-orders"
+          },
+          {
+            "title": "Creating an order",
+            "path": "refs/creating-an-order"
+          },
+          {
+            "title": "Canceling an order",
+            "path": "refs/canceling-an-order"
+          },
+          {
+            "title": "Callback Authentication",
+            "path": "refs/callback-authentication"
+          }
+        ]
+      },
+      {
+        "group": "PHP client",
+        "pages": [
+          {
+            "title": "Github Repository",
+            "path": "refs/github-repository-1"
+          },
+          {
+            "title": "Getting Started",
+            "path": "refs/php-getting-started"
+          },
+          {
+            "title": "Finding an order",
+            "path": "refs/php-finding-an-order"
+          },
+          {
+            "title": "Retrieving multiple orders",
+            "path": "refs/php-retrieving-multiple-orders"
+          },
+          {
+            "title": "Creating an order",
+            "path": "refs/creating-an-order-1"
+          },
+          {
+            "title": "Canceling an order",
+            "path": "refs/canceling-an-order-1"
+          },
+          {
+            "title": "Callback authentication",
+            "path": "refs/php-callback-authentication"
+          },
+          {
+            "title": "Accessing Other APIs",
+            "path": "refs/accessing-other-apis-1"
+          }
+        ]
+      },
+      {
+        "group": ".Net Client",
+        "pages": [
+          {
+            "title": "Github Repository",
+            "path": "refs/github-repository-2"
+          },
+          {
+            "title": "Getting Started",
+            "path": "refs/dotnet-getting-started"
+          },
+          {
+            "title": "Creating an order",
+            "path": "refs/creating-an-order-2"
+          },
+          {
+            "title": "Callback Authentication",
+            "path": "refs/callback-authentication-1"
+          },
+          {
+            "title": "Accessing Other APIs",
+            "path": "refs/accessing-other-apis"
+          }
+        ]
+      },
+      {
+        "group": "Making requests via curl",
+        "pages": [
+          {
+            "title": "Example requests",
+            "path": "refs/creating-a-signature"
+          }
+        ]
+      }
+    ]
+  }
+}

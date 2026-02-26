@@ -1,0 +1,2161 @@
+{
+  "site": "docs.readme.com",
+  "navType": "simple",
+  "tabs": [],
+  "sections": [
+    {
+      "name": "main",
+      "pages": [
+        {
+          "title": "Welcome to ReadMe",
+          "path": "/main/docs/about-readme",
+          "fullUrl": "https://docs.readme.com/main/docs/about-readme",
+          "level": 1,
+          "group": "Getting Started"
+        },
+        {
+          "title": "Quickstart",
+          "path": "/main/docs/quickstart",
+          "fullUrl": "https://docs.readme.com/main/docs/quickstart",
+          "level": 1,
+          "group": "Getting Started"
+        },
+        {
+          "title": "Build with AI",
+          "path": "/main/docs/ai-overview",
+          "fullUrl": "https://docs.readme.com/main/docs/ai-overview",
+          "level": 1,
+          "group": "Getting Started"
+        },
+        {
+          "title": "Migrating to ReadMe",
+          "path": "/main/docs/migration-moving-your-docs-to-their-new-home",
+          "fullUrl": "https://docs.readme.com/main/docs/migration-moving-your-docs-to-their-new-home",
+          "level": 1,
+          "group": "Getting Started"
+        },
+        {
+          "title": "Creating a Project",
+          "path": "/main/docs/creating-a-project",
+          "fullUrl": "https://docs.readme.com/main/docs/creating-a-project",
+          "level": 1,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Your Dashboard and Profile",
+          "path": "/main/docs/your-dashboard-and-profile",
+          "fullUrl": "https://docs.readme.com/main/docs/your-dashboard-and-profile",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Navigating Your Hub",
+          "path": "/main/docs/navigating-your-hub-1",
+          "fullUrl": "https://docs.readme.com/main/docs/navigating-your-hub-1",
+          "level": 1,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Keyboard Shortcuts",
+          "path": "/main/docs/keyboard-shortcuts",
+          "fullUrl": "https://docs.readme.com/main/docs/keyboard-shortcuts",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Setting Custom Domain & SSL",
+          "path": "/main/docs/setting-up-custom-domain",
+          "fullUrl": "https://docs.readme.com/main/docs/setting-up-custom-domain",
+          "level": 1,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Allow iFrames",
+          "path": "/main/docs/allowing-iframes",
+          "fullUrl": "https://docs.readme.com/main/docs/allowing-iframes",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Having Problems Generating SSL?",
+          "path": "/main/docs/having-problems-generating-ssl",
+          "fullUrl": "https://docs.readme.com/main/docs/having-problems-generating-ssl",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "URL Paths in ReadMe",
+          "path": "/main/docs/url-paths-in-readme",
+          "fullUrl": "https://docs.readme.com/main/docs/url-paths-in-readme",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Turn Off Cloudflare Proxy",
+          "path": "/main/docs/turn-off-cloudflare-proxy",
+          "fullUrl": "https://docs.readme.com/main/docs/turn-off-cloudflare-proxy",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "System Configuration",
+          "path": "/main/docs/system-configuration",
+          "fullUrl": "https://docs.readme.com/main/docs/system-configuration",
+          "level": 1,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Login Expiration",
+          "path": "/main/docs/login-expiration",
+          "fullUrl": "https://docs.readme.com/main/docs/login-expiration",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Internal Documentation",
+          "path": "/main/docs/internal-documentation",
+          "fullUrl": "https://docs.readme.com/main/docs/internal-documentation",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Error Pages",
+          "path": "/main/docs/error-pages",
+          "fullUrl": "https://docs.readme.com/main/docs/error-pages",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Redirect Scenarios",
+          "path": "/main/docs/redirect-scenarios",
+          "fullUrl": "https://docs.readme.com/main/docs/redirect-scenarios",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "OpenAPI Support in ReadMe",
+          "path": "/main/docs/openapi",
+          "fullUrl": "https://docs.readme.com/main/docs/openapi",
+          "level": 1,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Categories, Pages, and Subpages",
+          "path": "/main/docs/openapi-categories-pages-subpages",
+          "fullUrl": "https://docs.readme.com/main/docs/openapi-categories-pages-subpages",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Re-syncing Your OpenAPI Document",
+          "path": "/main/docs/openapi-resyncing",
+          "fullUrl": "https://docs.readme.com/main/docs/openapi-resyncing",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "OpenAPI Compatibility Chart",
+          "path": "/main/docs/openapi-compatibility-chart",
+          "fullUrl": "https://docs.readme.com/main/docs/openapi-compatibility-chart",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "OpenAPI Extensions",
+          "path": "/main/docs/openapi-extensions",
+          "fullUrl": "https://docs.readme.com/main/docs/openapi-extensions",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Custom Login Page",
+          "path": "/main/docs/custom-login-page",
+          "fullUrl": "https://docs.readme.com/main/docs/custom-login-page",
+          "level": 1,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "ReadMe's Outbound IP Addresses",
+          "path": "/main/docs/ip-addresses",
+          "fullUrl": "https://docs.readme.com/main/docs/ip-addresses",
+          "level": 1,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Sending Data to Your Documentation's Users",
+          "path": "/main/docs/user-data-options",
+          "fullUrl": "https://docs.readme.com/main/docs/user-data-options",
+          "level": 1,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Integrations",
+          "path": "/main/docs/integrations",
+          "fullUrl": "https://docs.readme.com/main/docs/integrations",
+          "level": 1,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Slack",
+          "path": "/main/docs/slack",
+          "fullUrl": "https://docs.readme.com/main/docs/slack",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Google Analytics",
+          "path": "/main/docs/google-analytics",
+          "fullUrl": "https://docs.readme.com/main/docs/google-analytics",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Segment",
+          "path": "/main/docs/segment",
+          "fullUrl": "https://docs.readme.com/main/docs/segment",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Zendesk",
+          "path": "/main/docs/zendesk",
+          "fullUrl": "https://docs.readme.com/main/docs/zendesk",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Localize",
+          "path": "/main/docs/localize",
+          "fullUrl": "https://docs.readme.com/main/docs/localize",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Transifex",
+          "path": "/main/docs/transifex",
+          "fullUrl": "https://docs.readme.com/main/docs/transifex",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Typekit",
+          "path": "/main/docs/typekit-key",
+          "fullUrl": "https://docs.readme.com/main/docs/typekit-key",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Google Site Verification",
+          "path": "/main/docs/google-site-verification",
+          "fullUrl": "https://docs.readme.com/main/docs/google-site-verification",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "reCaptcha",
+          "path": "/main/docs/recaptcha",
+          "fullUrl": "https://docs.readme.com/main/docs/recaptcha",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Amazon API Gateway",
+          "path": "/main/docs/aws",
+          "fullUrl": "https://docs.readme.com/main/docs/aws",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Stainless",
+          "path": "/main/docs/stainless",
+          "fullUrl": "https://docs.readme.com/main/docs/stainless",
+          "level": 2,
+          "group": "PROJECT SETUP"
+        },
+        {
+          "title": "Getting Started with Documentation",
+          "path": "/main/docs/document-api-overview",
+          "fullUrl": "https://docs.readme.com/main/docs/document-api-overview",
+          "level": 1,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Guides",
+          "path": "/main/docs/guides",
+          "fullUrl": "https://docs.readme.com/main/docs/guides",
+          "level": 1,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Creating and Managing Guides",
+          "path": "/main/docs/creating-and-managing-guides",
+          "fullUrl": "https://docs.readme.com/main/docs/creating-and-managing-guides",
+          "level": 2,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Structuring Your Documentation",
+          "path": "/main/docs/structuring-your-docs",
+          "fullUrl": "https://docs.readme.com/main/docs/structuring-your-docs",
+          "level": 2,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Creating Mermaid Diagrams",
+          "path": "/main/docs/creating-mermaid-diagrams",
+          "fullUrl": "https://docs.readme.com/main/docs/creating-mermaid-diagrams",
+          "level": 2,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "API Reference",
+          "path": "/main/docs/api-reference",
+          "fullUrl": "https://docs.readme.com/main/docs/api-reference",
+          "level": 1,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "OpenAPI Upload and Management",
+          "path": "/main/docs/openapi-upload-and-management",
+          "fullUrl": "https://docs.readme.com/main/docs/openapi-upload-and-management",
+          "level": 2,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Building APIs from Scratch with the API Designer",
+          "path": "/main/docs/building-apis-from-scratch-with-the-api-designer",
+          "fullUrl": "https://docs.readme.com/main/docs/building-apis-from-scratch-with-the-api-designer",
+          "level": 2,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "GraphQL API Reference (Limited Support)",
+          "path": "/main/docs/graphql",
+          "fullUrl": "https://docs.readme.com/main/docs/graphql",
+          "level": 2,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "OAuth Flows in Try It!",
+          "path": "/main/docs/oauth-workflows-in-try-it",
+          "fullUrl": "https://docs.readme.com/main/docs/oauth-workflows-in-try-it",
+          "level": 2,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Recipes",
+          "path": "/main/docs/recipes",
+          "fullUrl": "https://docs.readme.com/main/docs/recipes",
+          "level": 1,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Creating a Recipe",
+          "path": "/main/docs/creating-recipes",
+          "fullUrl": "https://docs.readme.com/main/docs/creating-recipes",
+          "level": 2,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Changelog",
+          "path": "/main/docs/changelog",
+          "fullUrl": "https://docs.readme.com/main/docs/changelog",
+          "level": 1,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Landing Page",
+          "path": "/main/docs/landing-page",
+          "fullUrl": "https://docs.readme.com/main/docs/landing-page",
+          "level": 1,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Custom Pages",
+          "path": "/main/docs/custom-page",
+          "fullUrl": "https://docs.readme.com/main/docs/custom-page",
+          "level": 1,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "MDX",
+          "path": "/main/docs/mdx",
+          "fullUrl": "https://docs.readme.com/main/docs/mdx",
+          "level": 1,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Built-in Components",
+          "path": "/main/docs/built-in-components",
+          "fullUrl": "https://docs.readme.com/main/docs/built-in-components",
+          "level": 2,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Custom Components",
+          "path": "/main/docs/building-custom-mdx-components",
+          "fullUrl": "https://docs.readme.com/main/docs/building-custom-mdx-components",
+          "level": 2,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Troubleshoot MDX Errors",
+          "path": "/main/docs/rendering-errors-invalid-mdx",
+          "fullUrl": "https://docs.readme.com/main/docs/rendering-errors-invalid-mdx",
+          "level": 2,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Reusable Content",
+          "path": "/main/docs/reusable-content",
+          "fullUrl": "https://docs.readme.com/main/docs/reusable-content",
+          "level": 1,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "ReadMe Micro",
+          "path": "/main/docs/readme-micro",
+          "fullUrl": "https://docs.readme.com/main/docs/readme-micro",
+          "level": 1,
+          "group": "DOCUMENTing your API"
+        },
+        {
+          "title": "Agent",
+          "path": "/main/docs/aiagent",
+          "fullUrl": "https://docs.readme.com/main/docs/aiagent",
+          "level": 1,
+          "group": "AI"
+        },
+        {
+          "title": "Linter",
+          "path": "/main/docs/linter",
+          "fullUrl": "https://docs.readme.com/main/docs/linter",
+          "level": 1,
+          "group": "AI"
+        },
+        {
+          "title": "Docs Audit",
+          "path": "/main/docs/docs-audit",
+          "fullUrl": "https://docs.readme.com/main/docs/docs-audit",
+          "level": 1,
+          "group": "AI"
+        },
+        {
+          "title": "MCP (Model Context Protocol)",
+          "path": "/main/docs/mcp-servers",
+          "fullUrl": "https://docs.readme.com/main/docs/mcp-servers",
+          "level": 1,
+          "group": "AI"
+        },
+        {
+          "title": "Auto-Generate Your MCP Server",
+          "path": "/main/docs/generate-your-own-mcp-server",
+          "fullUrl": "https://docs.readme.com/main/docs/generate-your-own-mcp-server",
+          "level": 2,
+          "group": "AI"
+        },
+        {
+          "title": "ReadMe's MCP Server",
+          "path": "/main/docs/readmes-mcp-server",
+          "fullUrl": "https://docs.readme.com/main/docs/readmes-mcp-server",
+          "level": 2,
+          "group": "AI"
+        },
+        {
+          "title": "MCP Use Cases for Technical Writers",
+          "path": "/main/docs/mcp-use-cases-for-technical-writers",
+          "fullUrl": "https://docs.readme.com/main/docs/mcp-use-cases-for-technical-writers",
+          "level": 2,
+          "group": "AI"
+        },
+        {
+          "title": "LLMs.txt",
+          "path": "/main/docs/LLMstxt",
+          "fullUrl": "https://docs.readme.com/main/docs/LLMstxt",
+          "level": 1,
+          "group": "AI"
+        },
+        {
+          "title": "Ask AI",
+          "path": "/main/docs/ask-ai",
+          "fullUrl": "https://docs.readme.com/main/docs/ask-ai",
+          "level": 1,
+          "group": "AI"
+        },
+        {
+          "title": "Owlbot AI (Legacy)",
+          "path": "/main/docs/owlbot",
+          "fullUrl": "https://docs.readme.com/main/docs/owlbot",
+          "level": 2,
+          "group": "AI"
+        },
+        {
+          "title": "AI Dropdown",
+          "path": "/main/docs/AskAI",
+          "fullUrl": "https://docs.readme.com/main/docs/AskAI",
+          "level": 1,
+          "group": "AI"
+        },
+        {
+          "title": "Bi-Directional Sync",
+          "path": "/main/docs/bi-directional-sync",
+          "fullUrl": "https://docs.readme.com/main/docs/bi-directional-sync",
+          "level": 1,
+          "group": "Syncing Your Content"
+        },
+        {
+          "title": "Sync with GitHub",
+          "path": "/main/docs/sync-with-github",
+          "fullUrl": "https://docs.readme.com/main/docs/sync-with-github",
+          "level": 2,
+          "group": "Syncing Your Content"
+        },
+        {
+          "title": "Sync with GitLab",
+          "path": "/main/docs/sync-with-gitlab",
+          "fullUrl": "https://docs.readme.com/main/docs/sync-with-gitlab",
+          "level": 2,
+          "group": "Syncing Your Content"
+        },
+        {
+          "title": "Documentation Structure",
+          "path": "/main/docs/documentation-structure",
+          "fullUrl": "https://docs.readme.com/main/docs/documentation-structure",
+          "level": 2,
+          "group": "Syncing Your Content"
+        },
+        {
+          "title": "Syncing Docs via CLI / GitHub",
+          "path": "/main/docs/rdme",
+          "fullUrl": "https://docs.readme.com/main/docs/rdme",
+          "level": 1,
+          "group": "Syncing Your Content"
+        },
+        {
+          "title": "GitHub Actions Example: Syncing Markdown",
+          "path": "/main/docs/github-actions-docs-example",
+          "fullUrl": "https://docs.readme.com/main/docs/github-actions-docs-example",
+          "level": 1,
+          "group": "Syncing Your Content"
+        },
+        {
+          "title": "GitHub Actions Example: Syncing OpenAPI",
+          "path": "/main/docs/github-actions-openapi-example",
+          "fullUrl": "https://docs.readme.com/main/docs/github-actions-openapi-example",
+          "level": 1,
+          "group": "Syncing Your Content"
+        },
+        {
+          "title": "Versioning",
+          "path": "/main/docs/versions",
+          "fullUrl": "https://docs.readme.com/main/docs/versions",
+          "level": 1,
+          "group": "Version Control"
+        },
+        {
+          "title": "Branches",
+          "path": "/main/docs/branches",
+          "fullUrl": "https://docs.readme.com/main/docs/branches",
+          "level": 1,
+          "group": "Version Control"
+        },
+        {
+          "title": "Suggest in GitHub",
+          "path": "/main/docs/suggest-in-github",
+          "fullUrl": "https://docs.readme.com/main/docs/suggest-in-github",
+          "level": 1,
+          "group": "Version Control"
+        },
+        {
+          "title": "ReadMe Refactored Upgrade Guide",
+          "path": "/main/docs/upgrade-to-readme-refactored",
+          "fullUrl": "https://docs.readme.com/main/docs/upgrade-to-readme-refactored",
+          "level": 1,
+          "group": "ReadMe Refactored"
+        },
+        {
+          "title": "Upgrade FAQ",
+          "path": "/main/docs/upgrade-faq",
+          "fullUrl": "https://docs.readme.com/main/docs/upgrade-faq",
+          "level": 1,
+          "group": "ReadMe Refactored"
+        },
+        {
+          "title": "Developer Dashboard Overview",
+          "path": "/main/docs/developer-dashboard",
+          "fullUrl": "https://docs.readme.com/main/docs/developer-dashboard",
+          "level": 1,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "My Developers Overview",
+          "path": "/main/docs/my-developers",
+          "fullUrl": "https://docs.readme.com/main/docs/my-developers",
+          "level": 2,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Personalized API Docs Overview",
+          "path": "/main/docs/personalized-docs",
+          "fullUrl": "https://docs.readme.com/main/docs/personalized-docs",
+          "level": 2,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Set Up Personalized Docs",
+          "path": "/main/docs/personalized-docs-webhook",
+          "fullUrl": "https://docs.readme.com/main/docs/personalized-docs-webhook",
+          "level": 3,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Using Amazon API Gateway with the Personalized Docs Webhook",
+          "path": "/main/docs/amazon-api-gateway-webhook",
+          "fullUrl": "https://docs.readme.com/main/docs/amazon-api-gateway-webhook",
+          "level": 3,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "API Exploration Tools",
+          "path": "/main/docs/api-exploration-tools",
+          "fullUrl": "https://docs.readme.com/main/docs/api-exploration-tools",
+          "level": 1,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Real-Time API Logs Overview",
+          "path": "/main/docs/sending-api-logs",
+          "fullUrl": "https://docs.readme.com/main/docs/sending-api-logs",
+          "level": 2,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "API Reference Landing Pages",
+          "path": "/main/docs/reference-core-pages",
+          "fullUrl": "https://docs.readme.com/main/docs/reference-core-pages",
+          "level": 2,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "My Requests Overview",
+          "path": "/main/docs/my-requests",
+          "fullUrl": "https://docs.readme.com/main/docs/my-requests",
+          "level": 3,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Show API Request History To Users",
+          "path": "/main/docs/showing-api-logs-to-users",
+          "fullUrl": "https://docs.readme.com/main/docs/showing-api-logs-to-users",
+          "level": 3,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "SDKs",
+          "path": "/main/docs/sdks",
+          "fullUrl": "https://docs.readme.com/main/docs/sdks",
+          "level": 3,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Other Ways to Send API Requests",
+          "path": "/main/docs/other-ways-to-use-api-metrics",
+          "fullUrl": "https://docs.readme.com/main/docs/other-ways-to-use-api-metrics",
+          "level": 3,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "API & Docs Metrics Charts",
+          "path": "/main/docs/using-metrics-charts",
+          "fullUrl": "https://docs.readme.com/main/docs/using-metrics-charts",
+          "level": 1,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Export Metrics Data",
+          "path": "/main/docs/exporting-metrics-data",
+          "fullUrl": "https://docs.readme.com/main/docs/exporting-metrics-data",
+          "level": 2,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Community Building",
+          "path": "/main/docs/community-building",
+          "fullUrl": "https://docs.readme.com/main/docs/community-building",
+          "level": 1,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Discussion Forums",
+          "path": "/main/docs/discussion-forums",
+          "fullUrl": "https://docs.readme.com/main/docs/discussion-forums",
+          "level": 2,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Managing Forum Support",
+          "path": "/main/docs/managing-forum-support",
+          "fullUrl": "https://docs.readme.com/main/docs/managing-forum-support",
+          "level": 3,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Creating a Dev FAQ",
+          "path": "/main/docs/creating-a-dev-faq",
+          "fullUrl": "https://docs.readme.com/main/docs/creating-a-dev-faq",
+          "level": 3,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Health Check Status Updates",
+          "path": "/main/docs/health-check-status-updates",
+          "fullUrl": "https://docs.readme.com/main/docs/health-check-status-updates",
+          "level": 2,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Supporting Your Developers",
+          "path": "/main/docs/supporting-your-developers",
+          "fullUrl": "https://docs.readme.com/main/docs/supporting-your-developers",
+          "level": 2,
+          "group": "Developer Experience"
+        },
+        {
+          "title": "Themes",
+          "path": "/main/docs/design-themes",
+          "fullUrl": "https://docs.readme.com/main/docs/design-themes",
+          "level": 1,
+          "group": "PROJECT CUSTOMIZATION"
+        },
+        {
+          "title": "Custom CSS and JavaScript",
+          "path": "/main/docs/custom-css-and-javascript",
+          "fullUrl": "https://docs.readme.com/main/docs/custom-css-and-javascript",
+          "level": 1,
+          "group": "PROJECT CUSTOMIZATION"
+        },
+        {
+          "title": "Customizing Docs Using CSS Variables",
+          "path": "/main/docs/customizing-docs-using-css-variables",
+          "fullUrl": "https://docs.readme.com/main/docs/customizing-docs-using-css-variables",
+          "level": 2,
+          "group": "PROJECT CUSTOMIZATION"
+        },
+        {
+          "title": "Custom Icons",
+          "path": "/main/docs/custom-icons",
+          "fullUrl": "https://docs.readme.com/main/docs/custom-icons",
+          "level": 1,
+          "group": "PROJECT CUSTOMIZATION"
+        },
+        {
+          "title": "Dark Mode",
+          "path": "/main/docs/custom-css-with-dark-mode",
+          "fullUrl": "https://docs.readme.com/main/docs/custom-css-with-dark-mode",
+          "level": 1,
+          "group": "PROJECT CUSTOMIZATION"
+        },
+        {
+          "title": "Site Navigation",
+          "path": "/main/docs/site-navigation",
+          "fullUrl": "https://docs.readme.com/main/docs/site-navigation",
+          "level": 1,
+          "group": "PROJECT CUSTOMIZATION"
+        },
+        {
+          "title": "Site Footer",
+          "path": "/main/docs/site-footer",
+          "fullUrl": "https://docs.readme.com/main/docs/site-footer",
+          "level": 2,
+          "group": "PROJECT CUSTOMIZATION"
+        },
+        {
+          "title": "Pro Tips",
+          "path": "/main/docs/pro-tips",
+          "fullUrl": "https://docs.readme.com/main/docs/pro-tips",
+          "level": 1,
+          "group": "PROJECT CUSTOMIZATION"
+        },
+        {
+          "title": "Settings",
+          "path": "/main/docs/project-settings",
+          "fullUrl": "https://docs.readme.com/main/docs/project-settings",
+          "level": 1,
+          "group": "ADMINISTRATION"
+        },
+        {
+          "title": "Your Account",
+          "path": "/main/docs/your-account",
+          "fullUrl": "https://docs.readme.com/main/docs/your-account",
+          "level": 1,
+          "group": "ADMINISTRATION"
+        },
+        {
+          "title": "Two-Factor Authentication",
+          "path": "/main/docs/two-factor-authentication",
+          "fullUrl": "https://docs.readme.com/main/docs/two-factor-authentication",
+          "level": 1,
+          "group": "ADMINISTRATION"
+        },
+        {
+          "title": "Teammates and Roles",
+          "path": "/main/docs/manage-team",
+          "fullUrl": "https://docs.readme.com/main/docs/manage-team",
+          "level": 1,
+          "group": "ADMINISTRATION"
+        },
+        {
+          "title": "Plans and Pricing",
+          "path": "/main/docs/plans-and-pricing",
+          "fullUrl": "https://docs.readme.com/main/docs/plans-and-pricing",
+          "level": 1,
+          "group": "ADMINISTRATION"
+        },
+        {
+          "title": "Payment and Billing Info",
+          "path": "/main/docs/payment-and-billing-info",
+          "fullUrl": "https://docs.readme.com/main/docs/payment-and-billing-info",
+          "level": 1,
+          "group": "ADMINISTRATION"
+        },
+        {
+          "title": "Exporting Data",
+          "path": "/main/docs/exporting-data",
+          "fullUrl": "https://docs.readme.com/main/docs/exporting-data",
+          "level": 1,
+          "group": "ADMINISTRATION"
+        },
+        {
+          "title": "Need More Support?",
+          "path": "/main/docs/need-more-support",
+          "fullUrl": "https://docs.readme.com/main/docs/need-more-support",
+          "level": 1,
+          "group": "TECHNICAL SUPPORT & QUESTIONS"
+        },
+        {
+          "title": "Feature Requests",
+          "path": "/main/docs/feature-requests",
+          "fullUrl": "https://docs.readme.com/main/docs/feature-requests",
+          "level": 1,
+          "group": "TECHNICAL SUPPORT & QUESTIONS"
+        },
+        {
+          "title": "Security FAQ",
+          "path": "/main/docs/security-faq",
+          "fullUrl": "https://docs.readme.com/main/docs/security-faq",
+          "level": 1,
+          "group": "TECHNICAL SUPPORT & QUESTIONS"
+        },
+        {
+          "title": "Bug Bounty Program",
+          "path": "/main/docs/bug-bounty-program",
+          "fullUrl": "https://docs.readme.com/main/docs/bug-bounty-program",
+          "level": 2,
+          "group": "TECHNICAL SUPPORT & QUESTIONS"
+        },
+        {
+          "title": "Technical FAQ",
+          "path": "/main/docs/technical-faq",
+          "fullUrl": "https://docs.readme.com/main/docs/technical-faq",
+          "level": 1,
+          "group": "TECHNICAL SUPPORT & QUESTIONS"
+        },
+        {
+          "title": "Accessibility Conformance Report",
+          "path": "/main/docs/vpat",
+          "fullUrl": "https://docs.readme.com/main/docs/vpat",
+          "level": 1,
+          "group": "TECHNICAL SUPPORT & QUESTIONS"
+        },
+        {
+          "title": "Page/404",
+          "path": "/main/page/404",
+          "fullUrl": "https://docs.readme.com/main/page/404",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Page/Branching For Enterprise",
+          "path": "/main/page/branching-for-enterprise",
+          "fullUrl": "https://docs.readme.com/main/page/branching-for-enterprise",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Page/Custom Page",
+          "path": "/main/page/custom-page",
+          "fullUrl": "https://docs.readme.com/main/page/custom-page",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Page/Enterprise Refactored Overview",
+          "path": "/main/page/enterprise-refactored-overview",
+          "fullUrl": "https://docs.readme.com/main/page/enterprise-refactored-overview",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Page/Refactored Features Overview",
+          "path": "/main/page/refactored-features-overview",
+          "fullUrl": "https://docs.readme.com/main/page/refactored-features-overview",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Page/Welcome To Our New Editor Ui",
+          "path": "/main/page/welcome-to-our-new-editor-ui",
+          "fullUrl": "https://docs.readme.com/main/page/welcome-to-our-new-editor-ui",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Page/What Is Readme Sync",
+          "path": "/main/page/what-is-readme-sync",
+          "fullUrl": "https://docs.readme.com/main/page/what-is-readme-sync",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Docs/Net Setup",
+          "path": "/main/docs/net-setup",
+          "fullUrl": "https://docs.readme.com/main/docs/net-setup",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Docs/Python Django Api Metrics",
+          "path": "/main/docs/python-django-api-metrics",
+          "fullUrl": "https://docs.readme.com/main/docs/python-django-api-metrics",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Docs/Python Flask Api Metrics",
+          "path": "/main/docs/python-flask-api-metrics",
+          "fullUrl": "https://docs.readme.com/main/docs/python-flask-api-metrics",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Docs/Ruby Api Metrics Set Up",
+          "path": "/main/docs/ruby-api-metrics-set-up",
+          "fullUrl": "https://docs.readme.com/main/docs/ruby-api-metrics-set-up",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Docs/Sending Logs To Readme With Nodejs",
+          "path": "/main/docs/sending-logs-to-readme-with-nodejs",
+          "fullUrl": "https://docs.readme.com/main/docs/sending-logs-to-readme-with-nodejs",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Docs/Sending Logs To Readme With Php Laravel",
+          "path": "/main/docs/sending-logs-to-readme-with-php-laravel",
+          "fullUrl": "https://docs.readme.com/main/docs/sending-logs-to-readme-with-php-laravel",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Recipes/Create A Custom Component",
+          "path": "/main/recipes/create-a-custom-component",
+          "fullUrl": "https://docs.readme.com/main/recipes/create-a-custom-component",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Recipes/Developer Dashboard Nodeexpress Configuration",
+          "path": "/main/recipes/developer-dashboard-nodeexpress-configuration",
+          "fullUrl": "https://docs.readme.com/main/recipes/developer-dashboard-nodeexpress-configuration",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Recipes/Sync Directory Of Files Via Code",
+          "path": "/main/recipes/sync-directory-of-files-via-code",
+          "fullUrl": "https://docs.readme.com/main/recipes/sync-directory-of-files-via-code",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Recipes/Sync Oas Files Via Bitbucket Pipelines",
+          "path": "/main/recipes/sync-oas-files-via-bitbucket-pipelines",
+          "fullUrl": "https://docs.readme.com/main/recipes/sync-oas-files-via-bitbucket-pipelines",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Recipes/Sync Oas Files Via Github Actions",
+          "path": "/main/recipes/sync-oas-files-via-github-actions",
+          "fullUrl": "https://docs.readme.com/main/recipes/sync-oas-files-via-github-actions",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Recipes/Verify Webhook Signature",
+          "path": "/main/recipes/verify-webhook-signature",
+          "fullUrl": "https://docs.readme.com/main/recipes/verify-webhook-signature",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Post Request",
+          "path": "/main/reference/post_request",
+          "fullUrl": "https://docs.readme.com/main/reference/post_request",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Metrics Api Introduction",
+          "path": "/main/reference/metrics-api-introduction",
+          "fullUrl": "https://docs.readme.com/main/reference/metrics-api-introduction",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getaveragepagequality",
+          "path": "/main/reference/getaveragepagequality",
+          "fullUrl": "https://docs.readme.com/main/reference/getaveragepagequality",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getbestpages",
+          "path": "/main/reference/getbestpages",
+          "fullUrl": "https://docs.readme.com/main/reference/getbestpages",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getpagecomments",
+          "path": "/main/reference/getpagecomments",
+          "fullUrl": "https://docs.readme.com/main/reference/getpagecomments",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getpageperformance",
+          "path": "/main/reference/getpageperformance",
+          "fullUrl": "https://docs.readme.com/main/reference/getpageperformance",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getworstpages",
+          "path": "/main/reference/getworstpages",
+          "fullUrl": "https://docs.readme.com/main/reference/getworstpages",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Gethistoricalpageviews",
+          "path": "/main/reference/gethistoricalpageviews",
+          "fullUrl": "https://docs.readme.com/main/reference/gethistoricalpageviews",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getpageviewsbyday",
+          "path": "/main/reference/getpageviewsbyday",
+          "fullUrl": "https://docs.readme.com/main/reference/getpageviewsbyday",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getpageviewsbyuser",
+          "path": "/main/reference/getpageviewsbyuser",
+          "fullUrl": "https://docs.readme.com/main/reference/getpageviewsbyuser",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getpageviewsforpath",
+          "path": "/main/reference/getpageviewsforpath",
+          "fullUrl": "https://docs.readme.com/main/reference/getpageviewsforpath",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Gettoppages",
+          "path": "/main/reference/gettoppages",
+          "fullUrl": "https://docs.readme.com/main/reference/gettoppages",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Gettotalpageviews",
+          "path": "/main/reference/gettotalpageviews",
+          "fullUrl": "https://docs.readme.com/main/reference/gettotalpageviews",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getuniquepageviews",
+          "path": "/main/reference/getuniquepageviews",
+          "fullUrl": "https://docs.readme.com/main/reference/getuniquepageviews",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Gettopsearchterms",
+          "path": "/main/reference/gettopsearchterms",
+          "fullUrl": "https://docs.readme.com/main/reference/gettopsearchterms",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getusersbysearchterm",
+          "path": "/main/reference/getusersbysearchterm",
+          "fullUrl": "https://docs.readme.com/main/reference/getusersbysearchterm",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getapiregistry",
+          "path": "/main/reference/getapiregistry",
+          "fullUrl": "https://docs.readme.com/main/reference/getapiregistry",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deleteapispecification",
+          "path": "/main/reference/deleteapispecification",
+          "fullUrl": "https://docs.readme.com/main/reference/deleteapispecification",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getapischema",
+          "path": "/main/reference/getapischema",
+          "fullUrl": "https://docs.readme.com/main/reference/getapischema",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getapispecification",
+          "path": "/main/reference/getapispecification",
+          "fullUrl": "https://docs.readme.com/main/reference/getapispecification",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updateapispecification",
+          "path": "/main/reference/updateapispecification",
+          "fullUrl": "https://docs.readme.com/main/reference/updateapispecification",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Uploadapispecification",
+          "path": "/main/reference/uploadapispecification",
+          "fullUrl": "https://docs.readme.com/main/reference/uploadapispecification",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Api Upgrade Guide",
+          "path": "/main/reference/api-upgrade-guide",
+          "fullUrl": "https://docs.readme.com/main/reference/api-upgrade-guide",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createcategory",
+          "path": "/main/reference/createcategory",
+          "fullUrl": "https://docs.readme.com/main/reference/createcategory",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deletecategory",
+          "path": "/main/reference/deletecategory",
+          "fullUrl": "https://docs.readme.com/main/reference/deletecategory",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getcategories",
+          "path": "/main/reference/getcategories",
+          "fullUrl": "https://docs.readme.com/main/reference/getcategories",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getcategory",
+          "path": "/main/reference/getcategory",
+          "fullUrl": "https://docs.readme.com/main/reference/getcategory",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getcategorydocs",
+          "path": "/main/reference/getcategorydocs",
+          "fullUrl": "https://docs.readme.com/main/reference/getcategorydocs",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updatecategory",
+          "path": "/main/reference/updatecategory",
+          "fullUrl": "https://docs.readme.com/main/reference/updatecategory",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createchangelog",
+          "path": "/main/reference/createchangelog",
+          "fullUrl": "https://docs.readme.com/main/reference/createchangelog",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deletechangelog",
+          "path": "/main/reference/deletechangelog",
+          "fullUrl": "https://docs.readme.com/main/reference/deletechangelog",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getchangelog",
+          "path": "/main/reference/getchangelog",
+          "fullUrl": "https://docs.readme.com/main/reference/getchangelog",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getchangelogs",
+          "path": "/main/reference/getchangelogs",
+          "fullUrl": "https://docs.readme.com/main/reference/getchangelogs",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updatechangelog",
+          "path": "/main/reference/updatechangelog",
+          "fullUrl": "https://docs.readme.com/main/reference/updatechangelog",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createcustompage",
+          "path": "/main/reference/createcustompage",
+          "fullUrl": "https://docs.readme.com/main/reference/createcustompage",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deletecustompage",
+          "path": "/main/reference/deletecustompage",
+          "fullUrl": "https://docs.readme.com/main/reference/deletecustompage",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getcustompage",
+          "path": "/main/reference/getcustompage",
+          "fullUrl": "https://docs.readme.com/main/reference/getcustompage",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getcustompages",
+          "path": "/main/reference/getcustompages",
+          "fullUrl": "https://docs.readme.com/main/reference/getcustompages",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updatecustompage",
+          "path": "/main/reference/updatecustompage",
+          "fullUrl": "https://docs.readme.com/main/reference/updatecustompage",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createdoc",
+          "path": "/main/reference/createdoc",
+          "fullUrl": "https://docs.readme.com/main/reference/createdoc",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deletedoc",
+          "path": "/main/reference/deletedoc",
+          "fullUrl": "https://docs.readme.com/main/reference/deletedoc",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getdoc",
+          "path": "/main/reference/getdoc",
+          "fullUrl": "https://docs.readme.com/main/reference/getdoc",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getproductiondoc",
+          "path": "/main/reference/getproductiondoc",
+          "fullUrl": "https://docs.readme.com/main/reference/getproductiondoc",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Searchdocs",
+          "path": "/main/reference/searchdocs",
+          "fullUrl": "https://docs.readme.com/main/reference/searchdocs",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updatedoc",
+          "path": "/main/reference/updatedoc",
+          "fullUrl": "https://docs.readme.com/main/reference/updatedoc",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getoutboundips",
+          "path": "/main/reference/getoutboundips",
+          "fullUrl": "https://docs.readme.com/main/reference/getoutboundips",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Askowlbot",
+          "path": "/main/reference/askowlbot",
+          "fullUrl": "https://docs.readme.com/main/reference/askowlbot",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Pagination Legacy",
+          "path": "/main/reference/pagination-legacy",
+          "fullUrl": "https://docs.readme.com/main/reference/pagination-legacy",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getproject",
+          "path": "/main/reference/getproject",
+          "fullUrl": "https://docs.readme.com/main/reference/getproject",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createversion",
+          "path": "/main/reference/createversion",
+          "fullUrl": "https://docs.readme.com/main/reference/createversion",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deleteversion",
+          "path": "/main/reference/deleteversion",
+          "fullUrl": "https://docs.readme.com/main/reference/deleteversion",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getversion",
+          "path": "/main/reference/getversion",
+          "fullUrl": "https://docs.readme.com/main/reference/getversion",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getversions",
+          "path": "/main/reference/getversions",
+          "fullUrl": "https://docs.readme.com/main/reference/getversions",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updateversion",
+          "path": "/main/reference/updateversion",
+          "fullUrl": "https://docs.readme.com/main/reference/updateversion",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createapikey",
+          "path": "/main/reference/createapikey",
+          "fullUrl": "https://docs.readme.com/main/reference/createapikey",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deleteapikey",
+          "path": "/main/reference/deleteapikey",
+          "fullUrl": "https://docs.readme.com/main/reference/deleteapikey",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getapikey",
+          "path": "/main/reference/getapikey",
+          "fullUrl": "https://docs.readme.com/main/reference/getapikey",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getapikeys",
+          "path": "/main/reference/getapikeys",
+          "fullUrl": "https://docs.readme.com/main/reference/getapikeys",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updateapikey",
+          "path": "/main/reference/updateapikey",
+          "fullUrl": "https://docs.readme.com/main/reference/updateapikey",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createreference",
+          "path": "/main/reference/createreference",
+          "fullUrl": "https://docs.readme.com/main/reference/createreference",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deletereference",
+          "path": "/main/reference/deletereference",
+          "fullUrl": "https://docs.readme.com/main/reference/deletereference",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getreference",
+          "path": "/main/reference/getreference",
+          "fullUrl": "https://docs.readme.com/main/reference/getreference",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updatereference",
+          "path": "/main/reference/updatereference",
+          "fullUrl": "https://docs.readme.com/main/reference/updatereference",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createapi",
+          "path": "/main/reference/createapi",
+          "fullUrl": "https://docs.readme.com/main/reference/createapi",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deleteapi",
+          "path": "/main/reference/deleteapi",
+          "fullUrl": "https://docs.readme.com/main/reference/deleteapi",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getapi",
+          "path": "/main/reference/getapi",
+          "fullUrl": "https://docs.readme.com/main/reference/getapi",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getapis",
+          "path": "/main/reference/getapis",
+          "fullUrl": "https://docs.readme.com/main/reference/getapis",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updateapi",
+          "path": "/main/reference/updateapi",
+          "fullUrl": "https://docs.readme.com/main/reference/updateapi",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Validateapi",
+          "path": "/main/reference/validateapi",
+          "fullUrl": "https://docs.readme.com/main/reference/validateapi",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Applytoreadme 1",
+          "path": "/main/reference/applytoreadme-1",
+          "fullUrl": "https://docs.readme.com/main/reference/applytoreadme-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getopenroles 1",
+          "path": "/main/reference/getopenroles-1",
+          "fullUrl": "https://docs.readme.com/main/reference/getopenroles-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createbranch",
+          "path": "/main/reference/createbranch",
+          "fullUrl": "https://docs.readme.com/main/reference/createbranch",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deletebranch",
+          "path": "/main/reference/deletebranch",
+          "fullUrl": "https://docs.readme.com/main/reference/deletebranch",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getbranch",
+          "path": "/main/reference/getbranch",
+          "fullUrl": "https://docs.readme.com/main/reference/getbranch",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getbranches",
+          "path": "/main/reference/getbranches",
+          "fullUrl": "https://docs.readme.com/main/reference/getbranches",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updatebranch",
+          "path": "/main/reference/updatebranch",
+          "fullUrl": "https://docs.readme.com/main/reference/updatebranch",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createcategory 1",
+          "path": "/main/reference/createcategory-1",
+          "fullUrl": "https://docs.readme.com/main/reference/createcategory-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deletecategory 1",
+          "path": "/main/reference/deletecategory-1",
+          "fullUrl": "https://docs.readme.com/main/reference/deletecategory-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getcategories 1",
+          "path": "/main/reference/getcategories-1",
+          "fullUrl": "https://docs.readme.com/main/reference/getcategories-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getcategory 1",
+          "path": "/main/reference/getcategory-1",
+          "fullUrl": "https://docs.readme.com/main/reference/getcategory-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getcategorypages",
+          "path": "/main/reference/getcategorypages",
+          "fullUrl": "https://docs.readme.com/main/reference/getcategorypages",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updatecategory 1",
+          "path": "/main/reference/updatecategory-1",
+          "fullUrl": "https://docs.readme.com/main/reference/updatecategory-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createchangelog 1",
+          "path": "/main/reference/createchangelog-1",
+          "fullUrl": "https://docs.readme.com/main/reference/createchangelog-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deletechangelog 1",
+          "path": "/main/reference/deletechangelog-1",
+          "fullUrl": "https://docs.readme.com/main/reference/deletechangelog-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getchangelog 1",
+          "path": "/main/reference/getchangelog-1",
+          "fullUrl": "https://docs.readme.com/main/reference/getchangelog-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getchangelogs 1",
+          "path": "/main/reference/getchangelogs-1",
+          "fullUrl": "https://docs.readme.com/main/reference/getchangelogs-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updatechangelog 1",
+          "path": "/main/reference/updatechangelog-1",
+          "fullUrl": "https://docs.readme.com/main/reference/updatechangelog-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createcustompage 1",
+          "path": "/main/reference/createcustompage-1",
+          "fullUrl": "https://docs.readme.com/main/reference/createcustompage-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deletecustompage 1",
+          "path": "/main/reference/deletecustompage-1",
+          "fullUrl": "https://docs.readme.com/main/reference/deletecustompage-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getcustompage 1",
+          "path": "/main/reference/getcustompage-1",
+          "fullUrl": "https://docs.readme.com/main/reference/getcustompage-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getcustompages 1",
+          "path": "/main/reference/getcustompages-1",
+          "fullUrl": "https://docs.readme.com/main/reference/getcustompages-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updatecustompage 1",
+          "path": "/main/reference/updatecustompage-1",
+          "fullUrl": "https://docs.readme.com/main/reference/updatecustompage-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createguide",
+          "path": "/main/reference/createguide",
+          "fullUrl": "https://docs.readme.com/main/reference/createguide",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deleteguide",
+          "path": "/main/reference/deleteguide",
+          "fullUrl": "https://docs.readme.com/main/reference/deleteguide",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getguide",
+          "path": "/main/reference/getguide",
+          "fullUrl": "https://docs.readme.com/main/reference/getguide",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updateguide",
+          "path": "/main/reference/updateguide",
+          "fullUrl": "https://docs.readme.com/main/reference/updateguide",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getimage",
+          "path": "/main/reference/getimage",
+          "fullUrl": "https://docs.readme.com/main/reference/getimage",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getimages",
+          "path": "/main/reference/getimages",
+          "fullUrl": "https://docs.readme.com/main/reference/getimages",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Uploadimage",
+          "path": "/main/reference/uploadimage",
+          "fullUrl": "https://docs.readme.com/main/reference/uploadimage",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Intro To The Readme Api",
+          "path": "/main/reference/intro-to-the-readme-api",
+          "fullUrl": "https://docs.readme.com/main/reference/intro-to-the-readme-api",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getoutboundips 1",
+          "path": "/main/reference/getoutboundips-1",
+          "fullUrl": "https://docs.readme.com/main/reference/getoutboundips-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Askowlbot 1",
+          "path": "/main/reference/askowlbot-1",
+          "fullUrl": "https://docs.readme.com/main/reference/askowlbot-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Pagination",
+          "path": "/main/reference/pagination",
+          "fullUrl": "https://docs.readme.com/main/reference/pagination",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getproject 1",
+          "path": "/main/reference/getproject-1",
+          "fullUrl": "https://docs.readme.com/main/reference/getproject-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Createrecipe",
+          "path": "/main/reference/createrecipe",
+          "fullUrl": "https://docs.readme.com/main/reference/createrecipe",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Deleterecipe",
+          "path": "/main/reference/deleterecipe",
+          "fullUrl": "https://docs.readme.com/main/reference/deleterecipe",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getrecipe",
+          "path": "/main/reference/getrecipe",
+          "fullUrl": "https://docs.readme.com/main/reference/getrecipe",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getrecipes",
+          "path": "/main/reference/getrecipes",
+          "fullUrl": "https://docs.readme.com/main/reference/getrecipes",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Updaterecipe",
+          "path": "/main/reference/updaterecipe",
+          "fullUrl": "https://docs.readme.com/main/reference/updaterecipe",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Search 3",
+          "path": "/main/reference/search-3",
+          "fullUrl": "https://docs.readme.com/main/reference/search-3",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Authentication",
+          "path": "/main/reference/authentication",
+          "fullUrl": "https://docs.readme.com/main/reference/authentication",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/Getting Started",
+          "path": "/main/reference/getting-started",
+          "fullUrl": "https://docs.readme.com/main/reference/getting-started",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Reference/My Requests",
+          "path": "/main/reference/my-requests",
+          "fullUrl": "https://docs.readme.com/main/reference/my-requests",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog",
+          "path": "/main/changelog",
+          "fullUrl": "https://docs.readme.com/main/changelog",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Ai Agent Improvements",
+          "path": "/main/changelog/ai-agent-improvements",
+          "fullUrl": "https://docs.readme.com/main/changelog/ai-agent-improvements",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Multiple Chat Windows For Ai Agent",
+          "path": "/main/changelog/multiple-chat-windows-for-ai-agent",
+          "fullUrl": "https://docs.readme.com/main/changelog/multiple-chat-windows-for-ai-agent",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Broken Link Checker",
+          "path": "/main/changelog/broken-link-checker",
+          "fullUrl": "https://docs.readme.com/main/changelog/broken-link-checker",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Search And Audit Scheduler",
+          "path": "/main/changelog/search-and-audit-scheduler",
+          "fullUrl": "https://docs.readme.com/main/changelog/search-and-audit-scheduler",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Preview Mode Api Method Styles",
+          "path": "/main/changelog/preview-mode-api-method-styles",
+          "fullUrl": "https://docs.readme.com/main/changelog/preview-mode-api-method-styles",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Bug Fixes And Improvements 1",
+          "path": "/main/changelog/bug-fixes-and-improvements-1",
+          "fullUrl": "https://docs.readme.com/main/changelog/bug-fixes-and-improvements-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Ai Linting Docs Audit And More Ai Features",
+          "path": "/main/changelog/ai-linting-docs-audit-and-more-ai-features",
+          "fullUrl": "https://docs.readme.com/main/changelog/ai-linting-docs-audit-and-more-ai-features",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Api Designer Improvements",
+          "path": "/main/changelog/api-designer-improvements",
+          "fullUrl": "https://docs.readme.com/main/changelog/api-designer-improvements",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Component Marketplace",
+          "path": "/main/changelog/component-marketplace",
+          "fullUrl": "https://docs.readme.com/main/changelog/component-marketplace",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Keyboard Shortcuts",
+          "path": "/main/changelog/keyboard-shortcuts",
+          "fullUrl": "https://docs.readme.com/main/changelog/keyboard-shortcuts",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Branching Improvements",
+          "path": "/main/changelog/branching-improvements",
+          "fullUrl": "https://docs.readme.com/main/changelog/branching-improvements",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Editor Role",
+          "path": "/main/changelog/editor-role",
+          "fullUrl": "https://docs.readme.com/main/changelog/editor-role",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Bug Fixes Improvements 5",
+          "path": "/main/changelog/bug-fixes-improvements-5",
+          "fullUrl": "https://docs.readme.com/main/changelog/bug-fixes-improvements-5",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Launch Week",
+          "path": "/main/changelog/launch-week",
+          "fullUrl": "https://docs.readme.com/main/changelog/launch-week",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Export Documentation In Readme Refactored",
+          "path": "/main/changelog/export-documentation-in-readme-refactored",
+          "fullUrl": "https://docs.readme.com/main/changelog/export-documentation-in-readme-refactored",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Ask Ai For Api References",
+          "path": "/main/changelog/ask-ai-for-api-references",
+          "fullUrl": "https://docs.readme.com/main/changelog/ask-ai-for-api-references",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Ask Ai Llms Txt",
+          "path": "/main/changelog/ask-ai-llms-txt",
+          "fullUrl": "https://docs.readme.com/main/changelog/ask-ai-llms-txt",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Bug Fixes Improvements 4",
+          "path": "/main/changelog/bug-fixes-improvements-4",
+          "fullUrl": "https://docs.readme.com/main/changelog/bug-fixes-improvements-4",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Syncing Versions From Github",
+          "path": "/main/changelog/syncing-versions-from-github",
+          "fullUrl": "https://docs.readme.com/main/changelog/syncing-versions-from-github",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Build And Use Custom Components With Mdx",
+          "path": "/main/changelog/build-and-use-custom-components-with-mdx",
+          "fullUrl": "https://docs.readme.com/main/changelog/build-and-use-custom-components-with-mdx",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Bug Fixes Improvements 3",
+          "path": "/main/changelog/bug-fixes-improvements-3",
+          "fullUrl": "https://docs.readme.com/main/changelog/bug-fixes-improvements-3",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/View My Developers Alongside Documentation",
+          "path": "/main/changelog/view-my-developers-alongside-documentation",
+          "fullUrl": "https://docs.readme.com/main/changelog/view-my-developers-alongside-documentation",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Apidesigner",
+          "path": "/main/changelog/apidesigner",
+          "fullUrl": "https://docs.readme.com/main/changelog/apidesigner",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Bookmark Projects",
+          "path": "/main/changelog/bookmark-projects",
+          "fullUrl": "https://docs.readme.com/main/changelog/bookmark-projects",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Github Copilot Support With Owlbot",
+          "path": "/main/changelog/github-copilot-support-with-owlbot",
+          "fullUrl": "https://docs.readme.com/main/changelog/github-copilot-support-with-owlbot",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Readme Refactored",
+          "path": "/main/changelog/readme-refactored",
+          "fullUrl": "https://docs.readme.com/main/changelog/readme-refactored",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/New Project Navigation",
+          "path": "/main/changelog/new-project-navigation",
+          "fullUrl": "https://docs.readme.com/main/changelog/new-project-navigation",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Bug Fixes Improvements 7",
+          "path": "/main/changelog/bug-fixes-improvements-7",
+          "fullUrl": "https://docs.readme.com/main/changelog/bug-fixes-improvements-7",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Bug Fixes Improvements 2",
+          "path": "/main/changelog/bug-fixes-improvements-2",
+          "fullUrl": "https://docs.readme.com/main/changelog/bug-fixes-improvements-2",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Bug Fixes Improvements 6",
+          "path": "/main/changelog/bug-fixes-improvements-6",
+          "fullUrl": "https://docs.readme.com/main/changelog/bug-fixes-improvements-6",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Simpler Aws Api Gateway Setup",
+          "path": "/main/changelog/simpler-aws-api-gateway-setup",
+          "fullUrl": "https://docs.readme.com/main/changelog/simpler-aws-api-gateway-setup",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Staging Promotion Improvements",
+          "path": "/main/changelog/staging-promotion-improvements",
+          "fullUrl": "https://docs.readme.com/main/changelog/staging-promotion-improvements",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Bug Fixes Improvements 1",
+          "path": "/main/changelog/bug-fixes-improvements-1",
+          "fullUrl": "https://docs.readme.com/main/changelog/bug-fixes-improvements-1",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Bug Fixes Improvements",
+          "path": "/main/changelog/bug-fixes-improvements",
+          "fullUrl": "https://docs.readme.com/main/changelog/bug-fixes-improvements",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Bug Fixes And Improvements 3",
+          "path": "/main/changelog/bug-fixes-and-improvements-3",
+          "fullUrl": "https://docs.readme.com/main/changelog/bug-fixes-and-improvements-3",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Annual Billing Ach Support",
+          "path": "/main/changelog/annual-billing-ach-support",
+          "fullUrl": "https://docs.readme.com/main/changelog/annual-billing-ach-support",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Updated Emoji Support",
+          "path": "/main/changelog/updated-emoji-support",
+          "fullUrl": "https://docs.readme.com/main/changelog/updated-emoji-support",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Redesigned Api Reference Configuration",
+          "path": "/main/changelog/redesigned-api-reference-configuration",
+          "fullUrl": "https://docs.readme.com/main/changelog/redesigned-api-reference-configuration",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Bug Fixes And Improvements 2",
+          "path": "/main/changelog/bug-fixes-and-improvements-2",
+          "fullUrl": "https://docs.readme.com/main/changelog/bug-fixes-and-improvements-2",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Better Search And Filtering In Developer Dashboard",
+          "path": "/main/changelog/better-search-and-filtering-in-developer-dashboard",
+          "fullUrl": "https://docs.readme.com/main/changelog/better-search-and-filtering-in-developer-dashboard",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Pairing Requests And Responses",
+          "path": "/main/changelog/pairing-requests-and-responses",
+          "fullUrl": "https://docs.readme.com/main/changelog/pairing-requests-and-responses",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Bug Fixes And Improvements",
+          "path": "/main/changelog/bug-fixes-and-improvements",
+          "fullUrl": "https://docs.readme.com/main/changelog/bug-fixes-and-improvements",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Getting Started Improvements",
+          "path": "/main/changelog/getting-started-improvements",
+          "fullUrl": "https://docs.readme.com/main/changelog/getting-started-improvements",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/02 12 24 Search Sort Reusable Content",
+          "path": "/main/changelog/02-12-24-search-sort-reusable-content",
+          "fullUrl": "https://docs.readme.com/main/changelog/02-12-24-search-sort-reusable-content",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/01 29 24 Webhooks Support",
+          "path": "/main/changelog/01-29-24-webhooks-support",
+          "fullUrl": "https://docs.readme.com/main/changelog/01-29-24-webhooks-support",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Additional Level Of Sidebar Nesting",
+          "path": "/main/changelog/additional-level-of-sidebar-nesting",
+          "fullUrl": "https://docs.readme.com/main/changelog/additional-level-of-sidebar-nesting",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/12 20 2023 Reusable Content",
+          "path": "/main/changelog/12-20-2023-reusable-content",
+          "fullUrl": "https://docs.readme.com/main/changelog/12-20-2023-reusable-content",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Owlbot Ai Api For Asking Questions",
+          "path": "/main/changelog/owlbot-ai-api-for-asking-questions",
+          "fullUrl": "https://docs.readme.com/main/changelog/owlbot-ai-api-for-asking-questions",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Owlbot Customization And Seo Improvements",
+          "path": "/main/changelog/owlbot-customization-and-seo-improvements",
+          "fullUrl": "https://docs.readme.com/main/changelog/owlbot-customization-and-seo-improvements",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Changelog/Customize Changelog",
+          "path": "/main/changelog/customize-changelog",
+          "fullUrl": "https://docs.readme.com/main/changelog/customize-changelog",
+          "level": 0,
+          "group": ""
+        },
+        {
+          "title": "Discuss",
+          "path": "/main/discuss",
+          "fullUrl": "https://docs.readme.com/main/discuss",
+          "level": 0,
+          "group": ""
+        }
+      ]
+    }
+  ]
+}

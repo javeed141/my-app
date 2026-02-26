@@ -1,0 +1,1108 @@
+{
+  "name": "Pennylane",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "getting started",
+            "pages": [
+              {
+                "title": "API Overview",
+                "path": "docs/api-overview"
+              },
+              {
+                "title": "Introduction to the Pennylane API",
+                "path": "docs/getting-started"
+              },
+              {
+                "title": "Choose the Right API for Your Integration",
+                "path": "docs/what-apis-are-available"
+              },
+              {
+                "title": "Data Sharing or API: Which Should You Use?",
+                "path": "docs/should-i-use-data-sharing-or-the-api-1"
+              },
+              {
+                "group": "Authentication",
+                "pages": [
+                  {
+                    "title": "Create a Firm API Token",
+                    "path": "docs/firm-api"
+                  },
+                  {
+                    "title": "Implement OAuth 2.0",
+                    "path": "docs/oauth-20-walkthrough"
+                  },
+                  {
+                    "title": "Understand Scopes",
+                    "path": "docs/v2-scopes"
+                  }
+                ]
+              },
+              {
+                "title": "Setup & Configuration",
+                "path": "docs/error-handling-status-codes"
+              }
+            ]
+          },
+          {
+            "group": "tutorials",
+            "pages": [
+              {
+                "group": "Use Cases",
+                "pages": [
+                  {
+                    "title": "Point of Sale Integration",
+                    "path": "docs/how-to-build-a-pos-integration"
+                  },
+                  {
+                    "group": "Accounting Management",
+                    "pages": [
+                      {
+                        "title": "Create Ledger Entries via API",
+                        "path": "docs/create-a-ledger-entry"
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Invoicing Management",
+                    "pages": [
+                      {
+                        "title": "Import a Supplier Invoice via API",
+                        "path": "docs/supplier-invoicing"
+                      },
+                      {
+                        "title": "Import a Customer Invoice via API",
+                        "path": "docs/customer-invoicing"
+                      },
+                      {
+                        "title": "Create a Customer Invoice via API",
+                        "path": "docs/create-a-customer-invoice-use-case"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Feature Guides",
+                "pages": [
+                  {
+                    "title": "Filter Customer Invoices",
+                    "path": "docs/filter-my-customer-invoices"
+                  },
+                  {
+                    "title": "Filter Supplier Invoices",
+                    "path": "docs/filter-my-supplier-invoices"
+                  },
+                  {
+                    "title": "Filter Draft Invoices",
+                    "path": "docs/filter-my-draft-invoices"
+                  },
+                  {
+                    "title": "Filter Credit Notes",
+                    "path": "docs/filter-my-credit-notes"
+                  },
+                  {
+                    "title": "Filter Customers",
+                    "path": "docs/filter-my-customers"
+                  },
+                  {
+                    "title": "Filter Suppliers",
+                    "path": "docs/filter-my-suppliers"
+                  },
+                  {
+                    "title": "Filter Ledger Accounts",
+                    "path": "docs/filter-my-ledger-accounts"
+                  },
+                  {
+                    "title": "Filter Ledger Entries",
+                    "path": "docs/filter-my-ledger-entries"
+                  },
+                  {
+                    "title": "Filter Ledger Entry Lines",
+                    "path": "docs/filter-my-ledger-entry-lines"
+                  },
+                  {
+                    "title": "Filter Categories",
+                    "path": "docs/filter-my-categories"
+                  },
+                  {
+                    "title": "Filter Products",
+                    "path": "docs/filter-my-products"
+                  },
+                  {
+                    "title": "Automate Payment Matching",
+                    "path": "docs/automating-payment-matching"
+                  },
+                  {
+                    "title": "Use Cursor-Based Pagination",
+                    "path": "docs/using-cursor-based-pagination"
+                  },
+                  {
+                    "title": "Track Data Changes with the API",
+                    "path": "docs/tracking-data-changes-with-pennylane-api"
+                  },
+                  {
+                    "title": "Create a Downpayment Invoice",
+                    "path": "docs/create-a-downpayment-invoice-facture-dacompte"
+                  },
+                  {
+                    "title": "Send Documents by Email",
+                    "path": "docs/sending-documents-by-email"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "CONCEPTS & BEST PRACTICES",
+            "pages": [
+              {
+                "title": "Concepts",
+                "path": "docs/string-characters-limit"
+              },
+              {
+                "group": "Best Practices",
+                "pages": [
+                  {
+                    "title": "Import vs Create a Customer Invoice",
+                    "path": "docs/import-vs-create-a-customer-invoice-whats-the-difference"
+                  },
+                  {
+                    "title": "Understanding VAT Rates on Ledger Accounts",
+                    "path": "docs/handle-vat-rates-by-ledger-accounts"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "ADVANCED GUIDES",
+            "pages": [
+              {
+                "title": "Rate Limiting in API v2",
+                "path": "docs/rate-limiting-1"
+              }
+            ]
+          },
+          {
+            "group": "MIGRATION & RELEASE NOTES",
+            "pages": [
+              {
+                "title": "Migrate from API v1 to v2",
+                "path": "docs/api-v2-vs-v1"
+              },
+              {
+                "title": "API Changelog",
+                "path": "docs/stay-updated-with-our-api-changes"
+              },
+              {
+                "title": "Public Roadmap",
+                "path": "docs/api-public-roadmap"
+              },
+              {
+                "title": "2026 API changes Migration Guide",
+                "path": "docs/2026-api-changes-guide"
+              }
+            ]
+          },
+          {
+            "group": "RESOURCES",
+            "pages": [
+              {
+                "title": "Glossary",
+                "path": "docs/glossary"
+              }
+            ]
+          },
+          {
+            "group": "Need support?",
+            "pages": [
+              {
+                "title": "How to reach out to us",
+                "path": "docs/how-to-reach-out-to-us"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Accounting",
+            "pages": [
+              {
+                "group": "Journals",
+                "pages": [
+                  {
+                    "title": "Retrieve a journal",
+                    "path": "reference/getjournal",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Create a journal",
+                    "path": "reference/postjournals",
+                    "method": "POST"
+                  }
+                ]
+              },
+              {
+                "group": "Ledger Accounts",
+                "pages": [
+                  {
+                    "title": "Get a ledger account",
+                    "path": "reference/getledgeraccount",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Create a ledger account",
+                    "path": "reference/postledgeraccounts",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Update a ledger account",
+                    "path": "reference/updateledgeraccount",
+                    "method": "PUT"
+                  }
+                ]
+              },
+              {
+                "title": "Ledger Attachments",
+                "path": "reference/postledgerattachments"
+              },
+              {
+                "group": "Ledger Entries",
+                "pages": [
+                  {
+                    "title": "List ledger entry lines of a Ledger Entry",
+                    "path": "reference/getledgerentriesledgerentrylines",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Retrieve a Ledger entry",
+                    "path": "reference/getledgerentry",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Create a ledger entry",
+                    "path": "reference/postledgerentries",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Update a ledger entry",
+                    "path": "reference/putledgerentries",
+                    "method": "PUT"
+                  }
+                ]
+              },
+              {
+                "group": "Ledger Entry Lines",
+                "pages": [
+                  {
+                    "title": "Retrieve a Ledger entry line",
+                    "path": "reference/getledgerentryline",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List ledger entry lines lettered to a given ledger entry line",
+                    "path": "reference/getledgerentrylinesletteredledgerentrylines",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List categories of a Ledger Entry line",
+                    "path": "reference/getledgerentrylinescategories",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Link Analytical Categories to a Ledger Entry line",
+                    "path": "reference/putledgerentrylinescategories",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Letter ledger entry lines",
+                    "path": "reference/postledgerentrylinesletter",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Unletter ledger entry lines",
+                    "path": "reference/deleteledgerentrylinesunletter",
+                    "method": "DELETE"
+                  }
+                ]
+              },
+              {
+                "title": "Trial balance",
+                "path": "reference/gettrialbalance"
+              },
+              {
+                "title": "Fiscal years",
+                "path": "reference/company-fiscal-years"
+              },
+              {
+                "title": "ProAccountMandates",
+                "path": "reference/getproaccountmandates"
+              }
+            ]
+          },
+          {
+            "group": "Accounting exports",
+            "pages": [
+              {
+                "group": "Exports",
+                "pages": [
+                  {
+                    "title": "Retrieve an Analytical General Ledger export",
+                    "path": "reference/getanalyticalgeneralledgerexport",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Create a FEC export",
+                    "path": "reference/exportfec",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Retrieve a FEC export",
+                    "path": "reference/getfecexport",
+                    "method": "GET"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Analytics",
+            "pages": [
+              {
+                "group": "Category Groups",
+                "pages": [
+                  {
+                    "title": "Retrieve a category group",
+                    "path": "reference/getcategorygroup",
+                    "method": "GET"
+                  }
+                ]
+              },
+              {
+                "group": "Categories",
+                "pages": [
+                  {
+                    "title": "List categories",
+                    "path": "reference/getcategories",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Retrieve a category",
+                    "path": "reference/getcategory",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Create a category",
+                    "path": "reference/postcategories",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Update a category",
+                    "path": "reference/updatecategory",
+                    "method": "PUT"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Billing Subscriptions",
+            "pages": [
+              {
+                "group": "Billing Subscriptions",
+                "pages": [
+                  {
+                    "title": "Get a billing subscription",
+                    "path": "reference/getbillingsubscription",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Create a billing subscription",
+                    "path": "reference/postbillingsubscriptions",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Update a billing subscription",
+                    "path": "reference/putbillingsubscriptions",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "List invoice lines for a billing subscription",
+                    "path": "reference/getbillingsubscriptioninvoicelines",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List the invoice line sections of a billing subscription",
+                    "path": "reference/getbillingsubscriptioninvoicelinesections",
+                    "method": "GET"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Changelogs",
+            "pages": [
+              {
+                "group": "Changelogs",
+                "pages": [
+                  {
+                    "title": "Get supplier invoices changes events",
+                    "path": "reference/getsupplierinvoiceschanges",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Get customer changes events",
+                    "path": "reference/getcustomerchanges",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Get supplier changes events",
+                    "path": "reference/getsupplierchanges",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Get product change events",
+                    "path": "reference/getproductchanges",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Get ledger entry line change events",
+                    "path": "reference/getledgerentrylinechanges",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Get transaction change events",
+                    "path": "reference/gettransactionchanges",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Get quotes changes events",
+                    "path": "reference/getquotechanges",
+                    "method": "GET"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "COMMERCIAL DOCUMENTS",
+            "pages": [
+              {
+                "group": "Commercial Documents",
+                "pages": [
+                  {
+                    "title": "Retrieve a commercial document",
+                    "path": "reference/getcommercialdocument",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List invoice line sections for a commercial document",
+                    "path": "reference/getcommercialdocumentinvoicelinesections",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List invoice lines for a commercial document",
+                    "path": "reference/getcommercialdocumentinvoicelines",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List appendices of a commercial document",
+                    "path": "reference/getcommercialdocumentappendices",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Upload an appendix for a commercial document",
+                    "path": "reference/postcommercialdocumentappendices",
+                    "method": "POST"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Customer Invoices",
+            "pages": [
+              {
+                "group": "Customer Invoices",
+                "pages": [
+                  {
+                    "title": "List invoice line sections for a customer invoice",
+                    "path": "reference/getcustomerinvoiceinvoicelinesections",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List invoice lines for a customer invoice",
+                    "path": "reference/getcustomerinvoiceinvoicelines",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List payments for a customer invoice",
+                    "path": "reference/getcustomerinvoicepayments",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List matched transactions for a customer invoice",
+                    "path": "reference/getcustomerinvoicematchedtransactions",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List appendices of a customer invoice",
+                    "path": "reference/getcustomerinvoiceappendices",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List categories of a customer invoice",
+                    "path": "reference/getcustomerinvoicecategories",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Retrieve a customer invoice",
+                    "path": "reference/getcustomerinvoice",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Upload an appendix for a customer invoice",
+                    "path": "reference/postcustomerinvoiceappendices",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Send a customer invoice by email",
+                    "path": "reference/sendbyemailcustomerinvoice",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Create a customer invoice",
+                    "path": "reference/postcustomerinvoices",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Import an invoice with file attached",
+                    "path": "reference/importcustomerinvoices",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Link a credit note to a customer invoice",
+                    "path": "reference/linkcreditnote",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Create a customer invoice from a quote",
+                    "path": "reference/createcustomerinvoicefromquote",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Update a customer invoice",
+                    "path": "reference/updatecustomerinvoice",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Mark a customer invoice as paid",
+                    "path": "reference/markaspaidcustomerinvoice",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Categorize a customer invoice",
+                    "path": "reference/putcustomerinvoicecategories",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Update an Imported customer invoice",
+                    "path": "reference/updateimportedcustomerinvoice",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Turn the draft invoice into a finalized invoice.",
+                    "path": "reference/finalizecustomerinvoice",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Delete draft invoice",
+                    "path": "reference/deletecustomerinvoices",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "List custom header fields for a customer invoice",
+                    "path": "reference/getcustomerinvoicecustomheaderfields",
+                    "method": "GET"
+                  }
+                ]
+              },
+              {
+                "group": "Products",
+                "pages": [
+                  {
+                    "title": "Retrieve a product",
+                    "path": "reference/getproduct",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Create a product",
+                    "path": "reference/postproducts-1",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Update a product",
+                    "path": "reference/putproduct",
+                    "method": "PUT"
+                  }
+                ]
+              },
+              {
+                "title": "Customer Invoice Templates",
+                "path": "reference/getcustomerinvoicetemplates"
+              },
+              {
+                "group": "Customers",
+                "pages": [
+                  {
+                    "title": "Retrieve an individual customer",
+                    "path": "reference/getindividualcustomer",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List customers (company and individual)",
+                    "path": "reference/getcustomers",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Retrieve a customer",
+                    "path": "reference/getcustomer",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Create a company customer",
+                    "path": "reference/postcompanycustomer",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Create an individual customer",
+                    "path": "reference/postindividualcustomer",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Update a company customer",
+                    "path": "reference/putcompanycustomer",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Update an individual customer",
+                    "path": "reference/putindividualcustomer",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "List contacts of a customer",
+                    "path": "reference/getcustomercontacts",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List categories of a customer",
+                    "path": "reference/getcustomercategories",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Categorize a customer",
+                    "path": "reference/putcustomercategories",
+                    "method": "PUT"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "E-Invoices",
+            "pages": [
+              {
+                "title": "E-Invoices",
+                "path": "reference/createeinvoiceimport"
+              }
+            ]
+          },
+          {
+            "group": "File upload",
+            "pages": [
+              {
+                "title": "File Attachments",
+                "path": "reference/postfileattachments"
+              }
+            ]
+          },
+          {
+            "group": "Mandates",
+            "pages": [
+              {
+                "group": "Mandates",
+                "pages": [
+                  {
+                    "title": "List SEPA mandates",
+                    "path": "reference/getsepamandates",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Get a SEPA mandate",
+                    "path": "reference/getsepamandate",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Update a SEPA mandate",
+                    "path": "reference/putsepamandate",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Delete a SEPA mandate",
+                    "path": "reference/deletesepamandate",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "List gocardless mandates",
+                    "path": "reference/getgocardlessmandates",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Get a Gocardless mandate",
+                    "path": "reference/getgocardlessmandate",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Send a GoCardless mandate email request",
+                    "path": "reference/postgocardlessmandatemailrequests",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Associate a GoCardless mandate to a customer",
+                    "path": "reference/postgocardlessmandateassociations",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Cancel a Gocardless mandate",
+                    "path": "reference/postgocardlessmandatecancellations",
+                    "method": "POST"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "QUOTES",
+            "pages": [
+              {
+                "group": "Quotes",
+                "pages": [
+                  {
+                    "title": "Retrieve a quote",
+                    "path": "reference/getquote",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List invoice line sections for a quote",
+                    "path": "reference/getquoteinvoicelinesections",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List invoice lines for a quote",
+                    "path": "reference/getquoteinvoicelines",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List appendices of a quote",
+                    "path": "reference/getquoteappendices",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Create a quote",
+                    "path": "reference/postquotes",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Upload an appendix for a quote",
+                    "path": "reference/postquoteappendices",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Send a quote by email",
+                    "path": "reference/sendbyemailquote",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Update a quote",
+                    "path": "reference/updatequote",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Update status of a quote",
+                    "path": "reference/updatestatusquote",
+                    "method": "PUT"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Supplier invoices",
+            "pages": [
+              {
+                "group": "Supplier Invoices",
+                "pages": [
+                  {
+                    "title": "List supplier invoices",
+                    "path": "reference/getsupplierinvoices",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Retrieve a supplier invoice",
+                    "path": "reference/getsupplierinvoice",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List categories of a supplier invoice",
+                    "path": "reference/getsupplierinvoicecategories",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List payments for a supplier invoice",
+                    "path": "reference/getsupplierinvoicepayments",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List matched transactions for a supplier invoice",
+                    "path": "reference/getsupplierinvoicematchedtransactions",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Import a supplier invoice with a file attached",
+                    "path": "reference/importsupplierinvoice",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Link a purchase request to a supplier invoice",
+                    "path": "reference/postsupplierinvoicelinkedpurchaserequests",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Update a supplier invoice",
+                    "path": "reference/putsupplierinvoice",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Categorize a supplier invoice",
+                    "path": "reference/putsupplierinvoicecategories",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Update a supplier invoice payment status",
+                    "path": "reference/updatesupplierinvoicepaymentstatus",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Validate the accounting of a supplier invoice",
+                    "path": "reference/validateaccountingsupplierinvoice",
+                    "method": "PUT"
+                  }
+                ]
+              },
+              {
+                "group": "Purchase Requests",
+                "pages": [
+                  {
+                    "title": "Retrieve a purchase request",
+                    "path": "reference/getpurchaserequest",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Import a purchase order.",
+                    "path": "reference/createpurchaserequestimport",
+                    "method": "POST"
+                  }
+                ]
+              },
+              {
+                "group": "Suppliers",
+                "pages": [
+                  {
+                    "title": "Retrieve a supplier",
+                    "path": "reference/getsupplier",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Create a Supplier",
+                    "path": "reference/postsupplier",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Update a supplier",
+                    "path": "reference/putsupplier",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "List categories of a supplier",
+                    "path": "reference/getsuppliercategories",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Categorize a supplier",
+                    "path": "reference/putsuppliercategories",
+                    "method": "PUT"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Transactions",
+            "pages": [
+              {
+                "group": "Bank accounts",
+                "pages": [
+                  {
+                    "title": "List bank accounts",
+                    "path": "reference/getbankaccounts",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Retrieve a bank account",
+                    "path": "reference/getbankaccount",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Create a bank account",
+                    "path": "reference/postbankaccount",
+                    "method": "POST"
+                  }
+                ]
+              },
+              {
+                "group": "Transactions",
+                "pages": [
+                  {
+                    "title": "Retrieve a transaction",
+                    "path": "reference/gettransaction",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List invoices matched to a bank transaction",
+                    "path": "reference/gettransactionmatchedinvoices",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "List categories of a bank transaction",
+                    "path": "reference/gettransactioncategories",
+                    "method": "GET"
+                  },
+                  {
+                    "title": "Create a transaction",
+                    "path": "reference/createtransaction",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Match a transaction to a customer invoice",
+                    "path": "reference/postcustomerinvoicematchedtransactions",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Match a transaction to a supplier invoice",
+                    "path": "reference/postsupplierinvoicematchedtransactions",
+                    "method": "POST"
+                  },
+                  {
+                    "title": "Categorize a bank transaction",
+                    "path": "reference/puttransactioncategories",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Update a transaction",
+                    "path": "reference/updatetransaction",
+                    "method": "PUT"
+                  },
+                  {
+                    "title": "Unmatch a transaction to a customer invoice",
+                    "path": "reference/deletecustomerinvoicematchedtransactions",
+                    "method": "DELETE"
+                  },
+                  {
+                    "title": "Unmatch a transaction to a supplier invoice",
+                    "path": "reference/deletesupplierinvoicematchedtransactions",
+                    "method": "DELETE"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Users",
+            "pages": [
+              {
+                "title": "Users",
+                "path": "reference/getme"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "General",
+            "pages": [
+              {
+                "title": "List categories and Categorize a supplier/customer endpoints",
+                "path": "changelog/list-categories-and-categorize-a-suppliercustomer-endpoints"
+              },
+              {
+                "title": "Quotes - Get changes events endpoint",
+                "path": "changelog/quotes-get-changes-events-endpoint"
+              },
+              {
+                "title": "Get quotes changes events",
+                "path": "reference/getquotechanges"
+              },
+              {
+                "title": "E-invoices import - Add invoice ID to response",
+                "path": "changelog/e-invoices-import-add-invoice-id-to-response"
+              },
+              {
+                "title": "Supplier invoices - filtering by payment_status",
+                "path": "changelog/supplier-invoices-filtering-by-payment_status"
+              },
+              {
+                "title": "List supplier invoices",
+                "path": "reference/getsupplierinvoices"
+              },
+              {
+                "title": "Customer Invoices - Auto-populate invoice line fields from product data",
+                "path": "changelog/customer-invoices-auto-populate-invoice-line-fields-from-product-data"
+              },
+              {
+                "title": "Ledger Entries - Adding `due_date` on create",
+                "path": "changelog/ledger-entries-adding-due_date-on-create"
+              },
+              {
+                "title": "Deprecate ledger_attachment_id from the request body params of Ledger entries create and update endpoints",
+                "path": "changelog/deprecate-ledger_attachment_id-from-the-request-body-params-of-ledger-entries-create-and-update-endpoints"
+              },
+              {
+                "title": "Ledger Entries - Adding `piece_number` in the request body",
+                "path": "changelog/ledger-entries-adding-piece_number-in-the-request-body"
+              },
+              {
+                "title": "Transactions - Adding `interbank_code` in the response",
+                "path": "changelog/transactions-adding-interbank_code-in-the-response"
+              },
+              {
+                "title": "Updated error messages",
+                "path": "changelog/updated-error-messages"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
