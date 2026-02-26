@@ -1,21 +1,9 @@
 {/* Unknown component: <MetricCard> */}
 
-export const MetricCard = ({ label, value, unit, trend, trendDirection }) => (
-  <div className="bg-white border rounded-xl p-6 text-center shadow-sm">
-    <div className="text-sm text-gray-500 uppercase tracking-wider">{label}</div>
-    <div className="text-4xl font-bold my-2">
-      {value}<span className="text-lg text-gray-400 ml-1">{unit}</span>
-    </div>
-    <div className={`text-sm font-medium ${trendDirection === 'up' ? 'text-red-500' : 'text-green-500'}`}>
-      {trendDirection === 'up' ? '↑' : '↓'} {trend} vs last month
-    </div>
-  </div>
+export const MetricCard = ({ label, value }) => (
+  <div>{label}: {value}</div>
 );
 
-<MetricCard label="Avg Response Time" value={42} unit="ms" trend="12%" trendDirection="down" />
+<MetricCard label="Test" value={42} />
 
-<MetricCard label="P99 Latency" value={185} unit="ms" trend="3%" trendDirection="up" />
-
-<MetricCard label="Uptime (30d)" value={99.98} unit="%" trend="0.01%" trendDirection="down" />
-
-<MetricCard label="Error Rate" value={0.02} unit="%" trend="0.005%" trendDirection="down" />
+<MetricCard label="Test2" value={99} />

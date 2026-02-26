@@ -13,7 +13,7 @@ export const ChangelogEntry = ({ version, date, type, changes, breaking }) => {
         <span className="font-bold text-xl">{version}</span>
         <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${typeColors[type] || typeColors.patch}`}>
           {type}
-        </span>
+        </span>l
         <span className="text-gray-400 text-sm">{date}</span>
       </div>
       {breaking && breaking.length > 0 && (

@@ -414,6 +414,11 @@ Can self-close (when compact):
 4. SIMPLICITY WINS — a heading + paragraph is better than a forced component
 5. ONE COMPONENT PER CONCEPT — don't use 3 components where 1 works
 6. ESCAPE CONTENT — wrap {}, <>, code references in backticks or rephrase
+7. NEVER ADD HEADINGS — You are converting a single component, NOT a page section.
+   Your output replaces the component IN PLACE. Do NOT add ## or ### headings.
+   If the component has an internal title (e.g. a styled div with "System Status"),
+   use a component prop like title="System Status" or bold text **System Status**,
+   NOT a markdown heading. Headings break the page's heading hierarchy.
 
 ## Pattern Matching — What To Use For What
 
