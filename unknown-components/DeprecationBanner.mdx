@@ -1,6 +1,13 @@
 {/* Unknown component: <DeprecationBanner> */}
 
 export const DeprecationBanner = ({ children, version }) => {
+  return (
+    <div className="bg-red-100 border-l-4 border-red-500 p-4 my-4">
+      <span className="text-red-700 font-bold">⚠️ Deprecated in {version}:</span>
+      <span className="ml-2">{children}</span>
+    </div>
+  );
+};
 
 <DeprecationBanner version="v3.0">
   This endpoint will be removed. Use /v2/users instead.

@@ -1,0 +1,18 @@
+{/* Unknown component: <SupportCard> */}
+
+export const SupportCard = ({ level, email, hours, responseTime }) => (
+  <div className="border-2 rounded-xl p-6 text-center hover:border-blue-500 transition-colors">
+    <h3 className="text-xl font-bold">{level}</h3>
+    <p className="text-3xl font-bold text-blue-600 my-4">{responseTime}</p>
+    <p className="text-gray-500 text-sm">response time</p>
+    <hr className="my-4" />
+    <p>📧 {email}</p>
+    <p>🕐 {hours}</p>
+  </div>
+);
+
+<SupportCard level="Community" email="community@acme.dev" hours="Best effort" responseTime="48h" />
+
+<SupportCard level="Pro Support" email="pro@acme.dev" hours="Mon-Fri 9am-6pm" responseTime="4h" />
+
+<SupportCard level="Enterprise" email="enterprise@acme.dev" hours="24/7/365" responseTime="15min" />

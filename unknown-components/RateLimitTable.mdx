@@ -1,0 +1,33 @@
+{/* Unknown component: <RateLimitTable> */}
+
+export const RateLimitTable = ({ limits }) => (
+  <div className="overflow-x-auto">
+    <table className="min-w-full border-collapse">
+      <thead>
+        <tr className="bg-gray-50">
+          <th className="p-3 text-left font-semibold">Endpoint</th>
+          <th className="p-3 text-left font-semibold">Free</th>
+          <th className="p-3 text-left font-semibold">Pro</th>
+          <th className="p-3 text-left font-semibold">Enterprise</th>
+        </tr>
+      </thead>
+      <tbody>
+        {limits.map((l, i) => (
+          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+            <td className="p-3 font-mono text-sm">{l.endpoint}</td>
+            <td className="p-3">{l.free}</td>
+            <td className="p-3">{l.pro}</td>
+            <td className="p-3">{l.enterprise}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+<RateLimitTable limits={[
+  { endpoint: "POST /v2/payments", free: "100/hr", pro: "1,000/hr", enterprise: "10,000/hr" },
+  { endpoint: "GET /v2/payments/:id", free: "500/hr", pro: "5,000/hr", enterprise: "50,000/hr" },
+  { endpoint: "POST /v2/refunds", free: "50/hr", pro: "500/hr", enterprise: "5,000/hr" },
+  { endpoint: "GET /v2/customers", free: "200/hr", pro: "2,000/hr", enterprise: "20,000/hr" },
+]} />

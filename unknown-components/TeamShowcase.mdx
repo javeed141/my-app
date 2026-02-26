@@ -1,0 +1,21 @@
+{/* Unknown component: <TeamShowcase> */}
+
+export const TeamShowcase = ({ members }) => (
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 my-8">
+    {members.map((m, i) => (
+      <div key={i} className="text-center">
+        <img src={m.avatar} alt={m.name} className="w-24 h-24 rounded-full mx-auto mb-3 object-cover" />
+        <h4 className="font-bold m-0">{m.name}</h4>
+        <p className="text-sm text-gray-500 m-0">{m.role}</p>
+        <a href={m.github} className="text-blue-500 text-sm">GitHub →</a>
+      </div>
+    ))}
+  </div>
+);
+
+<TeamShowcase members={[
+  { name: "Sarah Chen", role: "API Lead", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200", github: "https://github.com/sarahchen" },
+  { name: "Marcus Johnson", role: "SDK Engineer", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200", github: "https://github.com/marcusj" },
+  { name: "Priya Patel", role: "DevRel", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200", github: "https://github.com/priyap" },
+  { name: "Alex Rivera", role: "Security", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200", github: "https://github.com/alexr" },
+]} />

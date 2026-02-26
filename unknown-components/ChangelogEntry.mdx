@@ -1,0 +1,72 @@
+{/* Unknown component: <ChangelogEntry> */}
+
+export const ChangelogEntry = ({ version, date, type, changes, breaking }) => {
+  const typeColors = {
+    major: 'bg-red-100 text-red-800 border-red-200',
+    minor: 'bg-blue-100 text-blue-800 border-blue-200',
+    patch: 'bg-green-100 text-green-800 border-green-200',
+  };
+  return (
+    <div className="border-l-4 border-blue-400 pl-6 pb-8 relative">
+      <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-400 rounded-full" />
+      <div className="flex items-center gap-3 mb-2">
+        <span className="font-bold text-xl">{version}</span>
+        <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${typeColors[type] || typeColors.patch}`}>
+          {type}
+        </span>
+        <span className="text-gray-400 text-sm">{date}</span>
+      </div>
+      {breaking && breaking.length > 0 && (
+        <div className="bg-red-50 border border-red-200 rounded p-3 mb-3">
+          <span className="font-bold text-red-700">⚠️ Breaking Changes:</span>
+          <ul className="mt-1 mb-0 text-sm">
+            {breaking.map((b, i) => <li key={i} className="text-red-600">{b}</li>)}
+          </ul>
+        </div>
+      )}
+      <ul className="space-y-1">
+        {changes.map((c, i) => <li key={i}>{c}</li>)}
+      </ul>
+    </div>
+  );
+};
+
+<ChangelogEntry
+  version="v3.0.0"
+  date="February 1, 2025"
+  type="major"
+  breaking={[
+    "Removed /v1/charges endpoint — use /v2/payments instead",
+    "Changed webhook signature format from HMAC-SHA1 to HMAC-SHA256",
+    "Minimum TLS version bumped to 1.3"
+  ]}
+  changes={[
+    "New unified payments API with support for 135+ currencies",
+    "Real-time fraud scoring on all transactions",
+    "Idempotency keys now required on all POST requests",
+    "New /v2/payouts endpoint for marketplace disbursements"
+  ]}
+/>
+
+<ChangelogEntry
+  version="v2.9.0"
+  date="January 10, 2025"
+  type="minor"
+  changes={[
+    "Added Apple Pay and Google Pay support",
+    "New customer.subscription.trial_ending webhook event",
+    "Improved error messages for declined transactions",
+    "SDK auto-retry on 429 and 5xx responses"
+  ]}
+/>
+
+<ChangelogEntry
+  version="v2.8.3"
+  date="December 20, 2024"
+  type="patch"
+  changes={[
+    "Fixed race condition in concurrent refund processing",
+    "Corrected currency rounding for JPY and KRW",
+    "Fixed webhook retry backoff calculation"
+  ]}
+/>

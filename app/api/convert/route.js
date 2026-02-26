@@ -28,6 +28,7 @@ import {
   fixBackslashEscapes,  // ← ADD
   fixAngleBrackets,
   fixCurlyBraces,
+  removeEmptyCodeFences,
   collapseBlankLines,
   scanUnknownComponents,
 } from "./functions/cleanup.js";
@@ -70,6 +71,7 @@ const CONVERTER_PIPELINE = [
   fixBackslashEscapes,  // ← ADD before fixAngleBrackets
   fixAngleBrackets,
   fixCurlyBraces,
+  removeEmptyCodeFences,
   collapseBlankLines,
 ];
 export async function POST(req) {
@@ -178,7 +180,7 @@ export async function POST(req) {
       converted,
       frontmatter: frontmatter || {},
       changes: allChanges,
-      warnings: [],  // ← ADD THIS
+      warnings: aiWarnings,
       componentBlocks,
       stats: {
         originalLength: rawMdx.length,

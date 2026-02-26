@@ -1,0 +1,34 @@
+{/* Unknown component: <EnvironmentSwitcher> */}
+
+export const EnvironmentSwitcher = ({ environments }) => {
+  const [active, setActive] = useState(0);
+  const env = environments[active];
+  return (
+    <div className="border rounded-lg overflow-hidden my-6">
+      <div className="flex border-b">
+        {environments.map((e, i) => (
+          <button
+            key={i}
+            onClick={() => setActive(i)}
+            className={`px-6 py-3 font-medium text-sm ${
+              i === active ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            {e.name}
+          </button>
+        ))}
+      </div>
+      <div className="p-6">
+        <div className="font-mono text-sm bg-gray-100 p-3 rounded mb-3">{env.baseUrl}</div>
+        <p className="text-sm text-gray-600">{env.description}</p>
+        <div className="mt-3 text-xs text-gray-400">API Key prefix: <code>{env.keyPrefix}</code></div>
+      </div>
+    </div>
+  );
+};
+
+<EnvironmentSwitcher environments={[
+  { name: "Sandbox", baseUrl: "https://sandbox.api.acme.dev/v2", description: "Test environment with fake data. No real charges. Cards always succeed unless using test decline tokens.", keyPrefix: "sk_test_" },
+  { name: "Production", baseUrl: "https://api.acme.dev/v2", description: "Live environment. Real charges will be processed. Use with caution.", keyPrefix: "sk_live_" },
+  { name: "Staging", baseUrl: "https://staging.api.acme.dev/v2", description: "Pre-production mirror. Updated 24h before production. Available to Enterprise customers only.", keyPrefix: "sk_staging_" },
+]} />

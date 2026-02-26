@@ -1,174 +1,42 @@
-// ai-converter.js
-// Sends unknown components to Grok 4.1 (xAI) and gets back
-// Documentation.AI compatible MDX. Falls back gracefully if AI is unavailable.
+// ai-module.js
+// Orchestrates the conversion of unknown components.
+// Delegates to specialized modules:
+//   - known-patterns.js → deterministic pattern matching
+//   - ai-client.js      → xAI API calls, retry, response parsing
+//   - system-prompt.js   → AI system prompt template
 //
-// FEATURES:
-// - Per-usage parallel calls with Promise.allSettled (not sequential)
-// - Classification hints injected into user prompt (from cleanup.js classifier)
-// - Rate limiting: max AI_MAX_CONCURRENT concurrent calls
-// - 1 retry on failure before falling back to manual review message
+// This file handles: pre-filtering, orchestration, validation, fallback messages.
+//
+// ARCHITECTURE:
+// 1. PRE-FILTER  → Skip components that already have pipeline converters
+// 2. KNOWN-PATTERN → Deterministic conversion for common ReadMe components
+// 3. AI CALL     → Only for components that can't be handled any other way
+// 4. VALIDATION  → Check AI output is valid Doc.AI MDX, fix or reject bad output
 
-import { AI_MODEL, AI_MAX_TOKENS } from "./types.js";
+import { knownPatternConvert } from "./known-patterns.js";
+import { callAIWithRetry } from "./ai-client.js";
+import { DOCAI_NATIVE_COMPONENTS } from "./scanner.js";
 
 // -------------------------------------------------------------------
 // Config
 // -------------------------------------------------------------------
 
 const AI_MAX_CONCURRENT = 10;  // Max parallel API calls
-const AI_RETRY_COUNT = 1;      // Retries per failed call
 
 // -------------------------------------------------------------------
-// System prompt — teaches the AI exactly how Documentation.AI works
+// Components that already have converters in converters.js.
+// These should NEVER reach AI — they're handled by the pipeline.
+// DOCAI_NATIVE_COMPONENTS is imported from scanner.js (single source of truth).
 // -------------------------------------------------------------------
 
-const SYSTEM_PROMPT = `You are a documentation migration specialist.
-You convert custom/unknown ReadMe.com components into Documentation.AI compatible MDX.
-
-IMPORTANT: You must produce clean, natural-looking documentation. The output should look like it was WRITTEN for Documentation.AI from scratch — not like a hacked-together conversion.
-
-## Your Toolbox — ONLY These Components Exist
-
-### Callout — for alerts, tips, warnings, info boxes
-<Callout kind="info|tip|success|alert|danger">
-  Content here. Supports **bold**, *italic*, \`code\`, links, lists inside.
-</Callout>
-
-<Callout kind="info" collapsed="true">
-  Content hidden until user clicks to expand.
-</Callout>
-
-### Card — for navigation links, feature highlights
-<Card title="Title" icon="lucide-icon" href="/link">
-  Short description text.
-</Card>
-
-### Columns — grid layout wrapper (2, 3, or 4 columns)
-<Columns cols={3}>
-  <Card title="A" icon="zap" href="/a">Desc</Card>
-  <Card title="B" icon="code" href="/b">Desc</Card>
-  <Card title="C" icon="shield" href="/c">Desc</Card>
-</Columns>
-
-### Expandable — for FAQ, collapsible sections, reveal-on-click
-<Expandable title="Question or section title">
-  Answer or hidden content. Supports full markdown inside.
-</Expandable>
-
-<ExpandableGroup>
-  <Expandable title="Q1">Answer 1</Expandable>
-  <Expandable title="Q2">Answer 2</Expandable>
-</ExpandableGroup>
-
-### Steps — for sequential instructions
-<Steps>
-  <Step title="Step name" icon="lucide-icon">
-    Step content with markdown, code blocks, etc.
-  </Step>
-</Steps>
-
-### Tabs — for alternative views (platforms, languages, before/after)
-<Tabs>
-  <Tab title="Tab label" icon="lucide-icon">
-    Tab content.
-  </Tab>
-</Tabs>
-
-### Code blocks and CodeGroup
-\`\`\`language
-code here
-\`\`\`
-
-<CodeGroup tabs="JavaScript,Python">
-\`\`\`javascript
-code
-\`\`\`
-\`\`\`python
-code
-\`\`\`
-</CodeGroup>
-
-### Image
-<Image src="url" alt="description" width="800" height="600" />
-
-### API fields
-<ParamField path="id" param-type="string" required="true">Description</ParamField>
-<ResponseField name="id" field-type="string" required="true">Description</ResponseField>
-
-### Update — for changelogs
-<Update label="v2.0" date="March 2024">Changes here</Update>
-
-### Plain markdown
-Headings (##, ###), **bold**, *italic*, \`inline code\`, [links](url), - lists, | tables |
-
-NOTHING ELSE EXISTS. No custom HTML divs, no className, no style props, no Tailwind.
-
----
-
-## Conversion Rules
-
-1. PRESERVE ALL TEXT — every word, link, code snippet must appear in output
-2. NEVER NEST BADLY — these are WRONG and ugly:
-   - ❌ Callout inside a list item
-   - ❌ Expandable inside a table cell
-   - ❌ Steps inside a Callout
-   - ❌ Multiple nested components for something simple
-3. KEEP IT CLEAN — output should read like natural documentation
-4. SIMPLICITY WINS — a heading + paragraph is better than a forced component
-5. ONE COMPONENT PER CONCEPT — don't use 3 components where 1 works
-
-## Pattern Matching — What To Use For What
-
-### Quiz / Trivia / Multiple Choice
-→ Use Expandable. Question as title. Answer inside as plain text.
-
-GOOD:
-<Expandable title="Quiz: Which HTTP method is idempotent?">
-  **Options:** POST, PUT, PATCH
-
-  **Answer:** PUT — making the same PUT request multiple times always produces the same result.
-</Expandable>
-
-### Styled Container / Wrapper (div with Tailwind classes)
-→ If it highlights info: Callout. If it's just layout: plain markdown. If it's decorative: remove wrapper, keep content.
-
-### Navigation Component (link with title + description + icon)
-→ Card
-
-### Feature Grid (multiple items in columns)
-→ Columns + Card
-
-### Code Before/After or Multi-platform
-→ Tabs with Tab children
-
-### Step-by-step Tutorial
-→ Steps with Step children
-
-### Warning / Deprecation Banner
-→ Callout kind="alert" or kind="danger"
-
-### Tip / Best Practice Box
-→ Callout kind="tip"
-
-### Dynamic / Interactive (useState, useEffect, fetch, onClick)
-→ Cannot replicate. Extract the CONTENT it displays and present statically.
-  Use Callout kind="info" with the key information, or plain markdown.
-
-### Progress Bar / Status Indicator
-→ Bold text with the value: **Migration Progress: 75%**
-
-### Pricing / Real-time Data
-→ Callout kind="info" explaining where to find the live data
-
----
-
-## Response Format
-
-Return ONLY valid JSON (no markdown fences around it, no extra text before or after):
-{
-  "converted": "<the Documentation.AI MDX string>",
-  "confidence": "high|medium|low",
-  "reasoning": "one sentence explaining your conversion choice"
-}`;
+const PIPELINE_HANDLED_COMPONENTS = new Set([
+  // convertCards() → Columns
+  "Cards",
+  // convertAccordions() → Expandable
+  "Accordion", "AccordionGroup",
+  // Already native Doc.AI — no conversion needed at all
+  ...DOCAI_NATIVE_COMPONENTS,
+]);
 
 
 // -------------------------------------------------------------------
@@ -180,31 +48,59 @@ export async function convertUnknownWithAI(componentBlocks) {
   const conversions = new Map();
   const warnings = [];
 
-  // No API key? Just show messages — don't try to convert programmatically
+  // ===============================================================
+  // STEP 1: PRE-FILTER — skip components handled by existing pipeline
+  // ===============================================================
+  const { needsProcessing, skipped } = filterComponentBlocks(componentBlocks);
+
+  if (skipped.length > 0) {
+    const skippedNames = [...new Set(skipped.map(b => b.name))];
+    warnings.push(
+      `Skipped ${skipped.length} component(s) already handled by pipeline: ${skippedNames.join(", ")}`
+    );
+
+    // For skipped components, put back the original usage so the
+    // pipeline converters can handle them normally
+    for (const block of skipped) {
+      for (let i = 0; i < block.placeholderIds.length; i++) {
+        conversions.set(block.placeholderIds[i], block.usages[i]);
+      }
+    }
+  }
+
+  // ===============================================================
+  // STEP 2: No API key? Use known-patterns or manual review messages
+  // ===============================================================
   if (!process.env.XAI_API_KEY) {
     warnings.push("AI conversion skipped — no XAI_API_KEY in .env");
 
-    for (const block of componentBlocks) {
+    for (const block of needsProcessing) {
       for (let i = 0; i < block.placeholderIds.length; i++) {
+        // Try known pattern first, then fallback
+        const knownResult = knownPatternConvert(
+          block.name,
+          block.usages[i]
+        );
+
         conversions.set(
           block.placeholderIds[i],
-          manualReviewMessage(block.name, block.usages[i])
+          knownResult || manualReviewMessage(block.name, block.usages[i])
         );
       }
     }
     return { conversions, warnings };
   }
 
-  // Build task list: one task per usage (not per component)
+  // ===============================================================
+  // STEP 3: Build task list — known patterns first, AI for the rest
+  // ===============================================================
   const tasks = [];
-  for (const block of componentBlocks) {
+  for (const block of needsProcessing) {
     for (let i = 0; i < block.placeholderIds.length; i++) {
       // TRY KNOWN PATTERN FIRST — no AI needed for common components
       const knownResult = knownPatternConvert(
         block.name,
-        block.usages[i],
-        block.definition,
-        block.classification
+        block.usages[i]
       );
 
       if (knownResult) {
@@ -224,12 +120,18 @@ export async function convertUnknownWithAI(componentBlocks) {
     }
   }
 
-  // Fire parallel calls in batches of AI_MAX_CONCURRENT
+  if (tasks.length === 0) {
+    return { conversions, warnings };
+  }
+
+  // ===============================================================
+  // STEP 4: Fire parallel AI calls in batches
+  // ===============================================================
   for (let batchStart = 0; batchStart < tasks.length; batchStart += AI_MAX_CONCURRENT) {
     const batch = tasks.slice(batchStart, batchStart + AI_MAX_CONCURRENT);
 
     const results = await Promise.allSettled(
-      batch.map((task) => callGrokWithRetry(task))
+      batch.map((task) => callAIWithRetry(task))
     );
 
     for (let i = 0; i < results.length; i++) {
@@ -237,16 +139,22 @@ export async function convertUnknownWithAI(componentBlocks) {
       const result = results[i];
 
       if (result.status === "fulfilled") {
-        conversions.set(task.pid, result.value.converted);
+        // STEP 5: Validate AI output before using it
+        const validated = validateAIOutput(result.value.converted, task.name);
+        conversions.set(task.pid, validated.mdx);
+
+        if (validated.warnings.length > 0) {
+          warnings.push(...validated.warnings);
+        }
 
         if (result.value.confidence === "low") {
           warnings.push(`Low confidence: <${task.name}> — ${result.value.reasoning}`);
         }
       } else {
-        console.warn(`[ai-converter] Failed for <${task.name}>:`, result.reason?.message || result.reason);
+        console.warn(`[ai-module] Failed for <${task.name}>:`, result.reason?.message || result.reason);
         warnings.push(`AI failed for <${task.name}>: ${result.reason?.message || "Unknown error"}`);
 
-        // AI failed — show manual review message, don't try programmatic conversion
+        // AI failed — show manual review message
         conversions.set(task.pid, manualReviewMessage(task.name, task.usage));
       }
     }
@@ -257,403 +165,141 @@ export async function convertUnknownWithAI(componentBlocks) {
 
 
 // -------------------------------------------------------------------
-// Call Grok with retry
+// PRE-FILTER: Separate components into "needs processing" vs "skipped"
 // -------------------------------------------------------------------
 
-async function callGrokWithRetry(task) {
-  let lastError;
-  for (let attempt = 0; attempt <= AI_RETRY_COUNT; attempt++) {
-    try {
-      return await callGrok(task);
-    } catch (err) {
-      lastError = err;
-      if (attempt < AI_RETRY_COUNT) {
-        // Wait 500ms before retry
-        await new Promise((r) => setTimeout(r, 500));
-      }
+function filterComponentBlocks(componentBlocks) {
+  const needsProcessing = [];
+  const skipped = [];
+
+  for (const block of componentBlocks) {
+    if (PIPELINE_HANDLED_COMPONENTS.has(block.name)) {
+      skipped.push(block);
+    } else {
+      needsProcessing.push(block);
     }
   }
-  throw lastError;
+
+  return { needsProcessing, skipped };
 }
 
 
 // -------------------------------------------------------------------
-// Call Grok 4.1 (xAI) API — OpenAI-compatible chat completions
+// POST-AI VALIDATION: Check that AI output is valid Doc.AI MDX
+//
+// Catches:
+// - AI inventing components that don't exist in Doc.AI
+// - Broken/unclosed tags
+// - Completely empty output
 // -------------------------------------------------------------------
 
-async function callGrok(task) {
-  const prompt = buildUserPrompt(task);
+function validateAIOutput(mdx, componentName) {
+  const warnings = [];
 
-  const url = "https://api.x.ai/v1/chat/completions";
+  if (!mdx || typeof mdx !== "string" || !mdx.trim()) {
+    return {
+      mdx: `{/* Component <${componentName}> returned empty from AI */}`,
+      warnings: [`AI returned empty output for <${componentName}>`],
+    };
+  }
 
-  const res = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${process.env.XAI_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: AI_MODEL,
-      max_completion_tokens: AI_MAX_TOKENS,
-      temperature: 0.2,
-      messages: [
-        {
-          role: "system",
-          content: SYSTEM_PROMPT,
-        },
-        {
-          role: "user",
-          content: prompt,
-        },
-      ],
-      response_format: {
-        type: "json_object",
-      },
-    }),
+  let cleaned = mdx.trim();
+
+  // Check for unknown components in AI output
+  const tagMatches = cleaned.matchAll(/<([A-Z][A-Za-z0-9]*)\b/g);
+  const unknownInOutput = [];
+
+  for (const match of tagMatches) {
+    const tagName = match[1];
+    if (!DOCAI_NATIVE_COMPONENTS.has(tagName)) {
+      unknownInOutput.push(tagName);
+    }
+  }
+
+  if (unknownInOutput.length > 0) {
+    const unique = [...new Set(unknownInOutput)];
+    warnings.push(
+      `AI used non-Doc.AI components in <${componentName}> output: ${unique.join(", ")}. ` +
+      `These may not render correctly.`
+    );
+  }
+
+  // Check for unclosed tags (simple heuristic)
+  for (const nativeComp of DOCAI_NATIVE_COMPONENTS) {
+    const openCount = (cleaned.match(new RegExp(`<${nativeComp}[\\s>]`, "g")) || []).length;
+    const closeCount = (cleaned.match(new RegExp(`</${nativeComp}>`, "g")) || []).length;
+    const selfCloseCount = (cleaned.match(new RegExp(`<${nativeComp}[^>]*/>`, "g")) || []).length;
+
+    if (openCount > closeCount + selfCloseCount) {
+      warnings.push(`Possible unclosed <${nativeComp}> in AI output for <${componentName}>`);
+    }
+  }
+
+  // Strip className/style props that AI might have left in
+  cleaned = cleaned.replace(/\s+className\s*=\s*(["'])[^"']*\1/g, "");
+  cleaned = cleaned.replace(/\s+style\s*=\s*\{[^}]*\}/g, "");
+
+  // --- MDX SYNTAX FIXES (from documentation rules) ---
+
+  // Fix: Replace <Mermaid>...</Mermaid> with fenced code block
+  cleaned = cleaned.replace(
+    /<Mermaid>\s*([\s\S]*?)\s*<\/Mermaid>/gi,
+    (_, content) => {
+      warnings.push(`Replaced <Mermaid> component with fenced code block in <${componentName}>`);
+      return "```mermaid\n" + content.trim() + "\n```";
+    }
+  );
+
+  // Fix: Replace single-quoted attributes with double quotes
+  // Matches attr='value' but not inside code blocks
+  cleaned = cleaned.replace(
+    /(<[A-Z][A-Za-z0-9]*\b[^>]*?\s\w[\w-]*)='([^']*)'/g,
+    (_m, before, val) => {
+      warnings.push(`Fixed single-quoted attribute in <${componentName}>`);
+      return `${before}="${val}"`;
+    }
+  );
+
+  // Fix: Replace H1 headings with H2 (# Title → ## Title)
+  cleaned = cleaned.replace(/^# (?!#)/gm, () => {
+    warnings.push(`Replaced H1 with H2 in <${componentName}> — H1 is reserved for page title`);
+    return "## ";
   });
 
-  if (!res.ok) {
-    const errText = await res.text().catch(() => "");
-    throw new Error(`Grok API returned ${res.status}: ${errText.slice(0, 200)}`);
-  }
-
-  const data = await res.json();
-
-  // OpenAI-compatible response structure
-  const text = data?.choices?.[0]?.message?.content;
-
-  if (!text) {
-    throw new Error("Empty response from Grok");
-  }
-
-  return parseResponse(text, task.name);
-}
-
-
-// -------------------------------------------------------------------
-// Known pattern converter — handles common ReadMe components that
-// have a clear, deterministic mapping. Runs BEFORE the AI call.
-// Returns converted MDX string, or null if no pattern matches.
-// -------------------------------------------------------------------
-
-function knownPatternConvert(name, usage, definition, classification) {
-  if (!usage) return null;
-
-  // --- Recipe → Steps ---
-  if (/^Recipe$/i.test(name)) {
-    return convertRecipeToSteps(usage);
-  }
-
-  // --- RecipeStep alone (orphaned) → Step content ---
-  if (/^RecipeStep$/i.test(name)) {
-    return convertRecipeStepToStep(usage);
-  }
-
-  // --- ProgressBar → bold text ---
-  if (/^ProgressBar$/i.test(name)) {
-    return convertProgressBar(usage);
-  }
-
-  // --- Data table components (features/items prop with array of objects) ---
-  if (classification && classification.category === "table") {
-    const tableResult = convertDataTableComponent(name, usage);
-    if (tableResult) return tableResult;
-  }
-
-  // --- Simple wrapper with just text children + classification is high confidence ---
-  if (classification && classification.confidence === "high") {
-    // Only handle self-closing or simple wrappers with plain text
-    const innerMatch = usage.match(new RegExp(`<${escapeForRegex(name)}[^>]*>([\\s\\S]*?)</${escapeForRegex(name)}>`));
-    if (innerMatch) {
-      const inner = innerMatch[1].trim();
-      // Only convert if inner content is plain text (no nested JSX)
-      if (inner && !/<[A-Z]/.test(inner)) {
-        return convertByClassification(name, usage, inner, definition, classification);
+  // Fix: Move URLs/paths from icon prop to image prop on Card components
+  // Catches icon="https://..." or icon="/images/..." or icon="./something.png"
+  cleaned = cleaned.replace(
+    /(<Card\b[^>]*?)icon="((?:https?:\/\/|\/|\.\/|\.\.\/)[^"]*)"([^>]*?>)/g,
+    (_m, before, url, after) => {
+      warnings.push(`Moved URL from icon to image prop in <${componentName}> — icon must be a Lucide name`);
+      // If there's already an image prop, don't add duplicate — just remove the bad icon
+      if (before.includes('image=') || after.includes('image=')) {
+        return `${before}${after}`;
       }
+      return `${before}image="${url}"${after}`;
     }
+  );
 
-    // Self-closing with props
-    const selfClose = usage.match(new RegExp(`<${escapeForRegex(name)}\\b([^>]*)/>`));
-    if (selfClose) {
-      return convertByClassification(name, usage, null, definition, classification);
+  // Warn: Detect lowercase component names that should be PascalCase
+  const CONTAINER_COMPONENTS = [
+    "callout", "card", "columns", "expandable", "expandablegroup",
+    "steps", "step", "tabs", "tab", "codegroup", "update",
+  ];
+  for (const lc of CONTAINER_COMPONENTS) {
+    const lcPattern = new RegExp(`<${lc}[\\s>]`, "g");
+    if (lcPattern.test(cleaned)) {
+      warnings.push(
+        `Possible lowercase component <${lc}> in <${componentName}> output — should be PascalCase`
+      );
     }
   }
 
-  return null; // No known pattern — let AI handle it
-}
-
-
-// --- Recipe → Steps converter ---
-function convertRecipeToSteps(usage) {
-  const stepRegex = /<RecipeStep\s+title="([^"]*)"(?:\s+language="([^"]*)")?>([\s\S]*?)<\/RecipeStep>/g;
-  const steps = [];
-  let match;
-
-  while ((match = stepRegex.exec(usage)) !== null) {
-    const title = match[1];
-    const language = match[2] || "";
-    const content = match[3].trim();
-
-    let stepContent;
-    if (language) {
-      stepContent = `\`\`\`${language}\n${content}\n\`\`\``;
-    } else {
-      stepContent = content;
-    }
-
-    steps.push(`  <Step title="${title}">\n    ${stepContent}\n  </Step>`);
-  }
-
-  if (steps.length === 0) return null;
-
-  return `<Steps>\n${steps.join("\n")}\n</Steps>`;
-}
-
-
-// --- Single RecipeStep → Step ---
-function convertRecipeStepToStep(usage) {
-  const match = usage.match(/<RecipeStep\s+title="([^"]*)"(?:\s+language="([^"]*)")?>([\s\S]*?)<\/RecipeStep>/);
-  if (!match) return null;
-
-  const title = match[1];
-  const language = match[2] || "";
-  const content = match[3].trim();
-
-  let stepContent;
-  if (language) {
-    stepContent = `\`\`\`${language}\n${content}\n\`\`\``;
-  } else {
-    stepContent = content;
-  }
-
-  return `<Steps>\n  <Step title="${title}">\n    ${stepContent}\n  </Step>\n</Steps>`;
-}
-
-
-// --- ProgressBar → bold text ---
-function convertProgressBar(usage) {
-  const labelMatch = usage.match(/label="([^"]*)"/);
-  const valueMatch = usage.match(/value=\{?(\d+)\}?/);
-  const maxMatch = usage.match(/max=\{?(\d+)\}?/);
-
-  const label = labelMatch ? labelMatch[1] : "Progress";
-  const value = valueMatch ? valueMatch[1] : "?";
-  const max = maxMatch ? maxMatch[1] : "100";
-
-  return `**${label}:** ${value}/${max} (${Math.round((parseInt(value) / parseInt(max)) * 100)}%)`;
-}
-
-
-// --- Data table components (CompatibilityMatrix, etc.) ---
-// Parses a features/items/data prop that contains an array of objects
-// and converts to a markdown table.
-function convertDataTableComponent(name, usage) {
-  // Find the array prop — typically features={[...]}, items={[...]}, data={[...]}
-  const arrayMatch = usage.match(/(?:features|items|data|rows)=\{(\[[\s\S]*?\])\s*\}/);
-  if (!arrayMatch) return null;
-
-  try {
-    // Parse the JS array literal — replace true/false with JSON equivalents
-    // The array looks like: [{ name: "API Access", free: true, pro: true, enterprise: true }, ...]
-    let arrayStr = arrayMatch[1];
-    
-    // Convert JS object syntax to valid JSON:
-    // 1. Quote unquoted keys: { name: → { "name":
-    arrayStr = arrayStr.replace(/(\{|,)\s*([a-zA-Z_]\w*)\s*:/g, '$1 "$2":');
-    // 2. Replace single quotes with double quotes (for string values)
-    arrayStr = arrayStr.replace(/'/g, '"');
-    // 3. Remove trailing commas before ] or } (valid JS, invalid JSON)
-    arrayStr = arrayStr.replace(/,\s*([\]}])/g, '$1');
-
-    const items = JSON.parse(arrayStr);
-    if (!Array.isArray(items) || items.length === 0) return null;
-
-    // Get all unique keys from the objects
-    const allKeys = [];
-    const keySet = new Set();
-    for (const item of items) {
-      for (const key of Object.keys(item)) {
-        if (!keySet.has(key)) {
-          keySet.add(key);
-          allKeys.push(key);
-        }
-      }
-    }
-
-    if (allKeys.length === 0) return null;
-
-    // Build markdown table
-    // Header row
-    const headerCells = allKeys.map(k => {
-      // Capitalize first letter, add spaces before capitals
-      return k.charAt(0).toUpperCase() + k.slice(1).replace(/([A-Z])/g, ' $1');
-    });
-    const header = `| ${headerCells.join(" | ")} |`;
-    const separator = `| ${allKeys.map(() => "---").join(" | ")} |`;
-
-    // Data rows
-    const rows = items.map(item => {
-      const cells = allKeys.map(key => {
-        const val = item[key];
-        if (val === true) return "✅";
-        if (val === false) return "❌";
-        if (val === null || val === undefined) return "";
-        return String(val);
-      });
-      return `| ${cells.join(" | ")} |`;
-    });
-
-    return [header, separator, ...rows].join("\n");
-  } catch (e) {
-    // JSON parse failed — let AI handle it
-    return null;
-  }
-}
-
-
-// --- Convert by classification category ---
-function convertByClassification(name, usage, innerText, definition, classification) {
-  const cat = classification.category;
-
-  // Extract props from usage for context
-  const messageMatch = usage.match(/message="([^"]*)"/);
-  const typeMatch = usage.match(/type="([^"]*)"/);
-  const linkMatch = usage.match(/link="([^"]*)"/);
-  const hrefMatch = usage.match(/href="([^"]*)"/);
-  const titleMatch = usage.match(/title="([^"]*)"/);
-
-  if (cat === "alert" || cat === "tip" || cat === "info" || cat === "success") {
-    // Map category to Callout kind
-    const kindMap = { alert: "alert", tip: "tip", info: "info", success: "success" };
-    let kind = kindMap[cat] || "info";
-
-    // Check if type prop hints at a different kind
-    if (typeMatch) {
-      const t = typeMatch[1].toLowerCase();
-      if (t === "warning" || t === "alert" || t === "danger" || t === "error") kind = "alert";
-      else if (t === "tip" || t === "hint") kind = "tip";
-      else if (t === "success" || t === "ok") kind = "success";
-      else if (t === "info" || t === "note") kind = "info";
-    }
-
-    let content = innerText || "";
-    if (messageMatch) {
-      content = `**${messageMatch[1]}**`;
-      if (linkMatch) {
-        content += ` [Learn more →](${linkMatch[1]})`;
-      }
-    }
-
-    if (!content) return null;
-    return `<Callout kind="${kind}">\n  ${content}\n</Callout>`;
-  }
-
-  if (cat === "card") {
-    const title = titleMatch ? titleMatch[1] : name;
-    const href = hrefMatch ? hrefMatch[1] : linkMatch ? linkMatch[1] : "#";
-    const desc = innerText || "";
-    return `<Card title="${title}" href="${href}">\n  ${desc}\n</Card>`;
-  }
-
-  return null; // Can't convert this category deterministically
-}
-
-
-function escapeForRegex(str) {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-
-// -------------------------------------------------------------------
-// Build user prompt — includes classification hint from cleanup.js
-// -------------------------------------------------------------------
-
-function buildUserPrompt(task) {
-  let prompt = `Convert this unknown ReadMe component to Documentation.AI MDX.\n\n`;
-  prompt += `Component name: <${task.name}>\n\n`;
-
-  // CLASSIFICATION HINT — pre-analyzed by classifyComponent() in cleanup.js
-  if (task.classification && task.classification.category !== "unknown") {
-    prompt += `### Classification (pre-analyzed)\n`;
-    prompt += `Category: ${task.classification.category}\n`;
-    prompt += `Suggested target: ${task.classification.target}\n`;
-    prompt += `Confidence: ${task.classification.confidence}\n`;
-    prompt += `Signals: ${task.classification.signals.join(", ")}\n`;
-    prompt += `\nUse this classification as a strong hint, but override it if the actual content suggests otherwise.\n\n`;
-  }
-
-  if (task.definition) {
-    // Sanitize definition: replace backticks that could break the fenced code block
-    const safeDef = task.definition.replace(/`/g, "'");
-    prompt += `### Component source code:\n\`\`\`jsx\n${safeDef}\n\`\`\`\n\n`;
-  }
-
-  if (task.usage) {
-    const safeUsage = task.usage.replace(/`/g, "'");
-    prompt += `### Usage:\n\`\`\`jsx\n${safeUsage}\n\`\`\`\n`;
-  }
-
-  if (task.context) {
-    prompt += `\nSurrounding context:\n${task.context}\n\n`;
-  }
-
-  prompt += `\nPreserve ALL text content. Make it look clean and natural. Return only JSON.`;
-
-  return prompt;
-}
-
-
-// -------------------------------------------------------------------
-// Parse Grok's JSON response
-// With response_format: { type: "json_object" }, Grok tries to return
-// valid JSON. But we still handle edge cases defensively.
-// -------------------------------------------------------------------
-
-function parseResponse(text, componentName) {
-  // Strip markdown code fences if Grok wrapped them
-  const cleaned = text
-    .replace(/^```json\s*/m, "")
-    .replace(/^```\s*/m, "")
-    .replace(/```\s*$/m, "")
-    .trim();
-
-  try {
-    const parsed = JSON.parse(cleaned);
-
-    if (!parsed.converted || typeof parsed.converted !== "string") {
-      throw new Error("Missing 'converted' field");
-    }
-
-    return {
-      converted: parsed.converted,
-      confidence: parsed.confidence || "medium",
-      reasoning: parsed.reasoning || "",
-    };
-  } catch (err) {
-    // JSON parse failed — try to extract any MDX component from the text
-    console.warn(`[ai-converter] JSON parse failed for <${componentName}>, trying extraction`);
-
-    const mdxMatch = text.match(
-      /<(?:Callout|Card|Columns|Steps|Tabs|Expandable|ExpandableGroup|CodeGroup)[\s\S]*?<\/(?:Callout|Card|Columns|Steps|Tabs|Expandable|ExpandableGroup|CodeGroup)>/
-    );
-
-    if (mdxMatch) {
-      return {
-        converted: mdxMatch[0],
-        confidence: "low",
-        reasoning: "Extracted from non-JSON response",
-      };
-    }
-
-    throw new Error(`Could not parse AI response: ${err.message}`);
-  }
+  return { mdx: cleaned, warnings };
 }
 
 
 // -------------------------------------------------------------------
 // Manual review message — when AI is unavailable or fails.
-// No programmatic conversion — just a clear message showing the
-// original component so the user knows exactly what to fix manually.
 // -------------------------------------------------------------------
 
 function manualReviewMessage(componentName, usage) {

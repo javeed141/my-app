@@ -5,7 +5,7 @@
 
 // --- AI Conversion Config ---
 export const AI_MODEL = "grok-4-1-fast-reasoning";
-export const AI_MAX_TOKENS = 4096;
+export const AI_MAX_TOKENS = 16384;
 
 export const FETCH_TIMEOUT_MS = 15_000;
 export const MAX_RESPONSE_BYTES = 2 * 1024 * 1024; // 2MB

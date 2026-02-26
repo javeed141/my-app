@@ -3,26 +3,34 @@
 export const Quiz = ({ question, options, correct }) => {
   const [selected, setSelected] = useState(null);
   return (
-    <div className="quiz-container my-4 p-4 border rounded">
-      <p><strong>{question}</strong></p>
+    <div className="border rounded-lg p-4 my-4">
+      <p className="font-bold text-lg">{question}</p>
       {options.map((opt, i) => (
         <button key={i} onClick={() => setSelected(i)}
-          className={selected === i ? (i === correct ? 'bg-green-200' : 'bg-red-200') : 'bg-gray-100'}>
+          className={`block w-full text-left p-2 my-1 rounded ${
+            selected === i ? (i === correct ? 'bg-green-200' : 'bg-red-200') : 'bg-gray-100'
+          }`}>
           {opt}
         </button>
       ))}
+      {selected !== null && selected === correct && (
+        <p className="text-green-600 mt-2">✅ Correct!</p>
+      )}
+      {selected !== null && selected !== correct && (
+        <p className="text-red-600 mt-2">❌ Try again. The correct answer is: {options[correct]}</p>
+      )}
     </div>
   );
 };
 
 <Quiz
-  question="What authentication method does Acme SDK v2 use?"
-  options={["API Tokens", "OAuth 2.0", "Basic Auth", "JWT"]}
+  question="Which HTTP status code indicates a successful payment?"
+  options={["200 OK", "201 Created", "202 Accepted", "204 No Content"]}
   correct={1}
 />
 
 <Quiz
-  question="Which plan includes WebSocket support?"
-  options={["Free", "Pro", "Enterprise only"]}
+  question="What authentication method does our API use?"
+  options={["OAuth 2.0", "API Key in header", "Basic Auth", "JWT Token"]}
   correct={1}
 />
