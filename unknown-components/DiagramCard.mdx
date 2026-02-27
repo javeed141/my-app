@@ -1,24 +1,14 @@
-{/* Unknown component: <DiagramCard> */}
+{/* Unknown component:  */}
 
-export const DiagramCard = ({ title, imageSrc, caption, width }) => (
-  <figure className="my-8 text-center">
-    <div className="border rounded-lg overflow-hidden inline-block shadow-lg">
-      <img src={imageSrc} alt={title} width={width || 800} className="block" />
+export const DiagramCard = (`{ title, imageSrc, caption, width }`) => (
+  <figure>
+    <div>
+      <img src={imageSrc} alt={title} width={width || 800} />
     </div>
-    <figcaption className="mt-3 text-sm text-gray-500 italic">{caption}</figcaption>
+    <figcaption>`{caption}`</figcaption>
   </figure>
 );
 
-<DiagramCard
-  title="Payment Flow Architecture"
-  imageSrc="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
-  caption="Figure 1: High-level overview of the payment processing pipeline"
-  width={800}
-/>
 
-<DiagramCard
-  title="Webhook Event Flow"
-  imageSrc="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
-  caption="Figure 2: How webhook events propagate from our servers to your endpoints"
-  width={800}
-/>
+
+

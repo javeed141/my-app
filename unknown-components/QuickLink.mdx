@@ -1,34 +1,19 @@
-{/* Unknown component: <QuickLink> */}
+{/* Unknown component:  */}
 
-export const QuickLink = ({ title, description, href, icon }) => (
-  <a href={href} className="block border rounded-lg p-4 hover:shadow-lg transition-shadow no-underline">
-    <div className="flex items-center gap-3">
-      <span className="text-2xl">{icon}</span>
+export const QuickLink = (`{ title, description, href, icon }`) => (
+  <a href={href}>
+    <div>
+      <span>`{icon}`</span>
       <div>
-        <h3 className="text-lg font-bold m-0">{title}</h3>
-        <p className="text-gray-600 m-0 text-sm">{description}</p>
+        <h3>`{title}`</h3>
+        <p>`{description}`</p>
       </div>
     </div>
   </a>
 );
 
-<QuickLink
-  title="API Reference"
-  description="Complete endpoint documentation with request/response examples"
-  href="/api-reference"
-  icon="📚"
-/>
 
-<QuickLink
-  title="Webhooks Guide"
-  description="Set up real-time event notifications for your integration"
-  href="/webhooks"
-  icon="🔔"
-/>
 
-<QuickLink
-  title="Error Codes"
-  description="Full list of error codes and troubleshooting steps"
-  href="/errors"
-  icon="🔧"
-/>
+
+
+

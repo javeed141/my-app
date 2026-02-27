@@ -700,7 +700,9 @@ export function convertBlockquoteCallouts(content) {
 
     const titleAttr = title ? ` title="${escAttr(title)}"` : "";
     result.push(`<Callout kind="${kind}"${titleAttr}>`);
+    result.push("");
     result.push(body);
+    result.push("");
     result.push("</Callout>");
   }
 
@@ -1090,7 +1092,7 @@ export function convertBlockSyntax(content) {
   let count = 0;
 
   const result = content.replace(
-    /\[block:(\w+)\]\s*\n([\s\S]*?)\n\s*\[\/block\]/g,
+    /\[block:([\w-]+)\]\s*\n([\s\S]*?)\n\s*\[\/block\]/g,
     (match, blockType, jsonStr) => {
       let data;
       try {
@@ -1109,10 +1111,10 @@ export function convertBlockSyntax(content) {
           const body = (data.body || "").trim();
 
           if (!body && !title) return "";
-          if (!body) return `<Callout kind="${kind}">\n${title}\n</Callout>`;
+          if (!body) return `<Callout kind="${kind}">\n\n${title}\n\n</Callout>`;
 
           const titleAttr = title ? ` title="${escAttr(title)}"` : "";
-          return `<Callout kind="${kind}"${titleAttr}>\n${body}\n</Callout>`;
+          return `<Callout kind="${kind}"${titleAttr}>\n\n${body}\n\n</Callout>`;
         }
 
         case "code": {
@@ -1186,8 +1188,20 @@ export function convertBlockSyntax(content) {
           return [headerRow, separator, ...bodyRows].join("\n");
         }
 
+        case "tutorial-tile": {
+          const title = data.title || "Tutorial";
+          const link = data.link || "";
+          return `<Card title="${escAttr(title)}" href="${escAttr(link)}" />`;
+        }
+
         case "html": {
-          return data.body || data.html || "";
+          const rawHtml = data.html || data.body || "";
+          // Convert HTML tables to markdown tables
+          const tableMatch = rawHtml.match(/<table[\s\S]*?<\/table>/i);
+          if (tableMatch) {
+            return htmlTableToMarkdown(rawHtml);
+          }
+          return rawHtml;
         }
 
         default: {
@@ -1206,4 +1220,65 @@ export function convertBlockSyntax(content) {
   }
 
   return { content: result, changes };
+}
+
+// --- HTML table → Markdown table helper ---
+// Parses <table> HTML (from [block:html]) into a markdown table.
+
+function htmlTableToMarkdown(html) {
+  // Extract header cells
+  const theadMatch = html.match(/<thead[\s\S]*?<\/thead>/i);
+  const tbodyMatch = html.match(/<tbody[\s\S]*?<\/tbody>/i);
+
+  const extractCells = (rowHtml) => {
+    const cells = [];
+    const cellRegex = /<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi;
+    let m;
+    while ((m = cellRegex.exec(rowHtml)) !== null) {
+      // Strip HTML tags, trim whitespace
+      cells.push(m[1].replace(/<[^>]*>/g, "").trim());
+    }
+    return cells;
+  };
+
+  const extractRows = (sectionHtml) => {
+    const rows = [];
+    const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+    let m;
+    while ((m = rowRegex.exec(sectionHtml)) !== null) {
+      rows.push(extractCells(m[1]));
+    }
+    return rows;
+  };
+
+  let headers = [];
+  if (theadMatch) {
+    const headRows = extractRows(theadMatch[0]);
+    if (headRows.length > 0) headers = headRows[0];
+  }
+
+  let bodyRows = [];
+  if (tbodyMatch) {
+    bodyRows = extractRows(tbodyMatch[0]);
+  } else {
+    // No explicit thead/tbody — extract all rows
+    const allRows = extractRows(html);
+    if (allRows.length > 0) {
+      headers = allRows[0];
+      bodyRows = allRows.slice(1);
+    }
+  }
+
+  if (headers.length === 0 && bodyRows.length === 0) return html;
+
+  const lines = [];
+  lines.push(`| ${headers.join(" | ")} |`);
+  lines.push(`| ${headers.map(() => "---").join(" | ")} |`);
+  for (const row of bodyRows) {
+    // Pad row to match header count
+    while (row.length < headers.length) row.push("");
+    lines.push(`| ${row.join(" | ")} |`);
+  }
+
+  return lines.join("\n");
 }

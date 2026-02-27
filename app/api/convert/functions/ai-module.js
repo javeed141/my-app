@@ -606,6 +606,46 @@ function validateAIOutput(mdx, componentName) {
     }
   );
 
+  // Fix: Replace bare & with "and" in text (not inside code blocks/inline code)
+  {
+    const ampLines = cleaned.split("\n");
+    let inCB = false;
+    const fixedLines = [];
+    for (const ampLine of ampLines) {
+      if (/^[ \t]*```/.test(ampLine)) { inCB = !inCB; fixedLines.push(ampLine); continue; }
+      if (inCB || /^\s*<\/?[A-Z]/.test(ampLine)) { fixedLines.push(ampLine); continue; }
+      let fixedLine = "";
+      let inIC = false;
+      for (let ci = 0; ci < ampLine.length; ci++) {
+        if (ampLine[ci] === "`") { inIC = !inIC; fixedLine += ampLine[ci]; continue; }
+        if (inIC) { fixedLine += ampLine[ci]; continue; }
+        if (ampLine[ci] === "&") {
+          const rest = ampLine.substring(ci);
+          if (/^&(?:#[0-9]+|#x[0-9a-fA-F]+|[a-zA-Z]{2,8});/.test(rest)) {
+            fixedLine += ampLine[ci]; continue;
+          }
+          const prev = ci > 0 ? ampLine[ci - 1] : " ";
+          const next = ci + 1 < ampLine.length ? ampLine[ci + 1] : " ";
+          fixedLine += (prev !== " " ? " " : "") + "and" + (next !== " " ? " " : "");
+          warnings.push(`Replaced bare & with 'and' in <${componentName}> AI output`);
+          continue;
+        }
+        fixedLine += ampLine[ci];
+      }
+      fixedLines.push(fixedLine);
+    }
+    cleaned = fixedLines.join("\n");
+  }
+
+  // Fix: Replace invalid code fence languages (curl → bash, etc.)
+  cleaned = cleaned.replace(
+    /^([ \t]*```)curl([ \t]*)$/gm,
+    (_m, pre, post) => {
+      warnings.push(`Fixed \`\`\`curl → \`\`\`bash in <${componentName}> AI output`);
+      return pre + "bash" + post;
+    }
+  );
+
   // Warn: Detect lowercase component names that should be PascalCase
   const CONTAINER_COMPONENTS = [
     "callout", "card", "columns", "expandable", "expandablegroup",

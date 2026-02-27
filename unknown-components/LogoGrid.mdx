@@ -1,23 +1,16 @@
-{/* Unknown component: <LogoGrid> */}
+{/* Unknown component:  */}
 
-export const LogoGrid = ({ title, logos }) => (
-  <div className="my-8">
-    <h3 className="text-center text-gray-500 uppercase tracking-wider text-sm mb-6">{title}</h3>
-    <div className="flex flex-wrap justify-center items-center gap-8">
-      {logos.map((logo, i) => (
-        <a key={i} href={logo.url} className="grayscale hover:grayscale-0 transition-all" title={logo.name}>
-          <img src={logo.src} alt={logo.name} className="h-10 object-contain" />
+export const LogoGrid = (`{ title, logos }`) => (
+  <div>
+    <h3>`{title}`</h3>
+    <div>
+      `{logos.map((logo, i) => (
+        <a key={i}` href={logo.url} title={logo.name}>
+          <img src={logo.src} alt={logo.name} />
         </a>
       ))}
     </div>
   </div>
 );
 
-<LogoGrid title="Works with your favorite tools" logos={[
-  { name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", url: "https://reactjs.org" },
-  { name: "Node.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", url: "https://nodejs.org" },
-  { name: "Python", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", url: "https://python.org" },
-  { name: "Go", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg", url: "https://go.dev" },
-  { name: "Ruby", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg", url: "https://ruby-lang.org" },
-  { name: "Java", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", url: "https://java.com" },
-]} />
+

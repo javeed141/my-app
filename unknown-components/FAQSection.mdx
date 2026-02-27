@@ -1,21 +1,20 @@
-{/* Unknown component: <FAQSection> */}
+{/* Unknown component:  */}
 
-export const FAQSection = ({ items }) => {
+export const FAQSection = (`{ items }`) => `{
   const [openIndex, setOpenIndex] = useState(null);
   return (
-    <div className="space-y-2 my-6">
+    <div>
       {items.map((item, i) => (
-        <div key={i} className="border rounded-lg overflow-hidden">
+        <div key={i}`>
           <button
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
-            className="w-full text-left p-4 flex justify-between items-center font-medium hover:bg-gray-50"
           >
-            {item.q}
-            <span className="text-gray-400">{openIndex === i ? '−' : '+'}</span>
+            `{item.q}`
+            <span>`{openIndex === i ? '−' : '+'}`</span>
           </button>
-          {openIndex === i && (
-            <div className="px-4 pb-4 text-gray-600 border-t pt-3">
-              {item.a}
+          `{openIndex === i && (
+            <div>
+              {item.a}`
             </div>
           )}
         </div>
@@ -24,10 +23,4 @@ export const FAQSection = ({ items }) => {
   );
 };
 
-<FAQSection items={[
-  { q: "How do I rotate my API keys?", a: "Go to Dashboard → Settings → API Keys → Click 'Roll Key'. Your old key will remain valid for 24 hours to allow migration." },
-  { q: "What happens if a webhook delivery fails?", a: "We retry with exponential backoff: 1min, 5min, 30min, 2hr, 24hr. After 5 failures, the endpoint is marked as failing and you'll receive an email alert." },
-  { q: "Can I use the sandbox for load testing?", a: "Yes, but please contact us first at enterprise@acme.dev so we can provision dedicated sandbox resources. Default sandbox is rate-limited to 1,000 req/min." },
-  { q: "Do you support partial refunds?", a: "Yes. Pass an amount less than the original charge to /v2/refunds. You can issue multiple partial refunds up to the original amount." },
-  { q: "How do I handle 3D Secure authentication?", a: "When a payment requires 3DS, the API returns status: 'requires_action' with a redirect URL. Send your customer to that URL. After authentication, they're redirected back to your return_url." },
-]} />
+

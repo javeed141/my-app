@@ -1,24 +1,17 @@
-{/* Unknown component: <PlatformGrid> */}
+{/* Unknown component:  */}
 
-export const PlatformGrid = ({ platforms }) => (
-  <div className="grid grid-cols-3 gap-4 my-6">
-    {platforms.map(p => (
-      <div key={p.name} className="flex flex-col items-center p-4 border rounded-lg">
-        <img src={p.logo} alt={p.name} className="w-12 h-12 mb-2" />
-        <span className="font-medium">{p.name}</span>
-        <span className={`text-sm ${p.status === 'GA' ? 'text-green-600' : 'text-yellow-600'}`}>
-          {p.status}
+export const PlatformGrid = (`{ platforms }`) => (
+  <div>
+    `{platforms.map(p => (
+      <div key={p.name}`>
+        <img src={p.logo} alt={p.name} />
+        <span>`{p.name}`</span>
+        <span`}>
+          `{p.status}`
         </span>
       </div>
     ))}
   </div>
 );
 
-<PlatformGrid platforms={[
-  { name: "Node.js", logo: "/img/nodejs.svg", status: "GA" },
-  { name: "Python", logo: "/img/python.svg", status: "GA" },
-  { name: "Ruby", logo: "/img/ruby.svg", status: "GA" },
-  { name: "Go", logo: "/img/go.svg", status: "Beta" },
-  { name: "Java", logo: "/img/java.svg", status: "Beta" },
-  { name: "PHP", logo: "/img/php.svg", status: "GA" },
-]} />
+

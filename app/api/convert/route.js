@@ -230,6 +230,9 @@ import {
   fixBackslashEscapes,  // ← ADD
   fixAngleBrackets,
   fixCurlyBraces,
+  fixAmpersands,
+  fixCodeFenceLanguages,
+  fixJsxBlankLines,
   removeEmptyCodeFences,
   collapseBlankLines,
   scanUnknownComponents,
@@ -273,6 +276,9 @@ const CONVERTER_PIPELINE = [
   fixBackslashEscapes,  // ← ADD before fixAngleBrackets
   fixAngleBrackets,
   fixCurlyBraces,
+  fixAmpersands,
+  fixCodeFenceLanguages,
+  fixJsxBlankLines,
   removeEmptyCodeFences,
   collapseBlankLines,
 ];

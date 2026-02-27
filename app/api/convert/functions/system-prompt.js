@@ -17,17 +17,19 @@ These rules prevent parsing errors. Every violation breaks the documentation sit
 
 ### Rule 0: ESCAPE SPECIAL CHARACTERS
 
-MDX treats \`{\`, \`}\`, \`<\`, \`>\` as JSX syntax. You MUST escape or avoid them in regular text:
+MDX treats \`{\`, \`}\`, \`<\`, \`>\` as JSX syntax, and \`&\` as an HTML entity start. You MUST escape or avoid them in regular text:
 
 WRONG (will cause parsing errors):
   Use {variable} to set the value.
   Configure the <Component> properly.
   The object looks like {key: value}.
+  Format & view settings.
 
 CORRECT:
   Use \`{variable}\` to set the value.
   Configure the \`<Component>\` properly.
   The object looks like \`{key: value}\`.
+  Format and view settings.
 
 OR rephrase to avoid them entirely:
   Use a variable to set the value.
@@ -37,6 +39,7 @@ Rules:
 - ALWAYS wrap code/variables in backticks: \`{variable}\`, \`<Component>\`, \`{key: value}\`
 - OR rephrase to avoid special characters: "Use a variable" instead of "Use {variable}"
 - NEVER use { } < > in plain text without backticks
+- NEVER use bare & in text — ALWAYS write "and" instead (& triggers HTML entity parsing errors)
 - NEVER write invalid JSX expressions: \`{not valid JS}\` will crash
 
 ### Rule 1: JSX Attributes — EXACT SYNTAX REQUIRED
@@ -484,6 +487,7 @@ When converting content, apply these writing principles:
 Before outputting your converted MDX, verify:
 
 1. NO raw { } < > in plain text — all wrapped in backticks or rephrased
+1a. NO bare & in text — always use "and" instead (& breaks HTML entity parsing)
 2. All string attributes use double quotes — no single quotes, no missing quotes
 3. All JSX expressions are valid — icon="star" not icon={star}
 4. Blank lines around markdown inside JSX components

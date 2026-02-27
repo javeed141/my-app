@@ -1029,19 +1029,36 @@ export function fixHeadingHierarchy(content) {
 
   const levels = headings.map((m) => m[1].length);
   const minLevel = Math.min(...levels);
-  if (minLevel <= 2) return { content, changes };
 
-  const bump = minLevel - 2;
-  const result = content.replace(/^(#{1,6})\s/gm, (match, hashes) => {
-    const newLevel = Math.max(1, hashes.length - bump);
-    return "#".repeat(newLevel) + " ";
-  });
+  // Already correct — minimum is H2
+  if (minLevel === 2) return { content, changes };
 
-  changes.push({
-    type: "heading",
-    count: headings.length,
-    detail: `bumped h${minLevel}→h2 (shifted ${bump} levels up)`,
-  });
+  let result;
+  if (minLevel === 1) {
+    // H1 exists — demote all headings by 1 (H1→H2, H2→H3, etc.)
+    result = content.replace(/^(#{1,6})\s/gm, (match, hashes) => {
+      const newLevel = Math.min(6, hashes.length + 1);
+      return "#".repeat(newLevel) + " ";
+    });
+    changes.push({
+      type: "heading",
+      count: headings.length,
+      detail: `demoted h1→h2 (shifted all headings down 1 level)`,
+    });
+  } else {
+    // Min level > 2 — bump all headings up so min becomes H2
+    const bump = minLevel - 2;
+    result = content.replace(/^(#{1,6})\s/gm, (match, hashes) => {
+      const newLevel = Math.max(1, hashes.length - bump);
+      return "#".repeat(newLevel) + " ";
+    });
+    changes.push({
+      type: "heading",
+      count: headings.length,
+      detail: `bumped h${minLevel}→h2 (shifted ${bump} levels up)`,
+    });
+  }
+
   return { content: result, changes };
 }
 
@@ -1569,7 +1586,210 @@ export function fixCurlyBraces(content) {
   return { content: result.join("\n"), changes };
 }
 
-// --- 9. Remove orphaned }; ---
+// --- 9. Fix bare & in text (MDX treats & as HTML entity start) ---
+//
+// Bare & followed by text that isn't a valid HTML entity can crash
+// the MDX compiler. We replace & with "and" in plain text outside
+// code blocks, inline code, and JSX component tags/attributes.
+
+export function fixAmpersands(content) {
+  const changes = [];
+  let count = 0;
+
+  const lines = content.split("\n");
+  let inCodeBlock = false;
+  const result = [];
+
+  for (const line of lines) {
+    if (/^[ \t]*```/.test(line)) {
+      inCodeBlock = !inCodeBlock;
+      result.push(line);
+      continue;
+    }
+    if (inCodeBlock) {
+      result.push(line);
+      continue;
+    }
+
+    // Skip JSX component lines (opening/closing tags, self-closing)
+    const trimmed = line.trim();
+    if (/^<\/?[A-Z]/.test(trimmed)) {
+      result.push(line);
+      continue;
+    }
+
+    let fixed = "";
+    let inInlineCode = false;
+
+    for (let i = 0; i < line.length; i++) {
+      if (line[i] === "`") {
+        inInlineCode = !inInlineCode;
+        fixed += line[i];
+        continue;
+      }
+      if (inInlineCode) {
+        fixed += line[i];
+        continue;
+      }
+
+      if (line[i] === "&") {
+        // Check if this is a valid HTML entity like &amp; &lt; &gt; &quot; &nbsp; &#123;
+        const rest = line.substring(i);
+        if (/^&(?:#[0-9]+|#x[0-9a-fA-F]+|[a-zA-Z]{2,8});/.test(rest)) {
+          // Valid HTML entity — keep it
+          fixed += line[i];
+          continue;
+        }
+        // Bare & — replace with "and"
+        // Preserve surrounding spacing: " & " → " and ", "A&B" → "A and B"
+        const prevChar = i > 0 ? line[i - 1] : " ";
+        const nextChar = i + 1 < line.length ? line[i + 1] : " ";
+        const needSpaceBefore = prevChar !== " " && prevChar !== "\t";
+        const needSpaceAfter = nextChar !== " " && nextChar !== "\t";
+        fixed += (needSpaceBefore ? " " : "") + "and" + (needSpaceAfter ? " " : "");
+        count++;
+        continue;
+      }
+
+      fixed += line[i];
+    }
+
+    result.push(fixed);
+  }
+
+  if (count > 0) {
+    changes.push({
+      type: "ampersand",
+      count,
+      detail: "replaced bare & with 'and' (MDX treats & as HTML entity start)",
+    });
+  }
+  return { content: result.join("\n"), changes };
+}
+
+// --- 10. Fix invalid code fence language identifiers ---
+//
+// Some source docs use ```curl which isn't a valid language identifier.
+// Map common invalid languages to their correct counterparts.
+
+const CODE_FENCE_LANG_MAP = {
+  curl: "bash",
+  shell: "bash",
+  sh: "bash",
+  zsh: "bash",
+  cmd: "bash",
+  powershell: "powershell",
+  ps: "powershell",
+  ps1: "powershell",
+  node: "javascript",
+  nodejs: "javascript",
+  js: "javascript",
+  ts: "typescript",
+  py: "python",
+  rb: "ruby",
+  yml: "yaml",
+  htm: "html",
+};
+
+export function fixCodeFenceLanguages(content) {
+  const changes = [];
+  let count = 0;
+
+  const result = content.replace(
+    /^([ \t]*```)(\w+)([ \t]*)$/gm,
+    (match, prefix, lang, trailing) => {
+      const lower = lang.toLowerCase();
+      if (CODE_FENCE_LANG_MAP[lower] && lower !== CODE_FENCE_LANG_MAP[lower]) {
+        count++;
+        return prefix + CODE_FENCE_LANG_MAP[lower] + trailing;
+      }
+      return match;
+    }
+  );
+
+  if (count > 0) {
+    changes.push({
+      type: "code-fence-lang",
+      count,
+      detail: "fixed invalid code fence language identifiers",
+    });
+  }
+  return { content: result, changes };
+}
+
+// --- 11. Ensure blank lines inside JSX components ---
+//
+// Markdown inside JSX components requires blank lines after the opening
+// tag and before the closing tag. Without them, the MDX parser treats
+// the content as raw text instead of rendering markdown.
+
+const CONTAINER_COMPONENTS_SET = new Set([
+  "Callout", "Card", "Columns", "Column",
+  "Expandable", "ExpandableGroup",
+  "Steps", "Step",
+  "Tabs", "Tab",
+  "CodeGroup", "Update",
+]);
+
+export function fixJsxBlankLines(content) {
+  const changes = [];
+  let count = 0;
+
+  const lines = content.split("\n");
+  let inCodeBlock = false;
+  const result = [];
+
+  for (let idx = 0; idx < lines.length; idx++) {
+    const line = lines[idx];
+
+    if (/^[ \t]*```/.test(line)) {
+      inCodeBlock = !inCodeBlock;
+      result.push(line);
+      continue;
+    }
+    if (inCodeBlock) {
+      result.push(line);
+      continue;
+    }
+
+    // Detect opening tag: <Component ...> (not self-closing)
+    const openMatch = line.match(/^(\s*)<([A-Z][A-Za-z0-9]*)\b[^>]*(?<!\/)>\s*$/);
+    if (openMatch && CONTAINER_COMPONENTS_SET.has(openMatch[2])) {
+      result.push(line);
+      // Check if next line exists and is not blank
+      if (idx + 1 < lines.length && lines[idx + 1].trim() !== "") {
+        result.push("");
+        count++;
+      }
+      continue;
+    }
+
+    // Detect closing tag: </Component>
+    const closeMatch = line.match(/^(\s*)<\/([A-Z][A-Za-z0-9]*)>\s*$/);
+    if (closeMatch && CONTAINER_COMPONENTS_SET.has(closeMatch[2])) {
+      // Check if previous result line is not blank
+      if (result.length > 0 && result[result.length - 1].trim() !== "") {
+        result.push("");
+        count++;
+      }
+      result.push(line);
+      continue;
+    }
+
+    result.push(line);
+  }
+
+  if (count > 0) {
+    changes.push({
+      type: "jsx-blank-lines",
+      count,
+      detail: "added blank lines inside JSX components for markdown parsing",
+    });
+  }
+  return { content: result.join("\n"), changes };
+}
+
+// --- 12. Remove orphaned }; ---
 
 export function removeOrphanedClosingBraces(content) {
   const changes = [];
