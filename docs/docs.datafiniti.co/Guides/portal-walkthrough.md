@@ -1,0 +1,12 @@
+# Portal Walkthrough
+
+With the Datafiniti Portal, tasks like querying data, managing your account settings, and downloading your Postman collection are a breeze! The following links will give you a brief overview of how to do these things so you can maximize your success using Datafiniti!
+
+## Datafiniti Portal Walkthroughs
+
+For a more in depth walkthrough tutorial on how to utilize the Datafiniti Portal and it's new features, you visit the links below. If you are new, here is a list of 3 basic walkthrough on how to manage your Datafiniti Portal.
+
+1. [Settings](https://docs.datafiniti.co/docs/settings)
+2. [Downloading Result Files](https://docs.datafiniti.co/docs/downloading-result-files)
+3. [Selecting Your Data Type](https://docs.datafiniti.co/docs/api-introduction)
+4. [Get Your Postman Collection and Token](https://docs.datafiniti.co/docs/get-your-postman-collection-and-token)

@@ -1,0 +1,8 @@
+# API Features
+
+Datafiniti’s Property Data API provides robust tools for discovering, analyzing, and leveraging real estate information across residential, commercial, and public records. With flexible query capabilities and extensive data coverage, you can build highly specific searches tailored to your use case. Listed here are several features Datafiniti's API allows you to use for property data searches:
+
+* [Autotrace](https://docs.datafiniti.co/docs/autotrace)
+* [Count](https://docs.datafiniti.co/docs/count)
+* [Geolocation](https://docs.datafiniti.co/docs/geolocation)
+* [Pagination](https://docs.datafiniti.co/docs/pagination)

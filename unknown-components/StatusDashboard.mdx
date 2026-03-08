@@ -1,20 +1,20 @@
-{/* Unknown component: <StatusDashboard> */}
+{/* Unknown component:  */}
 
-export const StatusDashboard = ({ services }) => {
+export const StatusDashboard = (`{ services }`) => `{
   const getColor = (status) => {
     if (status === 'operational') return 'bg-green-500';
     if (status === 'degraded') return 'bg-yellow-500';
     return 'bg-red-500';
-  };
+  }`;
   return (
-    <div className="border rounded-lg overflow-hidden">
-      <div className="bg-gray-900 text-white p-4 font-bold">System Status</div>
-      {services.map((s, i) => (
-        <div key={i} className="flex items-center justify-between p-3 border-b last:border-0">
-          <span className="font-medium">{s.name}</span>
-          <div className="flex items-center gap-2">
-            <span className={`w-3 h-3 rounded-full ${getColor(s.status)}`} />
-            <span className="text-sm capitalize">{s.status}</span>
+    <div>
+      <div>System Status</div>
+      `{services.map((s, i) => (
+        <div key={i}`>
+          <span>`{s.name}`</span>
+          <div>
+            <span`} />
+            <span>`{s.status}`</span>
           </div>
         </div>
       ))}
@@ -22,11 +22,4 @@ export const StatusDashboard = ({ services }) => {
   );
 };
 
-<StatusDashboard services={[
-  { name: "API Gateway", status: "operational" },
-  { name: "Payment Processing", status: "operational" },
-  { name: "Webhook Delivery", status: "degraded" },
-  { name: "Dashboard", status: "operational" },
-  { name: "Analytics Engine", status: "operational" },
-  { name: "File Storage", status: "maintenance" },
-]} />
+

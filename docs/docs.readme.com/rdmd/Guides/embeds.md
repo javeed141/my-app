@@ -1,0 +1,39 @@
+# Embeds
+
+## Syntax
+
+Simple embedded content is written as a Markdown link, with a title of "@embed", like so:
+
+```
+[Embed Title](https://youtu.be/8bh238ekw3 "@embed")
+```
+
+More robust embedded content is written as a JSX component:
+
+```
+<Embed
+  html={false}
+  url="https://github.com/readmeio/api-explorer/pull/671"
+  title="RDMD CSS theming and style adjustments. by rafegoldberg · Pull Request #671 · readmeio/api-explorer"
+  favicon="https://github.com/favicon.ico"
+  image="https://avatars2.githubusercontent.com/u/6878153?s=400&v=4"
+/>
+```
+
+## Examples
+
+<Embed html={false} url="https://github.com/readmeio/api-explorer/pull/671" title="RDMD CSS theming and style adjustments. by rafegoldberg · Pull Request #671 · readmeio/api-explorer" favicon="https://github.com/favicon.ico" image="https://avatars2.githubusercontent.com/u/6878153?s=400&v=4" />
+
+<Embed html={false} url="https://www.nytimes.com/2020/05/03/us/politics/george-w-bush-coronavirus-unity.html" title="George W. Bush Calls for End to Pandemic Partisanship" favicon="https://www.nytimes.com/vi-assets/static-assets/favicon-4bf96cb6a1093748bf5b3c429accb9b4.ico" image="https://static01.nyt.com/images/2020/05/02/world/02dc-virus-bush-2/merlin_171999921_e857a690-fb9b-462d-a20c-28c8161107c9-facebookJumbo.jpg" />
+
+### Embed Component (Embedly)
+
+<Embed html="<iframe class=&#x22;embedly-embed&#x22; src=&#x22;//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FJ3-uKv1DShQ%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DJ3-uKv1DShQ&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FJ3-uKv1DShQ%2Fhqdefault.jpg&key=f2aa6fc3595946d0afc3d76cbbd25dc3&type=text%2Fhtml&schema=youtube&#x22; width=&#x22;640&#x22; height=&#x22;480&#x22; scrolling=&#x22;no&#x22; title=&#x22;YouTube embed&#x22; frameborder=&#x22;0&#x22; allow=&#x22;autoplay; fullscreen&#x22; allowfullscreen=&#x22;true&#x22;></iframe>" url="https://www.youtube.com/watch?v=J3-uKv1DShQ&feature=youtu.be" title="Funny Solidier Drop Kick" favicon="https://s.ytimg.com/yts/img/favicon-vfl8qSV2F.ico" image="https://i.ytimg.com/vi/J3-uKv1DShQ/hqdefault.jpg" />
+
+### Embed Component (iFrame)
+
+<Embed html="<iframe class=&#x22;embedly-embed&#x22; src=&#x22;//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.google.com%2Fmaps%2Fembed%2Fv1%2Fplace%3Fcenter%3D37.829698%252C-122.258166%26key%3DAIzaSyD9HrlRuI1Ani0-MTZ7pvzxwxi4pgW0BCY%26zoom%3D16%26q%3DMama%27s%2BRoyal%2BCafe&display_name=Google+Maps&url=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FMama%27s%2BRoyal%2BCafe%2F%4037.829698%2C-122.258166%2C16z%2Fdata%3D%214m13%211m7%213m6%211s0x80857dfb145a04ff%3A0x96b17d967421636f%212s4126%2BOpal%2BSt%2C%2BOakland%2C%2BCA%2B94609%213b1%218m2%213d37.8296978%214d-122.2581661%213m4%211s0x0%3A0x722326b6c2ac7642%218m2%213d37.8277961%214d-122.2563006%3Fhl%3Den&image=http%3A%2F%2Fmaps-api-ssl.google.com%2Fmaps%2Fapi%2Fstaticmap%3Fcenter%3D37.829698%2C-122.258166%26zoom%3D15%26size%3D250x250%26sensor%3Dfalse&key=f2aa6fc3595946d0afc3d76cbbd25dc3&type=text%2Fhtml&schema=google&#x22; width=&#x22;600&#x22; height=&#x22;450&#x22; scrolling=&#x22;no&#x22; title=&#x22;Google Maps embed&#x22; frameborder=&#x22;0&#x22; allow=&#x22;autoplay; fullscreen&#x22; allowfullscreen=&#x22;true&#x22;></iframe>" url="https://www.google.com/maps/place/Mama's+Royal+Cafe/@37.829698,-122.258166,16z/data=!4m13!1m7!3m6!1s0x80857dfb145a04ff:0x96b17d967421636f!2s4126+Opal+St,+Oakland,+CA+94609!3b1!8m2!3d37.8296978!4d-122.2581661!3m4!1s0x0:0x722326b6c2ac7642!8m2!3d37.8277961!4d-122.2563006?hl=en" title="Mama's Royal Cafe" favicon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" image="http://maps-api-ssl.google.com/maps/api/staticmap?center=37.829698,-122.258166&zoom=15&size=250x250&sensor=false" />
+
+### Markdown Block
+
+[Embed Title](https://youtu.be/8bh238ekw3 "@embed")

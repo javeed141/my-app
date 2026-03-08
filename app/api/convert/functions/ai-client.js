@@ -1,168 +1,460 @@
+// // ai-client.js
+// // Handles all communication with the xAI API (OpenAI-compatible).
+// // Extracted from ai-module.js for single-responsibility.
+// //
+// // Contains: API call, retry logic, prompt building, response parsing.
+
+// import { AI_MODEL, AI_MAX_TOKENS } from "./types.js";
+// import { SYSTEM_PROMPT } from "./system-prompt.js";
+
+// const AI_RETRY_COUNT = 1; // Retries per failed call
+
+
+// // -------------------------------------------------------------------
+// // Call AI with retry
+// // -------------------------------------------------------------------
+
+// export async function callAIWithRetry(task) {
+//   let lastError;
+//   for (let attempt = 0; attempt <= AI_RETRY_COUNT; attempt++) {
+//     try {
+//       return await callAI(task);
+//     } catch (err) {
+//       lastError = err;
+//       if (attempt < AI_RETRY_COUNT) {
+//         // Wait 500ms before retry
+//         await new Promise((r) => setTimeout(r, 500));
+//       }
+//     }
+//   }
+//   throw lastError;
+// }
+
+
+// // -------------------------------------------------------------------
+// // Call xAI API — OpenAI-compatible chat completions
+// // -------------------------------------------------------------------
+
+// async function callAI(task) {
+//   const prompt = buildUserPrompt(task);
+
+//   const url = "https://api.x.ai/v1/chat/completions";
+
+//   const res = await fetch(url, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       "Authorization": `Bearer ${process.env.XAI_API_KEY}`,
+//     },
+//     body: JSON.stringify({
+//       model: AI_MODEL,
+//       max_completion_tokens: AI_MAX_TOKENS,
+//       temperature: 0.2,
+//       messages: [
+//         {
+//           role: "system",
+//           content: SYSTEM_PROMPT,
+//         },
+//         {
+//           role: "user",
+//           content: prompt,
+//         },
+//       ],
+//       response_format: {
+//         type: "json_object",
+//       },
+//     }),
+//   });
+
+//   console.log(`[ai-client] API response status: ${res.status} for <${task.name}>`);
+//   if (!res.ok) {
+//     const errText = await res.text().catch(() => "");
+//     console.error(`[ai-client] API ERROR for <${task.name}>: ${res.status} — ${errText.slice(0, 300)}`);
+//     throw new Error(`AI API returned ${res.status}: ${errText.slice(0, 200)}`);
+//   }
+
+//   const data = await res.json();
+
+//   // OpenAI-compatible response structure
+//   const text = data?.choices?.[0]?.message?.content;
+
+//   if (!text) {
+//     throw new Error("Empty response from AI");
+//   }
+
+//   return parseResponse(text, task.name);
+// }
+
+
+// // -------------------------------------------------------------------
+// // Build user prompt — includes classification hint from cleanup.js
+// // -------------------------------------------------------------------
+
+// function buildUserPrompt(task) {
+//   let prompt = `Convert this unknown ReadMe component to Documentation.AI MDX.\n\n`;
+//   prompt += `Component name: <${task.name}>\n\n`;
+
+//   // CLASSIFICATION HINT — pre-analyzed by classifyComponent() in cleanup.js
+//   if (task.classification && task.classification.category !== "unknown") {
+//     prompt += `### Classification (pre-analyzed)\n`;
+//     prompt += `Category: ${task.classification.category}\n`;
+//     prompt += `Suggested target: ${task.classification.target}\n`;
+//     prompt += `Confidence: ${task.classification.confidence}\n`;
+//     prompt += `Signals: ${task.classification.signals.join(", ")}\n`;
+//     prompt += `\nUse this classification as a strong hint, but override it if the actual content suggests otherwise.\n\n`;
+//   }
+
+//   if (task.definition) {
+//     // Sanitize definition: replace backticks that could break the fenced code block
+//     const safeDef = task.definition.replace(/`/g, "'");
+//     prompt += `### Component source code:\n\`\`\`jsx\n${safeDef}\n\`\`\`\n\n`;
+//   }
+
+//   if (task.usage) {
+//     const safeUsage = task.usage.replace(/`/g, "'");
+//     prompt += `### Usage:\n\`\`\`jsx\n${safeUsage}\n\`\`\`\n`;
+//   }
+
+//   if (task.context) {
+//     prompt += `\nSurrounding context:\n${task.context}\n\n`;
+//   }
+
+//   prompt += `\nPreserve ALL text content. Make it look clean and natural. Return only JSON.`;
+
+//   return prompt;
+// }
+
+
+// // -------------------------------------------------------------------
+// // Parse AI's JSON response
+// // -------------------------------------------------------------------
+
+// function parseResponse(text, componentName) {
+//   // Strip markdown code fences if AI wrapped them
+//   const cleaned = text
+//     .replace(/^```json\s*/m, "")
+//     .replace(/^```\s*/m, "")
+//     .replace(/```\s*$/m, "")
+//     .trim();
+
+//   try {
+//     const parsed = JSON.parse(cleaned);
+
+//     if (!parsed.converted || typeof parsed.converted !== "string") {
+//       throw new Error("Missing 'converted' field");
+//     }
+
+//     return {
+//       converted: parsed.converted,
+//       confidence: parsed.confidence || "medium",
+//       reasoning: parsed.reasoning || "",
+//     };
+//   } catch (err) {
+//     // JSON parse failed — try to extract any MDX component from the text
+//     console.warn(`[ai-module] JSON parse failed for <${componentName}>, trying extraction`);
+
+//     const mdxMatch = text.match(
+//       /<(?:Callout|Card|Columns|Steps|Tabs|Expandable|ExpandableGroup|CodeGroup)[\s\S]*?<\/(?:Callout|Card|Columns|Steps|Tabs|Expandable|ExpandableGroup|CodeGroup)>/
+//     );
+
+//     if (mdxMatch) {
+//       return {
+//         converted: mdxMatch[0],
+//         confidence: "low",
+//         reasoning: "Extracted from non-JSON response",
+//       };
+//     }
+
+//     throw new Error(`Could not parse AI response: ${err.message}`);
+//   }
+// }
+
 // ai-client.js
 // Handles all communication with the xAI API (OpenAI-compatible).
 // Extracted from ai-module.js for single-responsibility.
 //
 // Contains: API call, retry logic, prompt building, response parsing.
 
-import { AI_MODEL, AI_MAX_TOKENS } from "./types.js";
-import { SYSTEM_PROMPT } from "./system-prompt.js";
+  import { AI_MODEL, AI_MAX_TOKENS } from "./types.js";
+  import { SYSTEM_PROMPT, VERIFICATION_SYSTEM_PROMPT } from "./system-prompt.js";
 
-const AI_RETRY_COUNT = 1; // Retries per failed call
+  const AI_RETRY_COUNT = 1; // Retries per failed call
 
 
-// -------------------------------------------------------------------
-// Call AI with retry
-// -------------------------------------------------------------------
+  // -------------------------------------------------------------------
+  // Call AI with retry
+  // -------------------------------------------------------------------
 
-export async function callAIWithRetry(task) {
-  let lastError;
-  for (let attempt = 0; attempt <= AI_RETRY_COUNT; attempt++) {
-    try {
-      return await callAI(task);
-    } catch (err) {
-      lastError = err;
-      if (attempt < AI_RETRY_COUNT) {
-        // Wait 500ms before retry
-        await new Promise((r) => setTimeout(r, 500));
+  export async function callAIWithRetry(task) {
+    let lastError;
+    for (let attempt = 0; attempt <= AI_RETRY_COUNT; attempt++) {
+      try {
+        return await callAI(task);
+      } catch (err) {
+        lastError = err;
+        if (attempt < AI_RETRY_COUNT) {
+          // Wait 500ms before retry
+          await new Promise((r) => setTimeout(r, 500));
+        }
       }
     }
+    throw lastError;
   }
-  throw lastError;
-}
 
 
-// -------------------------------------------------------------------
-// Call xAI API — OpenAI-compatible chat completions
-// -------------------------------------------------------------------
+  // -------------------------------------------------------------------
+  // Call xAI API — OpenAI-compatible chat completions
+  // -------------------------------------------------------------------
 
-async function callAI(task) {
-  const prompt = buildUserPrompt(task);
+  async function callAI(task) {
+    const prompt = buildUserPrompt(task);
 
-  const url = "https://api.x.ai/v1/chat/completions";
+    const url = "https://api.x.ai/v1/chat/completions";
 
-  const res = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${process.env.XAI_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: AI_MODEL,
-      max_completion_tokens: AI_MAX_TOKENS,
-      temperature: 0.2,
-      messages: [
-        {
-          role: "system",
-          content: SYSTEM_PROMPT,
-        },
-        {
-          role: "user",
-          content: prompt,
-        },
-      ],
-      response_format: {
-        type: "json_object",
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${process.env.XAI_API_KEY}`,
       },
-    }),
-  });
+      body: JSON.stringify({
+        model: AI_MODEL,
+        max_completion_tokens: AI_MAX_TOKENS,
+        temperature: 0.2,
+        messages: [
+          {
+            role: "system",
+            content: SYSTEM_PROMPT,
+          },
+          {
+            role: "user",
+            content: prompt,
+          },
+        ],
+        response_format: {
+          type: "json_object",
+        },
+      }),
+    });
 
-  if (!res.ok) {
-    const errText = await res.text().catch(() => "");
-    throw new Error(`AI API returned ${res.status}: ${errText.slice(0, 200)}`);
-  }
-
-  const data = await res.json();
-
-  // OpenAI-compatible response structure
-  const text = data?.choices?.[0]?.message?.content;
-
-  if (!text) {
-    throw new Error("Empty response from AI");
-  }
-
-  return parseResponse(text, task.name);
-}
-
-
-// -------------------------------------------------------------------
-// Build user prompt — includes classification hint from cleanup.js
-// -------------------------------------------------------------------
-
-function buildUserPrompt(task) {
-  let prompt = `Convert this unknown ReadMe component to Documentation.AI MDX.\n\n`;
-  prompt += `Component name: <${task.name}>\n\n`;
-
-  // CLASSIFICATION HINT — pre-analyzed by classifyComponent() in cleanup.js
-  if (task.classification && task.classification.category !== "unknown") {
-    prompt += `### Classification (pre-analyzed)\n`;
-    prompt += `Category: ${task.classification.category}\n`;
-    prompt += `Suggested target: ${task.classification.target}\n`;
-    prompt += `Confidence: ${task.classification.confidence}\n`;
-    prompt += `Signals: ${task.classification.signals.join(", ")}\n`;
-    prompt += `\nUse this classification as a strong hint, but override it if the actual content suggests otherwise.\n\n`;
-  }
-
-  if (task.definition) {
-    // Sanitize definition: replace backticks that could break the fenced code block
-    const safeDef = task.definition.replace(/`/g, "'");
-    prompt += `### Component source code:\n\`\`\`jsx\n${safeDef}\n\`\`\`\n\n`;
-  }
-
-  if (task.usage) {
-    const safeUsage = task.usage.replace(/`/g, "'");
-    prompt += `### Usage:\n\`\`\`jsx\n${safeUsage}\n\`\`\`\n`;
-  }
-
-  if (task.context) {
-    prompt += `\nSurrounding context:\n${task.context}\n\n`;
-  }
-
-  prompt += `\nPreserve ALL text content. Make it look clean and natural. Return only JSON.`;
-
-  return prompt;
-}
-
-
-// -------------------------------------------------------------------
-// Parse AI's JSON response
-// -------------------------------------------------------------------
-
-function parseResponse(text, componentName) {
-  // Strip markdown code fences if AI wrapped them
-  const cleaned = text
-    .replace(/^```json\s*/m, "")
-    .replace(/^```\s*/m, "")
-    .replace(/```\s*$/m, "")
-    .trim();
-
-  try {
-    const parsed = JSON.parse(cleaned);
-
-    if (!parsed.converted || typeof parsed.converted !== "string") {
-      throw new Error("Missing 'converted' field");
+    if (!res.ok) {
+      const errText = await res.text().catch(() => "");
+      throw new Error(`AI API returned ${res.status}: ${errText.slice(0, 200)}`);
     }
 
-    return {
-      converted: parsed.converted,
-      confidence: parsed.confidence || "medium",
-      reasoning: parsed.reasoning || "",
-    };
-  } catch (err) {
-    // JSON parse failed — try to extract any MDX component from the text
-    console.warn(`[ai-module] JSON parse failed for <${componentName}>, trying extraction`);
+    const data = await res.json();
 
-    const mdxMatch = text.match(
-      /<(?:Callout|Card|Columns|Steps|Tabs|Expandable|ExpandableGroup|CodeGroup)[\s\S]*?<\/(?:Callout|Card|Columns|Steps|Tabs|Expandable|ExpandableGroup|CodeGroup)>/
-    );
+    // OpenAI-compatible response structure
+    const text = data?.choices?.[0]?.message?.content;
 
-    if (mdxMatch) {
+    if (!text) {
+      throw new Error("Empty response from AI");
+    }
+
+    return parseResponse(text, task.name);
+  }
+
+
+  // -------------------------------------------------------------------
+  // Build user prompt — includes classification hint from cleanup.js
+  // -------------------------------------------------------------------
+
+  function buildUserPrompt(task) {
+    let prompt = `Convert this unknown ReadMe component to Documentation.AI MDX.\n\n`;
+    prompt += `Component name: <${task.name}>\n\n`;
+
+    // CLASSIFICATION HINT — pre-analyzed by classifyComponent() in cleanup.js
+    if (task.classification && task.classification.category !== "unknown") {
+      prompt += `### Classification (pre-analyzed)\n`;
+      prompt += `Category: ${task.classification.category}\n`;
+      prompt += `Suggested target: ${task.classification.target}\n`;
+      prompt += `Confidence: ${task.classification.confidence}\n`;
+      prompt += `Signals: ${task.classification.signals.join(", ")}\n`;
+      prompt += `\nUse this classification as a strong hint, but override it if the actual content suggests otherwise.\n\n`;
+    }
+
+    if (task.definition) {
+      // Sanitize definition: replace backticks that could break the fenced code block
+      const safeDef = task.definition.replace(/`/g, "'");
+      prompt += `### Component source code:\n\`\`\`jsx\n${safeDef}\n\`\`\`\n\n`;
+    }
+
+    if (task.usage) {
+      const safeUsage = task.usage.replace(/`/g, "'");
+      prompt += `### Usage:\n\`\`\`jsx\n${safeUsage}\n\`\`\`\n`;
+    }
+
+    if (task.context) {
+      prompt += `\nSurrounding context:\n${task.context}\n\n`;
+    }
+
+    prompt += `\nPreserve ALL text content. Make it look clean and natural. Return only JSON.`;
+
+    return prompt;
+  }
+
+
+  // -------------------------------------------------------------------
+  // Parse AI's JSON response
+  // -------------------------------------------------------------------
+
+  function parseResponse(text, componentName) {
+    // Strip markdown code fences if AI wrapped them
+    const cleaned = text
+      .replace(/^```json\s*/m, "")
+      .replace(/^```\s*/m, "")
+      .replace(/```\s*$/m, "")
+      .trim();
+
+    try {
+      const parsed = JSON.parse(cleaned);
+
+      if (!parsed.converted || typeof parsed.converted !== "string") {
+        throw new Error("Missing 'converted' field");
+      }
+
       return {
-        converted: mdxMatch[0],
-        confidence: "low",
-        reasoning: "Extracted from non-JSON response",
+        converted: parsed.converted,
+        confidence: parsed.confidence || "medium",
+        reasoning: parsed.reasoning || "",
       };
+    } catch (err) {
+      // JSON parse failed — try to extract any MDX component from the text
+      console.warn(`[ai-module] JSON parse failed for <${componentName}>, trying extraction`);
+
+      const mdxMatch = text.match(
+        /<(?:Callout|Card|Columns|Steps|Tabs|Expandable|ExpandableGroup|CodeGroup)[\s\S]*?<\/(?:Callout|Card|Columns|Steps|Tabs|Expandable|ExpandableGroup|CodeGroup)>/
+      );
+
+      if (mdxMatch) {
+        return {
+          converted: mdxMatch[0],
+          confidence: "low",
+          reasoning: "Extracted from non-JSON response",
+        };
+      }
+
+      throw new Error(`Could not parse AI response: ${err.message}`);
+    }
+  }
+
+
+  // -------------------------------------------------------------------
+  // Post-pipeline verification — AI reviews the full converted MDX
+  // -------------------------------------------------------------------
+
+  export async function verifyConvertedMDX(mdx) {
+    if (!process.env.XAI_API_KEY) {
+      return { verified: mdx, fixes: [], skipped: true };
     }
 
-    throw new Error(`Could not parse AI response: ${err.message}`);
+    if (!mdx || mdx.trim().length < 50) {
+      return { verified: mdx, fixes: [], skipped: true };
+    }
+
+    try {
+      const verificationPrompt = buildVerificationPrompt(mdx);
+
+      const res = await fetch("https://api.x.ai/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.XAI_API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: AI_MODEL,
+          max_completion_tokens: AI_MAX_TOKENS,
+          temperature: 0.1,
+          messages: [
+            { role: "system", content: VERIFICATION_SYSTEM_PROMPT },
+            { role: "user", content: verificationPrompt },
+          ],
+          response_format: { type: "json_object" },
+        }),
+      });
+
+      if (!res.ok) {
+        const errText = await res.text().catch(() => "");
+        console.warn(`[ai-client] Verification API error: ${res.status} — ${errText.slice(0, 200)}`);
+        return { verified: mdx, fixes: [`Verification skipped — API error: ${res.status}`], skipped: true };
+      }
+
+      const data = await res.json();
+      const text = data?.choices?.[0]?.message?.content;
+
+      if (!text) {
+        return { verified: mdx, fixes: ["Verification skipped — empty AI response"], skipped: true };
+      }
+
+      return parseVerificationResponse(text, mdx);
+    } catch (err) {
+      console.warn("[ai-client] Verification failed:", err.message);
+      return { verified: mdx, fixes: [`Verification skipped — ${err.message}`], skipped: true };
+    }
   }
-}
+
+
+  function buildVerificationPrompt(mdx) {
+    let prompt = `## Task: VERIFY and FIX this converted MDX document\n\n`;
+    prompt += `The document below has already been converted from ReadMe.com format to Documentation.AI MDX by an automated pipeline.\n`;
+    prompt += `Your job is to review it for remaining issues and fix them.\n\n`;
+    prompt += `### The full MDX document:\n`;
+    prompt += `\`\`\`\`mdx\n${mdx}\n\`\`\`\`\n\n`;
+    prompt += `### What to check and fix:\n`;
+    prompt += `1. Leftover [block:...][/block] syntax that was not converted — convert them now\n`;
+    prompt += `2. Raw { } < > & characters in plain text (not inside code blocks or inline code)\n`;
+    prompt += `3. Broken or unclosed JSX components\n`;
+    prompt += `4. Single-quoted attributes (must be double-quoted)\n`;
+    prompt += `5. Invalid code fence language tags (e.g. curl → bash)\n`;
+    prompt += `6. H1 headings (should be H2 or lower)\n`;
+    prompt += `7. <Mermaid> component usage (must be \`\`\`mermaid code block)\n`;
+    prompt += `8. Leftover HTML/JSX artifacts (className, style, onClick)\n`;
+    prompt += `9. Non-existent components (only Doc.AI native components allowed)\n`;
+    prompt += `10. Missing blank lines inside JSX components (markdown needs blank lines)\n`;
+    prompt += `11. HTML comments <!-- --> (must be {/* */})\n`;
+    prompt += `12. Unclosed void elements: <br>, <hr>, <img> must be self-closed\n`;
+    prompt += `13. icon props with URLs instead of Lucide icon names\n\n`;
+    prompt += `### Rules:\n`;
+    prompt += `- If the document is ALREADY CORRECT, return it unchanged with empty fixes array\n`;
+    prompt += `- PRESERVE the frontmatter (---...---) exactly as-is\n`;
+    prompt += `- PRESERVE all text content — do not rephrase, summarize, or remove\n`;
+    prompt += `- Only fix actual syntax/format issues, do not restructure\n`;
+    prompt += `- Be conservative: when in doubt, leave as-is\n\n`;
+    prompt += `Return ONLY valid JSON:\n`;
+    prompt += `{ "verified": "<the complete fixed MDX>", "fixes": ["fix 1", "fix 2"], "hasIssues": true/false }`;
+    return prompt;
+  }
+
+
+  function parseVerificationResponse(text, originalMdx) {
+    const cleaned = text
+      .replace(/^```json\s*/m, "")
+      .replace(/^```\s*/m, "")
+      .replace(/```\s*$/m, "")
+      .trim();
+
+    try {
+      const parsed = JSON.parse(cleaned);
+
+      if (!parsed.verified || typeof parsed.verified !== "string") {
+        console.warn("[ai-client] Verification response missing 'verified' field");
+        return { verified: originalMdx, fixes: ["Verification response invalid"], skipped: true };
+      }
+
+      // Safety: reject if AI dropped more than 30% of content
+      const lengthRatio = parsed.verified.trim().length / originalMdx.trim().length;
+      if (lengthRatio < 0.7) {
+        console.warn(`[ai-client] Verification output is ${Math.round(lengthRatio * 100)}% of original — content loss suspected`);
+        return { verified: originalMdx, fixes: ["Verification discarded — suspected content loss"], skipped: true };
+      }
+
+      return {
+        verified: parsed.verified,
+        fixes: Array.isArray(parsed.fixes) ? parsed.fixes : [],
+        skipped: false,
+      };
+    } catch (err) {
+      console.warn("[ai-client] Verification JSON parse failed:", err.message);
+      return { verified: originalMdx, fixes: ["Verification response could not be parsed"], skipped: true };
+    }
+  }

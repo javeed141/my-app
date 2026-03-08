@@ -15,6 +15,12 @@ export default function Page() {
             Fetch
           </Link>
           <Link
+            href="/module-fetch-store"
+            className="px-4 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 text-sm font-medium transition-colors"
+          >
+            Fetch & Store
+          </Link>
+          <Link
             href="/mdx-convert"
             className="px-4 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 text-sm font-medium transition-colors"
           >
@@ -62,6 +68,23 @@ export default function Page() {
               <div>
                 <div className="text-white font-semibold text-sm group-hover:text-fuchsia-300 transition-colors">Doc Scraper</div>
                 <div className="text-slate-500 text-xs mt-0.5">Extract nav from any docs site</div>
+              </div>
+            </Link>
+
+            <Link
+              href="/module-fetch-store"
+              className="group flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-violet-500/40
+                         rounded-2xl px-6 py-4 text-left transition-all"
+            >
+              <div className="w-10 h-10 rounded-xl bg-emerald-600/20 flex items-center justify-center shrink-0">
+                <svg className="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+                </svg>
+              </div>
+              <div>
+                <div className="text-white font-semibold text-sm group-hover:text-emerald-300 transition-colors">Fetch & Store</div>
+                <div className="text-slate-500 text-xs mt-0.5">Scrape + download raw docs</div>
               </div>
             </Link>
 

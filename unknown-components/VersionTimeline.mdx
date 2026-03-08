@@ -1,46 +1,18 @@
-{/* Unknown component: <VersionTimeline> */}
+{/* Unknown component:  */}
 
-export const VersionTimeline = ({ versions }) => (
-  <div className="border-l-2 border-blue-300 ml-4 pl-6 space-y-6">
-    {versions.map((v, i) => (
-      <div key={i} className="relative">
-        <div className="absolute -left-8 w-4 h-4 bg-blue-500 rounded-full border-2 border-white" />
-        <div className="font-bold text-lg">{v.version}</div>
-        <div className="text-sm text-gray-500">{v.date}</div>
-        <ul className="mt-2">
-          {v.changes.map((c, j) => <li key={j}>{c}</li>)}
+export const VersionTimeline = (`{ versions }`) => (
+  <div>
+    `{versions.map((v, i) => (
+      <div key={i}`>
+        <div />
+        <div>`{v.version}`</div>
+        <div>`{v.date}`</div>
+        <ul>
+          `{v.changes.map((c, j) => <li key={j}`>`{c}`</li>)}
         </ul>
       </div>
     ))}
   </div>
 );
 
-<VersionTimeline versions={[
-  {
-    version: "v2.3.0",
-    date: "January 15, 2025",
-    changes: [
-      "Added multi-currency support (beta)",
-      "Improved webhook delivery reliability",
-      "Fixed race condition in refund processing"
-    ]
-  },
-  {
-    version: "v2.2.0",
-    date: "December 1, 2024",
-    changes: [
-      "New fraud detection engine",
-      "Added support for 3D Secure 2.0",
-      "Deprecated legacy card tokenization endpoint"
-    ]
-  },
-  {
-    version: "v2.1.0",
-    date: "October 10, 2024",
-    changes: [
-      "Subscription billing support",
-      "Usage-based pricing API",
-      "Customer portal embeddable widget"
-    ]
-  }
-]} />
+

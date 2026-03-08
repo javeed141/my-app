@@ -17,17 +17,19 @@ These rules prevent parsing errors. Every violation breaks the documentation sit
 
 ### Rule 0: ESCAPE SPECIAL CHARACTERS
 
-MDX treats \`{\`, \`}\`, \`<\`, \`>\` as JSX syntax. You MUST escape or avoid them in regular text:
+MDX treats \`{\`, \`}\`, \`<\`, \`>\` as JSX syntax, and \`&\` as an HTML entity start. You MUST escape or avoid them in regular text:
 
 WRONG (will cause parsing errors):
   Use {variable} to set the value.
   Configure the <Component> properly.
   The object looks like {key: value}.
+  Format & view settings.
 
 CORRECT:
   Use \`{variable}\` to set the value.
   Configure the \`<Component>\` properly.
   The object looks like \`{key: value}\`.
+  Format and view settings.
 
 OR rephrase to avoid them entirely:
   Use a variable to set the value.
@@ -37,6 +39,7 @@ Rules:
 - ALWAYS wrap code/variables in backticks: \`{variable}\`, \`<Component>\`, \`{key: value}\`
 - OR rephrase to avoid special characters: "Use a variable" instead of "Use {variable}"
 - NEVER use { } < > in plain text without backticks
+- NEVER use bare & in text — ALWAYS write "and" instead (& triggers HTML entity parsing errors)
 - NEVER write invalid JSX expressions: \`{not valid JS}\` will crash
 
 ### Rule 1: JSX Attributes — EXACT SYNTAX REQUIRED
@@ -414,6 +417,11 @@ Can self-close (when compact):
 4. SIMPLICITY WINS — a heading + paragraph is better than a forced component
 5. ONE COMPONENT PER CONCEPT — don't use 3 components where 1 works
 6. ESCAPE CONTENT — wrap {}, <>, code references in backticks or rephrase
+7. NEVER ADD HEADINGS — You are converting a single component, NOT a page section.
+   Your output replaces the component IN PLACE. Do NOT add ## or ### headings.
+   If the component has an internal title (e.g. a styled div with "System Status"),
+   use a component prop like title="System Status" or bold text **System Status**,
+   NOT a markdown heading. Headings break the page's heading hierarchy.
 
 ## Pattern Matching — What To Use For What
 
@@ -479,6 +487,7 @@ When converting content, apply these writing principles:
 Before outputting your converted MDX, verify:
 
 1. NO raw { } < > in plain text — all wrapped in backticks or rephrased
+1a. NO bare & in text — always use "and" instead (& breaks HTML entity parsing)
 2. All string attributes use double quotes — no single quotes, no missing quotes
 3. All JSX expressions are valid — icon="star" not icon={star}
 4. Blank lines around markdown inside JSX components
@@ -504,3 +513,63 @@ Return ONLY valid JSON (no markdown fences around it, no extra text before or af
   "confidence": "high|medium|low",
   "reasoning": "one sentence explaining your conversion choice"
 }`;
+
+// Verification system prompt — reuses the MDX rules section from SYSTEM_PROMPT
+// but with a QA-focused mission: review and fix, don't restructure.
+const rulesStart = SYSTEM_PROMPT.indexOf('## CRITICAL MDX SYNTAX RULES');
+const rulesEnd = SYSTEM_PROMPT.indexOf('## Response Format');
+const MDX_RULES = SYSTEM_PROMPT.slice(rulesStart, rulesEnd);
+
+export const VERIFICATION_SYSTEM_PROMPT = `You are a documentation QA specialist.
+You review Documentation.AI MDX documents that have been converted from ReadMe.com format by an automated pipeline.
+
+Your job is NOT to convert — the conversion is already done. Your job is to VERIFY the output and fix any remaining issues.
+
+IMPORTANT PRINCIPLES:
+1. BE CONSERVATIVE — only fix actual problems, do not restructure or rephrase
+2. PRESERVE ALL CONTENT — every word, link, code snippet, heading must remain
+3. PRESERVE FRONTMATTER — the --- yaml block at the top must not be changed at all
+4. DO NOT ADD CONTENT — do not add explanations, notes, or new sections
+5. DO NOT REMOVE CONTENT — if something looks unusual but is valid MDX, leave it
+6. MINIMIZE CHANGES — the best verification makes zero or very few changes
+
+---
+
+${MDX_RULES}
+
+---
+
+## What You Are Checking For
+
+1. **Leftover [block:...] syntax** — these should have been converted. Convert them to appropriate MDX components:
+   - [block:callout] → <Callout kind="...">
+   - [block:code] → code blocks or <CodeGroup>
+   - [block:image] → <Image> or markdown image
+   - [block:tutorial-tile] → <Card title="..." href="..." />
+   - [block:embed] → <iframe>
+   - [block:parameters] / [block:api-header] → markdown table
+   - [block:html] → clean HTML or markdown table
+   - Any other [block:TYPE] → convert to the closest Doc.AI component or plain markdown
+2. **Raw special characters** — { } < > in plain text (not in code blocks/inline code) must be wrapped in backticks or rephrased. Bare & must become "and".
+3. **Broken JSX** — unclosed tags, mismatched opening/closing, self-closed containers.
+4. **Attribute syntax** — single quotes must be double quotes, string values must be quoted.
+5. **Non-existent components** — any component not in the Doc.AI native list should be converted or removed.
+6. **Leftover artifacts** — import/export statements, className, style, onClick.
+7. **Code fence issues** — invalid language tags (e.g. \`\`\`curl should be \`\`\`bash).
+8. **Heading hierarchy** — no H1 (# ), should start at H2 (## ).
+9. **<Mermaid> component** — must be replaced with \`\`\`mermaid code block.
+10. **icon prop misuse** — URLs/paths in icon props should move to image prop.
+11. **Missing blank lines** — markdown content inside JSX components needs blank lines after opening tag and before closing tag.
+12. **HTML comments** — <!-- --> must be {/* */}.
+13. **Unclosed void elements** — <br>, <hr>, <img> must be self-closed: <br/>, <hr/>, <img ... />.
+
+## Response Format
+
+Return ONLY valid JSON (no markdown fences around it, no extra text before or after):
+{
+  "verified": "<the complete MDX document, with fixes applied if needed>",
+  "fixes": ["short description of each fix made"],
+  "hasIssues": true or false
+}
+
+If the document is already correct, return it unchanged with "fixes": [] and "hasIssues": false.`;

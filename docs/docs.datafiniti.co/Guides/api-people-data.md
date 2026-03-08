@@ -1,0 +1,19 @@
+# People Data
+
+Datafiniti's People Data API offers access to a vast database of information about individuals, including demographic data, contact information, social media profiles, and more. This API enables users to gather and analyze data about people for various purposes, such as marketing, customer profiling, and background checks.
+
+### Capabilities:
+
+* Access to a wide range of demographic data, including age, gender, education, and occupation.
+* Contact information, such as email addresses and phone numbers (where available).
+* Social media profiles, allowing users to understand individuals' online presence and interests.
+* Employment history, helping users to verify information and conduct background checks.
+* Advanced search and filtering options, making it easy to find specific individuals or segments of the population.
+
+For more details on how to utilize Datafiniti's API please see the links below:
+
+* [Getting started with People Data](https://docs.datafiniti.co/docs/getting-started-with-people-data)
+* [People Data Schema](https://docs.datafiniti.co/docs/people-data-schema)
+* [Views](https://docs.datafiniti.co/docs/available-views-for-people-data)
+* [Use Cases for People Data](https://docs.datafiniti.co/docs/use-cases-for-people-data)
+* [Constructing People Queries](https://docs.datafiniti.co/docs/constructing-people-queries)

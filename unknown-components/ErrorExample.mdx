@@ -1,47 +1,25 @@
-{/* Unknown component: <ErrorExample> */}
+{/* Unknown component:  */}
 
-export const ErrorExample = ({ status, code, message, suggestion }) => (
-  <div className="border rounded-lg overflow-hidden my-4">
-    <div className={`px-4 py-2 font-mono text-sm text-white ${
-      status >= 500 ? 'bg-red-600' : status >= 400 ? 'bg-yellow-600' : 'bg-gray-600'
-    }`}>
-      HTTP {status}
+export const ErrorExample = (`{ status, code, message, suggestion }`) => (
+  <div>
+    <div`}>
+      HTTP `{status}`
     </div>
-    <pre className="p-4 bg-gray-50 m-0 text-sm overflow-x-auto">{JSON.stringify({
-      error: { code, message }
+    <pre>`{JSON.stringify({
+      error: { code, message }`
     }, null, 2)}</pre>
-    {suggestion && (
-      <div className="px-4 py-3 bg-blue-50 border-t text-sm">
-        💡 <strong>Fix:</strong> {suggestion}
+    `{suggestion && (
+      <div>
+        💡 <strong>Fix:</strong> {suggestion}`
       </div>
     )}
   </div>
 );
 
-<ErrorExample
-  status={401}
-  code="authentication_failed"
-  message="Invalid API key provided"
-  suggestion="Check that your API key starts with 'sk_test_' (sandbox) or 'sk_live_' (production) and hasn't been revoked."
-/>
 
-<ErrorExample
-  status={422}
-  code="amount_too_small"
-  message="Amount must be at least 50 cents (50) for USD"
-  suggestion="Amounts are in the smallest currency unit. For USD, 100 = $1.00. Minimum charge is $0.50 (50)."
-/>
 
-<ErrorExample
-  status={429}
-  code="rate_limit_exceeded"
-  message="Too many requests. Retry after 30 seconds."
-  suggestion="Implement exponential backoff. Check the Retry-After header for exact wait time. Consider upgrading your plan for higher limits."
-/>
 
-<ErrorExample
-  status={503}
-  code="service_unavailable"
-  message="Payment processor temporarily unavailable"
-  suggestion="This is rare and usually resolves within minutes. Retry with backoff. Check status.acme.dev for incidents."
-/>
+
+
+
+
