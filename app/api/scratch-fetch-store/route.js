@@ -32,7 +32,7 @@ export async function POST(req) {
     return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
-  const { url } = body;
+  const { url, fetchContent = false } = body;
   if (!url || typeof url !== "string") {
     return NextResponse.json({ error: "url is required" }, { status: 400 });
   }
@@ -173,34 +173,51 @@ export async function POST(req) {
       };
 
       // ── Step 5: fetchAllPages() — fetch {url}.md for every page ──
-      const fetchResult = await fetchAllPages(linkResult.sections, {
-        concurrency: 5,
-        delayMs: 200,
-      });
+      // When fetchContent=false, skip markdown fetching — just store page names
+      let fetchResult;
+      if (fetchContent) {
+        fetchResult = await fetchAllPages(linkResult.sections, {
+          concurrency: 5,
+          delayMs: 200,
+        });
 
-      results["8_fetchAllPages"] = {
-        stats: fetchResult.stats,
-        pages: fetchResult.pages.map((p) => ({
-          section: p.section,
-          title: p.title,
-          slug: p.slug,
-          fullUrl: p.fullUrl,
-          mdUrl: p.mdUrl,
-          group: p.group,
-          status: p.status,
-          error: p.error,
-          fetchMs: p.fetchMs,
-          mdLength: p.markdown ? p.markdown.length : 0,
-        })),
-      };
+        results["8_fetchAllPages"] = {
+          stats: fetchResult.stats,
+          pages: fetchResult.pages.map((p) => ({
+            section: p.section,
+            title: p.title,
+            slug: p.slug,
+            fullUrl: p.fullUrl,
+            mdUrl: p.mdUrl,
+            group: p.group,
+            status: p.status,
+            error: p.error,
+            fetchMs: p.fetchMs,
+            mdLength: p.markdown ? p.markdown.length : 0,
+          })),
+        };
+      } else {
+        // Build a minimal fetchResult from linkResult (no markdown fetching)
+        const allPages = [];
+        for (const section of linkResult.sections) {
+          for (const page of section.pages) {
+            allPages.push({ ...page, section: section.name, markdown: null, status: "skipped" });
+          }
+        }
+        fetchResult = {
+          pages: allPages,
+          stats: { total: allPages.length, ok: 0, errors: 0, skipped: allPages.length, totalFetchMs: 0 },
+        };
+        results["8_fetchAllPages"] = { skipped: true, reason: "fetchContent=false", stats: fetchResult.stats };
+      }
 
-      // ── Step 7: savePages() — save .md files + manifest JSON ──
+      // ── Step 7: savePages() — save manifest JSON (+ .md files only if fetchContent) ──
       const hostname = new URL(url).hostname;
       const typeMap = { A: "tabs", B: "simple", C: "tabs", D: "projects" };
       const navType = typeMap[siteType.type] || "fallback";
       const tabNames = siteType.tabs?.map((t) => t.name) || [];
 
-      const writeResult = await savePages(fetchResult, hostname, navType, tabNames);
+      const writeResult = await savePages(fetchResult, hostname, navType, tabNames, siteType.versions);
 
       results["9_savePages"] = {
         outputDir: writeResult.outputDir,

@@ -499,6 +499,17 @@ export function detectSiteType(html, origin, pathname = "/") {
   }
 
   if (versions.hasVersions) {
+    // For versioned sites, the default/stable version works WITHOUT a prefix.
+    // e.g. Datafiniti: v4 is default → /docs/intro works without /v4/docs/intro
+    // Only non-default versions need the prefix: /v3/docs/intro
+    //
+    // So we use EMPTY versionPrefix for the default version,
+    // and list non-default versions as otherVersions to scrape separately.
+    const defaultVer = versions.currentVersion; // e.g. "/v4"
+    const otherVersions = versions.allVersions
+      .map((v) => "/v" + v)
+      .filter((v) => v !== defaultVer);
+
     return {
       type: "C",
       typeName: tabs.length > 0
@@ -506,7 +517,8 @@ export function detectSiteType(html, origin, pathname = "/") {
         : "Versions + Sidebar",
       tabs,
       projects: [],
-      versionPrefix: versions.currentVersion,
+      versionPrefix: "",  // default version doesn't need prefix
+      otherVersions,       // non-default versions to scrape separately
       childBranches: [...childBranches],
       versions,
     };

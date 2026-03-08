@@ -235,9 +235,7 @@ async function buildProjectSections(
     }
   }
 
-  // Fetch all in parallel, tracking redirects to detect cross-project redirects
-  // e.g. /reconciliation/docs → /payments/docs (same content, skip)
-  //      /payments/reference → /platform/reference (shared, skip)
+  // Fetch all in parallel, tracking redirects
   const htmlResults = await Promise.all(
     fetches.map(async (f) => {
       try {
@@ -256,13 +254,19 @@ async function buildProjectSections(
   // If /reconciliation/docs redirected to /payments/docs/overview,
   // the content belongs to "payments", not "reconciliation" — skip it.
   const filteredResults = htmlResults.filter((r) => {
-    if (!r.html || !r.finalUrl) return true; // keep nulls for fallback handling
+    if (!r.html || !r.finalUrl) return true;
     try {
       const finalPath = new URL(r.finalUrl).pathname;
       const segments = finalPath.split("/").filter(Boolean);
       // First segment of final URL should match the intended project
       if (segments[0] && segments[0] !== r.project) {
         console.log(`[scraper] Skipping ${r.project}/${r.type} → redirected to /${segments[0]}/ (different project)`);
+        return false;
+      }
+      // Also check if the type segment changed (e.g. /payments/reference → /platform/reference)
+      // This catches cases where the project stays but the content is shared
+      if (segments[1] && segments[1] !== r.type && segments[0] !== r.project) {
+        console.log(`[scraper] Skipping ${r.project}/${r.type} → content at /${segments[0]}/${segments[1]}/`);
         return false;
       }
     } catch {}
@@ -273,22 +277,15 @@ async function buildProjectSections(
   for (const { name, project, type, html } of filteredResults) {
     if (!html) continue;
 
-    // Try sidebar parsing first
     const lookups = parseSidebarLookups(html);
-    const prefix = `${project}/${type}`;
 
-    // Sidebar keys could be:
-    //   JSON parser → "docs" or "reference" (just the type)
-    //   DOM parser  → "platform" (the project name, with slug = "docs/slug-name")
+    // Sidebar keys: JSON parser → "docs"/"reference", DOM parser → project name
     const lookup =
       lookups.get(type) ||
       lookups.get(normalizePrefix(type)) ||
       lookups.get(project) ||
       null;
 
-    // Detect which parser produced the result:
-    //   JSON parser slugs: "platform-overview" (just the slug)
-    //   DOM parser slugs:  "docs/platform-overview" (type/slug, since prefix = project)
     const isProjectKeyed = !lookups.has(type) && !lookups.has(normalizePrefix(type)) && lookups.has(project);
 
     if (lookup && lookup.size > 0) {
@@ -296,19 +293,17 @@ async function buildProjectSections(
         (a, b) => a[1].order - b[1].order
       );
       const pages = sorted.map(([slug, meta]) => {
-        // If DOM parser keyed by project, slug already has "docs/platform-overview"
-        // so path = /{project}/{slug} = /platform/docs/platform-overview
-        // If JSON parser keyed by type, slug is just "platform-overview"
-        // so path = /{project}/{type}/{slug} = /platform/docs/platform-overview
         let pagePath, pageUrl;
         if (isProjectKeyed) {
+          // DOM parser: slug = "docs/platform-overview"
           pagePath = `/${project}/${slug}`;
           pageUrl = `${baseUrl}/${project}/${slug}`;
         } else {
-          pagePath = `/${prefix}/${slug}`;
-          pageUrl = `${baseUrl}/${prefix}/${slug}`;
+          // JSON parser: slug = "platform-overview"
+          // Path = /{project}/{type}/{slug}
+          pagePath = `/${project}/${type}/${slug}`;
+          pageUrl = `${baseUrl}/${project}/${type}/${slug}`;
         }
-        // Extract just the last segment as the slug for the filename
         const bareSlug = slug.split("/").pop() || slug;
         return {
           title: meta.title,
@@ -319,18 +314,51 @@ async function buildProjectSections(
           group: meta.group,
         };
       });
+
+      // Validate: all page paths should match /{project}/{type}/slug pattern
+      // If paths contain a DIFFERENT project (e.g. /payments/platform/reference/...)
+      // it means this tab serves another project's content — skip it
       if (pages.length > 0) {
+        const expectedPrefix = `/${project}/${type}/`;
+        const wrongProject = pages[0].path && !pages[0].path.startsWith(expectedPrefix) && !isProjectKeyed;
+        if (wrongProject) {
+          console.log(`[scraper] Skipping ${name} — content belongs to different project (path: ${pages[0].path})`);
+          continue;
+        }
         sections.push({ name, pages });
         continue;
       }
     }
 
-    // Fallback: scrape <a> links from HTML
-    const pages = parseHtmlFallback(html, baseUrl);
-    if (pages.length > 0) sections.push({ name, pages });
+    // Fallback: scrape <a> links from HTML — only keep pages belonging to this project
+    const fallback = parseHtmlFallback(html, baseUrl);
+    const ownPages = fallback.filter((p) => {
+      const seg = p.path.split("/").filter(Boolean)[0];
+      return !seg || seg === project;
+    });
+    if (ownPages.length > 0) sections.push({ name, pages: ownPages });
   }
 
-  return sections;
+  // ── Deduplicate sections with identical content ──
+  // Cross-project redirects can cause two sections to have the same pages.
+  // e.g. /reconciliation/docs serves same sidebar as /payments/docs
+  // Both produce identical slug sets → drop the duplicate.
+  const deduped = [];
+  const seenSlugSets = new Set();
+
+  for (const section of sections) {
+    const sectionType = section.name.split("/").pop(); // "Guides" or "API Reference"
+    const slugKey = sectionType + ":" + section.pages.map((p) => p.slug).sort().join(",");
+
+    if (seenSlugSets.has(slugKey)) {
+      console.log(`[scraper] Skipping duplicate section: ${section.name}`);
+      continue;
+    }
+    seenSlugSets.add(slugKey);
+    deduped.push(section);
+  }
+
+  return deduped;
 }
 
 // ════════════════════════════════════════════════════════════
@@ -433,6 +461,92 @@ async function buildBranchSections(branches, baseUrl, currentUrl, currentHtml) {
 }
 
 // ════════════════════════════════════════════════════════════
+//  BUILD SECTIONS — Non-default versions (e.g. /v3/ when v4 is default)
+//
+//  For versioned sites, the default version is scraped without prefix.
+//  Non-default versions need their version prefix in URLs.
+//  Each version's /docs page is fetched and sidebar parsed.
+//
+//  INPUT:
+//    versions — ["/v3", "/v2"] — version prefixes to scrape
+//    baseUrl  — origin string
+//
+//  OUTPUT:
+//    [{ name: "v3/Guides", pages: [...] },
+//     { name: "v3/API Reference", pages: [...] }]
+// ════════════════════════════════════════════════════════════
+
+async function buildVersionSections(versions, baseUrl) {
+  const sections = [];
+
+  // Fetch each version's /docs page in parallel
+  const results = await Promise.all(
+    versions.map(async (verPrefix) => {
+      const url = `${baseUrl}${verPrefix}/docs`;
+      try {
+        const html = await fetchPage(url);
+        return { verPrefix, html };
+      } catch {
+        return { verPrefix, html: null };
+      }
+    })
+  );
+
+  for (const { verPrefix, html } of results) {
+    if (!html) continue;
+
+    const verName = verPrefix.replace(/^\//, ""); // "/v3" → "v3"
+    const lookups = parseSidebarLookups(html);
+
+    // Process each section found in sidebar
+    let foundPages = false;
+    for (const [sectionKey, lookup] of lookups) {
+      if (!lookup || lookup.size === 0) continue;
+
+      const sectionName = `${verName}/${PREFIX_TO_SECTION[sectionKey] || PREFIX_TO_SECTION[normalizePrefix(sectionKey)] || sectionKey}`;
+      const sorted = [...lookup.entries()].sort(
+        (a, b) => a[1].order - b[1].order
+      );
+      const pages = sorted.map(([slug, meta]) => {
+        const bareSlug = slug.includes("/") ? slug.split("/").pop() : slug;
+        return {
+          title: meta.title,
+          slug: bareSlug,
+          path: `${verPrefix}/${sectionKey}/${bareSlug}`,
+          fullUrl: `${baseUrl}${verPrefix}/${sectionKey}/${bareSlug}`,
+          level: meta.level,
+          group: meta.group,
+        };
+      });
+      if (pages.length > 0) {
+        sections.push({ name: sectionName, pages });
+        foundPages = true;
+      }
+    }
+
+    // Fallback: scan <a> links
+    if (!foundPages) {
+      let pages = parseHtmlFallback(html, baseUrl);
+      if (pages.length === 0) {
+        pages = parseAllPageLinks(html, baseUrl);
+      }
+      pages = pages.map((p) => ({
+        ...p,
+        path: p.path.startsWith(verPrefix) ? p.path : `${verPrefix}${p.path}`,
+        fullUrl: p.fullUrl.includes(verPrefix)
+          ? p.fullUrl
+          : `${baseUrl}${verPrefix}${p.path}`,
+      }));
+      if (pages.length > 0) {
+        sections.push({ name: `${verName}/Guides`, pages });
+      }
+    }
+  }
+
+  return sections;
+}
+
+// ════════════════════════════════════════════════════════════
 //  SITEMAP MERGE — find pages missing from sidebar
 //
 //  Fetches /sitemap.xml, compares against existing sections,
@@ -448,9 +562,7 @@ async function buildBranchSections(branches, baseUrl, currentUrl, currentHtml) {
 //    number — count of pages added from sitemap
 // ════════════════════════════════════════════════════════════
 
-async function mergeSitemapUrls(sections, baseUrl, versionPrefix) {
-  // Fetch sitemap
-  const xml = await fetchPage(`${baseUrl}/sitemap.xml`);
+function mergeSitemapInto(sections, xml, baseUrl, versionPrefix) {
   if (!xml) return 0;
 
   const $ = load(xml, { xml: true });
@@ -473,14 +585,54 @@ async function mergeSitemapUrls(sections, baseUrl, versionPrefix) {
     }
   }
 
-  // Build map: sectionName → section (for appending)
+  // Build map: prefix → section (for appending sitemap pages)
+  // For standard sites: "docs" → Guides section, "reference" → API Reference section
+  // For multi-project (Type D): "payments/docs" → payments/Guides section
   const sectionByPrefix = new Map();
   for (const section of sections) {
-    // Extract prefix from section name: "Guides" → "docs", "API Reference" → "reference"
-    // Also handle branch sections like "ent/Guides"
-    for (const [prefix, name] of Object.entries(PREFIX_TO_SECTION)) {
-      if (section.name === name || section.name.endsWith(`/${name}`)) {
+    for (const [prefix, sectionLabel] of Object.entries(PREFIX_TO_SECTION)) {
+      if (section.name === sectionLabel || section.name.endsWith(`/${sectionLabel}`)) {
         sectionByPrefix.set(prefix, section);
+      }
+      // Type D: section name like "payments/Guides" → map "payments/docs" → section
+      const parts = section.name.split("/");
+      if (parts.length >= 2 && parts[parts.length - 1] === sectionLabel) {
+        const projectName = parts.slice(0, -1).join("/");
+        sectionByPrefix.set(`${projectName}/${prefix}`, section);
+      }
+    }
+  }
+
+  // Build a map of section → most common groups (for assigning sitemap pages)
+  // e.g. Guides section has groups ["Datafiniti API", "Web Portal"] — sitemap
+  // pages added to Guides should get assigned to the closest group, not "Sitemap"
+  const sectionGroups = new Map();
+  for (const section of sections) {
+    const groupCounts = new Map();
+    for (const page of section.pages) {
+      if (page.group) {
+        groupCounts.set(page.group, (groupCounts.get(page.group) || 0) + 1);
+      }
+    }
+    // Sort groups by count descending — first = most common = default
+    const sorted = [...groupCounts.entries()].sort((a, b) => b[1] - a[1]);
+    sectionGroups.set(section, sorted.map(([g]) => g));
+  }
+
+  // Build a map of slug → group from existing pages for exact matching
+  // This lets us match sitemap pages to the group where similar pages exist
+  const slugPrefixToGroup = new Map();
+  for (const section of sections) {
+    for (const page of section.pages) {
+      if (!page.group) continue;
+      // Use first word of slug as a grouping key
+      // e.g. "api-introduction" → "api", "how-credits-work-api" → "how"
+      const slugFirst = (page.slug || "").split("-")[0];
+      if (slugFirst) {
+        const key = `${section.name}:${slugFirst}`;
+        if (!slugPrefixToGroup.has(key)) {
+          slugPrefixToGroup.set(key, page.group);
+        }
       }
     }
   }
@@ -508,16 +660,50 @@ async function mergeSitemapUrls(sections, baseUrl, versionPrefix) {
     const segments = stripped.split("/").filter(Boolean);
     if (segments.length < 2) continue; // skip root-level pages
 
-    const prefix = segments[0]; // "docs", "reference", "changelog", etc.
-    const slug = segments.slice(1).join("/");
+    // Detect structure: could be /{type}/{slug} or /{project}/{type}/{slug}
+    // Try compound key first (Type D): "payments/docs" → matches "payments/Guides"
+    // Then simple key: "docs" → matches "Guides"
+    let prefix, slug, existingSection;
+
+    if (segments.length >= 3) {
+      const compoundKey = `${segments[0]}/${segments[1]}`;
+      const compoundSection = sectionByPrefix.get(compoundKey) || sectionByPrefix.get(`${segments[0]}/${normalizePrefix(segments[1])}`);
+      if (compoundSection) {
+        prefix = compoundKey;
+        slug = segments.slice(2).join("/");
+        existingSection = compoundSection;
+      }
+    }
+
+    if (!existingSection) {
+      prefix = segments[0];
+      slug = segments.slice(1).join("/");
+      existingSection = sectionByPrefix.get(prefix) || sectionByPrefix.get(normalizePrefix(prefix)) || null;
+    }
 
     // Skip forum/discuss pages
-    if (prefix === "discuss") continue;
+    if (segments[0] === "discuss" || segments[1] === "discuss") continue;
 
     // Check if path already exists (handles version prefix differences)
     const pathWithPrefix = versionPrefix ? `${versionPrefix}/${prefix}/${slug}` : `/${prefix}/${slug}`;
     const pathWithout = `/${prefix}/${slug}`;
     if (existingPaths.has(pathWithPrefix) || existingPaths.has(pathWithout) || existingPaths.has(pathname)) continue;
+
+    // Determine group: try slug-prefix match first, then fall back to most common group
+    let group = "";
+    if (existingSection) {
+      const slugFirst = (slug.split("/").pop() || slug).split("-")[0];
+      const key = `${existingSection.name}:${slugFirst}`;
+      if (slugPrefixToGroup.has(key)) {
+        group = slugPrefixToGroup.get(key);
+      } else {
+        // Use the most common group in this section
+        const groups = sectionGroups.get(existingSection);
+        if (groups && groups.length > 0) {
+          group = groups[0];
+        }
+      }
+    }
 
     const page = {
       title: slugToTitle(slug.split("/").pop() || slug),
@@ -525,11 +711,9 @@ async function mergeSitemapUrls(sections, baseUrl, versionPrefix) {
       path: pathWithPrefix,
       fullUrl: loc,
       level: 1,
-      group: "Sitemap",
+      group,
     };
 
-    // Try to append to existing section
-    const existingSection = sectionByPrefix.get(prefix) || sectionByPrefix.get(normalizePrefix(prefix));
     if (existingSection) {
       existingSection.pages.push(page);
       existingPaths.add(pathWithPrefix);
@@ -578,45 +762,64 @@ export async function extractAllLinks(siteType, html, baseUrl, currentUrl) {
   // Parse sidebar from current page (we already have this HTML)
   const sidebarLookups = parseSidebarLookups(html);
   const versionPrefix = siteType.versionPrefix || "";
-
-  let sections;
-
-  if (siteType.type === "D") {
-    sections = await buildProjectSections(
-      siteType.projects,
-      baseUrl,
-      currentUrl,
-      html
-    );
-  } else {
-    sections = await buildStandardSections(
-      sidebarLookups,
-      siteType.tabs,
-      baseUrl,
-      currentUrl,
-      html,
-      versionPrefix
-    );
-  }
-
-  // ── Scrape child branches (e.g. /ent/docs, /rdmd/docs) ──
-  // These are separate content sets on the same domain,
-  // detected from childrenProjects/projectsMeta in page scripts.
   const childBranches = siteType.childBranches || [];
-  if (childBranches.length > 0) {
-    const branchSections = await buildBranchSections(
-      childBranches,
-      baseUrl,
-      currentUrl,
-      html
-    );
-    sections.push(...branchSections);
+  const otherVersions = siteType.otherVersions || [];
+
+  // ── Start sitemap fetch NOW (runs in parallel with section building) ──
+  const sitemapPromise = fetchPage(`${baseUrl}/sitemap.xml`);
+
+  // ── Build main sections + child branches + other versions in parallel ──
+  const [mainResult, branchSections, versionSections] = await Promise.all([
+    // Main sections (default version, no prefix needed)
+    siteType.type === "D"
+      ? buildProjectSections(siteType.projects, baseUrl, currentUrl, html)
+      : buildStandardSections(sidebarLookups, siteType.tabs, baseUrl, currentUrl, html, versionPrefix),
+    // Child branches (parallel with main sections)
+    // Skip for Type D — projects already handled by buildProjectSections
+    childBranches.length > 0 && siteType.type !== "D"
+      ? buildBranchSections(childBranches, baseUrl, currentUrl, html)
+      : Promise.resolve([]),
+    // Non-default versions (e.g. v3 when v4 is default)
+    otherVersions.length > 0
+      ? buildVersionSections(otherVersions, baseUrl)
+      : Promise.resolve([]),
+  ]);
+
+  const sections = mainResult;
+
+  sections.push(...branchSections);
+  sections.push(...versionSections);
+
+  // ── Merge missing sitemap URLs (sitemap already fetched in parallel) ──
+  const sitemapXml = await sitemapPromise;
+  const sitemapMissing = mergeSitemapInto(sections, sitemapXml, baseUrl, versionPrefix);
+
+  // ── Deduplicate: remove sections with identical slug sets ──
+  // Sitemap merge or cross-project redirects can create duplicates.
+  const dedupedSections = [];
+  const seenSlugSets = new Set();
+  for (const section of sections) {
+    const slugKey = section.pages.map((p) => p.fullUrl).sort().join("\n");
+    if (seenSlugSets.has(slugKey)) {
+      console.log(`[scraper] Removing duplicate section: ${section.name} (${section.pages.length} pages)`);
+      continue;
+    }
+    seenSlugSets.add(slugKey);
+
+    // Also deduplicate pages within each section (by fullUrl)
+    const seenUrls = new Set();
+    section.pages = section.pages.filter((p) => {
+      if (seenUrls.has(p.fullUrl)) return false;
+      seenUrls.add(p.fullUrl);
+      return true;
+    });
+
+    dedupedSections.push(section);
   }
 
-  // ── Merge missing sitemap URLs ────────────────────────────
-  // Fetch sitemap.xml and add any pages not already found by sidebar parsing.
-  // This catches pages that exist on the site but aren't in any sidebar.
-  const sitemapMissing = await mergeSitemapUrls(sections, baseUrl, versionPrefix);
+  // Replace sections array content in place (other refs may point here)
+  sections.length = 0;
+  sections.push(...dedupedSections);
 
   let totalPages = sections.reduce((sum, s) => sum + s.pages.length, 0);
 

@@ -1,3 +1,0 @@
-# Platform Overview
-
-Modern Treasury offers an enterprise-grade platform for payments. We provide developer tools that both make it easy to build your integration and manage it securely. Our platform also offers a number of security capabilities that help you maintain controls and provide visibility into user activity. And we provide reporting workflows and integrations that ensure Modern Treasury can meet your team's needs.

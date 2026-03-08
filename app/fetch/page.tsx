@@ -372,6 +372,7 @@ export default function FetchPage() {
 
   // ─── Result state ───
   const [result, setResult] = useState<SidebarResult | null>(null);
+  const [fetchContentFlag, setFetchContentFlag] = useState(false);
 
   // ─── Single scrape ───
   async function handleScrapeClick() {
@@ -393,7 +394,7 @@ export default function FetchPage() {
       const res = await fetch("/api/scratch-fetch-store", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url: trimmed }),
+        body: JSON.stringify({ url: trimmed, fetchContent: fetchContentFlag }),
       });
 
       if (!res.ok) {
@@ -441,7 +442,7 @@ export default function FetchPage() {
         })),
       });
 
-      // Store and navigate
+      // Store and navigate to results page
       localStorage.setItem("scrape_result", JSON.stringify(scrapeResult));
       router.push("/results");
     } catch (e: unknown) {
@@ -456,7 +457,7 @@ export default function FetchPage() {
     const res = await fetch("/api/scratch-fetch-store", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: targetUrl }),
+      body: JSON.stringify({ url: targetUrl, fetchContent: fetchContentFlag }),
     });
 
     if (!res.ok) {
@@ -604,6 +605,19 @@ export default function FetchPage() {
             ) : "Scrape"}
           </button>
         </div>
+
+        {/* Fetch content toggle */}
+        <label className="flex items-center gap-2 mb-4 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={fetchContentFlag}
+            onChange={(e) => setFetchContentFlag(e.target.checked)}
+            className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+          />
+          <span className="text-xs text-gray-500">
+            Fetch markdown content (slower — downloads .md for every page)
+          </span>
+        </label>
 
         {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
 

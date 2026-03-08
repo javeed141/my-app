@@ -109,9 +109,9 @@ export async function fetchAllPages(sections, options = {}) {
   const tasks = allPages.map((page) => {
     const myIndex = taskIndex++;
     return async () => {
-      // Stagger to avoid burst
-      if (delayMs > 0 && myIndex > 0) {
-        await new Promise((r) => setTimeout(r, delayMs * (myIndex % concurrency)));
+      // Small delay between requests from the same worker to avoid burst
+      if (delayMs > 0 && myIndex >= concurrency) {
+        await new Promise((r) => setTimeout(r, delayMs));
       }
 
       // ReadMe serves markdown at {url}.md

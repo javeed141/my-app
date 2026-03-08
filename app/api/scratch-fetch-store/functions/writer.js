@@ -40,7 +40,7 @@ function timestamp() {
   return new Date().toISOString().replace(/[:.]/g, "-");
 }
 
-export async function savePages(fetchResult, hostname, siteType, tabs) {
+export async function savePages(fetchResult, hostname, siteType, tabs, versions = null) {
   const siteDir = path.join(DOCS_DIR, sanitize(hostname));
   const errors = [];
   let fileCount = 0;
@@ -61,6 +61,12 @@ export async function savePages(fetchResult, hostname, siteType, tabs) {
     site: hostname,
     navType: siteType,
     tabs: tabs || [],
+    ...(versions && versions.hasVersions ? {
+      versions: {
+        current: versions.currentVersion,
+        all: versions.allVersions,
+      },
+    } : {}),
     sections: [],
   };
 
