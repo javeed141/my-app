@@ -206,6 +206,7 @@ import { join } from "path";
 import { isUrlAllowed, fetchRaw } from "./functions/types.js";
 import { extractFrontmatter } from "./functions/frontmatter.js";
 import { convertUnknownWithAI } from "./functions/ai-module.js";
+import { verifyConvertedMDX } from "./functions/ai-client.js";
 
 import {
   convertBlockquoteCallouts,
@@ -375,9 +376,19 @@ export async function POST(req) {
     }
 
     // Step 4: Reassemble frontmatter + body
-    const converted = frontmatterStr
+    let converted = frontmatterStr
       ? `${frontmatterStr}\n\n${content.trim()}\n`
       : `${content.trim()}\n`;
+
+    // Step 4.5: AI Verification — post-pipeline quality check
+    let verificationFixes = [];
+    let verificationSkipped = false;
+    const { verified, fixes, skipped } = await verifyConvertedMDX(converted);
+    if (!skipped) {
+      converted = verified;
+      verificationFixes = fixes;
+    }
+    verificationSkipped = skipped;
 
     // Step 5: Build change report
     if (removedFields.length > 0) {
@@ -395,6 +406,10 @@ export async function POST(req) {
       changes: allChanges,
       warnings: aiWarnings,
       componentBlocks,
+      verification: {
+        applied: !verificationSkipped,
+        fixes: verificationFixes,
+      },
       stats: {
         originalLength: rawMdx.length,
         convertedLength: converted.length,

@@ -1,0 +1,3 @@
+# Views
+
+Views are used to filter which fields are displayed in the data you get back from search requests. Our data may include many fields that are not relevant for your particular needs, and you can filter this data out by using Views. A View is one or more fields and/or subfields that you want returned. Anything not included in a view will be filtered out of your results. This would be useful, for instance, if you wanted just pricing and reviews from a product search, or just square footage and number of bedrooms from properties.

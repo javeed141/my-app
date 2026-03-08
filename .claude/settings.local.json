@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node -e \":*)"
+      "Bash(node -e \":*)",
+      "Bash(curl -s -X POST \"http://localhost:3000/api/scratch-fetch-store\" -H \"Content-Type: application/json\" -d '{\"\"url\"\":\"\"https://docs.moderntreasury.com/docs\"\"}')",
+      "Bash(node test-mt.js)",
+      "Bash(node test-mt-sidebar.js)"
     ]
   }
 }

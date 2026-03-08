@@ -1,0 +1,46 @@
+# Find recently sold property
+
+# Introduction
+
+Datafiniti Property Data can help you identify when your own clients are selling or have recently sold their homes. You will be able to use this data to compare property values, build comp reports, or see market trends. Here's how you can view this data through the Datafiniti portal.
+
+## Starting from our quick example searches
+
+Datafiniti provide several quick "one click" searches to get started. We can use the "Residential - Sold last 30 days" button to populate property sold in the last 30 days.
+
+![](https://files.readme.io/fbafff6-image.png)
+
+## Filter for specific areas
+
+Let's say you need residential property, sold withing the last 90 days, in Nashville, Tennessee. You can use the "All filters" button to open Datafiniti's extensive list of filter. From here we can select the parameter we need for this example:
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/f4186ee-NashvilleSold90.gif",
+        "",
+        ""
+      ],
+      "align": "center"
+    }
+  ]
+}
+[/block]
+
+From the list of record found here you can see how many homes have sold in the last 90 days.
+
+## Filtering by most recent prices
+
+Lastly lets say you want to filter based on a range of an expected value price. We can utilize the `mostRecentPriceAmount` field to filter for residential property within $300000 to $500000.
+
+> 📘 Property data schema
+>
+> For more information on Datafiniti's [Property Data Schema](https://docs.datafiniti.co/docs/property-data-schema). There are plenty of unique field that both the API and portal can allow you to filter on.
+
+![](https://files.readme.io/584a2b0-image.png)
+
+# Conclusion
+
+Datafiniti's Property Data portal offers a valuable resource for home shoppers to professionals seeking insights into their property transactions. By leveraging this data, users can effectively track and analyze market trends, compare property values, and generate comprehensive comp reports. Datafiniti's portal empowers you to make informed decisions and gain a competitive edge in the real estate market.

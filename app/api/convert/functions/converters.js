@@ -1096,7 +1096,9 @@ export function convertBlockSyntax(content) {
     (match, blockType, jsonStr) => {
       let data;
       try {
-        data = JSON.parse(jsonStr);
+        // Strip backslash escapes before { and } that break JSON.parse
+        const cleanedJson = jsonStr.replace(/\\([{}])/g, '$1');
+        data = JSON.parse(cleanedJson);
       } catch {
         count++;
         return `{/* [block:${blockType}] could not be parsed */}`;

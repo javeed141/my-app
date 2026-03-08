@@ -1,0 +1,3 @@
+# Payment Order Management
+
+Modern Treasury offers a number of ways to manage Payment Orders through the dashboard. Users can manage Payment Orders individually or in bulk by uploading CSV files. Additionally, you can edit or cancel Payment Orders before they're transmitted to the bank.  This flexibility ensures efficient management of payment workflows and flexibility throughout the payment lifecycle.

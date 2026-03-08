@@ -1,0 +1,6 @@
+# API Features
+
+Datafiniti’s Product Data API provides robust tools for discovering, analyzing, and leveraging real product catalogs, pricing analytics, and inventory statuses. With flexible query capabilities and extensive data coverage, you can build highly specific searches tailored to your use case. Listed here are several features Datafiniti's product search API allows you to use for people data searches:
+
+* [Count](https://docs.datafiniti.co/docs/product-count)
+* [Pagination](https://docs.datafiniti.co/docs/product-pagination)

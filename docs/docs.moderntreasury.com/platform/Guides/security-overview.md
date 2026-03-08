@@ -1,0 +1,3 @@
+# Security Overview
+
+Modern Treasury offers a number of security features and controls that ensure you can configure access to your organization based on your company's needs. In addition to user management, you can maintain an [IP Allowlist](https://docs.moderntreasury.com/platform/docs/ip-allowlist), enable [Data Privacy Controls](https://docs.moderntreasury.com/platform/docs/data-privacy-controls-1), and monitor your [Audit Trail](https://docs.moderntreasury.com/platform/docs/audit-trail).

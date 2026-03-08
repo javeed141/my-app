@@ -1,0 +1,44 @@
+# Advanced Querying Building
+
+## Introduction
+
+This guide will help and allow you to use our Business, Product, & People Data more effectively
+
+## How to Use More Schema Fields in the Portal
+
+Datafiniti now has the all the schema fields available as both GUI inputs or API inputs. You can use either of our Filters or API builder tool. Let's take a look!
+
+## Picking a Data Type
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/6feb27e-Datafiniti-Portal-advanced.png",
+        "DatafinitiDashSelect.png",
+        1750
+      ],
+      "align": "center",
+      "caption": "You can select from the four data types datafiniti separates schema fields from: (Business, People, Product, and Property)"
+    }
+  ]
+}
+[/block]
+
+## Writing Your Own URL Query
+
+We can us this functionality to directly control the query with either relying on the "Feature Builder" GUI or query with exact API commands. For this example, let's say we want to get iPhone products, but don't want to have any products that are categorized as accessories or cases. Ordinarily, we wouldn't be able to set the filters via the portal filters, but by this can only be done by our API command builder
+
+I've updated the query to reflect our needs by typing this directly into the address bar after `query=`:
+
+`name:(iphone) AND -categories:(accessor* OR case*)`
+
+![](https://files.readme.io/a86aadf-image.png)
+
+## Data Type Examples
+
+* [Find Franchised Restaurants in Your State](https://docs.datafiniti.co/docs/find-chain-restaurants-in-your-state)
+* [Finding Highly Rated Products](https://docs.datafiniti.co/docs/finding-highly-rated-products)
+
+<br>

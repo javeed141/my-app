@@ -1,0 +1,3 @@
+# Partial Submissions
+
+Partial Submissions are a feature available on some plans for Paperform. They allow you to see when a submission has been started, but not submitted. Partial submissions are stored for a maximum of 30 days before being automatically removed. Note that the partial submissions API returns the partial submission record even after the submission has been completed. The primary reason for this is so that you can keep track of which partial submissions have gone on to be submitted. If a partial submission has been submitted, the `submitted_at` property will be set to the date time the submission was made.

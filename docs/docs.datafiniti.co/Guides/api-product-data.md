@@ -1,0 +1,20 @@
+# Product Data
+
+Datafiniti's Product Data API offers access to a comprehensive database of product information, including details about products, brands, categories, prices, and more. This API enables users to retrieve and analyze product data for various purposes, such as e-commerce analytics, price monitoring, and product research.
+
+### Capabilities:
+
+* Access to detailed product information, such as product name, description, brand, category, and specifications.
+* Pricing data, including current prices, historical prices, and price changes over time.
+* Availability data, indicating whether a product is in stock or out of stock.
+* Reviews and ratings, allowing users to understand customer feedback and sentiment.
+* Advanced search and filtering options, making it easy to find specific products or analyze trends in product data.
+
+For more information on how to utilize Datafiniti's product data API:
+
+* [Getting Started with Product Data](https://docs.datafiniti.co/docs/getting-started-with-product-data-1)
+* [Product Data Schema](https://docs.datafiniti.co/docs/product-data-schema)
+* [Views](https://docs.datafiniti.co/docs/available-views-for-product-data)
+* [Constructing Product Queries](https://docs.datafiniti.co/docs/constructing-product-queries)
+* [How Product Records Are Merged](https://docs.datafiniti.co/docs/how-product-records-are-merged)
+* [Use Cases for Product Data](https://docs.datafiniti.co/docs/use-cases-for-product-data)

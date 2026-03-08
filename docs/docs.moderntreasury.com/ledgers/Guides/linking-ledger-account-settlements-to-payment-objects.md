@@ -1,0 +1,5 @@
+# Link Ledger Account Settlements to Payment Objects
+
+[Ledger Account Settlements](/platform/reference/ledger-account-settlements) calculate the amount and direction of the money movement in order to offset the settled ledger account's balance. After that, the next step would be to physically move the money. Should you decide to initiate the payment through Modern Treasury, we provide the convenience of linking the Ledger Account Settlement and the [Payment](/payments/docs/overview) objects together, so that the status of the Ledger Account Settlement and the Settlement Ledger Transaction are updated automatically. When the payment status changes, the Ledger Account balance is also updated.
+
+Currently two types of Payment objects can be linked to Ledger Account Settlements, which are [Payment Orders](/platform/reference/payment-order-object) and [Expected Payments](https://docs.moderntreasury.com/platform/reference/expected-payment-object). Please see the nested instructions on how to integrate the objects together end to end.
