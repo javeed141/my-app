@@ -1,0 +1,33 @@
+# Count
+
+By setting `num_records` to 0 when running a property search, you can find the number of matching results for a query without using any record credits.  This is a zero-cost way to test the API for available data.
+
+Example input:
+
+```json
+{
+  "query": "country:US",
+  "num_records":0
+}
+```
+
+Example response:
+
+```json
+{
+    "num_found": 228865703
+}
+```
+
+From this result we can tell that we have a total of 228,865,703 records matching the search parameters. This knowledge is great for testing your query syntax, seeing expected results before pulling real data, or sanity checking results from previous searches.
+
+> 📘 Count Feature
+>
+> Please note that this is feature is only for paid accounts. So please check your account plan or contact <support@datafinti.co.>
+
+## Use cases
+
+Check out some of our use cases that use the Count feature:
+
+* [Accessing owners, brokers, & other people data](https://docs.datafiniti.co/docs/accessing-owners-brokers-and-other-people)
+* [Find property with a lien](https://docs.datafiniti.co/docs/find-property-with-liens)

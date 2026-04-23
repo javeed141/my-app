@@ -1,0 +1,9 @@
+# Available Views for Property Data
+
+The `view` parameter in the API determines which fields are returned by your data request and the order in which they're shown.  It also determines if multi-valued fields will flatten or expand their individual elements into multiple entries.
+
+Note that each `view` is available in either `json` or `csv` format.  The `format` parameter you use will determine which one is used.
+
+Available views for property data:
+
+* [properties\_all](https://docs.datafiniti.co/docs/properties_all)

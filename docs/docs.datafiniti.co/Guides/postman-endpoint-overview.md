@@ -1,0 +1,272 @@
+# Postman: Endpoint Overview
+
+This walkthrough will briefly describe each endpoint in the Datafiniti API .
+
+## 1. Open Your Datafiniti Collection
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/78b7db4-Screen_Shot_2017-12-13_at_1.42.34_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.42.34 PM.jpg",
+        2560,
+        1600,
+        "#414955"
+      ],
+      "caption": "When you click on your Datafiniti API v4 collection, you will have two subfolders. One with Public Endpoints and one with Secured Endpoints."
+    }
+  ]
+}
+[/block]
+
+## 2. Health Check
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/1ad2205-Screen_Shot_2017-12-13_at_1.42.49_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.42.49 PM.jpg",
+        2560,
+        1600,
+        "#454a52"
+      ],
+      "caption": "The \"Health Check\" endpoint can be used to confirm that your computer is successfully communicating with our API. Note the ```200 OK``` response code."
+    }
+  ]
+}
+[/block]
+
+## 3. Authentication
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/3dc80b1-Screen_Shot_2017-12-13_at_1.42.58_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.42.58 PM.jpg",
+        2560,
+        1600,
+        "#424854"
+      ],
+      "caption": "\"Authentication\" will grab your user token when you enter in the e-mail address and password associated with your account."
+    }
+  ]
+}
+[/block]
+
+## 4. Creating a View
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/77cdb52-Screen_Shot_2017-12-13_at_1.48.11_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.48.11 PM.jpg",
+        2560,
+        1600,
+        "#424854"
+      ],
+      "caption": "When you use \"Create A View,\" simply give it a ```name```, ```data_type```, and then set up the ```fields``` you'd like to see in that view. This view will be saved on your account for you to use when downloading records."
+    }
+  ]
+}
+[/block]
+
+## 5. Get All Views
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/6fb7689-Screen_Shot_2017-12-13_at_1.49.22_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.49.22 PM.jpg",
+        2560,
+        1600,
+        "#444955"
+      ],
+      "caption": "\"Get All Views\" will generate a list of all views available on your account as well as what those views show."
+    }
+  ]
+}
+[/block]
+
+## 6. Get View By Name
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/d0b2dd3-Screen_Shot_2017-12-13_at_1.49.16_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.49.16 PM.jpg",
+        2560,
+        1600,
+        "#444855"
+      ],
+      "caption": "If you know which view you are looking for and want to double check that it collects a specific value, you can use \"Get View By Name\" to pull up that view as well as all relevant information about it. You simply enter the name of the view you'd like to update at the end of the ```GET``` request."
+    }
+  ]
+}
+[/block]
+
+## 7. Update View
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/bc0c795-Screen_Shot_2017-12-13_at_1.49.47_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.49.47 PM.jpg",
+        2560,
+        1600,
+        "#424854"
+      ],
+      "caption": "\"Update View\" will allow you to change the fields, ```name```, and ```data_type``` of a specific view. You simply enter the name of the view you'd like to update at the end of the ```PUT``` request."
+    }
+  ]
+}
+[/block]
+
+## 8. Delete View
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/fec47f8-Screen_Shot_2017-12-13_at_1.50.08_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.50.08 PM.jpg",
+        2560,
+        1600,
+        "#414a55"
+      ],
+      "caption": "\"Delete View\" will delete a view based on the ```name``` you put at the end of the ```DELETE``` request."
+    }
+  ]
+}
+[/block]
+
+## 9. Get All Downloads
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/6f70daa-Screen_Shot_2017-12-13_at_1.50.21_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.50.21 PM.jpg",
+        2560,
+        1600,
+        "#424269"
+      ],
+      "caption": "\"Get All Downloads\" will generate a list of all the downloads you have run on your account."
+    }
+  ]
+}
+[/block]
+
+[block:callout]
+{
+  "type": "warning",
+  "title": "Result File Expiration",
+  "body": "Keep in mind that your result files will expire after 7 days, even if the result file link shows up when you recall your downloads."
+}
+[/block]
+
+## 10. Get Download
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/22fbf1b-Screen_Shot_2017-12-13_at_1.50.52_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.50.52 PM.jpg",
+        2560,
+        1600,
+        "#424268"
+      ],
+      "caption": "\"Get Download\" is used to call a specific download result file. Simply enter the ```download ID``` at the end of the ```GET``` request. This request also displays relevant information pertaining to the download request such as if it's still running, when it was finished, number of records requested, data type, format, and the query used to generate the results."
+    }
+  ]
+}
+[/block]
+
+## 11. Cancel Download
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/91de654-Screen_Shot_2017-12-13_at_1.51.02_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.51.02 PM.jpg",
+        2560,
+        1600,
+        "#414a55"
+      ]
+    }
+  ]
+}
+[/block]
+
+## 12. Searching the Databases
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/46b1b0e-Screen_Shot_2017-12-13_at_1.51.15_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.51.15 PM.jpg",
+        2560,
+        1600,
+        "#424952"
+      ],
+      "caption": "Click on \"Search Product Data,\" and go to the \"Body\" tab to start querying our extensive Product Database!"
+    }
+  ]
+}
+[/block]
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/85db49c-Screen_Shot_2017-12-13_at_1.51.16_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.51.16 PM.jpg",
+        2560,
+        1600,
+        "#424952"
+      ],
+      "caption": "Click on \"Search Business Data,\" and go to the \"Body\" tab to start querying our extensive Business Database!"
+    }
+  ]
+}
+[/block]
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/8263f0e-Screen_Shot_2017-12-13_at_1.51.18_PM.jpg",
+        "Screen Shot 2017-12-13 at 1.51.18 PM.jpg",
+        2560,
+        1600,
+        "#424952"
+      ],
+      "caption": "Click on \"Search Property Data,\" and go to the \"Body\" tab to start querying our extensive Property Database!"
+    }
+  ]
+}
+[/block]

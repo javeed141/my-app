@@ -317,6 +317,36 @@ function getAllUrls(): { name: string; url: string }[] {
   return all;
 }
 
+interface SidebarPage {
+  title: string;
+  slug: string;
+  path: string;
+  fullUrl: string;
+  level: number;
+  group: string;
+}
+
+interface SidebarSection {
+  name: string;
+  pageCount: number;
+  first5: SidebarPage[];
+  last3: SidebarPage[];
+}
+
+interface SidebarResult {
+  url: string;
+  siteType: string;
+  typeName: string;
+  tabs: string[];
+  versions: {
+    hasVersions: boolean;
+    currentVersion: string;
+    allVersions: string[];
+  };
+  totalPages: number;
+  sections: SidebarSection[];
+}
+
 type BatchStatus = "idle" | "running" | "done" | "cancelled";
 type ItemStatus = "pending" | "running" | "success" | "error";
 
@@ -340,6 +370,10 @@ export default function FetchPage() {
   const [batchResults, setBatchResults] = useState<Record<string, unknown>>({});
   const cancelRef = useRef(false);
 
+  // ─── Result state ───
+  const [result, setResult] = useState<SidebarResult | null>(null);
+  const [fetchContentFlag, setFetchContentFlag] = useState(false);
+
   // ─── Single scrape ───
   async function handleScrapeClick() {
     const trimmed = url.trim();
@@ -354,12 +388,13 @@ export default function FetchPage() {
 
     setLoading(true);
     setError(null);
+    setResult(null);
 
     try {
-      const res = await fetch("/api/scrape", {
+      const res = await fetch("/api/scratch-fetch-store", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url: trimmed }),
+        body: JSON.stringify({ url: trimmed, fetchContent: fetchContentFlag }),
       });
 
       if (!res.ok) {
@@ -368,7 +403,47 @@ export default function FetchPage() {
       }
 
       const data = await res.json();
-      localStorage.setItem("scrape_result", JSON.stringify(data));
+
+      const linkData = data["7_extractAllLinks"];
+      const siteType = data["5_detectSiteType"]?.output;
+
+      // Map type letter to navType for results page
+      const typeMap: Record<string, string> = { A: "tabs", B: "simple", C: "tabs", D: "projects" };
+
+      // Build scrape_result in format results page expects
+      const scrapeResult = {
+        site: new URL(trimmed).hostname,
+        navType: typeMap[siteType?.type] ?? "fallback",
+        tabs: siteType?.tabs?.map((t: { name: string }) => t.name) ?? [],
+        sections: linkData?.sections?.map((s: { name: string; pages: SidebarPage[] }) => ({
+          name: s.name,
+          pages: s.pages.map((p: SidebarPage) => ({
+            title: p.title,
+            path: p.path ?? "",
+            fullUrl: p.fullUrl ?? "",
+            level: p.level,
+            group: p.group,
+          })),
+        })) ?? [],
+      };
+
+      setResult({
+        url: trimmed,
+        siteType: siteType?.type ?? "",
+        typeName: siteType?.typeName ?? "",
+        tabs: scrapeResult.tabs,
+        versions: siteType?.versions ?? { hasVersions: false, currentVersion: "", allVersions: [] },
+        totalPages: linkData?.totalPages ?? 0,
+        sections: scrapeResult.sections.map((s: { name: string; pages: SidebarPage[] }) => ({
+          name: s.name,
+          pageCount: s.pages.length,
+          first5: s.pages.slice(0, 5),
+          last3: s.pages.slice(-3),
+        })),
+      });
+
+      // Store and navigate to results page
+      localStorage.setItem("scrape_result", JSON.stringify(scrapeResult));
       router.push("/results");
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : "Failed to scrape");
@@ -379,10 +454,10 @@ export default function FetchPage() {
 
   // ─── Batch: scrape one URL ───
   async function scrapeOne(targetUrl: string): Promise<unknown> {
-    const res = await fetch("/api/scrape", {
+    const res = await fetch("/api/scratch-fetch-store", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: targetUrl }),
+      body: JSON.stringify({ url: targetUrl, fetchContent: fetchContentFlag }),
     });
 
     if (!res.ok) {
@@ -531,7 +606,100 @@ export default function FetchPage() {
           </button>
         </div>
 
+        {/* Fetch content toggle */}
+        <label className="flex items-center gap-2 mb-4 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={fetchContentFlag}
+            onChange={(e) => setFetchContentFlag(e.target.checked)}
+            className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+          />
+          <span className="text-xs text-gray-500">
+            Fetch markdown content (slower — downloads .md for every page)
+          </span>
+        </label>
+
         {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
+
+        {/* ─── SIDEBAR RESULT ─── */}
+        {result && (
+          <div className="bg-white border border-gray-200 rounded-xl p-4 mb-6 shadow-sm">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md">
+                  Type {result.siteType}
+                </span>
+                <span className="text-sm font-medium text-gray-800">
+                  {result.typeName}
+                </span>
+              </div>
+              <span className="text-xs text-gray-500">
+                {result.totalPages} pages
+              </span>
+            </div>
+
+            {/* Tabs */}
+            {result.tabs.length > 0 && (
+              <div className="flex gap-1.5 mb-3">
+                {result.tabs.map((tab) => (
+                  <span key={tab} className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600">
+                    {tab}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Versions */}
+            {result.versions?.hasVersions && (
+              <div className="flex items-center gap-1.5 mb-3">
+                <span className="text-xs text-gray-500">Versions:</span>
+                {result.versions.allVersions.map((v) => (
+                  <span key={v} className={`text-xs px-1.5 py-0.5 rounded ${
+                    v === result.versions.currentVersion?.replace(/^\/v/, "")
+                      ? "bg-emerald-100 text-emerald-700 font-medium"
+                      : "bg-gray-100 text-gray-500"
+                  }`}>
+                    {v}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Sections */}
+            <div className="space-y-3">
+              {result.sections.map((section) => (
+                <div key={section.name} className="border-t border-gray-100 pt-2">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-xs font-semibold text-gray-700">{section.name}</span>
+                    <span className="text-xs text-gray-400">{section.pageCount} pages</span>
+                  </div>
+                  <div className="space-y-0.5">
+                    {section.first5.map((p, i) => (
+                      <div key={i} className="flex items-center gap-1 text-xs text-gray-500">
+                        {p.level > 0 && (
+                          <span style={{ marginLeft: `${p.level * 12}px` }} />
+                        )}
+                        <span className="truncate">{p.title}</span>
+                        {p.group && (
+                          <span className="text-gray-300 ml-auto text-[10px] flex-shrink-0">{p.group}</span>
+                        )}
+                      </div>
+                    ))}
+                    {section.pageCount > 5 && (
+                      <div className="text-xs text-gray-300 pl-1">
+                        ... {section.pageCount - 5} more
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-[10px] text-gray-400 mt-3 pt-2 border-t border-gray-100">
+              Stored in localStorage as &quot;sidebar_result&quot;
+            </p>
+          </div>
+        )}
 
         {/* ─── RUN ALL BUTTON ─── */}
         <div className="flex gap-2 mb-4">
