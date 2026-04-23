@@ -40,7 +40,7 @@ export default function MdxConvertPage() {
       ? { url: url.trim() }
       : { mdx: mdx.trim() };
 
-    if (mode === "url" && !url.trim()) return;
+    if (mode === "url"  && !url.trim()) return;
     if (mode === "mdx" && !mdx.trim()) return;
 
     setLoading(true);
